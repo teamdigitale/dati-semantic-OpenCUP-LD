@@ -1,0 +1,26 @@
+
+{
+    "@context": {
+    "CLV": "https://w3id.org/italia/onto/CLV/",
+    "COV": "https://w3id.org/italia/onto/COV/",
+    "PRJ": "https://w3id.org/italia/onto/Project/"
+    },
+    "@graph": [
+        {{#each .opencup}}
+        {
+        "@type": "PRJ:PublicInvestmentProject",
+        "@id": "https://w3id.org/italia/data/Project/PublicInvestmentProject/uniqueProjectCodeValue/{{encodeURIComponent CUP}}",
+
+        "PRJ:uniqueProjectCodeValue": "{{CUP}}",
+        "PRJ:projectTitle": "{{DESCRIZIONE_SINTETICA_CUP}}",
+        "PRJ:projectFunder": {
+            "@type":"COV:PublicOrganization",
+            "@id":"https://w3id.org/italia/data/COV/PublicOrganization/taxCode/{{encodeURIComponent PIVA_CODFISCALE_SOG_TITOLARE}}",
+            "COV:hasCategory": "https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent CATEGORIA_SOGGETTO}}",
+            "COV:taxCode": "{{PIVA_CODFISCALE_SOG_TITOLARE}}"
+        }
+        }
+        {{#unless @last}},{{/unless}}
+        {{/each}}
+    ]
+}

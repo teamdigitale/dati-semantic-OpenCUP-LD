@@ -1,0 +1,18 @@
+
+{
+    "@context": {
+    "PRJ": "https://w3id.org/italia/onto/Project/",
+    "PCTR": "https://w3id.org/italia/onto/PublicContract/"
+    },
+    "@graph": [
+        {{#each .cupcig}}
+        {
+        "@type": "PCTR:Lot",
+        "@id": "https://w3id.org/italia/data/PublicContract/Lot/CIG/{{encodeURIComponent CIG}}",
+
+        "PCTR:hasProject": "https://w3id.org/italia/data/Project/PublicInvestmentProject/uniqueProjectCodeValue/{{encodeURIComponent CUP}}"
+        }
+        {{#unless @last}},{{/unless}}
+        {{/each}}
+    ]
+}

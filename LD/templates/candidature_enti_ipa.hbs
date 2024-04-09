@@ -1,0 +1,23 @@
+
+{
+    "@context": {
+    "CLV": "https://w3id.org/italia/onto/CLV/",
+    "COV": "https://w3id.org/italia/onto/COV/",
+    "PRJ": "https://w3id.org/italia/onto/Project/",
+    "owl": "http://www.w3.org/2002/07/owl#"
+    },
+    "@graph": [
+        {{#each .enti}}
+        {
+            "@type":"COV:PublicOrganization",
+            "@id":"https://w3id.org/italia/data/COV/PublicOrganization/IPACode/{{encodeURIComponent Codice_IPA}}",
+            "owl:sameAs": "https://w3id.org/italia/data/COV/PublicOrganization/taxCode/{{encodeURIComponent Codice_fiscale_ente}}",
+
+            "COV:hasCategory": "https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent Codice_Categoria}}",
+            "COV:IPACode": "{{Codice_IPA}}",
+            "COV:legalName": "{{Denominazione_ente}}"
+        }
+        {{#unless @last}},{{/unless}}
+        {{/each}}
+    ]
+}
