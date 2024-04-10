@@ -11,9 +11,14 @@
         {
             "@type":"COV:PublicOrganization",
             "@id":"https://w3id.org/italia/data/COV/PublicOrganization/IPACode/{{encodeURIComponent Codice_IPA}}",
-            "owl:sameAs": "https://w3id.org/italia/data/COV/PublicOrganization/taxCode/{{encodeURIComponent Codice_fiscale_ente}}",
-
-            "COV:hasCategory": "https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent Codice_Categoria}}",
+            "owl:sameAs": {
+                    "@id": "https://w3id.org/italia/data/COV/PublicOrganization/taxCode/{{encodeURIComponent Codice_fiscale_ente}}",
+                    "@type": "COV:PublicOrganization"
+                },
+            "COV:hasCategory": {
+                "@id":"https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent Codice_Categoria}}",
+                "@type": "COV:PublicOrganizationCategory"
+                },
             "COV:IPACode": "{{Codice_IPA}}",
             "COV:legalName": "{{Denominazione_ente}}"
         }

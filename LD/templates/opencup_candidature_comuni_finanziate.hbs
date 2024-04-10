@@ -16,7 +16,10 @@
         "PRJ:projectFunder": {
             "@type":"COV:PublicOrganization",
             "@id":"https://w3id.org/italia/data/COV/PublicOrganization/taxCode/{{encodeURIComponent PIVA_CODFISCALE_SOG_TITOLARE}}",
-            "COV:hasCategory": "https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent CATEGORIA_SOGGETTO}}",
+            "COV:hasCategory": {
+                "@type": "COV:PublicOrganizationCategory",
+                "@id":"https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent CATEGORIA_SOGGETTO}}"
+            },
             "COV:taxCode": "{{PIVA_CODFISCALE_SOG_TITOLARE}}"
         }
         }
