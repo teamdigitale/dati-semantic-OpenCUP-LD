@@ -9,13 +9,13 @@
         {{#each .candidature}}
         {
         "@type": "PRJ:PublicInvestmentProject",
-        "@id": "https://w3id.org/italia/data/Project/PublicInvestmentProject/uniqueProjectCodeValue/{{encodeURIComponent codice_cup}}",
+        "@id": "https://w3id.org/italia/data/PublicInvestmentProject/{{encodeURIComponent codice_cup}}",
 
         "PRJ:uniqueProjectCodeValue": "{{codice_cup}}",
         "PRJ:projectTitle": "Progetto {{codice_cup}} per il comune {{codice_ipa}} relativo all'avviso {{avviso}}",
         "PRJ:projectTotalCost": {{importo_finanziamento}},
         "PRJ:hasCall": {
-            "@id":"https://w3id.org/italia/data/Project/Call/{{encodeURIComponent avviso}}",
+            "@id":"https://w3id.org/italia/data/Call/{{encodeURIComponent avviso}}",
             "@type": "PRJ:Call"
             }
         }

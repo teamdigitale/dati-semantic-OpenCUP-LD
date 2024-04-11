@@ -10,13 +10,13 @@
         {{#each .enti}}
         {
             "@type":"COV:PublicOrganization",
-            "@id":"https://w3id.org/italia/data/COV/PublicOrganization/IPACode/{{encodeURIComponent Codice_IPA}}",
+            "@id":"https://w3id.org/italia/data/PublicOrganization/{{encodeURIComponent Codice_IPA}}",
             "owl:sameAs": {
-                    "@id": "https://w3id.org/italia/data/COV/PublicOrganization/taxCode/{{encodeURIComponent Codice_fiscale_ente}}",
+                    "@id": "https://w3id.org/italia/data/PublicOrganization/{{encodeURIComponent Codice_fiscale_ente}}",
                     "@type": "COV:PublicOrganization"
                 },
             "COV:hasCategory": {
-                "@id":"https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent Codice_Categoria}}",
+                "@id":"https://w3id.org/italia/data/PublicOrganizationCategory/{{encodeURIComponent Codice_Categoria}}",
                 "@type": "COV:PublicOrganizationCategory"
                 },
             "COV:IPACode": "{{Codice_IPA}}",

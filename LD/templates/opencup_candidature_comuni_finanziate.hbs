@@ -9,16 +9,16 @@
         {{#each .opencup}}
         {
         "@type": "PRJ:PublicInvestmentProject",
-        "@id": "https://w3id.org/italia/data/Project/PublicInvestmentProject/uniqueProjectCodeValue/{{encodeURIComponent CUP}}",
+        "@id": "https://w3id.org/italia/data/PublicInvestmentProject/{{encodeURIComponent CUP}}",
 
         "PRJ:uniqueProjectCodeValue": "{{CUP}}",
         "PRJ:projectTitle": "{{DESCRIZIONE_SINTETICA_CUP}}",
         "PRJ:projectFunder": {
             "@type":"COV:PublicOrganization",
-            "@id":"https://w3id.org/italia/data/COV/PublicOrganization/taxCode/{{encodeURIComponent PIVA_CODFISCALE_SOG_TITOLARE}}",
+            "@id":"https://w3id.org/italia/data/PublicOrganization/{{encodeURIComponent PIVA_CODFISCALE_SOG_TITOLARE}}",
             "COV:hasCategory": {
                 "@type": "COV:PublicOrganizationCategory",
-                "@id":"https://w3id.org/italia/data/COV/PublicOrganization/PublicOrganizationCategory/{{encodeURIComponent CATEGORIA_SOGGETTO}}"
+                "@id":"https://w3id.org/italia/data/PublicOrganizationCategory/{{encodeURIComponent CATEGORIA_SOGGETTO}}"
             },
             "COV:taxCode": "{{PIVA_CODFISCALE_SOG_TITOLARE}}"
         }

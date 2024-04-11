@@ -8,10 +8,10 @@
         {{#each .cupcig}}
         {
         "@type": "PCTR:Lot",
-        "@id": "https://w3id.org/italia/data/PublicContract/Lot/CIG/{{encodeURIComponent CIG}}",
+        "@id": "https://w3id.org/italia/data/Lot/{{encodeURIComponent CIG}}",
 
         "PCTR:hasProject": {
-            "@id": "https://w3id.org/italia/data/Project/PublicInvestmentProject/uniqueProjectCodeValue/{{encodeURIComponent CUP}}",
+            "@id": "https://w3id.org/italia/data/PublicInvestmentProject/{{encodeURIComponent CUP}}",
             "@type": "PRJ:Project"
             }
         }
