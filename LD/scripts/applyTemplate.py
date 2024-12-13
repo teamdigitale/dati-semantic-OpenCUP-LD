@@ -3,7 +3,7 @@ from pybars import Compiler
 import urllib.parse
 
 def encodeURIComponent(this,value):
-    return urllib.parse.quote(value)
+    return urllib.parse.quote(str(value))
 
 def apply_handlebars_template(template, data):
     compiler = Compiler()
