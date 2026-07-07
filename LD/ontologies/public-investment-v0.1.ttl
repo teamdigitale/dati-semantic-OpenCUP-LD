@@ -4,6 +4,7 @@
 @prefix CLV:  <https://w3id.org/italia/onto/CLV/> .
 @prefix COV:  <https://w3id.org/italia/onto/COV/> .
 @prefix CPV:  <https://w3id.org/italia/onto/CPV/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
@@ -32,6 +33,22 @@
 				owl:versionIRI <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/1.0> ;
 				owl:versionInfo "Versione 1.0"@it , 
 								"Version 1.0"@en ;
+				dc:description "CUP." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-cup.png> ;
+				dc:description "Natura di intervento." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-natura-intervento.png> ;
+				dc:description "Atto." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-atto.png> ;
+				dc:description "Progetto." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-progetto.png> ;
+				dc:description "Intervento." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-intervento.png> ;
+				dc:description "Soggetto." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-soggetto.png> ;
+				dc:description "Relazioni intervento." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-relazioni-intervento.png> ;
+				dc:description "Tipizzazione data property." ;
+				dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-tipizzazione-data-property.png> ;
 				dct:identifier "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment" ;
 				dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
 				dct:language <http://publications.europa.eu/resource/authority/language/ITA> , <http://publications.europa.eu/resource/authority/language/ENG> ;
@@ -39,16 +56,16 @@
 				dct:creator <https://w3id.org/italia/data/public-organization/PCM-DIPE> , <https://w3id.org/italia/data/public-organization/ISTAT> ; 
 				dct:publisher <https://w3id.org/italia/data/public-organization/PCM-DIPE> ;
 				dct:rightsHolder <https://w3id.org/italia/data/public-organization/PCM-DIPE>; 
-				dct:issued "2026-07-08"^^xsd:date ;
-				dct:modified "2026-07-08"^^xsd:date ;
+				dct:issued "2026-07-07"^^xsd:date ;
+				dct:modified "2026-07-07"^^xsd:date ;
 				dct:temporal "Dal 2026" ;
 				dct:subject <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment> ;
 				dct:title "Public Investment Ontology"@en , 
 						  "Ontologia degli Investimenti Pubblici"@it ;		  
-				dct:description "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata alla rete OntoPiA ed è pubblicata nel Catalogo Nazionale dei dati semantici (schema.gov.it)."@it , 
-								"This ontology is the product of the semantic analysis of the Unique Project Code (CUP) and of the information assets of the OpenCUP portal. It is developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with the semantic stewardship of ISTAT and in coordination with the Department for Digital Transformation (DTD), within commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the OntoPiA network and published in the National Catalog of Semantic Data (schema.gov.it)."@en ;                                   
-				rdfs:comment "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata alla rete OntoPiA ed è pubblicata nel Catalogo Nazionale dei dati semantici (schema.gov.it)."@it ,
-							 "This ontology is the product of the semantic analysis of the Unique Project Code (CUP) and of the information assets of the OpenCUP portal. It is developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with the semantic stewardship of ISTAT and in coordination with the Department for Digital Transformation (DTD), within commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the OntoPiA network and published in the National Catalog of Semantic Data (schema.gov.it)."@en ;                                    
+				dct:description "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata con le ontologie CORE della rete semantica del Catalogo Nazionale dei dati (schema.gov.it)."@it , 
+								"This ontology results from the semantic analysis of the Unique Project Code (CUP) and the information assets of the OpenCUP portal. It has been developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with semantic stewardship by ISTAT and in coordination with the Department for Digital Transformation (DTD), within Commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the CORE ontologies of the National Data Catalogue semantic network (schema.gov.it)."@en ;                                   
+				rdfs:comment "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata con le ontologie CORE della rete semantica del Catalogo Nazionale dei dati (schema.gov.it)."@it ,
+						     "This ontology results from the semantic analysis of the Unique Project Code (CUP) and the information assets of the OpenCUP portal. It has been developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with semantic stewardship by ISTAT and in coordination with the Department for Digital Transformation (DTD), within Commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the CORE ontologies of the National Data Catalogue semantic network (schema.gov.it)."@en ;                                   
 				rdfs:label "Public Investment Ontology."@en , 
 						   "Ontologia degli Investimenti Pubblici"@it ;                               
 				dcat:contactPoint <https://w3id.org/italia/data/contact-point/PCM-DIPE> ;
@@ -107,6 +124,43 @@
                                                     admsapit:Project ;
                                            l0:name "National Data Catalog"@it .
 
+
+###  https://w3id.org/italia/data/distribution/PI-JSON-LD
+<https://w3id.org/italia/data/distribution/PI-JSON-LD> rdf:type owl:NamedIndividual ,
+                                                                     admsapit:SemanticAssetDistribution ;
+                                                            dct:description "Questa è la distribuzione RDF/Turtle dell'ontologia Investimenti Pubblici"@it ,
+                                                                            "This is the distribution in RDF/turtle of the ontology Public Investment"@en ;
+                                                            dct:format <http://publications.europa.eu/resource/authority/file-type/JSON_LD> ;
+                                                            dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                            dct:title "Distribuzione JSON-LD dell'ontologia Investimenti Pubblici"@it ,
+                                                                      "JSON-LD distribution of the Ontology Public Investment"@en ;
+                                                            dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/public-investment/latest> ;
+                                                            dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment.jsonld> .
+
+
+###  https://w3id.org/italia/data/distribution/PI-RDF-TURTLE
+<https://w3id.org/italia/data/distribution/PI-RDF-TURTLE> rdf:type owl:NamedIndividual ,
+                                                                        admsapit:SemanticAssetDistribution ;
+                                                               dct:description "Questa è la distribuzione RDF/Turtle dell'ontologia Investimenti Pubblici"@it ,
+                                                                               "This is the distribution in RDF/turtle of the ontology Public Investment"@en ;
+                                                               dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+                                                               dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                               dct:title "Distribuzione RDF/Turtle dell' ontologia Investimenti Pubblici"@it ,
+                                                                         "RDF/Turtle distribution of the ontology Public Investment"@en ;
+                                                               dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/public-investment/latest> ;
+                                                               dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment.ttl> .
+
+###  https://w3id.org/italia/data/distribution/PI-RDF-XML
+<https://w3id.org/italia/data/distribution/PI-RDF-XML> rdf:type owl:NamedIndividual ,
+                                                                     admsapit:SemanticAssetDistribution ;
+                                                            dct:description "Questa è la distribuzione RDF/XML dell'ontologia Investimenti Pubblici"@it ,
+                                                                            "This is the distribution in RDF/XML of the Public Investment"@en ;
+                                                            dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+                                                            dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                            dct:title "Distribuzione RDF/XML dell' ontologia Investimenti Pubblici"@it ,
+                                                                      "RDF/XML distribution of the ontology Public Investment"@en ;
+                                                            dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/public-investment/latest> ;
+                                                            dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment.rdf> .
 
 #################################################################
 # fine metadati

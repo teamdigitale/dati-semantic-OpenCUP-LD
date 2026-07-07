@@ -88,6 +88,6 @@ clean-filter: ## Rimuove JSON filtrati in srcdata/data/
 	rm -f $(FILTER_OUTPUTS)
 
 clean-ld: ## Rimuove output JSON-LD e TTL
-	rm -f LD/json-ld/*-ld.json LD/ttl/*-ld.ttl LD/ttl/all.ttl
+	rm -f LD/json-ld/*-ld.json LD/json-ld/all.ttl LD/ttl/*-ld.ttl LD/ttl/all.ttl
 
 clean: clean-filter clean-ld ## Rimuove tutti gli output generati (non i rawdata)

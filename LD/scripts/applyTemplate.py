@@ -62,8 +62,12 @@ def encodeURIComponent(this, value):
     return urllib.parse.quote(str(value))
 
 
+def normalize_cup(cup):
+    return str(cup).strip().upper()
+
+
 def cupUri(this, cup):
-    return f"{PI_DATA}{cup}"
+    return f"{PI_DATA}{normalize_cup(cup)}"
 
 
 def cvUri(this, tipo, codice):
@@ -118,7 +122,7 @@ def skos_concept(cv_type, code, label):
 
 
 def build_opencup_nodes(record):
-    cup = record["CUP"]
+    cup = normalize_cup(record["CUP"])
     cup_uri = f"{PI_DATA}{cup}"
     nodes = []
     concepts = {}
@@ -143,8 +147,6 @@ def build_opencup_nodes(record):
         },
     }
 
-    if is_present(record.get("DESCRIZIONE_SINTETICA_CUP")):
-        project["pi:oggetto_progettuale"] = record["DESCRIZIONE_SINTETICA_CUP"]
     if is_present(record.get("COSTO_PROGETTO")):
         project["pi:costo_del_progetto"] = record["COSTO_PROGETTO"]
     if is_present(record.get("FINANZIAMENTO_PROGETTO")):
@@ -180,7 +182,8 @@ def build_opencup_nodes(record):
             addr["CLV:regionName"] = record["REGIONE"]
         if is_present(record.get("CODICE_COMUNE")) and str(record.get("CODICE_COMUNE")) not in ("-1",):
             addr["CLV:cityCode"] = str(record["CODICE_COMUNE"]).zfill(6)
-        project["pi:ha_localizzazione"] = addr
+        project["pi:ha_localizzazione"] = {"@id": addr["@id"]}
+        project["pi:ha_indirizzo_o_riferimento"] = {"@id": addr["@id"]}
         nodes.append(addr)
 
     stato = record.get("STATO_PROGETTO")
@@ -210,6 +213,8 @@ def build_opencup_nodes(record):
         "@id": f"_:intervento-{cup}",
         "@type": intervention_types,
     }
+    if is_present(record.get("DESCRIZIONE_SINTETICA_CUP")):
+        intervention["pi:oggetto_progettuale"] = record["DESCRIZIONE_SINTETICA_CUP"]
     if is_present(record.get("DESCRIZIONE_INTERVENTO")):
         intervention["L0:description"] = record["DESCRIZIONE_INTERVENTO"]
     if nature_code and nature_code in NATURE_INDIVIDUAL:
