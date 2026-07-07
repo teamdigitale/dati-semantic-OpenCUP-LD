@@ -1,28 +1,16 @@
 
 {
     "@context": {
-    "CLV": "https://w3id.org/italia/onto/CLV/",
-    "COV": "https://w3id.org/italia/onto/COV/",
-    "PRJ": "https://w3id.org/italia/onto/Project/"
+        "pi": "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/",
+        "CLV": "https://w3id.org/italia/onto/CLV/",
+        "COV": "https://w3id.org/italia/onto/COV/",
+        "L0": "https://w3id.org/italia/onto/l0/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {{#each .opencup}}
-        {
-        "@type": "PRJ:PublicInvestmentProject",
-        "@id": "https://w3id.org/italia/data/PublicInvestmentProject/{{encodeURIComponent CUP}}",
-
-        "PRJ:uniqueProjectCodeValue": "{{CUP}}",
-        "PRJ:projectTitle": "{{DESCRIZIONE_SINTETICA_CUP}}",
-        "PRJ:projectFunder": {
-            "@type":"COV:PublicOrganization",
-            "@id":"https://w3id.org/italia/data/PublicOrganization/{{encodeURIComponent PIVA_CODFISCALE_SOG_TITOLARE}}",
-            "COV:hasCategory": {
-                "@type": "COV:PublicOrganizationCategory",
-                "@id":"https://w3id.org/italia/data/PublicOrganizationCategory/{{encodeURIComponent CATEGORIA_SOGGETTO}}"
-            },
-            "COV:taxCode": "{{PIVA_CODFISCALE_SOG_TITOLARE}}"
-        }
-        }
+        {{{opencupNodes this}}}
         {{#unless @last}},{{/unless}}
         {{/each}}
     ]

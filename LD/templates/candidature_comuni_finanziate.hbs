@@ -1,22 +1,25 @@
 
 {
     "@context": {
-    "CLV": "https://w3id.org/italia/onto/CLV/",
-    "COV": "https://w3id.org/italia/onto/COV/",
-    "PRJ": "https://w3id.org/italia/onto/Project/"
+        "pi": "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/",
+        "PRJ": "https://w3id.org/italia/onto/Project/",
+        "l0": "https://w3id.org/italia/onto/l0/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {{#each .candidature}}
         {
-        "@type": "PRJ:PublicInvestmentProject",
-        "@id": "https://w3id.org/italia/data/PublicInvestmentProject/{{encodeURIComponent codice_cup}}",
-
-        "PRJ:uniqueProjectCodeValue": "{{codice_cup}}",
-        "PRJ:projectTitle": "Progetto {{codice_cup}} per il comune {{codice_ipa}} relativo all'avviso {{avviso}}",
-        "PRJ:projectTotalCost": {{importo_finanziamento}},
+        "@type": "pi:Progetto_di_investimento_pubblico",
+        "@id": "{{cupUri codice_cup}}",
+        "pi:importo_finanziamento_pubblico": {{importo_finanziamento}},
         "PRJ:hasCall": {
             "@id":"https://w3id.org/italia/data/Call/{{encodeURIComponent avviso}}",
+            "l0:name": "{{avviso}}",
             "@type": "PRJ:Call"
+            },
+        "PRJ:hasProgramme": {
+            "@type": "PRJ:Programme",
+            "l0:name": "PNRR"
             }
         }
         {{#unless @last}},{{/unless}}

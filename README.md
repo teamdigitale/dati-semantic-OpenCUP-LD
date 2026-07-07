@@ -28,3 +28,26 @@ In questo modo, i dati sono resi interoperabili e i collegamenti fra le banche d
 
 Nota bene: i file di partenza sono tutti filtrati in modo da contenere solo i progetti che sono catalogati in PA Digitale. Questo per avere solo dati realmente interoperabili fra loro.
 
+## Ambiente Python (uv)
+
+```bash
+make setup          # uv sync
+make all            # filtra + converte in Linked Data
+make help           # tutti i target
+```
+
+Pipeline completa da zero:
+
+```bash
+make setup
+make fetch          # scarica ANAC CUP, PA Digitale, IndicePA
+# aggiungere manualmente in srcdata/rawdata/: OpenCUP.parquet, v_od_esiti.csv, v_od_bandi.csv
+make all
+```
+
+Per rigenerare solo la conversione LD (se i JSON in `srcdata/data/` sono già pronti):
+
+```bash
+make ld
+```
+

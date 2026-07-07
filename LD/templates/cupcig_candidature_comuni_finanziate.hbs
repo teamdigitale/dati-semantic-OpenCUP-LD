@@ -1,18 +1,17 @@
 
 {
     "@context": {
-    "PRJ": "https://w3id.org/italia/onto/Project/",
-    "PCTR": "https://w3id.org/italia/onto/PublicContract/"
+        "pi": "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/",
+        "PCTR": "https://w3id.org/italia/onto/PublicContract/"
     },
     "@graph": [
         {{#each .cupcig}}
         {
         "@type": "PCTR:Lot",
         "@id": "https://w3id.org/italia/data/Lot/{{encodeURIComponent CIG}}",
-
         "PCTR:hasProject": {
-            "@id": "https://w3id.org/italia/data/PublicInvestmentProject/{{encodeURIComponent CUP}}",
-            "@type": "PRJ:Project"
+            "@id": "{{cupUri CUP}}",
+            "@type": "pi:Progetto_di_investimento_pubblico"
             }
         }
         {{#unless @last}},{{/unless}}

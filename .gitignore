@@ -1,2 +1,15 @@
-venv
+.venv
 srcdata/rawdata/
+
+# Python
+__pycache__/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Output intermedi degli script di filtraggio (i dati canonici sono in srcdata/data/)
+srcdata/scripts/*.json
+
+# Artefatti RDF locali / sperimentali
+LD/json-ld/oxi/
+LD/json-ld/all.ttl
