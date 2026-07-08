@@ -2,16 +2,9 @@
   "dataset": "enti_ipa",
   "nodes": [
     {
-      "id": "https://w3id.org/italia/data/PublicOrganization/c_i625",
-      "shortId": "po:c_i625",
-      "label": "Comune di Seregno",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/PublicOrganization/00870790151",
-      "shortId": "po:00870790151",
-      "label": "po:00870790151",
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_c139",
+      "shortId": "po:c_c139",
+      "label": "Comune di Castellanza",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     },
@@ -23,13 +16,6 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/PublicOrganization/c_h623",
-      "shortId": "po:c_h623",
-      "label": "Comune di Rozzano",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
-    },
-    {
       "id": "https://w3id.org/italia/data/PublicOrganization/01743420158",
       "shortId": "po:01743420158",
       "label": "po:01743420158",
@@ -37,9 +23,9 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/PublicOrganization/82005730161",
-      "shortId": "po:82005730161",
-      "label": "po:82005730161",
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_e472",
+      "shortId": "po:c_e472",
+      "label": "Comune di Latina",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     },
@@ -58,6 +44,20 @@
       "dataset": "enti_ipa"
     },
     {
+      "id": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "shortId": "po:82005730161",
+      "label": "po:82005730161",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/00870790151",
+      "shortId": "po:00870790151",
+      "label": "po:00870790151",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
       "id": "https://w3id.org/italia/data/PublicOrganization/c_l118",
       "shortId": "po:c_l118",
       "label": "Comune di Terno d'Isola",
@@ -65,9 +65,16 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/PublicOrganization/c_c139",
-      "shortId": "po:c_c139",
-      "label": "Comune di Castellanza",
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_h623",
+      "shortId": "po:c_h623",
+      "label": "Comune di Rozzano",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_i625",
+      "shortId": "po:c_i625",
+      "label": "Comune di Seregno",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     },
@@ -77,24 +84,17 @@
       "label": "Comune di Albiano",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/PublicOrganization/c_e472",
-      "shortId": "po:c_e472",
-      "label": "Comune di Latina",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
     }
   ],
   "edges": [
     {
-      "source": "https://w3id.org/italia/data/PublicOrganization/c_i625",
-      "target": "https://w3id.org/italia/data/PublicOrganization/00870790151",
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_c139",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00252280128",
       "label": "sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/PublicOrganization/c_h623",
-      "target": "https://w3id.org/italia/data/PublicOrganization/01743420158",
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_e472",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00097020598",
       "label": "sameAs"
     },
     {
@@ -103,18 +103,18 @@
       "label": "sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/PublicOrganization/c_c139",
-      "target": "https://w3id.org/italia/data/PublicOrganization/00252280128",
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_h623",
+      "target": "https://w3id.org/italia/data/PublicOrganization/01743420158",
+      "label": "sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_i625",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00870790151",
       "label": "sameAs"
     },
     {
       "source": "https://w3id.org/italia/data/PublicOrganization/c_a158",
       "target": "https://w3id.org/italia/data/PublicOrganization/00271100224",
-      "label": "sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/PublicOrganization/c_e472",
-      "target": "https://w3id.org/italia/data/PublicOrganization/00097020598",
       "label": "sameAs"
     }
   ],

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import cytoscape, { Core } from "cytoscape";
+import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions } from "cytoscape";
+import fcose from "cytoscape-fcose";
 import { GraphData, SubgraphData } from "../types";
-import { DATASET_COLORS, DATASET_LABELS, TYPE_COLORS } from "../constants";
+import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS } from "../constants";
 import {
   MERGE_DATASETS,
   MERGE_QUADRANTS,
@@ -10,10 +11,20 @@ import {
   hubRadialPositions,
   joinNodeIdsFromEdges,
   makeCyNodeId,
-  resolveMergedCyEndpoints,
 } from "../utils/graphCup";
-import { JOIN_NODE_STYLE_BOX, JOIN_NODE_STYLE_COMPACT } from "../utils/graphStyles";
+import { graphNodeDisplayLabel } from "../utils/graphLabels";
+import {
+  EDGE_LABEL_VISIBLE,
+  EDGE_LINE_BASE,
+  JOIN_NODE_STYLE_BOX,
+  JOIN_NODE_STYLE_COMPACT,
+  NODE_SHADOW_BOX,
+  NODE_SHADOW_COMPACT,
+  Z_INDEX_MANUAL,
+} from "../utils/graphStyles";
 import { GRAPH_FONT_FAMILY, normalizeDisplayText } from "../utils/text";
+
+cytoscape.use(fcose);
 
 const COMPACT_NODE_TYPES = new Set([
   "pi:Progetto_di_investimento_pubblico",
@@ -21,19 +32,12 @@ const COMPACT_NODE_TYPES = new Set([
   "Literal",
 ]);
 
-const EDGE_LABEL_STYLE = {
-  "font-size": "8px",
-  "font-family": GRAPH_FONT_FAMILY,
-  "text-rotation": "autorotate",
-  "text-wrap": "wrap",
-  "text-max-width": "100px",
-  "text-margin-y": 10,
-  color: "#1e293b",
-  "text-background-color": "#ffffff",
-  "text-background-opacity": 1,
-  "text-background-padding": "3px",
-  "text-background-shape": "roundrectangle",
-} as const;
+function nodeColors(dataset: string, type: string): { accent: string; fill: string } {
+  return {
+    accent: DATASET_COLORS[dataset] ?? TYPE_COLORS[type] ?? "#64748b",
+    fill: DATASET_FILLS[dataset] ?? TYPE_FILLS[type] ?? "#ffffff",
+  };
+}
 
 type Phase = "separated" | "merging" | "merged";
 
@@ -44,11 +48,8 @@ interface Props {
   height?: number;
 }
 
-function shortNodeLabel(label: string, type: string): string {
-  const text = normalizeDisplayText(label);
-  if (type === "pi:Progetto_di_investimento_pubblico") return text;
-  if (text.length > 36) return `${text.slice(0, 34)}…`;
-  return text;
+function canonicalDatasetFor(merged: SubgraphData, logicalId: string): string | null {
+  return merged.nodes.find((n) => n.id === logicalId)?.dataset ?? null;
 }
 
 function easeInOutCubic(t: number): number {
@@ -99,10 +100,6 @@ function animateNodes(
   });
 }
 
-function canonicalDatasetFor(merged: SubgraphData, logicalId: string): string | null {
-  return merged.nodes.find((n) => n.id === logicalId)?.dataset ?? null;
-}
-
 function applySeparatedView(cy: Core): void {
   cy.nodes().removeClass("dup-hidden");
   cy.edges('[phase = "separated"]').style("opacity", 1);
@@ -112,10 +109,56 @@ function applySeparatedView(cy: Core): void {
 function applyMergedView(cy: Core): void {
   cy.edges('[phase = "separated"]').style("opacity", 0);
   cy.edges('[phase = "merged"][?isJoin]').style("opacity", 1);
-  cy.edges('[phase = "merged"][!isJoin]').style("opacity", 0.35);
+  cy.edges('[phase = "merged"][!isJoin]').style("opacity", 0.45);
   cy.nodes().forEach((node) => {
     if (node.data("isDuplicate")) node.addClass("dup-hidden");
     else node.removeClass("dup-hidden");
+  });
+}
+
+function idealEdgeLength(edge: EdgeSingular): number {
+  const label = String(edge.data("label") ?? "");
+  const lines = Math.max(1, Math.ceil(label.length / 18));
+  const labelRoom = Math.min(180, lines * 38 + label.length * 1.4);
+  return 72 + labelRoom;
+}
+
+function runForceLayout(eles: Collection, randomize: boolean): Promise<void> {
+  const nodeCount = eles.nodes().length;
+  const scale = nodeCount > 20 ? 1.15 : 1;
+
+  return new Promise((resolve) => {
+    const layout = eles.layout({
+      name: "fcose",
+      fit: false,
+      animate: false,
+      randomize,
+      quality: "proof",
+      nodeDimensionsIncludeLabels: true,
+      uniformNodeDimensions: false,
+      packComponents: false,
+      nodeSeparation: 95 * scale,
+      nodeRepulsion: () => 8500 * scale,
+      idealEdgeLength,
+      edgeElasticity: () => 0.42,
+      nestingFactor: 0.1,
+      gravity: 0.18,
+      numIter: nodeCount > 30 ? 3500 : 2800,
+      padding: 48,
+      tile: false,
+    } as LayoutOptions);
+    layout.on("layoutstop", () => resolve());
+    layout.run();
+  });
+}
+
+function layoutMergedGraph(cy: Core): Promise<void> {
+  const visible = cy.nodes().not(".dup-hidden");
+  const mergedEdges = cy.edges('[phase = "merged"]');
+  const subgraph = visible.union(mergedEdges);
+  if (subgraph.nodes().length === 0) return Promise.resolve();
+  return runForceLayout(subgraph, false).then(() => {
+    if (!visible.empty()) cy.fit(visible, 70);
   });
 }
 
@@ -168,8 +211,9 @@ export function MergeAnimationGraph({
     ).then(() => {
       if (signal.cancelled) return;
       applyMergedView(cy);
-      const visible = cy.nodes().not(".dup-hidden");
-      if (!visible.empty()) cy.fit(visible, 70);
+      return layoutMergedGraph(cy);
+    }).then(() => {
+      if (signal.cancelled) return;
       setPhaseSafe("merged");
     });
   }, [merged]);
@@ -239,6 +283,7 @@ export function MergeAnimationGraph({
         const p = localPos.get(n.id) ?? { x: 0, y: 0 };
         const position = { x: p.x + offset.x, y: p.y + offset.y };
         const canonicalDataset = canonicalDatasetFor(merged, mergeTargetId);
+        const { accent, fill } = nodeColors(dataset, n.type);
 
         nodeElements.push({
           data: {
@@ -248,10 +293,11 @@ export function MergeAnimationGraph({
             separatedX: position.x,
             separatedY: position.y,
             canonicalDataset,
-            label: shortNodeLabel(n.label, n.type),
+            label: graphNodeDisplayLabel(n.label, n.type),
             type: n.type,
             dataset,
-            color: DATASET_COLORS[dataset] ?? TYPE_COLORS[n.type] ?? "#94a3b8",
+            accentColor: accent,
+            fillColor: fill,
             isCompact: COMPACT_NODE_TYPES.has(n.type),
             isJoinNode:
               joinNodeIds.has(n.id) || joinNodeIds.has(mergeTargetId),
@@ -287,14 +333,22 @@ export function MergeAnimationGraph({
         (mergeTargetCounts.get(mt) ?? 0) > 1 && canonical !== null && ds !== canonical;
     }
 
+    const canonicalCyByLogical = new Map<string, string>();
+    for (const el of nodeElements) {
+      const d = el.data as Record<string, unknown>;
+      if (d.isDuplicate) continue;
+      canonicalCyByLogical.set(d.mergeTargetId as string, d.id as string);
+    }
+
     merged.edges.forEach((e, i) => {
-      const endpoints = resolveMergedCyEndpoints(e, logicalToCy, cyNodeIds);
-      if (!endpoints) return;
+      const source = canonicalCyByLogical.get(e.source);
+      const target = canonicalCyByLogical.get(e.target);
+      if (!source || !target) return;
       edgeElements.push({
         data: {
           id: `merged-${i}`,
-          source: endpoints.source,
-          target: endpoints.target,
+          source,
+          target,
           label: normalizeDisplayText(e.label),
           phase: "merged",
           isJoin: joinEdgeKeys.has(`${e.source}|${e.target}|${e.label}`),
@@ -315,21 +369,30 @@ export function MergeAnimationGraph({
           selector: "node",
           style: {
             label: "data(label)",
-            "background-color": "data(color)",
-            color: "#ffffff",
-            "text-outline-color": "#1e293b",
-            "text-outline-width": 1.5,
-            "font-size": "9px",
+            "background-color": "data(fillColor)",
+            "border-color": "data(accentColor)",
+            color: "#1e293b",
+            "font-weight": 500,
+            "text-outline-width": 0,
+            "font-size": "10px",
             "font-family": GRAPH_FONT_FAMILY,
             "text-wrap": "wrap",
             "text-valign": "center",
             "text-halign": "center",
             "border-width": 2,
-            "border-color": "#1e40af",
+            ...Z_INDEX_MANUAL,
             "z-index": 1,
             "transition-property": "opacity",
             "transition-duration": 300,
           },
+        },
+        {
+          selector: "node[?isCompact]",
+          style: { ...NODE_SHADOW_COMPACT },
+        },
+        {
+          selector: "node[!isCompact]",
+          style: { ...NODE_SHADOW_BOX },
         },
         {
           selector: "node.dup-hidden",
@@ -365,27 +428,19 @@ export function MergeAnimationGraph({
         {
           selector: 'edge[phase = "separated"]',
           style: {
-            label: "data(label)",
-            "curve-style": "bezier",
-            "edge-distances": "intersection",
-            "target-arrow-shape": "triangle",
-            width: 2,
-            "line-color": "#94a3b8",
-            "target-arrow-color": "#94a3b8",
+            ...Z_INDEX_MANUAL,
+            ...EDGE_LABEL_VISIBLE,
+            ...EDGE_LINE_BASE,
             opacity: 1,
-            "z-index": 50,
-            ...EDGE_LABEL_STYLE,
+            "z-index": 100,
           },
         },
         {
           selector: 'edge[phase = "merged"][!isJoin]',
           style: {
-            "curve-style": "bezier",
-            "edge-distances": "intersection",
-            "target-arrow-shape": "triangle",
+            ...EDGE_LABEL_VISIBLE,
+            ...EDGE_LINE_BASE,
             width: 1.5,
-            "line-color": "#cbd5e1",
-            "target-arrow-color": "#cbd5e1",
             opacity: 0,
             "z-index": 80,
           },
@@ -393,25 +448,16 @@ export function MergeAnimationGraph({
         {
           selector: 'edge[phase = "merged"][?isJoin]',
           style: {
-            label: "data(label)",
-            "curve-style": "bezier",
-            "edge-distances": "intersection",
-            "target-arrow-shape": "triangle",
-            width: 3,
-            "line-color": "#dc2626",
-            "target-arrow-color": "#dc2626",
-            opacity: 0,
-            "z-index": 140,
-            "font-size": "8px",
-            "text-rotation": "autorotate",
-            "text-wrap": "wrap",
-            "text-max-width": "100px",
-            "text-margin-y": 10,
+            ...EDGE_LABEL_VISIBLE,
+            ...EDGE_LINE_BASE,
+            width: 2.25,
+            "line-color": "#f87171",
+            "target-arrow-color": "#f87171",
             color: "#b91c1c",
             "text-background-color": "#fff1f2",
-            "text-background-opacity": 1,
-            "text-background-padding": "3px",
-            "text-background-shape": "roundrectangle",
+            "text-border-color": "#fecdd3",
+            opacity: 0,
+            "z-index": 140,
           },
         },
       ],
@@ -475,7 +521,7 @@ export function MergeAnimationGraph({
           Inquadra tutto
         </button>
         <span className="merge-phase-label">
-          {phase === "separated" && "Vista separata — 4 dataset in quadranti"}
+          {phase === "separated" && "Vista separata — quattro dataset nei rispettivi quadranti"}
           {phase === "merging" && "Animazione in corso…"}
           {phase === "merged" &&
             "Vista unita — un nodo per URI, join rossi, duplicati nascosti"}
@@ -497,7 +543,7 @@ export function MergeAnimationGraph({
             </span>
           ))}
         </div>
-        <div ref={containerRef} className="cytoscape-canvas merge-canvas" />
+        <div ref={containerRef} className="cytoscape-canvas merge-canvas" style={{ height: "100%" }} />
       </div>
 
       <p className="stats merge-stats">

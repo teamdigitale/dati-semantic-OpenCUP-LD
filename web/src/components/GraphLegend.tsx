@@ -55,10 +55,10 @@ export function GraphLegend({
         </div>
         {showJoinNodes && (
           <div className="graph-legend-section">
-            <h3>Nodi con doppio bordo — ancoraggio join</h3>
+            <h3>Nodi con alone rosso — ancoraggio join</h3>
             <p className="graph-legend-hint">
-              Nodi che partecipano a un join semantico tra dataset: stesso URI
-              condiviso, ponte owl:sameAs o estremità di proprietà ontologiche.
+              Nodi che partecipano a un join semantico tra dataset: il colore del nodo
+              indica la provenienza; l&apos;alone rosso segnala il ruolo di ancoraggio.
             </p>
             <ul className="graph-legend-list">
               <li>
