@@ -20,6 +20,23 @@ function isOtherCupNode(nodeId: string, cupUri: string): boolean {
   return nodeId !== cupUri && /\/CUP\//.test(nodeId);
 }
 
+/** Termini SKOS condivisi tra molti CUP: non usarli come ponti BFS verso altri progetti. */
+function isControlledVocabularyUri(nodeId: string): boolean {
+  return /\/controlled-vocabulary\//.test(nodeId);
+}
+
+function isCupInterventoEdge(
+  edge: GraphEdge,
+  cupUri: string,
+  interventoId: string
+): boolean {
+  return (
+    edge.label === "pi:ha_intervento_di_investimento_pubblico" &&
+    edge.source === cupUri &&
+    edge.target === interventoId
+  );
+}
+
 /**
  * Sottografo del dataset per un solo CUP: nodi dell'unione + vicini nel grafo isolato,
  * senza espandersi verso altri CUP del campione (es. avviso PNRR condiviso).
@@ -48,6 +65,7 @@ export function extractDatasetCupSlice(
 
     while (queue.length > 0) {
       const id = queue.shift()!;
+      if (isControlledVocabularyUri(id)) continue;
       for (const e of graph.edges) {
         const other =
           e.source === id ? e.target : e.target === id ? e.source : null;
@@ -100,16 +118,17 @@ export function buildLogicalToCyMap(
     const slice = extractDatasetCupSlice(graph, merged, cupCode);
 
     if (mn.type === "pi:Intervento_di_investimento_pubblico") {
-      const alt = slice.nodes.find(
+      const cupLinked = slice.nodes.filter(
         (n) =>
           n.type === mn.type &&
-          slice.edges.some(
-            (e) =>
-              (e.source === cupUri && e.target === n.id) ||
-              (e.target === cupUri && e.source === n.id)
-          )
+          slice.edges.some((e) => isCupInterventoEdge(e, cupUri, n.id))
       );
-      if (alt) map.set(mn.id, makeCyNodeId(mn.dataset, alt.id));
+      const alt = cupLinked[0];
+      if (alt) {
+        const cyId = makeCyNodeId(mn.dataset, alt.id);
+        map.set(mn.id, cyId);
+        for (const iv of cupLinked) map.set(iv.id, cyId);
+      }
     }
   }
 

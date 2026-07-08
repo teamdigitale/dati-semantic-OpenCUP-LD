@@ -191,6 +191,13 @@ function buildExtendedMergedLayout(
     const d = el.data as Record<string, unknown>;
     if (d.isDuplicate) continue;
     const mt = d.mergeTargetId as string;
+    const nodeType = String(d.type ?? "Resource");
+    if (
+      nodeType === "pi:Intervento_di_investimento_pubblico" &&
+      [...nodesById.values()].some((n) => n.type === "pi:Intervento_di_investimento_pubblico")
+    ) {
+      continue;
+    }
     if (nodesById.has(mt)) continue;
     nodesById.set(mt, {
       id: mt,
@@ -392,7 +399,8 @@ export function MergeAnimationGraph({
       const offset = MERGE_QUADRANTS[dataset];
 
       for (const n of slice.nodes) {
-        const cyId = makeCyNodeId(dataset, n.id);
+        const cyId = logicalToCy.get(n.id) ?? makeCyNodeId(dataset, n.id);
+        if (cyNodeIds.has(cyId)) continue;
         const mergeTargetId = cyToMergedLogical.get(cyId) ?? n.id;
         mergeTargetCounts.set(mergeTargetId, (mergeTargetCounts.get(mergeTargetId) ?? 0) + 1);
 
@@ -425,8 +433,8 @@ export function MergeAnimationGraph({
       }
 
       slice.edges.forEach((e, i) => {
-        const source = makeCyNodeId(dataset, e.source);
-        const target = makeCyNodeId(dataset, e.target);
+        const source = logicalToCy.get(e.source) ?? makeCyNodeId(dataset, e.source);
+        const target = logicalToCy.get(e.target) ?? makeCyNodeId(dataset, e.target);
         if (!cyNodeIds.has(source) || !cyNodeIds.has(target)) return;
         edgeElements.push({
           data: {
