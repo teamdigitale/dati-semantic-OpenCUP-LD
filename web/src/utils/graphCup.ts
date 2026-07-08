@@ -20,9 +20,18 @@ function isOtherCupNode(nodeId: string, cupUri: string): boolean {
   return nodeId !== cupUri && /\/CUP\//.test(nodeId);
 }
 
-/** Termini SKOS condivisi tra molti CUP: non usarli come ponti BFS verso altri progetti. */
+/** Termini SKOS condivisi tra molti CUP: non attraversarli in espansione. */
 function isControlledVocabularyUri(nodeId: string): boolean {
   return /\/controlled-vocabulary\//.test(nodeId);
+}
+
+/** Nodi hub condivisi (avviso PNRR, programma): non usarli come ponti verso altri CUP. */
+function isSharedHubUri(nodeId: string): boolean {
+  return (
+    isControlledVocabularyUri(nodeId) ||
+    /\/data\/Call\//.test(nodeId) ||
+    /\/data\/Programme\//.test(nodeId)
+  );
 }
 
 function isCupInterventoEdge(
@@ -38,8 +47,8 @@ function isCupInterventoEdge(
 }
 
 /**
- * Sottografo del dataset per un solo CUP: nodi dell'unione + vicini nel grafo isolato,
- * senza espandersi verso altri CUP del campione (es. avviso PNRR condiviso).
+ * Sottografo del dataset per un solo CUP: solo nodi dell'unione presenti nel grafo
+ * e vicini diretti del CUP (più CV dall'intervento), senza flood-fill su hub condivisi.
  */
 export function extractDatasetCupSlice(
   graph: GraphData,
@@ -48,31 +57,46 @@ export function extractDatasetCupSlice(
 ): { nodes: GraphNode[]; edges: GraphEdge[] } {
   const cupUri = cupCodeToUri(cupCode);
   const keep = new Set<string>();
+  const graphIds = new Set(graph.nodes.map((n) => n.id));
 
   for (const n of merged.nodes) {
-    if (n.dataset === graph.dataset) keep.add(n.id);
+    if (graphIds.has(n.id)) keep.add(n.id);
   }
 
-  const cupInGraph = graph.nodes.some((n) => n.id === cupUri);
-  const bfsSeeds = cupInGraph
-    ? [cupUri]
-    : merged.nodes.filter((n) => n.dataset === graph.dataset).map((n) => n.id);
+  const cupInGraph = graphIds.has(cupUri);
+  if (cupInGraph) {
+    keep.add(cupUri);
+    for (const e of graph.edges) {
+      if (e.source !== cupUri && e.target !== cupUri) continue;
+      const other = e.source === cupUri ? e.target : e.source;
+      if (isOtherCupNode(other, cupUri)) continue;
+      keep.add(other);
 
-  for (const seed of bfsSeeds) {
-    if (!graph.nodes.some((n) => n.id === seed)) continue;
-    const queue = [seed];
-    if (!keep.has(seed)) keep.add(seed);
+      if (isCupInterventoEdge(e, cupUri, other)) {
+        for (const e2 of graph.edges) {
+          const cv =
+            e2.source === other
+              ? e2.target
+              : e2.target === other
+                ? e2.source
+                : null;
+          if (cv && isControlledVocabularyUri(cv)) keep.add(cv);
+        }
+      }
+    }
+  } else {
+    const seeds = merged.nodes
+      .filter((n) => n.dataset === graph.dataset && graphIds.has(n.id))
+      .map((n) => n.id);
 
-    while (queue.length > 0) {
-      const id = queue.shift()!;
-      if (isControlledVocabularyUri(id)) continue;
+    for (const seed of seeds) {
+      keep.add(seed);
+      if (isSharedHubUri(seed)) continue;
       for (const e of graph.edges) {
-        const other =
-          e.source === id ? e.target : e.target === id ? e.source : null;
-        if (!other || keep.has(other)) continue;
+        if (e.source !== seed && e.target !== seed) continue;
+        const other = e.source === seed ? e.target : e.source;
         if (isOtherCupNode(other, cupUri)) continue;
         keep.add(other);
-        queue.push(other);
       }
     }
   }
@@ -90,62 +114,98 @@ export function makeCyNodeId(dataset: string, logicalId: string): string {
   return `${dataset}__${safe}`;
 }
 
-/**
- * Mappa id logici dell'unione → id Cytoscape nella vista separata.
- * Gestisce alias (es. intervento con id sintetico diverso nel grafo isolato).
- */
-export function buildLogicalToCyMap(
-  graphs: Record<string, GraphData>,
-  merged: SubgraphData,
-  cupCode: string
-): Map<string, string> {
-  const cupUri = cupCodeToUri(cupCode);
-  const map = new Map<string, string>();
-
-  for (const dataset of ["opencup", "candidature", "cupcig", "enti_ipa"] as const) {
-    const graph = graphs[dataset];
-    if (!graph) continue;
-    const slice = extractDatasetCupSlice(graph, merged, cupCode);
-    for (const n of slice.nodes) {
-      map.set(n.id, makeCyNodeId(dataset, n.id));
-    }
-  }
-
-  for (const mn of merged.nodes) {
-    if (map.has(mn.id)) continue;
-    const graph = graphs[mn.dataset];
-    if (!graph) continue;
-    const slice = extractDatasetCupSlice(graph, merged, cupCode);
-
-    if (mn.type === "pi:Intervento_di_investimento_pubblico") {
-      const cupLinked = slice.nodes.filter(
-        (n) =>
-          n.type === mn.type &&
-          slice.edges.some((e) => isCupInterventoEdge(e, cupUri, n.id))
-      );
-      const alt = cupLinked[0];
-      if (alt) {
-        const cyId = makeCyNodeId(mn.dataset, alt.id);
-        map.set(mn.id, cyId);
-        for (const iv of cupLinked) map.set(iv.id, cyId);
-      }
-    }
-  }
-
-  return map;
+export function mergedInterventoId(merged: SubgraphData): string | undefined {
+  return merged.nodes.find((n) => n.type === "pi:Intervento_di_investimento_pubblico")?.id;
 }
 
-export function resolveMergedCyEndpoints(
-  edge: GraphEdge,
-  logicalToCy: Map<string, string>,
-  cyNodeIds: Set<string>
-): { source: string; target: string } | null {
-  const srcCy = logicalToCy.get(edge.source);
-  const tgtCy = logicalToCy.get(edge.target);
-  if (!srcCy || !tgtCy || !cyNodeIds.has(srcCy) || !cyNodeIds.has(tgtCy)) {
-    return null;
+/** mergeTargetId per animazione: alias intervento OpenCUP → id nell'unione. */
+export function resolveMergeTargetId(
+  node: GraphNode,
+  dataset: string,
+  merged: SubgraphData,
+  cupCode: string,
+  sliceEdges: GraphEdge[]
+): string {
+  const cupUri = cupCodeToUri(cupCode);
+  if (
+    node.type === "pi:Intervento_di_investimento_pubblico" &&
+    dataset === "opencup" &&
+    sliceEdges.some((e) => isCupInterventoEdge(e, cupUri, node.id))
+  ) {
+    const mergedIv = mergedInterventoId(merged);
+    if (mergedIv) return mergedIv;
   }
-  return { source: srcCy, target: tgtCy };
+  return node.id;
+}
+
+/**
+ * Id Cytoscape canonico per un URI logico (dataset preferito dall'unione).
+ * Ogni dataset mantiene il proprio nodo nella vista separata.
+ */
+export function canonicalCyNodeId(
+  logicalId: string,
+  merged: SubgraphData,
+  cyNodes: {
+    id: string;
+    logicalId: string;
+    mergeTargetId: string;
+    dataset: string;
+    isDuplicate?: boolean;
+  }[]
+): string | undefined {
+  const canonicalDs = merged.nodes.find((n) => n.id === logicalId)?.dataset;
+  const visible = cyNodes.filter(
+    (n) =>
+      !n.isDuplicate &&
+      (n.logicalId === logicalId || n.mergeTargetId === logicalId)
+  );
+  if (visible.length === 0) return undefined;
+  if (canonicalDs) {
+    const preferred = visible.find((n) => n.dataset === canonicalDs);
+    if (preferred) return preferred.id;
+  }
+  return visible[0]?.id;
+}
+
+/** Layout compatto per un singolo quadrante (bounding box ~520×320). */
+export function quadrantLayoutPositions(
+  nodes: GraphNode[],
+  edges: GraphEdge[],
+  cx: number,
+  cy: number
+): Map<string, { x: number; y: number }> {
+  const local = hubRadialPositions(nodes, edges, 0, 0, MERGE_SEPARATED_LAYOUT_SCALE);
+  const pos = new Map<string, { x: number; y: number }>();
+  if (nodes.length === 0) return pos;
+
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minY = Infinity;
+  let maxY = -Infinity;
+  for (const n of nodes) {
+    const p = local.get(n.id) ?? { x: 0, y: 0 };
+    minX = Math.min(minX, p.x);
+    maxX = Math.max(maxX, p.x);
+    minY = Math.min(minY, p.y);
+    maxY = Math.max(maxY, p.y);
+  }
+
+  const w = Math.max(maxX - minX, 1);
+  const h = Math.max(maxY - minY, 1);
+  const maxSpan =
+    nodes.length > 8 ? MERGE_SEPARATED_MAX_SPAN + 50 : MERGE_SEPARATED_MAX_SPAN;
+  const fit = Math.min(1.15, maxSpan / Math.max(w, h));
+  const midX = (minX + maxX) / 2;
+  const midY = (minY + maxY) / 2;
+
+  for (const n of nodes) {
+    const p = local.get(n.id) ?? { x: 0, y: 0 };
+    pos.set(n.id, {
+      x: cx + (p.x - midX) * fit,
+      y: cy + (p.y - midY) * fit,
+    });
+  }
+  return pos;
 }
 
 /** Layout radiale compatto per mini-grafi e posizioni target dell'unione. */
@@ -182,7 +242,8 @@ export function hubRadialPositions(
     if (e.target === hubId) neighbors.add(e.source);
   }
   const neighborArr = [...neighbors];
-  const r1 = Math.max(200, 95 + neighborArr.length * 28) * scale;
+  const r1 =
+    Math.max(120, Math.min(320, 100 + neighborArr.length * 20)) * scale;
 
   leafAngles(neighborArr.length).forEach((angle, i) => {
     const id = neighborArr[i];
@@ -201,7 +262,7 @@ export function hubRadialPositions(
       continue;
     }
     const angle = Math.atan2(anchor.y - cy, anchor.x - cx);
-    const step = 95 * scale;
+    const step = 88 * scale;
     pos.set(n.id, {
       x: anchor.x + step * Math.cos(angle),
       y: anchor.y + step * Math.sin(angle),
@@ -217,8 +278,17 @@ export const MERGE_QUADRANTS: Record<
   (typeof MERGE_DATASETS)[number],
   { x: number; y: number }
 > = {
-  opencup: { x: -480, y: -280 },
-  candidature: { x: 480, y: -280 },
-  cupcig: { x: -480, y: 280 },
-  enti_ipa: { x: 480, y: 280 },
+  opencup: { x: -720, y: -420 },
+  candidature: { x: 720, y: -420 },
+  cupcig: { x: -720, y: 420 },
+  enti_ipa: { x: 720, y: 420 },
 };
+
+/** Scala layout locale nei quadranti separati. */
+export const MERGE_SEPARATED_LAYOUT_SCALE = 0.78;
+
+/** Dimensione massima (px) di un mini-grafo nel quadrante prima del fcose. */
+export const MERGE_SEPARATED_MAX_SPAN = 300;
+
+/** Padding zoom vista separata (init e dopo «Separa»). */
+export const MERGE_SEPARATED_FIT_PADDING = 52;

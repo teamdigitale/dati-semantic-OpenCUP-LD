@@ -6,11 +6,14 @@ import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS 
 import {
   MERGE_DATASETS,
   MERGE_QUADRANTS,
-  buildLogicalToCyMap,
+  MERGE_SEPARATED_FIT_PADDING,
+  canonicalCyNodeId,
   extractDatasetCupSlice,
   hubRadialPositions,
   joinNodeIdsFromEdges,
   makeCyNodeId,
+  quadrantLayoutPositions,
+  resolveMergeTargetId,
 } from "../utils/graphCup";
 import { graphNodeDisplayLabel } from "../utils/graphLabels";
 import {
@@ -109,24 +112,6 @@ function logicalEdgeKey(source: string, target: string, label: string): string {
   return `${source}|${target}|${label}`;
 }
 
-function buildCyToMergedLogical(
-  logicalToCy: Map<string, string>,
-  mergedLogicalIds: Set<string>
-): Map<string, string> {
-  const cyToLogical = new Map<string, string>();
-  for (const [logical, cyId] of logicalToCy) {
-    const existing = cyToLogical.get(cyId);
-    if (!existing) {
-      cyToLogical.set(cyId, logical);
-      continue;
-    }
-    if (mergedLogicalIds.has(logical) && !mergedLogicalIds.has(existing)) {
-      cyToLogical.set(cyId, logical);
-    }
-  }
-  return cyToLogical;
-}
-
 function buildCyToMergeTarget(
   nodeElements: cytoscape.ElementDefinition[]
 ): Map<string, string> {
@@ -141,7 +126,14 @@ function buildCyToMergeTarget(
 function appendPromotedMergedEdges(
   edgeElements: cytoscape.ElementDefinition[],
   cyToMergeTarget: Map<string, string>,
-  canonicalCyByLogical: Map<string, string>,
+  merged: SubgraphData,
+  cyNodeRecords: {
+    id: string;
+    logicalId: string;
+    mergeTargetId: string;
+    dataset: string;
+    isDuplicate?: boolean;
+  }[],
   joinEdgeKeys: Set<string>,
   existingKeys: Set<string>
 ): void {
@@ -154,8 +146,8 @@ function appendPromotedMergedEdges(
     const tgtLogical = cyToMergeTarget.get(d.target as string);
     if (!srcLogical || !tgtLogical) continue;
 
-    const srcCanon = canonicalCyByLogical.get(srcLogical);
-    const tgtCanon = canonicalCyByLogical.get(tgtLogical);
+    const srcCanon = canonicalCyNodeId(srcLogical, merged, cyNodeRecords);
+    const tgtCanon = canonicalCyNodeId(tgtLogical, merged, cyNodeRecords);
     if (!srcCanon || !tgtCanon) continue;
 
     const label = String(d.label ?? "");
@@ -245,6 +237,18 @@ function idealEdgeLength(edge: EdgeSingular): number {
   const lines = Math.max(1, Math.ceil(label.length / 18));
   const labelRoom = Math.min(180, lines * 38 + label.length * 1.4);
   return 72 + labelRoom;
+}
+
+function syncSeparatedPositions(cy: Core): void {
+  cy.nodes().forEach((node) => {
+    const p = node.position();
+    node.data("separatedX", p.x);
+    node.data("separatedY", p.y);
+  });
+}
+
+function fitSeparatedView(cy: Core): void {
+  cy.fit(undefined, MERGE_SEPARATED_FIT_PADDING);
 }
 
 function runForceLayout(eles: Collection, randomize: boolean): Promise<void> {
@@ -371,7 +375,7 @@ export function MergeAnimationGraph({
       signal
     ).then(() => {
       if (signal.cancelled) return;
-      cy.fit(undefined, 55);
+      fitSeparatedView(cy);
       setPhaseSafe("separated");
     });
   }, []);
@@ -384,29 +388,33 @@ export function MergeAnimationGraph({
 
     const nodeElements: cytoscape.ElementDefinition[] = [];
     const edgeElements: cytoscape.ElementDefinition[] = [];
-    const cyNodeIds = new Set<string>();
-    const logicalToCy = buildLogicalToCyMap(graphs, merged, cupCode);
-    const mergedLogicalIds = new Set(merged.nodes.map((n) => n.id));
-    const cyToMergedLogical = buildCyToMergedLogical(logicalToCy, mergedLogicalIds);
-
     const mergeTargetCounts = new Map<string, number>();
 
     for (const dataset of MERGE_DATASETS) {
       const graph = graphs[dataset];
       if (!graph) continue;
       const slice = extractDatasetCupSlice(graph, merged, cupCode);
-      const localPos = hubRadialPositions(slice.nodes, slice.edges, 0, 0, 1.1);
       const offset = MERGE_QUADRANTS[dataset];
+      const localPos = quadrantLayoutPositions(
+        slice.nodes,
+        slice.edges,
+        offset.x,
+        offset.y
+      );
 
       for (const n of slice.nodes) {
-        const cyId = logicalToCy.get(n.id) ?? makeCyNodeId(dataset, n.id);
-        if (cyNodeIds.has(cyId)) continue;
-        const mergeTargetId = cyToMergedLogical.get(cyId) ?? n.id;
+        const cyId = makeCyNodeId(dataset, n.id);
+        const mergeTargetId = resolveMergeTargetId(
+          n,
+          dataset,
+          merged,
+          cupCode,
+          slice.edges
+        );
         mergeTargetCounts.set(mergeTargetId, (mergeTargetCounts.get(mergeTargetId) ?? 0) + 1);
 
-        cyNodeIds.add(cyId);
-        const p = localPos.get(n.id) ?? { x: 0, y: 0 };
-        const position = { x: p.x + offset.x, y: p.y + offset.y };
+        const p = localPos.get(n.id) ?? offset;
+        const position = { x: p.x, y: p.y };
         const canonicalDataset = canonicalDatasetFor(merged, mergeTargetId);
         const { accent, fill } = nodeColors(dataset, n.type);
 
@@ -433,9 +441,8 @@ export function MergeAnimationGraph({
       }
 
       slice.edges.forEach((e, i) => {
-        const source = logicalToCy.get(e.source) ?? makeCyNodeId(dataset, e.source);
-        const target = logicalToCy.get(e.target) ?? makeCyNodeId(dataset, e.target);
-        if (!cyNodeIds.has(source) || !cyNodeIds.has(target)) return;
+        const source = makeCyNodeId(dataset, e.source);
+        const target = makeCyNodeId(dataset, e.target);
         edgeElements.push({
           data: {
             id: `sep-${dataset}-${i}`,
@@ -458,21 +465,32 @@ export function MergeAnimationGraph({
         (mergeTargetCounts.get(mt) ?? 0) > 1 && canonical !== null && ds !== canonical;
     }
 
-    const canonicalCyByLogical = new Map<string, string>();
-    for (const el of nodeElements) {
-      const d = el.data as Record<string, unknown>;
-      if (d.isDuplicate) continue;
-      const cyId = d.id as string;
-      const mergeTargetId = d.mergeTargetId as string;
-      const logicalId = d.logicalId as string;
-      canonicalCyByLogical.set(mergeTargetId, cyId);
-      if (logicalId !== mergeTargetId) canonicalCyByLogical.set(logicalId, cyId);
+    const cyNodeIds = new Set(
+      nodeElements.map((el) => (el.data as Record<string, unknown>).id as string)
+    );
+    for (let i = edgeElements.length - 1; i >= 0; i -= 1) {
+      const d = edgeElements[i].data as Record<string, unknown>;
+      if (d.phase !== "separated") continue;
+      if (!cyNodeIds.has(d.source as string) || !cyNodeIds.has(d.target as string)) {
+        edgeElements.splice(i, 1);
+      }
     }
+
+    const cyNodeRecords = nodeElements.map((el) => {
+      const d = el.data as Record<string, unknown>;
+      return {
+        id: d.id as string,
+        logicalId: d.logicalId as string,
+        mergeTargetId: d.mergeTargetId as string,
+        dataset: d.dataset as string,
+        isDuplicate: Boolean(d.isDuplicate),
+      };
+    });
 
     const mergedEdgeKeys = new Set<string>();
     merged.edges.forEach((e, i) => {
-      const source = canonicalCyByLogical.get(e.source);
-      const target = canonicalCyByLogical.get(e.target);
+      const source = canonicalCyNodeId(e.source, merged, cyNodeRecords);
+      const target = canonicalCyNodeId(e.target, merged, cyNodeRecords);
       if (!source || !target) return;
       const key = logicalEdgeKey(e.source, e.target, e.label);
       mergedEdgeKeys.add(key);
@@ -491,7 +509,8 @@ export function MergeAnimationGraph({
     appendPromotedMergedEdges(
       edgeElements,
       buildCyToMergeTarget(nodeElements),
-      canonicalCyByLogical,
+      merged,
+      cyNodeRecords,
       joinEdgeKeys,
       mergedEdgeKeys
     );
@@ -611,7 +630,9 @@ export function MergeAnimationGraph({
       ],
     });
 
-    cy.fit(undefined, 55);
+    applySeparatedView(cy);
+    syncSeparatedPositions(cy);
+    fitSeparatedView(cy);
     cyRef.current = cy;
 
     return () => {
@@ -662,7 +683,7 @@ export function MergeAnimationGraph({
               const visible = cy.nodes().not(".dup-hidden");
               cy.fit(visible.empty() ? undefined : visible, 70);
             } else {
-              cy.fit(undefined, 55);
+              fitSeparatedView(cy);
             }
           }}
         >

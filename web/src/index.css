@@ -590,12 +590,29 @@ a.resource-link code {
   position: relative;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  background: linear-gradient(165deg, #f8fafc 0%, #f1f5f9 100%);
+  background:
+    linear-gradient(165deg, #eff6ff 0%, #eff6ff 49.5%, #f8fafc 49.5%, #f8fafc 50.5%, #ecfdf5 50.5%, #ecfdf5 100%),
+    linear-gradient(105deg, #f8fafc 0%, #f8fafc 49.5%, transparent 49.5%, transparent 50.5%, #fffbeb 50.5%, #fffbeb 100%),
+    linear-gradient(165deg, #f8fafc 0%, #f8fafc 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
   overflow: hidden;
 }
 
+.merge-canvas-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    linear-gradient(#cbd5e1, #cbd5e1) center / 1px 100% no-repeat,
+    linear-gradient(#cbd5e1, #cbd5e1) center / 100% 1px no-repeat;
+  opacity: 0.45;
+}
+
 .merge-canvas {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
 }
