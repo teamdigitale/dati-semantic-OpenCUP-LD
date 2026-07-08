@@ -16,29 +16,45 @@ function leafAngles(count: number): number[] {
   return Array.from({ length: count }, (_, i) => -Math.PI / 2 + (2 * Math.PI * i) / count);
 }
 
-/** Nodi e archi del dataset collegati al CUP (o presenti nell'unione per quel dataset). */
+function isOtherCupNode(nodeId: string, cupUri: string): boolean {
+  return nodeId !== cupUri && /\/CUP\//.test(nodeId);
+}
+
+/**
+ * Sottografo del dataset per un solo CUP: nodi dell'unione + vicini nel grafo isolato,
+ * senza espandersi verso altri CUP del campione (es. avviso PNRR condiviso).
+ */
 export function extractDatasetCupSlice(
   graph: GraphData,
   merged: SubgraphData,
   cupCode: string
 ): { nodes: GraphNode[]; edges: GraphEdge[] } {
   const cupUri = cupCodeToUri(cupCode);
-  const keep = new Set(
-    merged.nodes.filter((n) => n.dataset === graph.dataset).map((n) => n.id)
-  );
-  if (graph.nodes.some((n) => n.id === cupUri)) keep.add(cupUri);
+  const keep = new Set<string>();
 
-  let changed = true;
-  while (changed) {
-    changed = false;
-    for (const e of graph.edges) {
-      if (keep.has(e.source) && !keep.has(e.target)) {
-        keep.add(e.target);
-        changed = true;
-      }
-      if (keep.has(e.target) && !keep.has(e.source)) {
-        keep.add(e.source);
-        changed = true;
+  for (const n of merged.nodes) {
+    if (n.dataset === graph.dataset) keep.add(n.id);
+  }
+
+  const cupInGraph = graph.nodes.some((n) => n.id === cupUri);
+  const bfsSeeds = cupInGraph
+    ? [cupUri]
+    : merged.nodes.filter((n) => n.dataset === graph.dataset).map((n) => n.id);
+
+  for (const seed of bfsSeeds) {
+    if (!graph.nodes.some((n) => n.id === seed)) continue;
+    const queue = [seed];
+    if (!keep.has(seed)) keep.add(seed);
+
+    while (queue.length > 0) {
+      const id = queue.shift()!;
+      for (const e of graph.edges) {
+        const other =
+          e.source === id ? e.target : e.target === id ? e.source : null;
+        if (!other || keep.has(other)) continue;
+        if (isOtherCupNode(other, cupUri)) continue;
+        keep.add(other);
+        queue.push(other);
       }
     }
   }

@@ -1,0 +1,155 @@
+{
+  "id": "cup_C51C22006060006",
+  "title": "Unione semantica — CUP C51C22006060006",
+  "sparql_note": "Il CUP C51C22006060006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 4 lotti CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20Cloud%20-%20Comuni%20-%20Luglio%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/80007510227",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_i354",
+      "target": "https://w3id.org/italia/data/PublicOrganization/80007510227",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9780552ED3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A0456E3C63",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z063DF65EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF93DF6B9A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "shortId": "cup:C51C22006060006",
+      "label": "C51C22006060006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20Cloud%20-%20Comuni%20-%20Luglio%202022",
+      "shortId": "call:1.2%20Abilitazione%20al%20Cloud%20-%20Comuni%20-%20Luglio%202022",
+      "label": "1.2 Abilitazione al Cloud - Comuni - Luglio 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/80007510227",
+      "shortId": "po:80007510227",
+      "label": "COMUNE DI SANT'ORSOLA TERME - TRENTO -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_i354",
+      "shortId": "po:c_i354",
+      "label": "Comune di Sant'Orsola Terme",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9780552ED3",
+      "shortId": "lot:9780552ED3",
+      "label": "CIG 9780…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A0456E3C63",
+      "shortId": "lot:A0456E3C63",
+      "label": "CIG A045…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z063DF65EA",
+      "shortId": "lot:Z063DF65EA",
+      "label": "CIG Z063…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZF93DF6B9A",
+      "shortId": "lot:ZF93DF6B9A",
+      "label": "CIG ZF93…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n0ac65fe9fa444c9bb0663a08ad9541cdb2133",
+      "shortId": "n0ac65fe9fa444c9bb0663a08ad9541cdb2133",
+      "label": "MIGRAZIONE AL CLOUD DEI SERVIZI DIGITALI DELL'AMMINISTRAZION…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20Cloud%20-%20Comuni%20-%20Luglio%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/80007510227",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_i354",
+      "target": "https://w3id.org/italia/data/PublicOrganization/80007510227",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9780552ED3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A0456E3C63",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z063DF65EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF93DF6B9A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C51C22006060006",
+      "target": "n0ac65fe9fa444c9bb0663a08ad9541cdb2133",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}

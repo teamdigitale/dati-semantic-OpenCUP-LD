@@ -208,13 +208,26 @@ def dedupe_edges(edges: list[dict]) -> list[dict]:
     return out
 
 
-def select_sample_cup_uris(g: Graph, n: int = OPEN_CUP_SAMPLE) -> list[URIRef]:
-    """CUP campione condiviso da tutti i grafi separati (ordinamento stabile)."""
-    cups = sorted(
-        g.subjects(RDF.type, PI + "Progetto_di_investimento_pubblico"),
-        key=lambda c: str(c),
-    )
-    return list(cups)[:n]
+def select_sample_cup_uris(
+    opencup_g: Graph,
+    all_g: Graph,
+    n: int = OPEN_CUP_SAMPLE,
+) -> list[URIRef]:
+    """CUP campione: i più ricchi nell'unione semantica (nodi, archi, join, dataset)."""
+    cup_type = PI + "Progetto_di_investimento_pubblico"
+    cups = list(opencup_g.subjects(RDF.type, cup_type))
+
+    def richness(cup: URIRef) -> tuple[int, str]:
+        sg = build_cup_union(all_g, cup)
+        score = (
+            len(sg["nodes"]) * 2
+            + len(sg["edges"])
+            + len(sg["join_edges"]) * 3
+            + len(sg["datasets_involved"]) * 2
+        )
+        return (-score, str(cup))
+
+    return sorted(cups, key=richness)[:n]
 
 
 def build_cup_neighborhood_graph(
@@ -925,7 +938,7 @@ def main() -> None:
 
     opencup_g = Graph()
     opencup_g.parse(TTL_DIR / DATASETS["opencup"], format="turtle")
-    sample_cup_uris = select_sample_cup_uris(opencup_g)
+    sample_cup_uris = select_sample_cup_uris(opencup_g, all_g)
     sample_cup_codes = [short_id(str(c)).replace("cup:", "") for c in sample_cup_uris]
 
     write_json(OUT_DIR / "graphs" / "sample_cups.json", {
@@ -960,6 +973,10 @@ def main() -> None:
     for cup in sample_cup_uris:
         code = short_id(str(cup)).replace("cup:", "")
         write_json(by_cup_dir / f"{code}.json", build_cup_union(all_g, cup))
+
+    for stale in by_cup_dir.glob("*.json"):
+        if stale.stem not in sample_cup_codes:
+            stale.unlink()
 
     write_json(OUT_DIR / "subgraphs" / "index.json", {
         "sample_cups": sample_cup_codes,

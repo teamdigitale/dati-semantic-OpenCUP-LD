@@ -1,0 +1,155 @@
+{
+  "id": "cup_J41F22001070006",
+  "title": "Unione semantica — CUP J41F22001070006",
+  "sparql_note": "Il CUP J41F22001070006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 4 lotti CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "target": "https://w3id.org/italia/data/Call/1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00237070362",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_f930",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00237070362",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9546374D07",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9567859F02",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9620655FA5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/96283058A2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "shortId": "cup:J41F22001070006",
+      "label": "J41F22001070006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.4.3 - app IO - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/00237070362",
+      "shortId": "po:00237070362",
+      "label": "COMUNE DI NONANTOLA - MODENA -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_f930",
+      "shortId": "po:c_f930",
+      "label": "Comune di Nonantola",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9546374D07",
+      "shortId": "lot:9546374D07",
+      "label": "CIG 9546…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9567859F02",
+      "shortId": "lot:9567859F02",
+      "label": "CIG 9567…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9620655FA5",
+      "shortId": "lot:9620655FA5",
+      "label": "CIG 9620…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/96283058A2",
+      "shortId": "lot:96283058A2",
+      "label": "CIG 9628…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n0ac65fe9fa444c9bb0663a08ad9541cdb2149",
+      "shortId": "n0ac65fe9fa444c9bb0663a08ad9541cdb2149",
+      "label": "APPLICAZIONE APP IO*TERRITORIO NAZIONALE*ATTIVAZIONE SERVIZI",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "target": "https://w3id.org/italia/data/Call/1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00237070362",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_f930",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00237070362",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9546374D07",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9567859F02",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9620655FA5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/96283058A2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J41F22001070006",
+      "target": "n0ac65fe9fa444c9bb0663a08ad9541cdb2149",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions } from "cytoscape";
 import fcose from "cytoscape-fcose";
-import { GraphData, SubgraphData } from "../types";
+import { GraphData, GraphEdge, GraphNode, SubgraphData } from "../types";
 import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS } from "../constants";
 import {
   MERGE_DATASETS,
@@ -100,6 +100,118 @@ function animateNodes(
   });
 }
 
+function logicalEdgeKey(source: string, target: string, label: string): string {
+  return `${source}|${target}|${label}`;
+}
+
+function buildCyToMergedLogical(
+  logicalToCy: Map<string, string>,
+  mergedLogicalIds: Set<string>
+): Map<string, string> {
+  const cyToLogical = new Map<string, string>();
+  for (const [logical, cyId] of logicalToCy) {
+    const existing = cyToLogical.get(cyId);
+    if (!existing) {
+      cyToLogical.set(cyId, logical);
+      continue;
+    }
+    if (mergedLogicalIds.has(logical) && !mergedLogicalIds.has(existing)) {
+      cyToLogical.set(cyId, logical);
+    }
+  }
+  return cyToLogical;
+}
+
+function buildCyToMergeTarget(
+  nodeElements: cytoscape.ElementDefinition[]
+): Map<string, string> {
+  const map = new Map<string, string>();
+  for (const el of nodeElements) {
+    const d = el.data as Record<string, unknown>;
+    map.set(d.id as string, d.mergeTargetId as string);
+  }
+  return map;
+}
+
+function appendPromotedMergedEdges(
+  edgeElements: cytoscape.ElementDefinition[],
+  cyToMergeTarget: Map<string, string>,
+  canonicalCyByLogical: Map<string, string>,
+  joinEdgeKeys: Set<string>,
+  existingKeys: Set<string>
+): void {
+  let promo = 0;
+  for (const el of edgeElements) {
+    const d = el.data as Record<string, unknown>;
+    if (d.phase !== "separated") continue;
+
+    const srcLogical = cyToMergeTarget.get(d.source as string);
+    const tgtLogical = cyToMergeTarget.get(d.target as string);
+    if (!srcLogical || !tgtLogical) continue;
+
+    const srcCanon = canonicalCyByLogical.get(srcLogical);
+    const tgtCanon = canonicalCyByLogical.get(tgtLogical);
+    if (!srcCanon || !tgtCanon) continue;
+
+    const label = String(d.label ?? "");
+    const key = logicalEdgeKey(srcLogical, tgtLogical, label);
+    if (existingKeys.has(key)) continue;
+
+    existingKeys.add(key);
+    edgeElements.push({
+      data: {
+        id: `merged-promo-${promo}`,
+        source: srcCanon,
+        target: tgtCanon,
+        label,
+        phase: "merged",
+        isJoin: joinEdgeKeys.has(key),
+      },
+    });
+    promo += 1;
+  }
+}
+
+function buildExtendedMergedLayout(
+  merged: SubgraphData,
+  nodeElements: cytoscape.ElementDefinition[],
+  edgeElements: cytoscape.ElementDefinition[],
+  cyToMergeTarget: Map<string, string>
+): { nodes: GraphNode[]; edges: GraphEdge[] } {
+  const nodesById = new Map(merged.nodes.map((n) => [n.id, n]));
+  const edges = [...merged.edges];
+  const edgeKeys = new Set(edges.map((e) => logicalEdgeKey(e.source, e.target, e.label)));
+
+  for (const el of nodeElements) {
+    const d = el.data as Record<string, unknown>;
+    if (d.isDuplicate) continue;
+    const mt = d.mergeTargetId as string;
+    if (nodesById.has(mt)) continue;
+    nodesById.set(mt, {
+      id: mt,
+      shortId: String(d.logicalId ?? mt),
+      label: String(d.fullLabel ?? d.label ?? mt),
+      type: String(d.type ?? "Resource"),
+      dataset: String(d.dataset ?? "shared"),
+    });
+  }
+
+  for (const el of edgeElements) {
+    const d = el.data as Record<string, unknown>;
+    if (d.phase !== "merged") continue;
+    const srcLogical = cyToMergeTarget.get(d.source as string);
+    const tgtLogical = cyToMergeTarget.get(d.target as string);
+    if (!srcLogical || !tgtLogical) continue;
+    const label = String(d.label ?? "");
+    const key = logicalEdgeKey(srcLogical, tgtLogical, label);
+    if (edgeKeys.has(key)) continue;
+    edgeKeys.add(key);
+    edges.push({ source: srcLogical, target: tgtLogical, label });
+  }
+
+  return { nodes: [...nodesById.values()], edges };
+}
+
 function applySeparatedView(cy: Core): void {
   cy.nodes().removeClass("dup-hidden");
   cy.edges('[phase = "separated"]').style("opacity", 1);
@@ -172,6 +284,7 @@ export function MergeAnimationGraph({
   const cyRef = useRef<Core | null>(null);
   const phaseRef = useRef<Phase>("separated");
   const animSignalRef = useRef({ cancelled: false });
+  const mergedLayoutRef = useRef<{ nodes: GraphNode[]; edges: GraphEdge[] } | null>(null);
   const [phase, setPhase] = useState<Phase>("separated");
 
   const setPhaseSafe = (next: Phase) => {
@@ -196,7 +309,11 @@ export function MergeAnimationGraph({
     animSignalRef.current = { cancelled: false };
     const signal = animSignalRef.current;
 
-    const mergedPos = hubRadialPositions(merged.nodes, merged.edges, 0, 0, 1.35);
+    const layoutGraph = mergedLayoutRef.current ?? {
+      nodes: merged.nodes,
+      edges: merged.edges,
+    };
+    const mergedPos = hubRadialPositions(layoutGraph.nodes, layoutGraph.edges, 0, 0, 1.35);
     setPhaseSafe("merging");
     applySeparatedView(cy);
 
@@ -257,13 +374,8 @@ export function MergeAnimationGraph({
     const edgeElements: cytoscape.ElementDefinition[] = [];
     const cyNodeIds = new Set<string>();
     const logicalToCy = buildLogicalToCyMap(graphs, merged, cupCode);
-
-    const mergeTargetForCy = (cyId: string, sliceLogicalId: string): string => {
-      for (const [mergedLogical, mappedCy] of logicalToCy) {
-        if (mappedCy === cyId) return mergedLogical;
-      }
-      return sliceLogicalId;
-    };
+    const mergedLogicalIds = new Set(merged.nodes.map((n) => n.id));
+    const cyToMergedLogical = buildCyToMergedLogical(logicalToCy, mergedLogicalIds);
 
     const mergeTargetCounts = new Map<string, number>();
 
@@ -276,7 +388,7 @@ export function MergeAnimationGraph({
 
       for (const n of slice.nodes) {
         const cyId = makeCyNodeId(dataset, n.id);
-        const mergeTargetId = mergeTargetForCy(cyId, n.id);
+        const mergeTargetId = cyToMergedLogical.get(cyId) ?? n.id;
         mergeTargetCounts.set(mergeTargetId, (mergeTargetCounts.get(mergeTargetId) ?? 0) + 1);
 
         cyNodeIds.add(cyId);
@@ -337,13 +449,20 @@ export function MergeAnimationGraph({
     for (const el of nodeElements) {
       const d = el.data as Record<string, unknown>;
       if (d.isDuplicate) continue;
-      canonicalCyByLogical.set(d.mergeTargetId as string, d.id as string);
+      const cyId = d.id as string;
+      const mergeTargetId = d.mergeTargetId as string;
+      const logicalId = d.logicalId as string;
+      canonicalCyByLogical.set(mergeTargetId, cyId);
+      if (logicalId !== mergeTargetId) canonicalCyByLogical.set(logicalId, cyId);
     }
 
+    const mergedEdgeKeys = new Set<string>();
     merged.edges.forEach((e, i) => {
       const source = canonicalCyByLogical.get(e.source);
       const target = canonicalCyByLogical.get(e.target);
       if (!source || !target) return;
+      const key = logicalEdgeKey(e.source, e.target, e.label);
+      mergedEdgeKeys.add(key);
       edgeElements.push({
         data: {
           id: `merged-${i}`,
@@ -351,10 +470,26 @@ export function MergeAnimationGraph({
           target,
           label: normalizeDisplayText(e.label),
           phase: "merged",
-          isJoin: joinEdgeKeys.has(`${e.source}|${e.target}|${e.label}`),
+          isJoin: joinEdgeKeys.has(key),
         },
       });
     });
+
+    appendPromotedMergedEdges(
+      edgeElements,
+      buildCyToMergeTarget(nodeElements),
+      canonicalCyByLogical,
+      joinEdgeKeys,
+      mergedEdgeKeys
+    );
+
+    const cyToMergeTarget = buildCyToMergeTarget(nodeElements);
+    mergedLayoutRef.current = buildExtendedMergedLayout(
+      merged,
+      nodeElements,
+      edgeElements,
+      cyToMergeTarget
+    );
 
     setPhaseSafe("separated");
 

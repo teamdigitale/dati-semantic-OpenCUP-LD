@@ -1,0 +1,291 @@
+{
+  "id": "cup_E31C22001170006",
+  "title": "Unione semantica — CUP E31C22001170006",
+  "sparql_note": "Il CUP E31C22001170006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 12 lotti CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00229080338",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_g535",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00229080338",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9459610D1C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9467132C76",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/94865504B6",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9532801C3C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9532846162",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9562968AD5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9563395B34",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9568655FE3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/956868155B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9574795AC8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9749931995",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9866559E0C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "shortId": "cup:E31C22001170006",
+      "label": "E31C22001170006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.2 Abilitazione al cloud - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/00229080338",
+      "shortId": "po:00229080338",
+      "label": "COMUNE DI PIACENZA - PC -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_g535",
+      "shortId": "po:c_g535",
+      "label": "Comune di Piacenza",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9459610D1C",
+      "shortId": "lot:9459610D1C",
+      "label": "CIG 9459…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9467132C76",
+      "shortId": "lot:9467132C76",
+      "label": "CIG 9467…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/94865504B6",
+      "shortId": "lot:94865504B6",
+      "label": "CIG 9486…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9532801C3C",
+      "shortId": "lot:9532801C3C",
+      "label": "CIG 9532…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9532846162",
+      "shortId": "lot:9532846162",
+      "label": "CIG 9532…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9562968AD5",
+      "shortId": "lot:9562968AD5",
+      "label": "CIG 9562…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9563395B34",
+      "shortId": "lot:9563395B34",
+      "label": "CIG 9563…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9568655FE3",
+      "shortId": "lot:9568655FE3",
+      "label": "CIG 9568…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/956868155B",
+      "shortId": "lot:956868155B",
+      "label": "CIG 9568…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9574795AC8",
+      "shortId": "lot:9574795AC8",
+      "label": "CIG 9574…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9749931995",
+      "shortId": "lot:9749931995",
+      "label": "CIG 9749…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9866559E0C",
+      "shortId": "lot:9866559E0C",
+      "label": "CIG 9866…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n0ac65fe9fa444c9bb0663a08ad9541cdb2170",
+      "shortId": "n0ac65fe9fa444c9bb0663a08ad9541cdb2170",
+      "label": "MIGRAZIONE AL CLOUD DEI SERVIZI DIGITALI DELL'AMMINISTRAZION…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00229080338",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_g535",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00229080338",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9459610D1C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9467132C76",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/94865504B6",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9532801C3C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9532846162",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9562968AD5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9563395B34",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9568655FE3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/956868155B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9574795AC8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9749931995",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9866559E0C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
+      "target": "n0ac65fe9fa444c9bb0663a08ad9541cdb2170",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}

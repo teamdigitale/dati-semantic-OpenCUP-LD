@@ -1,0 +1,172 @@
+{
+  "id": "cup_E31F22000170006",
+  "title": "Unione semantica — CUP E31F22000170006",
+  "sparql_note": "Il CUP E31F22000170006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 5 lotti CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "target": "https://w3id.org/italia/data/Call/1.4.3%20-%20pagoPA%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00351040423",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_a271",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00351040423",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/95245757EE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/960861826A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9611612922",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/96116822E8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/961974725B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "shortId": "cup:E31F22000170006",
+      "label": "E31F22000170006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.4.3%20-%20pagoPA%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.4.3%20-%20pagoPA%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.4.3 - pagoPA - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/00351040423",
+      "shortId": "po:00351040423",
+      "label": "COMUNE DI ANCONA - AN -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_a271",
+      "shortId": "po:c_a271",
+      "label": "Comune di Ancona",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/95245757EE",
+      "shortId": "lot:95245757EE",
+      "label": "CIG 9524…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/960861826A",
+      "shortId": "lot:960861826A",
+      "label": "CIG 9608…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9611612922",
+      "shortId": "lot:9611612922",
+      "label": "CIG 9611…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/96116822E8",
+      "shortId": "lot:96116822E8",
+      "label": "CIG 9611…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/961974725B",
+      "shortId": "lot:961974725B",
+      "label": "CIG 9619…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n0ac65fe9fa444c9bb0663a08ad9541cdb2165",
+      "shortId": "n0ac65fe9fa444c9bb0663a08ad9541cdb2165",
+      "label": "PIATTAFORMA PAGOPA*TERRITORIO NAZIONALE*ATTIVAZIONE SERVIZI",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "target": "https://w3id.org/italia/data/Call/1.4.3%20-%20pagoPA%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00351040423",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_a271",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00351040423",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/95245757EE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/960861826A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9611612922",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/96116822E8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/961974725B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
+      "target": "n0ac65fe9fa444c9bb0663a08ad9541cdb2165",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}
