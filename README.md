@@ -51,3 +51,38 @@ Per rigenerare solo la conversione LD (se i JSON in `srcdata/data/` sono già pr
 make ld
 ```
 
+## Web app (GitHub Pages)
+
+Sito statico in `web/` che esplora mappature RDF, grafi per dataset, unione semantica e analisi pre-calcolate — tutto generato da `all.ttl` in fase di build.
+
+```bash
+make all            # genera all.ttl (se non già presente)
+make web            # export JSON + build → docs/
+```
+
+In locale, dopo `make web`:
+
+```bash
+make web-preview    # http://localhost:4173/dati-semantic-OpenCUP-LD/
+# oppure: cd web && npm run dev   (sviluppo, senza base path GH Pages)
+```
+
+**Non usare** `npx serve docs` dalla root: la build referenzia asset sotto
+`/dati-semantic-OpenCUP-LD/...` (path del repo su github.io). `serve docs` li
+cerca in `/assets/...` e restituisce 404. Usare `make web-preview` oppure
+`cd web && npm run preview`.
+
+### Pubblicazione su GitHub Pages
+
+**Opzione A — cartella `/docs` sul branch principale**
+
+1. `make web` e committare la cartella `docs/`
+2. Repository → Settings → Pages → Source: branch `main`, folder `/docs`
+
+**Opzione B — GitHub Actions**
+
+Il workflow `.github/workflows/pages.yml` builda `web/` e pubblica `docs/` su ogni push.
+Abilitare Pages con source **GitHub Actions**.
+
+URL previsto: `https://<org>.github.io/dati-semantic-OpenCUP-LD/`
+

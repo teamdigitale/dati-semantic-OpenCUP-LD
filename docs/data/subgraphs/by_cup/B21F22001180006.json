@@ -1,0 +1,104 @@
+{
+  "id": "cup_B21F22001180006",
+  "title": "Unione semantica — CUP B21F22001180006",
+  "sparql_note": "Il CUP B21F22001180006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 1 lotto CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "target": "https://w3id.org/italia/data/Call/1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00097020598",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_e472",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00097020598",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/97227245A9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "shortId": "cup:B21F22001180006",
+      "label": "B21F22001180006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.4.1 Esperienza del Cittadino - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/00097020598",
+      "shortId": "po:00097020598",
+      "label": "COMUNE DI LATINA - LT -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_e472",
+      "shortId": "po:c_e472",
+      "label": "Comune di Latina",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/97227245A9",
+      "shortId": "lot:97227245A9",
+      "label": "CIG 9722…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n89c6cb9cafe344aa8d4a9cec48b73a1cb28",
+      "shortId": "n89c6cb9cafe344aa8d4a9cec48b73a1cb28",
+      "label": "MIGLIORAMENTO DELLESPERIENZA DUSO DEL SITO E DEI SERVIZI D…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "target": "https://w3id.org/italia/data/Call/1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00097020598",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_e472",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00097020598",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/97227245A9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B21F22001180006",
+      "target": "n89c6cb9cafe344aa8d4a9cec48b73a1cb28",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}

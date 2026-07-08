@@ -1,0 +1,39 @@
+{
+  "id": "cup_hub",
+  "title": "Un CUP attraversa OpenCUP, PNRR e l'ente titolare",
+  "sparql_note": "Lo stesso URI cup: collega automaticamente i dati da dataset diversi.",
+  "datasets_involved": [
+    "opencup",
+    "candidature"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C17H22001820007",
+      "target": "https://w3id.org/italia/data/Call/1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/C17H22001820007",
+      "shortId": "cup:C17H22001820007",
+      "label": "C17H22001820007",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.4.3 - app IO - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C17H22001820007",
+      "target": "https://w3id.org/italia/data/Call/1.4.3%20-%20app%20IO%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    }
+  ]
+}

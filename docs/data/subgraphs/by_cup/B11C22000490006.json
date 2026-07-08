@@ -1,0 +1,104 @@
+{
+  "id": "cup_B11C22000490006",
+  "title": "Unione semantica — CUP B11C22000490006",
+  "sparql_note": "Il CUP B11C22000490006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 1 lotto CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9721794633",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "shortId": "cup:B11C22000490006",
+      "label": "B11C22000490006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.2 Abilitazione al cloud - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "shortId": "po:82005730161",
+      "label": "COMUNE DI TERNO D'ISOLA - BG -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "shortId": "po:c_l118",
+      "label": "Comune di Terno d'Isola",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9721794633",
+      "shortId": "lot:9721794633",
+      "label": "CIG 9721…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n89c6cb9cafe344aa8d4a9cec48b73a1cb8",
+      "shortId": "n89c6cb9cafe344aa8d4a9cec48b73a1cb8",
+      "label": "MIGRAZIONE AL CLOUD DEI SERVIZI DIGITALI DELL'AMMINISTRAZION…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9721794633",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
+      "target": "n89c6cb9cafe344aa8d4a9cec48b73a1cb8",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}

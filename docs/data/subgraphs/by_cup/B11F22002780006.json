@@ -1,0 +1,121 @@
+{
+  "id": "cup_B11F22002780006",
+  "title": "Unione semantica — CUP B11F22002780006",
+  "sparql_note": "Il CUP B11F22002780006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 2 lotti CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "target": "https://w3id.org/italia/data/Call/1.4.5%20%27Piattaforma%20Notifiche%20Digitali%27%20Comuni%20%28Settembre%202022%29",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/975791348B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9804570B1C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "shortId": "cup:B11F22002780006",
+      "label": "B11F22002780006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.4.5%20%27Piattaforma%20Notifiche%20Digitali%27%20Comuni%20%28Settembre%202022%29",
+      "shortId": "call:1.4.5%20%27Piattaforma%20Notifiche%20Digitali%27%20Comuni%20%28Settembre%202022%29",
+      "label": "1.4.5 'Piattaforma Notifiche Digitali' Comuni (Settembre 202…",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "shortId": "po:82005730161",
+      "label": "COMUNE DI TERNO D'ISOLA - BG -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "shortId": "po:c_l118",
+      "label": "Comune di Terno d'Isola",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/975791348B",
+      "shortId": "lot:975791348B",
+      "label": "CIG 9757…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9804570B1C",
+      "shortId": "lot:9804570B1C",
+      "label": "CIG 9804…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n89c6cb9cafe344aa8d4a9cec48b73a1cb1798",
+      "shortId": "n89c6cb9cafe344aa8d4a9cec48b73a1cb1798",
+      "label": "PIATTAFORMA NOTIFICHE DIGITALI (PND)*TERRITORIO COMUNALE*PIA…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "target": "https://w3id.org/italia/data/Call/1.4.5%20%27Piattaforma%20Notifiche%20Digitali%27%20Comuni%20%28Settembre%202022%29",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/975791348B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9804570B1C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22002780006",
+      "target": "n89c6cb9cafe344aa8d4a9cec48b73a1cb1798",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "cup_cig",
+  "title": "Lotto CIG → progetto CUP",
+  "sparql_note": "ANAC collega l'appalto al CUP con PCTR:hasProject.",
+  "datasets_involved": [
+    "cupcig",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/data/Lot/9422434683",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Lot/9422434683",
+      "shortId": "lot:9422434683",
+      "label": "CIG 9422…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "shortId": "cup:H71C22000500006",
+      "label": "H71C22000500006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/00341200095",
+      "shortId": "po:00341200095",
+      "label": "COMUNE DI VEZZI PORTIO - SAVONA -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv:strumento-programmazione/99",
+      "label": "ALTRO",
+      "type": "Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv:copertura-finanziaria/006",
+      "label": "COMUNITARIA",
+      "type": "Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.2 Abilitazione al cloud - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganizationCategory/ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "shortId": "ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "label": "ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "type": "COV:PublicOrganizationCategory",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Lot/9422434683",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "label": "pi:ha_cup"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00341200095",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
+      "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/00341200095",
+      "target": "https://w3id.org/italia/data/PublicOrganizationCategory/ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "label": "COV:hasCategory"
+    }
+  ]
+}

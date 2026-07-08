@@ -1,0 +1,155 @@
+{
+  "templates": [
+    {
+      "file": "candidature_comuni_finanziate.hbs",
+      "dataset": "candidature_comuni_finanziate"
+    },
+    {
+      "file": "candidature_enti_ipa.hbs",
+      "dataset": "candidature_enti_ipa"
+    },
+    {
+      "file": "cupcig_candidature_comuni_finanziate.hbs",
+      "dataset": "cupcig_candidature_comuni_finanziate"
+    },
+    {
+      "file": "opencup_candidature_comuni_finanziate.hbs",
+      "dataset": "opencup_candidature_comuni_finanziate"
+    }
+  ],
+  "fieldMappings": [
+    [
+      "CUP",
+      "cup:{CUP}",
+      "@id progetto / CUP",
+      "opencup"
+    ],
+    [
+      "DESCRIZIONE_SINTETICA_CUP",
+      "pi:oggetto_progettuale",
+      "intervento",
+      "opencup"
+    ],
+    [
+      "PIVA_CODFISCALE_SOG_TITOLARE",
+      "pi:ha_soggetto_titolare → po:{CF}",
+      "ente titolare",
+      "opencup"
+    ],
+    [
+      "CODICE_SETTORE_INTERVENTO",
+      "pi:ha_settore_intervento",
+      "classificazione SKOS",
+      "opencup"
+    ],
+    [
+      "COSTO_PROGETTO",
+      "pi:costo_del_progetto",
+      "importo",
+      "opencup"
+    ],
+    [
+      "FINANZIAMENTO_PROGETTO",
+      "pi:importo_finanziamento_pubblico",
+      "importo",
+      "opencup"
+    ],
+    [
+      "INDIRIZZO_INTERVENTO / COMUNE",
+      "pi:ha_localizzazione / pi:ha_indirizzo_o_riferimento",
+      "CLV:Address",
+      "opencup"
+    ],
+    [
+      "codice_cup",
+      "cup:{CUP}",
+      "@id progetto",
+      "candidature"
+    ],
+    [
+      "importo_finanziamento",
+      "pi:importo_finanziamento_pubblico",
+      "importo PNRR",
+      "candidature"
+    ],
+    [
+      "avviso",
+      "PRJ:hasCall → call:{avviso}",
+      "avviso PNRR",
+      "candidature"
+    ],
+    [
+      "CUP",
+      "PCTR:hasProject → cup:{CUP}",
+      "collegamento CUP",
+      "cupcig"
+    ],
+    [
+      "CIG",
+      "lot:{CIG}",
+      "@id lotto ANAC",
+      "cupcig"
+    ],
+    [
+      "Codice_IPA",
+      "po:{IPA}",
+      "@id ente",
+      "enti_ipa"
+    ],
+    [
+      "Codice_fiscale_ente",
+      "owl:sameAs → po:{CF}",
+      "ponte semantico",
+      "enti_ipa"
+    ],
+    [
+      "Denominazione_ente",
+      "COV:legalName",
+      "denominazione",
+      "enti_ipa"
+    ]
+  ],
+  "semanticJoins": [
+    {
+      "id": "cup_hub",
+      "label": "CUP condiviso",
+      "uri": "cup:{CUP}",
+      "datasets": [
+        "opencup",
+        "candidature",
+        "cupcig"
+      ],
+      "note": "Lo stesso URI identifica il progetto in tutti i grafi: il collegamento è automatico, non serve una join tabellare."
+    },
+    {
+      "id": "org_sameas",
+      "label": "Ente IPA ↔ CF",
+      "uri": "owl:sameAs",
+      "datasets": [
+        "enti_ipa",
+        "opencup"
+      ],
+      "note": "IndicePA e OpenCUP usano URI diversi collegati da owl:sameAs sul codice fiscale."
+    },
+    {
+      "id": "cup_cig",
+      "label": "Lotto CIG → CUP",
+      "uri": "PCTR:hasProject",
+      "datasets": [
+        "cupcig",
+        "opencup"
+      ],
+      "note": "I lotti ANAC puntano al progetto CUP tramite proprietà ontologica PCTR:hasProject."
+    },
+    {
+      "id": "pnrr_call",
+      "label": "Avviso PNRR",
+      "uri": "PRJ:hasCall → call:{avviso}",
+      "datasets": [
+        "candidature",
+        "opencup"
+      ],
+      "note": "PA Digitale arricchisce lo stesso CUP con l'avviso PNRR di finanziamento."
+    }
+  ]
+}

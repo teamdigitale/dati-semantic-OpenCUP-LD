@@ -36,7 +36,7 @@ FILTER_OUTPUTS := \
 LD_JSON := $(wildcard LD/json-ld/*-ld.json)
 LD_TTL  := $(patsubst LD/json-ld/%-ld.json,LD/ttl/%.ttl,$(LD_JSON))
 
-.PHONY: help setup fetch check-rawdata filter ld all clean clean-ld clean-filter
+.PHONY: help setup fetch check-rawdata filter ld all clean clean-ld clean-filter web-assets web web-preview
 
 .DEFAULT_GOAL := help
 
@@ -91,3 +91,12 @@ clean-ld: ## Rimuove output JSON-LD e TTL
 	rm -f LD/json-ld/*-ld.json LD/json-ld/all.ttl LD/ttl/*-ld.ttl LD/ttl/all.ttl
 
 clean: clean-filter clean-ld ## Rimuove tutti gli output generati (non i rawdata)
+
+web-assets: ld ## Genera JSON per la web app da all.ttl
+	env -u VIRTUAL_ENV uv run python LD/scripts/export_web_assets.py
+
+web: web-assets ## Build sito statico in docs/ (GitHub Pages)
+	cd web && npm install && npm run build
+
+web-preview: web ## Anteprima locale come su GitHub Pages (base path /dati-semantic-OpenCUP-LD/)
+	cd web && npm run preview

@@ -1,0 +1,57 @@
+{
+  "id": "org_bridge",
+  "title": "IndicePA ↔ OpenCUP via owl:sameAs",
+  "sparql_note": "Due URI distinti per lo stesso ente, collegati semanticamente.",
+  "datasets_involved": [
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/C_A703",
+      "shortId": "po:C_A703",
+      "label": "Comune di Bassano del Grappa",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/00168480242",
+      "shortId": "po:00168480242",
+      "label": "COMUNE DI BASSANO DEL GRAPPA - VI -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganizationCategory/L6",
+      "shortId": "L6",
+      "label": "L6",
+      "type": "COV:PublicOrganizationCategory",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganizationCategory/ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "shortId": "ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "label": "ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "type": "COV:PublicOrganizationCategory",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/C_A703",
+      "target": "https://w3id.org/italia/data/PublicOrganization/00168480242",
+      "label": "sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/C_A703",
+      "target": "https://w3id.org/italia/data/PublicOrganizationCategory/L6",
+      "label": "COV:hasCategory"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/00168480242",
+      "target": "https://w3id.org/italia/data/PublicOrganizationCategory/ENTI%20TERRITORIALI%20E%20DI%20AMMINISTRAZIONE%20DEL%20TERRITORIO",
+      "label": "COV:hasCategory"
+    }
+  ]
+}

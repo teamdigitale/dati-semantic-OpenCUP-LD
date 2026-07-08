@@ -1,0 +1,104 @@
+{
+  "id": "cup_B11F22000590006",
+  "title": "Unione semantica — CUP B11F22000590006",
+  "sparql_note": "Il CUP B11F22000590006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 1 lotto CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "datasets_involved": [
+    "candidature",
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "target": "https://w3id.org/italia/data/Call/1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9723060AEE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "shortId": "cup:B11F22000590006",
+      "label": "B11F22000590006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Call/1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "shortId": "call:1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "label": "1.4.1 Esperienza del Cittadino - Comuni - Aprile 2022",
+      "type": "PRJ:Call",
+      "dataset": "candidature"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "shortId": "po:82005730161",
+      "label": "COMUNE DI TERNO D'ISOLA - BG -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "shortId": "po:c_l118",
+      "label": "Comune di Terno d'Isola",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9723060AEE",
+      "shortId": "lot:9723060AEE",
+      "label": "CIG 9723…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n89c6cb9cafe344aa8d4a9cec48b73a1cb12",
+      "shortId": "n89c6cb9cafe344aa8d4a9cec48b73a1cb12",
+      "label": "MIGLIORAMENTO DELLESPERIENZA DUSO DEL SITO E DEI SERVIZI D…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "target": "https://w3id.org/italia/data/Call/1.4.1%20Esperienza%20del%20Cittadino%20-%20Comuni%20-%20Aprile%202022",
+      "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/PublicOrganization/c_l118",
+      "target": "https://w3id.org/italia/data/PublicOrganization/82005730161",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9723060AEE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11F22000590006",
+      "target": "n89c6cb9cafe344aa8d4a9cec48b73a1cb12",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    }
+  ]
+}

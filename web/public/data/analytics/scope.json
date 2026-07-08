@@ -1,0 +1,49 @@
+{
+  "title": "Scope PA Digitale nel repository",
+  "definition": "CUP presenti in PA Digitale (candidature comuni finanziate) che ANAC collega a un CIG con esito di gara pubblicato. Tutti i dataset filtrati derivano da questo insieme.",
+  "filters": [
+    {
+      "step": "01_filter_cup_json",
+      "rule": "PA Digitale ∩ ANAC cup_json ∩ v_od_esiti (CIG con esito)",
+      "role": "Definisce l'insieme CUP/CIG hub"
+    },
+    {
+      "step": "04_filter_cup_candidature",
+      "rule": "Candidature PA Digitale il cui CUP è nell'hub",
+      "role": "Grafo PA Digitale completo in RDF"
+    },
+    {
+      "step": "03_filter_cup_od_bandi_esiti",
+      "rule": "Bandi ed esiti ANAC sui CIG dell'hub",
+      "role": "Tabellare (non ancora in RDF)"
+    },
+    {
+      "step": "02_filter_cup_opencup",
+      "rule": "OpenCUP.parquet filtrato sui CUP dell'hub",
+      "role": "Metadati progetto / titolare"
+    },
+    {
+      "step": "05_filter_enti_ipa",
+      "rule": "IndicePA via CF OpenCUP oppure codice_ipa PA Digitale",
+      "role": "Ponte semantico enti"
+    }
+  ],
+  "padigitale_raw_cups": 69534,
+  "hub_cups": 540,
+  "hub_cigs": 623,
+  "hub_pairs": 677,
+  "padigitale_filtered_cups": 540,
+  "padigitale_rows": 570,
+  "padigitale_ipa_codes": 238,
+  "opencup_cups": 534,
+  "opencup_missing_from_hub": 6,
+  "enti_ipa": 238,
+  "scp_bandi_cigs": 72,
+  "scp_esiti_cigs": 623,
+  "hub_cigs_without_bando": 551,
+  "gaps": [
+    "SCP bandi/esiti filtrati ma non convertiti in RDF (manca template LD).",
+    "OpenCUP.parquet non copre tutti i CUP dell'hub (6 CUP senza riga OpenCUP).",
+    "Il filtro 01 esclude PA Digitale senza mapping ANAC o senza esito gara."
+  ]
+}
