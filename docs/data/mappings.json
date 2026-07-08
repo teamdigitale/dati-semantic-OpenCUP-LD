@@ -37,8 +37,44 @@
       "opencup"
     ],
     [
-      "CODICE_SETTORE_INTERVENTO",
-      "pi:ha_settore_intervento",
+      "CODICE_SETTORE_INTERVENTO / SETTORE_INTERVENTO",
+      "pi:ha_settore_intervento → picv:settore-intervento/{cod}",
+      "classificazione SKOS",
+      "opencup"
+    ],
+    [
+      "CODICE_TIPO_INTERVENTO / TIPOLOGIA_INTERVENTO",
+      "pi:ha_tipologia_intervento → picv:tipologia-intervento/{cod}",
+      "classificazione SKOS",
+      "opencup"
+    ],
+    [
+      "CODICE_SOTTOSETTORE_INTERVENTO / SOTTOSETTORE_INTERVENTO",
+      "pi:ha_sottosettore_intervento → picv:sottosettore-intervento/{cod}",
+      "classificazione SKOS",
+      "opencup"
+    ],
+    [
+      "CODICE_CATEGORIA_INTERVENTO / CATEGORIA_INTERVENTO",
+      "pi:ha_categoria_intervento → picv:categoria-intervento/{cod}",
+      "classificazione SKOS",
+      "opencup"
+    ],
+    [
+      "CODICE_AREA_INTERVENTO / AREA_INTERVENTO",
+      "pi:ha_area_intervento → picv:area-intervento/{cod}",
+      "classificazione SKOS",
+      "opencup"
+    ],
+    [
+      "CODICE_COPERTURA_FINANZIARIA / COPERTURA_FINANZIARIA",
+      "pi:ha_tipologia_copertura_finanziaria → picv:copertura-finanziaria/{cod}",
+      "classificazione SKOS",
+      "opencup"
+    ],
+    [
+      "CODICE_STRUMENTO_PROGRAM / STRUMENTO_PROGRAMMAZIONE",
+      "pi:ha_strumento_di_programmazione → picv:strumento-programmazione/{cod}",
       "classificazione SKOS",
       "opencup"
     ],
@@ -150,6 +186,15 @@
         "opencup"
       ],
       "note": "PA Digitale arricchisce lo stesso CUP con l'avviso PNRR di finanziamento."
+    },
+    {
+      "id": "opencup_cv",
+      "label": "Vocabolari controllati OpenCUP",
+      "uri": "pi:ha_settore_intervento → picv:settore-intervento/{cod}",
+      "datasets": [
+        "opencup"
+      ],
+      "note": "Settore, tipologia, area, copertura finanziaria e strumento di programmazione come concetti SKOS con URI stabile (stesso codice = stesso termine condiviso)."
     }
   ]
 }

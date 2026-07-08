@@ -16,6 +16,8 @@ export function Analisi() {
   const [byCall, setByCall] = useState<ChartData | null>(null);
   const [byCupCig, setByCupCig] = useState<ChartData | null>(null);
   const [cupCigDist, setCupCigDist] = useState<ChartData | null>(null);
+  const [bySettore, setBySettore] = useState<ChartData | null>(null);
+  const [byTipologia, setByTipologia] = useState<ChartData | null>(null);
   const [counts, setCounts] = useState<CountsData | null>(null);
   const [scope, setScope] = useState<ScopeData | null>(null);
 
@@ -25,13 +27,17 @@ export function Analisi() {
       fetchJson<ChartData>("analytics/cost_by_call.json"),
       fetchJson<ChartData>("analytics/top_cup_cig.json"),
       fetchJson<ChartData>("analytics/cup_cig_distribution.json"),
+      fetchJson<ChartData>("analytics/cups_by_settore.json"),
+      fetchJson<ChartData>("analytics/cups_by_tipologia.json"),
       fetchJson<CountsData>("analytics/counts.json"),
       fetchJson<ScopeData>("analytics/scope.json"),
-    ]).then(([f, c, cupCig, dist, n, s]) => {
+    ]).then(([f, c, cupCig, dist, settore, tipologia, n, s]) => {
       setByFunder(f);
       setByCall(c);
       setByCupCig(cupCig);
       setCupCigDist(dist);
+      setBySettore(settore);
+      setByTipologia(tipologia);
       setCounts(n);
       setScope(s);
     });
@@ -59,6 +65,18 @@ export function Analisi() {
     cupCigDist?.labels.map((label, i) => ({
       name: label,
       value: cupCigDist.series[0]?.data[i] ?? 0,
+    })) ?? [];
+
+  const settoreChart =
+    bySettore?.labels.map((label, i) => ({
+      name: label.length > 32 ? label.slice(0, 32) + "…" : label,
+      value: bySettore.series[0]?.data[i] ?? 0,
+    })) ?? [];
+
+  const tipologiaChart =
+    byTipologia?.labels.map((label, i) => ({
+      name: label.length > 32 ? label.slice(0, 32) + "…" : label,
+      value: byTipologia.series[0]?.data[i] ?? 0,
     })) ?? [];
 
   return (
@@ -130,6 +148,32 @@ export function Analisi() {
           </div>
         </div>
       )}
+
+      <section className="chart-section">
+        <h2>{bySettore?.title}</h2>
+        <ResponsiveContainer width="100%" height={360}>
+          <BarChart data={settoreChart} layout="vertical" margin={{ left: 8, right: 16 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis type="number" allowDecimals={false} />
+            <YAxis type="category" dataKey="name" width={180} tick={{ fontSize: 10 }} />
+            <Tooltip />
+            <Bar dataKey="value" fill="#94a3b8" />
+          </BarChart>
+        </ResponsiveContainer>
+      </section>
+
+      <section className="chart-section">
+        <h2>{byTipologia?.title}</h2>
+        <ResponsiveContainer width="100%" height={360}>
+          <BarChart data={tipologiaChart} layout="vertical" margin={{ left: 8, right: 16 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis type="number" allowDecimals={false} />
+            <YAxis type="category" dataKey="name" width={180} tick={{ fontSize: 10 }} />
+            <Tooltip />
+            <Bar dataKey="value" fill="#64748b" />
+          </BarChart>
+        </ResponsiveContainer>
+      </section>
 
       <section className="chart-section">
         <h2>{cupCigDist?.title}</h2>

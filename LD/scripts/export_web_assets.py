@@ -32,7 +32,20 @@ OPEN_CUP_SAMPLE = 10
 PRJ_HAS_CALL = URIRef("https://w3id.org/italia/onto/Project/hasCall")
 HA_TITOLARE = PI + "ha_soggetto_titolare"
 HA_INTERVENTO = PI + "ha_intervento_di_investimento_pubblico"
+PI_CV = "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/"
 ONTO_NS = "https://w3id.org/italia/PublicInvestment/onto/"
+
+CV_INTERVENTO_PREDS = (
+    (PI + "ha_settore_intervento", "pi:ha_settore_intervento"),
+    (PI + "ha_tipologia_intervento", "pi:ha_tipologia_intervento"),
+    (PI + "ha_sottosettore_intervento", "pi:ha_sottosettore_intervento"),
+    (PI + "ha_categoria_intervento", "pi:ha_categoria_intervento"),
+    (PI + "ha_area_intervento", "pi:ha_area_intervento"),
+)
+CV_CUP_PREDS = (
+    (PI + "ha_tipologia_copertura_finanziaria", "pi:ha_tipologia_copertura_finanziaria"),
+    (PI + "ha_strumento_di_programmazione", "pi:ha_strumento_di_programmazione"),
+)
 
 
 def short_id(uri: str) -> str:
@@ -47,6 +60,7 @@ def short_id(uri: str) -> str:
         ("https://w3id.org/italia/onto/CLV/", "CLV:"),
         ("https://w3id.org/italia/onto/Project/", "PRJ:"),
         ("https://w3id.org/italia/onto/PublicContract/", "PCTR:"),
+        ("http://www.w3.org/2004/02/skos/core#", "skos:"),
     ]:
         if uri.startswith(prefix):
             return label + uri[len(prefix) :]
@@ -196,6 +210,23 @@ def is_ontology_class_uri(uri: str) -> bool:
     return "/onto/" in uri and not uri.startswith(PI_DATA)
 
 
+def is_cv_uri(uri: str) -> bool:
+    return uri.startswith(PI_CV)
+
+
+def link_cv_terms(g: Graph, cup, link) -> None:
+    """Collega i concetti SKOS del corredo informativo (progetto + intervento)."""
+    for pred_uri, pred_label in CV_CUP_PREDS:
+        for obj in g.objects(cup, pred_uri):
+            if isinstance(obj, URIRef) and not is_ontology_class_uri(str(obj)):
+                link(cup, obj, pred_label)
+    for intervento in g.objects(cup, HA_INTERVENTO):
+        for pred_uri, pred_label in CV_INTERVENTO_PREDS:
+            for obj in g.objects(intervento, pred_uri):
+                if isinstance(obj, URIRef) and not is_ontology_class_uri(str(obj)):
+                    link(intervento, obj, pred_label)
+
+
 def dedupe_edges(edges: list[dict]) -> list[dict]:
     seen: set[tuple[str, str, str]] = set()
     out: list[dict] = []
@@ -237,6 +268,7 @@ def build_cup_neighborhood_graph(
     *,
     neighbor_preds: tuple[tuple[URIRef, str], ...],
     include_pi_literals: bool = False,
+    include_cv_terms: bool = False,
 ) -> dict:
     """Grafo a stella su N CUP: solo vicini diretti selezionati."""
     cup_set = {str(c) for c in cup_uris}
@@ -247,12 +279,13 @@ def build_cup_neighborhood_graph(
         sid = str(s)
         if sid not in nodes_map:
             ntype = node_type(g, s)
+            ds = "shared" if is_cv_uri(sid) else dataset
             nodes_map[sid] = {
                 "id": sid,
                 "shortId": short_id(sid),
                 "label": node_label(g, s, ntype),
                 "type": ntype,
-                "dataset": dataset,
+                "dataset": ds,
             }
 
     def link(source, target, pred_label: str) -> None:
@@ -272,6 +305,8 @@ def build_cup_neighborhood_graph(
                     continue
                 link(cup, obj, label)
                 break
+        if include_cv_terms:
+            link_cv_terms(g, cup, link)
         if include_pi_literals:
             for p, o in g.predicate_objects(cup):
                 pred = short_id(str(p))
@@ -309,6 +344,7 @@ def build_opencup_sample_graph(g: Graph, cup_uris: list[URIRef]) -> dict:
             (PRJ_HAS_CALL, "PRJ:hasCall"),
             (HA_INTERVENTO, "pi:ha_intervento_di_investimento_pubblico"),
         ),
+        include_cv_terms=True,
     )
 
 
@@ -428,7 +464,13 @@ def build_mappings() -> dict:
         ("CUP", "cup:{CUP}", "@id progetto / CUP", "opencup"),
         ("DESCRIZIONE_SINTETICA_CUP", "pi:oggetto_progettuale", "intervento", "opencup"),
         ("PIVA_CODFISCALE_SOG_TITOLARE", "pi:ha_soggetto_titolare → po:{CF}", "ente titolare", "opencup"),
-        ("CODICE_SETTORE_INTERVENTO", "pi:ha_settore_intervento", "classificazione SKOS", "opencup"),
+        ("CODICE_SETTORE_INTERVENTO / SETTORE_INTERVENTO", "pi:ha_settore_intervento → picv:settore-intervento/{cod}", "classificazione SKOS", "opencup"),
+        ("CODICE_TIPO_INTERVENTO / TIPOLOGIA_INTERVENTO", "pi:ha_tipologia_intervento → picv:tipologia-intervento/{cod}", "classificazione SKOS", "opencup"),
+        ("CODICE_SOTTOSETTORE_INTERVENTO / SOTTOSETTORE_INTERVENTO", "pi:ha_sottosettore_intervento → picv:sottosettore-intervento/{cod}", "classificazione SKOS", "opencup"),
+        ("CODICE_CATEGORIA_INTERVENTO / CATEGORIA_INTERVENTO", "pi:ha_categoria_intervento → picv:categoria-intervento/{cod}", "classificazione SKOS", "opencup"),
+        ("CODICE_AREA_INTERVENTO / AREA_INTERVENTO", "pi:ha_area_intervento → picv:area-intervento/{cod}", "classificazione SKOS", "opencup"),
+        ("CODICE_COPERTURA_FINANZIARIA / COPERTURA_FINANZIARIA", "pi:ha_tipologia_copertura_finanziaria → picv:copertura-finanziaria/{cod}", "classificazione SKOS", "opencup"),
+        ("CODICE_STRUMENTO_PROGRAM / STRUMENTO_PROGRAMMAZIONE", "pi:ha_strumento_di_programmazione → picv:strumento-programmazione/{cod}", "classificazione SKOS", "opencup"),
         ("COSTO_PROGETTO", "pi:costo_del_progetto", "importo", "opencup"),
         ("FINANZIAMENTO_PROGETTO", "pi:importo_finanziamento_pubblico", "importo", "opencup"),
         ("INDIRIZZO_INTERVENTO / COMUNE", "pi:ha_localizzazione / pi:ha_indirizzo_o_riferimento", "CLV:Address", "opencup"),
@@ -475,6 +517,13 @@ def build_mappings() -> dict:
             "uri": "PRJ:hasCall → call:{avviso}",
             "datasets": ["candidature", "opencup"],
             "note": "PA Digitale arricchisce lo stesso CUP con l'avviso PNRR di finanziamento.",
+        },
+        {
+            "id": "opencup_cv",
+            "label": "Vocabolari controllati OpenCUP",
+            "uri": "pi:ha_settore_intervento → picv:settore-intervento/{cod}",
+            "datasets": ["opencup"],
+            "note": "Settore, tipologia, area, copertura finanziaria e strumento di programmazione come concetti SKOS con URI stabile (stesso codice = stesso termine condiviso).",
         },
     ]
     templates = [
@@ -544,6 +593,46 @@ def build_analytics(all_g: Graph) -> None:
         "title": "Costo per avviso PNRR",
         "labels": [r["callName"][:50] for r in by_call],
         "series": [{"name": "Euro", "data": [float(r["total"]) for r in by_call]}],
+    })
+
+    by_settore = sparql_select(all_g, """
+        PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        SELECT ?label (COUNT(DISTINCT ?prj) AS ?n)
+        WHERE {
+            ?prj a pi:Progetto_di_investimento_pubblico ;
+                 pi:ha_intervento_di_investimento_pubblico ?int .
+            ?int pi:ha_settore_intervento ?cv .
+            ?cv skos:prefLabel ?label .
+        }
+        GROUP BY ?label
+        ORDER BY DESC(?n)
+        LIMIT 12
+    """)
+    write_json(out / "cups_by_settore.json", {
+        "title": "Progetti CUP per settore di intervento (SKOS)",
+        "labels": [r["label"][:40] for r in by_settore],
+        "series": [{"name": "Progetti", "data": [int(r["n"]) for r in by_settore]}],
+    })
+
+    by_tipologia = sparql_select(all_g, """
+        PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        SELECT ?label (COUNT(DISTINCT ?prj) AS ?n)
+        WHERE {
+            ?prj a pi:Progetto_di_investimento_pubblico ;
+                 pi:ha_intervento_di_investimento_pubblico ?int .
+            ?int pi:ha_tipologia_intervento ?cv .
+            ?cv skos:prefLabel ?label .
+        }
+        GROUP BY ?label
+        ORDER BY DESC(?n)
+        LIMIT 12
+    """)
+    write_json(out / "cups_by_tipologia.json", {
+        "title": "Progetti CUP per tipologia di intervento (SKOS)",
+        "labels": [r["label"][:40] for r in by_tipologia],
+        "series": [{"name": "Progetti", "data": [int(r["n"]) for r in by_tipologia]}],
     })
 
     counts = {
@@ -750,6 +839,7 @@ def build_cup_union(all_g: Graph, cup) -> dict:
     if intervento:
         link(cup, intervento, "pi:ha_intervento_di_investimento_pubblico")
         nodes_map[str(intervento)]["dataset"] = "opencup"
+    link_cv_terms(all_g, cup, link)
 
     datasets_involved = sorted({
         n["dataset"] for n in nodes_map.values() if n["dataset"] != "shared"
@@ -761,7 +851,8 @@ def build_cup_union(all_g: Graph, cup) -> dict:
         f"Collegato a {lotto_label} CIG ANAC"
         f"{', avviso PNRR' if call else ''}"
         f"{', ente titolare' if org_cf else ''}"
-        f"{', IndicePA via owl:sameAs' if org_ipa else ''} — nessuna join SQL."
+        f"{', IndicePA via owl:sameAs' if org_ipa else ''}"
+        f"{', classificazione SKOS (settore, tipologia, …)' if intervento else ''} — nessuna join SQL."
     )
 
     join_predicates = ["owl:sameAs", "PCTR:hasProject", "PRJ:hasCall", "pi:ha_soggetto_titolare"]
@@ -879,6 +970,8 @@ def add_node(g: Graph, nodes_map: dict, s):
 
 
 def dataset_for_uri(uri: str) -> str:
+    if uri.startswith(PI_CV):
+        return "shared"
     if uri.startswith(PI_DATA):
         return "opencup"
     if uri.startswith(LOT_DATA):

@@ -33,9 +33,14 @@ const COMPACT_NODE_TYPES = new Set([
 ]);
 
 function nodeColors(dataset: string, type: string): { accent: string; fill: string } {
+  const typeAccent = TYPE_COLORS[type];
+  const typeFill = TYPE_FILLS[type];
+  if (typeAccent && (dataset === "shared" || type === "skos:Concept")) {
+    return { accent: typeAccent, fill: typeFill ?? "#ffffff" };
+  }
   return {
-    accent: DATASET_COLORS[dataset] ?? TYPE_COLORS[type] ?? "#64748b",
-    fill: DATASET_FILLS[dataset] ?? TYPE_FILLS[type] ?? "#ffffff",
+    accent: DATASET_COLORS[dataset] ?? typeAccent ?? "#64748b",
+    fill: DATASET_FILLS[dataset] ?? typeFill ?? "#ffffff",
   };
 }
 

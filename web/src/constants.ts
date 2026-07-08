@@ -42,6 +42,8 @@ export const TYPE_FILLS: Record<string, string> = {
   "COV:PublicOrganization": "#f5f3ff",
   "PCTR:Lot": "#fffbeb",
   "PRJ:Call": "#ecfdf5",
+  "skos:Concept": "#f1f5f9",
+  "CLV:Address": "#ecfeff",
   Literal: "#f8fafc",
   Resource: "#f8fafc",
 };

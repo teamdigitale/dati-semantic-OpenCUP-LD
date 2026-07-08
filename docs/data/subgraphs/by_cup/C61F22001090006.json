@@ -1,7 +1,7 @@
 {
   "id": "cup_C61F22001090006",
   "title": "Unione semantica — CUP C61F22001090006",
-  "sparql_note": "Il CUP C61F22001090006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 5 lotti CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs — nessuna join SQL.",
+  "sparql_note": "Il CUP C61F22001090006 è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). Collegato a 5 lotti CIG ANAC, avviso PNRR, ente titolare, IndicePA via owl:sameAs, classificazione SKOS (settore, tipologia, …) — nessuna join SQL.",
   "datasets_involved": [
     "candidature",
     "cupcig",
@@ -115,11 +115,60 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n593c34ffe08f42369914736137a8e605b2157",
-      "shortId": "n593c34ffe08f42369914736137a8e605b2157",
+      "id": "nde60b867f96b45679a03ffab188d0ec4b2157",
+      "shortId": "nde60b867f96b45679a03ffab188d0ec4b2157",
       "label": "APPLICAZIONE APP IO*TERRITORIO NAZIONALE*ATTIVAZIONE SERVIZI",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv:copertura-finanziaria/006",
+      "label": "COMUNITARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv:strumento-programmazione/99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/settore-intervento/10",
+      "shortId": "picv:settore-intervento/10",
+      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia-intervento/19",
+      "shortId": "picv:tipologia-intervento/19",
+      "label": "APPLICATIVI E PIATTAFORME WEB",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/sottosettore-intervento/02",
+      "shortId": "picv:sottosettore-intervento/02",
+      "label": "SERVIZI E APPLICAZIONI INFORMATICHE PER I CITTADINI E LE IMP…",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/categoria-intervento/001",
+      "shortId": "picv:categoria-intervento/001",
+      "label": "INFORMAZIONE E COMUNICAZIONE PER ATTIVITA' ISTITUZIONALI E L…",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/area-intervento/06",
+      "shortId": "picv:area-intervento/06",
+      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "type": "skos:Concept",
+      "dataset": "shared"
     }
   ],
   "edges": [
@@ -165,8 +214,43 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C61F22001090006",
-      "target": "n593c34ffe08f42369914736137a8e605b2157",
+      "target": "nde60b867f96b45679a03ffab188d0ec4b2157",
       "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C61F22001090006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C61F22001090006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "nde60b867f96b45679a03ffab188d0ec4b2157",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/settore-intervento/10",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "nde60b867f96b45679a03ffab188d0ec4b2157",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia-intervento/19",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "nde60b867f96b45679a03ffab188d0ec4b2157",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/sottosettore-intervento/02",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "nde60b867f96b45679a03ffab188d0ec4b2157",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/categoria-intervento/001",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "nde60b867f96b45679a03ffab188d0ec4b2157",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/area-intervento/06",
+      "label": "pi:ha_area_intervento"
     }
   ]
 }
