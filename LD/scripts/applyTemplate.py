@@ -1,7 +1,13 @@
 import json
 import re
+import sys
 import urllib.parse
+from pathlib import Path
+
 from pybars import Compiler
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from cv_resolver import get_resolver
 
 PI_ONTO = "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/"
 PI_DATA = "https://w3id.org/italia/PublicInvestment/data/CUP/"
@@ -33,12 +39,7 @@ STATO_CLASS = {
     "CANCELLATO": "Stato_cancellato_di_cup",
 }
 
-CV_TYPES = {
-    "settore": ("settore-intervento", "Settore_di_intervento"),
-    "tipologia": ("tipologia-intervento", "Tipologia_di_intervento"),
-    "sottosettore": ("sottosettore-intervento", "Sottosettore_di_intervento"),
-    "categoria": ("categoria-intervento", "Categoria_di_intervento"),
-    "area": ("area-intervento", "Area_di_intervento"),
+LOCAL_CV_TYPES = {
     "copertura": ("copertura-finanziaria", "Tipologia_copertura_finanziaria"),
     "strumento": ("strumento-programmazione", "Tipo_strumento_di_programmazione"),
 }
@@ -68,12 +69,6 @@ def normalize_cup(cup):
 
 def cupUri(this, cup):
     return f"{PI_DATA}{normalize_cup(cup)}"
-
-
-def cvUri(this, tipo, codice):
-    slug, _ = CV_TYPES[tipo]
-    code = str(codice).zfill(2) if tipo != "strumento" else str(codice).zfill(2)
-    return f"{PI_CV}{slug}/{code}"
 
 
 def format_code(value):
@@ -106,10 +101,11 @@ def if_present(this, value, options):
     return ""
 
 
-def skos_concept(cv_type, code, label):
+def skos_concept_local(cv_type, code, label):
+    """Mint SKOS concepts for copertura/strumento (no upstream CV asset yet)."""
     if not is_present(code):
         return None
-    slug, pi_class = CV_TYPES[cv_type]
+    slug, pi_class = LOCAL_CV_TYPES[cv_type]
     code_str = format_code(code)
     node = {
         "@id": f"{PI_CV}{slug}/{code_str}",
@@ -126,9 +122,11 @@ def build_opencup_nodes(record):
     cup_uri = f"{PI_DATA}{cup}"
     nodes = []
     concepts = {}
+    resolver = get_resolver()
+    cv_uris = resolver.resolve_record(record)
 
-    def remember_concept(cv_type, code, label):
-        concept = skos_concept(cv_type, code, label)
+    def remember_local_concept(cv_type, code, label):
+        concept = skos_concept_local(cv_type, code, label)
         if concept:
             concepts[concept["@id"]] = concept
         return concept
@@ -162,11 +160,15 @@ def build_opencup_nodes(record):
     if gen_date:
         project["pi:data_generazione_cup"] = {"@value": gen_date, "@type": "xsd:date"}
 
-    cop = remember_concept("copertura", record.get("CODICE_COPERTURA_FINANZIARIA"), record.get("COPERTURA_FINANZIARIA"))
+    cop = remember_local_concept(
+        "copertura", record.get("CODICE_COPERTURA_FINANZIARIA"), record.get("COPERTURA_FINANZIARIA")
+    )
     if cop:
         project["pi:ha_tipologia_copertura_finanziaria"] = {"@id": cop["@id"]}
 
-    strumento = remember_concept("strumento", record.get("CODICE_STRUMENTO_PROGRAM"), record.get("STRUMENTO_PROGRAMMAZIONE"))
+    strumento = remember_local_concept(
+        "strumento", record.get("CODICE_STRUMENTO_PROGRAM"), record.get("STRUMENTO_PROGRAMMAZIONE")
+    )
     if strumento:
         project["pi:ha_strumento_di_programmazione"] = {"@id": strumento["@id"]}
 
@@ -220,17 +222,16 @@ def build_opencup_nodes(record):
     if nature_code and nature_code in NATURE_INDIVIDUAL:
         intervention["pi:ha_natura_intervento"] = {"@id": f"pi:{NATURE_INDIVIDUAL[nature_code]}"}
 
-    cv_links = [
-        ("settore", "CODICE_SETTORE_INTERVENTO", "SETTORE_INTERVENTO", "pi:ha_settore_intervento"),
-        ("tipologia", "CODICE_TIPO_INTERVENTO", "TIPOLOGIA_INTERVENTO", "pi:ha_tipologia_intervento"),
-        ("sottosettore", "CODICE_SOTTOSETTORE_INTERVENTO", "SOTTOSETTORE_INTERVENTO", "pi:ha_sottosettore_intervento"),
-        ("categoria", "CODICE_CATEGORIA_INTERVENTO", "CATEGORIA_INTERVENTO", "pi:ha_categoria_intervento"),
-        ("area", "CODICE_AREA_INTERVENTO", "AREA_INTERVENTO", "pi:ha_area_intervento"),
+    cv_props = [
+        ("area", "pi:ha_area_intervento"),
+        ("settore", "pi:ha_settore_intervento"),
+        ("sottosettore", "pi:ha_sottosettore_intervento"),
+        ("categoria", "pi:ha_categoria_intervento"),
     ]
-    for cv_type, code_field, label_field, prop in cv_links:
-        concept = remember_concept(cv_type, record.get(code_field), record.get(label_field))
-        if concept:
-            intervention[prop] = {"@id": concept["@id"]}
+    for key, prop in cv_props:
+        uri = cv_uris.get(key)
+        if uri:
+            intervention[prop] = {"@id": uri}
 
     titolare = {
         "@type": ["COV:PublicOrganization", "pi:Soggetto_titolare_progetto_investimento"],
@@ -263,7 +264,6 @@ def apply_handlebars_template(template, data):
     context = {
         "encodeURIComponent": encodeURIComponent,
         "cupUri": cupUri,
-        "cvUri": cvUri,
         "if_present": if_present,
         "opencupNodes": opencupNodes,
     }

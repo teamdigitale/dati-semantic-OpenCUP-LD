@@ -36,7 +36,7 @@ FILTER_OUTPUTS := \
 LD_JSON := $(wildcard LD/json-ld/*-ld.json)
 LD_TTL  := $(patsubst LD/json-ld/%-ld.json,LD/ttl/%.ttl,$(LD_JSON))
 
-.PHONY: help setup fetch check-rawdata filter ld all clean clean-ld clean-filter web-assets web web-preview
+.PHONY: help setup fetch fetch-assets check-rawdata filter ld all clean clean-ld clean-filter web-assets web web-preview
 
 .DEFAULT_GOAL := help
 
@@ -56,6 +56,9 @@ fetch: setup ## Scarica le fonti disponibili via rete (ANAC, PA Digitale, Indice
 	cd $(SCRIPTS) && bash get_cup_json.sh
 	cd $(SCRIPTS) && bash get_candidature_comuni.sh
 	cd $(SCRIPTS) && bash get_indicepa_json.sh
+
+fetch-assets: setup ## Scarica ontologia e vocabolario PCM-DIPE (public-investment)
+	env -u VIRTUAL_ENV uv run python LD/scripts/fetch_public_investment_assets.py
 
 check-rawdata: ## Verifica che i file raw necessari esistano
 	@missing=0; \

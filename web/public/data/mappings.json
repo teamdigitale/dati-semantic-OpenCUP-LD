@@ -38,32 +38,26 @@
     ],
     [
       "CODICE_SETTORE_INTERVENTO / SETTORE_INTERVENTO",
-      "pi:ha_settore_intervento → picv:settore-intervento/{cod}",
-      "classificazione SKOS",
-      "opencup"
-    ],
-    [
-      "CODICE_TIPO_INTERVENTO / TIPOLOGIA_INTERVENTO",
-      "pi:ha_tipologia_intervento → picv:tipologia-intervento/{cod}",
-      "classificazione SKOS",
+      "pi:ha_settore_intervento → picv-settore:{area}_{cod}",
+      "classificazione SKOS PCM-DIPE",
       "opencup"
     ],
     [
       "CODICE_SOTTOSETTORE_INTERVENTO / SOTTOSETTORE_INTERVENTO",
-      "pi:ha_sottosettore_intervento → picv:sottosettore-intervento/{cod}",
-      "classificazione SKOS",
+      "pi:ha_sottosettore_intervento → picv-sottosettore:{area}_{sett}_{cod}",
+      "classificazione SKOS PCM-DIPE",
       "opencup"
     ],
     [
       "CODICE_CATEGORIA_INTERVENTO / CATEGORIA_INTERVENTO",
-      "pi:ha_categoria_intervento → picv:categoria-intervento/{cod}",
-      "classificazione SKOS",
+      "pi:ha_categoria_intervento → picv-categoria:{chiave_composita}",
+      "classificazione SKOS PCM-DIPE",
       "opencup"
     ],
     [
       "CODICE_AREA_INTERVENTO / AREA_INTERVENTO",
-      "pi:ha_area_intervento → picv:area-intervento/{cod}",
-      "classificazione SKOS",
+      "pi:ha_area_intervento → picv-area:{cod}",
+      "classificazione SKOS PCM-DIPE",
       "opencup"
     ],
     [
@@ -189,12 +183,12 @@
     },
     {
       "id": "opencup_cv",
-      "label": "Vocabolari controllati OpenCUP",
-      "uri": "pi:ha_settore_intervento → picv:settore-intervento/{cod}",
+      "label": "Vocabolario classificazione intervento (PCM-DIPE)",
+      "uri": "pi:ha_settore_intervento → picv-settore:{area}_{cod}",
       "datasets": [
         "opencup"
       ],
-      "note": "Settore, tipologia, area, copertura finanziaria e strumento di programmazione come concetti SKOS con URI stabile (stesso codice = stesso termine condiviso)."
+      "note": "Area, settore, sottosettore e categoria come concetti SKOS con URI composite dal vocabolario ufficiale classificazione_intervento."
     }
   ]
 }

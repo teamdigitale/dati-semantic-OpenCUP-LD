@@ -8,10 +8,14 @@ import json
 from pathlib import Path
 
 from rdflib import Graph, Literal, URIRef
-from rdflib.namespace import RDF, OWL
+from rdflib.namespace import RDF, OWL, SKOS, RDFS
 
 ROOT = Path(__file__).resolve().parents[2]
 TTL_DIR = ROOT / "LD" / "ttl"
+CV_TTL = (
+    ROOT
+    / "LD/controlled-vocabularies/classificazione-intervento/latest/classificazione_intervento.ttl"
+)
 OUT_DIR = ROOT / "web" / "public" / "data"
 
 PI = URIRef("https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/")
@@ -37,7 +41,6 @@ ONTO_NS = "https://w3id.org/italia/PublicInvestment/onto/"
 
 CV_INTERVENTO_PREDS = (
     (PI + "ha_settore_intervento", "pi:ha_settore_intervento"),
-    (PI + "ha_tipologia_intervento", "pi:ha_tipologia_intervento"),
     (PI + "ha_sottosettore_intervento", "pi:ha_sottosettore_intervento"),
     (PI + "ha_categoria_intervento", "pi:ha_categoria_intervento"),
     (PI + "ha_area_intervento", "pi:ha_area_intervento"),
@@ -48,13 +51,27 @@ CV_CUP_PREDS = (
 )
 
 
+CV_SHORT_PREFIXES = (
+    ("classificazione_intervento/Area_di_intervento/", "picv-area:"),
+    ("classificazione_intervento/Settore_di_intervento/", "picv-settore:"),
+    ("classificazione_intervento/Sottosettore_di_intervento/", "picv-sottosettore:"),
+    ("classificazione_intervento/Categoria_di_intervento/", "picv-categoria:"),
+    ("copertura-finanziaria/", "picv-copertura:"),
+    ("strumento-programmazione/", "picv-strumento:"),
+)
+
+
 def short_id(uri: str) -> str:
+    if uri.startswith(PI_CV):
+        for slug, cv_label in CV_SHORT_PREFIXES:
+            if uri.startswith(PI_CV + slug):
+                return cv_label + uri[len(PI_CV + slug) :]
+        return "picv:" + uri[len(PI_CV) :]
     for prefix, label in [
         (PI_DATA, "cup:"),
         (PO_DATA, "po:"),
         (LOT_DATA, "lot:"),
         (CALL_DATA, "call:"),
-        ("https://w3id.org/italia/PublicInvestment/controlled-vocabulary/", "picv:"),
         (str(PI), "pi:"),
         ("https://w3id.org/italia/onto/COV/", "COV:"),
         ("https://w3id.org/italia/onto/CLV/", "CLV:"),
@@ -72,6 +89,9 @@ def short_id(uri: str) -> str:
 
 
 def node_type(g: Graph, subject) -> str:
+    sid = str(subject)
+    if is_cv_uri(sid):
+        return "skos:Concept"
     types = [short_id(str(t)) for t in g.objects(subject, RDF.type)]
     for preferred in (
         "pi:Progetto_di_investimento_pubblico",
@@ -120,7 +140,8 @@ def normalize_display_text(text: str) -> str:
 def node_label(g: Graph, subject, ntype: str) -> str:
     for pred in (
         URIRef("https://w3id.org/italia/onto/COV/legalName"),
-        URIRef("http://www.w3.org/2004/02/skos/core#prefLabel"),
+        SKOS.prefLabel,
+        RDFS.label,
         URIRef("https://w3id.org/italia/onto/l0/name"),
         URIRef("https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/oggetto_progettuale"),
     ):
@@ -214,17 +235,44 @@ def is_cv_uri(uri: str) -> bool:
     return uri.startswith(PI_CV)
 
 
-def link_cv_terms(g: Graph, cup, link) -> None:
+def load_cv_graph() -> Graph:
+    cv_g = Graph()
+    if CV_TTL.is_file():
+        cv_g.parse(CV_TTL, format="turtle")
+    else:
+        print(f"Warning: CV TTL not found at {CV_TTL}; run make fetch-assets", file=__import__("sys").stderr)
+    return cv_g
+
+
+def merge_cv_graph(target: Graph, cv_g: Graph) -> None:
+    if len(cv_g):
+        target += cv_g
+
+
+def link_cv_terms(g: Graph, cup, link, cv_g: Graph | None = None) -> None:
     """Collega i concetti SKOS del corredo informativo (progetto + intervento)."""
+    linked: set[str] = set()
+
+    def link_cv_node(source, obj, pred_label: str) -> None:
+        link(source, obj, pred_label)
+        linked.add(str(obj))
+        if cv_g is None:
+            return
+        for broader in cv_g.objects(obj, SKOS.broader):
+            broader_uri = str(broader).strip('"')
+            if broader_uri.startswith(PI_CV):
+                link(obj, URIRef(broader_uri), "skos:broader")
+                linked.add(broader_uri)
+
     for pred_uri, pred_label in CV_CUP_PREDS:
         for obj in g.objects(cup, pred_uri):
             if isinstance(obj, URIRef) and not is_ontology_class_uri(str(obj)):
-                link(cup, obj, pred_label)
+                link_cv_node(cup, obj, pred_label)
     for intervento in g.objects(cup, HA_INTERVENTO):
         for pred_uri, pred_label in CV_INTERVENTO_PREDS:
             for obj in g.objects(intervento, pred_uri):
                 if isinstance(obj, URIRef) and not is_ontology_class_uri(str(obj)):
-                    link(intervento, obj, pred_label)
+                    link_cv_node(intervento, obj, pred_label)
 
 
 def dedupe_edges(edges: list[dict]) -> list[dict]:
@@ -269,8 +317,13 @@ def build_cup_neighborhood_graph(
     neighbor_preds: tuple[tuple[URIRef, str], ...],
     include_pi_literals: bool = False,
     include_cv_terms: bool = False,
+    cv_g: Graph | None = None,
 ) -> dict:
     """Grafo a stella su N CUP: solo vicini diretti selezionati."""
+    label_g = Graph()
+    label_g += g
+    if cv_g is not None:
+        label_g += cv_g
     cup_set = {str(c) for c in cup_uris}
     nodes_map: dict[str, dict] = {}
     edges: list[dict] = []
@@ -283,7 +336,7 @@ def build_cup_neighborhood_graph(
             nodes_map[sid] = {
                 "id": sid,
                 "shortId": short_id(sid),
-                "label": node_label(g, s, ntype),
+                "label": node_label(label_g, s, ntype),
                 "type": ntype,
                 "dataset": ds,
             }
@@ -306,7 +359,7 @@ def build_cup_neighborhood_graph(
                 link(cup, obj, label)
                 break
         if include_cv_terms:
-            link_cv_terms(g, cup, link)
+            link_cv_terms(g, cup, link, cv_g)
         if include_pi_literals:
             for p, o in g.predicate_objects(cup):
                 pred = short_id(str(p))
@@ -334,7 +387,7 @@ def build_cup_neighborhood_graph(
     }
 
 
-def build_opencup_sample_graph(g: Graph, cup_uris: list[URIRef]) -> dict:
+def build_opencup_sample_graph(g: Graph, cup_uris: list[URIRef], cv_g: Graph | None = None) -> dict:
     return build_cup_neighborhood_graph(
         g,
         cup_uris,
@@ -345,6 +398,7 @@ def build_opencup_sample_graph(g: Graph, cup_uris: list[URIRef]) -> dict:
             (HA_INTERVENTO, "pi:ha_intervento_di_investimento_pubblico"),
         ),
         include_cv_terms=True,
+        cv_g=cv_g,
     )
 
 
@@ -464,11 +518,10 @@ def build_mappings() -> dict:
         ("CUP", "cup:{CUP}", "@id progetto / CUP", "opencup"),
         ("DESCRIZIONE_SINTETICA_CUP", "pi:oggetto_progettuale", "intervento", "opencup"),
         ("PIVA_CODFISCALE_SOG_TITOLARE", "pi:ha_soggetto_titolare → po:{CF}", "ente titolare", "opencup"),
-        ("CODICE_SETTORE_INTERVENTO / SETTORE_INTERVENTO", "pi:ha_settore_intervento → picv:settore-intervento/{cod}", "classificazione SKOS", "opencup"),
-        ("CODICE_TIPO_INTERVENTO / TIPOLOGIA_INTERVENTO", "pi:ha_tipologia_intervento → picv:tipologia-intervento/{cod}", "classificazione SKOS", "opencup"),
-        ("CODICE_SOTTOSETTORE_INTERVENTO / SOTTOSETTORE_INTERVENTO", "pi:ha_sottosettore_intervento → picv:sottosettore-intervento/{cod}", "classificazione SKOS", "opencup"),
-        ("CODICE_CATEGORIA_INTERVENTO / CATEGORIA_INTERVENTO", "pi:ha_categoria_intervento → picv:categoria-intervento/{cod}", "classificazione SKOS", "opencup"),
-        ("CODICE_AREA_INTERVENTO / AREA_INTERVENTO", "pi:ha_area_intervento → picv:area-intervento/{cod}", "classificazione SKOS", "opencup"),
+        ("CODICE_SETTORE_INTERVENTO / SETTORE_INTERVENTO", "pi:ha_settore_intervento → picv-settore:{area}_{cod}", "classificazione SKOS PCM-DIPE", "opencup"),
+        ("CODICE_SOTTOSETTORE_INTERVENTO / SOTTOSETTORE_INTERVENTO", "pi:ha_sottosettore_intervento → picv-sottosettore:{area}_{sett}_{cod}", "classificazione SKOS PCM-DIPE", "opencup"),
+        ("CODICE_CATEGORIA_INTERVENTO / CATEGORIA_INTERVENTO", "pi:ha_categoria_intervento → picv-categoria:{chiave_composita}", "classificazione SKOS PCM-DIPE", "opencup"),
+        ("CODICE_AREA_INTERVENTO / AREA_INTERVENTO", "pi:ha_area_intervento → picv-area:{cod}", "classificazione SKOS PCM-DIPE", "opencup"),
         ("CODICE_COPERTURA_FINANZIARIA / COPERTURA_FINANZIARIA", "pi:ha_tipologia_copertura_finanziaria → picv:copertura-finanziaria/{cod}", "classificazione SKOS", "opencup"),
         ("CODICE_STRUMENTO_PROGRAM / STRUMENTO_PROGRAMMAZIONE", "pi:ha_strumento_di_programmazione → picv:strumento-programmazione/{cod}", "classificazione SKOS", "opencup"),
         ("COSTO_PROGETTO", "pi:costo_del_progetto", "importo", "opencup"),
@@ -520,10 +573,10 @@ def build_mappings() -> dict:
         },
         {
             "id": "opencup_cv",
-            "label": "Vocabolari controllati OpenCUP",
-            "uri": "pi:ha_settore_intervento → picv:settore-intervento/{cod}",
+            "label": "Vocabolario classificazione intervento (PCM-DIPE)",
+            "uri": "pi:ha_settore_intervento → picv-settore:{area}_{cod}",
             "datasets": ["opencup"],
-            "note": "Settore, tipologia, area, copertura finanziaria e strumento di programmazione come concetti SKOS con URI stabile (stesso codice = stesso termine condiviso).",
+            "note": "Area, settore, sottosettore e categoria come concetti SKOS con URI composite dal vocabolario ufficiale classificazione_intervento.",
         },
     ]
     templates = [
@@ -598,41 +651,43 @@ def build_analytics(all_g: Graph) -> None:
     by_settore = sparql_select(all_g, """
         PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         SELECT ?label (COUNT(DISTINCT ?prj) AS ?n)
         WHERE {
             ?prj a pi:Progetto_di_investimento_pubblico ;
                  pi:ha_intervento_di_investimento_pubblico ?int .
             ?int pi:ha_settore_intervento ?cv .
-            ?cv skos:prefLabel ?label .
+            { ?cv skos:prefLabel ?label . } UNION { ?cv rdfs:label ?label . }
         }
         GROUP BY ?label
         ORDER BY DESC(?n)
         LIMIT 12
     """)
     write_json(out / "cups_by_settore.json", {
-        "title": "Progetti CUP per settore di intervento (SKOS)",
+        "title": "Progetti CUP per settore di intervento (SKOS PCM-DIPE)",
         "labels": [r["label"][:40] for r in by_settore],
         "series": [{"name": "Progetti", "data": [int(r["n"]) for r in by_settore]}],
     })
 
-    by_tipologia = sparql_select(all_g, """
+    by_categoria = sparql_select(all_g, """
         PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         SELECT ?label (COUNT(DISTINCT ?prj) AS ?n)
         WHERE {
             ?prj a pi:Progetto_di_investimento_pubblico ;
                  pi:ha_intervento_di_investimento_pubblico ?int .
-            ?int pi:ha_tipologia_intervento ?cv .
-            ?cv skos:prefLabel ?label .
+            ?int pi:ha_categoria_intervento ?cv .
+            { ?cv skos:prefLabel ?label . } UNION { ?cv rdfs:label ?label . }
         }
         GROUP BY ?label
         ORDER BY DESC(?n)
         LIMIT 12
     """)
-    write_json(out / "cups_by_tipologia.json", {
-        "title": "Progetti CUP per tipologia di intervento (SKOS)",
-        "labels": [r["label"][:40] for r in by_tipologia],
-        "series": [{"name": "Progetti", "data": [int(r["n"]) for r in by_tipologia]}],
+    write_json(out / "cups_by_categoria.json", {
+        "title": "Progetti CUP per categoria di intervento (SKOS PCM-DIPE)",
+        "labels": [r["label"][:40] for r in by_categoria],
+        "series": [{"name": "Progetti", "data": [int(r["n"]) for r in by_categoria]}],
     })
 
     counts = {
@@ -802,7 +857,7 @@ def find_hub_cup(g: Graph):
     return URIRef(rows[0]["cup"])
 
 
-def build_cup_union(all_g: Graph, cup) -> dict:
+def build_cup_union(all_g: Graph, cup, cv_g: Graph | None = None) -> dict:
     """Sottografo unione semantica per un singolo CUP (hub tra i 4 dataset)."""
     cup_code = short_id(str(cup)).replace("cup:", "")
     if (cup, RDF.type, PI + "Progetto_di_investimento_pubblico") not in all_g:
@@ -822,12 +877,17 @@ def build_cup_union(all_g: Graph, cup) -> dict:
     nodes_map: dict[str, dict] = {}
     edges: list[dict] = []
 
+    label_g = Graph()
+    label_g += all_g
+    if cv_g is not None:
+        label_g += cv_g
+
     def link(source, target, pred_label: str):
-        add_node(all_g, nodes_map, source)
-        add_node(all_g, nodes_map, target)
+        add_node(label_g, nodes_map, source)
+        add_node(label_g, nodes_map, target)
         edges.append({"source": str(source), "target": str(target), "label": pred_label})
 
-    add_node(all_g, nodes_map, cup)
+    add_node(label_g, nodes_map, cup)
     if call:
         link(cup, call, "PRJ:hasCall")
     if org_cf:
@@ -839,7 +899,7 @@ def build_cup_union(all_g: Graph, cup) -> dict:
     if intervento:
         link(cup, intervento, "pi:ha_intervento_di_investimento_pubblico")
         nodes_map[str(intervento)]["dataset"] = "opencup"
-    link_cv_terms(all_g, cup, link)
+    link_cv_terms(all_g, cup, link, cv_g)
 
     datasets_involved = sorted({
         n["dataset"] for n in nodes_map.values() if n["dataset"] != "shared"
@@ -867,20 +927,20 @@ def build_cup_union(all_g: Graph, cup) -> dict:
     )
 
 
-def build_unione_completa(all_g: Graph) -> dict:
+def build_unione_completa(all_g: Graph, cv_g: Graph | None = None) -> dict:
     """Sottografo demo: primo CUP campione con tutti e 4 i dataset collegati."""
     cup = find_hub_cup(all_g)
     if not cup:
         return empty_subgraph("unione_completa")
-    result = build_cup_union(all_g, cup)
+    result = build_cup_union(all_g, cup, cv_g)
     result["id"] = "unione_completa"
     return result
 
 
-def extract_subgraph(all_g: Graph, pattern_id: str) -> dict:
+def extract_subgraph(all_g: Graph, pattern_id: str, cv_g: Graph | None = None) -> dict:
     """Build small demo subgraphs for semantic union page."""
     if pattern_id == "unione_completa":
-        return build_unione_completa(all_g)
+        return build_unione_completa(all_g, cv_g)
 
     if pattern_id == "cup_hub":
         cup = next(all_g.subjects(RDF.type, PI + "Progetto_di_investimento_pubblico"), None)
@@ -1028,9 +1088,14 @@ def main() -> None:
 
     all_g = Graph()
     all_g.parse(TTL_DIR / "all.ttl", format="turtle")
+    cv_g = load_cv_graph()
+    merge_cv_graph(all_g, cv_g)
 
     opencup_g = Graph()
     opencup_g.parse(TTL_DIR / DATASETS["opencup"], format="turtle")
+    opencup_enriched = Graph()
+    opencup_enriched += opencup_g
+    merge_cv_graph(opencup_enriched, cv_g)
     sample_cup_uris = select_sample_cup_uris(opencup_g, all_g)
     sample_cup_codes = [short_id(str(c)).replace("cup:", "") for c in sample_cup_uris]
 
@@ -1041,7 +1106,7 @@ def main() -> None:
     })
 
     builders = {
-        "opencup": lambda g: build_opencup_sample_graph(g, sample_cup_uris),
+        "opencup": lambda g: build_opencup_sample_graph(g, sample_cup_uris, cv_g),
         "candidature": lambda g: build_candidature_sample_graph(g, sample_cup_uris),
         "cupcig": lambda g: build_cupcig_sample_graph(g, sample_cup_uris),
         "enti_ipa": lambda g: wrap_sample_graph(
@@ -1059,13 +1124,13 @@ def main() -> None:
         write_json(OUT_DIR / "graphs" / f"{name}.json", data)
 
     for pid in ("unione_completa", "cup_hub", "org_bridge", "cup_cig", "pnrr_avviso"):
-        write_json(OUT_DIR / "subgraphs" / f"{pid}.json", extract_subgraph(all_g, pid))
+        write_json(OUT_DIR / "subgraphs" / f"{pid}.json", extract_subgraph(all_g, pid, cv_g))
 
     by_cup_dir = OUT_DIR / "subgraphs" / "by_cup"
     by_cup_dir.mkdir(exist_ok=True)
     for cup in sample_cup_uris:
         code = short_id(str(cup)).replace("cup:", "")
-        write_json(by_cup_dir / f"{code}.json", build_cup_union(all_g, cup))
+        write_json(by_cup_dir / f"{code}.json", build_cup_union(all_g, cup, cv_g))
 
     for stale in by_cup_dir.glob("*.json"):
         if stale.stem not in sample_cup_codes:

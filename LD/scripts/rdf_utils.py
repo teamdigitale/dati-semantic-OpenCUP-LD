@@ -7,11 +7,10 @@ PI_DATA = "https://w3id.org/italia/PublicInvestment/data/CUP/"
 PI_CV = "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/"
 
 CV_PREFIXES = {
-    "settore-intervento": "picv-settore",
-    "tipologia-intervento": "picv-tipologia",
-    "sottosettore-intervento": "picv-sottosettore",
-    "categoria-intervento": "picv-categoria",
-    "area-intervento": "picv-area",
+    "classificazione_intervento/Area_di_intervento": "picv-area",
+    "classificazione_intervento/Settore_di_intervento": "picv-settore",
+    "classificazione_intervento/Sottosettore_di_intervento": "picv-sottosettore",
+    "classificazione_intervento/Categoria_di_intervento": "picv-categoria",
     "copertura-finanziaria": "picv-copertura",
     "strumento-programmazione": "picv-strumento",
 }

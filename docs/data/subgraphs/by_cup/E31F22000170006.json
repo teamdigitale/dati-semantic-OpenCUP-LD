@@ -115,58 +115,51 @@
       "dataset": "cupcig"
     },
     {
-      "id": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
-      "shortId": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
+      "id": "n0dea357e5890471ea80f8977ccbd69a5b2165",
+      "shortId": "n0dea357e5890471ea80f8977ccbd69a5b2165",
       "label": "PIATTAFORMA PAGOPA*TERRITORIO NAZIONALE*ATTIVAZIONE SERVIZI",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
     },
     {
       "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
-      "shortId": "picv:copertura-finanziaria/006",
+      "shortId": "picv-copertura:006",
       "label": "COMUNITARIA",
       "type": "skos:Concept",
       "dataset": "shared"
     },
     {
       "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
-      "shortId": "picv:strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
       "label": "ALTRO",
       "type": "skos:Concept",
       "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/settore-intervento/10",
-      "shortId": "picv:settore-intervento/10",
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "shortId": "picv-settore:6_10",
       "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
       "type": "skos:Concept",
       "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia-intervento/19",
-      "shortId": "picv:tipologia-intervento/19",
-      "label": "APPLICATIVI E PIATTAFORME WEB",
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "shortId": "picv-area:6",
+      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
       "type": "skos:Concept",
       "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/sottosettore-intervento/02",
-      "shortId": "picv:sottosettore-intervento/02",
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_2",
+      "shortId": "picv-sottosettore:6_10_2",
       "label": "SERVIZI E APPLICAZIONI INFORMATICHE PER I CITTADINI E LE IMP…",
       "type": "skos:Concept",
       "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/categoria-intervento/001",
-      "shortId": "picv:categoria-intervento/001",
-      "label": "INFORMAZIONE E COMUNICAZIONE PER ATTIVITA' ISTITUZIONALI E L…",
-      "type": "skos:Concept",
-      "dataset": "shared"
-    },
-    {
-      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/area-intervento/06",
-      "shortId": "picv:area-intervento/06",
-      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_2_1",
+      "shortId": "picv-categoria:6_10_2_1",
+      "label": "SERVIZI ED APPLICAZIONI PER IL PUBBLICO",
       "type": "skos:Concept",
       "dataset": "shared"
     }
@@ -214,7 +207,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31F22000170006",
-      "target": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
+      "target": "n0dea357e5890471ea80f8977ccbd69a5b2165",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -228,28 +221,38 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
-      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/settore-intervento/10",
+      "source": "n0dea357e5890471ea80f8977ccbd69a5b2165",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
     {
-      "source": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
-      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia-intervento/19",
-      "label": "pi:ha_tipologia_intervento"
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "label": "skos:broader"
     },
     {
-      "source": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
-      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/sottosettore-intervento/02",
+      "source": "n0dea357e5890471ea80f8977ccbd69a5b2165",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_2",
       "label": "pi:ha_sottosettore_intervento"
     },
     {
-      "source": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
-      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/categoria-intervento/001",
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_2",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n0dea357e5890471ea80f8977ccbd69a5b2165",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_2_1",
       "label": "pi:ha_categoria_intervento"
     },
     {
-      "source": "nc29c97dbbcfd42bbb5bd0bf6cc37a682b2165",
-      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/area-intervento/06",
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_2_1",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_2",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n0dea357e5890471ea80f8977ccbd69a5b2165",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     }
   ]
