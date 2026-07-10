@@ -283,10 +283,15 @@ function revealSeparatedLayout(cy: Core): void {
   fitSeparatedView(cy);
 }
 
+type FixedNodeConstraint = {
+  nodeId: string;
+  position: { x: number; y: number };
+};
+
 function runForceLayout(
   eles: Collection,
   randomize: boolean,
-  fixedNodeConstraint: { nodeId: string; x: number; y: number }[] = []
+  fixedNodeConstraint: FixedNodeConstraint[] = []
 ): Promise<void> {
   const nodeCount = eles.nodes().length;
   const scale = nodeCount > 20 ? 1.15 : 1;
@@ -323,15 +328,17 @@ async function layoutSeparatedQuadrants(cy: Core, cupCode: string): Promise<void
     const nodes = cy.nodes(`[dataset = "${dataset}"]`);
     if (nodes.length < 2) continue;
 
-    const fixedNodeConstraint: { nodeId: string; x: number; y: number }[] = [];
+    const fixedNodeConstraint: FixedNodeConstraint[] = [];
 
     const anchor = nodes.filter((n) => n.data("isMergeAnchor"));
     if (anchor.length > 0) {
       const a = anchor[0];
       fixedNodeConstraint.push({
         nodeId: a.id(),
-        x: a.data("separatedX") as number,
-        y: a.data("separatedY") as number,
+        position: {
+          x: a.data("separatedX") as number,
+          y: a.data("separatedY") as number,
+        },
       });
     }
 
@@ -339,16 +346,20 @@ async function layoutSeparatedQuadrants(cy: Core, cupCode: string): Promise<void
     if (cupNodes.length > 0 && !cupNodes[0].data("isMergeAnchor")) {
       fixedNodeConstraint.push({
         nodeId: cupNodes[0].id(),
-        x: cupNodes[0].data("separatedX") as number,
-        y: cupNodes[0].data("separatedY") as number,
+        position: {
+          x: cupNodes[0].data("separatedX") as number,
+          y: cupNodes[0].data("separatedY") as number,
+        },
       });
     }
 
     const subgraph = nodes.union(nodes.connectedEdges());
-    await runForceLayout(subgraph, false, fixedNodeConstraint);
+    const subgraphIds = new Set(subgraph.nodes().map((n) => n.id()));
+    const constraints = fixedNodeConstraint.filter((c) => subgraphIds.has(c.nodeId));
+    await runForceLayout(subgraph, false, constraints);
 
-    for (const c of fixedNodeConstraint) {
-      cy.getElementById(c.nodeId).position({ x: c.x, y: c.y });
+    for (const c of constraints) {
+      cy.getElementById(c.nodeId).position(c.position);
     }
   }
 }
@@ -758,12 +769,21 @@ export function MergeAnimationGraph({
 
     const layoutGen = ++layoutGenRef.current;
     separatedSnapshotRef.current.clear();
-    void layoutSeparatedQuadrants(cy, cupCode).then(() => {
-      if (layoutGen !== layoutGenRef.current || cy.destroyed()) return;
-      saveSeparatedSnapshot(cy, separatedSnapshotRef.current);
-      revealSeparatedLayout(cy);
-      setSeparatedLayoutReady(true);
-    });
+    void layoutSeparatedQuadrants(cy, cupCode)
+      .then(() => {
+        if (layoutGen !== layoutGenRef.current || cy.destroyed()) return;
+        saveSeparatedSnapshot(cy, separatedSnapshotRef.current);
+        revealSeparatedLayout(cy);
+      })
+      .catch(() => {
+        if (layoutGen !== layoutGenRef.current || cy.destroyed()) return;
+        applySeparatedSnapshot(cy, separatedSnapshotRef.current);
+        revealSeparatedLayout(cy);
+      })
+      .finally(() => {
+        if (layoutGen !== layoutGenRef.current || cy.destroyed()) return;
+        setSeparatedLayoutReady(true);
+      });
 
     return () => {
       animSignalRef.current.cancelled = true;

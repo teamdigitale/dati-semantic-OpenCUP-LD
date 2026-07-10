@@ -11,6 +11,42 @@ import {
 import { fetchJson } from "../api";
 import { ChartData, CountsData, ScopeData } from "../types";
 
+interface ChartPoint {
+  name: string;
+  fullLabel: string;
+  value: number;
+}
+
+function toChartPoint(label: string, value: number, maxAxisLen?: number): ChartPoint {
+  const name =
+    maxAxisLen != null && label.length > maxAxisLen
+      ? `${label.slice(0, maxAxisLen)}…`
+      : label;
+  return { name, fullLabel: label, value };
+}
+
+function AnalisiTooltip({
+  active,
+  payload,
+  valueFormatter,
+}: {
+  active?: boolean;
+  payload?: Array<{ payload: ChartPoint; value: number }>;
+  valueFormatter?: (value: number) => string;
+}) {
+  if (!active || !payload?.length) return null;
+  const row = payload[0].payload;
+  const value = payload[0].value;
+  return (
+    <div className="analisi-chart-tooltip">
+      <p className="analisi-chart-tooltip-label">{row.fullLabel}</p>
+      <p className="analisi-chart-tooltip-value">
+        {valueFormatter ? valueFormatter(value) : value.toLocaleString("it")}
+      </p>
+    </div>
+  );
+}
+
 export function Analisi() {
   const [byFunder, setByFunder] = useState<ChartData | null>(null);
   const [byCall, setByCall] = useState<ChartData | null>(null);
@@ -44,40 +80,34 @@ export function Analisi() {
   }, []);
 
   const funderChart =
-    byFunder?.labels.map((label, i) => ({
-      name: label.length > 28 ? label.slice(0, 28) + "…" : label,
-      value: byFunder.series[0]?.data[i] ?? 0,
-    })) ?? [];
+    byFunder?.labels.map((label, i) =>
+      toChartPoint(label, byFunder.series[0]?.data[i] ?? 0, 28)
+    ) ?? [];
 
   const callChart =
-    byCall?.labels.map((label, i) => ({
-      name: label.length > 32 ? label.slice(0, 32) + "…" : label,
-      value: byCall.series[0]?.data[i] ?? 0,
-    })) ?? [];
+    byCall?.labels.map((label, i) =>
+      toChartPoint(label, byCall.series[0]?.data[i] ?? 0, 32)
+    ) ?? [];
 
   const cupCigChart =
-    byCupCig?.labels.map((label, i) => ({
-      name: label,
-      value: byCupCig.series[0]?.data[i] ?? 0,
-    })) ?? [];
+    byCupCig?.labels.map((label, i) =>
+      toChartPoint(label, byCupCig.series[0]?.data[i] ?? 0)
+    ) ?? [];
 
   const cupCigDistChart =
-    cupCigDist?.labels.map((label, i) => ({
-      name: label,
-      value: cupCigDist.series[0]?.data[i] ?? 0,
-    })) ?? [];
+    cupCigDist?.labels.map((label, i) =>
+      toChartPoint(label, cupCigDist.series[0]?.data[i] ?? 0)
+    ) ?? [];
 
   const settoreChart =
-    bySettore?.labels.map((label, i) => ({
-      name: label.length > 32 ? label.slice(0, 32) + "…" : label,
-      value: bySettore.series[0]?.data[i] ?? 0,
-    })) ?? [];
+    bySettore?.labels.map((label, i) =>
+      toChartPoint(label, bySettore.series[0]?.data[i] ?? 0, 32)
+    ) ?? [];
 
   const categoriaChart =
-    byCategoria?.labels.map((label, i) => ({
-      name: label.length > 32 ? label.slice(0, 32) + "…" : label,
-      value: byCategoria.series[0]?.data[i] ?? 0,
-    })) ?? [];
+    byCategoria?.labels.map((label, i) =>
+      toChartPoint(label, byCategoria.series[0]?.data[i] ?? 0, 32)
+    ) ?? [];
 
   return (
     <div>
@@ -156,7 +186,7 @@ export function Analisi() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" allowDecimals={false} />
             <YAxis type="category" dataKey="name" width={180} tick={{ fontSize: 10 }} />
-            <Tooltip />
+            <Tooltip content={<AnalisiTooltip />} />
             <Bar dataKey="value" fill="#94a3b8" />
           </BarChart>
         </ResponsiveContainer>
@@ -169,7 +199,7 @@ export function Analisi() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" allowDecimals={false} />
             <YAxis type="category" dataKey="name" width={180} tick={{ fontSize: 10 }} />
-            <Tooltip />
+            <Tooltip content={<AnalisiTooltip />} />
             <Bar dataKey="value" fill="#64748b" />
           </BarChart>
         </ResponsiveContainer>
@@ -182,7 +212,7 @@ export function Analisi() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" tick={{ fontSize: 11 }} />
             <YAxis allowDecimals={false} />
-            <Tooltip />
+            <Tooltip content={<AnalisiTooltip />} />
             <Bar dataKey="value" fill="#d97706" />
           </BarChart>
         </ResponsiveContainer>
@@ -195,7 +225,7 @@ export function Analisi() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" allowDecimals={false} />
             <YAxis type="category" dataKey="name" width={120} tick={{ fontSize: 10 }} />
-            <Tooltip />
+            <Tooltip content={<AnalisiTooltip />} />
             <Bar dataKey="value" fill="#d97706" />
           </BarChart>
         </ResponsiveContainer>
@@ -208,7 +238,11 @@ export function Analisi() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k €`} />
             <YAxis type="category" dataKey="name" width={160} tick={{ fontSize: 11 }} />
-            <Tooltip formatter={(v: number) => `${v.toLocaleString("it")} €`} />
+            <Tooltip
+              content={
+                <AnalisiTooltip valueFormatter={(v) => `${v.toLocaleString("it")} €`} />
+              }
+            />
             <Bar dataKey="value" fill="#2563eb" />
           </BarChart>
         </ResponsiveContainer>
@@ -221,7 +255,11 @@ export function Analisi() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" angle={-35} textAnchor="end" interval={0} tick={{ fontSize: 10 }} />
             <YAxis tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
-            <Tooltip formatter={(v: number) => `${v.toLocaleString("it")} €`} />
+            <Tooltip
+              content={
+                <AnalisiTooltip valueFormatter={(v) => `${v.toLocaleString("it")} €`} />
+              }
+            />
             <Bar dataKey="value" fill="#059669" />
           </BarChart>
         </ResponsiveContainer>

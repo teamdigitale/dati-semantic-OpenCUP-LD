@@ -45,7 +45,7 @@ export function UnioneAnimazione() {
 
   return (
     <div>
-      <h1>Unione animata <span className="badge-demo">prova</span></h1>
+      <h1>Unione animata</h1>
       <p className="lead">
         Vista sperimentale: i quattro grafi del campione per un CUP sono mostrati
         separati nei quadranti. Premi <strong>Unisci grafi</strong> per animare i

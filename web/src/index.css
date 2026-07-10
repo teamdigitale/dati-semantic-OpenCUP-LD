@@ -310,6 +310,31 @@ h2 {
   margin-top: 0;
 }
 
+.analisi-chart-tooltip {
+  max-width: min(420px, 90vw);
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.analisi-chart-tooltip-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #0f172a;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.analisi-chart-tooltip-value {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
 code {
   background: #f1f5f9;
   padding: 0.15rem 0.35rem;
@@ -555,20 +580,6 @@ a.resource-link code {
   box-shadow: 0 0 0 3px #f87171;
   margin-top: 0.2rem;
   vertical-align: middle;
-}
-
-.badge-demo {
-  display: inline-block;
-  font-size: 0.55em;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  vertical-align: middle;
-  margin-left: 0.35rem;
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
-  background: #fef3c7;
-  color: #92400e;
 }
 
 .merge-animation-wrap {
