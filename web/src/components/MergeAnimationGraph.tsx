@@ -12,9 +12,11 @@ import {
   hubRadialPositions,
   joinNodeIdsFromEdges,
   makeCyNodeId,
-  quadrantLayoutPositions,
+  pickMergeAnchorId,
+  quadrantSeparatedPositions,
   resolveMergeTargetId,
 } from "../utils/graphCup";
+import { cupCodeToUri } from "../utils/uri";
 import { graphNodeDisplayLabel } from "../utils/graphLabels";
 import {
   EDGE_LABEL_VISIBLE,
@@ -239,19 +241,53 @@ function idealEdgeLength(edge: EdgeSingular): number {
   return 72 + labelRoom;
 }
 
-function syncSeparatedPositions(cy: Core): void {
+function saveSeparatedSnapshot(
+  cy: Core,
+  snapshot: Map<string, { x: number; y: number }>
+): void {
+  snapshot.clear();
   cy.nodes().forEach((node) => {
     const p = node.position();
-    node.data("separatedX", p.x);
-    node.data("separatedY", p.y);
+    snapshot.set(node.id(), { x: p.x, y: p.y });
   });
+}
+
+function applySeparatedSnapshot(
+  cy: Core,
+  snapshot: Map<string, { x: number; y: number }>
+): void {
+  cy.nodes().forEach((node) => {
+    const target = separatedTargetFor(node, snapshot);
+    if (target) node.position(target);
+  });
+}
+
+function separatedTargetFor(
+  node: cytoscape.NodeSingular,
+  snapshot: Map<string, { x: number; y: number }>
+): { x: number; y: number } | null {
+  const fromSnapshot = snapshot.get(node.id());
+  if (fromSnapshot) return fromSnapshot;
+  const x = node.data("separatedX") as number;
+  const y = node.data("separatedY") as number;
+  if (typeof x === "number" && typeof y === "number") return { x, y };
+  return null;
 }
 
 function fitSeparatedView(cy: Core): void {
   cy.fit(undefined, MERGE_SEPARATED_FIT_PADDING);
 }
 
-function runForceLayout(eles: Collection, randomize: boolean): Promise<void> {
+function revealSeparatedLayout(cy: Core): void {
+  cy.resize();
+  fitSeparatedView(cy);
+}
+
+function runForceLayout(
+  eles: Collection,
+  randomize: boolean,
+  fixedNodeConstraint: { nodeId: string; x: number; y: number }[] = []
+): Promise<void> {
   const nodeCount = eles.nodes().length;
   const scale = nodeCount > 20 ? 1.15 : 1;
 
@@ -274,10 +310,47 @@ function runForceLayout(eles: Collection, randomize: boolean): Promise<void> {
       numIter: nodeCount > 30 ? 3500 : 2800,
       padding: 48,
       tile: false,
+      fixedNodeConstraint,
     } as LayoutOptions);
     layout.on("layoutstop", () => resolve());
     layout.run();
   });
+}
+
+async function layoutSeparatedQuadrants(cy: Core, cupCode: string): Promise<void> {
+  const cupUri = cupCodeToUri(cupCode);
+  for (const dataset of MERGE_DATASETS) {
+    const nodes = cy.nodes(`[dataset = "${dataset}"]`);
+    if (nodes.length < 2) continue;
+
+    const fixedNodeConstraint: { nodeId: string; x: number; y: number }[] = [];
+
+    const anchor = nodes.filter((n) => n.data("isMergeAnchor"));
+    if (anchor.length > 0) {
+      const a = anchor[0];
+      fixedNodeConstraint.push({
+        nodeId: a.id(),
+        x: a.data("separatedX") as number,
+        y: a.data("separatedY") as number,
+      });
+    }
+
+    const cupNodes = nodes.filter((n) => n.data("logicalId") === cupUri);
+    if (cupNodes.length > 0 && !cupNodes[0].data("isMergeAnchor")) {
+      fixedNodeConstraint.push({
+        nodeId: cupNodes[0].id(),
+        x: cupNodes[0].data("separatedX") as number,
+        y: cupNodes[0].data("separatedY") as number,
+      });
+    }
+
+    const subgraph = nodes.union(nodes.connectedEdges());
+    await runForceLayout(subgraph, false, fixedNodeConstraint);
+
+    for (const c of fixedNodeConstraint) {
+      cy.getElementById(c.nodeId).position({ x: c.x, y: c.y });
+    }
+  }
 }
 
 function layoutMergedGraph(cy: Core): Promise<void> {
@@ -301,7 +374,10 @@ export function MergeAnimationGraph({
   const phaseRef = useRef<Phase>("separated");
   const animSignalRef = useRef({ cancelled: false });
   const mergedLayoutRef = useRef<{ nodes: GraphNode[]; edges: GraphEdge[] } | null>(null);
+  const separatedSnapshotRef = useRef<Map<string, { x: number; y: number }>>(new Map());
+  const layoutGenRef = useRef(0);
   const [phase, setPhase] = useState<Phase>("separated");
+  const [separatedLayoutReady, setSeparatedLayoutReady] = useState(false);
 
   const setPhaseSafe = (next: Phase) => {
     phaseRef.current = next;
@@ -321,6 +397,7 @@ export function MergeAnimationGraph({
     const cy = cyRef.current;
     if (!cy || phaseRef.current === "merging") return;
 
+    layoutGenRef.current += 1;
     animSignalRef.current.cancelled = true;
     animSignalRef.current = { cancelled: false };
     const signal = animSignalRef.current;
@@ -341,23 +418,30 @@ export function MergeAnimationGraph({
       },
       1100,
       signal
-    ).then(() => {
-      if (signal.cancelled) return;
-      applyMergedView(cy);
-      return layoutMergedGraph(cy);
-    }).then(() => {
-      if (signal.cancelled) return;
-      setPhaseSafe("merged");
-    });
+    )
+      .then(() => {
+        if (signal.cancelled) return;
+        applyMergedView(cy);
+        return layoutMergedGraph(cy);
+      })
+      .then(() => {
+        if (signal.cancelled) return;
+        setPhaseSafe("merged");
+      })
+      .catch(() => {
+        if (!signal.cancelled) setPhaseSafe("merged");
+      });
   }, [merged]);
 
   const runSeparateAnimation = useCallback(() => {
     const cy = cyRef.current;
     if (!cy || phaseRef.current === "merging") return;
 
+    layoutGenRef.current += 1;
     animSignalRef.current.cancelled = true;
     animSignalRef.current = { cancelled: false };
     const signal = animSignalRef.current;
+    const snapshot = separatedSnapshotRef.current;
 
     setPhaseSafe("merging");
     cy.nodes().removeClass("dup-hidden");
@@ -365,41 +449,76 @@ export function MergeAnimationGraph({
 
     void animateNodes(
       cy.nodes().toArray(),
-      (node) => {
-        const x = node.data("separatedX") as number;
-        const y = node.data("separatedY") as number;
-        if (typeof x !== "number" || typeof y !== "number") return null;
-        return { x, y };
-      },
+      (node) => separatedTargetFor(node, snapshot),
       1100,
       signal
-    ).then(() => {
-      if (signal.cancelled) return;
-      fitSeparatedView(cy);
-      setPhaseSafe("separated");
-    });
+    )
+      .then(() => {
+        if (signal.cancelled) return;
+        applySeparatedSnapshot(cy, snapshot);
+        applySeparatedView(cy);
+        revealSeparatedLayout(cy);
+      })
+      .finally(() => {
+        if (!signal.cancelled) setPhaseSafe("separated");
+      });
   }, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
+    setSeparatedLayoutReady(false);
     animSignalRef.current.cancelled = true;
     animSignalRef.current = { cancelled: false };
 
     const nodeElements: cytoscape.ElementDefinition[] = [];
     const edgeElements: cytoscape.ElementDefinition[] = [];
     const mergeTargetCounts = new Map<string, number>();
+    const slices = new Map<
+      string,
+      { nodes: GraphNode[]; edges: GraphEdge[] }
+    >();
 
     for (const dataset of MERGE_DATASETS) {
       const graph = graphs[dataset];
       if (!graph) continue;
       const slice = extractDatasetCupSlice(graph, merged, cupCode);
+      slices.set(dataset, slice);
+      for (const n of slice.nodes) {
+        const mergeTargetId = resolveMergeTargetId(
+          n,
+          dataset,
+          merged,
+          cupCode,
+          slice.edges
+        );
+        mergeTargetCounts.set(
+          mergeTargetId,
+          (mergeTargetCounts.get(mergeTargetId) ?? 0) + 1
+        );
+      }
+    }
+
+    for (const dataset of MERGE_DATASETS) {
+      const slice = slices.get(dataset);
+      if (!slice) continue;
       const offset = MERGE_QUADRANTS[dataset];
-      const localPos = quadrantLayoutPositions(
+      const anchorId = pickMergeAnchorId(
+        slice.nodes,
+        slice.edges,
+        dataset,
+        merged,
+        cupCode,
+        joinNodeIds,
+        mergeTargetCounts
+      );
+      const localPos = quadrantSeparatedPositions(
         slice.nodes,
         slice.edges,
         offset.x,
-        offset.y
+        offset.y,
+        cupCode,
+        anchorId
       );
 
       for (const n of slice.nodes) {
@@ -417,6 +536,7 @@ export function MergeAnimationGraph({
         const position = { x: p.x, y: p.y };
         const canonicalDataset = canonicalDatasetFor(merged, mergeTargetId);
         const { accent, fill } = nodeColors(dataset, n.type);
+        const isMergeAnchor = n.id === anchorId;
 
         nodeElements.push({
           data: {
@@ -433,7 +553,10 @@ export function MergeAnimationGraph({
             fillColor: fill,
             isCompact: COMPACT_NODE_TYPES.has(n.type),
             isJoinNode:
-              joinNodeIds.has(n.id) || joinNodeIds.has(mergeTargetId),
+              isMergeAnchor ||
+              joinNodeIds.has(n.id) ||
+              joinNodeIds.has(mergeTargetId),
+            isMergeAnchor,
             isDuplicate: false,
           },
           position,
@@ -631,9 +754,16 @@ export function MergeAnimationGraph({
     });
 
     applySeparatedView(cy);
-    syncSeparatedPositions(cy);
-    fitSeparatedView(cy);
     cyRef.current = cy;
+
+    const layoutGen = ++layoutGenRef.current;
+    separatedSnapshotRef.current.clear();
+    void layoutSeparatedQuadrants(cy, cupCode).then(() => {
+      if (layoutGen !== layoutGenRef.current || cy.destroyed()) return;
+      saveSeparatedSnapshot(cy, separatedSnapshotRef.current);
+      revealSeparatedLayout(cy);
+      setSeparatedLayoutReady(true);
+    });
 
     return () => {
       animSignalRef.current.cancelled = true;
@@ -660,7 +790,7 @@ export function MergeAnimationGraph({
         <button
           type="button"
           className="graph-toolbar-btn"
-          disabled={phase === "merging" || phase === "merged"}
+          disabled={!separatedLayoutReady || phase === "merging" || phase === "merged"}
           onClick={runMergeAnimation}
         >
           Unisci grafi
@@ -668,7 +798,7 @@ export function MergeAnimationGraph({
         <button
           type="button"
           className="graph-toolbar-btn"
-          disabled={phase === "merging" || phase === "separated"}
+          disabled={!separatedLayoutReady || phase === "merging" || phase === "separated"}
           onClick={runSeparateAnimation}
         >
           Separa grafi
@@ -690,14 +820,23 @@ export function MergeAnimationGraph({
           Inquadra tutto
         </button>
         <span className="merge-phase-label">
-          {phase === "separated" && "Vista separata — quattro dataset nei rispettivi quadranti"}
+          {phase === "separated" &&
+            "Vista separata — nodo di fusione al centro di ogni riquadro, CUP verso il centro"}
           {phase === "merging" && "Animazione in corso…"}
           {phase === "merged" &&
             "Vista unita — un nodo per URI, join rossi, duplicati nascosti"}
         </span>
       </div>
 
-      <div className="merge-canvas-shell" style={{ height }}>
+      <div
+        className={`merge-canvas-shell${separatedLayoutReady ? "" : " merge-canvas-shell--layouting"}`}
+        style={{ height }}
+      >
+        {!separatedLayoutReady && (
+          <p className="merge-canvas-layout-status" aria-live="polite">
+            Layout grafi in corso…
+          </p>
+        )}
         <div
           className={`merge-quadrant-labels${phase === "merged" ? " merge-quadrant-labels--hidden" : ""}`}
           aria-hidden

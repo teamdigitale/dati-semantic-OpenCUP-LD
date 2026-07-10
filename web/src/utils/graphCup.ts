@@ -167,6 +167,144 @@ export function canonicalCyNodeId(
   return visible[0]?.id;
 }
 
+/** Quanto il CUP è tirato verso il centro globale (0,0) nel riquadro separato. */
+export const MERGE_CUP_CENTER_PULL = 0.42;
+
+/** Scala layout locale nei quadranti separati. */
+export const MERGE_SEPARATED_LAYOUT_SCALE = 0.78;
+
+/** Punto lungo la direzione quadrante → centro globale (0,0). */
+export function towardGlobalCenter(
+  cx: number,
+  cy: number,
+  factor = MERGE_CUP_CENTER_PULL
+): { x: number; y: number } {
+  return { x: cx * (1 - factor), y: cy * (1 - factor) };
+}
+
+const MERGE_TYPE_SCORE: Record<string, number> = {
+  "pi:Progetto_di_investimento_pubblico": 80,
+  "COV:PublicOrganization": 60,
+  "PCTR:Lot": 50,
+  "PRJ:Call": 40,
+  "skos:Concept": 10,
+};
+
+/**
+ * Nodo da evidenziare al centro del riquadro: quello che si fonderà con altri dataset.
+ * Se più candidati, sceglie il più importante (CUP > join > URI condiviso > grado).
+ */
+export function pickMergeAnchorId(
+  nodes: GraphNode[],
+  edges: GraphEdge[],
+  dataset: string,
+  merged: SubgraphData,
+  cupCode: string,
+  joinNodeIds: Set<string>,
+  mergeTargetCounts: Map<string, number>
+): string | undefined {
+  if (nodes.length === 0) return undefined;
+  const cupUri = cupCodeToUri(cupCode);
+
+  let bestId: string | undefined;
+  let bestScore = -1;
+
+  for (const n of nodes) {
+    const mergeTargetId = resolveMergeTargetId(
+      n,
+      dataset,
+      merged,
+      cupCode,
+      edges
+    );
+    let score = 0;
+    if (n.id === cupUri) score += 1000;
+    if (joinNodeIds.has(n.id) || joinNodeIds.has(mergeTargetId)) score += 500;
+    if ((mergeTargetCounts.get(mergeTargetId) ?? 0) > 1) score += 300;
+    score += MERGE_TYPE_SCORE[n.type] ?? 0;
+    const degree = edges.filter(
+      (e) => e.source === n.id || e.target === n.id
+    ).length;
+    score += degree * 8;
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestId = n.id;
+    }
+  }
+  return bestId;
+}
+
+/**
+ * Posizioni iniziali per vista separata: ancoraggio merge al centro riquadro,
+ * CUP verso il centro globale, resto su layout radiale (poi fcose).
+ */
+export function quadrantSeparatedPositions(
+  nodes: GraphNode[],
+  edges: GraphEdge[],
+  cx: number,
+  cy: number,
+  cupCode: string,
+  anchorId: string | undefined
+): Map<string, { x: number; y: number }> {
+  const pos = new Map<string, { x: number; y: number }>();
+  if (nodes.length === 0) return pos;
+
+  const hubId = anchorId ?? nodes[0].id;
+  const cupUri = cupCodeToUri(cupCode);
+  const cupNode = nodes.find((n) => n.id === cupUri);
+
+  if (cupNode && cupUri === hubId) {
+    pos.set(hubId, towardGlobalCenter(cx, cy, 0.32));
+  } else {
+    pos.set(hubId, { x: cx, y: cy });
+    if (cupNode) {
+      pos.set(cupUri, towardGlobalCenter(cx, cy));
+    }
+  }
+
+  const radial = hubRadialPositions(
+    nodes,
+    edges,
+    cx,
+    cy,
+    MERGE_SEPARATED_LAYOUT_SCALE,
+    hubId
+  );
+  for (const n of nodes) {
+    if (!pos.has(n.id)) {
+      pos.set(n.id, radial.get(n.id) ?? { x: cx, y: cy });
+    }
+  }
+
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minY = Infinity;
+  let maxY = -Infinity;
+  for (const p of pos.values()) {
+    minX = Math.min(minX, p.x);
+    maxX = Math.max(maxX, p.x);
+    minY = Math.min(minY, p.y);
+    maxY = Math.max(maxY, p.y);
+  }
+  const w = Math.max(maxX - minX, 1);
+  const h = Math.max(maxY - minY, 1);
+  const maxSpan =
+    nodes.length > 8 ? MERGE_SEPARATED_MAX_SPAN + 50 : MERGE_SEPARATED_MAX_SPAN;
+  const fit = Math.min(1.15, maxSpan / Math.max(w, h));
+  if (fit < 1) {
+    const anchorPos = pos.get(hubId) ?? { x: cx, y: cy };
+    for (const [id, p] of pos) {
+      pos.set(id, {
+        x: anchorPos.x + (p.x - anchorPos.x) * fit,
+        y: anchorPos.y + (p.y - anchorPos.y) * fit,
+      });
+    }
+  }
+
+  return pos;
+}
+
 /** Layout compatto per un singolo quadrante (bounding box ~520×320). */
 export function quadrantLayoutPositions(
   nodes: GraphNode[],
@@ -214,7 +352,8 @@ export function hubRadialPositions(
   edges: GraphEdge[],
   cx = 0,
   cy = 0,
-  scale = 1
+  scale = 1,
+  explicitHubId?: string
 ): Map<string, { x: number; y: number }> {
   const pos = new Map<string, { x: number; y: number }>();
   if (nodes.length === 0) return pos;
@@ -227,11 +366,14 @@ export function hubRadialPositions(
   }
 
   const cup = nodes.find((n) => n.type === "pi:Progetto_di_investimento_pubblico");
-  const hubId = cup?.id ?? nodes.sort((a, b) => {
-    const deg = (id: string) =>
-      edges.filter((e) => e.source === id || e.target === id).length;
-    return deg(b.id) - deg(a.id);
-  })[0]?.id;
+  const hubId =
+    explicitHubId ??
+    cup?.id ??
+    nodes.sort((a, b) => {
+      const deg = (id: string) =>
+        edges.filter((e) => e.source === id || e.target === id).length;
+      return deg(b.id) - deg(a.id);
+    })[0]?.id;
   if (!hubId) return pos;
 
   pos.set(hubId, { x: cx, y: cy });
@@ -283,9 +425,6 @@ export const MERGE_QUADRANTS: Record<
   cupcig: { x: -720, y: 420 },
   enti_ipa: { x: 720, y: 420 },
 };
-
-/** Scala layout locale nei quadranti separati. */
-export const MERGE_SEPARATED_LAYOUT_SCALE = 0.78;
 
 /** Dimensione massima (px) di un mini-grafo nel quadrante prima del fcose. */
 export const MERGE_SEPARATED_MAX_SPAN = 300;

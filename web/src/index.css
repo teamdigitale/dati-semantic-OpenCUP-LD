@@ -610,6 +610,23 @@ a.resource-link code {
   opacity: 0.45;
 }
 
+.merge-canvas-shell--layouting .merge-canvas,
+.merge-canvas-shell--layouting .merge-quadrant-labels {
+  visibility: hidden;
+}
+
+.merge-canvas-layout-status {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
 .merge-canvas {
   position: relative;
   z-index: 0;
