@@ -11,6 +11,8 @@ CV_PREFIXES = {
     "classificazione_intervento/Settore_di_intervento": "picv-settore",
     "classificazione_intervento/Sottosettore_di_intervento": "picv-sottosettore",
     "classificazione_intervento/Categoria_di_intervento": "picv-categoria",
+    "natura_intervento": "picv-natura",
+    "tipologia_intervento": "picv-tipologia",
     "copertura-finanziaria": "picv-copertura",
     "strumento-programmazione": "picv-strumento",
 }

@@ -1,166 +1,245 @@
-@prefix :  <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/> .
-@prefix adms: <https://w3id.org/italia/onto/ADMS/> .
-@prefix admsapit: <https://w3id.org/italia/onto/ADMS/> .
-@prefix CLV:  <https://w3id.org/italia/onto/CLV/> .
-@prefix COV:  <https://w3id.org/italia/onto/COV/> .
-@prefix CPV:  <https://w3id.org/italia/onto/CPV/> .
+@prefix : <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/> .
+@prefix RO: <https://w3id.org/italia/onto/RO/> .
+@prefix SM: <https://w3id.org/italia/onto/SM/> .
+@prefix TI: <https://w3id.org/italia/onto/TI/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix L0:  <https://w3id.org/italia/onto/l0/> .
 @prefix l0: <https://w3id.org/italia/onto/l0/> .
-@prefix ocup:  <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix RO:  <https://w3id.org/italia/onto/RO/> .
-@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
-@prefix SM:  <https://w3id.org/italia/onto/SM/> .
-@prefix swrl:  <http://www.w3.org/2003/11/swrl#> .
-@prefix TI:  <https://w3id.org/italia/onto/TI/> .
-@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix CLV: <https://w3id.org/italia/onto/CLV/> .
+@prefix COV: <https://w3id.org/italia/onto/COV/> .
+@prefix CPV: <https://w3id.org/italia/onto/CPV/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ocup: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix xml:  <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix admsapit: <https://w3id.org/italia/onto/ADMS/> .
+@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
+@base <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/> .
+
+<https://w3id.org/italia/PublicInvestment/onto/PublicInvestment> rdf:type owl:Ontology ;
+                                                                  owl:versionIRI <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/1.0> ;
+                                                                  dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/PublicInvestment/latest/public-investment-full.png> ;
+                                                                  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
+                                                                  dct:creator <https://w3id.org/italia/data/public-organization/ISTAT> ,
+                                                                              <https://w3id.org/italia/data/public-organization/PCM-DIPE> ;
+                                                                  dct:description "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata con le ontologie CORE della rete semantica del Catalogo Nazionale dei dati (schema.gov.it)."@it ,
+                                                                                  "This ontology results from the semantic analysis of the Unique Project Code (CUP) and the information assets of the OpenCUP portal. It has been developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with semantic stewardship by ISTAT and in coordination with the Department for Digital Transformation (DTD), within Commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the CORE ontologies of the National Data Catalogue semantic network (schema.gov.it)."@en ;
+                                                                  dct:identifier "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment" ;
+                                                                  dct:issued "2026-07-13"^^xsd:date ;
+                                                                  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ,
+                                                                               <http://publications.europa.eu/resource/authority/language/ITA> ;
+                                                                  dct:modified "2026-07-13"^^xsd:date ;
+                                                                  dct:publisher <https://w3id.org/italia/data/public-organization/PCM-DIPE> ;
+                                                                  dct:rightsHolder <https://w3id.org/italia/data/public-organization/PCM-DIPE> ;
+                                                                  dct:subject <http://publications.europa.eu/resource/authority/data-theme/ECON> ,
+                                                                              <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
+                                                                  dct:temporal "Dal 2026" ;
+                                                                  dct:title "Ontologia degli Investimenti Pubblici"@it ,
+                                                                            "Public Investment Ontology"@en ;
+                                                                  rdfs:comment "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata con le ontologie CORE della rete semantica del Catalogo Nazionale dei dati (schema.gov.it)."@it ,
+                                                                               "This ontology results from the semantic analysis of the Unique Project Code (CUP) and the information assets of the OpenCUP portal. It has been developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with semantic stewardship by ISTAT and in coordination with the Department for Digital Transformation (DTD), within Commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the CORE ontologies of the National Data Catalogue semantic network (schema.gov.it)."@en ;
+                                                                  rdfs:label "Ontologia degli Investimenti Pubblici"@it ,
+                                                                             "Public Investment Ontology."@en ;
+                                                                  owl:versionInfo "Version 1.0"@en ,
+                                                                                  "Versione 1.0"@it ;
+                                                                  dcat:contactPoint <https://w3id.org/italia/data/contact-point/PCM-DIPE> ;
+                                                                  dcat:keyword "Investimenti Pubblici"@it ,
+                                                                               "OpenCUP"@en ,
+                                                                               "OpenCUP"@it ,
+                                                                               "Public Investment"@en ;
+                                                                  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON> ,
+                                                                             <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
+                                                                  admsapit:acronym "PI" ;
+                                                                  admsapit:hasContributor <https://w3id.org/italia/data/public-organization/ISTAT> ;
+                                                                  admsapit:hasFormalityLevel admsapit:Formal ;
+                                                                  admsapit:hasKeyClass ocup:Codice_unico_di_progetto ,
+                                                                                       ocup:Intervento_di_investimento_pubblico ;
+                                                                  admsapit:hasOntologyLanguage admsapit:OWL ;
+                                                                  admsapit:hasSemanticAssetDistribution <https://w3id.org/italia/data/distribution/PI-JSON-LD> ,
+                                                                                                        <https://w3id.org/italia/data/distribution/PI-RDF-TURTLE> ,
+                                                                                                        <https://w3id.org/italia/data/distribution/PI-RDF-XML> ;
+                                                                  admsapit:hasTask admsapit:AnnotationTask ,
+                                                                                   admsapit:QueryFormulationTask ,
+                                                                                   admsapit:SearchTask ;
+                                                                  admsapit:last <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/1.0> ;
+                                                                  admsapit:officialURI "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment"^^xsd:anyURI ;
+                                                                  admsapit:prefix "pi" ;
+                                                                  admsapit:semanticAssetInUse <https://w3id.org/italia/data/project/NDC> ;
+                                                                  admsapit:status "catalogued" ,
+                                                                                  "published" ;
+                                                                  admsapit:target "Pubbliche Amministrazioni" ;
+                                                                  admsapit:type admsapit:DomainOntology .
 
 #################################################################
-# inizio metadati
+#    Annotation properties
 #################################################################
 
-<https://w3id.org/italia/PublicInvestment/onto/PublicInvestment> rdf:type owl:Ontology ;				
-				owl:versionIRI <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/1.0> ;
-				owl:versionInfo "Versione 1.0"@it , 
-								"Version 1.0"@en ;								
-                dc:description <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment-full.png> ;			
-				dct:identifier "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment" ;
-				dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
-				dct:language <http://publications.europa.eu/resource/authority/language/ITA> , <http://publications.europa.eu/resource/authority/language/ENG> ;
-				dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON> , <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
-				dct:creator <https://w3id.org/italia/data/public-organization/PCM-DIPE> , <https://w3id.org/italia/data/public-organization/ISTAT> ; 
-				dct:publisher <https://w3id.org/italia/data/public-organization/PCM-DIPE> ;
-				dct:rightsHolder <https://w3id.org/italia/data/public-organization/PCM-DIPE>; 
-				dct:issued "2026-07-09"^^xsd:date ;
-				dct:modified "2026-07-09"^^xsd:date ;
-				dct:temporal "Dal 2026" ;
-				dct:subject <http://publications.europa.eu/resource/authority/data-theme/ECON> , <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
-				dct:title "Public Investment Ontology"@en , 
-						  "Ontologia degli Investimenti Pubblici"@it ;		  
-				dct:description "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata con le ontologie CORE della rete semantica del Catalogo Nazionale dei dati (schema.gov.it)."@it , 
-								"This ontology results from the semantic analysis of the Unique Project Code (CUP) and the information assets of the OpenCUP portal. It has been developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with semantic stewardship by ISTAT and in coordination with the Department for Digital Transformation (DTD), within Commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the CORE ontologies of the National Data Catalogue semantic network (schema.gov.it)."@en ;                                   
-				rdfs:comment "L’ontologia è il prodotto dell'analisi semantica del Codice Unico di Progetto (CUP) e del patrimonio informativo del portale OpenCUP. È sviluppata dal Dipartimento per la programmazione e il coordinamento della politica economica (DIPE) della Presidenza del Consiglio dei Ministri, con la semantic stewardship dell'ISTAT e in coordinamento con il Dipartimento per la Trasformazione Digitale (DTD), nell'ambito dell'Impegno C6 del 6° Piano d'Azione Nazionale per il Governo Aperto (OGP) 2024–2026. È allineata con le ontologie CORE della rete semantica del Catalogo Nazionale dei dati (schema.gov.it)."@it ,
-						     "This ontology results from the semantic analysis of the Unique Project Code (CUP) and the information assets of the OpenCUP portal. It has been developed by the Department for Programming and Coordination of Economic Policy (DIPE) of the Presidency of the Council of Ministers, with semantic stewardship by ISTAT and in coordination with the Department for Digital Transformation (DTD), within Commitment C6 of the 6th National Action Plan for the Open Government Partnership (OGP) 2024–2026. It is aligned with the CORE ontologies of the National Data Catalogue semantic network (schema.gov.it)."@en ;                                   
-				rdfs:label "Public Investment Ontology."@en , 
-						   "Ontologia degli Investimenti Pubblici"@it ;                               
-				dcat:contactPoint <https://w3id.org/italia/data/contact-point/PCM-DIPE> ;
-				dcat:keyword "Investimenti Pubblici"@it , "OpenCUP"@it,
-							 "Public Investment"@en , "OpenCUP"@en ;
-				admsapit:acronym "PI" ;
-				admsapit:hasContributor  <https://w3id.org/italia/data/public-organization/ISTAT>;
-				admsapit:hasFormalityLevel admsapit:Formal ;
-				admsapit:hasKeyClass :Codice_unico_di_progetto ,
-									 :Intervento_di_investimento_pubblico ;					 
-				admsapit:hasOntologyLanguage admsapit:OWL ;
-				admsapit:hasSemanticAssetDistribution <https://w3id.org/italia/data/distribution/PI-JSON-LD> ,
-													  <https://w3id.org/italia/data/distribution/PI-RDF-TURTLE> ,
-													  <https://w3id.org/italia/data/distribution/PI-RDF-XML> ;									  
-				admsapit:hasTask admsapit:AnnotationTask ,
-								 admsapit:QueryFormulationTask ,
-								 admsapit:SearchTask ;				 
-				admsapit:last <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/1.0> ;
-				admsapit:officialURI "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment"^^xsd:anyURI ;
-				admsapit:prefix "pi" ;
-				admsapit:semanticAssetInUse <https://w3id.org/italia/data/project/NDC> ;
-				admsapit:status "catalogued" , "published" ;
-				admsapit:target "Pubbliche Amministrazioni" ;
-				admsapit:type admsapit:DomainOntology .
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
 
 
-   
-<https://w3id.org/italia/data/public-organization/PCM-DIPE>
-    a dcatapit:Agent , foaf:Agent ;
-    dct:identifier "PCM-DIPE" ;
-    foaf:name "Dipartimento per la Programmazione e il Coordinamento della Politica Economica (DIPE) della Presidenza del Consiglio dei Ministri"@it,
-              "Department for Economic Policy Planning and Coordination (DIPE) of the Prime Minister's Office"@en .
-
-<https://w3id.org/italia/data/public-organization/ISTAT>
-    a dcatapit:Agent , foaf:Agent ;
-    dct:identifier "ISTAT" ;
-    foaf:name "Istituto Nazionale di Statistica - ISTAT"@it ,
-              "Italian National Institute of Statistics - ISTAT"@en .
-
-<https://w3id.org/italia/data/contact-point/PCM-DIPE>
-   a vcard:Organization, vcard:Kind ;
-   vcard:fn "Segreteria Tecnica PCM-DIPE" ;
-   vcard:hasEmail <mailto:f.destefanis@governo.it>, <mailto:leo.salvatori@governo.it>  .
-
-<https://w3id.org/italia/data/standard/SKOS>
-    a dcatapit:Standard , dct:Standard ;
-    dct:identifier "SKOS" ;
-    foaf:name "Simple Knowledge Organization System (SKOS)"@en ;
-    dct:title "Simple Knowledge Organization System - SKOS" ;
-    dct:description "Simple Knowledge Organization System (SKOS) è un modello di dati comune per la condivisione e il collegamento di sistemi di organizzazione della conoscenza tramite il Web. "@it,
-	                "The Simple Knowledge Organization System (SKOS) is a common data model for sharing and linking knowledge organization systems via the Web. "@en . 
-	                
-
-###  https://w3id.org/italia/data/project/NDC
-<https://w3id.org/italia/data/project/NDC> rdf:type owl:NamedIndividual ,
-                                                    admsapit:Project ;
-                                           l0:name "National Data Catalog"@it .
+###  http://purl.org/dc/terms/accrualPeriodicity
+dct:accrualPeriodicity rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/italia/data/distribution/PI-JSON-LD
-<https://w3id.org/italia/data/distribution/PI-JSON-LD> rdf:type owl:NamedIndividual ,
-                                                                     admsapit:SemanticAssetDistribution ;
-                                                            dct:description "Questa è la distribuzione RDF/Turtle dell'ontologia Investimenti Pubblici"@it ,
-                                                                            "This is the distribution in RDF/turtle of the ontology Public Investment"@en ;
-                                                            dct:format <http://publications.europa.eu/resource/authority/file-type/JSON_LD> ;
-                                                            dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
-                                                            dct:title "Distribuzione JSON-LD dell'ontologia Investimenti Pubblici"@it ,
-                                                                      "JSON-LD distribution of the Ontology Public Investment"@en ;
-                                                            dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/public-investment/latest> ;
-                                                            dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment.jsonld> .
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/italia/data/distribution/PI-RDF-TURTLE
-<https://w3id.org/italia/data/distribution/PI-RDF-TURTLE> rdf:type owl:NamedIndividual ,
-                                                                        admsapit:SemanticAssetDistribution ;
-                                                               dct:description "Questa è la distribuzione RDF/Turtle dell'ontologia Investimenti Pubblici"@it ,
-                                                                               "This is the distribution in RDF/turtle of the ontology Public Investment"@en ;
-                                                               dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
-                                                               dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
-                                                               dct:title "Distribuzione RDF/Turtle dell' ontologia Investimenti Pubblici"@it ,
-                                                                         "RDF/Turtle distribution of the ontology Public Investment"@en ;
-                                                               dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/public-investment/latest> ;
-                                                               dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment.ttl> .
+###  http://purl.org/dc/terms/description
+dct:description rdf:type owl:AnnotationProperty .
 
-###  https://w3id.org/italia/data/distribution/PI-RDF-XML
-<https://w3id.org/italia/data/distribution/PI-RDF-XML> rdf:type owl:NamedIndividual ,
-                                                                     admsapit:SemanticAssetDistribution ;
-                                                            dct:description "Questa è la distribuzione RDF/XML dell'ontologia Investimenti Pubblici"@it ,
-                                                                            "This is the distribution in RDF/XML of the Public Investment"@en ;
-                                                            dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
-                                                            dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
-                                                            dct:title "Distribuzione RDF/XML dell' ontologia Investimenti Pubblici"@it ,
-                                                                      "RDF/XML distribution of the ontology Public Investment"@en ;
-                                                            dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/public-investment/latest> ;
-                                                            dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/public-investment/latest/public-investment.rdf> .
+
+###  http://purl.org/dc/terms/format
+dct:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dct:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dct:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+dct:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dct:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dct:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rightsHolder
+dct:rightsHolder rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/subject
+dct:subject rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/temporal
+dct:temporal rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dct:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#fn
+vcard:fn rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#hasEmail
+vcard:hasEmail rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#accessURL
+dcat:accessURL rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#contactPoint
+dcat:contactPoint rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+dcat:downloadURL rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#keyword
+dcat:keyword rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#theme
+dcat:theme rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/acronym
+admsapit:acronym rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/hasContributor
+admsapit:hasContributor rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/hasFormalityLevel
+admsapit:hasFormalityLevel rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/hasKeyClass
+admsapit:hasKeyClass rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/hasOntologyLanguage
+admsapit:hasOntologyLanguage rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/hasSemanticAssetDistribution
+admsapit:hasSemanticAssetDistribution rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/hasTask
+admsapit:hasTask rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/last
+admsapit:last rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/officialURI
+admsapit:officialURI rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/prefix
+admsapit:prefix rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/semanticAssetInUse
+admsapit:semanticAssetInUse rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/status
+admsapit:status rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/target
+admsapit:target rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/ADMS/type
+admsapit:type rdf:type owl:AnnotationProperty .
+
 
 #################################################################
-# fine metadati
+#    Datatypes
 #################################################################
 
-
-
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
 ###  http://www.w3.org/2001/XMLSchema#boolean
 xsd:boolean rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://www.w3.org/2001/XMLSchema#dateTime
@@ -180,29 +259,17 @@ xsd:string rdf:type rdfs:Datatype .
 
 
 #################################################################
-#    Object Properties
+#    Object Properties
 #################################################################
-
-###  https://w3id.org/italia/onto/COV/hasActivityType
-COV:hasActivityType rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/italia/onto/COV/hasSupportUnit
-COV:hasSupportUnit rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/italia/onto/COV/holdEmployment
-COV:holdEmployment rdf:type owl:ObjectProperty .
-
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/asserisce_atto
 ocup:asserisce_atto rdf:type owl:ObjectProperty ;
                     rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( L0:Agent
+                                  owl:unionOf ( l0:Agent
                                                 [ rdf:type owl:Restriction ;
                                                   owl:onProperty [ owl:inverseOf RO:holdsRoleInTime
                                                                  ] ;
-                                                  owl:someValuesFrom L0:Agent
+                                                  owl:someValuesFrom l0:Agent
                                                 ]
                                               )
                                 ] ;
@@ -818,6 +885,18 @@ ocup:sostituisce_utente_sistema_cup rdf:type owl:ObjectProperty ,
                                                "sostituisce utente sistema cup"@it .
 
 
+###  https://w3id.org/italia/onto/COV/hasActivityType
+COV:hasActivityType rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/italia/onto/COV/hasSupportUnit
+COV:hasSupportUnit rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/italia/onto/COV/holdEmployment
+COV:holdEmployment rdf:type owl:ObjectProperty .
+
+
 ###  https://w3id.org/italia/onto/RO/holdsRoleInTime
 RO:holdsRoleInTime rdf:type owl:ObjectProperty .
 
@@ -827,21 +906,21 @@ SM:hasOnlineContactPoint rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/italia/onto/l0/directlyPrecedes
-L0:directlyPrecedes rdf:type owl:ObjectProperty .
+l0:directlyPrecedes rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/italia/onto/l0/hasLastMember
-L0:hasLastMember rdf:type owl:ObjectProperty .
+l0:hasLastMember rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/italia/onto/l0/hasMember
-L0:hasMember rdf:type owl:ObjectProperty .
+l0:hasMember rdf:type owl:ObjectProperty .
 
 
 #################################################################
-#    Data properties
+#    Data properties
 #################################################################
-
+
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/ambito_di_delega
 ocup:ambito_di_delega rdf:type owl:DatatypeProperty ,
                                owl:FunctionalProperty ;
@@ -988,7 +1067,7 @@ ocup:data_raggiungimento_target_di_progetto rdf:type owl:DatatypeProperty ,
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/denominazione_corso_di_formazione
 ocup:denominazione_corso_di_formazione rdf:type owl:DatatypeProperty ;
-                                       rdfs:subPropertyOf L0:name ;
+                                       rdfs:subPropertyOf l0:name ;
                                        rdf:type owl:FunctionalProperty ;
                                        rdfs:label "denominazione corso di formazione"@it ,
                                                   "training course name"@en .
@@ -996,7 +1075,7 @@ ocup:denominazione_corso_di_formazione rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/denominazione_progetto_di_ricerca
 ocup:denominazione_progetto_di_ricerca rdf:type owl:DatatypeProperty ;
-                                       rdfs:subPropertyOf L0:name ;
+                                       rdfs:subPropertyOf l0:name ;
                                        rdf:type owl:FunctionalProperty ;
                                        rdfs:label "denominazione progetto di ricerca"@it ,
                                                   "research project name"@en .
@@ -1049,7 +1128,7 @@ ocup:infrastruttura_interessata_dal_progetto rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/modalità_corso_di_formazione
 ocup:modalità_corso_di_formazione rdf:type owl:DatatypeProperty ;
-                                  rdfs:subPropertyOf L0:description ;
+                                  rdfs:subPropertyOf l0:description ;
                                   rdf:type owl:FunctionalProperty ;
                                   rdfs:label "modalità corso di formazione"@it ,
                                              "training course mode"@en .
@@ -1075,7 +1154,7 @@ ocup:numero_norma rdf:type owl:DatatypeProperty ,
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/obiettivo_corso_di_formazione
 ocup:obiettivo_corso_di_formazione rdf:type owl:DatatypeProperty ;
-                                   rdfs:subPropertyOf L0:description ;
+                                   rdfs:subPropertyOf l0:description ;
                                    rdf:type owl:FunctionalProperty ;
                                    rdfs:label "obiettivo corso di formazione"@it ,
                                               "training course objective"@en .
@@ -1117,7 +1196,7 @@ ocup:ragione_collegamento_master rdf:type owl:DatatypeProperty ,
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/scopo_intervento_cumulativo
 ocup:scopo_intervento_cumulativo rdf:type owl:DatatypeProperty ;
-                                 rdfs:subPropertyOf L0:description ;
+                                 rdfs:subPropertyOf l0:description ;
                                  rdf:type owl:FunctionalProperty ;
                                  rdfs:label "cumulative intervention purpose"@en ,
                                             "scopo intervento cumulativo"@it .
@@ -1125,7 +1204,7 @@ ocup:scopo_intervento_cumulativo rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/servizio_acquistato_realizzato
 ocup:servizio_acquistato_realizzato rdf:type owl:DatatypeProperty ;
-                                    rdfs:subPropertyOf L0:description ;
+                                    rdfs:subPropertyOf l0:description ;
                                     rdf:type owl:FunctionalProperty ;
                                     rdfs:label "purchased service completed"@en ,
                                                "servizio acquistato realizzato"@it .
@@ -1168,35 +1247,39 @@ ocup:valore_target_di_progetto rdf:type owl:DatatypeProperty ,
 
 
 ###  https://w3id.org/italia/onto/l0/description
-L0:description rdf:type owl:DatatypeProperty .
+l0:description rdf:type owl:DatatypeProperty .
 
 
 ###  https://w3id.org/italia/onto/l0/name
-L0:name rdf:type owl:DatatypeProperty .
+l0:name rdf:type owl:DatatypeProperty .
 
 
 #################################################################
-#    Classes
+#    Classes
 #################################################################
-
-###  https://w3id.org/italia/onto/CLV/Address
-CLV:Address rdf:type owl:Class .
+
+###  http://dati.gov.it/onto/dcatapit#Agent
+dcatapit:Agent rdf:type owl:Class .
 
 
-###  https://w3id.org/italia/onto/COV/OnlineContactPoint
-COV:OnlineContactPoint rdf:type owl:Class .
+###  http://dati.gov.it/onto/dcatapit#Standard
+dcatapit:Standard rdf:type owl:Class .
 
 
-###  https://w3id.org/italia/onto/COV/Organization
-COV:Organization rdf:type owl:Class .
+###  http://purl.org/dc/terms/Standard
+dct:Standard rdf:type owl:Class .
 
 
-###  https://w3id.org/italia/onto/COV/PublicOrganization
-COV:PublicOrganization rdf:type owl:Class .
+###  http://www.w3.org/2006/vcard/ns#Kind
+vcard:Kind rdf:type owl:Class .
 
 
-###  https://w3id.org/italia/onto/CPV/Alive
-CPV:Alive rdf:type owl:Class .
+###  http://www.w3.org/2006/vcard/ns#Organization
+vcard:Organization rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/Acquisto_di_beni
@@ -2153,7 +2236,7 @@ ocup:Stato_di_correttezza_di_atto_di_finanziamento rdf:type owl:Class ;
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/Stato_di_cup
 ocup:Stato_di_cup rdf:type owl:Class ;
                   owl:equivalentClass [ rdf:type owl:Restriction ;
-                                        owl:onProperty [ owl:inverseOf L0:hasMember
+                                        owl:onProperty [ owl:inverseOf l0:hasMember
                                                        ] ;
                                         owl:someValuesFrom ocup:Storia_di_cup
                                       ] ;
@@ -2203,7 +2286,7 @@ ocup:Storia_di_cup rdf:type owl:Class ;
                                                         ] ;
                                          owl:someValuesFrom owl:Thing
                                        ] ;
-                   rdfs:subClassOf L0:Sequence ;
+                   rdfs:subClassOf l0:Sequence ;
                    rdfs:comment "A chronological and immutable log of all changes, additions, and status changes affecting a given CUP from its generation until its closure or revocation. It tracks each event, the operator that generated it, and the time it occurred."@en ,
                                 "Registro cronologico e immutabile di tutte le variazioni, integrazioni e passaggi di stato che hanno interessato un determinato CUP dalla sua generazione fino alla chiusura o revoca. Tiene traccia di ogni evento, dell'operatore che lo genera e del momento in cui viene generato."@it ;
                    rdfs:label "History of cup"@en ,
@@ -2432,92 +2515,260 @@ ocup:Utente_sistema_cup rdf:type owl:Class ;
                                    "Utente sistema cup"@it .
 
 
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_di_beni
+ocup:acquisto_di_beni rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_corso_di_formazione
+ocup:acquisto_o_realizzazione_corso_di_formazione rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_di_servizi
+ocup:acquisto_o_realizzazione_di_servizi rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_progetto_di_ricerca
+ocup:acquisto_o_realizzazione_progetto_di_ricerca rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_studio_o_progettazione
+ocup:acquisto_o_realizzazione_studio_o_progettazione rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/concessione_di_contributi_ad_altri_soggetti
+ocup:concessione_di_contributi_ad_altri_soggetti rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/concessione_di_incentivi_ad_unità_produttive
+ocup:concessione_di_incentivi_ad_unità_produttive rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/realizzazione_di_lavori_pubblici
+ocup:realizzazione_di_lavori_pubblici rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/sottoscrizione_iniziale_o_aumento_di_capitale
+ocup:sottoscrizione_iniziale_o_aumento_di_capitale rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/ADMS/Project
+admsapit:Project rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/ADMS/SemanticAssetDistribution
+admsapit:SemanticAssetDistribution rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/CLV/Address
+CLV:Address rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/COV/OnlineContactPoint
+COV:OnlineContactPoint rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/COV/Organization
+COV:Organization rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/COV/PublicOrganization
+COV:PublicOrganization rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/CPV/Alive
+CPV:Alive rdf:type owl:Class .
+
+
 ###  https://w3id.org/italia/onto/TI/TimeIndexedEvent
 TI:TimeIndexedEvent rdf:type owl:Class .
 
 
 ###  https://w3id.org/italia/onto/l0/Agent
-L0:Agent rdf:type owl:Class ;
+l0:Agent rdf:type owl:Class ;
          owl:disjointWith [ rdf:type owl:Restriction ;
                             owl:onProperty [ owl:inverseOf RO:holdsRoleInTime
                                            ] ;
-                            owl:someValuesFrom L0:Agent
+                            owl:someValuesFrom l0:Agent
                           ] .
 
 
 ###  https://w3id.org/italia/onto/l0/Sequence
-L0:Sequence rdf:type owl:Class .
+l0:Sequence rdf:type owl:Class .
 
 
 #################################################################
-#    Individuals
+#    Individuals
 #################################################################
-
+
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_di_beni
-ocup:acquisto_di_beni rdf:type owl:NamedIndividual ;
-                      rdfs:label "acquisto di beni"@it ,
-                                 "purchase of goods"@en .
+ocup:acquisto_di_beni rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_corso_di_formazione
-ocup:acquisto_o_realizzazione_corso_di_formazione rdf:type owl:NamedIndividual ;
-                                                  rdfs:label "acquisto o realizzazione corso di formazione"@it ,
-                                                             "purchase or completion of a training course"@en .
+ocup:acquisto_o_realizzazione_corso_di_formazione rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_di_servizi
-ocup:acquisto_o_realizzazione_di_servizi rdf:type owl:NamedIndividual ;
-                                         rdfs:label "acquisto o realizzazione di servizi"@it ,
-                                                    "purchase or provision of services"@en .
+ocup:acquisto_o_realizzazione_di_servizi rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_progetto_di_ricerca
-ocup:acquisto_o_realizzazione_progetto_di_ricerca rdf:type owl:NamedIndividual ;
-                                                  rdfs:label "acquisto o realizzazione progetto di ricerca"@it ,
-                                                             "purchase or implementation of research project"@en .
+ocup:acquisto_o_realizzazione_progetto_di_ricerca rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/acquisto_o_realizzazione_studio_o_progettazione
-ocup:acquisto_o_realizzazione_studio_o_progettazione rdf:type owl:NamedIndividual ;
-                                                     rdfs:label "acquisto o realizzazione studio o progettazione"@it ,
-                                                                "purchase or implementation of study or design"@en .
+ocup:acquisto_o_realizzazione_studio_o_progettazione rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/concessione_di_contributi_ad_altri_soggetti
-ocup:concessione_di_contributi_ad_altri_soggetti rdf:type owl:NamedIndividual ;
-                                                 rdfs:label "concessione di contributi ad altri soggetti"@it ,
-                                                            "granting of contributions to other entities"@en .
+ocup:concessione_di_contributi_ad_altri_soggetti rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/concessione_di_incentivi_ad_unità_produttive
-ocup:concessione_di_incentivi_ad_unità_produttive rdf:type owl:NamedIndividual ;
-                                                  rdfs:label "concessione di incentivi ad unità produttive"@it ,
-                                                             "granting incentives to production units"@en .
+ocup:concessione_di_incentivi_ad_unità_produttive rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/realizzazione_di_lavori_pubblici
-ocup:realizzazione_di_lavori_pubblici rdf:type owl:NamedIndividual ;
-                                      rdfs:label "construction of public works"@en ,
-                                                 "realizzazione di lavori pubblici"@it .
+ocup:realizzazione_di_lavori_pubblici rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/sottoscrizione_iniziale_o_aumento_di_capitale
-ocup:sottoscrizione_iniziale_o_aumento_di_capitale rdf:type owl:NamedIndividual ;
-                                                   rdfs:label "initial subscription or capital increase"@en ,
+ocup:sottoscrizione_iniziale_o_aumento_di_capitale rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/italia/data/contact-point/PCM-DIPE
+<https://w3id.org/italia/data/contact-point/PCM-DIPE> rdf:type owl:NamedIndividual ,
+                                                               vcard:Kind ,
+                                                               vcard:Organization ;
+                                                      vcard:fn "Segreteria Tecnica PCM-DIPE" ;
+                                                      vcard:hasEmail <mailto:open.cup@governo.it> .
+
+
+###  https://w3id.org/italia/data/distribution/PI-JSON-LD
+<https://w3id.org/italia/data/distribution/PI-JSON-LD> rdf:type owl:NamedIndividual ,
+                                                                admsapit:SemanticAssetDistribution ;
+                                                       dct:description "Questa è la distribuzione RDF/Turtle dell'ontologia Investimenti Pubblici"@it ,
+                                                                       "This is the distribution in RDF/turtle of the ontology Public Investment"@en ;
+                                                       dct:format <http://publications.europa.eu/resource/authority/file-type/JSON_LD> ;
+                                                       dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                       dct:title "Distribuzione JSON-LD dell'ontologia Investimenti Pubblici"@it ,
+                                                                 "JSON-LD distribution of the Ontology Public Investment"@en ;
+                                                       dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/PublicInvestment/latest> ;
+                                                       dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/PublicInvestment/latest/PublicInvestment.jsonld> .
+
+
+###  https://w3id.org/italia/data/distribution/PI-RDF-TURTLE
+<https://w3id.org/italia/data/distribution/PI-RDF-TURTLE> rdf:type owl:NamedIndividual ,
+                                                                   admsapit:SemanticAssetDistribution ;
+                                                          dct:description "Questa è la distribuzione RDF/Turtle dell'ontologia Investimenti Pubblici"@it ,
+                                                                          "This is the distribution in RDF/turtle of the ontology Public Investment"@en ;
+                                                          dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+                                                          dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                          dct:title "Distribuzione RDF/Turtle dell' ontologia Investimenti Pubblici"@it ,
+                                                                    "RDF/Turtle distribution of the ontology Public Investment"@en ;
+                                                          dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/PublicInvestment/latest> ;
+                                                          dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/PublicInvestment/latest/PublicInvestment.ttl> .
+
+
+###  https://w3id.org/italia/data/distribution/PI-RDF-XML
+<https://w3id.org/italia/data/distribution/PI-RDF-XML> rdf:type owl:NamedIndividual ,
+                                                                admsapit:SemanticAssetDistribution ;
+                                                       dct:description "Questa è la distribuzione RDF/XML dell'ontologia Investimenti Pubblici"@it ,
+                                                                       "This is the distribution in RDF/XML of the Public Investment"@en ;
+                                                       dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+                                                       dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                       dct:title "Distribuzione RDF/XML dell' ontologia Investimenti Pubblici"@it ,
+                                                                 "RDF/XML distribution of the ontology Public Investment"@en ;
+                                                       dcat:accessURL <https://github.com/PCM-DIPE/public-investment/tree/main/assets/ontologies/PublicInvestment/latest> ;
+                                                       dcat:downloadURL <https://raw.githubusercontent.com/PCM-DIPE/public-investment/main/assets/ontologies/PublicInvestment/latest/PublicInvestment.rdf> .
+
+
+###  https://w3id.org/italia/data/project/NDC
+<https://w3id.org/italia/data/project/NDC> rdf:type owl:NamedIndividual ,
+                                                    admsapit:Project ;
+                                           l0:name "National Data Catalog"@it .
+
+
+###  https://w3id.org/italia/data/public-organization/ISTAT
+<https://w3id.org/italia/data/public-organization/ISTAT> rdf:type owl:NamedIndividual ,
+                                                                  dcatapit:Agent ,
+                                                                  foaf:Agent ;
+                                                         dct:identifier "ISTAT" ;
+                                                         foaf:name "Istituto Nazionale di Statistica - ISTAT"@it ,
+                                                                   "Italian National Institute of Statistics - ISTAT"@en .
+
+
+###  https://w3id.org/italia/data/public-organization/PCM-DIPE
+<https://w3id.org/italia/data/public-organization/PCM-DIPE> rdf:type owl:NamedIndividual ,
+                                                                     dcatapit:Agent ,
+                                                                     foaf:Agent ;
+                                                            dct:identifier "PCM-DIPE" ;
+                                                            foaf:name "Department for Economic Policy Planning and Coordination (DIPE) of the Prime Minister's Office"@en ,
+                                                                      "Dipartimento per la Programmazione e il Coordinamento della Politica Economica (DIPE) della Presidenza del Consiglio dei Ministri"@it .
+
+
+###  https://w3id.org/italia/data/standard/SKOS
+<https://w3id.org/italia/data/standard/SKOS> rdf:type owl:NamedIndividual ,
+                                                      dcatapit:Standard ,
+                                                      dct:Standard ;
+                                             dct:description "Simple Knowledge Organization System (SKOS) è un modello di dati comune per la condivisione e il collegamento di sistemi di organizzazione della conoscenza tramite il Web. "@it ,
+                                                             "The Simple Knowledge Organization System (SKOS) is a common data model for sharing and linking knowledge organization systems via the Web. "@en ;
+                                             dct:identifier "SKOS" ;
+                                             dct:title "Simple Knowledge Organization System - SKOS" ;
+                                             foaf:name "Simple Knowledge Organization System (SKOS)"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ocup:acquisto_di_beni rdfs:label "acquisto di beni"@it ,
+                                 "purchase of goods"@en .
+
+
+ocup:acquisto_o_realizzazione_corso_di_formazione rdfs:label "acquisto o realizzazione corso di formazione"@it ,
+                                                             "purchase or completion of a training course"@en .
+
+
+ocup:acquisto_o_realizzazione_di_servizi rdfs:label "acquisto o realizzazione di servizi"@it ,
+                                                    "purchase or provision of services"@en .
+
+
+ocup:acquisto_o_realizzazione_progetto_di_ricerca rdfs:label "acquisto o realizzazione progetto di ricerca"@it ,
+                                                             "purchase or implementation of research project"@en .
+
+
+ocup:acquisto_o_realizzazione_studio_o_progettazione rdfs:label "acquisto o realizzazione studio o progettazione"@it ,
+                                                                "purchase or implementation of study or design"@en .
+
+
+ocup:concessione_di_contributi_ad_altri_soggetti rdfs:label "concessione di contributi ad altri soggetti"@it ,
+                                                            "granting of contributions to other entities"@en .
+
+
+ocup:concessione_di_incentivi_ad_unità_produttive rdfs:label "concessione di incentivi ad unità produttive"@it ,
+                                                             "granting incentives to production units"@en .
+
+
+ocup:realizzazione_di_lavori_pubblici rdfs:label "construction of public works"@en ,
+                                                 "realizzazione di lavori pubblici"@it .
+
+
+ocup:sottoscrizione_iniziale_o_aumento_di_capitale rdfs:label "initial subscription or capital increase"@en ,
                                                               "sottoscrizione iniziale o aumento di capitale"@it .
 
 
 #################################################################
-#    General axioms
+#    General axioms
 #################################################################
-
+
 [ rdf:type owl:Class ;
   owl:unionOf ( ocup:Stato_cancellato_di_cup
                 ocup:Stato_chiuso_di_cup
                 ocup:Stato_revocato_di_cup
               ) ;
   owl:equivalentClass [ rdf:type owl:Restriction ;
-                        owl:onProperty [ owl:inverseOf L0:hasLastMember
+                        owl:onProperty [ owl:inverseOf l0:hasLastMember
                                        ] ;
                         owl:someValuesFrom ocup:Storia_di_cup
                       ]
@@ -2701,7 +2952,7 @@ ocup:sottoscrizione_iniziale_o_aumento_di_capitale rdf:type owl:NamedIndividual 
 
 
 [ rdf:type owl:Restriction ;
-  owl:onProperty [ owl:inverseOf L0:directlyPrecedes
+  owl:onProperty [ owl:inverseOf l0:directlyPrecedes
                  ] ;
   owl:someValuesFrom ocup:Stato_cancellato_di_cup ;
   rdfs:subClassOf [ rdf:type owl:Class ;
@@ -2713,7 +2964,7 @@ ocup:sottoscrizione_iniziale_o_aumento_di_capitale rdf:type owl:NamedIndividual 
 
 
 [ rdf:type owl:Restriction ;
-  owl:onProperty [ owl:inverseOf L0:directlyPrecedes
+  owl:onProperty [ owl:inverseOf l0:directlyPrecedes
                  ] ;
   owl:someValuesFrom [ rdf:type owl:Class ;
                        owl:unionOf ( ocup:Stato_chiuso_di_cup
@@ -2789,49 +3040,22 @@ ocup:sottoscrizione_iniziale_o_aumento_di_capitale rdf:type owl:NamedIndividual 
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:acquisto_di_beni
-                            )
-                ]
-                [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:acquisto_o_realizzazione_di_servizi
-                            )
-                ]
-                [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:concessione_di_contributi_ad_altri_soggetti
-                            )
-                ]
-                [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:concessione_di_incentivi_ad_unità_produttive
-                            )
-                ]
-                [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:realizzazione_di_lavori_pubblici
-                            )
-                ]
-                [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:sottoscrizione_iniziale_o_aumento_di_capitale
-                            )
-                ]
+  owl:members ( ocup:acquisto_di_beni
+                ocup:acquisto_o_realizzazione_di_servizi
+                ocup:concessione_di_contributi_ad_altri_soggetti
+                ocup:concessione_di_incentivi_ad_unità_produttive
+                ocup:realizzazione_di_lavori_pubblici
+                ocup:sottoscrizione_iniziale_o_aumento_di_capitale
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:acquisto_o_realizzazione_corso_di_formazione
-                            )
-                ]
-                [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:acquisto_o_realizzazione_progetto_di_ricerca
-                            )
-                ]
-                [ rdf:type owl:Class ;
-                  owl:oneOf ( ocup:acquisto_o_realizzazione_studio_o_progettazione
-                            )
-                ]
+  owl:members ( ocup:acquisto_o_realizzazione_corso_di_formazione
+                ocup:acquisto_o_realizzazione_progetto_di_ricerca
+                ocup:acquisto_o_realizzazione_studio_o_progettazione
               )
 ] .
 
 
-###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

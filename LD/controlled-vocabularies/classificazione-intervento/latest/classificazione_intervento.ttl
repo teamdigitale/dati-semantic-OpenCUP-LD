@@ -22,8 +22,6 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
 
-
-
 #################################################################
 # inizio metadati
 #################################################################
@@ -79,7 +77,7 @@
 <https://w3id.org/italia/data/contact-point/PCM-DIPE>
    a vcard:Organization, vcard:Kind ;
    vcard:fn "Segreteria Tecnica PCM-DIPE" ;
-   vcard:hasEmail <mailto:f.destefanis@governo.it>, <mailto:leo.salvatori@governo.it>  .
+   vcard:hasEmail <mailto:open.cup@governo.it> .
 
 <https://w3id.org/italia/data/standard/SKOS>
     a dcatapit:Standard , dct:Standard ;
@@ -123,9 +121,6 @@
 #################################################################
 # fine metadati
 #################################################################
-
-
-
 <https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1> a :Area_di_intervento;
   rdfs:label "IMMOBILI"@it;
   skos:topConceptOf <https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento>;

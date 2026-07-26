@@ -6,6 +6,17 @@ export const PREFIXES: Record<string, string> = {
   call: "https://w3id.org/italia/data/Call/",
   pi: "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/",
   picv: "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/",
+  "picv-natura": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/",
+  "picv-tipologia":
+    "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/",
+  "picv-area":
+    "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/",
+  "picv-settore":
+    "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/",
+  "picv-sottosettore":
+    "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/",
+  "picv-categoria":
+    "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/",
   COV: "https://w3id.org/italia/onto/COV/",
   CLV: "https://w3id.org/italia/onto/CLV/",
   PRJ: "https://w3id.org/italia/onto/Project/",
@@ -47,7 +58,7 @@ export function cupCodeToUri(code: string): string {
   return `${PREFIXES.cup}${code}`;
 }
 
-const TERM_RE = /[A-Za-z][\w]*:[\w%.-]+/g;
+const TERM_RE = /[A-Za-z][\w-]*:[\w%.-]+/g;
 
 /** Spezza una stringa di mapping in token linkabili e testo. */
 export function tokenizeRdfMapping(text: string): { text: string; href: string | null }[] {

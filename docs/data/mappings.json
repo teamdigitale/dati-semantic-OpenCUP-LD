@@ -61,6 +61,18 @@
       "opencup"
     ],
     [
+      "CODICE_NATURA_INTERVENTO / NATURA_INTERVENTO",
+      "pi:ha_natura_intervento → picv-natura:{cod}",
+      "natura SKOS PCM-DIPE",
+      "opencup"
+    ],
+    [
+      "CODICE_TIPO_INTERVENTO / TIPOLOGIA_INTERVENTO",
+      "pi:ha_tipologia_intervento → picv-tipologia:{natura}_{tipo}",
+      "tipologia SKOS PCM-DIPE",
+      "opencup"
+    ],
+    [
       "CODICE_COPERTURA_FINANZIARIA / COPERTURA_FINANZIARIA",
       "pi:ha_tipologia_copertura_finanziaria → picv:copertura-finanziaria/{cod}",
       "classificazione SKOS",
@@ -183,12 +195,12 @@
     },
     {
       "id": "opencup_cv",
-      "label": "Vocabolario classificazione intervento (PCM-DIPE)",
-      "uri": "pi:ha_settore_intervento → picv-settore:{area}_{cod}",
+      "label": "Vocabolari controllati OpenCUP (PCM-DIPE)",
+      "uri": "pi:ha_settore_intervento / pi:ha_natura_intervento / pi:ha_tipologia_intervento",
       "datasets": [
         "opencup"
       ],
-      "note": "Area, settore, sottosettore e categoria come concetti SKOS con URI composite dal vocabolario ufficiale classificazione_intervento."
+      "note": "Classificazione, natura e tipologia come concetti SKOS con URI ufficiali da schema.gov.it (classificazione_intervento, natura_intervento, tipologia_intervento)."
     }
   ]
 }

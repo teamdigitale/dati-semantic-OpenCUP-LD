@@ -19,7 +19,7 @@ COMMIT_API = (
 
 ASSETS = [
     (
-        f"{RAW_BASE}/ontologies/public-investment/latest/public-investment.ttl",
+        f"{RAW_BASE}/ontologies/PublicInvestment/latest/PublicInvestment.ttl",
         ROOT / "LD/ontologies/public-investment/latest/public-investment.ttl",
     ),
     (
@@ -31,6 +31,26 @@ ASSETS = [
         f"{RAW_BASE}/controlled-vocabularies/classificazione_intervento/latest/classificazione_intervento.csv",
         ROOT
         / "LD/controlled-vocabularies/classificazione-intervento/latest/classificazione_intervento.csv",
+    ),
+    (
+        f"{RAW_BASE}/controlled-vocabularies/natura_intervento/latest/natura_intervento.ttl",
+        ROOT
+        / "LD/controlled-vocabularies/natura-intervento/latest/natura_intervento.ttl",
+    ),
+    (
+        f"{RAW_BASE}/controlled-vocabularies/natura_intervento/latest/natura_intervento.csv",
+        ROOT
+        / "LD/controlled-vocabularies/natura-intervento/latest/natura_intervento.csv",
+    ),
+    (
+        f"{RAW_BASE}/controlled-vocabularies/tipologia_intervento/latest/tipologia_intervento.ttl",
+        ROOT
+        / "LD/controlled-vocabularies/tipologia-intervento/latest/tipologia_intervento.ttl",
+    ),
+    (
+        f"{RAW_BASE}/controlled-vocabularies/tipologia_intervento/latest/tipologia_intervento.csv",
+        ROOT
+        / "LD/controlled-vocabularies/tipologia-intervento/latest/tipologia_intervento.csv",
     ),
 ]
 

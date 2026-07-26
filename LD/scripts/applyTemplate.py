@@ -14,22 +14,17 @@ PI_DATA = "https://w3id.org/italia/PublicInvestment/data/CUP/"
 PI_CV = "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/"
 COV_DATA = "https://w3id.org/italia/data/PublicOrganization/"
 
-NATURE_INDIVIDUAL = {
-    "01": "acquisto_di_beni",
-    "02": "acquisto_o_realizzazione_di_servizi",
-    "03": "realizzazione_di_lavori_pubblici",
-    "04": "concessione_di_contributi_ad_altri_soggetti",
-    "05": "concessione_di_incentivi_ad_unità_produttive",
-    "06": "sottoscrizione_iniziale_o_aumento_di_capitale",
-}
-
+# Classi ontologiche per rdf:type dell'intervento (codici ufficiali PCM-DIPE).
 NATURE_CLASS = {
     "01": "Acquisto_di_beni",
     "02": "Acquisto_o_realizzazione_di_servizi",
     "03": "Realizzazione_di_lavori_pubblici",
+    "06": "Concessione_di_contributi_ad_altri_soggetti",
+    "07": "Concessione_di_incentivi_ad_unità_produttive",
+    "08": "Sottoscrizione_iniziale_o_aumento_di_capitale",
+    # Legacy OpenCUP (pre-rinumerazione)
     "04": "Concessione_di_contributi_ad_altri_soggetti",
     "05": "Concessione_di_incentivi_ad_unità_produttive",
-    "06": "Sottoscrizione_iniziale_o_aumento_di_capitale",
 }
 
 STATO_CLASS = {
@@ -219,14 +214,14 @@ def build_opencup_nodes(record):
         intervention["pi:oggetto_progettuale"] = record["DESCRIZIONE_SINTETICA_CUP"]
     if is_present(record.get("DESCRIZIONE_INTERVENTO")):
         intervention["L0:description"] = record["DESCRIZIONE_INTERVENTO"]
-    if nature_code and nature_code in NATURE_INDIVIDUAL:
-        intervention["pi:ha_natura_intervento"] = {"@id": f"pi:{NATURE_INDIVIDUAL[nature_code]}"}
 
     cv_props = [
         ("area", "pi:ha_area_intervento"),
         ("settore", "pi:ha_settore_intervento"),
         ("sottosettore", "pi:ha_sottosettore_intervento"),
         ("categoria", "pi:ha_categoria_intervento"),
+        ("natura", "pi:ha_natura_intervento"),
+        ("tipologia", "pi:ha_tipologia_intervento"),
     ]
     for key, prop in cv_props:
         uri = cv_uris.get(key)

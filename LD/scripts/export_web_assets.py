@@ -12,9 +12,11 @@ from rdflib.namespace import RDF, OWL, SKOS, RDFS
 
 ROOT = Path(__file__).resolve().parents[2]
 TTL_DIR = ROOT / "LD" / "ttl"
-CV_TTL = (
+CV_TTL_FILES = (
     ROOT
-    / "LD/controlled-vocabularies/classificazione-intervento/latest/classificazione_intervento.ttl"
+    / "LD/controlled-vocabularies/classificazione-intervento/latest/classificazione_intervento.ttl",
+    ROOT / "LD/controlled-vocabularies/natura-intervento/latest/natura_intervento.ttl",
+    ROOT / "LD/controlled-vocabularies/tipologia-intervento/latest/tipologia_intervento.ttl",
 )
 OUT_DIR = ROOT / "web" / "public" / "data"
 
@@ -44,6 +46,8 @@ CV_INTERVENTO_PREDS = (
     (PI + "ha_sottosettore_intervento", "pi:ha_sottosettore_intervento"),
     (PI + "ha_categoria_intervento", "pi:ha_categoria_intervento"),
     (PI + "ha_area_intervento", "pi:ha_area_intervento"),
+    (PI + "ha_natura_intervento", "pi:ha_natura_intervento"),
+    (PI + "ha_tipologia_intervento", "pi:ha_tipologia_intervento"),
 )
 CV_CUP_PREDS = (
     (PI + "ha_tipologia_copertura_finanziaria", "pi:ha_tipologia_copertura_finanziaria"),
@@ -56,6 +60,8 @@ CV_SHORT_PREFIXES = (
     ("classificazione_intervento/Settore_di_intervento/", "picv-settore:"),
     ("classificazione_intervento/Sottosettore_di_intervento/", "picv-sottosettore:"),
     ("classificazione_intervento/Categoria_di_intervento/", "picv-categoria:"),
+    ("natura_intervento/", "picv-natura:"),
+    ("tipologia_intervento/", "picv-tipologia:"),
     ("copertura-finanziaria/", "picv-copertura:"),
     ("strumento-programmazione/", "picv-strumento:"),
 )
@@ -237,10 +243,18 @@ def is_cv_uri(uri: str) -> bool:
 
 def load_cv_graph() -> Graph:
     cv_g = Graph()
-    if CV_TTL.is_file():
-        cv_g.parse(CV_TTL, format="turtle")
-    else:
-        print(f"Warning: CV TTL not found at {CV_TTL}; run make fetch-assets", file=__import__("sys").stderr)
+    found = False
+    for path in CV_TTL_FILES:
+        if path.is_file():
+            cv_g.parse(path, format="turtle")
+            found = True
+        else:
+            print(
+                f"Warning: CV TTL not found at {path}; run make fetch-assets",
+                file=__import__("sys").stderr,
+            )
+    if not found:
+        print("Warning: no controlled-vocabulary TTL loaded", file=__import__("sys").stderr)
     return cv_g
 
 
@@ -522,6 +536,8 @@ def build_mappings() -> dict:
         ("CODICE_SOTTOSETTORE_INTERVENTO / SOTTOSETTORE_INTERVENTO", "pi:ha_sottosettore_intervento → picv-sottosettore:{area}_{sett}_{cod}", "classificazione SKOS PCM-DIPE", "opencup"),
         ("CODICE_CATEGORIA_INTERVENTO / CATEGORIA_INTERVENTO", "pi:ha_categoria_intervento → picv-categoria:{chiave_composita}", "classificazione SKOS PCM-DIPE", "opencup"),
         ("CODICE_AREA_INTERVENTO / AREA_INTERVENTO", "pi:ha_area_intervento → picv-area:{cod}", "classificazione SKOS PCM-DIPE", "opencup"),
+        ("CODICE_NATURA_INTERVENTO / NATURA_INTERVENTO", "pi:ha_natura_intervento → picv-natura:{cod}", "natura SKOS PCM-DIPE", "opencup"),
+        ("CODICE_TIPO_INTERVENTO / TIPOLOGIA_INTERVENTO", "pi:ha_tipologia_intervento → picv-tipologia:{natura}_{tipo}", "tipologia SKOS PCM-DIPE", "opencup"),
         ("CODICE_COPERTURA_FINANZIARIA / COPERTURA_FINANZIARIA", "pi:ha_tipologia_copertura_finanziaria → picv:copertura-finanziaria/{cod}", "classificazione SKOS", "opencup"),
         ("CODICE_STRUMENTO_PROGRAM / STRUMENTO_PROGRAMMAZIONE", "pi:ha_strumento_di_programmazione → picv:strumento-programmazione/{cod}", "classificazione SKOS", "opencup"),
         ("COSTO_PROGETTO", "pi:costo_del_progetto", "importo", "opencup"),
@@ -573,10 +589,10 @@ def build_mappings() -> dict:
         },
         {
             "id": "opencup_cv",
-            "label": "Vocabolario classificazione intervento (PCM-DIPE)",
-            "uri": "pi:ha_settore_intervento → picv-settore:{area}_{cod}",
+            "label": "Vocabolari controllati OpenCUP (PCM-DIPE)",
+            "uri": "pi:ha_settore_intervento / pi:ha_natura_intervento / pi:ha_tipologia_intervento",
             "datasets": ["opencup"],
-            "note": "Area, settore, sottosettore e categoria come concetti SKOS con URI composite dal vocabolario ufficiale classificazione_intervento.",
+            "note": "Classificazione, natura e tipologia come concetti SKOS con URI ufficiali da schema.gov.it (classificazione_intervento, natura_intervento, tipologia_intervento).",
         },
     ]
     templates = [

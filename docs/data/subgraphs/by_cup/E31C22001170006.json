@@ -199,8 +199,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "na3042697b2c74504860ed99a551bf978b2170",
-      "shortId": "na3042697b2c74504860ed99a551bf978b2170",
+      "id": "n71ba75ceb1874bfea60e9453a196835bb2170",
+      "shortId": "n71ba75ceb1874bfea60e9453a196835bb2170",
       "label": "MIGRAZIONE AL CLOUD DEI SERVIZI DIGITALI DELL'AMMINISTRAZION…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -244,6 +244,27 @@
       "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_1_7",
       "shortId": "picv-categoria:6_10_1_7",
       "label": "SISTEMI INFORMATIVI PER LA P.A.",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "shortId": "picv-natura:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
+      "shortId": "picv-tipologia:02_19",
+      "label": "APPLICATIVI E PIATTAFORME WEB",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "shortId": "picv-tipologia:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
       "type": "skos:Concept",
       "dataset": "shared"
     }
@@ -326,7 +347,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
-      "target": "na3042697b2c74504860ed99a551bf978b2170",
+      "target": "n71ba75ceb1874bfea60e9453a196835bb2170",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -340,7 +361,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "na3042697b2c74504860ed99a551bf978b2170",
+      "source": "n71ba75ceb1874bfea60e9453a196835bb2170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -350,7 +371,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "na3042697b2c74504860ed99a551bf978b2170",
+      "source": "n71ba75ceb1874bfea60e9453a196835bb2170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -360,7 +381,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "na3042697b2c74504860ed99a551bf978b2170",
+      "source": "n71ba75ceb1874bfea60e9453a196835bb2170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_1_7",
       "label": "pi:ha_categoria_intervento"
     },
@@ -370,9 +391,24 @@
       "label": "skos:broader"
     },
     {
-      "source": "na3042697b2c74504860ed99a551bf978b2170",
+      "source": "n71ba75ceb1874bfea60e9453a196835bb2170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n71ba75ceb1874bfea60e9453a196835bb2170",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n71ba75ceb1874bfea60e9453a196835bb2170",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "label": "skos:broader"
     }
   ]
 }
