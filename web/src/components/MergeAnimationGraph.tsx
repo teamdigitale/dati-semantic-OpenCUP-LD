@@ -31,6 +31,9 @@ import { GRAPH_FONT_FAMILY, normalizeDisplayText } from "../utils/text";
 
 cytoscape.use(fcose);
 
+/** Durata (ms) dell'animazione Unisci / Separa grafi. */
+const MERGE_ANIM_DURATION_MS = 2400;
+
 const COMPACT_NODE_TYPES = new Set([
   "pi:Progetto_di_investimento_pubblico",
   "PCTR:Lot",
@@ -427,7 +430,7 @@ export function MergeAnimationGraph({
         const mergeTargetId = node.data("mergeTargetId") as string;
         return mergedPos.get(mergeTargetId) ?? null;
       },
-      1100,
+      MERGE_ANIM_DURATION_MS,
       signal
     )
       .then(() => {
@@ -461,7 +464,7 @@ export function MergeAnimationGraph({
     void animateNodes(
       cy.nodes().toArray(),
       (node) => separatedTargetFor(node, snapshot),
-      1100,
+      MERGE_ANIM_DURATION_MS,
       signal
     )
       .then(() => {
