@@ -32,7 +32,7 @@
     ],
     [
       "PIVA_CODFISCALE_SOG_TITOLARE",
-      "pi:ha_soggetto_titolare → po:{CF}",
+      "pi:ha_soggetto_titolare → cf:{CF}",
       "ente titolare",
       "opencup"
     ],
@@ -134,13 +134,13 @@
     ],
     [
       "Codice_IPA",
-      "po:{IPA}",
+      "ipa:{IPA}",
       "@id ente",
       "enti_ipa"
     ],
     [
       "Codice_fiscale_ente",
-      "owl:sameAs → po:{CF}",
+      "owl:sameAs → cf:{CF}",
       "ponte semantico",
       "enti_ipa"
     ],

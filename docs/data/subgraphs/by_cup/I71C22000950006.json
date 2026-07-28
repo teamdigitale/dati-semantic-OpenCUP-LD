@@ -5,6 +5,7 @@
   "datasets_involved": [
     "candidature",
     "cupcig",
+    "enti_ipa",
     "opencup"
   ],
   "join_edges": [
@@ -15,12 +16,12 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I71C22000950006",
-      "target": "https://w3id.org/italia/data/PublicOrganization/00168480242",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00168480242",
       "label": "pi:ha_soggetto_titolare"
     },
     {
-      "source": "https://w3id.org/italia/data/PublicOrganization/C_A703",
-      "target": "https://w3id.org/italia/data/PublicOrganization/00168480242",
+      "source": "https://indicepa.gov.it/ente/C_A703",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00168480242",
       "label": "owl:sameAs"
     },
     {
@@ -60,18 +61,18 @@
       "dataset": "candidature"
     },
     {
-      "id": "https://w3id.org/italia/data/PublicOrganization/00168480242",
-      "shortId": "po:00168480242",
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00168480242",
+      "shortId": "cf:00168480242",
       "label": "COMUNE DI BASSANO DEL GRAPPA - VI -",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
     {
-      "id": "https://w3id.org/italia/data/PublicOrganization/C_A703",
-      "shortId": "po:C_A703",
+      "id": "https://indicepa.gov.it/ente/C_A703",
+      "shortId": "ipa:C_A703",
       "label": "Comune di Bassano del Grappa",
       "type": "COV:PublicOrganization",
-      "dataset": "opencup"
+      "dataset": "enti_ipa"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/9880743710",
@@ -102,8 +103,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n71ba75ceb1874bfea60e9453a196835bb2141",
-      "shortId": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "id": "n8223668a17b64fc3baa51bb4a45e2877b2141",
+      "shortId": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "label": "MIGRAZIONE AL CLOUD DEI SERVIZI DIGITALI DELL'AMMINISTRAZION…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -180,12 +181,12 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I71C22000950006",
-      "target": "https://w3id.org/italia/data/PublicOrganization/00168480242",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00168480242",
       "label": "pi:ha_soggetto_titolare"
     },
     {
-      "source": "https://w3id.org/italia/data/PublicOrganization/C_A703",
-      "target": "https://w3id.org/italia/data/PublicOrganization/00168480242",
+      "source": "https://indicepa.gov.it/ente/C_A703",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00168480242",
       "label": "owl:sameAs"
     },
     {
@@ -210,7 +211,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I71C22000950006",
-      "target": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "target": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -224,7 +225,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "source": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -234,7 +235,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "source": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -244,7 +245,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "source": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_1_7",
       "label": "pi:ha_categoria_intervento"
     },
@@ -254,17 +255,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "source": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "source": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n71ba75ceb1874bfea60e9453a196835bb2141",
+      "source": "n8223668a17b64fc3baa51bb4a45e2877b2141",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
       "label": "pi:ha_tipologia_intervento"
     },

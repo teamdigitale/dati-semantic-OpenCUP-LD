@@ -12,7 +12,8 @@ from cv_resolver import get_resolver
 PI_ONTO = "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/"
 PI_DATA = "https://w3id.org/italia/PublicInvestment/data/CUP/"
 PI_CV = "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/"
-COV_DATA = "https://w3id.org/italia/data/PublicOrganization/"
+IPA_DATA = "https://indicepa.gov.it/ente/"
+CF_DATA = "https://w3id.org/italia/data/CodiceFiscale/"
 
 # Classi ontologiche per rdf:type dell'intervento (codici ufficiali PCM-DIPE).
 NATURE_CLASS = {
@@ -136,7 +137,7 @@ def build_opencup_nodes(record):
         "pi:ha_cup": {"@id": cup_uri},
         "pi:ha_intervento_di_investimento_pubblico": {"@id": f"_:intervento-{cup}"},
         "pi:ha_soggetto_titolare": {
-            "@id": f"{COV_DATA}{urllib.parse.quote(str(record['PIVA_CODFISCALE_SOG_TITOLARE']))}",
+            "@id": f"{CF_DATA}{urllib.parse.quote(str(record['PIVA_CODFISCALE_SOG_TITOLARE']))}",
         },
     }
 
@@ -230,7 +231,7 @@ def build_opencup_nodes(record):
 
     titolare = {
         "@type": ["COV:PublicOrganization", "pi:Soggetto_titolare_progetto_investimento"],
-        "@id": f"{COV_DATA}{urllib.parse.quote(str(record['PIVA_CODFISCALE_SOG_TITOLARE']))}",
+        "@id": f"{CF_DATA}{urllib.parse.quote(str(record['PIVA_CODFISCALE_SOG_TITOLARE']))}",
         "COV:taxCode": str(record["PIVA_CODFISCALE_SOG_TITOLARE"]),
     }
     if is_present(record.get("SOGGETTO_TITOLARE")):

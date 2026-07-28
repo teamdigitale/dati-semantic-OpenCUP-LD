@@ -10,9 +10,9 @@
         {{#each .enti}}
         {
             "@type":"COV:PublicOrganization",
-            "@id":"https://w3id.org/italia/data/PublicOrganization/{{encodeURIComponent Codice_IPA}}",
+            "@id":"https://indicepa.gov.it/ente/{{encodeURIComponent Codice_IPA}}",
             "owl:sameAs": {
-                    "@id": "https://w3id.org/italia/data/PublicOrganization/{{encodeURIComponent Codice_fiscale_ente}}",
+                    "@id": "https://w3id.org/italia/data/CodiceFiscale/{{encodeURIComponent Codice_fiscale_ente}}",
                     "@type": "COV:PublicOrganization"
                 },
             "COV:hasCategory": {

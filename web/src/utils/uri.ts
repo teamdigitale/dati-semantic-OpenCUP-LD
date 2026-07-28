@@ -1,7 +1,8 @@
 /** Prefissi RDF usati nei grafi — per espandere shortId in URI dereferenziabili. */
 export const PREFIXES: Record<string, string> = {
   cup: "https://w3id.org/italia/PublicInvestment/data/CUP/",
-  po: "https://w3id.org/italia/data/PublicOrganization/",
+  ipa: "https://indicepa.gov.it/ente/",
+  cf: "https://w3id.org/italia/data/CodiceFiscale/",
   lot: "https://w3id.org/italia/data/Lot/",
   call: "https://w3id.org/italia/data/Call/",
   pi: "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/",

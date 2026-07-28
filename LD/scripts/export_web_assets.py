@@ -22,7 +22,8 @@ OUT_DIR = ROOT / "web" / "public" / "data"
 
 PI = URIRef("https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/")
 PI_DATA = "https://w3id.org/italia/PublicInvestment/data/CUP/"
-PO_DATA = "https://w3id.org/italia/data/PublicOrganization/"
+IPA_DATA = "https://indicepa.gov.it/ente/"
+CF_DATA = "https://w3id.org/italia/data/CodiceFiscale/"
 LOT_DATA = "https://w3id.org/italia/data/Lot/"
 CALL_DATA = "https://w3id.org/italia/data/Call/"
 
@@ -75,7 +76,8 @@ def short_id(uri: str) -> str:
         return "picv:" + uri[len(PI_CV) :]
     for prefix, label in [
         (PI_DATA, "cup:"),
-        (PO_DATA, "po:"),
+        (IPA_DATA, "ipa:"),
+        (CF_DATA, "cf:"),
         (LOT_DATA, "lot:"),
         (CALL_DATA, "call:"),
         (str(PI), "pi:"),
@@ -531,7 +533,7 @@ def build_mappings() -> dict:
     opencup_fields = [
         ("CUP", "cup:{CUP}", "@id progetto / CUP", "opencup"),
         ("DESCRIZIONE_SINTETICA_CUP", "pi:oggetto_progettuale", "intervento", "opencup"),
-        ("PIVA_CODFISCALE_SOG_TITOLARE", "pi:ha_soggetto_titolare → po:{CF}", "ente titolare", "opencup"),
+        ("PIVA_CODFISCALE_SOG_TITOLARE", "pi:ha_soggetto_titolare → cf:{CF}", "ente titolare", "opencup"),
         ("CODICE_SETTORE_INTERVENTO / SETTORE_INTERVENTO", "pi:ha_settore_intervento → picv-settore:{area}_{cod}", "classificazione SKOS PCM-DIPE", "opencup"),
         ("CODICE_SOTTOSETTORE_INTERVENTO / SOTTOSETTORE_INTERVENTO", "pi:ha_sottosettore_intervento → picv-sottosettore:{area}_{sett}_{cod}", "classificazione SKOS PCM-DIPE", "opencup"),
         ("CODICE_CATEGORIA_INTERVENTO / CATEGORIA_INTERVENTO", "pi:ha_categoria_intervento → picv-categoria:{chiave_composita}", "classificazione SKOS PCM-DIPE", "opencup"),
@@ -554,8 +556,8 @@ def build_mappings() -> dict:
         ("CIG", "lot:{CIG}", "@id lotto ANAC", "cupcig"),
     ]
     enti_fields = [
-        ("Codice_IPA", "po:{IPA}", "@id ente", "enti_ipa"),
-        ("Codice_fiscale_ente", "owl:sameAs → po:{CF}", "ponte semantico", "enti_ipa"),
+        ("Codice_IPA", "ipa:{IPA}", "@id ente", "enti_ipa"),
+        ("Codice_fiscale_ente", "owl:sameAs → cf:{CF}", "ponte semantico", "enti_ipa"),
         ("Denominazione_ente", "COV:legalName", "denominazione", "enti_ipa"),
     ]
     joins = [
@@ -1054,9 +1056,9 @@ def dataset_for_uri(uri: str) -> str:
         return "cupcig"
     if uri.startswith(CALL_DATA):
         return "candidature"
-    if uri.startswith(PO_DATA):
-        if uri[len(PO_DATA) :].startswith("c_"):
-            return "enti_ipa"
+    if uri.startswith(IPA_DATA):
+        return "enti_ipa"
+    if uri.startswith(CF_DATA):
         return "opencup"
     return "shared"
 

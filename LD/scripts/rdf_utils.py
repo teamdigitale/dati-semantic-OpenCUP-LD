@@ -28,7 +28,8 @@ LD_CONTEXT = {
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "cup": PI_DATA,
-    "po": "https://w3id.org/italia/data/PublicOrganization/",
+    "ipa": "https://indicepa.gov.it/ente/",
+    "cf": "https://w3id.org/italia/data/CodiceFiscale/",
     "lot": "https://w3id.org/italia/data/Lot/",
     "call": "https://w3id.org/italia/data/Call/",
     "pocat": "https://w3id.org/italia/data/PublicOrganizationCategory/",
@@ -38,7 +39,8 @@ LD_CONTEXT = {
 
 def bind_ld_prefixes(graph: Graph) -> None:
     graph.bind("cup", Namespace(PI_DATA), override=True)
-    graph.bind("po", Namespace("https://w3id.org/italia/data/PublicOrganization/"), override=True)
+    graph.bind("ipa", Namespace("https://indicepa.gov.it/ente/"), override=True)
+    graph.bind("cf", Namespace("https://w3id.org/italia/data/CodiceFiscale/"), override=True)
     graph.bind("lot", Namespace("https://w3id.org/italia/data/Lot/"), override=True)
     graph.bind("call", Namespace("https://w3id.org/italia/data/Call/"), override=True)
     graph.bind(
