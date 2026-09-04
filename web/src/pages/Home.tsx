@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 const FLAT_CUPCIG = [
-  { CIG: "A003DEB979", CUP: "F81F22001260006" },
-  { CIG: "A02DF62C3A", CUP: "J41F22004110006" },
+  { CIG: "9467132C76", CUP: "E31C22001170006" },
+  { CIG: "998570721A", CUP: "C61F22001090006" },
 ];
 
 const JSONLD_CUPCIG = {
@@ -12,10 +12,10 @@ const JSONLD_CUPCIG = {
   },
   "@graph": [
     {
-      "@id": "https://w3id.org/italia/data/Lot/A003DEB979",
+      "@id": "https://w3id.org/italia/data/Lot/9467132C76",
       "@type": "PCTR:Lot",
       "PCTR:hasProject": {
-        "@id": "https://w3id.org/italia/PublicInvestment/data/CUP/F81F22001260006",
+        "@id": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
         "@type": "pi:Progetto_di_investimento_pubblico",
       },
     },

@@ -34,7 +34,7 @@ DATASETS = {
     "enti_ipa": "candidature_enti_ipa-ld.ttl",
 }
 
-OPEN_CUP_SAMPLE = 10
+OPEN_CUP_SAMPLE = 4
 
 PRJ_HAS_CALL = URIRef("https://w3id.org/italia/onto/Project/hasCall")
 HA_TITOLARE = PI + "ha_soggetto_titolare"

@@ -25,7 +25,7 @@ export function Grafi() {
       <h1>Grafi separati</h1>
       <p className="lead">
         Ogni dataset RDF visualizzato in isolamento sullo{" "}
-        <strong>stesso campione di 10 CUP</strong> (scelto in build da OpenCUP, ordinamento
+        <strong>stesso campione di 4 CUP</strong> (scelto in build da OpenCUP, ordinamento
         stabile). Le analisi in tab Analisi usano invece l&apos;intero <code>all.ttl</code>.
         {" "}
         {graph?.sample_note ?? "Campione statico."} ({graph?.nodes.length ?? "…"} nodi)
