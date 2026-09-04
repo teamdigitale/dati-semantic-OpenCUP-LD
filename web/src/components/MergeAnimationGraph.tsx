@@ -544,7 +544,6 @@ export function MergeAnimationGraph({
           cupCode,
           slice.edges
         );
-        mergeTargetCounts.set(mergeTargetId, (mergeTargetCounts.get(mergeTargetId) ?? 0) + 1);
 
         const p = localPos.get(n.id) ?? offset;
         const position = { x: p.x, y: p.y };
@@ -593,13 +592,26 @@ export function MergeAnimationGraph({
       });
     }
 
+    // Per URI "shared" (CV SKOS) tieni la prima copia presente nei quadranti.
+    const keepDatasetForShared = new Map<string, string>();
+    for (const el of nodeElements) {
+      const d = el.data as Record<string, unknown>;
+      if (d.canonicalDataset !== "shared") continue;
+      const mt = d.mergeTargetId as string;
+      if (!keepDatasetForShared.has(mt)) {
+        keepDatasetForShared.set(mt, d.dataset as string);
+      }
+    }
+
     for (const el of nodeElements) {
       const d = el.data as Record<string, unknown>;
       const mt = d.mergeTargetId as string;
       const canonical = d.canonicalDataset as string | null;
       const ds = d.dataset as string;
+      const keepDs =
+        canonical === "shared" ? keepDatasetForShared.get(mt) ?? null : canonical;
       d.isDuplicate =
-        (mergeTargetCounts.get(mt) ?? 0) > 1 && canonical !== null && ds !== canonical;
+        (mergeTargetCounts.get(mt) ?? 0) > 1 && keepDs !== null && ds !== keepDs;
     }
 
     const cyNodeIds = new Set(

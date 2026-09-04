@@ -17,7 +17,7 @@ export function Layout() {
       <header className="header">
         <div className="header-inner">
           <Link to="/" className="logo">
-            OpenCUP LD Explorer
+            OpenCUP LD
           </Link>
           <nav>
             {NAV.map(({ to, label }) => (

@@ -8,8 +8,17 @@ run_py() {
     env -u VIRTUAL_ENV uv run python "$@"
 }
 
+# CUP↔CIG: reshape + JSON-LD @context (no Handlebars)
+run_py LD/scripts/convert_cupcig_jsonld.py \
+    --src srcdata/data/cupcig_candidature_comuni_finanziate.json \
+    --dest LD/json-ld/cupcig_candidature_comuni_finanziate-ld.json
+run_py LD/scripts/compactJsonLD.py LD/json-ld/cupcig_candidature_comuni_finanziate-ld.json
+
 for tname in LD/templates/*.hbs; do
     bname=$(basename "${tname}" .hbs)
+    if [[ "${bname}" == "cupcig_candidature_comuni_finanziate" ]]; then
+        continue
+    fi
     jname="srcdata/data/${bname}.json"
     jldname="LD/json-ld/${bname}-ld.json"
     run_py LD/scripts/applyTemplate.py "${jname}" "${tname}" > "${jldname}"

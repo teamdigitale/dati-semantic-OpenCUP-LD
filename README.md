@@ -1,5 +1,9 @@
 # dati-semantic-OpenCUP-LD
-Repository di lavoro per la conversione dei dati OpenCUP e collegati in LD
+
+Repository di lavoro per la conversione dei dati OpenCUP e collegati in Linked Data,
+e per raccontare come la semantica rende interoperabili le banche dati pubbliche.
+
+> Branch di sviluppo narrativo / JSON-LD: `narrative-jsonld`.
 
 ## Obiettivi
 
@@ -10,28 +14,38 @@ I dati di:
 * IndicePA
 * ANAC
 
-Possono tutti essere connessi fra loro. Idealmente questo può essere fatto attraverso delle join fra i vari database.
+possono essere connessi fra loro. Un'alternativa alle join SQL è produrre Linked Data
+con le ontologie e i CV pubblicati su [schema.gov.it](https://schema.gov.it)
+(PublicInvestment, classificazione intervento, natura, tipologia, …).
 
-Un esempio di elaborazione di questi dati si può trovare nel [Vademecum sui dati aperti del PNRR](https://pnrr.datibenecomune.it/) realizzato
-da @aborruso.
+In questo modo i collegamenti (stesso CUP, stesso ente, stesso concetto SKOS)
+diventano evidenti: stesse URI → stesso nodo nel grafo.
 
-Un'alternativa è la produzione di Linked Data a partire da queste tabelle, utilizzando le ontologie pubblicate su https://schema.gov.it .
+### Orizzonte
 
-In questo modo, i dati sono resi interoperabili e i collegamenti fra le banche dati diventano evidenti ed "automatici".
+1. Passare dal campione “CUP in PA Digitale” a **OpenCUP e ANAC completi**
+   (CUP↔CIG; poi bandi/esiti SCP).
+2. Caricare il grafo su un **database a grafo / endpoint SPARQL** (es. Jena Fuseki).
+3. Mostrare un catalogo di **query** (CUP→CIG→bando, IPA↔CF, costi per CV, …).
+4. Tenere i grafi Cytoscape sui **campioni**; le query sul DB per la scala piena.
 
 ## Organizzazione del repository
 
-* nella cartella `srcdata` si trovano i dati di partenza e gli script per generarli a partire dalle fonti
-* nella cartella `LD` si trovano:
-  * i file template in formato [handlebars](https://handlebarsjs.com/) che permettono la conversione dai file JSON di partenza ai file JSON-LD corrispondenti
-  * una cartella `ttl` nella quale si trova l'output delle conversioni. In particolare nel file `all.ttl` si può vedere il database ottenuto complessivo.
+* `srcdata` — dati di partenza e script di filtro
+* `LD` — conversione a Linked Data
+  * `templates/*.hbs` — ancora usati per OpenCUP, PA Digitale, IndicePA
+  * `scripts/convert_cupcig_jsonld.py` — CUP↔CIG via **reshape + `@context`**
+    (Handlebars deprecato per questo dataset; `--spike` mostra anche framing pyld)
+  * `ttl/all.ttl` — grafo unito
+* `web` — sito statico; la **home** è il racconto JSON → JSON-LD → join → roadmap grafo
 
-Nota bene: i file di partenza sono tutti filtrati in modo da contenere solo i progetti che sono catalogati in PA Digitale. Questo per avere solo dati realmente interoperabili fra loro.
+Nota: i JSON filtrati in `srcdata/data/` contengono oggi solo progetti catalogati in
+PA Digitale, per avere uno scope davvero interoperabile tra le fonti.
 
 ## Ambiente Python (uv)
 
 ```bash
-make setup          # uv sync
+make setup          # uv sync (include pyld)
 make all            # filtra + converte in Linked Data
 make help           # tutti i target
 ```
@@ -45,44 +59,33 @@ make fetch          # scarica ANAC CUP, PA Digitale, IndicePA
 make all
 ```
 
-Per rigenerare solo la conversione LD (se i JSON in `srcdata/data/` sono già pronti):
+Solo conversione LD:
 
 ```bash
 make ld
+# demo CUP↔CIG JSON → reshape → frame:
+uv run python LD/scripts/convert_cupcig_jsonld.py --spike
 ```
 
 ## Web app (GitHub Pages)
 
-Sito statico in `web/` che esplora mappature RDF, grafi per dataset, unione semantica e analisi pre-calcolate — tutto generato da `all.ttl` in fase di build.
-
 ```bash
-make all            # genera all.ttl (se non già presente)
+make all
 make web            # export JSON + build → docs/
-```
-
-In locale, dopo `make web`:
-
-```bash
 make web-preview    # http://localhost:4173/dati-semantic-OpenCUP-LD/
-# oppure: cd web && npm run dev   (sviluppo, senza base path GH Pages)
 ```
 
-**Non usare** `npx serve docs` dalla root: la build referenzia asset sotto
-`/dati-semantic-OpenCUP-LD/...` (path del repo su github.io). `serve docs` li
-cerca in `/assets/...` e restituisce 404. Usare `make web-preview` oppure
-`cd web && npm run preview`.
+**Non usare** `npx serve docs` dalla root: la build referenzia
+`/dati-semantic-OpenCUP-LD/...`. Usare `make web-preview` o `cd web && npm run preview`.
 
 ### Pubblicazione su GitHub Pages
 
 **Opzione A — cartella `/docs` sul branch principale**
 
-1. `make web` e committare la cartella `docs/`
-2. Repository → Settings → Pages → Source: branch `main`, folder `/docs`
+1. `make web` e committare `docs/`
+2. Settings → Pages → Source: branch, folder `/docs`
 
 **Opzione B — GitHub Actions**
 
-Il workflow `.github/workflows/pages.yml` builda `web/` e pubblica `docs/` su ogni push.
-Abilitare Pages con source **GitHub Actions**.
-
+Il workflow `.github/workflows/pages.yml` pubblica su ogni push.
 URL previsto: `https://<org>.github.io/dati-semantic-OpenCUP-LD/`
-
