@@ -21,6 +21,7 @@ export const DATASET_LABELS: Record<string, string> = {
   candidature: "PA Digitale",
   cupcig: "CUP↔CIG (ANAC)",
   enti_ipa: "IndicePA",
+  scp: "SCP MIT",
   shared: "Condiviso",
 };
 
@@ -29,6 +30,8 @@ export const TYPE_COLORS: Record<string, string> = {
   "pi:Intervento_di_investimento_pubblico": "#60a5fa",
   "COV:PublicOrganization": "#8b5cf6",
   "PCTR:Lot": "#f59e0b",
+  "PCTR:Award": "#d97706",
+  "PCTR:ContractNotice": "#b45309",
   "PRJ:Call": "#10b981",
   "skos:Concept": "#94a3b8",
   "CLV:Address": "#22d3ee",
@@ -41,6 +44,8 @@ export const TYPE_FILLS: Record<string, string> = {
   "pi:Intervento_di_investimento_pubblico": "#f0f9ff",
   "COV:PublicOrganization": "#f5f3ff",
   "PCTR:Lot": "#fffbeb",
+  "PCTR:Award": "#fff7ed",
+  "PCTR:ContractNotice": "#ffedd5",
   "PRJ:Call": "#ecfdf5",
   "skos:Concept": "#f1f5f9",
   "CLV:Address": "#ecfeff",

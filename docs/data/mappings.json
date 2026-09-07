@@ -15,6 +15,10 @@
     {
       "file": "opencup_candidature_comuni_finanziate.hbs",
       "dataset": "opencup_candidature_comuni_finanziate"
+    },
+    {
+      "file": "convert_scp_jsonld.py",
+      "dataset": "scp_bandi_esiti"
     }
   ],
   "fieldMappings": [
@@ -133,6 +137,42 @@
       "cupcig"
     ],
     [
+      "cig",
+      "lot:{cig} (+ PCTR:Award / PCTR:ContractNotice)",
+      "@id lotto SCP = stesso URI ANAC",
+      "scp"
+    ],
+    [
+      "id_gara",
+      "notice:{id_gara}",
+      "bando / procedura",
+      "scp"
+    ],
+    [
+      "cf_aggiudicatario / aggiudicatario",
+      "PCTR:hasWinner → cf:{CF}",
+      "aggiudicatario",
+      "scp"
+    ],
+    [
+      "codice_fiscale_stazione_appaltante",
+      "PCTR:contractingAuthority → cf:{CF}",
+      "stazione appaltante",
+      "scp"
+    ],
+    [
+      "imp_di_aggiudicazione",
+      "PCTR:awardAmount",
+      "importo aggiudicazione",
+      "scp"
+    ],
+    [
+      "url_esito / url_bando",
+      "rdfs:seeAlso",
+      "link SCP",
+      "scp"
+    ],
+    [
       "Codice_IPA",
       "ipa:{IPA}",
       "@id ente",
@@ -179,9 +219,20 @@
       "uri": "PCTR:hasProject",
       "datasets": [
         "cupcig",
-        "opencup"
+        "opencup",
+        "scp"
       ],
-      "note": "I lotti ANAC puntano al progetto CUP tramite proprietà ontologica PCTR:hasProject."
+      "note": "I lotti ANAC e gli esiti SCP condividono l'URI del Lot e puntano al progetto CUP."
+    },
+    {
+      "id": "scp_award",
+      "label": "Esito SCP → Lot → aggiudicatario",
+      "uri": "PCTR:awardedLot / PCTR:hasWinner",
+      "datasets": [
+        "scp",
+        "cupcig"
+      ],
+      "note": "L'aggiudicazione arricchisce lo stesso Lot/{CIG} con vincitore (CF) e importo."
     },
     {
       "id": "pnrr_call",

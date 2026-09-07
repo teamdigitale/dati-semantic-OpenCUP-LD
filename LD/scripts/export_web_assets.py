@@ -555,6 +555,14 @@ def build_mappings() -> dict:
         ("CUP", "PCTR:hasProject → cup:{CUP}", "collegamento CUP", "cupcig"),
         ("CIG", "lot:{CIG}", "@id lotto ANAC", "cupcig"),
     ]
+    scp_fields = [
+        ("cig", "lot:{cig} (+ PCTR:Award / PCTR:ContractNotice)", "@id lotto SCP = stesso URI ANAC", "scp"),
+        ("id_gara", "notice:{id_gara}", "bando / procedura", "scp"),
+        ("cf_aggiudicatario / aggiudicatario", "PCTR:hasWinner → cf:{CF}", "aggiudicatario", "scp"),
+        ("codice_fiscale_stazione_appaltante", "PCTR:contractingAuthority → cf:{CF}", "stazione appaltante", "scp"),
+        ("imp_di_aggiudicazione", "PCTR:awardAmount", "importo aggiudicazione", "scp"),
+        ("url_esito / url_bando", "rdfs:seeAlso", "link SCP", "scp"),
+    ]
     enti_fields = [
         ("Codice_IPA", "ipa:{IPA}", "@id ente", "enti_ipa"),
         ("Codice_fiscale_ente", "owl:sameAs → cf:{CF}", "ponte semantico", "enti_ipa"),
@@ -579,8 +587,15 @@ def build_mappings() -> dict:
             "id": "cup_cig",
             "label": "Lotto CIG → CUP",
             "uri": "PCTR:hasProject",
-            "datasets": ["cupcig", "opencup"],
-            "note": "I lotti ANAC puntano al progetto CUP tramite proprietà ontologica PCTR:hasProject.",
+            "datasets": ["cupcig", "opencup", "scp"],
+            "note": "I lotti ANAC e gli esiti SCP condividono l'URI del Lot e puntano al progetto CUP.",
+        },
+        {
+            "id": "scp_award",
+            "label": "Esito SCP → Lot → aggiudicatario",
+            "uri": "PCTR:awardedLot / PCTR:hasWinner",
+            "datasets": ["scp", "cupcig"],
+            "note": "L'aggiudicazione arricchisce lo stesso Lot/{CIG} con vincitore (CF) e importo.",
         },
         {
             "id": "pnrr_call",
@@ -601,9 +616,19 @@ def build_mappings() -> dict:
         {"file": t.name, "dataset": t.stem}
         for t in sorted((ROOT / "LD" / "templates").glob("*.hbs"))
     ]
+    templates.append(
+        {
+            "file": "convert_scp_jsonld.py",
+            "dataset": "scp_bandi_esiti",
+        }
+    )
     return {
         "templates": templates,
-        "fieldMappings": opencup_fields + candidature_fields + cupcig_fields + enti_fields,
+        "fieldMappings": opencup_fields
+        + candidature_fields
+        + cupcig_fields
+        + scp_fields
+        + enti_fields,
         "semanticJoins": joins,
     }
 
@@ -844,7 +869,7 @@ def build_scope_analytics(out: Path) -> None:
         scope["hub_cigs_without_bando"] = len(hub_upper - b_cigs)
 
     scope["gaps"] = [
-        "SCP bandi/esiti filtrati ma non convertiti in RDF (manca template LD).",
+        "SCP bandi/esiti hub convertiti in RDF (Award / ContractNotice sullo stesso Lot/{CIG}).",
         "OpenCUP.parquet non copre tutti i CUP dell'hub (6 CUP senza riga OpenCUP).",
         "Il filtro 01 esclude PA Digitale senza mapping ANAC o senza esito gara.",
     ]

@@ -3,6 +3,8 @@ import { fetchJson } from "../api";
 import { MappingsData } from "../types";
 import { DATASET_LABELS } from "../constants";
 import { RdfMappingText } from "../components/ResourceLink";
+import { PageIntro } from "../components/PageIntro";
+import mappatureRaw from "../../content/mappature.md?raw";
 
 export function Mappature() {
   const [data, setData] = useState<MappingsData | null>(null);
@@ -21,35 +23,39 @@ export function Mappature() {
 
   return (
     <div>
-      <h1>Mappature</h1>
-      <p className="lead">
-        Trasformazione dai campi tabellari alle proprietà dell&apos;ontologia PublicInvestment.
-      </p>
+      <PageIntro raw={mappatureRaw} />
 
-      <section>
-        <h2>Template Handlebars</h2>
-        <ul className="template-list">
+      <section className="mb-5">
+        <h2>Template e convertitori</h2>
+        <ul className="list-group list-group-flush border rounded">
           {data.templates.map((t) => (
-            <li key={t.file}>
-              <code>{t.file}</code> → {t.dataset}
+            <li className="list-group-item" key={t.file}>
+              <code>{t.file}</code>
+              <span className="text-secondary"> → {t.dataset}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      <section>
+      <section className="mb-5">
         <h2>Join semantici (automatici)</h2>
-        <div className="join-grid">
+        <div className="row g-3">
           {data.semanticJoins.map((j) => (
-            <div key={j.id} className="join-card">
-              <h3>{j.label}</h3>
-              <p>
-                <RdfMappingText value={j.uri} />
-              </p>
-              <p className="datasets">
-                {j.datasets.map((d) => DATASET_LABELS[d] ?? d).join(" ↔ ")}
-              </p>
-              <p>{j.note}</p>
+            <div className="col-12 col-md-6" key={j.id}>
+              <div className="card-wrapper card-space h-100">
+                <div className="card card-bg h-100">
+                  <div className="card-body">
+                    <h3 className="h5 card-title">{j.label}</h3>
+                    <p>
+                      <RdfMappingText value={j.uri} />
+                    </p>
+                    <p className="text-success fw-semibold">
+                      {j.datasets.map((d) => DATASET_LABELS[d] ?? d).join(" ↔ ")}
+                    </p>
+                    <p className="card-text mb-0">{j.note}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -57,39 +63,50 @@ export function Mappature() {
 
       <section>
         <h2>Campi → proprietà RDF</h2>
-        <div className="filter-bar">
-          <label>
-            Dataset:{" "}
-            <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-              <option value="all">Tutti</option>
-              {Object.entries(DATASET_LABELS).map(([k, v]) => (
-                <option key={k} value={k}>
-                  {v}
-                </option>
-              ))}
-            </select>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="datasetFilter">
+            Dataset
           </label>
-        </div>
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Campo sorgente</th>
-              <th>Proprietà RDF</th>
-              <th>Ruolo</th>
-              <th>Dataset</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i}>
-                <td><code>{r[0]}</code></td>
-                <td><RdfMappingText value={r[1]} /></td>
-                <td>{r[2]}</td>
-                <td>{DATASET_LABELS[r[3]] ?? r[3]}</td>
-              </tr>
+          <select
+            id="datasetFilter"
+            className="form-select w-auto"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+          >
+            <option value="all">Tutti</option>
+            {Array.from(new Set(data.fieldMappings.map((r) => r[3]))).map((k) => (
+              <option key={k} value={k}>
+                {DATASET_LABELS[k] ?? k}
+              </option>
             ))}
-          </tbody>
-        </table>
+          </select>
+        </div>
+        <div className="table-responsive">
+          <table className="table table-striped table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Campo sorgente</th>
+                <th scope="col">Proprietà RDF</th>
+                <th scope="col">Ruolo</th>
+                <th scope="col">Dataset</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  <td>
+                    <code>{r[0]}</code>
+                  </td>
+                  <td>
+                    <RdfMappingText value={r[1]} />
+                  </td>
+                  <td>{r[2]}</td>
+                  <td>{DATASET_LABELS[r[3]] ?? r[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   );

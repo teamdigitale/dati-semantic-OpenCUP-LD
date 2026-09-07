@@ -1,0 +1,46 @@
+opencup_by_stato: >
+  Quanti progetti pubblici sono ancora **attivi** e quanti risultano **chiusi**
+  (anche d'ufficio). È una fotografia dello stato di avanzamento OpenCUP a scala nazionale.
+
+cups_by_regione: >
+  Dove si concentrano i CUP OpenCUP. La tabella risponde a «quanti in questa regione»;
+  con i codici ISTAT del comune si potranno poi collegare mappe e arricchimenti esterni.
+
+pad_cost_by_regione: >
+  Finanziamenti PA Digitale (PNRR) per regione: quanto arriva al territorio sul digitale pubblico.
+
+pad_top_comuni: >
+  Comuni che hanno ottenuto di più sugli avvisi PA Digitale. Domanda tipica da cittadino:
+  «il mio comune quanto ha ricevuto sul digitale?»
+
+scp_top_aggiudicatari: >
+  A chi sono andate più spesso le gare: soggetti con il maggior numero di lotti (CIG) negli esiti SCP,
+  aggregati per codice fiscale quando presente.
+
+scp_top_aggiudicatari_euro: >
+  Stessa fonte, classifica per somma degli importi di aggiudicazione.
+  Si considerano solo lotti con importo dichiarato ≤ 10 M€ (per ridurre outlier noti nel dataset).
+  Nel grafo hub, il vincitore è un nodo CF collegato a lotto e CUP.
+
+cups_by_settore: >
+  A cosa servono i progetti: istruzione, infrastrutture, servizi… Nel grafo lo stesso settore
+  diventa un concetto riusabile tra progetti, non solo una stringa in colonna.
+
+cups_by_categoria: >
+  Categorie più fini dello stesso albero di classificazione: utili per capire il mix degli interventi.
+
+cup_cig_distribution: >
+  Quanti lotti di gara (CIG) ha un progetto (CUP): la maggior parte ne ha uno; la coda lunga spiega
+  i progetti «a stella» nell'unione. I CUP placeholder (ND) sono esclusi.
+
+top_cup_cig: >
+  Top CUP per numero di CIG su tutta ANAC (esclusi placeholder **ND** / zeri:
+  non sono progetti validi, ma «CUP non dichiarato»). Per esplorarne uno hub usa le card sopra.
+
+cost_by_funder: >
+  Chi gestisce i finanziamenti più grandi (titolare OpenCUP). Nel grafo hub lo stesso soggetto
+  è un'organizzazione con codice fiscale, collegabile a IndicePA.
+
+cost_by_call: >
+  Finanziamenti PA Digitale per avviso (cloud, esperienza del cittadino, pagoPA, notifiche, SPID/CIE…):
+  quanto pesano le misure digitali PNRR.

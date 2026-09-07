@@ -6,6 +6,9 @@ import { GraphLegend } from "../components/GraphLegend";
 import { GraphNodeList } from "../components/GraphNodeList";
 import { ResourceLink } from "../components/ResourceLink";
 import { DATASET_LABELS } from "../constants";
+import { useCupQueryParam } from "../hooks/useCupQueryParam";
+import { PageIntro } from "../components/PageIntro";
+import unioneRaw from "../../content/unione.md?raw";
 
 interface SubgraphIndex {
   sample_cups: string[];
@@ -17,13 +20,16 @@ export function Unione() {
   const [activeCup, setActiveCup] = useState<string>("");
   const [subgraph, setSubgraph] = useState<SubgraphData | null>(null);
   const [loading, setLoading] = useState(false);
+  const { selectCup } = useCupQueryParam(sampleCups, activeCup, setActiveCup);
 
   useEffect(() => {
     fetchJson<SubgraphIndex>("subgraphs/index.json").then((d) => {
       setSampleCups(d.sample_cups);
-      setActiveCup(d.default_cup ?? d.sample_cups[0] ?? "");
+      if (!activeCup) {
+        setActiveCup(d.default_cup ?? d.sample_cups[0] ?? "");
+      }
     });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!activeCup) return;
@@ -35,38 +41,38 @@ export function Unione() {
 
   return (
     <div>
-      <h1>Unione semantica</h1>
-      <p className="lead">
-        Per ogni CUP del campione (gli stessi 10 dei grafi separati), vedi come OpenCUP,
-        PA Digitale, ANAC e IndicePA si collegano automaticamente via URI. Gli archi{" "}
-        <strong>rossi</strong> sono i join semantici.
-      </p>
+      <PageIntro raw={unioneRaw} />
 
-      <div className="filter-bar">
-        <label>
-          CUP:{" "}
-          <select value={activeCup} onChange={(e) => setActiveCup(e.target.value)}>
-            {sampleCups.map((cup) => (
-              <option key={cup} value={cup}>
-                {cup}
-              </option>
-            ))}
-          </select>
+      <div className="mb-3">
+        <label className="form-label" htmlFor="cupSelect">
+          CUP
         </label>
+        <select
+          id="cupSelect"
+          className="form-select w-auto d-inline-block"
+          value={activeCup}
+          onChange={(e) => selectCup(e.target.value)}
+        >
+          {sampleCups.map((cup) => (
+            <option key={cup} value={cup}>
+              {cup}
+            </option>
+          ))}
+        </select>
         {activeCup && (
-          <span className="stats" style={{ marginLeft: "1rem" }}>
+          <span className="ms-3">
             <ResourceLink value={`cup:${activeCup}`} />
           </span>
         )}
       </div>
 
-      <div className="tab-bar cup-tabs">
+      <div className="cup-tabs mb-3">
         {sampleCups.map((cup) => (
           <button
             key={cup}
             type="button"
-            className={activeCup === cup ? "tab active" : "tab"}
-            onClick={() => setActiveCup(cup)}
+            className={`btn btn-sm ${activeCup === cup ? "btn-primary" : "btn-outline-primary"}`}
+            onClick={() => selectCup(cup)}
             title={cup}
           >
             {cup.slice(0, 4)}…{cup.slice(-4)}
@@ -77,16 +83,17 @@ export function Unione() {
       {loading && <p>Caricamento sottografo…</p>}
       {subgraph && !loading && (
         <>
-          <div className="info-box">
-            <h2>{subgraph.title}</h2>
+          <div className="callout callout-note mb-3">
+            <div className="callout-title">
+              <span className="text">{subgraph.title}</span>
+            </div>
             <p>{subgraph.sparql_note}</p>
-            <p className="datasets">
-              Dataset coinvolti:{" "}
+            <p className="mb-0">
+              Dataset:{" "}
               {subgraph.datasets_involved.map((d) => DATASET_LABELS[d] ?? d).join(", ")}
-            </p>
-            <p className="stats">
+              {" · "}
               {subgraph.nodes.length} nodi · {subgraph.edges.length} archi ·{" "}
-              {subgraph.join_edges.length} join semantici
+              {subgraph.join_edges.length} join
             </p>
           </div>
           <CytoscapeGraph data={subgraph} highlightJoin height={620} />

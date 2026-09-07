@@ -1,17 +1,17 @@
 {
   "title": "Basi complete vs hub interop",
-  "definition": "Le statistiche Analisi sono calcolate sulle basi raw complete (OpenCUP, ANAC CUP↔CIG, PA Digitale, IndicePA), senza filtro di intersezione. I grafi Cytoscape restano sul campione hub (PA Digitale ∩ ANAC ∩ esiti) e sui 4 CUP più ricchi nell'unione semantica.",
+  "definition": "Le statistiche Analisi sono calcolate sulle basi raw complete (OpenCUP, ANAC CUP↔CIG, PA Digitale, IndicePA, esiti SCP), senza filtro di intersezione. I grafi dell'unione semantica restano sul campione hub (PA Digitale ∩ ANAC ∩ esiti) e sui CUP più ricchi nell'unione.",
   "mode": "full_raw",
   "filters": [
     {
       "step": "analytics-full",
       "rule": "Aggregati DuckDB su srcdata/rawdata/* (nessuna intersezione)",
-      "role": "Chart Analisi + counts nazionali"
+      "role": "Chart Analisi + counts nazionali (quanto / chi / dove / stato)"
     },
     {
       "step": "01–05 filter + convertLD",
       "rule": "Hub PA Digitale ∩ ANAC cup_json ∩ v_od_esiti → JSON-LD/TTL",
-      "role": "Grafo RDF e visualizzazioni Cytoscape"
+      "role": "Grafo RDF e visualizzazioni unione (come sono collegati)"
     }
   ],
   "opencup_cups": 11942785,
@@ -29,11 +29,13 @@
   "hub_padigitale_rows": 570,
   "hub_padigitale_cups": 540,
   "hub_enti_ipa": 238,
-  "hub_ttl_lines": 22003,
+  "hub_ttl_lines": 27769,
   "gaps": [
-    "RDF / JSON-LD resta limitato all'hub interop; scala nazionale via analytics DuckDB (Fuseki in roadmap).",
-    "SCP bandi/esiti: solo conteggi tabellari, non in RDF.",
-    "Grafi Cytoscape: campione fisso di 4 CUP (ricchezza unione), non le basi complete."
+    "Il RDF/JSON-LD resta sull'hub interop; le Analisi tabellari coprono le basi nazionali.",
+    "SCP bandi/esiti: convertiti in RDF sull'hub (Lot + Award + Notice); analytics nazionali restano tabellari.",
+    "Le mappe a grafo mostrano un campione di CUP, non milioni di nodi nazionali.",
+    "Prossimi passi: ribassi/CPV più ricchi, stati candidatura PA Digitale, comuni via ISTAT/Wikidata.",
+    "Nei ranking ANAC, CUP placeholder (ND, 000…) sono esclusi: non sono progetti validi."
   ],
   "scp_bandi_cigs_full": 135005,
   "scp_esiti_cigs_full": 396221

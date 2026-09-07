@@ -14,6 +14,13 @@ run_py LD/scripts/convert_cupcig_jsonld.py \
     --dest LD/json-ld/cupcig_candidature_comuni_finanziate-ld.json
 run_py LD/scripts/compactJsonLD.py LD/json-ld/cupcig_candidature_comuni_finanziate-ld.json
 
+# SCP bandi/esiti hub → Award / ContractNotice on same Lot URIs
+run_py LD/scripts/convert_scp_jsonld.py \
+    --bandi srcdata/data/SCP_bandi.json \
+    --esiti srcdata/data/SCP_esiti.json \
+    --dest LD/json-ld/scp_bandi_esiti-ld.json
+run_py LD/scripts/compactJsonLD.py LD/json-ld/scp_bandi_esiti-ld.json
+
 for tname in LD/templates/*.hbs; do
     bname=$(basename "${tname}" .hbs)
     if [[ "${bname}" == "cupcig_candidature_comuni_finanziate" ]]; then

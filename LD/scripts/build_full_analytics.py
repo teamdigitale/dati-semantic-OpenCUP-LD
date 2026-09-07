@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build Analisi chart JSON from full raw sources (DuckDB CLI, no intersection filter).
 
-Graphs/Cytoscape stay on the hub LD sample; this script only refreshes
+Graph visualizations stay on the hub LD sample; this script refreshes
 web/public/data/analytics/*.json from OpenCUP + ANAC + PA Digitale + IndicePA
-(and optional SCP counts).
+and SCP esiti (aggiudicazioni), plus territorial / status aggregates.
 """
 
 from __future__ import annotations
@@ -198,7 +198,8 @@ def main() -> None:
         f"""
         SELECT SETTORE_INTERVENTO AS label, COUNT(DISTINCT CUP) AS n
         FROM read_parquet('{oc}')
-        WHERE SETTORE_INTERVENTO IS NOT NULL AND CAST(SETTORE_INTERVENTO AS VARCHAR) <> ''
+        WHERE SETTORE_INTERVENTO IS NOT NULL
+          AND CAST(SETTORE_INTERVENTO AS VARCHAR) NOT IN ('', 'DATO NON PRESENTE', 'SETTORE_INTERVENTO')
         GROUP BY 1
         ORDER BY n DESC
         LIMIT 12
@@ -219,7 +220,8 @@ def main() -> None:
         f"""
         SELECT CATEGORIA_INTERVENTO AS label, COUNT(DISTINCT CUP) AS n
         FROM read_parquet('{oc}')
-        WHERE CATEGORIA_INTERVENTO IS NOT NULL AND CAST(CATEGORIA_INTERVENTO AS VARCHAR) <> ''
+        WHERE CATEGORIA_INTERVENTO IS NOT NULL
+          AND CAST(CATEGORIA_INTERVENTO AS VARCHAR) NOT IN ('', 'DATO NON PRESENTE', 'CATEGORIA_INTERVENTO')
         GROUP BY 1
         ORDER BY n DESC
         LIMIT 12
@@ -265,6 +267,11 @@ def main() -> None:
           SELECT CUP, COUNT(*) AS nLots
           FROM read_json_auto('{cj}', maximum_object_size=500000000)
           WHERE CUP IS NOT NULL AND CUP <> ''
+            AND UPPER(TRIM(CAST(CUP AS VARCHAR))) NOT IN (
+              'ND', 'N.D.', 'N/D', 'NULL', 'NONE'
+            )
+            AND TRIM(CAST(CUP AS VARCHAR)) NOT IN ('0', '00')
+            AND TRIM(CAST(CUP AS VARCHAR)) NOT LIKE '00000000000000%'
           GROUP BY 1
         ),
         bucketed AS (
@@ -315,6 +322,11 @@ def main() -> None:
         SELECT CUP AS label, COUNT(*) AS nLots
         FROM read_json_auto('{cj}', maximum_object_size=500000000)
         WHERE CUP IS NOT NULL AND CUP <> ''
+          AND UPPER(TRIM(CAST(CUP AS VARCHAR))) NOT IN (
+            'ND', 'N.D.', 'N/D', 'NULL', 'NONE'
+          )
+          AND TRIM(CAST(CUP AS VARCHAR)) NOT IN ('0', '00')
+          AND TRIM(CAST(CUP AS VARCHAR)) NOT LIKE '00000000000000%'
         GROUP BY 1
         ORDER BY nLots DESC
         LIMIT 15
@@ -328,6 +340,195 @@ def main() -> None:
         "Lotti CIG",
         OUT / "top_cup_cig.json",
     )
+
+    print("Analytics: OpenCUP by regione / stato…", flush=True)
+    by_regione = duck_json(
+        exe,
+        f"""
+        SELECT REGIONE AS label, COUNT(DISTINCT CUP) AS n
+        FROM read_parquet('{oc}')
+        WHERE REGIONE IS NOT NULL
+          AND CAST(REGIONE AS VARCHAR) NOT IN ('', 'DATO NON PRESENTE', 'TUTTE')
+        GROUP BY 1
+        ORDER BY n DESC
+        LIMIT 20
+        """,
+    )
+    chart_from_rows(
+        by_regione if isinstance(by_regione, list) else [],
+        "label",
+        "n",
+        "OpenCUP nazionale — CUP per regione (top 20)",
+        "Progetti",
+        OUT / "cups_by_regione.json",
+        label_max=40,
+    )
+
+    by_stato = duck_json(
+        exe,
+        f"""
+        SELECT UPPER(TRIM(CAST(STATO_PROGETTO AS VARCHAR))) AS label,
+               COUNT(DISTINCT CUP) AS n
+        FROM read_parquet('{oc}')
+        WHERE STATO_PROGETTO IS NOT NULL
+          AND UPPER(TRIM(CAST(STATO_PROGETTO AS VARCHAR))) NOT IN (
+            '', 'DATO NON PRESENTE', 'STATO_PROGETTO'
+          )
+        GROUP BY 1
+        ORDER BY n DESC
+        """,
+    )
+    chart_from_rows(
+        by_stato if isinstance(by_stato, list) else [],
+        "label",
+        "n",
+        "OpenCUP nazionale — CUP per stato del progetto",
+        "Progetti",
+        OUT / "opencup_by_stato.json",
+        label_max=40,
+    )
+
+    print("Analytics: PA Digitale per regione / comuni…", flush=True)
+    pad_regione = duck_json(
+        exe,
+        f"""
+        SELECT regione AS label, SUM(importo_finanziamento) AS total
+        FROM read_json_auto('{pad}', maximum_object_size=200000000)
+        WHERE regione IS NOT NULL AND regione <> ''
+        GROUP BY 1
+        ORDER BY total DESC NULLS LAST
+        LIMIT 20
+        """,
+    )
+    chart_from_rows(
+        pad_regione if isinstance(pad_regione, list) else [],
+        "label",
+        "total",
+        "PA Digitale — finanziamento per regione",
+        "Euro",
+        OUT / "pad_cost_by_regione.json",
+        label_max=40,
+    )
+
+    pad_comuni = duck_json(
+        exe,
+        f"""
+        SELECT comune AS label, SUM(importo_finanziamento) AS total
+        FROM read_json_auto('{pad}', maximum_object_size=200000000)
+        WHERE comune IS NOT NULL AND comune <> ''
+        GROUP BY 1
+        ORDER BY total DESC NULLS LAST
+        LIMIT 15
+        """,
+    )
+    chart_from_rows(
+        pad_comuni if isinstance(pad_comuni, list) else [],
+        "label",
+        "total",
+        "PA Digitale — comuni con più finanziamento (top 15)",
+        "Euro",
+        OUT / "pad_top_comuni.json",
+        label_max=40,
+    )
+
+    if ESITI.exists():
+        print("Analytics: SCP top aggiudicatari…", flush=True)
+        esiti = ESITI.as_posix()
+        awards_lots = duck_json(
+            exe,
+            f"""
+            WITH cleaned AS (
+              SELECT
+                COALESCE(
+                  NULLIF(TRIM(CAST(cf_aggiudicatario AS VARCHAR)), ''),
+                  NULLIF(TRIM(CAST(aggiudicatario AS VARCHAR)), '')
+                ) AS key_id,
+                COALESCE(
+                  NULLIF(TRIM(CAST(aggiudicatario AS VARCHAR)), ''),
+                  NULLIF(TRIM(CAST(cf_aggiudicatario AS VARCHAR)), '')
+                ) AS display_name,
+                UPPER(TRIM(CAST(cig AS VARCHAR))) AS cig
+              FROM read_csv_auto('{esiti}', ignore_errors=true, strict_mode=false)
+              WHERE (
+                (cf_aggiudicatario IS NOT NULL AND TRIM(CAST(cf_aggiudicatario AS VARCHAR)) <> '')
+                OR (aggiudicatario IS NOT NULL AND TRIM(CAST(aggiudicatario AS VARCHAR)) <> '')
+              )
+            ),
+            per_lot AS (
+              SELECT key_id, MAX(display_name) AS display_name, cig
+              FROM cleaned
+              WHERE key_id IS NOT NULL AND cig IS NOT NULL AND cig <> ''
+              GROUP BY key_id, cig
+            )
+            SELECT MAX(display_name) AS label, COUNT(*) AS nLots
+            FROM per_lot
+            GROUP BY key_id
+            ORDER BY nLots DESC
+            LIMIT 15
+            """,
+        )
+        chart_from_rows(
+            awards_lots if isinstance(awards_lots, list) else [],
+            "label",
+            "nLots",
+            "SCP MIT — soggetti con più lotti aggiudicati (top 15)",
+            "Lotti CIG",
+            OUT / "scp_top_aggiudicatari.json",
+            label_max=50,
+        )
+
+        awards_euro = duck_json(
+            exe,
+            f"""
+            WITH cleaned AS (
+              SELECT
+                COALESCE(
+                  NULLIF(TRIM(CAST(cf_aggiudicatario AS VARCHAR)), ''),
+                  NULLIF(TRIM(CAST(aggiudicatario AS VARCHAR)), '')
+                ) AS key_id,
+                COALESCE(
+                  NULLIF(TRIM(CAST(aggiudicatario AS VARCHAR)), ''),
+                  NULLIF(TRIM(CAST(cf_aggiudicatario AS VARCHAR)), '')
+                ) AS display_name,
+                UPPER(TRIM(CAST(cig AS VARCHAR))) AS cig,
+                TRY_CAST(imp_di_aggiudicazione AS DOUBLE) AS importo
+              FROM read_csv_auto('{esiti}', ignore_errors=true, strict_mode=false)
+              WHERE (
+                (cf_aggiudicatario IS NOT NULL AND TRIM(CAST(cf_aggiudicatario AS VARCHAR)) <> '')
+                OR (aggiudicatario IS NOT NULL AND TRIM(CAST(aggiudicatario AS VARCHAR)) <> '')
+              )
+            ),
+            per_lot AS (
+              SELECT
+                key_id,
+                MAX(display_name) AS display_name,
+                cig,
+                MAX(importo) AS importo
+              FROM cleaned
+              WHERE key_id IS NOT NULL
+                AND cig IS NOT NULL AND cig <> ''
+                AND importo IS NOT NULL
+                AND importo > 0
+                AND importo <= 10000000
+              GROUP BY key_id, cig
+            )
+            SELECT MAX(display_name) AS label, SUM(importo) AS total
+            FROM per_lot
+            GROUP BY key_id
+            ORDER BY total DESC NULLS LAST
+            LIMIT 15
+            """,
+        )
+        chart_from_rows(
+            awards_euro if isinstance(awards_euro, list) else [],
+            "label",
+            "total",
+            "SCP MIT — top aggiudicatari per importo (lotti ≤ 10 M€, top 15)",
+            "Euro",
+            OUT / "scp_top_aggiudicatari_euro.json",
+            label_max=50,
+        )
+
 
     print("Analytics: counts + scope…", flush=True)
     opencup_cups = int(
@@ -432,21 +633,21 @@ def main() -> None:
         "title": "Basi complete vs hub interop",
         "definition": (
             "Le statistiche Analisi sono calcolate sulle basi raw complete "
-            "(OpenCUP, ANAC CUP↔CIG, PA Digitale, IndicePA), senza filtro di intersezione. "
-            "I grafi Cytoscape restano sul campione hub (PA Digitale ∩ ANAC ∩ esiti) "
-            "e sui 4 CUP più ricchi nell'unione semantica."
+            "(OpenCUP, ANAC CUP↔CIG, PA Digitale, IndicePA, esiti SCP), senza filtro di intersezione. "
+            "I grafi dell'unione semantica restano sul campione hub "
+            "(PA Digitale ∩ ANAC ∩ esiti) e sui CUP più ricchi nell'unione."
         ),
         "mode": "full_raw",
         "filters": [
             {
                 "step": "analytics-full",
                 "rule": "Aggregati DuckDB su srcdata/rawdata/* (nessuna intersezione)",
-                "role": "Chart Analisi + counts nazionali",
+                "role": "Chart Analisi + counts nazionali (quanto / chi / dove / stato)",
             },
             {
                 "step": "01–05 filter + convertLD",
                 "rule": "Hub PA Digitale ∩ ANAC cup_json ∩ v_od_esiti → JSON-LD/TTL",
-                "role": "Grafo RDF e visualizzazioni Cytoscape",
+                "role": "Grafo RDF e visualizzazioni unione (come sono collegati)",
             },
         ],
         "opencup_cups": opencup_cups,
@@ -459,9 +660,11 @@ def main() -> None:
         "enti_ipa": enti_ipa,
         **hub,
         "gaps": [
-            "RDF / JSON-LD resta limitato all'hub interop; scala nazionale via analytics DuckDB (Fuseki in roadmap).",
-            "SCP bandi/esiti: solo conteggi tabellari, non in RDF.",
-            "Grafi Cytoscape: campione fisso di 4 CUP (ricchezza unione), non le basi complete.",
+            "Il RDF/JSON-LD resta sull'hub interop; le Analisi tabellari coprono le basi nazionali.",
+            "SCP bandi/esiti: convertiti in RDF sull'hub (Lot + Award + Notice); analytics nazionali restano tabellari.",
+            "Le mappe a grafo mostrano un campione di CUP, non milioni di nodi nazionali.",
+            "Prossimi passi: ribassi/CPV più ricchi, stati candidatura PA Digitale, comuni via ISTAT/Wikidata.",
+            "Nei ranking ANAC, CUP placeholder (ND, 000…) sono esclusi: non sono progetti validi.",
         ],
     }
     if scp_bandi_cigs is not None:

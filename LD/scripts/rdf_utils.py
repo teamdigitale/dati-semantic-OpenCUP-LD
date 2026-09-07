@@ -32,6 +32,8 @@ LD_CONTEXT = {
     "cf": "https://w3id.org/italia/data/CodiceFiscale/",
     "lot": "https://w3id.org/italia/data/Lot/",
     "call": "https://w3id.org/italia/data/Call/",
+    "notice": "https://w3id.org/italia/data/ContractNotice/",
+    "award": "https://w3id.org/italia/data/Award/",
     "pocat": "https://w3id.org/italia/data/PublicOrganizationCategory/",
     **{prefix: f"{PI_CV}{slug}/" for slug, prefix in CV_PREFIXES.items()},
 }
@@ -43,6 +45,16 @@ def bind_ld_prefixes(graph: Graph) -> None:
     graph.bind("cf", Namespace("https://w3id.org/italia/data/CodiceFiscale/"), override=True)
     graph.bind("lot", Namespace("https://w3id.org/italia/data/Lot/"), override=True)
     graph.bind("call", Namespace("https://w3id.org/italia/data/Call/"), override=True)
+    graph.bind(
+        "notice",
+        Namespace("https://w3id.org/italia/data/ContractNotice/"),
+        override=True,
+    )
+    graph.bind(
+        "award",
+        Namespace("https://w3id.org/italia/data/Award/"),
+        override=True,
+    )
     graph.bind(
         "pocat",
         Namespace("https://w3id.org/italia/data/PublicOrganizationCategory/"),

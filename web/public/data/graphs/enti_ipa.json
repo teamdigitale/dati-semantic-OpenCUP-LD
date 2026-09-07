@@ -2,30 +2,9 @@
   "dataset": "enti_ipa",
   "nodes": [
     {
-      "id": "https://indicepa.gov.it/ente/c_a271",
-      "shortId": "ipa:c_a271",
-      "label": "Comune di Ancona",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
-    },
-    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00351040423",
       "shortId": "cf:00351040423",
       "label": "cf:00351040423",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
-      "shortId": "cf:00221940364",
-      "label": "cf:00221940364",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://indicepa.gov.it/ente/c_f257",
-      "shortId": "ipa:c_f257",
-      "label": "Comune di Modena",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     },
@@ -37,9 +16,23 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://indicepa.gov.it/ente/c_g535",
-      "shortId": "ipa:c_g535",
-      "label": "Comune di Piacenza",
+      "id": "https://indicepa.gov.it/ente/c_f257",
+      "shortId": "ipa:c_f257",
+      "label": "Comune di Modena",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
+      "shortId": "cf:00221940364",
+      "label": "cf:00221940364",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_h199",
+      "shortId": "ipa:c_h199",
+      "label": "Comune di Ravenna",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     },
@@ -51,22 +44,29 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://indicepa.gov.it/ente/c_h199",
-      "shortId": "ipa:c_h199",
-      "label": "Comune di Ravenna",
+      "id": "https://indicepa.gov.it/ente/c_g535",
+      "shortId": "ipa:c_g535",
+      "label": "Comune di Piacenza",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_a271",
+      "shortId": "ipa:c_a271",
+      "label": "Comune di Ancona",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     }
   ],
   "edges": [
     {
-      "source": "https://indicepa.gov.it/ente/c_a271",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00351040423",
+      "source": "https://indicepa.gov.it/ente/c_f257",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
       "label": "sameAs"
     },
     {
-      "source": "https://indicepa.gov.it/ente/c_f257",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
+      "source": "https://indicepa.gov.it/ente/c_h199",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00354730392",
       "label": "sameAs"
     },
     {
@@ -75,8 +75,8 @@
       "label": "sameAs"
     },
     {
-      "source": "https://indicepa.gov.it/ente/c_h199",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00354730392",
+      "source": "https://indicepa.gov.it/ente/c_a271",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00351040423",
       "label": "sameAs"
     }
   ],

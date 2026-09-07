@@ -23,24 +23,28 @@ diventano evidenti: stesse URI → stesso nodo nel grafo.
 
 ### Orizzonte
 
-1. Caricare il grafo hub (e poi OpenCUP/ANAC nazionali) su un **database a grafo /
-   endpoint SPARQL** (es. Jena Fuseki).
-2. Mostrare un catalogo di **query** live (CUP→CIG→bando, IPA↔CF, costi per CV, …).
-3. Tenere i grafi Cytoscape sui **campioni**; le analisi tabellari già usano le basi complete.
+1. **Analisi tabellari** sulle basi complete: territorio, stati di avanzamento,
+   aggiudicazioni SCP, settori, avvisi PNRR — già in pagina Analisi.
+2. Tenere le **mappe a grafo** sui campioni hub (unione semantica); mostrare
+   cosa si scopre meglio con gli URI rispetto a un `GROUP BY`.
+3. Allargare la costellazione: ribassi/CPV SCP nel grafo hub, stati candidatura
+   PA Digitale, comuni via codice ISTAT → Wikidata (popolazione, coordinate) e
+   mappe.
 
 ## Due percorsi dati
 
 | Percorso | Input | Output | Uso |
 |----------|--------|--------|-----|
-| **Analytics full** | `srcdata/rawdata/*` (OpenCUP ~24M righe, ANAC cup_json, PA Digitale, IndicePA, SCP) | `web/public/data/analytics/*.json` | Pagina **Analisi** |
-| **LD hub** | Filtri 01–05 (PA Digitale ∩ ANAC ∩ esiti) → JSON-LD → `all.ttl` | grafi / subgraph (top 4 CUP) | Cytoscape |
+| **Analytics full** | `srcdata/rawdata/*` (OpenCUP, ANAC, PA Digitale, IndicePA, SCP) | `web/public/data/analytics/*.json` | Pagina **Analisi** (quanto / dove / chi / stato) |
+| **LD hub** | Filtri 01–05 (PA Digitale ∩ ANAC ∩ esiti) → JSON-LD → `all.ttl` | grafi / subgraph (campione CUP) | Unione semantica |
 
 ```bash
 make analytics-full   # solo statistiche nazionali (DuckDB CLI)
 make web-assets       # LD hub + analytics-full + export grafi
 ```
 
-Non si converte OpenCUP/ANAC nazionali in RDF nel sito statico (scala Fuseki).
+Non si materializza un RDF nazionale nel sito statico: aggregati tabellari +
+campioni di grafo.
 
 ## Organizzazione del repository
 
@@ -50,8 +54,11 @@ Non si converte OpenCUP/ANAC nazionali in RDF nel sito statico (scala Fuseki).
   * `scripts/convert_cupcig_jsonld.py` — CUP↔CIG via **reshape + `@context`**
     (Handlebars deprecato per questo dataset; `--spike` mostra anche framing pyld)
   * `scripts/build_full_analytics.py` — aggregati DuckDB sulle basi raw complete
+    (regione, stato progetto, top comuni PAD, top aggiudicatari SCP, …)
+  * `scripts/convert_scp_jsonld.py` — SCP bandi/esiti hub → Award / ContractNotice su `Lot/{cig}`
   * `ttl/all.ttl` — grafo unito (**hub** interop, non nazionale)
-* `web` — sito statico; la **home** è il racconto JSON → JSON-LD → join → roadmap grafo
+* `web` — sito statico; testi editoriali in **`web/content/`** (Markdown/YAML), non nei `.tsx`
+  * `content/README.md` — come modificare i testi
 
 Nota: i JSON filtrati in `srcdata/data/` restano lo scope **hub** (intersezione) per RDF e
 grafi. Le **Analisi** leggono invece le basi complete in `srcdata/rawdata/`.

@@ -1,247 +1,183 @@
-:root {
-  font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
-  line-height: 1.5;
-  color: #1e293b;
-  background: #f8fafc;
-}
+/* Override minimi sopra Bootstrap Italia — grafi Cytoscape, chart, codice */
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-a {
-  color: #2563eb;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.app {
+.app-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.header {
-  background: #0f172a;
-  color: #f8fafc;
-  padding: 0.75rem 1.5rem;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-weight: 700;
-  color: #f8fafc;
-  font-size: 1.1rem;
-}
-
-.logo:hover {
-  text-decoration: none;
-  opacity: 0.9;
-}
-
-nav {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.nav-link {
-  color: #94a3b8;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: #f8fafc;
-  background: #1e293b;
-  text-decoration: none;
-}
-
-.main {
+.app-shell > main {
   flex: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  width: 100%;
 }
 
-.footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.85rem;
-  color: #64748b;
-  border-top: 1px solid #e2e8f0;
+.it-brand-title {
+  font-size: 1.5rem;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 1.75rem;
+/* Menu header BI: testo chiaro su barra blu (contrasto WCAG) */
+.it-header-navbar-wrapper,
+.it-header-navbar-wrapper.theme-dark {
+  background-color: #0066cc !important;
 }
 
-h2 {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
-
-.lead {
-  color: #475569;
-  font-size: 1.05rem;
-}
-
-.story-hero {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.story-kicker {
-  margin: 0 0 0.35rem;
-  font-size: 0.8rem;
+.it-header-navbar-wrapper .navbar-nav .nav-link,
+.it-header-navbar-wrapper .navbar-nav .nav-link span,
+.it-header-navbar-wrapper.theme-dark .navbar-nav .nav-link,
+.it-header-navbar-wrapper.theme-dark .navbar-nav .nav-link span,
+.it-header-navbar-wrapper .navbar.theme-dark .nav-link,
+.it-header-navbar-wrapper .navbar.theme-dark .nav-link span {
+  color: #fff !important;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #64748b;
+  opacity: 0.95;
 }
 
-.story-section {
-  margin: 2rem 0;
+.it-header-navbar-wrapper .navbar-nav .nav-link:hover,
+.it-header-navbar-wrapper .navbar-nav .nav-link:hover span,
+.it-header-navbar-wrapper .navbar-nav .nav-link:focus,
+.it-header-navbar-wrapper .navbar-nav .nav-link:focus span {
+  color: #fff !important;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
 }
 
-.story-section h2 {
-  margin-top: 0;
-  font-size: 1.35rem;
+.it-header-navbar-wrapper .navbar-nav .nav-link.active,
+.it-header-navbar-wrapper .navbar-nav .nav-link.active span {
+  color: #fff !important;
+  opacity: 1;
+  border-bottom: 2px solid #fff;
 }
 
-.story-section h3 {
-  margin: 0 0 0.5rem;
-  font-size: 0.95rem;
-  color: #334155;
+.it-header-navbar-wrapper .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #fff;
 }
 
-.story-list {
-  padding-left: 1.25rem;
+.it-header-navbar-wrapper .navbar-toggler-icon {
+  filter: invert(1) brightness(2);
 }
 
-.story-list li {
-  margin: 0.35rem 0;
+/* Brand link bianco anche se ereditasse colori scuri */
+.it-header-center-wrapper .it-brand-wrapper a {
+  color: #fff;
+  text-decoration: none;
 }
 
-.story-note {
-  font-size: 0.92rem;
-  color: #64748b;
-  background: #f1f5f9;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
+.it-header-center-wrapper .it-brand-title,
+.it-header-center-wrapper .it-brand-tagline {
+  color: #fff;
 }
 
-.story-compare {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 1rem 0;
-}
 
-@media (max-width: 800px) {
-  .story-compare {
-    grid-template-columns: 1fr;
-  }
+pre,
+code {
+  font-family: "Roboto Mono", ui-monospace, monospace;
 }
 
 .story-compare pre,
+.ld-compare pre,
 .story-pipeline {
-  margin: 0;
-  padding: 0.85rem 1rem;
-  background: #0f172a;
-  color: #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.78rem;
+  background: #f2f7fc;
+  border: 1px solid #d9e6f2;
+  border-radius: 4px;
+  padding: 1rem;
+  font-size: 0.8rem;
   overflow-x: auto;
-  line-height: 1.45;
+  max-height: 28rem;
 }
 
-.story-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-.story-links a {
-  display: inline-block;
-  padding: 0.4rem 0.75rem;
-  border-radius: 6px;
-  background: #eff6ff;
-  color: #1d4ed8;
-  font-size: 0.9rem;
-}
-
-.story-links a:hover {
-  background: #dbeafe;
-  text-decoration: none;
-}
-
-.story-steps {
-  padding-left: 1.25rem;
-}
-
-.story-steps li {
-  margin: 0.55rem 0;
-}
-
-.story-pipeline {
-  margin-top: 1rem;
-}
-
-.card-grid {
+.ld-compare {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .ld-compare {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Cytoscape / graph pages */
+.cy-wrap {
+  border: 1px solid #d9e6f2;
+  border-radius: 4px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cy-container {
+  width: 100%;
+  min-height: 400px;
+}
+
+.analisi-chart-tooltip {
+  background: #fff;
+  border: 1px solid #5b6f82;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.12);
+}
+
+.analisi-chart-tooltip-label {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #17324d;
+}
+
+.analisi-chart-tooltip-value {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: #0066cc;
+}
+
+.chart-section {
   margin: 2rem 0;
 }
 
-.card {
+.cup-tabs .btn {
+  margin: 0.25rem;
+}
+
+.join-node-sample,
+.legend-edge-sample {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  border-radius: 2px;
+}
+
+.join-node-sample {
+  border: 2px solid #c72a2a;
   background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1.25rem;
-  transition: box-shadow 0.15s;
-  color: inherit;
 }
 
-.card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
+.legend-edge-sample {
+  height: 0;
+  border-top: 3px solid #c72a2a;
+  width: 1.25rem;
 }
 
-.card h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  color: #2563eb;
+/* Merge animation */
+.merge-anim-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.card p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #64748b;
+.merge-anim-stage {
+  position: relative;
 }
 
+.dup-hidden {
+  display: none !important;
+}
+
+/* --- graph / merge (preserved) --- */
 .info-box {
   background: #fff;
   border: 1px solid #e2e8f0;

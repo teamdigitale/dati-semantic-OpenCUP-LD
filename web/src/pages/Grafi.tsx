@@ -5,6 +5,8 @@ import { CytoscapeGraph } from "../components/CytoscapeGraph";
 import { GraphNodeList } from "../components/GraphNodeList";
 import { ResourceLink } from "../components/ResourceLink";
 import { DATASET_COLORS, DATASET_LABELS } from "../constants";
+import { PageIntro } from "../components/PageIntro";
+import grafiRaw from "../../content/grafi.md?raw";
 
 const DATASETS = ["opencup", "candidature", "cupcig", "enti_ipa"] as const;
 
@@ -22,13 +24,10 @@ export function Grafi() {
 
   return (
     <div>
-      <h1>Grafi separati</h1>
-      <p className="lead">
-        Ogni dataset RDF visualizzato in isolamento sullo{" "}
-        <strong>stesso campione di 4 CUP</strong> (scelto in build da OpenCUP, ordinamento
-        stabile). Le analisi in tab Analisi usano invece l&apos;intero <code>all.ttl</code>.
-        {" "}
-        {graph?.sample_note ?? "Campione statico."} ({graph?.nodes.length ?? "…"} nodi)
+      <PageIntro raw={grafiRaw} />
+      <p className="text-secondary">
+        {graph?.sample_note ?? "Campione statico."} ({graph?.nodes.length ?? "…"}{" "}
+        nodi)
       </p>
       {graph?.sample_cups && graph.sample_cups.length > 0 && (
         <p className="stats">
