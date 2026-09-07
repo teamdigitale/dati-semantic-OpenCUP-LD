@@ -85,6 +85,8 @@ export interface MappingsData {
 export interface ChartData {
   title: string;
   labels: string[];
+  /** Optional long titles / descriptions aligned with labels */
+  details?: string[];
   series: { name: string; data: number[] }[];
 }
 

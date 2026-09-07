@@ -3,8 +3,23 @@ opencup_by_stato: >
   (anche d'ufficio). È una fotografia dello stato di avanzamento OpenCUP a scala nazionale.
 
 cups_by_regione: >
-  Dove si concentrano i CUP OpenCUP. La tabella risponde a «quanti in questa regione»;
-  con i codici ISTAT del comune si potranno poi collegare mappe e arricchimenti esterni.
+  Dove si concentrano i CUP OpenCUP in **valore assoluto**. La Lombardia guida di solito;
+  sotto confrontiamo anche a parità di popolazione e di PIL.
+
+cups_by_regione_per_100k: >
+  Stessi CUP, divisi per abitanti (ISTAT): **CUP ogni 100.000 residenti**.
+  Regioni piccole possono superare le grandi: il ranking cambia rispetto agli assoluti.
+
+cups_by_regione_per_pil: >
+  Intensità rispetto all’economia regionale: **CUP per miliardo di euro di PIL**
+  (PIL stimato da popolazione × PIL pro capite ISTAT). Ancora una volta il podio può cambiare.
+
+cups_by_regione_map: >
+  Coropleta interattiva: scegli **CUP o CIG**, **quantità o importo €**, e il livello
+  (regioni / province / comuni; con **Auto** cambia allo zoom).
+  A livello regione restano le scale per abitante e per PIL.
+  Tooltip: valore selezionato più il dato complementare (conteggio ↔ euro).
+
 
 pad_cost_by_regione: >
   Finanziamenti PA Digitale (PNRR) per regione: quanto arriva al territorio sul digitale pubblico.
@@ -34,12 +49,17 @@ cup_cig_distribution: >
   i progetti «a stella» nell'unione. I CUP placeholder (ND) sono esclusi.
 
 top_cup_cig: >
-  Top CUP per numero di CIG su tutta ANAC (esclusi placeholder **ND** / zeri:
-  non sono progetti validi, ma «CUP non dichiarato»). Per esplorarne uno hub usa le card sopra.
+  Top CUP per numero di CIG su tutta ANAC (esclusi placeholder **ND** / zeri).
+  Nel tooltip trovi anche la **descrizione sintetica** OpenCUP del progetto.
 
 cost_by_funder: >
-  Chi gestisce i finanziamenti più grandi (titolare OpenCUP). Nel grafo hub lo stesso soggetto
-  è un'organizzazione con codice fiscale, collegabile a IndicePA.
+  Chi gestisce i finanziamenti più grandi (titolare OpenCUP). Attenzione: la voce **«soggetto privato»**
+  non è un ente singolo, ma un'etichetta generica/anonimizzata usata da OpenCUP quando il titolare
+  è privato e il nome non è esposto (imprese, no-profit, ecc.).
+
+soggetto_privato_by_categoria: >
+  Scomposizione dei soli CUP con titolare «soggetto privato» per **categoria soggetto** OpenCUP:
+  così si vede se prevalgono imprese di servizi, enti senza fine di lucro, ecc.
 
 cost_by_call: >
   Finanziamenti PA Digitale per avviso (cloud, esperienza del cittadino, pagoPA, notifiche, SPID/CIE…):

@@ -13,11 +13,21 @@ import { fetchJson } from "../api";
 import { ChartData, CountsData, ScopeData } from "../types";
 import { PageIntro } from "../components/PageIntro";
 import { ContentMarkdown } from "../components/ContentMarkdown";
+import { RegioneCupMap } from "../components/RegioneCupMap";
 import { parseYaml } from "../content/load";
 import analisiRaw from "../../content/analisi.md?raw";
 import insightsRaw from "../../content/analisi.insights.yml?raw";
+import gapsRaw from "../../content/analisi.gaps.yml?raw";
+import {
+  cupsPer100k,
+  cupsPerPilMld,
+  normalizeRegion,
+  pilMlnEuro,
+  RegioneIndicatori,
+} from "../utils/regions";
 
 const insights = parseYaml<Record<string, string>>(insightsRaw);
+const gapsDoc = parseYaml<{ title: string; items: string[] }>(gapsRaw);
 
 const BI = {
   primary: "#0066cc",
@@ -30,6 +40,7 @@ const BI = {
 interface ChartPoint {
   name: string;
   fullLabel: string;
+  detail?: string;
   value: number;
 }
 
@@ -38,12 +49,17 @@ interface SubgraphIndex {
   default_cup: string | null;
 }
 
-function toChartPoint(label: string, value: number, maxAxisLen?: number): ChartPoint {
+function toChartPoint(
+  label: string,
+  value: number,
+  maxAxisLen?: number,
+  detail?: string
+): ChartPoint {
   const name =
     maxAxisLen != null && label.length > maxAxisLen
       ? `${label.slice(0, maxAxisLen)}…`
       : label;
-  return { name, fullLabel: label, value };
+  return { name, fullLabel: label, detail, value };
 }
 
 function AnalisiTooltip({
@@ -61,6 +77,9 @@ function AnalisiTooltip({
   return (
     <div className="analisi-chart-tooltip">
       <p className="analisi-chart-tooltip-label">{row.fullLabel}</p>
+      {row.detail ? (
+        <p className="analisi-chart-tooltip-detail">{row.detail}</p>
+      ) : null}
       <p className="analisi-chart-tooltip-value">
         {valueFormatter ? valueFormatter(value) : value.toLocaleString("it")}
       </p>
@@ -94,11 +113,16 @@ function StatCard({ value, label }: { value: string; label: string }) {
   );
 }
 
+function CompactAxisTick(v: number) {
+  const n = (x: number, d: number) => x.toFixed(d).replace(".", ",");
+  if (Math.abs(v) >= 1e9) return `${n(v / 1e9, v >= 1e10 ? 0 : 1)}B`;
+  if (Math.abs(v) >= 1e6) return `${n(v / 1e6, v >= 1e7 ? 0 : 1)}M`;
+  if (Math.abs(v) >= 1e3) return `${n(v / 1e3, 0)}k`;
+  return String(Math.round(v));
+}
+
 function EuroAxisTick(v: number) {
-  if (v >= 1e9) return `${(v / 1e9).toFixed(0)}B €`;
-  if (v >= 1e6) return `${(v / 1e6).toFixed(0)}M €`;
-  if (v >= 1e3) return `${(v / 1e3).toFixed(0)}k €`;
-  return `${v} €`;
+  return `${CompactAxisTick(v)} €`;
 }
 
 function ChartSection({
@@ -110,6 +134,7 @@ function ChartSection({
   yWidth = 160,
   euro = false,
   height,
+  valueDecimals = false,
 }: {
   title?: string;
   insight: React.ReactNode;
@@ -119,15 +144,23 @@ function ChartSection({
   yWidth?: number;
   euro?: boolean;
   height?: number;
+  valueDecimals?: boolean;
 }) {
   if (!title || data.length === 0) return null;
   const chartHeight =
     height ??
     (layout === "vertical" ? Math.max(360, data.length * 28) : 300);
+  const axisFmt = euro ? EuroAxisTick : CompactAxisTick;
   const tip = euro ? (
     <AnalisiTooltip valueFormatter={(v) => `${v.toLocaleString("it")} €`} />
   ) : (
-    <AnalisiTooltip />
+    <AnalisiTooltip
+      valueFormatter={(v) =>
+        v.toLocaleString("it", {
+          maximumFractionDigits: valueDecimals ? 1 : 0,
+        })
+      }
+    />
   );
   return (
     <section className="chart-section">
@@ -135,12 +168,16 @@ function ChartSection({
       <Insight>{insight}</Insight>
       <ResponsiveContainer width="100%" height={chartHeight}>
         {layout === "vertical" ? (
-          <BarChart data={data} layout="vertical" margin={{ left: 8, right: 16 }}>
+          <BarChart
+            data={data}
+            layout="vertical"
+            margin={{ left: 12, right: 24, top: 8, bottom: 8 }}
+          >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               type="number"
-              allowDecimals={false}
-              tickFormatter={euro ? EuroAxisTick : undefined}
+              allowDecimals={valueDecimals}
+              tickFormatter={axisFmt}
             />
             <YAxis
               type="category"
@@ -153,12 +190,16 @@ function ChartSection({
             <Bar dataKey="value" fill={color} />
           </BarChart>
         ) : (
-          <BarChart data={data} margin={{ bottom: 48 }}>
+          <BarChart
+            data={data}
+            margin={{ left: 56, right: 16, top: 8, bottom: 48 }}
+          >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" tick={{ fontSize: 11 }} interval={0} />
             <YAxis
-              allowDecimals={false}
-              tickFormatter={euro ? EuroAxisTick : undefined}
+              allowDecimals={valueDecimals}
+              width={52}
+              tickFormatter={axisFmt}
             />
             <Tooltip content={tip} />
             <Bar dataKey="value" fill={color} />
@@ -182,9 +223,11 @@ export function Analisi() {
   const [padComuni, setPadComuni] = useState<ChartData | null>(null);
   const [scpAwards, setScpAwards] = useState<ChartData | null>(null);
   const [scpAwardsEuro, setScpAwardsEuro] = useState<ChartData | null>(null);
+  const [privCat, setPrivCat] = useState<ChartData | null>(null);
   const [counts, setCounts] = useState<CountsData | null>(null);
   const [scope, setScope] = useState<ScopeData | null>(null);
   const [sampleCups, setSampleCups] = useState<string[]>([]);
+  const [regionInd, setRegionInd] = useState<RegioneIndicatori | null>(null);
 
   useEffect(() => {
     Promise.all([
@@ -200,9 +243,11 @@ export function Analisi() {
       fetchJson<ChartData>("analytics/pad_top_comuni.json"),
       fetchJson<ChartData>("analytics/scp_top_aggiudicatari.json"),
       fetchJson<ChartData>("analytics/scp_top_aggiudicatari_euro.json"),
+      fetchJson<ChartData>("analytics/soggetto_privato_by_categoria.json"),
       fetchJson<CountsData>("analytics/counts.json"),
       fetchJson<ScopeData>("analytics/scope.json"),
       fetchJson<SubgraphIndex>("subgraphs/index.json"),
+      fetchJson<RegioneIndicatori>("geo/regioni_indicatori.json"),
     ]).then(
       ([
         f,
@@ -217,9 +262,11 @@ export function Analisi() {
         padC,
         scp,
         scpEuro,
+        priv,
         n,
         s,
         idx,
+        ind,
       ]) => {
         setByFunder(f);
         setByCall(c);
@@ -233,16 +280,23 @@ export function Analisi() {
         setPadComuni(padC);
         setScpAwards(scp);
         setScpAwardsEuro(scpEuro);
+        setPrivCat(priv);
         setCounts(n);
         setScope(s);
         setSampleCups(idx.sample_cups ?? []);
+        setRegionInd(ind);
       }
     );
   }, []);
 
   const mapChart = (chart: ChartData | null, maxLen?: number) =>
     chart?.labels.map((label, i) =>
-      toChartPoint(label, chart.series[0]?.data[i] ?? 0, maxLen)
+      toChartPoint(
+        label,
+        chart.series[0]?.data[i] ?? 0,
+        maxLen,
+        chart.details?.[i]
+      )
     ) ?? [];
 
   const funderChart = mapChart(byFunder, 28);
@@ -252,11 +306,44 @@ export function Analisi() {
   const settoreChart = mapChart(bySettore, 32);
   const categoriaChart = mapChart(byCategoria, 32);
   const regioneChart = mapChart(byRegione, 28);
+  const regionePer100kChart: ChartPoint[] =
+    byRegione && regionInd
+      ? byRegione.labels
+          .map((label, i) => {
+            const cups = byRegione.series[0]?.data[i] ?? 0;
+            const ind = regionInd.regioni[normalizeRegion(label)];
+            if (!ind) return null;
+            return toChartPoint(
+              label,
+              cupsPer100k(cups, ind.popolazione),
+              28
+            );
+          })
+          .filter((p): p is ChartPoint => p != null)
+          .sort((a, b) => b.value - a.value)
+      : [];
+  const regionePerPilChart: ChartPoint[] =
+    byRegione && regionInd
+      ? byRegione.labels
+          .map((label, i) => {
+            const cups = byRegione.series[0]?.data[i] ?? 0;
+            const ind = regionInd.regioni[normalizeRegion(label)];
+            if (!ind) return null;
+            return toChartPoint(
+              label,
+              cupsPerPilMld(cups, pilMlnEuro(ind)),
+              28
+            );
+          })
+          .filter((p): p is ChartPoint => p != null)
+          .sort((a, b) => b.value - a.value)
+      : [];
   const statoChart = mapChart(byStato, 24);
   const padRegioneChart = mapChart(padRegione, 28);
   const padComuniChart = mapChart(padComuni, 28);
   const scpAwardsChart = mapChart(scpAwards, 28);
   const scpAwardsEuroChart = mapChart(scpAwardsEuro, 28);
+  const privCatChart = mapChart(privCat, 32);
 
   return (
     <div>
@@ -387,6 +474,30 @@ export function Analisi() {
       />
 
       <ChartSection
+        title="CUP OpenCUP per 100.000 abitanti"
+        insight={insights.cups_by_regione_per_100k}
+        data={regionePer100kChart}
+        color={BI.primary}
+        yWidth={140}
+        valueDecimals
+      />
+
+      <ChartSection
+        title="CUP OpenCUP per miliardo € di PIL"
+        insight={insights.cups_by_regione_per_pil}
+        data={regionePerPilChart}
+        color={BI.primary}
+        yWidth={140}
+        valueDecimals
+      />
+
+      <section className="chart-section">
+        <h2>Mappa — CUP e CIG sul territorio</h2>
+        <Insight>{insights.cups_by_regione_map}</Insight>
+        <RegioneCupMap chart={byRegione} />
+      </section>
+
+      <ChartSection
         title={padRegione?.title}
         insight={insights.pad_cost_by_regione}
         data={padRegioneChart}
@@ -464,6 +575,15 @@ export function Analisi() {
       />
 
       <ChartSection
+        title={privCat?.title}
+        insight={insights.soggetto_privato_by_categoria}
+        data={privCatChart}
+        color={BI.neutral}
+        euro
+        yWidth={200}
+      />
+
+      <ChartSection
         title={byCall?.title}
         insight={insights.cost_by_call}
         data={callChart}
@@ -472,16 +592,18 @@ export function Analisi() {
         yWidth={200}
       />
 
-      {scope?.gaps && (
+      {gapsDoc?.items?.length ? (
         <section className="mt-4">
-          <h2 className="h5">Note e lacune</h2>
-          <ul>
-            {scope.gaps.map((g) => (
-              <li key={g}>{g}</li>
+          <h2 className="h5">{gapsDoc.title ?? "Come leggere questi numeri"}</h2>
+          <ul className="analisi-gaps">
+            {gapsDoc.items.map((g) => (
+              <li key={g.slice(0, 48)}>
+                <ContentMarkdown source={g.trim()} />
+              </li>
             ))}
           </ul>
         </section>
-      )}
+      ) : null}
     </div>
   );
 }

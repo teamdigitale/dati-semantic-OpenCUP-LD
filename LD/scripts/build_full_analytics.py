@@ -81,24 +81,190 @@ def duck_scalar(exe: str, sql: str):
     return None
 
 
-def write_chart(path: Path, title: str, labels: list[str], series_name: str, data: list[float | int]) -> None:
+def write_chart(
+    path: Path,
+    title: str,
+    labels: list[str],
+    series_name: str,
+    data: list[float | int],
+    details: list[str] | None = None,
+) -> None:
+    payload: dict = {
+        "title": title,
+        "labels": labels,
+        "series": [{"name": series_name, "data": data}],
+    }
+    if details is not None:
+        payload["details"] = details
     path.write_text(
-        json.dumps(
-            {
-                "title": title,
-                "labels": labels,
-                "series": [{"name": series_name, "data": data}],
-            },
-            ensure_ascii=False,
-            indent=2,
-        )
-        + "\n",
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
 
 def write_json(path: Path, obj: object) -> None:
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _rows_to_territory_map(
+    rows: list[dict],
+    *,
+    key_field: str = "key",
+    name_field: str | None = "name",
+) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for row in rows:
+        key = str(row.get(key_field) or "").strip()
+        if not key:
+            continue
+        entry: dict = {
+            "cups": int(row.get("cups") or 0),
+            "cup_euro": float(row.get("cup_euro") or 0),
+            "cigs": int(row.get("cigs") or 0),
+            "cig_euro": float(row.get("cig_euro") or 0),
+        }
+        if name_field and row.get(name_field):
+            entry["name"] = str(row[name_field])
+        out[key] = entry
+    return out
+
+
+def build_map_territory(exe: str, oc: str, cj: str, esiti: Path | None) -> None:
+    """Lookup tables for Leaflet choropleth (regioni / province / comuni)."""
+    has_esiti = bool(esiti and esiti.exists())
+    ep = esiti.as_posix() if has_esiti else ""
+
+    def territory_sql(key_expr: str, name_expr: str, where_extra: str) -> str:
+        esiti_cte = (
+            f"""
+        esiti AS (
+          SELECT cig,
+                 max(try_cast(imp_di_aggiudicazione AS DOUBLE)) AS imp
+          FROM read_csv_auto('{ep}', sample_size=-1)
+          WHERE cig IS NOT NULL AND imp_di_aggiudicazione IS NOT NULL
+          GROUP BY 1
+        ),
+            """
+            if has_esiti
+            else ""
+        )
+        join_esiti = "LEFT JOIN esiti ON esiti.cig = pairs.CIG" if has_esiti else ""
+        cig_euro_agg = "coalesce(SUM(esiti.imp), 0)" if has_esiti else "0::DOUBLE"
+        return f"""
+        WITH cups AS (
+          SELECT
+            CUP,
+            {key_expr} AS key,
+            any_value({name_expr}) AS name,
+            max(try_cast(replace(cast(FINANZIAMENTO_PROGETTO AS VARCHAR), ',', '.') AS DOUBLE)) AS cup_euro
+          FROM read_parquet('{oc}')
+          WHERE {where_extra}
+          GROUP BY CUP, key
+        ),
+        cup_agg AS (
+          SELECT
+            key,
+            any_value(name) AS name,
+            COUNT(*) AS cups,
+            coalesce(SUM(cup_euro), 0) AS cup_euro
+          FROM cups
+          GROUP BY key
+        ),
+        pairs AS (
+          SELECT CUP, CIG
+          FROM read_json_auto('{cj}', maximum_object_size=200000000)
+          WHERE CUP IS NOT NULL
+            AND upper(trim(cast(CUP AS VARCHAR))) NOT IN ('ND', '')
+            AND CIG IS NOT NULL
+            AND upper(trim(cast(CIG AS VARCHAR))) NOT IN ('ND', '')
+        ),
+        {esiti_cte}
+        cig_agg AS (
+          SELECT
+            cups.key AS key,
+            COUNT(DISTINCT pairs.CIG) AS cigs,
+            {cig_euro_agg} AS cig_euro
+          FROM cups
+          LEFT JOIN pairs USING (CUP)
+          {join_esiti}
+          GROUP BY cups.key
+        )
+        SELECT
+          cup_agg.key AS key,
+          cup_agg.name AS name,
+          cup_agg.cups AS cups,
+          cup_agg.cup_euro AS cup_euro,
+          coalesce(cig_agg.cigs, 0) AS cigs,
+          coalesce(cig_agg.cig_euro, 0) AS cig_euro
+        FROM cup_agg
+        LEFT JOIN cig_agg USING (key)
+        ORDER BY cups DESC
+        """
+
+    reg_where = """
+      REGIONE IS NOT NULL
+      AND cast(REGIONE AS VARCHAR) NOT IN ('', 'DATO NON PRESENTE', 'TUTTE')
+    """
+    prov_where = """
+      CODICE_PROVINCIA IS NOT NULL
+      AND cast(CODICE_PROVINCIA AS VARCHAR) NOT IN ('', '-1', 'DATO NON PRESENTE')
+    """
+    com_where = """
+      CODICE_COMUNE IS NOT NULL
+      AND cast(CODICE_COMUNE AS VARCHAR) NOT IN ('', '-1', 'DATO NON PRESENTE')
+    """
+
+    print("  …regioni", flush=True)
+    reg_rows = duck_json(
+        exe,
+        territory_sql(
+            "upper(trim(cast(REGIONE AS VARCHAR)))",
+            "upper(trim(cast(REGIONE AS VARCHAR)))",
+            reg_where,
+        ),
+    )
+    print("  …province", flush=True)
+    prov_rows = duck_json(
+        exe,
+        territory_sql(
+            "lpad(cast(CODICE_PROVINCIA AS VARCHAR), 3, '0')",
+            "upper(trim(cast(PROVINCIA AS VARCHAR)))",
+            prov_where,
+        ),
+    )
+    print("  …comuni", flush=True)
+    com_rows = duck_json(
+        exe,
+        territory_sql(
+            "lpad(cast(CODICE_COMUNE AS VARCHAR), 6, '0')",
+            "upper(trim(cast(COMUNE AS VARCHAR)))",
+            com_where,
+        ),
+    )
+
+    payload = {
+        "source": "OpenCUP (CUP/finanziamento) + ANAC cup↔CIG + SCP esiti (importo aggiudicazione)",
+        "notes": (
+            "cup_euro = max FINANZIAMENTO_PROGETTO per CUP. "
+            "cig_euro = max imp_di_aggiudicazione per CIG, geolocalizzato via CUP OpenCUP. "
+            "Chiavi: regione=nome OpenCUP; provincia/comune=codice ISTAT."
+        ),
+        "regioni": _rows_to_territory_map(
+            reg_rows if isinstance(reg_rows, list) else [], name_field=None
+        ),
+        "province": _rows_to_territory_map(
+            prov_rows if isinstance(prov_rows, list) else []
+        ),
+        "comuni": _rows_to_territory_map(
+            com_rows if isinstance(com_rows, list) else []
+        ),
+    }
+    write_json(OUT / "map_territory.json", payload)
+    print(
+        f"  map_territory: {len(payload['regioni'])} regioni, "
+        f"{len(payload['province'])} province, {len(payload['comuni'])} comuni",
+        flush=True,
+    )
 
 
 def chart_from_rows(
@@ -109,9 +275,11 @@ def chart_from_rows(
     series_name: str,
     out: Path,
     label_max: int | None = None,
+    detail_key: str | None = None,
 ) -> None:
     labels: list[str] = []
     data: list[float | int] = []
+    details: list[str] = []
     for r in rows or []:
         lab = str(r.get(label_key) or "")
         if label_max is not None and len(lab) > label_max:
@@ -119,7 +287,16 @@ def chart_from_rows(
         labels.append(lab)
         val = r.get(value_key)
         data.append(float(val) if isinstance(val, float) else int(val or 0))
-    write_chart(out, title, labels, series_name, data)
+        if detail_key is not None:
+            details.append(str(r.get(detail_key) or "").strip())
+    write_chart(
+        out,
+        title,
+        labels,
+        series_name,
+        data,
+        details=details if detail_key is not None else None,
+    )
 
 
 def hub_counts() -> dict:
@@ -189,6 +366,34 @@ def main() -> None:
         "OpenCUP nazionale — costo per ente titolare (top 15)",
         "Euro",
         OUT / "cost_by_funder.json",
+        label_max=50,
+    )
+
+    print("Analytics: soggetto privato by categoria…", flush=True)
+    priv_cat = duck_json(
+        exe,
+        f"""
+        SELECT
+          COALESCE(
+            NULLIF(TRIM(CAST(CATEGORIA_SOGGETTO AS VARCHAR)), ''),
+            'Categoria non indicata'
+          ) AS label,
+          SUM(TRY_CAST(REPLACE(CAST(FINANZIAMENTO_PROGETTO AS VARCHAR), ',', '.') AS DOUBLE)) AS total,
+          COUNT(DISTINCT CUP) AS nCups
+        FROM read_parquet('{oc}')
+        WHERE LOWER(TRIM(CAST(SOGGETTO_TITOLARE AS VARCHAR))) = 'soggetto privato'
+        GROUP BY 1
+        ORDER BY total DESC NULLS LAST
+        LIMIT 12
+        """,
+    )
+    chart_from_rows(
+        priv_cat if isinstance(priv_cat, list) else [],
+        "label",
+        "total",
+        "OpenCUP — «soggetto privato» per categoria (top 12)",
+        "Euro",
+        OUT / "soggetto_privato_by_categoria.json",
         label_max=50,
     )
 
@@ -319,17 +524,36 @@ def main() -> None:
     top = duck_json(
         exe,
         f"""
-        SELECT CUP AS label, COUNT(*) AS nLots
-        FROM read_json_auto('{cj}', maximum_object_size=500000000)
-        WHERE CUP IS NOT NULL AND CUP <> ''
-          AND UPPER(TRIM(CAST(CUP AS VARCHAR))) NOT IN (
-            'ND', 'N.D.', 'N/D', 'NULL', 'NONE'
-          )
-          AND TRIM(CAST(CUP AS VARCHAR)) NOT IN ('0', '00')
-          AND TRIM(CAST(CUP AS VARCHAR)) NOT LIKE '00000000000000%'
-        GROUP BY 1
-        ORDER BY nLots DESC
-        LIMIT 15
+        WITH top_cups AS (
+          SELECT CUP AS cup, COUNT(*) AS nLots
+          FROM read_json_auto('{cj}', maximum_object_size=500000000)
+          WHERE CUP IS NOT NULL AND CUP <> ''
+            AND UPPER(TRIM(CAST(CUP AS VARCHAR))) NOT IN (
+              'ND', 'N.D.', 'N/D', 'NULL', 'NONE'
+            )
+            AND TRIM(CAST(CUP AS VARCHAR)) NOT IN ('0', '00')
+            AND TRIM(CAST(CUP AS VARCHAR)) NOT LIKE '00000000000000%'
+          GROUP BY 1
+          ORDER BY nLots DESC
+          LIMIT 15
+        ),
+        titles AS (
+          SELECT
+            CUP AS cup,
+            any_value(
+              NULLIF(TRIM(CAST(DESCRIZIONE_SINTETICA_CUP AS VARCHAR)), '')
+            ) AS titolo
+          FROM read_parquet('{oc}')
+          WHERE CUP IN (SELECT cup FROM top_cups)
+          GROUP BY 1
+        )
+        SELECT
+          t.cup AS label,
+          t.nLots AS nLots,
+          COALESCE(titles.titolo, '') AS titolo
+        FROM top_cups t
+        LEFT JOIN titles ON titles.cup = t.cup
+        ORDER BY t.nLots DESC
         """,
     )
     chart_from_rows(
@@ -339,6 +563,7 @@ def main() -> None:
         "ANAC nazionale — CUP con più CIG collegati (top 15)",
         "Lotti CIG",
         OUT / "top_cup_cig.json",
+        detail_key="titolo",
     )
 
     print("Analytics: OpenCUP by regione / stato…", flush=True)
@@ -363,6 +588,9 @@ def main() -> None:
         OUT / "cups_by_regione.json",
         label_max=40,
     )
+
+    print("Analytics: mappa territorio CUP/CIG (regioni/province/comuni)…", flush=True)
+    build_map_territory(exe, oc, cj, ESITI if ESITI.exists() else None)
 
     by_stato = duck_json(
         exe,
@@ -660,11 +888,11 @@ def main() -> None:
         "enti_ipa": enti_ipa,
         **hub,
         "gaps": [
-            "Il RDF/JSON-LD resta sull'hub interop; le Analisi tabellari coprono le basi nazionali.",
-            "SCP bandi/esiti: convertiti in RDF sull'hub (Lot + Award + Notice); analytics nazionali restano tabellari.",
-            "Le mappe a grafo mostrano un campione di CUP, non milioni di nodi nazionali.",
-            "Prossimi passi: ribassi/CPV più ricchi, stati candidatura PA Digitale, comuni via ISTAT/Wikidata.",
-            "Nei ranking ANAC, CUP placeholder (ND, 000…) sono esclusi: non sono progetti validi.",
+            "I grafici e la mappa usano i dati di tutta Italia; l'Unione semantica mostra un campione di progetti dove le fonti si incontrano.",
+            "ND nei dati ANAC non è un progetto: significa CUP non dichiarato ed è escluso dalle classifiche.",
+            "Le aggiudicazioni SCP nazionali sono nei grafici; nel grafo hub solo per i lotti del campione.",
+            "«Soggetto privato» in OpenCUP è un'etichetta generica, non un singolo ente.",
+            "Ancora in arrivo: arricchimenti territoriali (Wikidata) e mappe PA Digitale per comune.",
         ],
     }
     if scp_bandi_cigs is not None:

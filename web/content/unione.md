@@ -1,6 +1,7 @@
 ---
 title: Unione semantica
 lead: >
-  Sottografo per CUP: stesso URI tra fonti, lotti, avvisi e (sullo hub) esiti SCP.
-  Scegli un CUP campione per navigare i join senza scrivere SQL.
+  Qui non conti milioni di righe: **navighi i collegamenti**. Per un CUP del campione
+  vedi progetto, lotti ANAC, avviso PNRR, ente e (sullo hub) esiti SCP come un solo
+  sottografo — l'apporto del Linked Data rispetto al database aggregato.
 ---

@@ -1,12 +1,16 @@
 ---
 title: Analisi
 lead: >
-  Statistiche sulle **basi complete**: rispondono a *quanto*, *dove*, *a che punto* e *a chi*.
-  Per capire *come* le fonti si collegano (stesso progetto, stessi lotti, stesso ente) serve la
-  [mappa a grafo](/unione) sul campione hub.
-callout_title: Tabella = quanto · Grafo = come
+  Questa pagina è la lente **database**: aggregati DuckDB sulle basi nazionali
+  (*quanto*, *dove*, *a chi*). Non sostituisce il grafo: per *come* le fonti
+  condividono lo stesso progetto/lotto/ente vai all'[unione semantica](/unione).
+callout_title: Cosa vedi qui vs cosa vedi nel grafo
 callout_body: >
-  Un grafico a barre dice «questo ente ha X euro» o «questi sono i principali aggiudicatari».
-  Nell'[unione semantica](/unione) vedi lo stesso URI di progetto, i lotti, l'avviso PNRR e l'ente
-  IndicePA — senza reinventare un join a ogni domanda.
+  **Qui (DB):** classifiche e conteggi — «questo titolare ha X euro», «questa regione ha N CUP»,
+  «questi sono i CUP con più CIG». Servono a capire la scala nazionale.
+
+  **Nel grafo:** lo stesso CUP è un nodo condiviso tra OpenCUP e PA Digitale; ogni CIG è un lotto
+  collegato; l'aggiudicatario SCP e l'ente IndicePA si agganciano senza riscrivere un JOIN.
+  Il grafo non ricalcola i top-N nazionali: rende **espliciti e navigabili** i collegamenti
+  che nel DB esistono solo se li scrivi tu nella query.
 ---

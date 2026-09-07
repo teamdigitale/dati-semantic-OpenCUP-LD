@@ -1,6 +1,7 @@
 ---
 title: Unione animata
 lead: >
-  Animazione della fusione: i nodi con lo stesso URI provenienti da dataset diversi
-  si sovrappongono — il join semantico reso visibile.
+  Demonstrazione dell'apporto del grafo: fonti separate si fondono quando
+  condividono lo **stesso URI**. È ciò che un JOIN SQL fa a ogni query;
+  qui il join è già nel modello dei dati.
 ---

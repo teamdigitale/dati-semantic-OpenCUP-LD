@@ -23,13 +23,9 @@ diventano evidenti: stesse URI → stesso nodo nel grafo.
 
 ### Orizzonte
 
-1. **Analisi tabellari** sulle basi complete: territorio, stati di avanzamento,
-   aggiudicazioni SCP, settori, avvisi PNRR — già in pagina Analisi.
-2. Tenere le **mappe a grafo** sui campioni hub (unione semantica); mostrare
-   cosa si scopre meglio con gli URI rispetto a un `GROUP BY`.
-3. Allargare la costellazione: ribassi/CPV SCP nel grafo hub, stati candidatura
-   PA Digitale, comuni via codice ISTAT → Wikidata (popolazione, coordinate) e
-   mappe.
+1. **Database / Analisi**: aggregati nazionali (quanto, dove, chi) — già in pagina Analisi + mappa regioni.
+2. **Grafo / Unione**: identità URI e relazioni navigabili sul campione hub — non è un sostituto del DB, risolve i join multi-fonte.
+3. Allargare la costellazione: mappe PA Digitale/comuni, Wikidata ISTAT, Award SCP nei subgraph, stati candidatura.
 
 ## Due percorsi dati
 
