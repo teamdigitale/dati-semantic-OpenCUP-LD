@@ -23,11 +23,24 @@ diventano evidenti: stesse URI → stesso nodo nel grafo.
 
 ### Orizzonte
 
-1. Passare dal campione “CUP in PA Digitale” a **OpenCUP e ANAC completi**
-   (CUP↔CIG; poi bandi/esiti SCP).
-2. Caricare il grafo su un **database a grafo / endpoint SPARQL** (es. Jena Fuseki).
-3. Mostrare un catalogo di **query** (CUP→CIG→bando, IPA↔CF, costi per CV, …).
-4. Tenere i grafi Cytoscape sui **campioni**; le query sul DB per la scala piena.
+1. Caricare il grafo hub (e poi OpenCUP/ANAC nazionali) su un **database a grafo /
+   endpoint SPARQL** (es. Jena Fuseki).
+2. Mostrare un catalogo di **query** live (CUP→CIG→bando, IPA↔CF, costi per CV, …).
+3. Tenere i grafi Cytoscape sui **campioni**; le analisi tabellari già usano le basi complete.
+
+## Due percorsi dati
+
+| Percorso | Input | Output | Uso |
+|----------|--------|--------|-----|
+| **Analytics full** | `srcdata/rawdata/*` (OpenCUP ~24M righe, ANAC cup_json, PA Digitale, IndicePA, SCP) | `web/public/data/analytics/*.json` | Pagina **Analisi** |
+| **LD hub** | Filtri 01–05 (PA Digitale ∩ ANAC ∩ esiti) → JSON-LD → `all.ttl` | grafi / subgraph (top 4 CUP) | Cytoscape |
+
+```bash
+make analytics-full   # solo statistiche nazionali (DuckDB CLI)
+make web-assets       # LD hub + analytics-full + export grafi
+```
+
+Non si converte OpenCUP/ANAC nazionali in RDF nel sito statico (scala Fuseki).
 
 ## Organizzazione del repository
 
@@ -36,11 +49,12 @@ diventano evidenti: stesse URI → stesso nodo nel grafo.
   * `templates/*.hbs` — ancora usati per OpenCUP, PA Digitale, IndicePA
   * `scripts/convert_cupcig_jsonld.py` — CUP↔CIG via **reshape + `@context`**
     (Handlebars deprecato per questo dataset; `--spike` mostra anche framing pyld)
-  * `ttl/all.ttl` — grafo unito
+  * `scripts/build_full_analytics.py` — aggregati DuckDB sulle basi raw complete
+  * `ttl/all.ttl` — grafo unito (**hub** interop, non nazionale)
 * `web` — sito statico; la **home** è il racconto JSON → JSON-LD → join → roadmap grafo
 
-Nota: i JSON filtrati in `srcdata/data/` contengono oggi solo progetti catalogati in
-PA Digitale, per avere uno scope davvero interoperabile tra le fonti.
+Nota: i JSON filtrati in `srcdata/data/` restano lo scope **hub** (intersezione) per RDF e
+grafi. Le **Analisi** leggono invece le basi complete in `srcdata/rawdata/`.
 
 ## Ambiente Python (uv)
 
@@ -54,8 +68,8 @@ Pipeline completa da zero:
 
 ```bash
 make setup
-make fetch          # scarica ANAC CUP, PA Digitale, IndicePA
-# aggiungere manualmente in srcdata/rawdata/: OpenCUP.parquet, v_od_esiti.csv, v_od_bandi.csv
+make fetch          # ANAC CUP↔CIG, SCP bandi/esiti (MIT), PA Digitale, IndicePA
+# aggiungere / convertire manualmente in srcdata/rawdata/: OpenCUP.parquet
 make all
 ```
 

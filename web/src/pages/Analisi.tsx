@@ -113,38 +113,72 @@ export function Analisi() {
     <div>
       <h1>Analisi</h1>
       <p className="lead">
-        Statistiche SPARQL pre-calcolate sul grafo completo <code>all.ttl</code> (tutto lo scope
-        PA Digitale collegato ad ANAC). I grafi separati mostrano invece un campione fisso di 10
-        CUP condiviso tra tutte le fonti.
+        Statistiche pre-calcolate con DuckDB sulle <strong>basi raw complete</strong> (OpenCUP,
+        ANAC, PA Digitale, IndicePA), senza filtro di intersezione. I grafi Cytoscape restano sul
+        campione hub (4 CUP più ricchi nell&apos;unione semantica).
       </p>
 
       {scope && (
         <section className="info-box">
           <h2>{scope.title}</h2>
           <p>{scope.definition}</p>
+          <h3 className="analisi-scope-subtitle">Basi complete</h3>
           <div className="stat-grid">
-            {scope.padigitale_raw_cups != null && (
+            {scope.opencup_cups != null && (
               <div className="stat-card">
-                <span className="stat-value">{scope.padigitale_raw_cups.toLocaleString("it")}</span>
-                <span className="stat-label">CUP in PA Digitale (raw)</span>
+                <span className="stat-value">{scope.opencup_cups.toLocaleString("it")}</span>
+                <span className="stat-label">CUP OpenCUP</span>
               </div>
             )}
+            {scope.anac_cigs != null && (
+              <div className="stat-card">
+                <span className="stat-value">{scope.anac_cigs.toLocaleString("it")}</span>
+                <span className="stat-label">CIG ANAC (cup_json)</span>
+              </div>
+            )}
+            {scope.padigitale_raw_cups != null && (
+              <div className="stat-card">
+                <span className="stat-value">
+                  {scope.padigitale_raw_cups.toLocaleString("it")}
+                </span>
+                <span className="stat-label">CUP PA Digitale</span>
+              </div>
+            )}
+            {scope.enti_ipa != null && (
+              <div className="stat-card">
+                <span className="stat-value">{scope.enti_ipa.toLocaleString("it")}</span>
+                <span className="stat-label">Enti IndicePA</span>
+              </div>
+            )}
+          </div>
+          <h3 className="analisi-scope-subtitle">Hub interop (grafi / RDF)</h3>
+          <div className="stat-grid">
             {scope.hub_cups != null && (
               <div className="stat-card">
-                <span className="stat-value">{scope.hub_cups}</span>
-                <span className="stat-label">CUP nello scope collegato</span>
+                <span className="stat-value">{scope.hub_cups.toLocaleString("it")}</span>
+                <span className="stat-label">CUP hub</span>
               </div>
             )}
             {scope.hub_cigs != null && (
               <div className="stat-card">
-                <span className="stat-value">{scope.hub_cigs}</span>
-                <span className="stat-label">CIG ANAC collegati</span>
+                <span className="stat-value">{scope.hub_cigs.toLocaleString("it")}</span>
+                <span className="stat-label">CIG hub</span>
               </div>
             )}
-            {scope.scp_bandi_cigs != null && (
+            {scope.scp_esiti_cigs_full != null && (
               <div className="stat-card">
-                <span className="stat-value">{scope.scp_bandi_cigs}</span>
-                <span className="stat-label">CIG con bando SCP</span>
+                <span className="stat-value">
+                  {scope.scp_esiti_cigs_full.toLocaleString("it")}
+                </span>
+                <span className="stat-label">CIG con esito SCP (full)</span>
+              </div>
+            )}
+            {scope.scp_bandi_cigs_full != null && (
+              <div className="stat-card">
+                <span className="stat-value">
+                  {scope.scp_bandi_cigs_full.toLocaleString("it")}
+                </span>
+                <span className="stat-label">CIG con bando SCP (full)</span>
               </div>
             )}
           </div>
@@ -161,20 +195,20 @@ export function Analisi() {
       {counts && (
         <div className="stat-grid">
           <div className="stat-card">
-            <span className="stat-value">{counts.cups}</span>
-            <span className="stat-label">Progetti CUP (RDF)</span>
+            <span className="stat-value">{counts.cups.toLocaleString("it")}</span>
+            <span className="stat-label">CUP OpenCUP (full)</span>
           </div>
           <div className="stat-card">
-            <span className="stat-value">{counts.orgs}</span>
-            <span className="stat-label">Organizzazioni</span>
+            <span className="stat-value">{counts.orgs.toLocaleString("it")}</span>
+            <span className="stat-label">Enti IndicePA (full)</span>
           </div>
           <div className="stat-card">
-            <span className="stat-value">{counts.lots}</span>
-            <span className="stat-label">Lotti CIG</span>
+            <span className="stat-value">{counts.lots.toLocaleString("it")}</span>
+            <span className="stat-label">CIG ANAC (full)</span>
           </div>
           <div className="stat-card">
             <span className="stat-value">{counts.triples.toLocaleString("it")}</span>
-            <span className="stat-label">Triple RDF</span>
+            <span className="stat-label">Triple RDF (hub)</span>
           </div>
         </div>
       )}
@@ -236,7 +270,12 @@ export function Analisi() {
         <ResponsiveContainer width="100%" height={360}>
           <BarChart data={funderChart} layout="vertical" margin={{ left: 8, right: 16 }}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis type="number" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k €`} />
+            <XAxis
+              type="number"
+              tickFormatter={(v) =>
+                v >= 1e9 ? `${(v / 1e9).toFixed(0)}B €` : `${(v / 1e6).toFixed(0)}M €`
+              }
+            />
             <YAxis type="category" dataKey="name" width={160} tick={{ fontSize: 11 }} />
             <Tooltip
               content={

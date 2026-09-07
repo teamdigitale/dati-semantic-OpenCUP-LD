@@ -1159,7 +1159,8 @@ def main() -> None:
         "default_cup": sample_cup_codes[0] if sample_cup_codes else None,
     })
 
-    build_analytics(all_g)
+    # Analytics charts come from full raw sources via build_full_analytics.py
+    # (make analytics-full / make web-assets). Hub SPARQL aggregates removed.
     print(f"Web assets written to {OUT_DIR}")
 
 
