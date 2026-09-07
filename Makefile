@@ -2,13 +2,11 @@
 #
 # Uso rapido:
 #   make setup          # ambiente Python (uv)
-#   make fetch          # scarica le fonti remote (ANAC CUP, PA Digitale, IndicePA)
+#   make fetch          # scarica ANAC CUP, SCP bandi/esiti, PA Digitale, IndicePA
 #   make all            # filtra i JSON e genera JSON-LD + TTL
 #
-# Prima di `make all` servono anche in srcdata/rawdata/ (download manuale):
-#   - OpenCUP.parquet       https://www.opencup.gov.it/...
-#   - v_od_esiti.csv        https://dati.anticorruzione.it/opendata/...
-#   - v_od_bandi.csv        https://dati.anticorruzione.it/opendata/...
+# Prima di `make all` serve anche in srcdata/rawdata/ (download / conversione manuale):
+#   - OpenCUP.parquet       https://www.opencup.gov.it/... (vedi convert_opencup_parquet.sh)
 
 SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
@@ -36,7 +34,7 @@ FILTER_OUTPUTS := \
 LD_JSON := $(wildcard LD/json-ld/*-ld.json)
 LD_TTL  := $(patsubst LD/json-ld/%-ld.json,LD/ttl/%.ttl,$(LD_JSON))
 
-.PHONY: help setup fetch fetch-assets check-rawdata filter ld all clean clean-ld clean-filter web-assets web web-preview
+.PHONY: help setup fetch fetch-assets check-rawdata filter ld all clean clean-ld clean-filter analytics-full web-assets web web-preview
 
 .DEFAULT_GOAL := help
 
@@ -46,14 +44,15 @@ help: ## Elenco target disponibili
 		awk 'BEGIN {FS = ":.*## "}; {printf "  %-18s %s\n", $$1, $$2}'
 	@printf "\nPipeline completa (con rawdata già presente):\n"
 	@printf "  make setup && make all\n\n"
-	@printf "Pipeline da zero (dopo aver messo OpenCUP.parquet e CSV ANAC in %s):\n" "$(RAWDATA)"
+	@printf "Pipeline da zero (dopo aver messo OpenCUP.parquet in %s):\n" "$(RAWDATA)"
 	@printf "  make setup && make fetch && make all\n\n"
 
 setup: ## Crea/aggiorna l'ambiente Python con uv
 	$(UV) sync
 
-fetch: setup ## Scarica le fonti disponibili via rete (ANAC, PA Digitale, IndicePA)
+fetch: setup ## Scarica ANAC CUP↔CIG, SCP bandi/esiti (MIT), PA Digitale, IndicePA
 	cd $(SCRIPTS) && bash get_cup_json.sh
+	cd $(SCRIPTS) && bash get_scp_bandi_esiti.sh
 	cd $(SCRIPTS) && bash get_candidature_comuni.sh
 	cd $(SCRIPTS) && bash get_indicepa_json.sh
 
@@ -71,7 +70,7 @@ check-rawdata: ## Verifica che i file raw necessari esistano
 	if (( missing )); then \
 		echo ""; \
 		echo "Scarica i file mancanti oppure esegui: make fetch"; \
-		echo "OpenCUP.parquet e i CSV ANAC (v_od_*) vanno aggiunti manualmente in $(RAWDATA)/"; \
+		echo "OpenCUP.parquet va aggiunto/convertito manualmente in $(RAWDATA)/"; \
 		exit 1; \
 	fi
 
@@ -95,7 +94,10 @@ clean-ld: ## Rimuove output JSON-LD e TTL
 
 clean: clean-filter clean-ld ## Rimuove tutti gli output generati (non i rawdata)
 
-web-assets: ld ## Genera JSON per la web app da all.ttl
+analytics-full: check-rawdata ## Statistiche Analisi sulle basi raw complete (DuckDB)
+	env -u VIRTUAL_ENV uv run python LD/scripts/build_full_analytics.py
+
+web-assets: ld analytics-full ## Grafi da all.ttl (hub) + analytics da raw completi
 	env -u VIRTUAL_ENV uv run python LD/scripts/export_web_assets.py
 
 web: web-assets ## Build sito statico in docs/ (GitHub Pages)

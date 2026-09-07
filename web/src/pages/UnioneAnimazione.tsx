@@ -5,6 +5,9 @@ import { MergeAnimationGraph } from "../components/MergeAnimationGraph";
 import { GraphLegend } from "../components/GraphLegend";
 import { ResourceLink } from "../components/ResourceLink";
 import { MERGE_DATASETS } from "../utils/graphCup";
+import { useCupQueryParam } from "../hooks/useCupQueryParam";
+import { PageIntro } from "../components/PageIntro";
+import unioneAnimRaw from "../../content/unione-animazione.md?raw";
 
 interface SubgraphIndex {
   sample_cups: string[];
@@ -17,11 +20,14 @@ export function UnioneAnimazione() {
   const [graphs, setGraphs] = useState<Record<string, GraphData>>({});
   const [merged, setMerged] = useState<SubgraphData | null>(null);
   const [loading, setLoading] = useState(false);
+  const { selectCup } = useCupQueryParam(sampleCups, activeCup, setActiveCup);
 
   useEffect(() => {
     fetchJson<SubgraphIndex>("subgraphs/index.json").then((d) => {
       setSampleCups(d.sample_cups);
-      setActiveCup(d.default_cup ?? d.sample_cups[0] ?? "");
+      if (!activeCup) {
+        setActiveCup(d.default_cup ?? d.sample_cups[0] ?? "");
+      }
     });
     Promise.all(
       MERGE_DATASETS.map((ds) =>
@@ -30,7 +36,7 @@ export function UnioneAnimazione() {
     ).then((entries) => {
       setGraphs(Object.fromEntries(entries));
     });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!activeCup) return;
@@ -45,27 +51,30 @@ export function UnioneAnimazione() {
 
   return (
     <div>
-      <h1>Unione animata</h1>
-      <p className="lead">
-        Vista sperimentale: i quattro grafi del campione per un CUP sono mostrati
-        separati nei quadranti. Premi <strong>Unisci grafi</strong> per animare i
-        nodi con lo <strong>stesso URI</strong> fino a sovrapporsi, come nell&apos;unione
-        semantica. I nodi coinvolti nei join hanno il doppio bordo rosso.
+      <PageIntro raw={unioneAnimRaw} />
+      <p className="text-secondary">
+        Premi <strong>Unisci grafi</strong>: i nodi con lo stesso URI si
+        sovrappongono — è il join semantico che le tabelle nascondono.
       </p>
 
-      <div className="filter-bar">
-        <label>
-          CUP:{" "}
-          <select value={activeCup} onChange={(e) => setActiveCup(e.target.value)}>
-            {sampleCups.map((cup) => (
-              <option key={cup} value={cup}>
-                {cup}
-              </option>
-            ))}
-          </select>
+      <div className="mb-3">
+        <label className="form-label" htmlFor="cupSelectAnim">
+          CUP
         </label>
+        <select
+          id="cupSelectAnim"
+          className="form-select w-auto d-inline-block"
+          value={activeCup}
+          onChange={(e) => selectCup(e.target.value)}
+        >
+          {sampleCups.map((cup) => (
+            <option key={cup} value={cup}>
+              {cup}
+            </option>
+          ))}
+        </select>
         {activeCup && (
-          <span className="stats" style={{ marginLeft: "1rem" }}>
+          <span className="ms-3">
             <ResourceLink value={`cup:${activeCup}`} />
           </span>
         )}
