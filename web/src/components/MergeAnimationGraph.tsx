@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions, NodeSingular } from "cytoscape";
+import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions } from "cytoscape";
 import fcose from "cytoscape-fcose";
 import { GraphData, GraphEdge, GraphNode, SubgraphData } from "../types";
 import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS } from "../constants";
@@ -28,8 +28,7 @@ import {
   NODE_SHADOW_BOX,
   NODE_SHADOW_COMPACT,
   Z_INDEX_MANUAL,
-  boxNodeHeight,
-  boxNodeWidth,
+  measureBoxNodeSize,
 } from "../utils/graphStyles";
 import { GRAPH_FONT_FAMILY, normalizeDisplayText } from "../utils/text";
 import grafiCommonRaw from "../../content/grafi.common.yml?raw";
@@ -568,6 +567,11 @@ export function MergeAnimationGraph({
         const canonicalDataset = canonicalDatasetFor(merged, mergeTargetId);
         const { accent, fill } = nodeColors(dataset, n.type);
         const isMergeAnchor = n.id === anchorId;
+        const label = graphNodeDisplayLabel(n.label, n.type);
+        const isCompact = COMPACT_NODE_TYPES.has(n.type);
+        const box = isCompact
+          ? { width: 72, height: 72 }
+          : measureBoxNodeSize(label, 100, 24, 24, 15);
 
         nodeElements.push({
           data: {
@@ -577,12 +581,14 @@ export function MergeAnimationGraph({
             separatedX: position.x,
             separatedY: position.y,
             canonicalDataset,
-            label: graphNodeDisplayLabel(n.label, n.type),
+            label,
             type: n.type,
             dataset,
             accentColor: accent,
             fillColor: fill,
-            isCompact: COMPACT_NODE_TYPES.has(n.type),
+            isCompact,
+            boxW: box.width,
+            boxH: box.height,
             isJoinNode:
               isMergeAnchor ||
               joinNodeIds.has(n.id) ||
@@ -714,6 +720,8 @@ export function MergeAnimationGraph({
             "text-valign": "center",
             "text-halign": "center",
             "border-width": 2,
+            width: "data(boxW)",
+            height: "data(boxH)",
             ...Z_INDEX_MANUAL,
             "z-index": 1,
             "transition-property": "opacity",
@@ -722,33 +730,28 @@ export function MergeAnimationGraph({
         },
         {
           selector: "node[?isCompact]",
-          style: { ...NODE_SHADOW_COMPACT },
-        },
-        {
-          selector: "node[!isCompact]",
-          style: { ...NODE_SHADOW_BOX },
-        },
-        {
-          selector: "node.dup-hidden",
           style: {
-            opacity: 0,
-            "events": "no",
-            "z-index": 0,
+            shape: "ellipse",
+            "text-max-width": "64px",
+            ...NODE_SHADOW_COMPACT,
           },
-        },
-        {
-          selector: "node[?isCompact]",
-          style: { shape: "ellipse", width: 72, height: 72, "text-max-width": "64px" },
         },
         {
           selector: "node[!isCompact]",
           style: {
             shape: "round-rectangle",
-            width: (n: NodeSingular) => boxNodeWidth(n, 100),
-            height: (n: NodeSingular) => boxNodeHeight(n, 100),
             padding: "12px",
             "corner-radius": "8",
             "text-max-width": "100px",
+            ...NODE_SHADOW_BOX,
+          },
+        },
+        {
+          selector: "node.dup-hidden",
+          style: {
+            opacity: 0,
+            events: "no",
+            "z-index": 0,
           },
         },
         {

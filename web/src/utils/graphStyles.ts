@@ -1,4 +1,3 @@
-import type { NodeSingular } from "cytoscape";
 import { GRAPH_FONT_FAMILY } from "./text";
 
 /** Nodi sotto gli archi così le etichette degli edge restano leggibili. */
@@ -9,24 +8,28 @@ export const Z_INDEX_MANUAL = {
 export const NODE_LABEL_FONT_SIZE = "12px";
 
 /**
- * Dimensioni nodi «box» in base all’etichetta.
- * Sostituisce `width`/`height: "label"` (deprecato in Cytoscape 3.x; può dare nodi invisibili).
+ * Dimensioni nodi «box» in base all’etichetta (da salvare in `data.boxW` / `data.boxH`).
+ * Sostituisce `width`/`height: "label"` (deprecato; può dare nodi invisibili).
  */
-function measureBoxNodeSize(
-  node: NodeSingular,
-  maxTextWidth: number,
-  padX: number,
-  padY: number,
-  lineHeight: number
+export function measureBoxNodeSize(
+  label: string,
+  maxTextWidth = 118,
+  padX = 28,
+  padY = 28,
+  lineHeight = 16
 ): { width: number; height: number } {
-  const label = String(node.data("label") ?? "");
+  const text = label || "·";
   const ctx = document.createElement("canvas").getContext("2d");
   if (!ctx) {
-    return { width: maxTextWidth + padX, height: lineHeight + padY };
+    const approx = Math.min(maxTextWidth, Math.max(40, text.length * 7));
+    return {
+      width: Math.max(72, approx + padX),
+      height: Math.max(40, Math.ceil(text.length / 18) * lineHeight + padY),
+    };
   }
   ctx.font = `500 ${NODE_LABEL_FONT_SIZE} ${GRAPH_FONT_FAMILY}`;
 
-  const words = label.split(/\s+/).filter(Boolean);
+  const words = text.split(/\s+/).filter(Boolean);
   const lines: string[] = [];
   let current = "";
   for (const word of words) {
@@ -43,17 +46,9 @@ function measureBoxNodeSize(
 
   const textW = Math.max(...lines.map((line) => ctx.measureText(line).width));
   return {
-    width: Math.max(56, Math.min(maxTextWidth, textW) + padX),
-    height: Math.max(36, lines.length * lineHeight + padY),
+    width: Math.max(72, Math.min(maxTextWidth, textW) + padX),
+    height: Math.max(40, lines.length * lineHeight + padY),
   };
-}
-
-export function boxNodeWidth(node: NodeSingular, maxTextWidth = 118): number {
-  return measureBoxNodeSize(node, maxTextWidth, 28, 28, 16).width;
-}
-
-export function boxNodeHeight(node: NodeSingular, maxTextWidth = 118): number {
-  return measureBoxNodeSize(node, maxTextWidth, 28, 28, 16).height;
 }
 
 /** Ombra morbida — forma va impostata per tipo nodo (ellipse vs round-rectangle). */
@@ -89,10 +84,7 @@ export const JOIN_NODE_STYLE_BOX = {
 } as const;
 
 export const EDGE_LINE_BASE = {
-  // taxi: evita warning "invalid endpoints" quando source/target si sovrappongono (merge)
-  "curve-style": "taxi",
-  "taxi-direction": "auto",
-  "taxi-turn": "35px",
+  "curve-style": "bezier",
   "edge-distances": "intersection",
   "target-arrow-shape": "vee",
   "arrow-scale": 0.9,

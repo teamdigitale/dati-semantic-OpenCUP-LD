@@ -23,8 +23,7 @@ import {
   NODE_SHADOW_BOX,
   NODE_SHADOW_COMPACT,
   Z_INDEX_MANUAL,
-  boxNodeHeight,
-  boxNodeWidth,
+  measureBoxNodeSize,
 } from "../utils/graphStyles";
 import { ResourceLink } from "./ResourceLink";
 
@@ -133,6 +132,7 @@ function centerComponent(comp: Collection, cx: number, cellY: number): void {
 }
 
 function finishLayout(cy: Core): void {
+  cy.resize();
   enforceMinZoom(cy);
 }
 
@@ -257,17 +257,24 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
     const elements = [
       ...data.nodes.map((n) => {
         const { accent, fill } = nodeColors(n.dataset, n.type);
+        const label = graphNodeDisplayLabel(n.label, n.type);
+        const compact = isCompactNode(n.type);
+        const box = compact
+          ? { width: 76, height: 76 }
+          : measureBoxNodeSize(label, 118);
         return {
           data: {
             id: n.id,
-            label: graphNodeDisplayLabel(n.label, n.type),
+            label,
             fullLabel: normalizeDisplayText(n.label),
             type: n.type,
             dataset: n.dataset,
             accentColor: accent,
             fillColor: fill,
-            isCompact: isCompactNode(n.type),
+            isCompact: compact,
             isJoinNode: joinNodeIds.has(n.id),
+            boxW: box.width,
+            boxH: box.height,
           },
         };
       }),
@@ -294,14 +301,14 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
           selector: "node",
           style: {
             ...NODE_BASE_STYLE,
+            width: "data(boxW)",
+            height: "data(boxH)",
           },
         },
         {
           selector: "node[?isCompact]",
           style: {
             shape: "ellipse",
-            width: 76,
-            height: 76,
             "text-max-width": "68px",
             "font-size": "11px",
             ...NODE_SHADOW_COMPACT,
@@ -311,8 +318,6 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
           selector: "node[!isCompact]",
           style: {
             shape: "round-rectangle",
-            width: (n: NodeSingular) => boxNodeWidth(n, 118),
-            height: (n: NodeSingular) => boxNodeHeight(n, 118),
             padding: "14px",
             "corner-radius": "10",
             "text-max-width": "118px",
