@@ -950,12 +950,12 @@ def build_cup_union(all_g: Graph, cup, cv_g: Graph | None = None) -> dict:
     n_lots = len(lots)
     lotto_label = "1 lotto" if n_lots == 1 else f"{n_lots} lotti"
     note = (
-        f"Il CUP {cup_code} è lo stesso nodo RDF in OpenCUP e PA Digitale (URI condiviso). "
+        f"Il CUP {cup_code} è lo stesso progetto in OpenCUP e PA Digitale. "
         f"Collegato a {lotto_label} CIG ANAC"
-        f"{', avviso PNRR' if call else ''}"
-        f"{', ente titolare' if org_cf else ''}"
-        f"{', IndicePA via owl:sameAs' if org_ipa else ''}"
-        f"{', classificazione SKOS (settore, tipologia, …)' if intervento else ''} — nessuna join SQL."
+        f"{', all’avviso PNRR' if call else ''}"
+        f"{', al soggetto titolare' if org_cf else ''}"
+        f"{', all’ente IndicePA' if org_ipa else ''}"
+        f"{', alla classificazione dell’intervento' if intervento else ''}."
     )
 
     join_predicates = ["owl:sameAs", "PCTR:hasProject", "PRJ:hasCall", "pi:ha_soggetto_titolare"]

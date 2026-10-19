@@ -3,6 +3,7 @@ import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions, NodeSingular 
 import fcose from "cytoscape-fcose";
 import { GraphData, GraphNode, SubgraphData } from "../types";
 import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS } from "../constants";
+import { site } from "../content/site";
 import { resolveHref } from "../utils/uri";
 import { joinNodeIdsFromEdges } from "../utils/graphCup";
 import { graphNodeDisplayLabel } from "../utils/graphLabels";
@@ -12,6 +13,7 @@ import {
   EDGE_LINE_BASE,
   JOIN_NODE_STYLE_BOX,
   JOIN_NODE_STYLE_COMPACT,
+  NODE_LABEL_FONT_SIZE,
   NODE_SHADOW_BOX,
   NODE_SHADOW_COMPACT,
   Z_INDEX_MANUAL,
@@ -196,10 +198,10 @@ const NODE_BASE_STYLE = {
   label: "data(label)",
   "background-color": "data(fillColor)",
   "border-color": "data(accentColor)",
-  color: "#1e293b",
+  color: "#17324d",
   "font-weight": 500,
   "text-outline-width": 0,
-  "font-size": "11px",
+  "font-size": NODE_LABEL_FONT_SIZE,
   "font-family": GRAPH_FONT_FAMILY,
   "text-wrap": "wrap",
   "text-valign": "center",
@@ -293,7 +295,7 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
             width: 76,
             height: 76,
             "text-max-width": "68px",
-            "font-size": "10px",
+            "font-size": "11px",
             ...NODE_SHADOW_COMPACT,
           },
         },
@@ -429,13 +431,13 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
   return (
     <div className="cytoscape-wrap">
       <div className="graph-toolbar">
-        <button type="button" className="graph-toolbar-btn" onClick={fitAll}>
-          Vista completa
+        <button type="button" className="btn btn-sm btn-outline-primary" onClick={fitAll}>
+          {site.graph.fit}
         </button>
-        <button type="button" className="graph-toolbar-btn" onClick={() => zoomBy(1.2)}>
+        <button type="button" className="btn btn-sm btn-outline-primary" onClick={() => zoomBy(1.2)}>
           Zoom +
         </button>
-        <button type="button" className="graph-toolbar-btn" onClick={() => zoomBy(1 / 1.2)}>
+        <button type="button" className="btn btn-sm btn-outline-primary" onClick={() => zoomBy(1 / 1.2)}>
           Zoom −
         </button>
       </div>
@@ -445,18 +447,18 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
           <p className="node-detail-label">{normalizeDisplayText(selected.label)}</p>
           <dl className="node-detail-meta">
             <div>
-              <dt>Tipo</dt>
+              <dt>{site.graph.detail_type}</dt>
               <dd>
                 <code>{selected.type}</code>
               </dd>
             </div>
             <div>
-              <dt>Dataset</dt>
+              <dt>{site.graph.detail_dataset}</dt>
               <dd>{DATASET_LABELS[selected.dataset] ?? selected.dataset}</dd>
             </div>
             {selectedHref && (
               <div>
-                <dt>URI</dt>
+                <dt>{site.graph.detail_uri}</dt>
                 <dd>
                   <ResourceLink
                     value={selected.id.startsWith("http") ? selected.shortId : selected.id}

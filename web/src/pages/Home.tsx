@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ContentMarkdown } from "../components/ContentMarkdown";
 import { parseMarkdown, parseYaml, splitSections } from "../content/load";
+import { site } from "../content/site";
 import homeRaw from "../../content/home.md?raw";
 import sourcesRaw from "../../content/home.sources.yml?raw";
 import exploreRaw from "../../content/home.explore.yml?raw";
@@ -51,7 +52,7 @@ export function Home() {
           {typeof homeMeta.eyebrow === "string" && (
             <p className="text-secondary mb-1">{homeMeta.eyebrow}</p>
           )}
-          <h1>{String(homeMeta.title ?? "OpenCUP LD")}</h1>
+          <h1>{String(homeMeta.title ?? site.brand.title)}</h1>
           {typeof homeMeta.lead === "string" && (
             <p className="lead">{homeMeta.lead}</p>
           )}
@@ -71,7 +72,7 @@ export function Home() {
         )}
         <div className="row g-3">
           {sourcesDoc.sources.map((s) => (
-            <div className="col-12 col-md-6" key={s.title}>
+            <div className="col-12 col-md-6 col-lg-4" key={s.title}>
               <div className="card-wrapper card-space h-100">
                 <div className="card card-bg h-100">
                   <div className="card-body">
@@ -90,65 +91,9 @@ export function Home() {
         )}
       </section>
 
-      {sections.compare && (
-        <section className="mb-5">
-          <ContentMarkdown source={sections.compare} />
-        </section>
-      )}
-
       {sections.citizen && (
         <section className="mb-5">
           <ContentMarkdown source={sections.citizen} />
-        </section>
-      )}
-
-      {sections.pipeline && (
-        <section className="mb-5">
-          <ContentMarkdown source={sections.pipeline} />
-          <div className="accordion" id="accordionLdDetail">
-            <div className="accordion-item">
-              <h3 className="accordion-header" id="headingReshape">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseReshape"
-                  aria-expanded="false"
-                  aria-controls="collapseReshape"
-                >
-                  Dettaglio tecnico del reshape
-                </button>
-              </h3>
-              <div
-                id="collapseReshape"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingReshape"
-                data-bs-parent="#accordionLdDetail"
-              >
-                <div className="accordion-body">
-                  <ul>
-                    <li>
-                      Assegnare <code>@id</code> stabili (CUP, Lot, Award, Notice, IPA, CF).
-                    </li>
-                    <li>
-                      Dichiarare <code>@type</code> ontologici (es.{" "}
-                      <code>pi:Progetto_di_investimento_pubblico</code>,{" "}
-                      <code>PCTR:Lot</code>, <code>PCTR:Award</code>).
-                    </li>
-                    <li>
-                      Per OpenCUP: blank node dell&apos;intervento, URI dei CV SKOS.
-                    </li>
-                    <li>
-                      IndicePA: <code>owl:sameAs</code> tra ente IPA e CF del titolare.
-                    </li>
-                    <li>
-                      SCP: stesso <code>Lot/{"{cig}"}</code> di ANAC + Award / ContractNotice.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
       )}
 
@@ -157,36 +102,20 @@ export function Home() {
           <ContentMarkdown source={sections.jsonld} />
           <div className="ld-compare">
             <div>
-              <h3 className="h5">JSON piatto (ANAC)</h3>
+              <h3 className="h5">{String(homeMeta.json_flat_title)}</h3>
               <pre>{JSON.stringify(FLAT_CUPCIG, null, 2)}</pre>
             </div>
             <div>
-              <h3 className="h5">JSON-LD (reshape + context)</h3>
+              <h3 className="h5">{String(homeMeta.jsonld_title)}</h3>
               <pre>{JSON.stringify(JSONLD_CUPCIG, null, 2)}</pre>
             </div>
           </div>
-          <p className="text-secondary mt-2 mb-0">
-            Prova locale:{" "}
-            <code>uv run python LD/scripts/convert_cupcig_jsonld.py --spike</code>
-          </p>
         </section>
       )}
 
       {sections.uri && (
         <section className="mb-5">
           <ContentMarkdown source={sections.uri} />
-        </section>
-      )}
-
-      {sections.limits && (
-        <section className="mb-5">
-          <ContentMarkdown source={sections.limits} />
-          <pre className="story-pipeline mt-3">{`srcdata raw
-  → analytics full (territorio, stati, aggiudicazioni)
-  → filtro hub + SCP → Award/Notice RDF
-  → reshape + @context
-  → JSON-LD → Turtle (all.ttl)
-  → web: racconto + campioni + analisi`}</pre>
         </section>
       )}
 
@@ -203,7 +132,7 @@ export function Home() {
                     </h3>
                     <p className="card-text">{item.description}</p>
                     <Link className="read-more" to={item.to}>
-                      <span className="text">Apri</span>
+                      <span className="text">{site.cta.detail}</span>
                     </Link>
                   </div>
                 </div>

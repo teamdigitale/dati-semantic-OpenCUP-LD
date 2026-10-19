@@ -1,0 +1,68 @@
+brand:
+  slim: Linked Data · investimento pubblico
+  title: OpenCUP Linked Data
+  tagline: Il CUP — Codice Unico di Progetto e le banche dati collegate
+  footer_subtitle: Semantica dell’investimento pubblico — ontologia PublicInvestment
+
+nav:
+  - to: /
+    label: Home
+    end: true
+  - to: /mappature
+    label: Mappature
+    end: true
+  - to: /grafi
+    label: Grafi separati
+    end: true
+  - to: /unione
+    label: Unione semantica
+    end: true
+  - to: /unione/animazione
+    label: Unione animata
+    end: true
+  - to: /analisi
+    label: Analisi
+    end: true
+
+aria:
+  nav: Navigazione principale
+  nav_toggle: Mostra o nascondi la navigazione
+
+footer:
+  contents_title: Contenuti
+  contents_body: >
+    Numeri a scala nazionale dalle banche dati OpenCUP, ANAC, PA
+    Digitale e dagli esiti di gara; grafi in cui lo stesso CUP
+    collega le informazioni di fonti diverse.
+  sources_title: Fonti
+  sources_line: OpenCUP · ANAC CUP↔CIG · PA Digitale · IndicePA · SCP MIT
+  small_print: Design System .italia / Bootstrap Italia
+
+cta:
+  detail: Dettaglio
+
+loading:
+  default: Caricamento…
+  map: Caricamento mappa…
+  map_level: "Caricamento {level}…"
+  graph: Caricamento grafo…
+  subgraph: Caricamento sottografo…
+
+graph:
+  fit: Vista completa
+  detail_type: Tipo
+  detail_dataset: Dataset
+  detail_uri: URI
+  sample_fallback: Campione di progetti.
+  nodes_edges: "({nodes} nodi · {edges} archi)"
+  source_aria: Fonte dati
+  dataset_prefix: "Dataset: "
+  subgraph_stats: "{nodes} nodi · {edges} archi · {joins} collegamenti tra fonti"
+
+dataset_labels:
+  opencup: OpenCUP
+  candidature: PA Digitale
+  cupcig: CUP↔CIG (ANAC)
+  enti_ipa: IndicePA
+  scp: SCP MIT
+  shared: Condiviso

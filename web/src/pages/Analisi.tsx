@@ -10,14 +10,15 @@ import {
   CartesianGrid,
 } from "recharts";
 import { fetchJson } from "../api";
-import { ChartData, CountsData, ScopeData } from "../types";
+import { ChartData, ScopeData } from "../types";
 import { PageIntro } from "../components/PageIntro";
 import { ContentMarkdown } from "../components/ContentMarkdown";
 import { RegioneCupMap } from "../components/RegioneCupMap";
-import { parseYaml } from "../content/load";
+import { parseMarkdown, parseYaml, splitSections } from "../content/load";
 import analisiRaw from "../../content/analisi.md?raw";
 import insightsRaw from "../../content/analisi.insights.yml?raw";
 import gapsRaw from "../../content/analisi.gaps.yml?raw";
+import analisiUiRaw from "../../content/analisi.ui.yml?raw";
 import {
   cupsPer100k,
   cupsPerPilMld,
@@ -28,6 +29,27 @@ import {
 
 const insights = parseYaml<Record<string, string>>(insightsRaw);
 const gapsDoc = parseYaml<{ title: string; items: string[] }>(gapsRaw);
+const analisiUi = parseYaml<{
+  anchors_aria: string;
+  anchors: { href: string; label: string }[];
+  stats: {
+    opencup: string;
+    anac: string;
+    padigitale: string;
+    enti_ipa: string;
+  };
+  sample_card: {
+    body: string;
+    link_unione: string;
+    link_animazione: string;
+  };
+  charts: {
+    per_100k: string;
+    per_pil: string;
+    map: string;
+  };
+}>(analisiUiRaw);
+const analisiSections = splitSections(parseMarkdown(analisiRaw).content);
 
 const BI = {
   primary: "#0066cc",
@@ -178,12 +200,13 @@ function ChartSection({
               type="number"
               allowDecimals={valueDecimals}
               tickFormatter={axisFmt}
+              tick={{ fontSize: 12, fill: "#5b6f82" }}
             />
             <YAxis
               type="category"
               dataKey="name"
               width={yWidth}
-              tick={{ fontSize: 10 }}
+              tick={{ fontSize: 12, fill: "#17324d" }}
               interval={0}
             />
             <Tooltip content={tip} />
@@ -195,11 +218,16 @@ function ChartSection({
             margin={{ left: 56, right: 16, top: 8, bottom: 48 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" tick={{ fontSize: 11 }} interval={0} />
+            <XAxis
+              dataKey="name"
+              tick={{ fontSize: 12, fill: "#17324d" }}
+              interval={0}
+            />
             <YAxis
               allowDecimals={valueDecimals}
               width={52}
               tickFormatter={axisFmt}
+              tick={{ fontSize: 12, fill: "#5b6f82" }}
             />
             <Tooltip content={tip} />
             <Bar dataKey="value" fill={color} />
@@ -224,7 +252,6 @@ export function Analisi() {
   const [scpAwards, setScpAwards] = useState<ChartData | null>(null);
   const [scpAwardsEuro, setScpAwardsEuro] = useState<ChartData | null>(null);
   const [privCat, setPrivCat] = useState<ChartData | null>(null);
-  const [counts, setCounts] = useState<CountsData | null>(null);
   const [scope, setScope] = useState<ScopeData | null>(null);
   const [sampleCups, setSampleCups] = useState<string[]>([]);
   const [regionInd, setRegionInd] = useState<RegioneIndicatori | null>(null);
@@ -244,7 +271,6 @@ export function Analisi() {
       fetchJson<ChartData>("analytics/scp_top_aggiudicatari.json"),
       fetchJson<ChartData>("analytics/scp_top_aggiudicatari_euro.json"),
       fetchJson<ChartData>("analytics/soggetto_privato_by_categoria.json"),
-      fetchJson<CountsData>("analytics/counts.json"),
       fetchJson<ScopeData>("analytics/scope.json"),
       fetchJson<SubgraphIndex>("subgraphs/index.json"),
       fetchJson<RegioneIndicatori>("geo/regioni_indicatori.json"),
@@ -263,7 +289,6 @@ export function Analisi() {
         scp,
         scpEuro,
         priv,
-        n,
         s,
         idx,
         ind,
@@ -281,7 +306,6 @@ export function Analisi() {
         setScpAwards(scp);
         setScpAwardsEuro(scpEuro);
         setPrivCat(priv);
-        setCounts(n);
         setScope(s);
         setSampleCups(idx.sample_cups ?? []);
         setRegionInd(ind);
@@ -347,254 +371,241 @@ export function Analisi() {
 
   return (
     <div>
-      <PageIntro raw={analisiRaw} />
+      <PageIntro raw={analisiRaw} includeBody={false} />
+
+      <nav aria-label={analisiUi.anchors_aria}>
+        <ul className="analisi-anchors">
+          {analisiUi.anchors.map((a) => (
+            <li key={a.href}>
+              <a href={a.href}>{a.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       {scope && (
         <section className="mb-5">
-          <h2>{scope.title}</h2>
-          <p>{scope.definition}</p>
-
-          <h3 className="h5 mt-4">Basi complete (quanto)</h3>
-          <div className="row g-3 mb-3">
+          {analisiSections["scala-nazionale"] && (
+            <ContentMarkdown source={analisiSections["scala-nazionale"]} />
+          )}
+          <div className="row g-3">
             {scope.opencup_cups != null && (
               <StatCard
                 value={scope.opencup_cups.toLocaleString("it")}
-                label="CUP OpenCUP"
+                label={analisiUi.stats.opencup}
               />
             )}
             {scope.anac_cigs != null && (
               <StatCard
                 value={scope.anac_cigs.toLocaleString("it")}
-                label="CIG ANAC"
+                label={analisiUi.stats.anac}
               />
             )}
             {scope.padigitale_raw_cups != null && (
               <StatCard
                 value={scope.padigitale_raw_cups.toLocaleString("it")}
-                label="CUP PA Digitale"
+                label={analisiUi.stats.padigitale}
               />
             )}
             {scope.enti_ipa != null && (
               <StatCard
                 value={scope.enti_ipa.toLocaleString("it")}
-                label="Enti IndicePA"
+                label={analisiUi.stats.enti_ipa}
               />
-            )}
-          </div>
-
-          <h3 className="h5 mt-4">Hub interop (dove nasce il grafo)</h3>
-          <Insight>
-            Solo ~{scope.hub_cups?.toLocaleString("it") ?? "…"} CUP sono nello
-            scope in cui PA Digitale, ANAC ed esiti SCP si incontrano. Da lì
-            deriva il RDF hub. Le visualizzazioni a grafo usano un campione di
-            CUP leggibile, non le basi nazionali intere.
-          </Insight>
-          <div className="row g-3">
-            {scope.hub_cups != null && (
-              <StatCard
-                value={scope.hub_cups.toLocaleString("it")}
-                label="CUP hub"
-              />
-            )}
-            {scope.hub_cigs != null && (
-              <StatCard
-                value={scope.hub_cigs.toLocaleString("it")}
-                label="CIG hub"
-              />
-            )}
-            {counts && (
-              <StatCard
-                value={counts.triples.toLocaleString("it")}
-                label="Triple RDF (hub)"
-              />
-            )}
-            {sampleCups.length > 0 && (
-              <StatCard value={String(sampleCups.length)} label="CUP nel grafo UI" />
             )}
           </div>
         </section>
       )}
 
-      <section className="mb-5">
-        <h2>Dal numero al grafo</h2>
-        <p>
-          Questi CUP sono tra i più ricchi nell&apos;unione semantica. Aprili
-          nell&apos;unione per vedere relazioni che una classifica non mostra.
-        </p>
-        <div className="row g-3">
-          {sampleCups.map((cup) => (
-            <div className="col-12 col-md-6" key={cup}>
-              <div className="card-wrapper card-space h-100">
-                <div className="card card-bg h-100">
-                  <div className="card-body">
-                    <h3 className="h5 card-title">
-                      <code>{cup}</code>
-                    </h3>
-                    <p className="card-text">
-                      Stesso URI in OpenCUP e PA Digitale; lotti CIG,
-                      classificazione, ponte IndicePA.
-                    </p>
-                    <div className="d-flex flex-wrap gap-2">
-                      <Link
-                        className="btn btn-primary btn-sm"
-                        to={`/unione?cup=${cup}`}
-                      >
-                        Unione semantica
-                      </Link>
-                      <Link
-                        className="btn btn-outline-primary btn-sm"
-                        to={`/unione/animazione?cup=${cup}`}
-                      >
-                        Unione animata
-                      </Link>
+      {sampleCups.length > 0 && (
+        <section className="mb-5">
+          {analisiSections["dal-numero-al-grafo"] && (
+            <ContentMarkdown source={analisiSections["dal-numero-al-grafo"]} />
+          )}
+          <div className="row g-3">
+            {sampleCups.map((cup) => (
+              <div className="col-12 col-md-6" key={cup}>
+                <div className="card-wrapper card-space h-100">
+                  <div className="card card-bg h-100">
+                    <div className="card-body">
+                      <h3 className="h5 card-title">
+                        <code>{cup}</code>
+                      </h3>
+                      <p className="card-text">{analisiUi.sample_card.body}</p>
+                      <div className="d-flex flex-wrap gap-2">
+                        <Link
+                          className="btn btn-primary btn-sm"
+                          to={`/unione?cup=${cup}`}
+                        >
+                          {analisiUi.sample_card.link_unione}
+                        </Link>
+                        <Link
+                          className="btn btn-outline-primary btn-sm"
+                          to={`/unione/animazione?cup=${cup}`}
+                        >
+                          {analisiUi.sample_card.link_animazione}
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      )}
 
-      <ChartSection
-        title={byStato?.title}
-        insight={insights.opencup_by_stato}
-        data={statoChart}
-        color={BI.analogue1}
-        layout="horizontal"
-        height={280}
-      />
+      <div id="analisi-stato">
+        <ChartSection
+          title={byStato?.title}
+          insight={insights.opencup_by_stato}
+          data={statoChart}
+          color={BI.analogue1}
+          layout="horizontal"
+          height={280}
+        />
+      </div>
 
-      <ChartSection
-        title={byRegione?.title}
-        insight={insights.cups_by_regione}
-        data={regioneChart}
-        color={BI.primary}
-        yWidth={140}
-      />
+      <div id="analisi-territorio">
+        <ChartSection
+          title={byRegione?.title}
+          insight={insights.cups_by_regione}
+          data={regioneChart}
+          color={BI.primary}
+          yWidth={140}
+        />
 
-      <ChartSection
-        title="CUP OpenCUP per 100.000 abitanti"
-        insight={insights.cups_by_regione_per_100k}
-        data={regionePer100kChart}
-        color={BI.primary}
-        yWidth={140}
-        valueDecimals
-      />
+        <ChartSection
+          title={analisiUi.charts.per_100k}
+          insight={insights.cups_by_regione_per_100k}
+          data={regionePer100kChart}
+          color={BI.primary}
+          yWidth={140}
+          valueDecimals
+        />
 
-      <ChartSection
-        title="CUP OpenCUP per miliardo € di PIL"
-        insight={insights.cups_by_regione_per_pil}
-        data={regionePerPilChart}
-        color={BI.primary}
-        yWidth={140}
-        valueDecimals
-      />
+        <ChartSection
+          title={analisiUi.charts.per_pil}
+          insight={insights.cups_by_regione_per_pil}
+          data={regionePerPilChart}
+          color={BI.primary}
+          yWidth={140}
+          valueDecimals
+        />
+      </div>
 
-      <section className="chart-section">
-        <h2>Mappa — CUP e CIG sul territorio</h2>
+      <section className="chart-section" id="analisi-mappa">
+        <h2>{analisiUi.charts.map}</h2>
         <Insight>{insights.cups_by_regione_map}</Insight>
         <RegioneCupMap chart={byRegione} />
       </section>
 
-      <ChartSection
-        title={padRegione?.title}
-        insight={insights.pad_cost_by_regione}
-        data={padRegioneChart}
-        color={BI.analogue1}
-        euro
-        yWidth={140}
-      />
+      <div id="analisi-pnrr">
+        <ChartSection
+          title={padRegione?.title}
+          insight={insights.pad_cost_by_regione}
+          data={padRegioneChart}
+          color={BI.analogue1}
+          euro
+          yWidth={140}
+        />
 
-      <ChartSection
-        title={padComuni?.title}
-        insight={insights.pad_top_comuni}
-        data={padComuniChart}
-        color={BI.analogue1}
-        euro
-        yWidth={140}
-      />
+        <ChartSection
+          title={padComuni?.title}
+          insight={insights.pad_top_comuni}
+          data={padComuniChart}
+          color={BI.analogue1}
+          euro
+          yWidth={140}
+        />
 
-      <ChartSection
-        title={scpAwards?.title}
-        insight={insights.scp_top_aggiudicatari}
-        data={scpAwardsChart}
-        color={BI.analogue2}
-        yWidth={170}
-      />
+        <ChartSection
+          title={byCall?.title}
+          insight={insights.cost_by_call}
+          data={callChart}
+          color={BI.analogue1}
+          euro
+          yWidth={200}
+        />
+      </div>
 
-      <ChartSection
-        title={scpAwardsEuro?.title}
-        insight={insights.scp_top_aggiudicatari_euro}
-        data={scpAwardsEuroChart}
-        color={BI.analogue2}
-        euro
-        yWidth={170}
-      />
+      <div id="analisi-gare">
+        <ChartSection
+          title={scpAwards?.title}
+          insight={insights.scp_top_aggiudicatari}
+          data={scpAwardsChart}
+          color={BI.analogue2}
+          yWidth={170}
+        />
 
-      <ChartSection
-        title={bySettore?.title}
-        insight={insights.cups_by_settore}
-        data={settoreChart}
-        color={BI.neutralLight}
-        yWidth={180}
-      />
+        <ChartSection
+          title={scpAwardsEuro?.title}
+          insight={insights.scp_top_aggiudicatari_euro}
+          data={scpAwardsEuroChart}
+          color={BI.analogue2}
+          euro
+          yWidth={170}
+        />
 
-      <ChartSection
-        title={byCategoria?.title}
-        insight={insights.cups_by_categoria}
-        data={categoriaChart}
-        color={BI.neutral}
-        yWidth={180}
-      />
+        <ChartSection
+          title={cupCigDist?.title}
+          insight={insights.cup_cig_distribution}
+          data={cupCigDistChart}
+          color={BI.analogue2}
+          layout="horizontal"
+          height={300}
+        />
 
-      <ChartSection
-        title={cupCigDist?.title}
-        insight={insights.cup_cig_distribution}
-        data={cupCigDistChart}
-        color={BI.analogue2}
-        layout="horizontal"
-        height={300}
-      />
+        <ChartSection
+          title={byCupCig?.title}
+          insight={insights.top_cup_cig}
+          data={cupCigChart}
+          color={BI.analogue2}
+          yWidth={120}
+        />
+      </div>
 
-      <ChartSection
-        title={byCupCig?.title}
-        insight={insights.top_cup_cig}
-        data={cupCigChart}
-        color={BI.analogue2}
-        yWidth={120}
-      />
+      <div id="analisi-classificazione">
+        <ChartSection
+          title={bySettore?.title}
+          insight={insights.cups_by_settore}
+          data={settoreChart}
+          color={BI.neutralLight}
+          yWidth={180}
+        />
 
-      <ChartSection
-        title={byFunder?.title}
-        insight={insights.cost_by_funder}
-        data={funderChart}
-        color={BI.primary}
-        euro
-        yWidth={160}
-      />
+        <ChartSection
+          title={byCategoria?.title}
+          insight={insights.cups_by_categoria}
+          data={categoriaChart}
+          color={BI.neutral}
+          yWidth={180}
+        />
+      </div>
 
-      <ChartSection
-        title={privCat?.title}
-        insight={insights.soggetto_privato_by_categoria}
-        data={privCatChart}
-        color={BI.neutral}
-        euro
-        yWidth={200}
-      />
+      <div id="analisi-titolari">
+        <ChartSection
+          title={byFunder?.title}
+          insight={insights.cost_by_funder}
+          data={funderChart}
+          color={BI.primary}
+          euro
+          yWidth={160}
+        />
 
-      <ChartSection
-        title={byCall?.title}
-        insight={insights.cost_by_call}
-        data={callChart}
-        color={BI.analogue1}
-        euro
-        yWidth={200}
-      />
+        <ChartSection
+          title={privCat?.title}
+          insight={insights.soggetto_privato_by_categoria}
+          data={privCatChart}
+          color={BI.neutral}
+          euro
+          yWidth={200}
+        />
+      </div>
 
       {gapsDoc?.items?.length ? (
         <section className="mt-4">
-          <h2 className="h5">{gapsDoc.title ?? "Come leggere questi numeri"}</h2>
+          <h2 className="h5">{gapsDoc.title}</h2>
           <ul className="analisi-gaps">
             {gapsDoc.items.map((g) => (
               <li key={g.slice(0, 48)}>

@@ -1,7 +1,8 @@
 ---
 title: Unione animata
 lead: >
-  Demonstrazione dell'apporto del grafo: fonti separate si fondono quando
-  condividono lo **stesso URI**. È ciò che un JOIN SQL fa a ogni query;
-  qui il join è già nel modello dei dati.
+  All’inizio le quattro banche dati compaiono in riquadri separati. Premendo **Unisci grafi**,
+  i nodi che condividono lo stesso URI si avvicinano e diventano un solo oggetto: si vede
+  così, passo dopo passo, come il formato Linked Data colleghi OpenCUP, ANAC, PA Digitale
+  e IndicePA sullo stesso CUP. Con **Separa grafi** si torna alla vista iniziale.
 ---

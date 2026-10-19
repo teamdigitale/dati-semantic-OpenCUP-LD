@@ -3,9 +3,11 @@ import { fetchJson } from "../api";
 import { GraphData } from "../types";
 import { CytoscapeGraph } from "../components/CytoscapeGraph";
 import { GraphNodeList } from "../components/GraphNodeList";
+import { GraphLegend } from "../components/GraphLegend";
 import { ResourceLink } from "../components/ResourceLink";
-import { DATASET_COLORS, DATASET_LABELS } from "../constants";
+import { DATASET_LABELS } from "../constants";
 import { PageIntro } from "../components/PageIntro";
+import { site } from "../content/site";
 import grafiRaw from "../../content/grafi.md?raw";
 
 const DATASETS = ["opencup", "candidature", "cupcig", "enti_ipa"] as const;
@@ -26,8 +28,12 @@ export function Grafi() {
     <div>
       <PageIntro raw={grafiRaw} />
       <p className="text-secondary">
-        {graph?.sample_note ?? "Campione statico."} ({graph?.nodes.length ?? "…"}{" "}
-        nodi)
+        {graph?.sample_note ?? site.graph.sample_fallback}{" "}
+        {graph
+          ? site.graph.nodes_edges
+              .replace("{nodes}", String(graph.nodes.length))
+              .replace("{edges}", String(graph.edges.length))
+          : ""}
       </p>
       {graph?.sample_cups && graph.sample_cups.length > 0 && (
         <p className="stats">
@@ -41,13 +47,12 @@ export function Grafi() {
         </p>
       )}
 
-      <div className="tab-bar">
+      <div className="btn-group flex-wrap mb-3" role="group" aria-label={site.graph.source_aria}>
         {DATASETS.map((d) => (
           <button
             key={d}
             type="button"
-            className={active === d ? "tab active" : "tab"}
-            style={{ borderColor: DATASET_COLORS[d] }}
+            className={`btn btn-sm ${active === d ? "btn-primary" : "btn-outline-primary"}`}
             onClick={() => setActive(d)}
           >
             {DATASET_LABELS[d]}
@@ -55,22 +60,12 @@ export function Grafi() {
         ))}
       </div>
 
-      {loading && <p>Caricamento grafo…</p>}
+      {loading && <p>{site.loading.graph}</p>}
       {graph && !loading && (
         <>
-          <p className="stats">
-            {graph.nodes.length} nodi · {graph.edges.length} archi
-          </p>
           <CytoscapeGraph data={graph} />
+          <GraphLegend datasets={[active]} />
           <GraphNodeList nodes={graph.nodes} />
-          <div className="legend">
-            {Object.entries(DATASET_COLORS).map(([k, c]) => (
-              <span key={k} className="legend-item">
-                <span className="dot" style={{ background: c }} />
-                {DATASET_LABELS[k] ?? k}
-              </span>
-            ))}
-          </div>
         </>
       )}
     </div>

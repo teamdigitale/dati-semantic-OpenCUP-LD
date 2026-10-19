@@ -1,14 +1,15 @@
 sources:
   - title: OpenCUP
-    description: Anagrafica CUP, costi, classificazione, titolare (CF)
+    description: Anagrafica dei progetti — CUP, costi, classificazione, soggetto titolare
   - title: ANAC CUP↔CIG
-    description: Lotti di gara collegati al CUP
+    description: Lotti di gara (CIG) collegati al Codice Unico di Progetto
   - title: PA Digitale
-    description: Avvisi PNRR e finanziamenti
+    description: Avvisi PNRR e finanziamenti per la digitalizzazione della PA
   - title: IndicePA
-    description: Ente con codice IPA e owl:sameAs verso il CF
+    description: Enti pubblici con codice IPA, collegati al codice fiscale del titolare
   - title: SCP MIT
-    description: Bandi ed esiti (aggiudicatari) sullo stesso CIG
+    description: Bandi ed esiti di gara (aggiudicatari) sullo stesso CIG
 sources_note: >
-  Le [Analisi](/analisi) usano già le basi complete (territorio, stati, aggiudicazioni).
-  Il RDF e le mappe a grafo restano sull'hub interop (PA Digitale ∩ ANAC ∩ esiti) e su un campione di CUP.
+  Le [Analisi](/analisi) mostrano i numeri a scala nazionale.
+  I [grafi](/grafi) e l’[unione](/unione) mostrano come le stesse entità si colleghino
+  a partire dallo stesso CUP.

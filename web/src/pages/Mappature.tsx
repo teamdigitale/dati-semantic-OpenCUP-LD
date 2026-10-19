@@ -4,7 +4,11 @@ import { MappingsData } from "../types";
 import { DATASET_LABELS } from "../constants";
 import { RdfMappingText } from "../components/ResourceLink";
 import { PageIntro } from "../components/PageIntro";
+import { parseMarkdown } from "../content/load";
+import { site } from "../content/site";
 import mappatureRaw from "../../content/mappature.md?raw";
+
+const mappatureMeta = parseMarkdown(mappatureRaw).data;
 
 export function Mappature() {
   const [data, setData] = useState<MappingsData | null>(null);
@@ -14,7 +18,9 @@ export function Mappature() {
     fetchJson<MappingsData>("mappings.json").then(setData);
   }, []);
 
-  if (!data) return <p>Caricamento…</p>;
+  if (!data) return <p>{site.loading.default}</p>;
+
+  const headers = (mappatureMeta.table_headers ?? {}) as Record<string, string>;
 
   const rows =
     filter === "all"
@@ -23,22 +29,10 @@ export function Mappature() {
 
   return (
     <div>
-      <PageIntro raw={mappatureRaw} />
+      <PageIntro raw={mappatureRaw} includeBody={false} />
 
       <section className="mb-5">
-        <h2>Template e convertitori</h2>
-        <ul className="list-group list-group-flush border rounded">
-          {data.templates.map((t) => (
-            <li className="list-group-item" key={t.file}>
-              <code>{t.file}</code>
-              <span className="text-secondary"> → {t.dataset}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mb-5">
-        <h2>Join semantici (automatici)</h2>
+        <h2>{String(mappatureMeta.joins_heading ?? "")}</h2>
         <div className="row g-3">
           {data.semanticJoins.map((j) => (
             <div className="col-12 col-md-6" key={j.id}>
@@ -62,10 +56,10 @@ export function Mappature() {
       </section>
 
       <section>
-        <h2>Campi → proprietà RDF</h2>
+        <h2>{String(mappatureMeta.table_heading ?? "")}</h2>
         <div className="mb-3">
           <label className="form-label" htmlFor="datasetFilter">
-            Dataset
+            {String(mappatureMeta.filter_label ?? "")}
           </label>
           <select
             id="datasetFilter"
@@ -73,7 +67,7 @@ export function Mappature() {
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           >
-            <option value="all">Tutti</option>
+            <option value="all">{String(mappatureMeta.filter_all ?? "")}</option>
             {Array.from(new Set(data.fieldMappings.map((r) => r[3]))).map((k) => (
               <option key={k} value={k}>
                 {DATASET_LABELS[k] ?? k}
@@ -85,10 +79,10 @@ export function Mappature() {
           <table className="table table-striped table-hover table-bordered">
             <thead>
               <tr>
-                <th scope="col">Campo sorgente</th>
-                <th scope="col">Proprietà RDF</th>
-                <th scope="col">Ruolo</th>
-                <th scope="col">Dataset</th>
+                <th scope="col">{headers.campo}</th>
+                <th scope="col">{headers.proprieta}</th>
+                <th scope="col">{headers.ruolo}</th>
+                <th scope="col">{headers.dataset}</th>
               </tr>
             </thead>
             <tbody>

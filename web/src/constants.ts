@@ -16,14 +16,8 @@ export const DATASET_FILLS: Record<string, string> = {
   shared: "#f8fafc",
 };
 
-export const DATASET_LABELS: Record<string, string> = {
-  opencup: "OpenCUP",
-  candidature: "PA Digitale",
-  cupcig: "CUP↔CIG (ANAC)",
-  enti_ipa: "IndicePA",
-  scp: "SCP MIT",
-  shared: "Condiviso",
-};
+/** Etichette dataset: vedi `web/content/site.yml` (`dataset_labels`). */
+export { DATASET_LABELS } from "./content/site";
 
 export const TYPE_COLORS: Record<string, string> = {
   "pi:Progetto_di_investimento_pubblico": "#3b82f6",

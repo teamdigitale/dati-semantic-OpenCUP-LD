@@ -21,6 +21,22 @@ con le ontologie e i CV pubblicati su [schema.gov.it](https://schema.gov.it)
 In questo modo i collegamenti (stesso CUP, stesso ente, stesso concetto SKOS)
 diventano evidenti: stesse URI → stesso nodo nel grafo.
 
+### Convenzione URI (quando non esiste un’URI ufficiale)
+
+Per mintare nuove URI di dati (istanze) usare sempre:
+
+```text
+https://w3id.org/italia/data/{nomeontologia}/{nomeconcetto}/{nomeattributo}/{valore}
+```
+
+- `{nomeontologia}` — es. `PublicInvestment`, `PublicContract`
+- `{nomeconcetto}` — es. `CUP`, `Lot`, `Award`
+- `{nomeattributo}` — **solo se** l’URI rappresenta il valore di un attributo; altrimenti il segmento si omette
+- `{valore}` — valore dell’istanza
+
+Esempi: `…/data/PublicInvestment/CUP/E31C22001170006`; con attributo: `…/data/PublicInvestment/CUP/codice/E31C….`  
+Le URI già pubblicate ufficialmente (es. IndicePA `https://indicepa.gov.it/ente/{ipa}`, vocabolari su schema.gov.it) non si reinventano.
+
 ### Orizzonte
 
 1. **Database / Analisi**: aggregati nazionali (quanto, dove, chi) — già in pagina Analisi + mappa regioni.

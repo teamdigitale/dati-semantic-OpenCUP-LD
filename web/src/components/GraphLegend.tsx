@@ -1,23 +1,35 @@
 import { DATASET_COLORS, DATASET_LABELS } from "../constants";
+import { parseYaml } from "../content/load";
+import { ContentMarkdown } from "./ContentMarkdown";
+import legendaRaw from "../../content/legenda.yml?raw";
 
-const DATASET_DESCRIPTIONS: Record<string, string> = {
-  opencup:
-    "Progetto CUP, intervento, ente titolare — dati da OpenCUP.parquet",
-  candidature:
-    "Avviso PNRR e importi — dati da PA Digitale (candidature comuni finanziate)",
-  cupcig:
-    "Lotto CIG ANAC collegato al CUP — ponte verso gli appalti pubblici",
-  enti_ipa:
-    "Ente da IndicePA (codice IPA) — collegato al titolare via owl:sameAs",
-  shared: "Letterale o risorsa senza dataset di provenienza",
-};
+interface LegendaContent {
+  aria: string;
+  title: string;
+  colors: { title: string; hint: string };
+  datasets: Record<string, string>;
+  join_nodes: {
+    title: string;
+    hint: string;
+    label: string;
+    desc: string;
+  };
+  join_edges: {
+    title: string;
+    hint: string;
+    label: string;
+    desc: string;
+  };
+}
+
+const legenda = parseYaml<LegendaContent>(legendaRaw);
 
 interface Props {
   /** Dataset presenti nel grafo; se omesso mostra tutti. */
   datasets?: string[];
-  /** Mostra la voce per gli archi join semantici (rossi). */
+  /** Mostra la voce per gli archi di collegamento tra fonti (rossi). */
   showJoinEdges?: boolean;
-  /** Mostra la voce per i nodi join (doppio bordo). */
+  /** Mostra la voce per i nodi di ancoraggio (doppio bordo). */
   showJoinNodes?: boolean;
 }
 
@@ -31,23 +43,21 @@ export function GraphLegend({
     : Object.keys(DATASET_COLORS).filter((k) => k !== "shared");
 
   return (
-    <section className="graph-legend" aria-label="Legenda colori grafo">
-      <h2>Legenda</h2>
+    <section className="graph-legend" aria-label={legenda.aria}>
+      <h2>{legenda.title}</h2>
       <div className="graph-legend-grid">
         <div className="graph-legend-section">
-          <h3>Colori dei nodi — provenienza dataset</h3>
-          <p className="graph-legend-hint">
-            Ogni nodo è colorato in base al grafo RDF da cui proviene. Lo stesso CUP
-            può comparire in più dataset con lo <strong>stesso URI</strong>: il colore
-            indica la fonte dei dati che arricchiscono quel nodo.
-          </p>
+          <h3>{legenda.colors.title}</h3>
+          <div className="graph-legend-hint">
+            <ContentMarkdown source={legenda.colors.hint} />
+          </div>
           <ul className="graph-legend-list">
             {keys.map((key) => (
               <li key={key}>
                 <span className="dot" style={{ background: DATASET_COLORS[key] }} />
                 <span className="graph-legend-label">{DATASET_LABELS[key] ?? key}</span>
                 <span className="graph-legend-desc">
-                  {DATASET_DESCRIPTIONS[key] ?? ""}
+                  {legenda.datasets[key] ?? ""}
                 </span>
               </li>
             ))}
@@ -55,36 +65,30 @@ export function GraphLegend({
         </div>
         {showJoinNodes && (
           <div className="graph-legend-section">
-            <h3>Nodi con alone rosso — ancoraggio join</h3>
-            <p className="graph-legend-hint">
-              Nodi che partecipano a un join semantico tra dataset: il colore del nodo
-              indica la provenienza; l&apos;alone rosso segnala il ruolo di ancoraggio.
-            </p>
+            <h3>{legenda.join_nodes.title}</h3>
+            <div className="graph-legend-hint">
+              <ContentMarkdown source={legenda.join_nodes.hint} />
+            </div>
             <ul className="graph-legend-list">
               <li>
                 <span className="join-node-sample" />
-                <span className="graph-legend-label">Nodo join</span>
-                <span className="graph-legend-desc">
-                  CUP condiviso, ente titolare, lotto CIG, avviso PNRR, …
-                </span>
+                <span className="graph-legend-label">{legenda.join_nodes.label}</span>
+                <span className="graph-legend-desc">{legenda.join_nodes.desc}</span>
               </li>
             </ul>
           </div>
         )}
         {showJoinEdges && (
           <div className="graph-legend-section">
-            <h3>Archi rossi — join semantico</h3>
-            <p className="graph-legend-hint">
-              Collegamenti automatici tra dataset: stesso URI, owl:sameAs o proprietà
-              ontologiche (es. PCTR:hasProject). Non sono join SQL tra tabelle.
-            </p>
+            <h3>{legenda.join_edges.title}</h3>
+            <div className="graph-legend-hint">
+              <ContentMarkdown source={legenda.join_edges.hint} />
+            </div>
             <ul className="graph-legend-list">
               <li>
                 <span className="legend-edge-sample" />
-                <span className="graph-legend-label">Join semantico</span>
-                <span className="graph-legend-desc">
-                  PRJ:hasCall, pi:ha_soggetto_titolare, owl:sameAs, PCTR:hasProject
-                </span>
+                <span className="graph-legend-label">{legenda.join_edges.label}</span>
+                <span className="graph-legend-desc">{legenda.join_edges.desc}</span>
               </li>
             </ul>
           </div>

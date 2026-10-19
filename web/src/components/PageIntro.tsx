@@ -2,7 +2,14 @@ import { ContentMarkdown } from "./ContentMarkdown";
 import { parseMarkdown } from "../content/load";
 
 /** Title + lead (+ optional callout) from a content/*.md frontmatter file. */
-export function PageIntro({ raw }: { raw: string }) {
+export function PageIntro({
+  raw,
+  includeBody = true,
+}: {
+  raw: string;
+  /** When false, only frontmatter intro is rendered (body sections used by the page). */
+  includeBody?: boolean;
+}) {
   const { data, content } = parseMarkdown(raw);
   const title = String(data.title ?? "");
   const lead = typeof data.lead === "string" ? data.lead : "";
@@ -27,7 +34,7 @@ export function PageIntro({ raw }: { raw: string }) {
           <ContentMarkdown source={calloutBody} />
         </div>
       )}
-      {content.trim() && <ContentMarkdown source={content} />}
+      {includeBody && content.trim() && <ContentMarkdown source={content} />}
     </>
   );
 }

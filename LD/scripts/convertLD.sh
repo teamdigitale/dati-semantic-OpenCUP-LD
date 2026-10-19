@@ -23,9 +23,7 @@ run_py LD/scripts/compactJsonLD.py LD/json-ld/scp_bandi_esiti-ld.json
 
 for tname in LD/templates/*.hbs; do
     bname=$(basename "${tname}" .hbs)
-    if [[ "${bname}" == "cupcig_candidature_comuni_finanziate" ]]; then
-        continue
-    fi
+    # CUP↔CIG: gestito sopra con convert_cupcig_jsonld.py (template in OLD/LD/templates/)
     jname="srcdata/data/${bname}.json"
     jldname="LD/json-ld/${bname}-ld.json"
     run_py LD/scripts/applyTemplate.py "${jname}" "${tname}" > "${jldname}"

@@ -1,16 +1,29 @@
 ---
 title: Analisi
 lead: >
-  Questa pagina è la lente **database**: aggregati DuckDB sulle basi nazionali
-  (*quanto*, *dove*, *a chi*). Non sostituisce il grafo: per *come* le fonti
-  condividono lo stesso progetto/lotto/ente vai all'[unione semantica](/unione).
-callout_title: Cosa vedi qui vs cosa vedi nel grafo
+  Questa pagina raccoglie i numeri dell’investimento pubblico a scala nazionale: quanti
+  progetti risultano attivi o chiusi, dove si concentrano sul territorio, quanto
+  finanziamento è stato assegnato nell’ambito dei fondi PNRR di PA Digitale, a chi sono
+  state aggiudicate le gare, a cosa servono gli interventi. Per vedere come le stesse
+  informazioni si colleghino tra banche dati diverse si va all’[unione semantica](/unione).
+callout_title: Cosa mostra questa pagina
 callout_body: >
-  **Qui (DB):** classifiche e conteggi — «questo titolare ha X euro», «questa regione ha N CUP»,
-  «questi sono i CUP con più CIG». Servono a capire la scala nazionale.
-
-  **Nel grafo:** lo stesso CUP è un nodo condiviso tra OpenCUP e PA Digitale; ogni CIG è un lotto
-  collegato; l'aggiudicatario SCP e l'ente IndicePA si agganciano senza riscrivere un JOIN.
-  Il grafo non ricalcola i top-N nazionali: rende **espliciti e navigabili** i collegamenti
-  che nel DB esistono solo se li scrivi tu nella query.
+  Classifiche e conteggi su tutta Italia: ad esempio quanti CUP ha una regione, quali comuni
+  hanno ottenuto i finanziamenti più alti nell’ambito dei fondi PNRR di PA Digitale, a quali
+  soggetti sono state aggiudicate più spesso le gare. Servono a capire la portata dei dati.
+  Nel grafo, invece, lo stesso CUP è un nodo condiviso tra OpenCUP e PA Digitale, ogni CIG
+  è un lotto collegato al progetto, ente e aggiudicatario compaiono come nodi legati a quel
+  percorso — senza dover ricostruire a mano i collegamenti a ogni domanda.
 ---
+
+<!-- section:scala-nazionale -->
+
+## Scala nazionale
+
+Conteggi sulle banche OpenCUP, ANAC, PA Digitale e IndicePA a scala nazionale.
+
+<!-- section:dal-numero-al-grafo -->
+
+## Dal numero al grafo
+
+Alcuni CUP in cui OpenCUP, gare, avvisi digitali ed enti si incontrano. Nell’unione è possibile seguire i collegamenti.

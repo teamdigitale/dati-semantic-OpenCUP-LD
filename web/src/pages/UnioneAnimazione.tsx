@@ -7,6 +7,7 @@ import { ResourceLink } from "../components/ResourceLink";
 import { MERGE_DATASETS } from "../utils/graphCup";
 import { useCupQueryParam } from "../hooks/useCupQueryParam";
 import { PageIntro } from "../components/PageIntro";
+import { site } from "../content/site";
 import unioneAnimRaw from "../../content/unione-animazione.md?raw";
 
 interface SubgraphIndex {
@@ -52,10 +53,6 @@ export function UnioneAnimazione() {
   return (
     <div>
       <PageIntro raw={unioneAnimRaw} />
-      <p className="text-secondary">
-        Premi <strong>Unisci grafi</strong>: i nodi con lo stesso URI si
-        sovrappongono — è il join semantico che le tabelle nascondono.
-      </p>
 
       <div className="mb-3">
         <label className="form-label" htmlFor="cupSelectAnim">
@@ -80,7 +77,7 @@ export function UnioneAnimazione() {
         )}
       </div>
 
-      {loading && <p>Caricamento…</p>}
+      {loading && <p>{site.loading.default}</p>}
       {ready && merged && (
         <>
           <MergeAnimationGraph

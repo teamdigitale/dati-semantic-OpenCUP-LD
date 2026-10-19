@@ -28,7 +28,43 @@ import {
   rawMetric,
   levelFromZoom,
 } from "../utils/regions";
+import { parseYaml } from "../content/load";
+import mappaRaw from "../../content/mappa.yml?raw";
 import "leaflet/dist/leaflet.css";
+
+interface MappaContent {
+  loading: string;
+  loading_level: string;
+  aria: {
+    entity: string;
+    value: string;
+    level: string;
+    scale: string;
+  };
+  entity: { cup: string; cig: string };
+  value: { count: string; euro: string };
+  level: {
+    auto: string;
+    regione: string;
+    provincia: string;
+    comune: string;
+  };
+  scale: {
+    assoluti: string;
+    per_abitante: string;
+    per_pil: string;
+  };
+  footer: {
+    level_prefix: string;
+    zoom_auto: string;
+    colors_count: string;
+    colors_cup_euro: string;
+    colors_cig_euro: string;
+    borders: string;
+  };
+}
+
+const mappa = parseYaml<MappaContent>(mappaRaw);
 
 const BASE = import.meta.env.BASE_URL;
 const GEO_REG = `${BASE}data/geo/regioni.geojson`;
@@ -265,7 +301,7 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
   const canvasRenderer = useMemo(() => L.canvas({ padding: 0.5 }), []);
 
   if (!regGeo || !territory) {
-    return <p className="text-secondary">Caricamento mappa…</p>;
+    return <p className="text-secondary">{mappa.loading}</p>;
   }
 
   const displayGeo = activeGeo ?? regGeo;
@@ -313,12 +349,12 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
 
   return (
     <div className="regione-map-wrap">
-      <div className="regione-map-toolbar d-flex flex-wrap gap-2 mb-2 align-items-center">
-        <div className="btn-group" role="group" aria-label="Entità">
+      <div className="regione-map-toolbar">
+        <div className="btn-group" role="group" aria-label={mappa.aria.entity}>
           {(
             [
-              ["cup", "CUP"],
-              ["cig", "CIG"],
+              ["cup", mappa.entity.cup],
+              ["cig", mappa.entity.cig],
             ] as const
           ).map(([id, label]) => (
             <button
@@ -331,11 +367,11 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
             </button>
           ))}
         </div>
-        <div className="btn-group" role="group" aria-label="Valore">
+        <div className="btn-group" role="group" aria-label={mappa.aria.value}>
           {(
             [
-              ["count", "Quantità"],
-              ["euro", "Importo €"],
+              ["count", mappa.value.count],
+              ["euro", mappa.value.euro],
             ] as const
           ).map(([id, label]) => (
             <button
@@ -348,13 +384,13 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
             </button>
           ))}
         </div>
-        <div className="btn-group" role="group" aria-label="Livello territoriale">
+        <div className="btn-group" role="group" aria-label={mappa.aria.level}>
           {(
             [
-              ["auto", "Auto (zoom)"],
-              ["regione", "Regioni"],
-              ["provincia", "Province"],
-              ["comune", "Comuni"],
+              ["auto", mappa.level.auto],
+              ["regione", mappa.level.regione],
+              ["provincia", mappa.level.provincia],
+              ["comune", mappa.level.comune],
             ] as const
           ).map(([id, label]) => (
             <button
@@ -368,12 +404,12 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
           ))}
         </div>
         {level === "regione" ? (
-          <div className="btn-group" role="group" aria-label="Scala">
+          <div className="btn-group" role="group" aria-label={mappa.aria.scale}>
             {(
               [
-                ["assoluti", "Assoluti"],
-                ["per_abitante", "Per abitante"],
-                ["per_pil", "Per PIL"],
+                ["assoluti", mappa.scale.assoluti],
+                ["per_abitante", mappa.scale.per_abitante],
+                ["per_pil", mappa.scale.per_pil],
               ] as const
             ).map(([id, label]) => (
               <button
@@ -389,7 +425,7 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
         ) : null}
         {layerPending ? (
           <span className="small text-secondary">
-            Caricamento {wantedLevel}…
+            {mappa.loading_level.replace("{level}", wantedLevel)}
           </span>
         ) : null}
       </div>
@@ -415,17 +451,21 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
         <ZoomWatcher onZoom={setZoom} />
       </MapContainer>
       <p className="small text-secondary mt-2 mb-0">
-        Livello: <strong>{level}</strong>
+        {mappa.footer.level_prefix}
+        <strong>{level}</strong>
         {levelOverride === "auto"
-          ? ` (zoom ${zoom.toFixed(0)}: regioni sotto 7, province 7–8, comuni da 9)`
+          ? mappa.footer.zoom_auto.replace("{zoom}", zoom.toFixed(0))
           : null}
         .{" "}
         {valueKind === "count"
-          ? `Colori = numero di ${entity === "cup" ? "CUP" : "CIG"}.`
+          ? mappa.footer.colors_count.replace(
+              "{entity}",
+              entity === "cup" ? mappa.entity.cup : mappa.entity.cig
+            )
           : entity === "cup"
-            ? "Colori = finanziamento OpenCUP (€)."
-            : "Colori = importo di aggiudicazione SCP (€), geolocalizzato via CUP."}{" "}
-        Confini: openpolis / ISTAT. Usa lo zoom o i pulsanti per province e comuni.
+            ? mappa.footer.colors_cup_euro
+            : mappa.footer.colors_cig_euro}{" "}
+        {mappa.footer.borders}
       </p>
     </div>
   );

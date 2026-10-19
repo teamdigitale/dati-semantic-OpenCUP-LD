@@ -3,6 +3,7 @@ import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions } from "cytosc
 import fcose from "cytoscape-fcose";
 import { GraphData, GraphEdge, GraphNode, SubgraphData } from "../types";
 import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS } from "../constants";
+import { parseYaml } from "../content/load";
 import {
   MERGE_DATASETS,
   MERGE_QUADRANTS,
@@ -18,11 +19,26 @@ import {
 } from "../utils/graphCup";
 import { cupCodeToUri } from "../utils/uri";
 import { graphNodeDisplayLabel } from "../utils/graphLabels";
+import grafiCommonRaw from "../../content/grafi.common.yml?raw";
+
+const mergeUi = parseYaml<{
+  merge: {
+    unite: string;
+    separate: string;
+    fit: string;
+    phase_separated: string;
+    phase_merging: string;
+    phase_merged: string;
+    layout_status: string;
+    stats: string;
+  };
+}>(grafiCommonRaw).merge;
 import {
   EDGE_LABEL_VISIBLE,
   EDGE_LINE_BASE,
   JOIN_NODE_STYLE_BOX,
   JOIN_NODE_STYLE_COMPACT,
+  NODE_LABEL_FONT_SIZE,
   NODE_SHADOW_BOX,
   NODE_SHADOW_COMPACT,
   Z_INDEX_MANUAL,
@@ -687,10 +703,10 @@ export function MergeAnimationGraph({
             label: "data(label)",
             "background-color": "data(fillColor)",
             "border-color": "data(accentColor)",
-            color: "#1e293b",
+            color: "#17324d",
             "font-weight": 500,
             "text-outline-width": 0,
-            "font-size": "10px",
+            "font-size": NODE_LABEL_FONT_SIZE,
             "font-family": GRAPH_FONT_FAMILY,
             "text-wrap": "wrap",
             "text-valign": "center",
@@ -821,26 +837,26 @@ export function MergeAnimationGraph({
 
   return (
     <div className="merge-animation-wrap">
-      <div className="graph-toolbar merge-toolbar">
+      <div className="graph-toolbar">
         <button
           type="button"
-          className="graph-toolbar-btn"
+          className="btn btn-sm btn-primary"
           disabled={!separatedLayoutReady || phase === "merging" || phase === "merged"}
           onClick={runMergeAnimation}
         >
-          Unisci grafi
+          {mergeUi.unite}
         </button>
         <button
           type="button"
-          className="graph-toolbar-btn"
+          className="btn btn-sm btn-outline-primary"
           disabled={!separatedLayoutReady || phase === "merging" || phase === "separated"}
           onClick={runSeparateAnimation}
         >
-          Separa grafi
+          {mergeUi.separate}
         </button>
         <button
           type="button"
-          className="graph-toolbar-btn"
+          className="btn btn-sm btn-outline-primary"
           onClick={() => {
             const cy = cyRef.current;
             if (!cy) return;
@@ -852,24 +868,24 @@ export function MergeAnimationGraph({
             }
           }}
         >
-          Inquadra tutto
+          {mergeUi.fit}
         </button>
-        <span className="merge-phase-label">
-          {phase === "separated" &&
-            "Vista separata — nodo di fusione al centro di ogni riquadro, CUP verso il centro"}
-          {phase === "merging" && "Animazione in corso…"}
-          {phase === "merged" &&
-            "Vista unita — un nodo per URI, join rossi, duplicati nascosti"}
+        <span className="merge-phase-label" aria-live="polite">
+          {phase === "separated" && mergeUi.phase_separated}
+          {phase === "merging" && mergeUi.phase_merging}
+          {phase === "merged" && mergeUi.phase_merged}
         </span>
       </div>
 
       <div
-        className={`merge-canvas-shell${separatedLayoutReady ? "" : " merge-canvas-shell--layouting"}`}
+        className={`merge-canvas-shell${separatedLayoutReady ? "" : " merge-canvas-shell--layouting"}${
+          phase === "merged" ? " merge-canvas-shell--merged" : ""
+        }`}
         style={{ height }}
       >
         {!separatedLayoutReady && (
           <p className="merge-canvas-layout-status" aria-live="polite">
-            Layout grafi in corso…
+            {mergeUi.layout_status}
           </p>
         )}
         <div
@@ -890,8 +906,9 @@ export function MergeAnimationGraph({
       </div>
 
       <p className="stats merge-stats">
-        {duplicateCount} URI condivisi tra dataset · {merged.join_edges.length} join
-        semantici evidenziati in rosso
+        {mergeUi.stats
+          .replace("{duplicates}", String(duplicateCount))
+          .replace("{joins}", String(merged.join_edges.length))}
       </p>
     </div>
   );

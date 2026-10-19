@@ -8,6 +8,7 @@ import { ResourceLink } from "../components/ResourceLink";
 import { DATASET_LABELS } from "../constants";
 import { useCupQueryParam } from "../hooks/useCupQueryParam";
 import { PageIntro } from "../components/PageIntro";
+import { site } from "../content/site";
 import unioneRaw from "../../content/unione.md?raw";
 
 interface SubgraphIndex {
@@ -66,21 +67,7 @@ export function Unione() {
         )}
       </div>
 
-      <div className="cup-tabs mb-3">
-        {sampleCups.map((cup) => (
-          <button
-            key={cup}
-            type="button"
-            className={`btn btn-sm ${activeCup === cup ? "btn-primary" : "btn-outline-primary"}`}
-            onClick={() => selectCup(cup)}
-            title={cup}
-          >
-            {cup.slice(0, 4)}…{cup.slice(-4)}
-          </button>
-        ))}
-      </div>
-
-      {loading && <p>Caricamento sottografo…</p>}
+      {loading && <p>{site.loading.subgraph}</p>}
       {subgraph && !loading && (
         <>
           <div className="callout callout-note mb-3">
@@ -89,11 +76,13 @@ export function Unione() {
             </div>
             <p>{subgraph.sparql_note}</p>
             <p className="mb-0">
-              Dataset:{" "}
+              {site.graph.dataset_prefix}
               {subgraph.datasets_involved.map((d) => DATASET_LABELS[d] ?? d).join(", ")}
               {" · "}
-              {subgraph.nodes.length} nodi · {subgraph.edges.length} archi ·{" "}
-              {subgraph.join_edges.length} join
+              {site.graph.subgraph_stats
+                .replace("{nodes}", String(subgraph.nodes.length))
+                .replace("{edges}", String(subgraph.edges.length))
+                .replace("{joins}", String(subgraph.join_edges.length))}
             </p>
           </div>
           <CytoscapeGraph data={subgraph} highlightJoin height={620} />

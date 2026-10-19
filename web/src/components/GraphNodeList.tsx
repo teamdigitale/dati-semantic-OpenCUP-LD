@@ -1,7 +1,15 @@
 import { GraphNode } from "../types";
 import { normalizeDisplayText } from "../utils/text";
 import { resolveHref } from "../utils/uri";
+import { parseYaml } from "../content/load";
 import { ResourceLink } from "./ResourceLink";
+import grafiCommonRaw from "../../content/grafi.common.yml?raw";
+
+interface GrafiCommon {
+  node_list: { title: string; intro: string };
+}
+
+const { node_list } = parseYaml<GrafiCommon>(grafiCommonRaw);
 
 interface Props {
   nodes: GraphNode[];
@@ -19,8 +27,8 @@ export function GraphNodeList({ nodes }: Props) {
 
   return (
     <section className="node-links">
-      <h2>URI dereferenziabili</h2>
-      <p className="stats">Clic su un nodo nel grafo o su un link qui sotto per aprire la risorsa.</p>
+      <h2>{node_list.title}</h2>
+      <p className="stats">{node_list.intro}</p>
       <ul className="uri-list">
         {linkable.map(({ node }) => (
           <li key={node.id}>
