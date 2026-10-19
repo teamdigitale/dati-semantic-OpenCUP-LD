@@ -44,10 +44,15 @@ export function measureBoxNodeSize(
   if (current) lines.push(current);
   if (!lines.length) lines.push("·");
 
-  const textW = Math.max(...lines.map((line) => ctx.measureText(line).width));
+  const textW = Math.max(
+    0,
+    ...lines.map((line) => ctx.measureText(line).width)
+  );
+  const width = Math.round(Math.max(72, Math.min(maxTextWidth, textW) + padX));
+  const height = Math.round(Math.max(40, lines.length * lineHeight + padY));
   return {
-    width: Math.max(72, Math.min(maxTextWidth, textW) + padX),
-    height: Math.max(40, lines.length * lineHeight + padY),
+    width: Number.isFinite(width) ? width : 96,
+    height: Number.isFinite(height) ? height : 48,
   };
 }
 

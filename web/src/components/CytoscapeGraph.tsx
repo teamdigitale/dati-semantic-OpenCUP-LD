@@ -317,7 +317,7 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
           style: {
             shape: "round-rectangle",
             padding: "14px",
-            "corner-radius": "10",
+            "corner-radius": "10px",
             "text-max-width": "118px",
             ...NODE_SHADOW_BOX,
           },

@@ -1,22 +1,20 @@
 /**
  * Opzioni di rendering Cytoscape condivise.
- * Firefox (Gecko) con `pixelRatio: "auto"` spesso lascia il canvas bianco
- * (DPR / zoom pagina); su Chrome funziona. Vedi cytoscape.js#372.
+ *
+ * Su Firefox il canvas resta spesso bianco con `pixelRatio: "auto"`
+ * (DPR / zoom pagina — cytoscape.js#372). Usiamo sempre 1: un po’
+ * meno nitido su display retina, ma visibile su Chrome e Firefox.
  */
 export function cytoscapeRenderOptions(): {
   textureOnViewport: false;
   motionBlur: false;
-  pixelRatio: 1 | "auto";
+  pixelRatio: 1;
+  hideEdgesOnViewport: false;
 } {
-  const isFirefox =
-    typeof navigator !== "undefined" && /firefox/i.test(navigator.userAgent);
   return {
     textureOnViewport: false,
     motionBlur: false,
-    pixelRatio: isFirefox ? 1 : "auto",
+    hideEdgesOnViewport: false,
+    pixelRatio: 1,
   };
-}
-
-export function isFirefoxBrowser(): boolean {
-  return typeof navigator !== "undefined" && /firefox/i.test(navigator.userAgent);
 }

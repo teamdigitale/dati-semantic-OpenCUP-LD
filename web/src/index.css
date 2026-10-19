@@ -246,14 +246,16 @@ a.resource-link code {
   width: 100%;
   min-height: 400px;
   position: relative;
+  overflow: hidden;
 }
 
-/* Evita che stili globali comprimano il canvas Cytoscape (grafi «bianchi»). */
+/* Non comprimere i canvas Cytoscape (soprattutto Firefox). */
 .cytoscape-canvas > canvas,
 .merge-canvas > canvas {
   display: block !important;
   max-width: none !important;
   max-height: none !important;
+  image-rendering: auto;
 }
 
 .node-detail {

@@ -739,7 +739,7 @@ export function MergeAnimationGraph({
           style: {
             shape: "round-rectangle",
             padding: "12px",
-            "corner-radius": "8",
+            "corner-radius": "8px",
             "text-max-width": "100px",
             ...NODE_SHADOW_BOX,
           },
