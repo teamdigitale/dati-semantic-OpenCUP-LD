@@ -3,7 +3,7 @@ eyebrow: OpenCUP · Linked Data · interoperabilità
 title: Il CUP come chiave per leggere l’investimento pubblico
 lead: >
   OpenCUP assegna a ogni progetto di investimento pubblico un Codice Unico di Progetto (CUP).
-  Altre banche dati — gare, avvisi digitali, enti, aggiudicazioni — descrivono lo stesso
+  Le altre banche dati — gare, avvisi digitali, enti, aggiudicazioni — descrivono lo stesso
   investimento con schemi e codici diversi. La semantica collega queste fonti: progetto,
   lotto, ente e classificazione diventano lo stesso oggetto ovunque compaiano, così le
   informazioni di fonti diverse si leggono insieme.
@@ -22,7 +22,7 @@ jsonld_title: JSON-LD (identità e relazione)
 
 <!-- section:why -->
 
-## 1. Perché la semantica (e cos’è un grafo)
+## 1. Perché la semantica
 
 Nelle banche dati tradizionali le informazioni stanno in tabelle: righe e colonne. Per collegare OpenCUP alle gare o agli enti bisogna ogni volta confrontare i codici (CUP, CIG, codice fiscale).
 
@@ -50,7 +50,7 @@ I numeri nazionali sono in [Analisi](/analisi). I collegamenti tra fonti si espl
 
 ## 4. Dal codice in tabella all’identità sul web
 
-L’ANAC pubblica l’elenco dei collegamenti tra **CIG** (codice identificativo di gara, cioè il lotto) e **CUP** (il progetto). Nei dati aperti è spesso una tabella con poche colonne: per ogni riga, un CIG e il CUP a cui appartiene — niente di più. Nel formato Linked Data la stessa informazione diventa un **lotto** collegato a un **progetto**: ciascuno ha il proprio URI e un tipo definito dall’ontologia. Sotto, a sinistra un estratto di quella tabella in JSON; a destra lo stesso legame espresso come Linked Data.
+L’ANAC pubblica l’elenco dei collegamenti tra **CIG** (codice identificativo di gara, cioè il lotto) e **CUP** (il progetto). È una tabella con due colonne: per ogni riga, un CIG e il CUP a cui appartiene. Nel formato Linked Data la stessa informazione diventa un **lotto** collegato a un **progetto**: ciascuno ha il proprio URI e un tipo definito dall’ontologia. Sotto, a sinistra un estratto di quella tabella in JSON; a destra lo stesso legame espresso come Linked Data.
 
 <!-- section:uri -->
 
