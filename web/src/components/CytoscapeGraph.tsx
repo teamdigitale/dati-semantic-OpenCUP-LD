@@ -22,7 +22,6 @@ import {
   NODE_LABEL_FONT_SIZE,
   NODE_SHADOW_BOX,
   NODE_SHADOW_COMPACT,
-  Z_INDEX_MANUAL,
   measureBoxNodeSize,
 } from "../utils/graphStyles";
 import { ResourceLink } from "./ResourceLink";
@@ -216,8 +215,6 @@ const NODE_BASE_STYLE = {
   "text-halign": "center",
   "border-width": 2,
   "border-opacity": 1,
-  ...Z_INDEX_MANUAL,
-  "z-index": 1,
 } as const;
 
 export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Props) {
@@ -361,16 +358,13 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
             "border-opacity": 1,
             "underlay-color": "#bfdbfe",
             "underlay-opacity": 0.5,
-            "z-index": 20,
           },
         },
         {
           selector: "edge",
           style: {
-            ...Z_INDEX_MANUAL,
             ...EDGE_LABEL_VISIBLE,
             ...EDGE_LINE_BASE,
-            "z-index": 100,
           },
         },
         {
@@ -392,7 +386,6 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
             color: "#b91c1c",
             "text-background-color": "#fff1f2",
             "text-border-color": "#fecdd3",
-            "z-index": 160,
           },
         },
         {
@@ -404,10 +397,14 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
           },
         },
       ],
+      textureOnViewport: false,
+      motionBlur: false,
+      pixelRatio: "auto",
     });
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
+        cy.resize();
         layoutByComponents(cy);
       });
     });

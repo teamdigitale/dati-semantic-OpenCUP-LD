@@ -27,7 +27,6 @@ import {
   NODE_LABEL_FONT_SIZE,
   NODE_SHADOW_BOX,
   NODE_SHADOW_COMPACT,
-  Z_INDEX_MANUAL,
   measureBoxNodeSize,
 } from "../utils/graphStyles";
 import { GRAPH_FONT_FAMILY, normalizeDisplayText } from "../utils/text";
@@ -722,8 +721,6 @@ export function MergeAnimationGraph({
             "border-width": 2,
             width: "data(boxW)",
             height: "data(boxH)",
-            ...Z_INDEX_MANUAL,
-            "z-index": 1,
             "transition-property": "opacity",
             "transition-duration": 300,
           },
@@ -751,7 +748,6 @@ export function MergeAnimationGraph({
           style: {
             opacity: 0,
             events: "no",
-            "z-index": 0,
           },
         },
         {
@@ -765,11 +761,9 @@ export function MergeAnimationGraph({
         {
           selector: 'edge[phase = "separated"]',
           style: {
-            ...Z_INDEX_MANUAL,
             ...EDGE_LABEL_VISIBLE,
             ...EDGE_LINE_BASE,
             opacity: 1,
-            "z-index": 100,
           },
         },
         {
@@ -779,7 +773,6 @@ export function MergeAnimationGraph({
             ...EDGE_LINE_BASE,
             width: 1.5,
             opacity: 0,
-            "z-index": 80,
           },
         },
         {
@@ -794,10 +787,11 @@ export function MergeAnimationGraph({
             "text-background-color": "#fff1f2",
             "text-border-color": "#fecdd3",
             opacity: 0,
-            "z-index": 140,
           },
         },
       ],
+      textureOnViewport: false,
+      motionBlur: false,
     });
 
     applySeparatedView(cy);

@@ -1,9 +1,9 @@
 import { GRAPH_FONT_FAMILY } from "./text";
 
-/** Nodi sotto gli archi così le etichette degli edge restano leggibili. */
-export const Z_INDEX_MANUAL = {
-  "z-index-compare": "manual",
-} as const;
+/**
+ * Non usare `z-index-compare: manual`: su alcuni browser/GitHub Pages
+ * i layer canvas multipli restano vuoti (grafo «bianco» con nodi presenti nel modello).
+ */
 
 export const NODE_LABEL_FONT_SIZE = "12px";
 
@@ -111,5 +111,4 @@ export const EDGE_LABEL_VISIBLE = {
   "text-border-color": "#d9e6f2",
   "text-border-width": 1,
   "text-opacity": 1,
-  "z-index": 200,
 } as const;
