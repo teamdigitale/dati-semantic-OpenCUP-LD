@@ -1,5 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions, NodeSingular } from "cytoscape";
+import cytoscape, {
+  Collection,
+  Core,
+  EdgeSingular,
+  LayoutOptions,
+  NodeSingular,
+} from "cytoscape";
 import fcose from "cytoscape-fcose";
 import { GraphData, GraphNode, SubgraphData } from "../types";
 import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS } from "../constants";
@@ -17,6 +23,8 @@ import {
   NODE_SHADOW_BOX,
   NODE_SHADOW_COMPACT,
   Z_INDEX_MANUAL,
+  boxNodeHeight,
+  boxNodeWidth,
 } from "../utils/graphStyles";
 import { ResourceLink } from "./ResourceLink";
 
@@ -303,8 +311,8 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
           selector: "node[!isCompact]",
           style: {
             shape: "round-rectangle",
-            width: "label",
-            height: "label",
+            width: (n: NodeSingular) => boxNodeWidth(n, 118),
+            height: (n: NodeSingular) => boxNodeHeight(n, 118),
             padding: "14px",
             "corner-radius": "10",
             "text-max-width": "118px",

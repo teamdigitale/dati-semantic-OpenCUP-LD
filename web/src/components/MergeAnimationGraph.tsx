@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions } from "cytoscape";
+import cytoscape, { Collection, Core, EdgeSingular, LayoutOptions, NodeSingular } from "cytoscape";
 import fcose from "cytoscape-fcose";
 import { GraphData, GraphEdge, GraphNode, SubgraphData } from "../types";
 import { DATASET_COLORS, DATASET_FILLS, DATASET_LABELS, TYPE_COLORS, TYPE_FILLS } from "../constants";
@@ -19,6 +19,19 @@ import {
 } from "../utils/graphCup";
 import { cupCodeToUri } from "../utils/uri";
 import { graphNodeDisplayLabel } from "../utils/graphLabels";
+import {
+  EDGE_LABEL_VISIBLE,
+  EDGE_LINE_BASE,
+  JOIN_NODE_STYLE_BOX,
+  JOIN_NODE_STYLE_COMPACT,
+  NODE_LABEL_FONT_SIZE,
+  NODE_SHADOW_BOX,
+  NODE_SHADOW_COMPACT,
+  Z_INDEX_MANUAL,
+  boxNodeHeight,
+  boxNodeWidth,
+} from "../utils/graphStyles";
+import { GRAPH_FONT_FAMILY, normalizeDisplayText } from "../utils/text";
 import grafiCommonRaw from "../../content/grafi.common.yml?raw";
 
 const mergeUi = parseYaml<{
@@ -33,17 +46,6 @@ const mergeUi = parseYaml<{
     stats: string;
   };
 }>(grafiCommonRaw).merge;
-import {
-  EDGE_LABEL_VISIBLE,
-  EDGE_LINE_BASE,
-  JOIN_NODE_STYLE_BOX,
-  JOIN_NODE_STYLE_COMPACT,
-  NODE_LABEL_FONT_SIZE,
-  NODE_SHADOW_BOX,
-  NODE_SHADOW_COMPACT,
-  Z_INDEX_MANUAL,
-} from "../utils/graphStyles";
-import { GRAPH_FONT_FAMILY, normalizeDisplayText } from "../utils/text";
 
 cytoscape.use(fcose);
 
@@ -742,8 +744,8 @@ export function MergeAnimationGraph({
           selector: "node[!isCompact]",
           style: {
             shape: "round-rectangle",
-            width: "label",
-            height: "label",
+            width: (n: NodeSingular) => boxNodeWidth(n, 100),
+            height: (n: NodeSingular) => boxNodeHeight(n, 100),
             padding: "12px",
             "corner-radius": "8",
             "text-max-width": "100px",
