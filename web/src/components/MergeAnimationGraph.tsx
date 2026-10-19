@@ -29,6 +29,7 @@ import {
   NODE_SHADOW_COMPACT,
   measureBoxNodeSize,
 } from "../utils/graphStyles";
+import { cytoscapeRenderOptions } from "../utils/cytoscapeOptions";
 import { GRAPH_FONT_FAMILY, normalizeDisplayText } from "../utils/text";
 import grafiCommonRaw from "../../content/grafi.common.yml?raw";
 
@@ -790,8 +791,7 @@ export function MergeAnimationGraph({
           },
         },
       ],
-      textureOnViewport: false,
-      motionBlur: false,
+      ...cytoscapeRenderOptions(),
     });
 
     applySeparatedView(cy);

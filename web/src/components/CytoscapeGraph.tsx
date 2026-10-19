@@ -24,6 +24,7 @@ import {
   NODE_SHADOW_COMPACT,
   measureBoxNodeSize,
 } from "../utils/graphStyles";
+import { cytoscapeRenderOptions } from "../utils/cytoscapeOptions";
 import { ResourceLink } from "./ResourceLink";
 
 cytoscape.use(fcose);
@@ -332,9 +333,8 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
         {
           selector: "node.focused[?isJoinNode]",
           style: {
-            "border-width": 4,
-            "underlay-padding": 8,
-            "underlay-color": "#fca5a5",
+            "border-width": 5,
+            "border-color": "#ef4444",
           },
         },
         {
@@ -356,8 +356,6 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
             "border-width": 3,
             "border-color": "#3b82f6",
             "border-opacity": 1,
-            "underlay-color": "#bfdbfe",
-            "underlay-opacity": 0.5,
           },
         },
         {
@@ -397,9 +395,7 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
           },
         },
       ],
-      textureOnViewport: false,
-      motionBlur: false,
-      pixelRatio: "auto",
+      ...cytoscapeRenderOptions(),
     });
 
     requestAnimationFrame(() => {
@@ -428,7 +424,14 @@ export function CytoscapeGraph({ data, highlightJoin = false, height = 620 }: Pr
     cyRef.current = cy;
     setSelected(null);
 
+    const onWinResize = () => {
+      cy.resize();
+      enforceMinZoom(cy);
+    };
+    window.addEventListener("resize", onWinResize);
+
     return () => {
+      window.removeEventListener("resize", onWinResize);
       cy.destroy();
       cyRef.current = null;
     };

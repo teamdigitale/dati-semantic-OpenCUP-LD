@@ -51,36 +51,23 @@ export function measureBoxNodeSize(
   };
 }
 
-/** Ombra morbida — forma va impostata per tipo nodo (ellipse vs round-rectangle). */
-export const NODE_SHADOW_COMPACT = {
-  "underlay-opacity": 0.4,
-  "underlay-padding": 4,
-  "underlay-color": "#d9e6f2",
-  "underlay-shape": "ellipse",
-} as const;
+/**
+ * Ombre/underlay: su Firefox i layer canvas extra spesso restano vuoti.
+ * Usiamo solo bordo più marcato (niente underlay).
+ */
+export const NODE_SHADOW_COMPACT = {} as const;
 
-export const NODE_SHADOW_BOX = {
-  "underlay-opacity": 0.45,
-  "underlay-padding": 5,
-  "underlay-color": "#d9e6f2",
-  "underlay-shape": "round-rectangle",
-} as const;
+export const NODE_SHADOW_BOX = {} as const;
 
 /** Evidenzia collegamenti tra fonti senza sovrascrivere i colori di dataset. */
 export const JOIN_NODE_STYLE_COMPACT = {
-  "border-width": 3,
-  "underlay-opacity": 0.85,
-  "underlay-padding": 5,
-  "underlay-color": "#f87171",
-  "underlay-shape": "ellipse",
+  "border-width": 4,
+  "border-color": "#f87171",
 } as const;
 
 export const JOIN_NODE_STYLE_BOX = {
-  "border-width": 3,
-  "underlay-opacity": 0.85,
-  "underlay-padding": 5,
-  "underlay-color": "#f87171",
-  "underlay-shape": "round-rectangle",
+  "border-width": 4,
+  "border-color": "#f87171",
 } as const;
 
 export const EDGE_LINE_BASE = {
