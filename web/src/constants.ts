@@ -4,6 +4,7 @@ export const DATASET_COLORS: Record<string, string> = {
   candidature: "#10b981",
   cupcig: "#f59e0b",
   enti_ipa: "#8b5cf6",
+  monithon: "#0d9488",
   shared: "#64748b",
 };
 
@@ -13,6 +14,7 @@ export const DATASET_FILLS: Record<string, string> = {
   candidature: "#ecfdf5",
   cupcig: "#fffbeb",
   enti_ipa: "#f5f3ff",
+  monithon: "#f0fdfa",
   shared: "#f8fafc",
 };
 
@@ -27,6 +29,9 @@ export const TYPE_COLORS: Record<string, string> = {
   "PCTR:Award": "#d97706",
   "PCTR:ContractNotice": "#b45309",
   "PRJ:Call": "#10b981",
+  "schema:Report": "#0d9488",
+  "cm:Report_di_monitoraggio_civico": "#0d9488",
+  "cm:Gruppo_di_monitoraggio": "#14b8a6",
   "skos:Concept": "#94a3b8",
   "CLV:Address": "#22d3ee",
   Literal: "#e2e8f0",
@@ -41,6 +46,9 @@ export const TYPE_FILLS: Record<string, string> = {
   "PCTR:Award": "#fff7ed",
   "PCTR:ContractNotice": "#ffedd5",
   "PRJ:Call": "#ecfdf5",
+  "schema:Report": "#f0fdfa",
+  "cm:Report_di_monitoraggio_civico": "#f0fdfa",
+  "cm:Gruppo_di_monitoraggio": "#ccfbf1",
   "skos:Concept": "#f1f5f9",
   "CLV:Address": "#ecfeff",
   Literal: "#f8fafc",

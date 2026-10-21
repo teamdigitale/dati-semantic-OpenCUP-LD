@@ -1,0 +1,67 @@
+{
+  "dataset": "cupcig",
+  "coverage": "sample",
+  "sample_cups": [
+    "B71G23000080009"
+  ],
+  "sample_note": "Lotti CIG ANAC collegati al CUP.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "shortId": "cup:B71G23000080009",
+      "label": "B71G23000080009",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B075E5AC46",
+      "shortId": "lot:B075E5AC46",
+      "label": "CIG B075E5AC46",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B0E231C707",
+      "shortId": "lot:B0E231C707",
+      "label": "CIG B0E231C707",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B08C362DF0",
+      "shortId": "lot:B08C362DF0",
+      "label": "CIG B08C362DF0",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9876713966",
+      "shortId": "lot:9876713966",
+      "label": "CIG 9876713966",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Lot/B075E5AC46",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B0E231C707",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B08C362DF0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9876713966",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    }
+  ]
+}

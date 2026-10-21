@@ -1,0 +1,254 @@
+{
+  "id": "monithon_H95F22000090006",
+  "title": "Unione semantica — CUP H95F22000090006",
+  "sparql_note": "Il CUP H95F22000090006 è oggetto del report Monithon 2290 (REPORT DI MONITORAGGIO CIVICO LAVORI DI ADEGUAMENTO SISMICO PALESTRA ITI DA VINCI). Collegato a 3 lotti CIG ANAC. Localizzazione OpenCUP: TRAPANI.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/990133474B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A005EB044D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B969AAC403",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "cm:ha_progetto_monitorato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "label": "cm:prodotto_da"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/non-avviato",
+      "label": "cm:ha_stato_avanzamento_osservato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/p_tp",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
+      "label": "owl:sameAs"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "shortId": "cup:H95F22000090006",
+      "label": "ISTITUTO TECNICO INDUSTRIALE DI TRAPANI  PALESTRA  COD. EDIF. 0810212538 - LAV",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
+      "shortId": "cf:93004780818",
+      "label": "PROVINCIA REGIONALE DI TRAPANI",
+      "type": "COV:Organization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/comune",
+      "shortId": "cup:H95F22000090006/comune",
+      "label": "Comune: TRAPANI",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/regione",
+      "shortId": "cup:H95F22000090006/regione",
+      "label": "Regione: SICILIA",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/natura",
+      "shortId": "cup:H95F22000090006/natura",
+      "label": "Natura: REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/settore",
+      "shortId": "cup:H95F22000090006/settore",
+      "label": "Settore: INFRASTRUTTURE SOCIALI",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/990133474B",
+      "shortId": "lot:990133474B",
+      "label": "CIG 990133474B",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A005EB044D",
+      "shortId": "lot:A005EB044D",
+      "label": "CIG A005EB044D",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B969AAC403",
+      "shortId": "lot:B969AAC403",
+      "label": "CIG B969AAC403",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2290",
+      "shortId": "monithon:2290",
+      "label": "REPORT DI MONITORAGGIO CIVICO LAVORI DI ADEGUAMENTO SISMICO PALESTRA ITI DA VINCI",
+      "type": "cm:Report_di_monitoraggio_civico",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "shortId": "gruppo:monithon",
+      "label": "Monithon",
+      "type": "cm:Gruppo_di_monitoraggio",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/non-avviato",
+      "shortId": "avanz:non-avviato",
+      "label": "NON AVVIATO",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "shortId": "fonte:open-data",
+      "label": "open data",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "shortId": "fonte:sopralluogo",
+      "label": "sopralluogo",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2290#sintesi",
+      "shortId": "monithon:2290#sintesi",
+      "label": "[In affidamento - Affidamento gara in corso] Il progetto non è ancora arrivato nella sua fase esecutiva.",
+      "type": "Literal",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/p_tp",
+      "shortId": "ipa:p_tp",
+      "label": "LIBERO CONSORZIO COMUNALE DI TRAPANI",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/comune",
+      "label": "pi:comune"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/regione",
+      "label": "pi:regione"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/natura",
+      "label": "pi:natura"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/settore",
+      "label": "pi:settore"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/990133474B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A005EB044D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B969AAC403",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
+      "label": "cm:ha_progetto_monitorato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "label": "cm:prodotto_da"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/non-avviato",
+      "label": "cm:ha_stato_avanzamento_osservato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2290",
+      "target": "https://it.monithon.eu/report/view/2290#sintesi",
+      "label": "cm:sintesi"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/p_tp",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
+      "label": "owl:sameAs"
+    }
+  ]
+}

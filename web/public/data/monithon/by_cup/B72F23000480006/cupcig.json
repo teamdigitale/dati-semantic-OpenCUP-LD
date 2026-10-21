@@ -1,0 +1,103 @@
+{
+  "dataset": "cupcig",
+  "coverage": "sample",
+  "sample_cups": [
+    "B72F23000480006"
+  ],
+  "sample_note": "Lotti CIG ANAC collegati al CUP.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "shortId": "cup:B72F23000480006",
+      "label": "B72F23000480006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B8624AC34B",
+      "shortId": "lot:B8624AC34B",
+      "label": "CIG B8624AC34B",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A0418EEB7A",
+      "shortId": "lot:A0418EEB7A",
+      "label": "CIG A0418EEB7A",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B0BA862C08",
+      "shortId": "lot:B0BA862C08",
+      "label": "CIG B0BA862C08",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B6E2B7E3B4",
+      "shortId": "lot:B6E2B7E3B4",
+      "label": "CIG B6E2B7E3B4",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B67CC9BA05",
+      "shortId": "lot:B67CC9BA05",
+      "label": "CIG B67CC9BA05",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B41B0FA085",
+      "shortId": "lot:B41B0FA085",
+      "label": "CIG B41B0FA085",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A02B886AE1",
+      "shortId": "lot:A02B886AE1",
+      "label": "CIG A02B886AE1",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Lot/B8624AC34B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A0418EEB7A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B0BA862C08",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B6E2B7E3B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B67CC9BA05",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B41B0FA085",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A02B886AE1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    }
+  ]
+}

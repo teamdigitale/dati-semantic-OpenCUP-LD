@@ -5,6 +5,8 @@ export const PREFIXES: Record<string, string> = {
   cf: "https://w3id.org/italia/data/CodiceFiscale/",
   lot: "https://w3id.org/italia/data/Lot/",
   call: "https://w3id.org/italia/data/Call/",
+  monithon: "https://it.monithon.eu/report/view/",
+  cm: "https://w3id.org/italia/draft/CivicMonitoring/onto/CivicMonitoring/",
   pi: "https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/",
   picv: "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/",
   "picv-natura": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/",

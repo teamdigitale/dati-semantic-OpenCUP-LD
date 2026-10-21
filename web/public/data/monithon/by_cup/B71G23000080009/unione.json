@@ -1,0 +1,288 @@
+{
+  "id": "monithon_B71G23000080009",
+  "title": "Unione semantica — CUP B71G23000080009",
+  "sparql_note": "Il CUP B71G23000080009 è oggetto del report Monithon 2352 (REPORT DI MONITORAGGIO CIVICO “Riqualificazione e messa in sicurezza della Pineta di Castelvolturno e fasce prospicienti il litorale contermine - Lotto Unico di Completamento”). Collegato a 4 lotti CIG ANAC. Localizzazione OpenCUP: CASTEL VOLTURNO.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B075E5AC46",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B0E231C707",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B08C362DF0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9876713966",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "cm:ha_progetto_monitorato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "label": "cm:prodotto_da"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "label": "cm:ha_stato_avanzamento_osservato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/r_campan",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
+      "label": "owl:sameAs"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "shortId": "cup:B71G23000080009",
+      "label": "RIQUALIFICAZIONE E MESSA IN SICUREZZA DELLA PINETA DI CASTELVOLTURNO E FASCE PRO",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
+      "shortId": "cf:80011990639",
+      "label": "REGIONE CAMPANIA",
+      "type": "COV:Organization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/comune",
+      "shortId": "cup:B71G23000080009/comune",
+      "label": "Comune: CASTEL VOLTURNO",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/regione",
+      "shortId": "cup:B71G23000080009/regione",
+      "label": "Regione: CAMPANIA",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/natura",
+      "shortId": "cup:B71G23000080009/natura",
+      "label": "Natura: ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/settore",
+      "shortId": "cup:B71G23000080009/settore",
+      "label": "Settore: INFRASTRUTTURE AMBIENTALI E RISORSE IDRICHE",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B075E5AC46",
+      "shortId": "lot:B075E5AC46",
+      "label": "CIG B075E5AC46",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B0E231C707",
+      "shortId": "lot:B0E231C707",
+      "label": "CIG B0E231C707",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B08C362DF0",
+      "shortId": "lot:B08C362DF0",
+      "label": "CIG B08C362DF0",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9876713966",
+      "shortId": "lot:9876713966",
+      "label": "CIG 9876713966",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2352",
+      "shortId": "monithon:2352",
+      "label": "REPORT DI MONITORAGGIO CIVICO “Riqualificazione e messa in sicurezza della Pineta di Castelvolturno e fasce prospicienti il litorale contermine - Lotto Unico di Completamento”",
+      "type": "cm:Report_di_monitoraggio_civico",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "shortId": "gruppo:monithon",
+      "label": "Monithon",
+      "type": "cm:Gruppo_di_monitoraggio",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "shortId": "avanz:in-corso",
+      "label": "IN CORSO",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "shortId": "fonte:open-data",
+      "label": "open data",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "shortId": "fonte:sopralluogo",
+      "label": "sopralluogo",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "shortId": "fonte:interviste",
+      "label": "interviste",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2352#sintesi",
+      "shortId": "monithon:2352#sintesi",
+      "label": "[In corso con problemi di realizzazione] Dalla visita di monitoraggio e le interviste abbiamo rilevato che sono stati ottenuti i seguenti ri",
+      "type": "Literal",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/r_campan",
+      "shortId": "ipa:r_campan",
+      "label": "Regione Campania",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/comune",
+      "label": "pi:comune"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/regione",
+      "label": "pi:regione"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/natura",
+      "label": "pi:natura"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009/settore",
+      "label": "pi:settore"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B075E5AC46",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B0E231C707",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B08C362DF0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9876713966",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B71G23000080009",
+      "label": "cm:ha_progetto_monitorato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "label": "cm:prodotto_da"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "label": "cm:ha_stato_avanzamento_osservato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2352",
+      "target": "https://it.monithon.eu/report/view/2352#sintesi",
+      "label": "cm:sintesi"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/r_campan",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
+      "label": "owl:sameAs"
+    }
+  ]
+}

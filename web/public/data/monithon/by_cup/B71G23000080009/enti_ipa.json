@@ -1,0 +1,31 @@
+{
+  "dataset": "enti_ipa",
+  "coverage": "sample",
+  "sample_cups": [
+    "B71G23000080009"
+  ],
+  "sample_note": "Ente IndicePA collegato al CF del titolare OpenCUP.",
+  "nodes": [
+    {
+      "id": "https://indicepa.gov.it/ente/r_campan",
+      "shortId": "ipa:r_campan",
+      "label": "Regione Campania",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
+      "shortId": "cf:80011990639",
+      "label": "REGIONE CAMPANIA",
+      "type": "COV:Organization",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://indicepa.gov.it/ente/r_campan",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
+      "label": "owl:sameAs"
+    }
+  ]
+}
