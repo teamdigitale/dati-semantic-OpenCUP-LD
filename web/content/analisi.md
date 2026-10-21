@@ -10,7 +10,7 @@ callout_title: Cosa mostra questa pagina
 callout_body: >
   Classifiche e conteggi su tutta Italia: ad esempio quanti CUP ha una regione, quali comuni
   hanno ottenuto i finanziamenti più alti nell’ambito dei fondi PNRR di PA Digitale, a quali
-  soggetti sono state aggiudicate più spesso le gare. Servono a capire la portata dei dati.
+  soggetti sono state aggiudicate più spesso le gare.
   Nel grafo, invece, lo stesso CUP è un nodo condiviso tra OpenCUP e PA Digitale, ogni CIG
   è un lotto collegato al progetto, ente e aggiudicatario compaiono come nodi legati a quel
   percorso — senza dover ricostruire a mano i collegamenti a ogni domanda.

@@ -39,14 +39,6 @@ I testi delle pagine del sito vivono qui, **non** nei componenti React.
 
 - Nei frontmatter YAML, stringhe con `:` vanno in blocco piegato (`lead: >`) o tra virgolette.
 
-## Voce editoriale
-
-- Parlare di **OpenCUP**, del **CUP** e della **semantica** (URI, ontologie, banche dati collegate).
-- Italiano naturale ed esplicativo (non telegrafico); sempre **«banca dati»**, mai «banca» da sola.
-- Preferire «nel formato Linked Data»; «i dati di X»; non usare «fatto/i» nel senso tecnico inglese.
-- **Non dare del tu:** stile impersonale («si vede», «è visibile», «si sceglie», «in questa pagina»).
-- Il visitatore non deve leggere scelte di pipeline, nomi di script o roadmap di cantiere.
-
 ## Convenzione URI (per agenti e autori)
 
 Quando un’URI **non è già ufficiale**, il pattern è:
