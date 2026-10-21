@@ -1,0 +1,91 @@
+{
+  "dataset": "monithon",
+  "coverage": "sample",
+  "sample_cups": [
+    "J89G23000880006"
+  ],
+  "sample_note": "Report Monithon (cm:) arricchito da scrape della pagina pubblica: stato, fonti, sintesi, data osservazione → CUP.",
+  "nodes": [
+    {
+      "id": "https://it.monithon.eu/report/view/2260",
+      "shortId": "monithon:2260",
+      "label": "REPORT DI MONITORAGGIO CIVICO Violenza maschile sulle donne: dall’emergenza all’autonomia",
+      "type": "cm:Report_di_monitoraggio_civico",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "shortId": "cup:J89G23000880006",
+      "label": "UTILIZZO DI IMMOBILI SUL TERRITORIO DI ROMA CAPITALE",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "shortId": "gruppo:monithon",
+      "label": "Monithon",
+      "type": "cm:Gruppo_di_monitoraggio",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "shortId": "avanz:in-corso",
+      "label": "IN CORSO",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "shortId": "fonte:open-data",
+      "label": "open data",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "shortId": "fonte:interviste",
+      "label": "interviste",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2260#sintesi",
+      "shortId": "monithon:2260#sintesi",
+      "label": "[In corso con problemi di realizzazione] Il progetto ha già prodotto risultati parziali ma significativi. Dai dati forniti dagli attuatori e",
+      "type": "Literal",
+      "dataset": "monithon"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2260",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "label": "cm:ha_progetto_monitorato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2260",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "label": "cm:prodotto_da"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2260",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "label": "cm:ha_stato_avanzamento_osservato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2260",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2260",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2260",
+      "target": "https://it.monithon.eu/report/view/2260#sintesi",
+      "label": "cm:sintesi"
+    }
+  ]
+}

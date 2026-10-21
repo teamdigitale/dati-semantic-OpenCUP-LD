@@ -1,0 +1,351 @@
+{
+  "id": "monithon_B72F23000480006",
+  "title": "Unione semantica — CUP B72F23000480006",
+  "sparql_note": "Il CUP B72F23000480006 è oggetto del report Monithon 2450 (Polo della Creatività (Creativity Hub)). Collegato a 7 lotti CIG ANAC. Localizzazione OpenCUP: FERRARA.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B8624AC34B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A0418EEB7A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B0BA862C08",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B6E2B7E3B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B67CC9BA05",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B41B0FA085",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A02B886AE1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "cm:ha_progetto_monitorato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "label": "cm:prodotto_da"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "label": "cm:ha_stato_avanzamento_osservato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_d548",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
+      "label": "owl:sameAs"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "shortId": "cup:B72F23000480006",
+      "label": "ATUSS- PRFESR- POLO CREATIVITÀ - AREE BAGNI DUCALI E EX AMGA+ FERRARA OFF",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
+      "shortId": "cf:00297110389",
+      "label": "COMUNE DI FERRARA - FE -",
+      "type": "COV:Organization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/comune",
+      "shortId": "cup:B72F23000480006/comune",
+      "label": "Comune: FERRARA",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/regione",
+      "shortId": "cup:B72F23000480006/regione",
+      "label": "Regione: EMILIA-ROMAGNA",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/natura",
+      "shortId": "cup:B72F23000480006/natura",
+      "label": "Natura: REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/settore",
+      "shortId": "cup:B72F23000480006/settore",
+      "label": "Settore: INFRASTRUTTURE SOCIALI",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B8624AC34B",
+      "shortId": "lot:B8624AC34B",
+      "label": "CIG B8624AC34B",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A0418EEB7A",
+      "shortId": "lot:A0418EEB7A",
+      "label": "CIG A0418EEB7A",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B0BA862C08",
+      "shortId": "lot:B0BA862C08",
+      "label": "CIG B0BA862C08",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B6E2B7E3B4",
+      "shortId": "lot:B6E2B7E3B4",
+      "label": "CIG B6E2B7E3B4",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B67CC9BA05",
+      "shortId": "lot:B67CC9BA05",
+      "label": "CIG B67CC9BA05",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B41B0FA085",
+      "shortId": "lot:B41B0FA085",
+      "label": "CIG B41B0FA085",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A02B886AE1",
+      "shortId": "lot:A02B886AE1",
+      "label": "CIG A02B886AE1",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2450",
+      "shortId": "monithon:2450",
+      "label": "Polo della Creatività (Creativity Hub)",
+      "type": "cm:Report_di_monitoraggio_civico",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "shortId": "gruppo:monithon",
+      "label": "Monithon",
+      "type": "cm:Gruppo_di_monitoraggio",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "shortId": "avanz:in-corso",
+      "label": "IN CORSO",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "shortId": "fonte:open-data",
+      "label": "open data",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "shortId": "fonte:sopralluogo",
+      "label": "sopralluogo",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "shortId": "fonte:interviste",
+      "label": "interviste",
+      "type": "skos:Concept",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2450#sintesi",
+      "shortId": "monithon:2450#sintesi",
+      "label": "[Running - Work started] The \"notebook\" of the site visit is attached (Attachment No. 1 - under the photos). The intervention is already sho",
+      "type": "Literal",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2450#data_osservazione",
+      "shortId": "monithon:2450#data_osservazione",
+      "label": "2026-10-09",
+      "type": "Literal",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_d548",
+      "shortId": "ipa:c_d548",
+      "label": "Comune di Ferrara",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/comune",
+      "label": "pi:comune"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/regione",
+      "label": "pi:regione"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/natura",
+      "label": "pi:natura"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/settore",
+      "label": "pi:settore"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B8624AC34B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A0418EEB7A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B0BA862C08",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B6E2B7E3B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B67CC9BA05",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B41B0FA085",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A02B886AE1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "label": "cm:ha_progetto_monitorato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
+      "label": "cm:prodotto_da"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
+      "label": "cm:ha_stato_avanzamento_osservato"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
+      "label": "cm:usa_tipologia_fonte"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://it.monithon.eu/report/view/2450#sintesi",
+      "label": "cm:sintesi"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2450",
+      "target": "https://it.monithon.eu/report/view/2450#data_osservazione",
+      "label": "cm:data_osservazione"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_d548",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
+      "label": "owl:sameAs"
+    }
+  ]
+}

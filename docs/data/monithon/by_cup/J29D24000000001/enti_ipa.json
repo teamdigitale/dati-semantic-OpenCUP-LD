@@ -1,0 +1,31 @@
+{
+  "dataset": "enti_ipa",
+  "coverage": "sample",
+  "sample_cups": [
+    "J29D24000000001"
+  ],
+  "sample_note": "Ente IndicePA collegato al CF del titolare OpenCUP.",
+  "nodes": [
+    {
+      "id": "https://indicepa.gov.it/ente/c_g482",
+      "shortId": "ipa:c_g482",
+      "label": "Comune di Pescara",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
+      "shortId": "cf:00124600685",
+      "label": "COMUNE DI PESCARA - PE -",
+      "type": "COV:Organization",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://indicepa.gov.it/ente/c_g482",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
+      "label": "owl:sameAs"
+    }
+  ]
+}

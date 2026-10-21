@@ -1,0 +1,79 @@
+{
+  "dataset": "opencup",
+  "coverage": "sample",
+  "sample_cups": [
+    "J89G23000880006"
+  ],
+  "sample_note": "Anagrafica OpenCUP per il CUP selezionato.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "shortId": "cup:J89G23000880006",
+      "label": "UTILIZZO DI IMMOBILI SUL TERRITORIO DI ROMA CAPITALE",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/02438750586",
+      "shortId": "cf:02438750586",
+      "label": "ROMA CAPITALE",
+      "type": "COV:Organization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/comune",
+      "shortId": "cup:J89G23000880006/comune",
+      "label": "Comune: ROMA",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/regione",
+      "shortId": "cup:J89G23000880006/regione",
+      "label": "Regione: LAZIO",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/natura",
+      "shortId": "cup:J89G23000880006/natura",
+      "label": "Natura: ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/settore",
+      "shortId": "cup:J89G23000880006/settore",
+      "label": "Settore: SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "type": "Literal",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/02438750586",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/comune",
+      "label": "pi:comune"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/regione",
+      "label": "pi:regione"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/natura",
+      "label": "pi:natura"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89G23000880006/settore",
+      "label": "pi:settore"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "dataset": "cupcig",
+  "coverage": "sample",
+  "sample_cups": [
+    "J29D24000000001"
+  ],
+  "sample_note": "Lotti CIG ANAC collegati al CUP.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "shortId": "cup:J29D24000000001",
+      "label": "J29D24000000001",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B6E23BEE71",
+      "shortId": "lot:B6E23BEE71",
+      "label": "CIG B6E23BEE71",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B94BD54960",
+      "shortId": "lot:B94BD54960",
+      "label": "CIG B94BD54960",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B664414D85",
+      "shortId": "lot:B664414D85",
+      "label": "CIG B664414D85",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/BBF4DFCDE7",
+      "shortId": "lot:BBF4DFCDE7",
+      "label": "CIG BBF4DFCDE7",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
+      "shortId": "lot:B6E1BDFF9C",
+      "label": "CIG B6E1BDFF9C",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Lot/B6E23BEE71",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B94BD54960",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B664414D85",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/BBF4DFCDE7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
+    }
+  ]
+}

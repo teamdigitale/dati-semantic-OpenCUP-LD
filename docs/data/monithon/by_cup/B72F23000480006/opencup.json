@@ -1,0 +1,79 @@
+{
+  "dataset": "opencup",
+  "coverage": "sample",
+  "sample_cups": [
+    "B72F23000480006"
+  ],
+  "sample_note": "Anagrafica OpenCUP per il CUP selezionato.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "shortId": "cup:B72F23000480006",
+      "label": "ATUSS- PRFESR- POLO CREATIVITÀ - AREE BAGNI DUCALI E EX AMGA+ FERRARA OFF",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
+      "shortId": "cf:00297110389",
+      "label": "COMUNE DI FERRARA - FE -",
+      "type": "COV:Organization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/comune",
+      "shortId": "cup:B72F23000480006/comune",
+      "label": "Comune: FERRARA",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/regione",
+      "shortId": "cup:B72F23000480006/regione",
+      "label": "Regione: EMILIA-ROMAGNA",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/natura",
+      "shortId": "cup:B72F23000480006/natura",
+      "label": "Natura: REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "Literal",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/settore",
+      "shortId": "cup:B72F23000480006/settore",
+      "label": "Settore: INFRASTRUTTURE SOCIALI",
+      "type": "Literal",
+      "dataset": "opencup"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/comune",
+      "label": "pi:comune"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/regione",
+      "label": "pi:regione"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/natura",
+      "label": "pi:natura"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/settore",
+      "label": "pi:settore"
+    }
+  ]
+}
