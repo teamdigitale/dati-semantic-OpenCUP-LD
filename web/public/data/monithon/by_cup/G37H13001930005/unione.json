@@ -1,0 +1,209 @@
+{
+  "id": "monithon_G37H13001930005",
+  "title": "Unione semantica — CUP G37H13001930005",
+  "sparql_note": "Il CUP G37H13001930005 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/r_sicili",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5683964B77",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "shortId": "cup:G37H13001930005",
+      "label": "G37H13001930005",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "shortId": "cf:80012000826",
+      "label": "REGIONE AUTONOMA DELLA SICILIA",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/r_sicili",
+      "shortId": "ipa:r_sicili",
+      "label": "Regione Siciliana",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5683964B77",
+      "shortId": "lot:5683964B77",
+      "label": "CIG 5683…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "shortId": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "label": "MUSEO ARCHEOLOGICO REGIONALE PAOLO ORSI*VIALE TEOCRITO*RISTR…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/005",
+      "shortId": "picv-copertura:005",
+      "label": "ALTRA PUBBLICA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/00",
+      "shortId": "picv-strumento:00",
+      "label": "ASSENTE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "shortId": "picv-settore:1_5",
+      "label": "INFRASTRUTTURE SOCIALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "shortId": "picv-area:1",
+      "label": "IMMOBILI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "shortId": "picv-sottosettore:1_5_11",
+      "label": "BENI CULTURALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_97",
+      "shortId": "picv-categoria:1_5_11_97",
+      "label": "MUSEI ARCHIVI E BIBLIOTECHE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "shortId": "picv-natura:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
+      "shortId": "picv-tipologia:03_04",
+      "label": "RISTRUTTURAZIONE (PER CAMBIO DI DESTINAZIONE D'USO)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "shortId": "picv-tipologia:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/r_sicili",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5683964B77",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "target": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/005",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H13001930005",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/00",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_97",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_97",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b20",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "label": "skos:broader"
+    }
+  ]
+}

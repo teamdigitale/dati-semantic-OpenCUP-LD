@@ -1,10 +1,7 @@
 {
   "dataset": "enti_ipa",
-  "coverage": "sample",
-  "sample_cups": [
-    "J89G23000880006"
-  ],
-  "sample_note": "Ente IndicePA collegato al CF del titolare OpenCUP.",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme enti_ipa dell’hub Monithon-seeded.",
   "nodes": [
     {
       "id": "https://indicepa.gov.it/ente/c_h501",
@@ -12,20 +9,7 @@
       "label": "ROMA CAPITALE",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/CodiceFiscale/02438750586",
-      "shortId": "cf:02438750586",
-      "label": "ROMA CAPITALE",
-      "type": "COV:Organization",
-      "dataset": "opencup"
     }
   ],
-  "edges": [
-    {
-      "source": "https://indicepa.gov.it/ente/c_h501",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/02438750586",
-      "label": "owl:sameAs"
-    }
-  ]
+  "edges": []
 }

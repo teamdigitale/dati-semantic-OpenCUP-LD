@@ -1,7 +1,7 @@
 {
   "id": "monithon_J29D24000000001",
   "title": "Unione semantica — CUP J29D24000000001",
-  "sparql_note": "Il CUP J29D24000000001 è oggetto del report Monithon 2325 (REPORT DI MONITORAGGIO CIVICO COMPLETAMENTO TEATRO MICHETTI). Collegato a 5 lotti CIG ANAC. Localizzazione OpenCUP: PESCARA.",
+  "sparql_note": "Il CUP J29D24000000001 è oggetto di report Monithon. Collegato a 5 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
@@ -10,9 +10,34 @@
   ],
   "join_edges": [
     {
+      "source": "https://it.monithon.eu/report/view/2325",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2325",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
       "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_g482",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B664414D85",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/B6E23BEE71",
@@ -25,189 +50,39 @@
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/B664414D85",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/BBF4DFCDE7",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
       "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "label": "cm:ha_progetto_monitorato"
-    },
-    {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
-      "label": "cm:prodotto_da"
-    },
-    {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
-      "label": "cm:ha_stato_avanzamento_osservato"
-    },
-    {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
-      "label": "cm:usa_tipologia_fonte"
-    },
-    {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
-      "label": "cm:usa_tipologia_fonte"
-    },
-    {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
-      "label": "cm:usa_tipologia_fonte"
-    },
-    {
-      "source": "https://indicepa.gov.it/ente/c_g482",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
-      "label": "owl:sameAs"
     }
   ],
   "nodes": [
     {
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
       "shortId": "cup:J29D24000000001",
-      "label": "TEATRO MICHETTI",
+      "label": "J29D24000000001",
       "type": "pi:Progetto_di_investimento_pubblico",
       "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2325",
+      "shortId": "2325",
+      "label": "2325",
+      "type": "Document",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
       "shortId": "cf:00124600685",
       "label": "COMUNE DI PESCARA - PE -",
-      "type": "COV:Organization",
+      "type": "COV:PublicOrganization",
       "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/comune",
-      "shortId": "cup:J29D24000000001/comune",
-      "label": "Comune: PESCARA",
-      "type": "Literal",
-      "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/regione",
-      "shortId": "cup:J29D24000000001/regione",
-      "label": "Regione: ABRUZZO",
-      "type": "Literal",
-      "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/natura",
-      "shortId": "cup:J29D24000000001/natura",
-      "label": "Natura: REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
-      "type": "Literal",
-      "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/settore",
-      "shortId": "cup:J29D24000000001/settore",
-      "label": "Settore: INFRASTRUTTURE SOCIALI",
-      "type": "Literal",
-      "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/B6E23BEE71",
-      "shortId": "lot:B6E23BEE71",
-      "label": "CIG B6E23BEE71",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/B94BD54960",
-      "shortId": "lot:B94BD54960",
-      "label": "CIG B94BD54960",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/B664414D85",
-      "shortId": "lot:B664414D85",
-      "label": "CIG B664414D85",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/BBF4DFCDE7",
-      "shortId": "lot:BBF4DFCDE7",
-      "label": "CIG BBF4DFCDE7",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
-      "shortId": "lot:B6E1BDFF9C",
-      "label": "CIG B6E1BDFF9C",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://it.monithon.eu/report/view/2325",
-      "shortId": "monithon:2325",
-      "label": "REPORT DI MONITORAGGIO CIVICO COMPLETAMENTO TEATRO MICHETTI",
-      "type": "cm:Report_di_monitoraggio_civico",
-      "dataset": "monithon"
-    },
-    {
-      "id": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
-      "shortId": "gruppo:monithon",
-      "label": "Monithon",
-      "type": "cm:Gruppo_di_monitoraggio",
-      "dataset": "monithon"
-    },
-    {
-      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
-      "shortId": "avanz:in-corso",
-      "label": "IN CORSO",
-      "type": "skos:Concept",
-      "dataset": "monithon"
-    },
-    {
-      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
-      "shortId": "fonte:open-data",
-      "label": "open data",
-      "type": "skos:Concept",
-      "dataset": "monithon"
-    },
-    {
-      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
-      "shortId": "fonte:sopralluogo",
-      "label": "sopralluogo",
-      "type": "skos:Concept",
-      "dataset": "monithon"
-    },
-    {
-      "id": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
-      "shortId": "fonte:interviste",
-      "label": "interviste",
-      "type": "skos:Concept",
-      "dataset": "monithon"
-    },
-    {
-      "id": "https://it.monithon.eu/report/view/2325#sintesi",
-      "shortId": "monithon:2325#sintesi",
-      "label": "[In esecuzione - Lavori iniziati] Il progetto esecutivo è stato approvato dal Comune, ma non sono ancora iniziati i lavori e quindi è imposs",
-      "type": "Literal",
-      "dataset": "monithon"
-    },
-    {
-      "id": "https://it.monithon.eu/report/view/2325#data_osservazione",
-      "shortId": "monithon:2325#data_osservazione",
-      "label": "2026-01-29",
-      "type": "Literal",
-      "dataset": "monithon"
     },
     {
       "id": "https://indicepa.gov.it/ente/c_g482",
@@ -215,33 +90,143 @@
       "label": "Comune di Pescara",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B664414D85",
+      "shortId": "lot:B664414D85",
+      "label": "CIG B664…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
+      "shortId": "lot:B6E1BDFF9C",
+      "label": "CIG B6E1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B6E23BEE71",
+      "shortId": "lot:B6E23BEE71",
+      "label": "CIG B6E2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B94BD54960",
+      "shortId": "lot:B94BD54960",
+      "label": "CIG B94B…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/BBF4DFCDE7",
+      "shortId": "lot:BBF4DFCDE7",
+      "label": "CIG BBF4…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "shortId": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "label": "TEATRO MICHETTI*VIA CONTE DI RUVO*LAVORI DI COMPETAMENTO DEL…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "shortId": "picv-copertura:001",
+      "label": "STATALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "shortId": "picv-settore:1_5",
+      "label": "INFRASTRUTTURE SOCIALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "shortId": "picv-area:1",
+      "label": "IMMOBILI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "shortId": "picv-sottosettore:1_5_11",
+      "label": "BENI CULTURALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
+      "shortId": "picv-categoria:1_5_11_999",
+      "label": "ALTRI BENI CULTURALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "shortId": "picv-natura:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
+      "shortId": "picv-tipologia:03_05",
+      "label": "RESTAURO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "shortId": "picv-tipologia:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
     }
   ],
   "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2325",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2325",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
       "label": "pi:ha_soggetto_titolare"
     },
     {
-      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/comune",
-      "label": "pi:comune"
+      "source": "https://indicepa.gov.it/ente/c_g482",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
+      "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/regione",
-      "label": "pi:regione"
+      "source": "https://w3id.org/italia/data/Lot/B664414D85",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/natura",
-      "label": "pi:natura"
-    },
-    {
-      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001/settore",
-      "label": "pi:settore"
+      "source": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/B6E23BEE71",
@@ -254,64 +239,74 @@
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/B664414D85",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/BBF4DFCDE7",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/B6E1BDFF9C",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "label": "PCTR:hasProject"
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "target": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
-      "label": "cm:ha_progetto_monitorato"
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/data/Gruppo/monithon",
-      "label": "cm:prodotto_da"
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D24000000001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/stato-avanzamento-progetto/in-corso",
-      "label": "cm:ha_stato_avanzamento_osservato"
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "pi:ha_settore_intervento"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/open-data",
-      "label": "cm:usa_tipologia_fonte"
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "skos:broader"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/sopralluogo",
-      "label": "cm:usa_tipologia_fonte"
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "pi:ha_sottosettore_intervento"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://w3id.org/italia/draft/CivicMonitoring/controlled-vocabulary/tipologia-fonte-informazione/interviste",
-      "label": "cm:usa_tipologia_fonte"
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "skos:broader"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://it.monithon.eu/report/view/2325#sintesi",
-      "label": "cm:sintesi"
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
+      "label": "pi:ha_categoria_intervento"
     },
     {
-      "source": "https://it.monithon.eu/report/view/2325",
-      "target": "https://it.monithon.eu/report/view/2325#data_osservazione",
-      "label": "cm:data_osservazione"
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "skos:broader"
     },
     {
-      "source": "https://indicepa.gov.it/ente/c_g482",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00124600685",
-      "label": "owl:sameAs"
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b74",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "label": "skos:broader"
     }
   ]
 }

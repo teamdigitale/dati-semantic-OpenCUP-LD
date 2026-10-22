@@ -1,10 +1,7 @@
 {
   "dataset": "enti_ipa",
-  "coverage": "sample",
-  "sample_cups": [
-    "H95F22000090006"
-  ],
-  "sample_note": "Ente IndicePA collegato al CF del titolare OpenCUP.",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme enti_ipa dell’hub Monithon-seeded.",
   "nodes": [
     {
       "id": "https://indicepa.gov.it/ente/p_tp",
@@ -12,20 +9,7 @@
       "label": "LIBERO CONSORZIO COMUNALE DI TRAPANI",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
-      "shortId": "cf:93004780818",
-      "label": "PROVINCIA REGIONALE DI TRAPANI",
-      "type": "COV:Organization",
-      "dataset": "opencup"
     }
   ],
-  "edges": [
-    {
-      "source": "https://indicepa.gov.it/ente/p_tp",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
-      "label": "owl:sameAs"
-    }
-  ]
+  "edges": []
 }

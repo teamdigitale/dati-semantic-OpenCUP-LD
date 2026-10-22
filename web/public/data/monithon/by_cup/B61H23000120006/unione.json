@@ -1,0 +1,261 @@
+{
+  "id": "monithon_B61H23000120006",
+  "title": "Unione semantica — CUP B61H23000120006",
+  "sparql_note": "Il CUP B61H23000120006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2289",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2289",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80014890638",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_f839",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80014890638",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B2B70EE9B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B2B7323BF4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "shortId": "cup:B61H23000120006",
+      "label": "B61H23000120006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2289",
+      "shortId": "2289",
+      "label": "2289",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80014890638",
+      "shortId": "cf:80014890638",
+      "label": "COMUNE DI NAPOLI - NA -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_f839",
+      "shortId": "ipa:c_f839",
+      "label": "Comune di Napoli",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B2B70EE9B4",
+      "shortId": "lot:B2B70EE9B4",
+      "label": "CIG B2B7…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B2B7323BF4",
+      "shortId": "lot:B2B7323BF4",
+      "label": "CIG B2B7…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "shortId": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "label": "COMUNE DI NAPOLI*PIAZZA MUNICIPIO*IL PROGETTO NAPOLI SMART C…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv-copertura:006",
+      "label": "COMUNITARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "shortId": "picv-settore:6_10",
+      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "shortId": "picv-area:6",
+      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "shortId": "picv-sottosettore:6_10_3",
+      "label": "AZIONI INNOVATRICI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_3_5",
+      "shortId": "picv-categoria:6_10_3_5",
+      "label": "SEMPLIFICAZIONE PROCEDURE, STANDARD DI QUALITA' E INNOVAZION…",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "shortId": "picv-natura:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
+      "shortId": "picv-tipologia:02_19",
+      "label": "APPLICATIVI E PIATTAFORME WEB",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "shortId": "picv-tipologia:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2289",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2289",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80014890638",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_f839",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80014890638",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B2B70EE9B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B2B7323BF4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "target": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B61H23000120006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_3_5",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_3_5",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b50",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "label": "skos:broader"
+    }
+  ]
+}

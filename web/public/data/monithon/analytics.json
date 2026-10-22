@@ -1,0 +1,216 @@
+{
+  "catalog": {
+    "n_reports": 1413,
+    "with_cup": 37,
+    "with_cig": 12,
+    "without_subject": 1364,
+    "with_issued": 1413
+  },
+  "hub": {
+    "cups": 28,
+    "cigs": 75,
+    "pairs": 74,
+    "opencup_rows": 48,
+    "enti_ipa": 23,
+    "cases": 28,
+    "cases_with_monithon_report": 18
+  },
+  "by_regione": {
+    "title": "CUP hub per regione",
+    "labels": [
+      "CAMPANIA",
+      "SICILIA",
+      "TOSCANA",
+      "EMILIA-ROMAGNA",
+      "ABRUZZO",
+      "LAZIO",
+      "CALABRIA",
+      "FRIULI-VENEZIA GIULIA",
+      "LOMBARDIA",
+      "MOLISE",
+      "PIEMONTE",
+      "SARDEGNA",
+      "TUTTE"
+    ],
+    "series": [
+      {
+        "name": "CUP",
+        "data": [
+          6,
+          4,
+          4,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "costo_by_regione": {
+    "title": "Costo progetti hub per regione (€)",
+    "labels": [
+      "CAMPANIA",
+      "SICILIA",
+      "LAZIO",
+      "ABRUZZO",
+      "TOSCANA",
+      "EMILIA-ROMAGNA",
+      "CALABRIA",
+      "PIEMONTE",
+      "TUTTE",
+      "SARDEGNA",
+      "MOLISE",
+      "FRIULI-VENEZIA GIULIA",
+      "LOMBARDIA"
+    ],
+    "series": [
+      {
+        "name": "€",
+        "data": [
+          19653601.0,
+          15809837.0,
+          7336000.0,
+          6500000.0,
+          6420456.0,
+          5809599.0,
+          1500000.0,
+          699000.0,
+          469483.0,
+          346319.0,
+          284300.0,
+          274996.0,
+          155234.0
+        ]
+      }
+    ]
+  },
+  "by_settore": {
+    "title": "CUP hub per settore",
+    "labels": [
+      "INFRASTRUTTURE SOCIALI",
+      "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "RICERCA SVILUPPO TECNOLOGICO ED INNOVAZIONE",
+      "INFRASTRUTTURE AMBIENTALI E RISORSE IDRICHE",
+      "ISTRUZIONE, FORMAZIONE E SOSTEGNI PER IL MERCATO DEL LAVORO",
+      "SERVIZI ALLE IMPRESE"
+    ],
+    "series": [
+      {
+        "name": "CUP",
+        "data": [
+          16,
+          7,
+          2,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "by_natura": {
+    "title": "CUP hub per natura intervento",
+    "labels": [
+      "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "CONCESSIONE DI INCENTIVI AD UNITA' PRODUTTIVE",
+      "ACQUISTO DI BENI"
+    ],
+    "series": [
+      {
+        "name": "CUP",
+        "data": [
+          16,
+          9,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  "by_stato": {
+    "title": "CUP hub per stato OpenCUP",
+    "labels": [
+      "ATTIVO",
+      "CHIUSO"
+    ],
+    "series": [
+      {
+        "name": "CUP",
+        "data": [
+          27,
+          1
+        ]
+      }
+    ]
+  },
+  "sources_coverage": {
+    "title": "Casi hub con dataset collegato",
+    "labels": [
+      "opencup",
+      "enti_ipa",
+      "cupcig",
+      "monithon"
+    ],
+    "series": [
+      {
+        "name": "casi",
+        "data": [
+          28,
+          27,
+          22,
+          18
+        ]
+      }
+    ]
+  },
+  "top_cig_per_cup": {
+    "title": "CIG ANAC per CUP (top)",
+    "labels": [
+      "B72F23000420006",
+      "J89G23000880006",
+      "B72F23000480006",
+      "D63C22000250009",
+      "J29D24000000001",
+      "B71G23000080009",
+      "H95F22000090006",
+      "B24H22001440006",
+      "B61H23000120006",
+      "C15I24000000001",
+      "G43D21005100006",
+      "H68E23000050006",
+      "B12I14002270002",
+      "B19F18000830007",
+      "B89J21000580005"
+    ],
+    "series": [
+      {
+        "name": "CIG",
+        "data": [
+          17,
+          13,
+          7,
+          5,
+          5,
+          4,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

@@ -1,15 +1,12 @@
 {
   "dataset": "opencup",
-  "coverage": "sample",
-  "sample_cups": [
-    "H95F22000090006"
-  ],
-  "sample_note": "Anagrafica OpenCUP per il CUP selezionato.",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme opencup dell’hub Monithon-seeded.",
   "nodes": [
     {
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
       "shortId": "cup:H95F22000090006",
-      "label": "ISTITUTO TECNICO INDUSTRIALE DI TRAPANI  PALESTRA  COD. EDIF. 0810212538 - LAV",
+      "label": "H95F22000090006",
       "type": "pi:Progetto_di_investimento_pubblico",
       "dataset": "opencup"
     },
@@ -17,36 +14,78 @@
       "id": "https://w3id.org/italia/data/CodiceFiscale/93004780818",
       "shortId": "cf:93004780818",
       "label": "PROVINCIA REGIONALE DI TRAPANI",
-      "type": "COV:Organization",
+      "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/comune",
-      "shortId": "cup:H95F22000090006/comune",
-      "label": "Comune: TRAPANI",
-      "type": "Literal",
+      "id": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "shortId": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "label": "ISTITUTO TECNICO INDUSTRIALE DI TRAPANI – PALESTRA – COD. ED…",
+      "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/regione",
-      "shortId": "cup:H95F22000090006/regione",
-      "label": "Regione: SICILIA",
-      "type": "Literal",
-      "dataset": "opencup"
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv-copertura:006",
+      "label": "COMUNITARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/natura",
-      "shortId": "cup:H95F22000090006/natura",
-      "label": "Natura: REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
-      "type": "Literal",
-      "dataset": "opencup"
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/settore",
-      "shortId": "cup:H95F22000090006/settore",
-      "label": "Settore: INFRASTRUTTURE SOCIALI",
-      "type": "Literal",
-      "dataset": "opencup"
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "shortId": "picv-settore:1_5",
+      "label": "INFRASTRUTTURE SOCIALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "shortId": "picv-area:1",
+      "label": "IMMOBILI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_8",
+      "shortId": "picv-sottosettore:1_5_8",
+      "label": "SOCIALI E SCOLASTICHE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_8_87",
+      "shortId": "picv-categoria:1_5_8_87",
+      "label": "SCUOLE ELEMENTARI, MEDIE E SUPERIORI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "shortId": "picv-natura:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_14",
+      "shortId": "picv-tipologia:03_14",
+      "label": "MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA (ESCLUSO D…",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "shortId": "picv-tipologia:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
     }
   ],
   "edges": [
@@ -57,23 +96,68 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/comune",
-      "label": "pi:comune"
+      "target": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/regione",
-      "label": "pi:regione"
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/natura",
-      "label": "pi:natura"
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006/settore",
-      "label": "pi:settore"
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_8",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_8",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_8_87",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_8_87",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_8",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b65",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_14",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_14",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "label": "skos:broader"
     }
   ]
 }

@@ -1,52 +1,98 @@
 {
   "dataset": "opencup",
-  "coverage": "sample",
-  "sample_cups": [
-    "B72F23000480006"
-  ],
-  "sample_note": "Anagrafica OpenCUP per il CUP selezionato.",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme opencup dell’hub Monithon-seeded.",
   "nodes": [
     {
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
       "shortId": "cup:B72F23000480006",
-      "label": "ATUSS- PRFESR- POLO CREATIVITÀ - AREE BAGNI DUCALI E EX AMGA+ FERRARA OFF",
+      "label": "B72F23000480006",
       "type": "pi:Progetto_di_investimento_pubblico",
       "dataset": "opencup"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00297110389",
       "shortId": "cf:00297110389",
-      "label": "COMUNE DI FERRARA - FE -",
-      "type": "COV:Organization",
+      "label": "COMUNE DI FERRARA",
+      "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/comune",
-      "shortId": "cup:B72F23000480006/comune",
-      "label": "Comune: FERRARA",
-      "type": "Literal",
+      "id": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "shortId": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "label": "ATUSS- PRFESR- POLO CREATIVITÀ - AREE BAGNI DUCALI E EX AMGA…",
+      "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/regione",
-      "shortId": "cup:B72F23000480006/regione",
-      "label": "Regione: EMILIA-ROMAGNA",
-      "type": "Literal",
-      "dataset": "opencup"
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/002",
+      "shortId": "picv-copertura:002",
+      "label": "REGIONALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/natura",
-      "shortId": "cup:B72F23000480006/natura",
-      "label": "Natura: REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
-      "type": "Literal",
-      "dataset": "opencup"
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/004",
+      "shortId": "picv-copertura:004",
+      "label": "COMUNALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
     },
     {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/settore",
-      "shortId": "cup:B72F23000480006/settore",
-      "label": "Settore: INFRASTRUTTURE SOCIALI",
-      "type": "Literal",
-      "dataset": "opencup"
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "shortId": "picv-settore:1_5",
+      "label": "INFRASTRUTTURE SOCIALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "shortId": "picv-area:1",
+      "label": "IMMOBILI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "shortId": "picv-sottosettore:1_5_11",
+      "label": "BENI CULTURALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
+      "shortId": "picv-categoria:1_5_11_999",
+      "label": "ALTRI BENI CULTURALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "shortId": "picv-natura:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
+      "shortId": "picv-tipologia:03_07",
+      "label": "MANUTENZIONE STRAORDINARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "shortId": "picv-tipologia:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
     }
   ],
   "edges": [
@@ -57,23 +103,73 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/comune",
-      "label": "pi:comune"
+      "target": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/regione",
-      "label": "pi:regione"
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/002",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/natura",
-      "label": "pi:natura"
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/004",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B72F23000480006/settore",
-      "label": "pi:settore"
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b77",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "label": "skos:broader"
     }
   ]
 }

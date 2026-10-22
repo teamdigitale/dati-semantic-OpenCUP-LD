@@ -1,0 +1,163 @@
+{
+  "dataset": "opencup",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme opencup dell’hub Monithon-seeded.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/G43D21005100006",
+      "shortId": "cup:G43D21005100006",
+      "label": "G43D21005100006",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "shortId": "cf:80012000826",
+      "label": "REGIONE AUTONOMA DELLA SICILIA",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "shortId": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "label": "PROGETTO DELLE OPERE DI RIQUALIFICAZIONE, VALORIZZAZIONE, CO…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv-copertura:006",
+      "label": "COMUNITARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "shortId": "picv-settore:1_5",
+      "label": "INFRASTRUTTURE SOCIALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "shortId": "picv-area:1",
+      "label": "IMMOBILI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "shortId": "picv-sottosettore:1_5_11",
+      "label": "BENI CULTURALI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_95",
+      "shortId": "picv-categoria:1_5_11_95",
+      "label": "AREE ARCHEOLOGICHE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "shortId": "picv-natura:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
+      "shortId": "picv-tipologia:03_03",
+      "label": "RECUPERO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "shortId": "picv-tipologia:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G43D21005100006",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G43D21005100006",
+      "target": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G43D21005100006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G43D21005100006",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_95",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_95",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n84420efbb4bf4b82bbb8285d1c5769d2b56",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "label": "skos:broader"
+    }
+  ]
+}

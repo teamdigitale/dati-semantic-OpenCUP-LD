@@ -1,9 +1,9 @@
 # Monitoraggio civico Monithon
 
-Cinque progetti con **report Monithon** collegati al CUP nelle banche dati OpenCUP e ANAC.
-Il report è modellato come `cm:Report_di_monitoraggio_civico` con `cm:ha_progetto_monitorato` verso il progetto (`cup:`).
-Dalla pagina pubblica Monithon si estraggono anche stato di avanzamento, tipologie di fonte, sintesi e data di osservazione (dove presenti).
+Hub Linked Data **seedato da Monithon** (non da PA Digitale): report pubblici collegati a CUP/CIG, poi espansi con **ANAC**, **OpenCUP**, **IndicePA** e **SCP** quando disponibili.
 
-Questa pagina è separata dall’hub PNRR PA Digitale: Monithon monitora soprattutto interventi di **coesione**.
+Il grafo unito è `LD/ttl/all_monithon.ttl`. Ogni report è un `schema:Report` / `foaf:Document` con `schema:about` (e `dct:subject`) verso il CUP o il lotto CIG; produttore `COV:Organization` = [Monithon](https://www.monithon.eu/).
+
+In pagina: conteggi del catalogo scrape vs hub collegabile, grafici per regione/settore/copertura fonti, tabella dei CUP, e drill-down del sottografo per caso.
 
 Dati riusati con licenza [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) — fonte [Monithon](https://www.monithon.eu/).

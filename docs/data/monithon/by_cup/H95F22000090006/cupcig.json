@@ -1,55 +1,29 @@
 {
   "dataset": "cupcig",
-  "coverage": "sample",
-  "sample_cups": [
-    "H95F22000090006"
-  ],
-  "sample_note": "Lotti CIG ANAC collegati al CUP.",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme cupcig dell’hub Monithon-seeded.",
   "nodes": [
-    {
-      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "shortId": "cup:H95F22000090006",
-      "label": "H95F22000090006",
-      "type": "pi:Progetto_di_investimento_pubblico",
-      "dataset": "opencup"
-    },
     {
       "id": "https://w3id.org/italia/data/Lot/990133474B",
       "shortId": "lot:990133474B",
-      "label": "CIG 990133474B",
+      "label": "CIG 9901…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/A005EB044D",
       "shortId": "lot:A005EB044D",
-      "label": "CIG A005EB044D",
+      "label": "CIG A005…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/B969AAC403",
       "shortId": "lot:B969AAC403",
-      "label": "CIG B969AAC403",
+      "label": "CIG B969…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     }
   ],
-  "edges": [
-    {
-      "source": "https://w3id.org/italia/data/Lot/990133474B",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/A005EB044D",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/B969AAC403",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H95F22000090006",
-      "label": "PCTR:hasProject"
-    }
-  ]
+  "edges": []
 }
