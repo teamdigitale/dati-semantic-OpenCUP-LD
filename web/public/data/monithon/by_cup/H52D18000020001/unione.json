@@ -1,0 +1,489 @@
+{
+  "id": "monithon_H52D18000020001",
+  "title": "Unione semantica — CUP H52D18000020001",
+  "sparql_note": "Il CUP H52D18000020001 è oggetto di report Monithon. Collegato a 14 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/979",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/979",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80013370210",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/assapcbz",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80013370210",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z092362460",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1024B1777",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z11256FD12",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z19251F1FD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3624BE8BE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5A27FF536",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B2D856C7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7724AAEDD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8F23630F6",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC42D5E907",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC623FE78C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC824968A1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCF24AA058",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZFA287D7FB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "shortId": "cup:H52D18000020001",
+      "label": "H52D18000020001",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/979",
+      "shortId": "979",
+      "label": "979",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80013370210",
+      "shortId": "cf:80013370210",
+      "label": "AGENZIA PER LA PROTEZIONE CIVILE - PROVINCIA AUTONOMA DI BOL…",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/assapcbz",
+      "shortId": "ipa:assapcbz",
+      "label": "Agenzia per la protezione civile",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z092362460",
+      "shortId": "lot:Z092362460",
+      "label": "CIG Z092…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1024B1777",
+      "shortId": "lot:Z1024B1777",
+      "label": "CIG Z102…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z11256FD12",
+      "shortId": "lot:Z11256FD12",
+      "label": "CIG Z112…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z19251F1FD",
+      "shortId": "lot:Z19251F1FD",
+      "label": "CIG Z192…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3624BE8BE",
+      "shortId": "lot:Z3624BE8BE",
+      "label": "CIG Z362…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5A27FF536",
+      "shortId": "lot:Z5A27FF536",
+      "label": "CIG Z5A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5B2D856C7",
+      "shortId": "lot:Z5B2D856C7",
+      "label": "CIG Z5B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z7724AAEDD",
+      "shortId": "lot:Z7724AAEDD",
+      "label": "CIG Z772…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z8F23630F6",
+      "shortId": "lot:Z8F23630F6",
+      "label": "CIG Z8F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC42D5E907",
+      "shortId": "lot:ZC42D5E907",
+      "label": "CIG ZC42…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC623FE78C",
+      "shortId": "lot:ZC623FE78C",
+      "label": "CIG ZC62…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC824968A1",
+      "shortId": "lot:ZC824968A1",
+      "label": "CIG ZC82…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZCF24AA058",
+      "shortId": "lot:ZCF24AA058",
+      "label": "CIG ZCF2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZFA287D7FB",
+      "shortId": "lot:ZFA287D7FB",
+      "label": "CIG ZFA2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "label": "UFFICIO IDROGRAFICO DELL'AGENZIA PER LA PROTEZIONE CIVILE. G…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "shortId": "picv-copertura:001",
+      "label": "STATALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/003",
+      "shortId": "picv-copertura:003",
+      "label": "PROVINCIALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv-copertura:006",
+      "label": "COMUNITARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
+      "shortId": "picv-settore:3_2",
+      "label": "INFRASTRUTTURE AMBIENTALI E RISORSE IDRICHE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
+      "shortId": "picv-area:3",
+      "label": "AMBIENTE ED ENERGIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_11",
+      "shortId": "picv-sottosettore:3_2_11",
+      "label": "PROTEZIONE, VALORIZZAZIONE E FRUIZIONE DELL'AMBIENTE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_11_999",
+      "shortId": "picv-categoria:3_2_11_999",
+      "label": "ALTRE STRUTTURE/INFRASTRUTTURE PER LA PROTEZIONE, VALORIZZAZ…",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "shortId": "picv-natura:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
+      "shortId": "picv-tipologia:02_99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "shortId": "picv-tipologia:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/979",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/979",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80013370210",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/assapcbz",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80013370210",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z092362460",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1024B1777",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z11256FD12",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z19251F1FD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3624BE8BE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5A27FF536",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B2D856C7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7724AAEDD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8F23630F6",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC42D5E907",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC623FE78C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC824968A1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCF24AA058",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZFA287D7FB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "target": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/003",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H52D18000020001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_11",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_11",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_11_999",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_11_999",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_11",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1706",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "label": "skos:broader"
+    }
+  ]
+}

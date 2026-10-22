@@ -1,0 +1,285 @@
+{
+  "id": "monithon_C62F12000030003",
+  "title": "Unione semantica — CUP C62F12000030003",
+  "sparql_note": "Il CUP C62F12000030003 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2227",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2227",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00050800523",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_i726",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00050800523",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5720801A52",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF3129ABCC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "shortId": "cup:C62F12000030003",
+      "label": "C62F12000030003",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2227",
+      "shortId": "2227",
+      "label": "2227",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00050800523",
+      "shortId": "cf:00050800523",
+      "label": "COMUNE DI SIENA - SI -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_i726",
+      "shortId": "ipa:c_i726",
+      "label": "Comune di Siena",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5720801A52",
+      "shortId": "lot:5720801A52",
+      "label": "CIG 5720…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZF3129ABCC",
+      "shortId": "lot:ZF3129ABCC",
+      "label": "CIG ZF31…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "label": "PROGETTO PER LA COSTITUZIONE DI UN SERVIZIO DI BIKE SHARING …",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/002",
+      "shortId": "picv-copertura:002",
+      "label": "REGIONALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/004",
+      "shortId": "picv-copertura:004",
+      "label": "COMUNALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv-copertura:006",
+      "label": "COMUNITARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "shortId": "picv-settore:6_10",
+      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "shortId": "picv-area:6",
+      "label": "SERVIZI PER LA P.A. E PER LA COLLETTIVITA'",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "shortId": "picv-sottosettore:6_10_3",
+      "label": "AZIONI INNOVATRICI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_3_1",
+      "shortId": "picv-categoria:6_10_3_1",
+      "label": "AZIONI PER L'INNALZAMENTO DELLA QUALITA' DELLA VITA IN AREE …",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "shortId": "picv-natura:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_11",
+      "shortId": "picv-tipologia:02_11",
+      "label": "STUDI E PROGETTAZIONI O PIANIFICAZIONE TERRITORIALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "shortId": "picv-tipologia:02",
+      "label": "ACQUISTO O REALIZZAZIONE DI SERVIZI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2227",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2227",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00050800523",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_i726",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00050800523",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5720801A52",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF3129ABCC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "target": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/002",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/004",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C62F12000030003",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_3_1",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_3_1",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_3",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b944",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_11",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_11",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02",
+      "label": "skos:broader"
+    }
+  ]
+}

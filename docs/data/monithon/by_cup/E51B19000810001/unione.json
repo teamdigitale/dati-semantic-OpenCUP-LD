@@ -1,0 +1,380 @@
+{
+  "id": "monithon_E51B19000810001",
+  "title": "Unione semantica — CUP E51B19000810001",
+  "sparql_note": "Il CUP E51B19000810001 è oggetto di report Monithon. Collegato a 9 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2282",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2282",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80008750731",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_l049",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80008750731",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/925733200A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9825087E45",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9826794EEE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/98268648B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/98382160AE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/98384566BA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A0062E8F88",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A038B9028E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE43D952EB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "shortId": "cup:E51B19000810001",
+      "label": "E51B19000810001",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/2282",
+      "shortId": "2282",
+      "label": "2282",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80008750731",
+      "shortId": "cf:80008750731",
+      "label": "COMUNE DI TARANTO - TA -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_l049",
+      "shortId": "ipa:c_l049",
+      "label": "Comune di Taranto",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/925733200A",
+      "shortId": "lot:925733200A",
+      "label": "CIG 9257…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9825087E45",
+      "shortId": "lot:9825087E45",
+      "label": "CIG 9825…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9826794EEE",
+      "shortId": "lot:9826794EEE",
+      "label": "CIG 9826…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/98268648B4",
+      "shortId": "lot:98268648B4",
+      "label": "CIG 9826…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/98382160AE",
+      "shortId": "lot:98382160AE",
+      "label": "CIG 9838…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/98384566BA",
+      "shortId": "lot:98384566BA",
+      "label": "CIG 9838…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A0062E8F88",
+      "shortId": "lot:A0062E8F88",
+      "label": "CIG A006…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A038B9028E",
+      "shortId": "lot:A038B9028E",
+      "label": "CIG A038…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZE43D952EB",
+      "shortId": "lot:ZE43D952EB",
+      "label": "CIG ZE43…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "label": "TERRITORIO COMUNALE*TERRITORIO COMUNALE*REALIZZAZIONE DI STR…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "shortId": "picv-copertura:001",
+      "label": "STATALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_7",
+      "shortId": "picv-settore:5_7",
+      "label": "INFRASTRUTTURE PER TELECOMUNICAZIONI E TECNOLOGIE INFORMATIC…",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
+      "shortId": "picv-area:5",
+      "label": "RICERCA, ITC, FORMAZIONE E ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_7_17",
+      "shortId": "picv-sottosettore:5_7_17",
+      "label": "INFRASTRUTTURE PER TELECOMUNICAZIONI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_7_17_176",
+      "shortId": "picv-categoria:5_7_17_176",
+      "label": "SISTEMI ED IMPIANTI DI CONTROLLO E VIDEOSORVEGLIANZA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "shortId": "picv-natura:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
+      "shortId": "picv-tipologia:03_01",
+      "label": "NUOVA REALIZZAZIONE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "shortId": "picv-tipologia:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/2282",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/2282",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80008750731",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_l049",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80008750731",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/925733200A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9825087E45",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9826794EEE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/98268648B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/98382160AE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/98384566BA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A0062E8F88",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A038B9028E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE43D952EB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "target": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000810001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_7",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_7",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_7_17",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_7_17",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_7",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_7_17_176",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_7_17_176",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_7_17",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1562",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "label": "skos:broader"
+    }
+  ]
+}

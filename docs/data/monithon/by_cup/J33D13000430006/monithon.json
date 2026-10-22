@@ -1,0 +1,40 @@
+{
+  "dataset": "monithon",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme monithon dell’hub Monithon-seeded.",
+  "nodes": [
+    {
+      "id": "https://it.monithon.eu/report/view/1010",
+      "shortId": "1010",
+      "label": "1010",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/77",
+      "shortId": "77",
+      "label": "77",
+      "type": "Report",
+      "dataset": "monithon"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/1010",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/77",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+{
+  "id": "monithon_D71E16000300001",
+  "title": "Unione semantica — CUP D71E16000300001",
+  "sparql_note": "Il CUP D71E16000300001 è oggetto di report Monithon. Collegato a 14 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/1253",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/1253",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/1587",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/1587",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_g273",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7568020FA8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/798131015F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8721038C37",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0223DAEFE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1023DB0CE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1332B0652",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2023DB132",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3332B061F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBC32B06C5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD523DAFFA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE732B059D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEC228496F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9833419A0F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "shortId": "cup:D71E16000300001",
+      "label": "D71E16000300001",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/1253",
+      "shortId": "1253",
+      "label": "1253",
+      "type": "Document",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/1587",
+      "shortId": "1587",
+      "label": "1587",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
+      "shortId": "cf:80016350821",
+      "label": "COMUNE DI PALERMO - PA -",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_g273",
+      "shortId": "ipa:c_g273",
+      "label": "Comune di Palermo",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7568020FA8",
+      "shortId": "lot:7568020FA8",
+      "label": "CIG 7568…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/798131015F",
+      "shortId": "lot:798131015F",
+      "label": "CIG 7981…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8721038C37",
+      "shortId": "lot:8721038C37",
+      "label": "CIG 8721…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z0223DAEFE",
+      "shortId": "lot:Z0223DAEFE",
+      "label": "CIG Z022…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1023DB0CE",
+      "shortId": "lot:Z1023DB0CE",
+      "label": "CIG Z102…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1332B0652",
+      "shortId": "lot:Z1332B0652",
+      "label": "CIG Z133…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2023DB132",
+      "shortId": "lot:Z2023DB132",
+      "label": "CIG Z202…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3332B061F",
+      "shortId": "lot:Z3332B061F",
+      "label": "CIG Z333…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZBC32B06C5",
+      "shortId": "lot:ZBC32B06C5",
+      "label": "CIG ZBC3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD523DAFFA",
+      "shortId": "lot:ZD523DAFFA",
+      "label": "CIG ZD52…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZE732B059D",
+      "shortId": "lot:ZE732B059D",
+      "label": "CIG ZE73…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZEC228496F",
+      "shortId": "lot:ZEC228496F",
+      "label": "CIG ZEC2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "shortId": "lot:9555931BB7",
+      "label": "\"APPALTO INTEGRATO NUOVE LINEEE TRANVIARIE DELLA CITTA' DI P…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9833419A0F",
+      "shortId": "lot:9833419A0F",
+      "label": "\"Affidamento del Servizio di Verifica del progetto Definitiv…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "label": "SISTEMA TRAM PALERMO - AMPLIAMENTO DEL SISTEMA TRAMVIARIO DE…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "shortId": "picv-copertura:001",
+      "label": "STATALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/01",
+      "shortId": "picv-strumento:01",
+      "label": "ACCORDO DI PROGRAMMA QUADRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
+      "shortId": "picv-settore:2_1",
+      "label": "INFRASTRUTTURE DI TRASPORTO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
+      "shortId": "picv-area:2",
+      "label": "TRASPORTI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_5",
+      "shortId": "picv-sottosettore:2_1_5",
+      "label": "TRASPORTO URBANO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_5_32",
+      "shortId": "picv-categoria:2_1_5_32",
+      "label": "LINEE METROPOLITANE E TRAMVIARIE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "shortId": "picv-natura:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
+      "shortId": "picv-tipologia:03_01",
+      "label": "NUOVA REALIZZAZIONE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "shortId": "picv-tipologia:03",
+      "label": "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/1253",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/1253",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/1587",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/1587",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_g273",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7568020FA8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/798131015F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8721038C37",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0223DAEFE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1023DB0CE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1332B0652",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2023DB132",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3332B061F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBC32B06C5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD523DAFFA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE732B059D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEC228496F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9833419A0F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "target": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/01",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_5",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_5",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_5_32",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_5_32",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_5",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03",
+      "label": "skos:broader"
+    }
+  ]
+}

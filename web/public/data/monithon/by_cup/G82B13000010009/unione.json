@@ -1,0 +1,56 @@
+{
+  "id": "monithon_G82B13000010009",
+  "title": "Unione semantica — CUP G82B13000010009",
+  "sparql_note": "Il CUP G82B13000010009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, a OpenCUP.",
+  "datasets_involved": [
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/706",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/706",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
+      "shortId": "cup:G82B13000010009",
+      "label": "G82B13000010009",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/706",
+      "shortId": "706",
+      "label": "706",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/706",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/706",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    }
+  ]
+}

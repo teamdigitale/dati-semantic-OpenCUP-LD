@@ -1,0 +1,74 @@
+{
+  "id": "monithon_F94C11000080000",
+  "title": "Unione semantica — CUP F94C11000080000",
+  "sparql_note": "Il CUP F94C11000080000 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/69",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F94C11000080000",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/69",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6711293E2C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F94C11000080000",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/F94C11000080000",
+      "shortId": "cup:F94C11000080000",
+      "label": "F94C11000080000",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/69",
+      "shortId": "69",
+      "label": "69",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6711293E2C",
+      "shortId": "lot:6711293E2C",
+      "label": "CIG 6711…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/69",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F94C11000080000",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/69",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6711293E2C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F94C11000080000",
+      "label": "PCTR:hasProject"
+    }
+  ]
+}

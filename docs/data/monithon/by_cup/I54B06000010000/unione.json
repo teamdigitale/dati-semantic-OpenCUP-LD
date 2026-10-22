@@ -1,0 +1,91 @@
+{
+  "id": "monithon_I54B06000010000",
+  "title": "Unione semantica — CUP I54B06000010000",
+  "sparql_note": "Il CUP I54B06000010000 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/511",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/511",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/476970336E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9E147F306",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "shortId": "cup:I54B06000010000",
+      "label": "I54B06000010000",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/511",
+      "shortId": "511",
+      "label": "511",
+      "type": "Report",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/476970336E",
+      "shortId": "lot:476970336E",
+      "label": "CIG 4769…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z9E147F306",
+      "shortId": "lot:Z9E147F306",
+      "label": "CIG Z9E1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/511",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/511",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/476970336E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9E147F306",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "PCTR:hasProject"
+    }
+  ]
+}

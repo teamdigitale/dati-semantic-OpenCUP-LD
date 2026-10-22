@@ -1,0 +1,3969 @@
+{
+  "id": "monithon_G66J17000360007",
+  "title": "Unione semantica — CUP G66J17000360007",
+  "sparql_note": "Il CUP G66J17000360007 è oggetto di report Monithon. Collegato a 218 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "datasets_involved": [
+    "cupcig",
+    "enti_ipa",
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/964",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/964",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/r_sicili",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/733214122A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/737621552D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/743973685C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/744446138F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7494424255",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7562785F99",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/758403607F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/766987985F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7688790E37",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7699956CB1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/77084183C4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7757465E9E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/77601083B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/79468983B0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/80024728CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8041989B41",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/80606280A8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/80643185BC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/81040043A9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8107003E80",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8125943C49",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/81259588AB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/81689216DC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/819602127E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8200127EDB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/82129092E9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8224107BC8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8266524767",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8339706F17",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8379303395",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8454116D36",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8555012B3A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/855515513F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/85876798E4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8839659D5C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/88430847C4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8897454B4E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/89876435A1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9330207A61",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9536267879",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z00223723E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z032EC51B2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z04255F4C3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z052900AD2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z052FE3FCF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0A230B461",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0B2456910",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0F2CC2221",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1034CFC4F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1223D1864",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1237047DE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z142D671EB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z142FE208E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z151F43004",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z153176CD2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1628663B8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1933F5858",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1B1F3C5C8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1B2D3EBB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1C273C64C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1E1F2754F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1F2B44E0B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z202367BF4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z20264738A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z202CC8DA9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z242BFA2A3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z292ABB98C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z293374BCA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2A2476A5C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2B20AB829",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2B2A6219F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2B2C805CA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2C31DFBB3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2C31E84F7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2D30294B7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z312A6167E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z321EB4189",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z322F0FCCF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3235EAF65",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z342D807A2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3621083A2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z382634529",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z392514344",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3A1E940F2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3A2755D6F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3A2A652C4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3B271F12A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3B2CF2AC1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3B2D793DD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3C295E613",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3E2FFC2C5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3F3367036",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4037139B2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z41238B3B7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4329010BF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4329362D0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z442A6217F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z46245684C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z49337575B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4A324E0C9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4B22DEC6E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4D2367B56",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4E252FC41",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4F2CC20C0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5632AE46A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z571F55747",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z57316D8E9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B21B3F13",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B246516D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B2FBEC50",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5D1EF8790",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5F260008C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5F2CDFAB5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z602C207EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6531DBF91",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6620FAE15",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z672B44FCD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z673323AAC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z692D3F7EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6A242B8E3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6B329A19E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z721EF8561",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7231C650B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z741EF0966",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z742C961EC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z751F82C16",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z752ED4E02",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z76366EB1A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z772B3E457",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z773187F4B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z773595E79",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7A2647444",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7E1F276AC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7E2A807C1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7F2E46727",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z85245689C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z852ABC985",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8627AE90C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z87390A9E4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z88235D2E9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z882A5C40D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z882EA4F80",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8B20AB88B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8B370F997",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8F29CEA1D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z902AF7F9E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z932EFD84D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z93333F6EB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z94234A829",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z95213B37F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z962C3C3EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z982A6D6F9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9A2A08B9F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9A2F5F7FF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9B1EBF6CA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9C20DAF1B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9E29DA872",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9E325878E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZA0291B4F1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZA1223737A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZA72E3A6FA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAB38BECF3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAC2414473",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAD2456A91",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAD28B02AA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZB2330EFE1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZB331CAB82",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZB52F99ECC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBB328C8ED",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2459423",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2A96DF0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2B92E9B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2FBEC41",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC0338530E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC51F01554",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC727382A7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC924815A8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC92900AB4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCA2AA2DB1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCC2D4282B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCE369D377",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCF2ADE51D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD12071C33",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD32CF2A8B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD52CC1CAB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD6203B102",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD6286647C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD62F99FD9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD7207054E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD825EBE3B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDA33C4CED",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDA3761738",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDB2442B91",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDB38CF7D4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDB38FF884",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDE29BF3BD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE02C3C440",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE331DBC45",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE62BCA050",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE7338A32E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE82F9A0C7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEA234275E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEA34503E2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEB325A718",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEC2072184",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEC2E3A401",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED25143BD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED289919C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED2FA9257",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED2FBAAC1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF2351DA9C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF925EBD52",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF92B52F7B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZFA3186DA8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9032183932",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8396958CF0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/83969717AC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8396984268",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "shortId": "cup:G66J17000360007",
+      "label": "G66J17000360007",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/964",
+      "shortId": "964",
+      "label": "964",
+      "type": "Document",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "shortId": "cf:80012000826",
+      "label": "Regione Siciliana",
+      "type": "COV:PublicOrganization",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/r_sicili",
+      "shortId": "ipa:r_sicili",
+      "label": "Regione Siciliana",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/733214122A",
+      "shortId": "lot:733214122A",
+      "label": "CIG 7332…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/737621552D",
+      "shortId": "lot:737621552D",
+      "label": "CIG 7376…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/743973685C",
+      "shortId": "lot:743973685C",
+      "label": "CIG 7439…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/744446138F",
+      "shortId": "lot:744446138F",
+      "label": "CIG 7444…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7494424255",
+      "shortId": "lot:7494424255",
+      "label": "CIG 7494…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7562785F99",
+      "shortId": "lot:7562785F99",
+      "label": "CIG 7562…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/758403607F",
+      "shortId": "lot:758403607F",
+      "label": "CIG 7584…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/766987985F",
+      "shortId": "lot:766987985F",
+      "label": "CIG 7669…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7688790E37",
+      "shortId": "lot:7688790E37",
+      "label": "CIG 7688…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7699956CB1",
+      "shortId": "lot:7699956CB1",
+      "label": "CIG 7699…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/77084183C4",
+      "shortId": "lot:77084183C4",
+      "label": "CIG 7708…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7757465E9E",
+      "shortId": "lot:7757465E9E",
+      "label": "CIG 7757…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/77601083B4",
+      "shortId": "lot:77601083B4",
+      "label": "CIG 7760…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/79468983B0",
+      "shortId": "lot:79468983B0",
+      "label": "CIG 7946…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/80024728CC",
+      "shortId": "lot:80024728CC",
+      "label": "CIG 8002…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8041989B41",
+      "shortId": "lot:8041989B41",
+      "label": "CIG 8041…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/80606280A8",
+      "shortId": "lot:80606280A8",
+      "label": "CIG 8060…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/80643185BC",
+      "shortId": "lot:80643185BC",
+      "label": "CIG 8064…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/81040043A9",
+      "shortId": "lot:81040043A9",
+      "label": "CIG 8104…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8107003E80",
+      "shortId": "lot:8107003E80",
+      "label": "CIG 8107…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8125943C49",
+      "shortId": "lot:8125943C49",
+      "label": "CIG 8125…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/81259588AB",
+      "shortId": "lot:81259588AB",
+      "label": "CIG 8125…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/81689216DC",
+      "shortId": "lot:81689216DC",
+      "label": "CIG 8168…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/819602127E",
+      "shortId": "lot:819602127E",
+      "label": "CIG 8196…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8200127EDB",
+      "shortId": "lot:8200127EDB",
+      "label": "CIG 8200…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/82129092E9",
+      "shortId": "lot:82129092E9",
+      "label": "CIG 8212…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8224107BC8",
+      "shortId": "lot:8224107BC8",
+      "label": "CIG 8224…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8266524767",
+      "shortId": "lot:8266524767",
+      "label": "CIG 8266…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8339706F17",
+      "shortId": "lot:8339706F17",
+      "label": "CIG 8339…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8379303395",
+      "shortId": "lot:8379303395",
+      "label": "CIG 8379…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8454116D36",
+      "shortId": "lot:8454116D36",
+      "label": "CIG 8454…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8555012B3A",
+      "shortId": "lot:8555012B3A",
+      "label": "CIG 8555…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/855515513F",
+      "shortId": "lot:855515513F",
+      "label": "CIG 8555…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/85876798E4",
+      "shortId": "lot:85876798E4",
+      "label": "CIG 8587…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8839659D5C",
+      "shortId": "lot:8839659D5C",
+      "label": "CIG 8839…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/88430847C4",
+      "shortId": "lot:88430847C4",
+      "label": "CIG 8843…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8897454B4E",
+      "shortId": "lot:8897454B4E",
+      "label": "CIG 8897…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/89876435A1",
+      "shortId": "lot:89876435A1",
+      "label": "CIG 8987…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9330207A61",
+      "shortId": "lot:9330207A61",
+      "label": "CIG 9330…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9536267879",
+      "shortId": "lot:9536267879",
+      "label": "CIG 9536…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z00223723E",
+      "shortId": "lot:Z00223723E",
+      "label": "CIG Z002…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z032EC51B2",
+      "shortId": "lot:Z032EC51B2",
+      "label": "CIG Z032…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z04255F4C3",
+      "shortId": "lot:Z04255F4C3",
+      "label": "CIG Z042…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z052900AD2",
+      "shortId": "lot:Z052900AD2",
+      "label": "CIG Z052…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z052FE3FCF",
+      "shortId": "lot:Z052FE3FCF",
+      "label": "CIG Z052…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z0A230B461",
+      "shortId": "lot:Z0A230B461",
+      "label": "CIG Z0A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z0B2456910",
+      "shortId": "lot:Z0B2456910",
+      "label": "CIG Z0B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z0F2CC2221",
+      "shortId": "lot:Z0F2CC2221",
+      "label": "CIG Z0F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1034CFC4F",
+      "shortId": "lot:Z1034CFC4F",
+      "label": "CIG Z103…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1223D1864",
+      "shortId": "lot:Z1223D1864",
+      "label": "CIG Z122…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1237047DE",
+      "shortId": "lot:Z1237047DE",
+      "label": "CIG Z123…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z142D671EB",
+      "shortId": "lot:Z142D671EB",
+      "label": "CIG Z142…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z142FE208E",
+      "shortId": "lot:Z142FE208E",
+      "label": "CIG Z142…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z151F43004",
+      "shortId": "lot:Z151F43004",
+      "label": "CIG Z151…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z153176CD2",
+      "shortId": "lot:Z153176CD2",
+      "label": "CIG Z153…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1628663B8",
+      "shortId": "lot:Z1628663B8",
+      "label": "CIG Z162…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1933F5858",
+      "shortId": "lot:Z1933F5858",
+      "label": "CIG Z193…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1B1F3C5C8",
+      "shortId": "lot:Z1B1F3C5C8",
+      "label": "CIG Z1B1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1B2D3EBB7",
+      "shortId": "lot:Z1B2D3EBB7",
+      "label": "CIG Z1B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1C273C64C",
+      "shortId": "lot:Z1C273C64C",
+      "label": "CIG Z1C2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1E1F2754F",
+      "shortId": "lot:Z1E1F2754F",
+      "label": "CIG Z1E1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z1F2B44E0B",
+      "shortId": "lot:Z1F2B44E0B",
+      "label": "CIG Z1F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z202367BF4",
+      "shortId": "lot:Z202367BF4",
+      "label": "CIG Z202…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z20264738A",
+      "shortId": "lot:Z20264738A",
+      "label": "CIG Z202…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z202CC8DA9",
+      "shortId": "lot:Z202CC8DA9",
+      "label": "CIG Z202…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z242BFA2A3",
+      "shortId": "lot:Z242BFA2A3",
+      "label": "CIG Z242…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z292ABB98C",
+      "shortId": "lot:Z292ABB98C",
+      "label": "CIG Z292…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z293374BCA",
+      "shortId": "lot:Z293374BCA",
+      "label": "CIG Z293…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2A2476A5C",
+      "shortId": "lot:Z2A2476A5C",
+      "label": "CIG Z2A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2B20AB829",
+      "shortId": "lot:Z2B20AB829",
+      "label": "CIG Z2B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2B2A6219F",
+      "shortId": "lot:Z2B2A6219F",
+      "label": "CIG Z2B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2B2C805CA",
+      "shortId": "lot:Z2B2C805CA",
+      "label": "CIG Z2B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2C31DFBB3",
+      "shortId": "lot:Z2C31DFBB3",
+      "label": "CIG Z2C3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2C31E84F7",
+      "shortId": "lot:Z2C31E84F7",
+      "label": "CIG Z2C3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z2D30294B7",
+      "shortId": "lot:Z2D30294B7",
+      "label": "CIG Z2D3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z312A6167E",
+      "shortId": "lot:Z312A6167E",
+      "label": "CIG Z312…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z321EB4189",
+      "shortId": "lot:Z321EB4189",
+      "label": "CIG Z321…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z322F0FCCF",
+      "shortId": "lot:Z322F0FCCF",
+      "label": "CIG Z322…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3235EAF65",
+      "shortId": "lot:Z3235EAF65",
+      "label": "CIG Z323…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z342D807A2",
+      "shortId": "lot:Z342D807A2",
+      "label": "CIG Z342…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3621083A2",
+      "shortId": "lot:Z3621083A2",
+      "label": "CIG Z362…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z382634529",
+      "shortId": "lot:Z382634529",
+      "label": "CIG Z382…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z392514344",
+      "shortId": "lot:Z392514344",
+      "label": "CIG Z392…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3A1E940F2",
+      "shortId": "lot:Z3A1E940F2",
+      "label": "CIG Z3A1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3A2755D6F",
+      "shortId": "lot:Z3A2755D6F",
+      "label": "CIG Z3A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3A2A652C4",
+      "shortId": "lot:Z3A2A652C4",
+      "label": "CIG Z3A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3B271F12A",
+      "shortId": "lot:Z3B271F12A",
+      "label": "CIG Z3B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3B2CF2AC1",
+      "shortId": "lot:Z3B2CF2AC1",
+      "label": "CIG Z3B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3B2D793DD",
+      "shortId": "lot:Z3B2D793DD",
+      "label": "CIG Z3B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3C295E613",
+      "shortId": "lot:Z3C295E613",
+      "label": "CIG Z3C2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3E2FFC2C5",
+      "shortId": "lot:Z3E2FFC2C5",
+      "label": "CIG Z3E2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z3F3367036",
+      "shortId": "lot:Z3F3367036",
+      "label": "CIG Z3F3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4037139B2",
+      "shortId": "lot:Z4037139B2",
+      "label": "CIG Z403…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z41238B3B7",
+      "shortId": "lot:Z41238B3B7",
+      "label": "CIG Z412…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4329010BF",
+      "shortId": "lot:Z4329010BF",
+      "label": "CIG Z432…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4329362D0",
+      "shortId": "lot:Z4329362D0",
+      "label": "CIG Z432…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z442A6217F",
+      "shortId": "lot:Z442A6217F",
+      "label": "CIG Z442…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z46245684C",
+      "shortId": "lot:Z46245684C",
+      "label": "CIG Z462…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z49337575B",
+      "shortId": "lot:Z49337575B",
+      "label": "CIG Z493…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4A324E0C9",
+      "shortId": "lot:Z4A324E0C9",
+      "label": "CIG Z4A3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4B22DEC6E",
+      "shortId": "lot:Z4B22DEC6E",
+      "label": "CIG Z4B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4D2367B56",
+      "shortId": "lot:Z4D2367B56",
+      "label": "CIG Z4D2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4E252FC41",
+      "shortId": "lot:Z4E252FC41",
+      "label": "CIG Z4E2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z4F2CC20C0",
+      "shortId": "lot:Z4F2CC20C0",
+      "label": "CIG Z4F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5632AE46A",
+      "shortId": "lot:Z5632AE46A",
+      "label": "CIG Z563…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z571F55747",
+      "shortId": "lot:Z571F55747",
+      "label": "CIG Z571…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z57316D8E9",
+      "shortId": "lot:Z57316D8E9",
+      "label": "CIG Z573…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5B21B3F13",
+      "shortId": "lot:Z5B21B3F13",
+      "label": "CIG Z5B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5B246516D",
+      "shortId": "lot:Z5B246516D",
+      "label": "CIG Z5B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5B2FBEC50",
+      "shortId": "lot:Z5B2FBEC50",
+      "label": "CIG Z5B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5D1EF8790",
+      "shortId": "lot:Z5D1EF8790",
+      "label": "CIG Z5D1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5F260008C",
+      "shortId": "lot:Z5F260008C",
+      "label": "CIG Z5F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5F2CDFAB5",
+      "shortId": "lot:Z5F2CDFAB5",
+      "label": "CIG Z5F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z602C207EA",
+      "shortId": "lot:Z602C207EA",
+      "label": "CIG Z602…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z6531DBF91",
+      "shortId": "lot:Z6531DBF91",
+      "label": "CIG Z653…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z6620FAE15",
+      "shortId": "lot:Z6620FAE15",
+      "label": "CIG Z662…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z672B44FCD",
+      "shortId": "lot:Z672B44FCD",
+      "label": "CIG Z672…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z673323AAC",
+      "shortId": "lot:Z673323AAC",
+      "label": "CIG Z673…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z692D3F7EA",
+      "shortId": "lot:Z692D3F7EA",
+      "label": "CIG Z692…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z6A242B8E3",
+      "shortId": "lot:Z6A242B8E3",
+      "label": "CIG Z6A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z6B329A19E",
+      "shortId": "lot:Z6B329A19E",
+      "label": "CIG Z6B3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z721EF8561",
+      "shortId": "lot:Z721EF8561",
+      "label": "CIG Z721…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z7231C650B",
+      "shortId": "lot:Z7231C650B",
+      "label": "CIG Z723…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z741EF0966",
+      "shortId": "lot:Z741EF0966",
+      "label": "CIG Z741…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z742C961EC",
+      "shortId": "lot:Z742C961EC",
+      "label": "CIG Z742…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z751F82C16",
+      "shortId": "lot:Z751F82C16",
+      "label": "CIG Z751…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z752ED4E02",
+      "shortId": "lot:Z752ED4E02",
+      "label": "CIG Z752…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z76366EB1A",
+      "shortId": "lot:Z76366EB1A",
+      "label": "CIG Z763…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z772B3E457",
+      "shortId": "lot:Z772B3E457",
+      "label": "CIG Z772…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z773187F4B",
+      "shortId": "lot:Z773187F4B",
+      "label": "CIG Z773…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z773595E79",
+      "shortId": "lot:Z773595E79",
+      "label": "CIG Z773…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z7A2647444",
+      "shortId": "lot:Z7A2647444",
+      "label": "CIG Z7A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z7E1F276AC",
+      "shortId": "lot:Z7E1F276AC",
+      "label": "CIG Z7E1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z7E2A807C1",
+      "shortId": "lot:Z7E2A807C1",
+      "label": "CIG Z7E2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z7F2E46727",
+      "shortId": "lot:Z7F2E46727",
+      "label": "CIG Z7F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z85245689C",
+      "shortId": "lot:Z85245689C",
+      "label": "CIG Z852…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z852ABC985",
+      "shortId": "lot:Z852ABC985",
+      "label": "CIG Z852…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z8627AE90C",
+      "shortId": "lot:Z8627AE90C",
+      "label": "CIG Z862…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z87390A9E4",
+      "shortId": "lot:Z87390A9E4",
+      "label": "CIG Z873…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z88235D2E9",
+      "shortId": "lot:Z88235D2E9",
+      "label": "CIG Z882…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z882A5C40D",
+      "shortId": "lot:Z882A5C40D",
+      "label": "CIG Z882…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z882EA4F80",
+      "shortId": "lot:Z882EA4F80",
+      "label": "CIG Z882…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z8B20AB88B",
+      "shortId": "lot:Z8B20AB88B",
+      "label": "CIG Z8B2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z8B370F997",
+      "shortId": "lot:Z8B370F997",
+      "label": "CIG Z8B3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z8F29CEA1D",
+      "shortId": "lot:Z8F29CEA1D",
+      "label": "CIG Z8F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z902AF7F9E",
+      "shortId": "lot:Z902AF7F9E",
+      "label": "CIG Z902…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z932EFD84D",
+      "shortId": "lot:Z932EFD84D",
+      "label": "CIG Z932…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z93333F6EB",
+      "shortId": "lot:Z93333F6EB",
+      "label": "CIG Z933…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z94234A829",
+      "shortId": "lot:Z94234A829",
+      "label": "CIG Z942…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z95213B37F",
+      "shortId": "lot:Z95213B37F",
+      "label": "CIG Z952…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z962C3C3EA",
+      "shortId": "lot:Z962C3C3EA",
+      "label": "CIG Z962…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z982A6D6F9",
+      "shortId": "lot:Z982A6D6F9",
+      "label": "CIG Z982…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z9A2A08B9F",
+      "shortId": "lot:Z9A2A08B9F",
+      "label": "CIG Z9A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z9A2F5F7FF",
+      "shortId": "lot:Z9A2F5F7FF",
+      "label": "CIG Z9A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z9B1EBF6CA",
+      "shortId": "lot:Z9B1EBF6CA",
+      "label": "CIG Z9B1…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z9C20DAF1B",
+      "shortId": "lot:Z9C20DAF1B",
+      "label": "CIG Z9C2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z9E29DA872",
+      "shortId": "lot:Z9E29DA872",
+      "label": "CIG Z9E2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z9E325878E",
+      "shortId": "lot:Z9E325878E",
+      "label": "CIG Z9E3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZA0291B4F1",
+      "shortId": "lot:ZA0291B4F1",
+      "label": "CIG ZA02…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZA1223737A",
+      "shortId": "lot:ZA1223737A",
+      "label": "CIG ZA12…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZA72E3A6FA",
+      "shortId": "lot:ZA72E3A6FA",
+      "label": "CIG ZA72…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZAB38BECF3",
+      "shortId": "lot:ZAB38BECF3",
+      "label": "CIG ZAB3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZAC2414473",
+      "shortId": "lot:ZAC2414473",
+      "label": "CIG ZAC2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZAD2456A91",
+      "shortId": "lot:ZAD2456A91",
+      "label": "CIG ZAD2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZAD28B02AA",
+      "shortId": "lot:ZAD28B02AA",
+      "label": "CIG ZAD2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZB2330EFE1",
+      "shortId": "lot:ZB2330EFE1",
+      "label": "CIG ZB23…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZB331CAB82",
+      "shortId": "lot:ZB331CAB82",
+      "label": "CIG ZB33…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZB52F99ECC",
+      "shortId": "lot:ZB52F99ECC",
+      "label": "CIG ZB52…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZBB328C8ED",
+      "shortId": "lot:ZBB328C8ED",
+      "label": "CIG ZBB3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZBD2459423",
+      "shortId": "lot:ZBD2459423",
+      "label": "CIG ZBD2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZBD2A96DF0",
+      "shortId": "lot:ZBD2A96DF0",
+      "label": "CIG ZBD2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZBD2B92E9B",
+      "shortId": "lot:ZBD2B92E9B",
+      "label": "CIG ZBD2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZBD2FBEC41",
+      "shortId": "lot:ZBD2FBEC41",
+      "label": "CIG ZBD2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC0338530E",
+      "shortId": "lot:ZC0338530E",
+      "label": "CIG ZC03…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC51F01554",
+      "shortId": "lot:ZC51F01554",
+      "label": "CIG ZC51…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC727382A7",
+      "shortId": "lot:ZC727382A7",
+      "label": "CIG ZC72…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC924815A8",
+      "shortId": "lot:ZC924815A8",
+      "label": "CIG ZC92…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC92900AB4",
+      "shortId": "lot:ZC92900AB4",
+      "label": "CIG ZC92…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZCA2AA2DB1",
+      "shortId": "lot:ZCA2AA2DB1",
+      "label": "CIG ZCA2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZCC2D4282B",
+      "shortId": "lot:ZCC2D4282B",
+      "label": "CIG ZCC2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZCE369D377",
+      "shortId": "lot:ZCE369D377",
+      "label": "CIG ZCE3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZCF2ADE51D",
+      "shortId": "lot:ZCF2ADE51D",
+      "label": "CIG ZCF2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD12071C33",
+      "shortId": "lot:ZD12071C33",
+      "label": "CIG ZD12…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD32CF2A8B",
+      "shortId": "lot:ZD32CF2A8B",
+      "label": "CIG ZD32…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD52CC1CAB",
+      "shortId": "lot:ZD52CC1CAB",
+      "label": "CIG ZD52…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD6203B102",
+      "shortId": "lot:ZD6203B102",
+      "label": "CIG ZD62…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD6286647C",
+      "shortId": "lot:ZD6286647C",
+      "label": "CIG ZD62…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD62F99FD9",
+      "shortId": "lot:ZD62F99FD9",
+      "label": "CIG ZD62…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD7207054E",
+      "shortId": "lot:ZD7207054E",
+      "label": "CIG ZD72…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZD825EBE3B",
+      "shortId": "lot:ZD825EBE3B",
+      "label": "CIG ZD82…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZDA33C4CED",
+      "shortId": "lot:ZDA33C4CED",
+      "label": "CIG ZDA3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZDA3761738",
+      "shortId": "lot:ZDA3761738",
+      "label": "CIG ZDA3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZDB2442B91",
+      "shortId": "lot:ZDB2442B91",
+      "label": "CIG ZDB2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZDB38CF7D4",
+      "shortId": "lot:ZDB38CF7D4",
+      "label": "CIG ZDB3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZDB38FF884",
+      "shortId": "lot:ZDB38FF884",
+      "label": "CIG ZDB3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZDE29BF3BD",
+      "shortId": "lot:ZDE29BF3BD",
+      "label": "CIG ZDE2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZE02C3C440",
+      "shortId": "lot:ZE02C3C440",
+      "label": "CIG ZE02…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZE331DBC45",
+      "shortId": "lot:ZE331DBC45",
+      "label": "CIG ZE33…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZE62BCA050",
+      "shortId": "lot:ZE62BCA050",
+      "label": "CIG ZE62…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZE7338A32E",
+      "shortId": "lot:ZE7338A32E",
+      "label": "CIG ZE73…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZE82F9A0C7",
+      "shortId": "lot:ZE82F9A0C7",
+      "label": "CIG ZE82…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZEA234275E",
+      "shortId": "lot:ZEA234275E",
+      "label": "CIG ZEA2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZEA34503E2",
+      "shortId": "lot:ZEA34503E2",
+      "label": "CIG ZEA3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZEB325A718",
+      "shortId": "lot:ZEB325A718",
+      "label": "CIG ZEB3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZEC2072184",
+      "shortId": "lot:ZEC2072184",
+      "label": "CIG ZEC2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZEC2E3A401",
+      "shortId": "lot:ZEC2E3A401",
+      "label": "CIG ZEC2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZED25143BD",
+      "shortId": "lot:ZED25143BD",
+      "label": "CIG ZED2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZED289919C",
+      "shortId": "lot:ZED289919C",
+      "label": "CIG ZED2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZED2FA9257",
+      "shortId": "lot:ZED2FA9257",
+      "label": "CIG ZED2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZED2FBAAC1",
+      "shortId": "lot:ZED2FBAAC1",
+      "label": "CIG ZED2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZF2351DA9C",
+      "shortId": "lot:ZF2351DA9C",
+      "label": "CIG ZF23…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZF925EBD52",
+      "shortId": "lot:ZF925EBD52",
+      "label": "CIG ZF92…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZF92B52F7B",
+      "shortId": "lot:ZF92B52F7B",
+      "label": "CIG ZF92…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZFA3186DA8",
+      "shortId": "lot:ZFA3186DA8",
+      "label": "CIG ZFA3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9032183932",
+      "shortId": "lot:9032183932",
+      "label": "\"lavori per la realizzazione di una infrastruttura per misur…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8396958CF0",
+      "shortId": "lot:8396958CF0",
+      "label": "\"Fornitura della struttura meccanica\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/83969717AC",
+      "shortId": "lot:83969717AC",
+      "label": "\"Fornitura di sensoristica specialistica per uso marino\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8396984268",
+      "shortId": "lot:8396984268",
+      "label": "\"Fornitura di sensori chimico-fisici per uso sottomarino\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "label": "ISTITUTO NAZIONALE DI FISICA NUCLEARE - LABORATORI NAZIONALI…",
+      "type": "pi:Intervento_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "shortId": "picv-copertura:001",
+      "label": "STATALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/002",
+      "shortId": "picv-copertura:002",
+      "label": "REGIONALE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "shortId": "picv-copertura:006",
+      "label": "COMUNITARIA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/007",
+      "shortId": "picv-copertura:007",
+      "label": "PRIVATA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "shortId": "picv-strumento:99",
+      "label": "ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_8",
+      "shortId": "picv-settore:5_8",
+      "label": "RICERCA SVILUPPO TECNOLOGICO ED INNOVAZIONE",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
+      "shortId": "picv-area:5",
+      "label": "RICERCA, ITC, FORMAZIONE E ALTRO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_8_61",
+      "shortId": "picv-sottosettore:5_8_61",
+      "label": "PROGETTI DI RICERCA PRESSO UNIVERSITA' E ISTITUTI DI RICERCA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_8_61_613",
+      "shortId": "picv-categoria:5_8_61_613",
+      "label": "CONTROLLO E TUTELA DELL'AMBIENTE TERRESTRE E MARINO",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/01",
+      "shortId": "picv-natura:01",
+      "label": "ACQUISTO DI BENI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01_00",
+      "shortId": "picv-tipologia:01_00",
+      "label": "NUOVA FORNITURA",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01",
+      "shortId": "picv-tipologia:01",
+      "label": "ACQUISTO DI BENI",
+      "type": "skos:Concept",
+      "dataset": "shared"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/964",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/964",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/r_sicili",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
+      "label": "owl:sameAs"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/733214122A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/737621552D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/743973685C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/744446138F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7494424255",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7562785F99",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/758403607F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/766987985F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7688790E37",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7699956CB1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/77084183C4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7757465E9E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/77601083B4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/79468983B0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/80024728CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8041989B41",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/80606280A8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/80643185BC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/81040043A9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8107003E80",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8125943C49",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/81259588AB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/81689216DC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/819602127E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8200127EDB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/82129092E9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8224107BC8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8266524767",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8339706F17",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8379303395",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8454116D36",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8555012B3A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/855515513F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/85876798E4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8839659D5C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/88430847C4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8897454B4E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/89876435A1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9330207A61",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9536267879",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z00223723E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z032EC51B2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z04255F4C3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z052900AD2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z052FE3FCF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0A230B461",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0B2456910",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z0F2CC2221",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1034CFC4F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1223D1864",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1237047DE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z142D671EB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z142FE208E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z151F43004",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z153176CD2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1628663B8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1933F5858",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1B1F3C5C8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1B2D3EBB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1C273C64C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1E1F2754F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z1F2B44E0B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z202367BF4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z20264738A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z202CC8DA9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z242BFA2A3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z292ABB98C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z293374BCA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2A2476A5C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2B20AB829",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2B2A6219F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2B2C805CA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2C31DFBB3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2C31E84F7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z2D30294B7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z312A6167E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z321EB4189",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z322F0FCCF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3235EAF65",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z342D807A2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3621083A2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z382634529",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z392514344",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3A1E940F2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3A2755D6F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3A2A652C4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3B271F12A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3B2CF2AC1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3B2D793DD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3C295E613",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3E2FFC2C5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z3F3367036",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4037139B2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z41238B3B7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4329010BF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4329362D0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z442A6217F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z46245684C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z49337575B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4A324E0C9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4B22DEC6E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4D2367B56",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4E252FC41",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z4F2CC20C0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5632AE46A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z571F55747",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z57316D8E9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B21B3F13",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B246516D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5B2FBEC50",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5D1EF8790",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5F260008C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z5F2CDFAB5",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z602C207EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6531DBF91",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6620FAE15",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z672B44FCD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z673323AAC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z692D3F7EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6A242B8E3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z6B329A19E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z721EF8561",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7231C650B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z741EF0966",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z742C961EC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z751F82C16",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z752ED4E02",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z76366EB1A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z772B3E457",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z773187F4B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z773595E79",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7A2647444",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7E1F276AC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7E2A807C1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z7F2E46727",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z85245689C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z852ABC985",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8627AE90C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z87390A9E4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z88235D2E9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z882A5C40D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z882EA4F80",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8B20AB88B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8B370F997",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z8F29CEA1D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z902AF7F9E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z932EFD84D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z93333F6EB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z94234A829",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z95213B37F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z962C3C3EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z982A6D6F9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9A2A08B9F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9A2F5F7FF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9B1EBF6CA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9C20DAF1B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9E29DA872",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/Z9E325878E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZA0291B4F1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZA1223737A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZA72E3A6FA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAB38BECF3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAC2414473",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAD2456A91",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZAD28B02AA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZB2330EFE1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZB331CAB82",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZB52F99ECC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBB328C8ED",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2459423",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2A96DF0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2B92E9B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZBD2FBEC41",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC0338530E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC51F01554",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC727382A7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC924815A8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZC92900AB4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCA2AA2DB1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCC2D4282B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCE369D377",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZCF2ADE51D",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD12071C33",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD32CF2A8B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD52CC1CAB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD6203B102",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD6286647C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD62F99FD9",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD7207054E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZD825EBE3B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDA33C4CED",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDA3761738",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDB2442B91",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDB38CF7D4",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDB38FF884",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZDE29BF3BD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE02C3C440",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE331DBC45",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE62BCA050",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE7338A32E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZE82F9A0C7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEA234275E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEA34503E2",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEB325A718",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEC2072184",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEC2E3A401",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED25143BD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED289919C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED2FA9257",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZED2FBAAC1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF2351DA9C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF925EBD52",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF92B52F7B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZFA3186DA8",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9032183932",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8396958CF0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/83969717AC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8396984268",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "label": "pi:ha_intervento_di_investimento_pubblico"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/001",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/002",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/006",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/copertura-finanziaria/007",
+      "label": "pi:ha_tipologia_copertura_finanziaria"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G66J17000360007",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/strumento-programmazione/99",
+      "label": "pi:ha_strumento_di_programmazione"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_8",
+      "label": "pi:ha_settore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_8",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_8_61",
+      "label": "pi:ha_sottosettore_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_8_61",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_8",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_8_61_613",
+      "label": "pi:ha_categoria_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_8_61_613",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_8_61",
+      "label": "skos:broader"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
+      "label": "pi:ha_area_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/01",
+      "label": "pi:ha_natura_intervento"
+    },
+    {
+      "source": "n8d1e9328ab544484895edd2b898ac6f7b1922",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01_00",
+      "label": "pi:ha_tipologia_intervento"
+    },
+    {
+      "source": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01_00",
+      "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01",
+      "label": "skos:broader"
+    }
+  ]
+}

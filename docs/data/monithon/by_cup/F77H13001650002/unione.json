@@ -1,0 +1,56 @@
+{
+  "id": "monithon_F77H13001650002",
+  "title": "Unione semantica — CUP F77H13001650002",
+  "sparql_note": "Il CUP F77H13001650002 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, a OpenCUP.",
+  "datasets_involved": [
+    "monithon",
+    "opencup"
+  ],
+  "join_edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/122",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/122",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
+      "shortId": "cup:F77H13001650002",
+      "label": "F77H13001650002",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://it.monithon.eu/report/view/122",
+      "shortId": "122",
+      "label": "122",
+      "type": "Document",
+      "dataset": "monithon"
+    },
+    {
+      "id": "https://www.monithon.eu/",
+      "shortId": "",
+      "label": "Monithon Europe E.T.S.",
+      "type": "COV:Organization",
+      "dataset": "monithon"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://it.monithon.eu/report/view/122",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://it.monithon.eu/report/view/122",
+      "target": "https://www.monithon.eu/",
+      "label": "dct:creator"
+    }
+  ]
+}
