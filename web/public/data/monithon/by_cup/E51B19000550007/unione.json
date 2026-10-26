@@ -1,11 +1,12 @@
 {
   "id": "monithon_E51B19000550007",
   "title": "Unione semantica — CUP E51B19000550007",
-  "sparql_note": "Il CUP E51B19000550007 è oggetto di report Monithon. Collegato a 42 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E51B19000550007 è oggetto di report Monithon. Collegato a 42 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,11 @@
       "source": "https://it.monithon.eu/report/view/1981",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6lo1165235/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000550007",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000550007",
@@ -261,6 +267,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/6lo1165235/",
+      "shortId": "",
+      "label": "Sviluppo di nuove molecole di seconda generazione per immuno…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80050050154",
@@ -571,8 +584,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1862",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1856",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1856",
       "label": "IMMUN-HUB -SVILUPPO DI NUOVE MOLECOLE DI SECONDA GENERAZIONE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -672,6 +685,11 @@
       "source": "https://it.monithon.eu/report/view/1981",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6lo1165235/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000550007",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000550007",
@@ -895,7 +913,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E51B19000550007",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1856",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -924,7 +942,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1856",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_8",
       "label": "pi:ha_settore_intervento"
     },
@@ -934,7 +952,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1856",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_8_62",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -944,7 +962,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1856",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_8_62_621",
       "label": "pi:ha_categoria_intervento"
     },
@@ -954,17 +972,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1856",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1856",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/06",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1862",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1856",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/06_02",
       "label": "pi:ha_tipologia_intervento"
     },

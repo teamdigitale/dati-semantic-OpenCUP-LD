@@ -1,10 +1,12 @@
 {
   "id": "monithon_B68J17000050005",
   "title": "Unione semantica — CUP B68J17000050005",
-  "sparql_note": "Il CUP B68J17000050005 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP B68J17000050005 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -19,9 +21,19 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca17065pp000000001/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZEE2463951",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
+      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7466193160",
@@ -29,9 +41,19 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/1611513",
+      "target": "https://w3id.org/italia/data/Lot/7466193160",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/7467755A5E",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1611434",
+      "target": "https://w3id.org/italia/data/Lot/7467755A5E",
+      "label": "PCTR:awardedLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7467806476",
@@ -39,9 +61,9 @@
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/ZEE2463951",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
-      "label": "PCTR:hasProject"
+      "source": "https://w3id.org/italia/data/Award/anac/1611575",
+      "target": "https://w3id.org/italia/data/Lot/7467806476",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -56,7 +78,7 @@
       "id": "https://it.monithon.eu/report/view/1578",
       "shortId": "1578",
       "label": "1578",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -67,32 +89,18 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/9ca17065pp000000001/",
+      "shortId": "",
+      "label": "NAPOLI TEATRO FESTIVAL PER UNA RICONGIUNZIONE ORGANICA TRA L…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "shortId": "cf:soggetto%20privato",
       "label": "soggetto privato",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7466193160",
-      "shortId": "lot:7466193160",
-      "label": "CIG 7466…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7467755A5E",
-      "shortId": "lot:7467755A5E",
-      "label": "CIG 7467…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7467806476",
-      "shortId": "lot:7467806476",
-      "label": "CIG 7467…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/ZEE2463951",
@@ -102,8 +110,50 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1223",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "id": "https://w3id.org/italia/data/Lot/7466193160",
+      "shortId": "lot:7466193160",
+      "label": "CIG 7466…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1611513",
+      "shortId": "1611513",
+      "label": "1611513",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7467755A5E",
+      "shortId": "lot:7467755A5E",
+      "label": "CIG 7467…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1611434",
+      "shortId": "1611434",
+      "label": "1611434",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7467806476",
+      "shortId": "lot:7467806476",
+      "label": "CIG 7467…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1611575",
+      "shortId": "1611575",
+      "label": "1611575",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1112",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1112",
       "label": "FONDAZIONE CAMPANIA DEI FESTIVAL*VIA FILANGIERI 36*EVENTI FE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -184,24 +234,14 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca17065pp000000001/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "label": "pi:ha_soggetto_titolare"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7466193160",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7467755A5E",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7467806476",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/ZEE2463951",
@@ -209,8 +249,38 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/7466193160",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1611513",
+      "target": "https://w3id.org/italia/data/Lot/7466193160",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7467755A5E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1611434",
+      "target": "https://w3id.org/italia/data/Lot/7467755A5E",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7467806476",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1611575",
+      "target": "https://w3id.org/italia/data/Lot/7467806476",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B68J17000050005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1112",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -224,7 +294,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1112",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -234,7 +304,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1112",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_12",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -244,7 +314,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1112",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_12_100",
       "label": "pi:ha_categoria_intervento"
     },
@@ -254,17 +324,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1112",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1112",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1223",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1112",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
       "label": "pi:ha_tipologia_intervento"
     },

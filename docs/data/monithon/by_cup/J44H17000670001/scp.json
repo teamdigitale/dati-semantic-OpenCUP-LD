@@ -1,0 +1,47 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1252679",
+      "shortId": "1252679",
+      "label": "\"DAC.0161.2021 - GPA - SOTTOVIA TRAPANI\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8940316627-1226961-7",
+      "shortId": "8940316627-1226961-7",
+      "label": "8940316627-1226961-7",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1226961",
+      "shortId": "1226961",
+      "label": "\"DAC.0186.2021 - GPA - Progettazione ed esecuzione lavori di…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8940316627",
+      "shortId": "lot:8940316627",
+      "label": "\"DAC.0186.2021 - GPA - Progettazione ed esecuzione lavori di…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/8940316627-1226961-7",
+      "target": "https://w3id.org/italia/data/Lot/8940316627",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1226961",
+      "target": "https://w3id.org/italia/data/Lot/8940316627",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

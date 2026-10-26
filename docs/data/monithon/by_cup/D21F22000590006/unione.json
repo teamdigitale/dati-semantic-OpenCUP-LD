@@ -1,8 +1,9 @@
 {
   "id": "monithon_D21F22000590006",
   "title": "Unione semantica — CUP D21F22000590006",
-  "sparql_note": "Il CUP D21F22000590006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D21F22000590006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "opencup"
@@ -22,6 +23,11 @@
       "source": "https://w3id.org/italia/data/Lot/9545788973",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D21F22000590006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2371534",
+      "target": "https://w3id.org/italia/data/Lot/9545788973",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -54,8 +60,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b8",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "id": "https://w3id.org/italia/data/Award/anac/2371534",
+      "shortId": "2371534",
+      "label": "2371534",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b5",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b5",
       "label": "MIGLIORAMENTO DELL'ESPERIENZA D'USO DEL SITO E DEI SERVIZI D…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -141,8 +154,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/2371534",
+      "target": "https://w3id.org/italia/data/Lot/9545788973",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D21F22000590006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "target": "ne7d28342d6964779bba482cdd32840a0b5",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -156,7 +174,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "source": "ne7d28342d6964779bba482cdd32840a0b5",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -166,7 +184,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "source": "ne7d28342d6964779bba482cdd32840a0b5",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_2",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -176,7 +194,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "source": "ne7d28342d6964779bba482cdd32840a0b5",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_2_1",
       "label": "pi:ha_categoria_intervento"
     },
@@ -186,17 +204,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "source": "ne7d28342d6964779bba482cdd32840a0b5",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "source": "ne7d28342d6964779bba482cdd32840a0b5",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b8",
+      "source": "ne7d28342d6964779bba482cdd32840a0b5",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
       "label": "pi:ha_tipologia_intervento"
     },

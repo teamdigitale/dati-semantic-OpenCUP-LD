@@ -1,11 +1,13 @@
 {
   "id": "monithon_G77H17001640002",
   "title": "Unione semantica — CUP G77H17001640002",
-  "sparql_note": "Il CUP G77H17001640002 è oggetto di report Monithon. Collegato a 7 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G77H17001640002 è oggetto di report Monithon. Collegato a 7 lotti CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9um2211193/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00313820540",
       "label": "pi:ha_soggetto_titolare"
@@ -28,11 +35,6 @@
       "source": "https://indicepa.gov.it/ente/c_a475",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00313820540",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7503334B16",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7504827B26",
@@ -63,6 +65,16 @@
       "source": "https://w3id.org/italia/data/Lot/Z88269AB84",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7503334B16",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1355744",
+      "target": "https://w3id.org/italia/data/Lot/7503334B16",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -88,6 +100,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/9um2211193/",
+      "shortId": "",
+      "label": "DIGIPASS ASSISI - POR FESR 2014-2020 ASSE II 2.2.1.",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00313820540",
       "shortId": "cf:00313820540",
       "label": "COMUNE DI ASSISI - PG -",
@@ -100,13 +119,6 @@
       "label": "Comune di Assisi",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7503334B16",
-      "shortId": "lot:7503334B16",
-      "label": "CIG 7503…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/7504827B26",
@@ -151,8 +163,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1490",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "id": "https://w3id.org/italia/data/Lot/7503334B16",
+      "shortId": "lot:7503334B16",
+      "label": "CIG 7503…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1355744",
+      "shortId": "1355744",
+      "label": "1355744",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1439",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1439",
       "label": "PALAZZO CAPITANO DEL PERDONO ED IMMOBILE EX ICAP*VIA FRAZ. S…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -233,6 +259,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9um2211193/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00313820540",
       "label": "pi:ha_soggetto_titolare"
@@ -241,11 +272,6 @@
       "source": "https://indicepa.gov.it/ente/c_a475",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00313820540",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7503334B16",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7504827B26",
@@ -278,8 +304,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/7503334B16",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1355744",
+      "target": "https://w3id.org/italia/data/Lot/7503334B16",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G77H17001640002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1439",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -293,7 +329,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1439",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_7",
       "label": "pi:ha_settore_intervento"
     },
@@ -303,7 +339,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1439",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_7_18",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -313,7 +349,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1439",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_7_18_181",
       "label": "pi:ha_categoria_intervento"
     },
@@ -323,17 +359,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1439",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1439",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1490",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1439",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

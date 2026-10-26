@@ -1,11 +1,13 @@
 {
   "id": "monithon_D11H14000160008",
   "title": "Unione semantica — CUP D11H14000160008",
-  "sparql_note": "Il CUP D11H14000160008 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D11H14000160008 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1mise999-1.7_94-piedimonte%20matese/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca16089pp000000004/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82000790616",
       "label": "pi:ha_soggetto_titolare"
@@ -30,14 +42,19 @@
       "label": "owl:sameAs"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/ZF937E5F81",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
+      "label": "PCTR:hasProject"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/61527111BD",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/ZF937E5F81",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
-      "label": "PCTR:hasProject"
+      "source": "https://w3id.org/italia/data/Award/anac/884669",
+      "target": "https://w3id.org/italia/data/Lot/61527111BD",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -52,7 +69,7 @@
       "id": "https://it.monithon.eu/report/view/1327",
       "shortId": "1327",
       "label": "1327",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -61,6 +78,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1mise999-1.7_94-piedimonte%20matese/",
+      "shortId": "",
+      "label": "DIP 53 - DGR 100/2014 - Lavori di recupero dell?ex Macello C…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/9ca16089pp000000004/",
+      "shortId": "",
+      "label": "Lavori di recupero, riqualificazione strutturale e funzional…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/82000790616",
@@ -77,13 +108,6 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/61527111BD",
-      "shortId": "lot:61527111BD",
-      "label": "CIG 6152…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
       "id": "https://w3id.org/italia/data/Lot/ZF937E5F81",
       "shortId": "lot:ZF937E5F81",
       "label": "CIG ZF93…",
@@ -91,8 +115,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b962",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "id": "https://w3id.org/italia/data/Lot/61527111BD",
+      "shortId": "lot:61527111BD",
+      "label": "CIG 6152…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/884669",
+      "shortId": "884669",
+      "label": "884669",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1235",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1235",
       "label": "IMMOBILE EX MACELLO COMUNALE ALLA VIA CASO*VIA G. CASO*RECUP…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -180,6 +218,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1mise999-1.7_94-piedimonte%20matese/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca16089pp000000004/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82000790616",
       "label": "pi:ha_soggetto_titolare"
@@ -190,18 +238,23 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/61527111BD",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/ZF937E5F81",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/61527111BD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/884669",
+      "target": "https://w3id.org/italia/data/Lot/61527111BD",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D11H14000160008",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1235",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -220,7 +273,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1235",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -230,7 +283,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1235",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_33",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -240,7 +293,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1235",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_33_3",
       "label": "pi:ha_categoria_intervento"
     },
@@ -250,17 +303,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1235",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1235",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b962",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1235",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

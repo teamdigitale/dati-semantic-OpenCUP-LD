@@ -1,10 +1,11 @@
 {
   "id": "monithon_H21B23000530007",
   "title": "Unione semantica — CUP H21B23000530007",
-  "sparql_note": "Il CUP H21B23000530007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP H21B23000530007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -29,6 +30,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/h21b23000530007---ithr0200324/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H21B23000530007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H21B23000530007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
       "label": "pi:ha_soggetto_titolare"
@@ -51,7 +57,7 @@
       "id": "https://it.monithon.eu/report/view/2348",
       "shortId": "2348",
       "label": "2348",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -69,6 +75,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/h21b23000530007---ithr0200324/",
+      "shortId": "",
+      "label": "TESTEAT",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
       "shortId": "cf:80007580279",
       "label": "REGIONE VENETO",
@@ -83,8 +96,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1040",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "id": "ne7d28342d6964779bba482cdd32840a0b929",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b929",
       "label": "CIVIFORM SOC. COOP. SOCIALE*FARE DELL'OFFERTA TURISTICA ENOG…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -182,6 +195,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/h21b23000530007---ithr0200324/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H21B23000530007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H21B23000530007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
       "label": "pi:ha_soggetto_titolare"
@@ -193,7 +211,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H21B23000530007",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "target": "ne7d28342d6964779bba482cdd32840a0b929",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -212,7 +230,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "source": "ne7d28342d6964779bba482cdd32840a0b929",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_11",
       "label": "pi:ha_settore_intervento"
     },
@@ -222,7 +240,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "source": "ne7d28342d6964779bba482cdd32840a0b929",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_11_72",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -232,7 +250,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "source": "ne7d28342d6964779bba482cdd32840a0b929",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_11_72_5",
       "label": "pi:ha_categoria_intervento"
     },
@@ -242,17 +260,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "source": "ne7d28342d6964779bba482cdd32840a0b929",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "source": "ne7d28342d6964779bba482cdd32840a0b929",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/07",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1040",
+      "source": "ne7d28342d6964779bba482cdd32840a0b929",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/07_99",
       "label": "pi:ha_tipologia_intervento"
     },

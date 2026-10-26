@@ -1,0 +1,66 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1706391",
+      "shortId": "1706391",
+      "label": "1706391",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2375989",
+      "shortId": "2375989",
+      "label": "2375989",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2136384",
+      "shortId": "2136384",
+      "label": "2136384",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/74384757C0",
+      "shortId": "lot:74384757C0",
+      "label": "CIG 7438…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9108464E43",
+      "shortId": "lot:9108464E43",
+      "label": "CIG 9108…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/875860557E",
+      "shortId": "lot:875860557E",
+      "label": "\"PROCEDURA APERTA SOPRA SOGLIA COMUNITARIA IN MODALITA\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1706391",
+      "target": "https://w3id.org/italia/data/Lot/74384757C0",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2375989",
+      "target": "https://w3id.org/italia/data/Lot/9108464E43",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2136384",
+      "target": "https://w3id.org/italia/data/Lot/875860557E",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

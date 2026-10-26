@@ -1,12 +1,15 @@
 {
   "id": "monithon_H64E23000100006",
   "title": "Unione semantica — CUP H64E23000100006",
-  "sparql_note": "Il CUP H64E23000100006 è oggetto di report Monithon. Collegato a 9 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP H64E23000100006 è oggetto di report Monithon. Collegato a 9 lotti CIG ANAC, a 5 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -20,6 +23,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca23008bp000000010/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/h64e23000100006---cam_fdr_062---1317415121/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/06798201213",
       "label": "pi:ha_soggetto_titolare"
@@ -30,34 +43,14 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/9902212BD6",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/9902319425",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/9902346A6B",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/9902372FDE",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/A00EEF95AD",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
+      "source": "https://w3id.org/italia/data/ContractNotice/2060957",
+      "target": "https://w3id.org/italia/data/Lot/A00EEF95AD",
+      "label": "PCTR:hasLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/A00EF26ACE",
@@ -65,14 +58,104 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/ContractNotice/2060957",
+      "target": "https://w3id.org/italia/data/Lot/A00EF26ACE",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/A0201256A5",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/ContractNotice/2101826",
+      "target": "https://w3id.org/italia/data/Lot/A0201256A5",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/A0201353DA",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/2101826",
+      "target": "https://w3id.org/italia/data/Lot/A0201353DA",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2615794",
+      "target": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983306",
+      "target": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902319425",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616157",
+      "target": "https://w3id.org/italia/data/Lot/9902319425",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983457",
+      "target": "https://w3id.org/italia/data/Lot/9902319425",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616171",
+      "target": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983457",
+      "target": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616163",
+      "target": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983457",
+      "target": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2667236",
+      "target": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/2052788",
+      "target": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "label": "PCTR:hasLot"
     }
   ],
   "nodes": [
@@ -87,7 +170,7 @@
       "id": "https://it.monithon.eu/report/view/2007",
       "shortId": "2007",
       "label": "2007",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -96,6 +179,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/9ca23008bp000000010/",
+      "shortId": "",
+      "label": "Potenziamento aree diagnostiche e chirurgiche post - COVID -…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/h64e23000100006---cam_fdr_062---1317415121/",
+      "shortId": "",
+      "label": "Potenziamento aree diagnostiche e chirurgiche post - COVID",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/06798201213",
@@ -112,34 +209,6 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/9902212BD6",
-      "shortId": "lot:9902212BD6",
-      "label": "\"Fornitura in acquisto di 20 apparecchi per anestesia da des…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/9902319425",
-      "shortId": "lot:9902319425",
-      "label": "\"Lotto 1 - Fornitura di un'apparecchiatura Angio-OCT-FAG int…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/9902346A6B",
-      "shortId": "lot:9902346A6B",
-      "label": "\"Lotto 2 - Fornitura di un microscopio operatorio per ORL\"",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/9902372FDE",
-      "shortId": "lot:9902372FDE",
-      "label": "\"Lotto 3 - Fornitura di due portatili digitali per radiograf…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
       "id": "https://w3id.org/italia/data/Lot/A00EEF95AD",
       "shortId": "lot:A00EEF95AD",
       "label": "\"Lotto 1 - Fornitura di 3 sistemi di circolazione extra-corp…",
@@ -147,11 +216,11 @@
       "dataset": "cupcig"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
-      "shortId": "lot:A00EEFE9CC",
-      "label": "\"Fornitura in acquisto di una CARDIO TC\"",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
+      "id": "https://w3id.org/italia/data/ContractNotice/2060957",
+      "shortId": "2060957",
+      "label": "\"Fornitura di sistemi per circolazione extra-corporea.\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/A00EF26ACE",
@@ -168,6 +237,13 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/ContractNotice/2101826",
+      "shortId": "2101826",
+      "label": "\"POR CAMPANIA FESR 2014 - 2020. Progetto 'Potenziamento aree…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/A0201353DA",
       "shortId": "lot:A0201353DA",
       "label": "\"Lotto 2 - n. 5 colonne laparoscopiche da destinare alle sal…",
@@ -175,8 +251,99 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1583",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "id": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "shortId": "lot:9902212BD6",
+      "label": "\"Fornitura in acquisto di 20 apparecchi per anestesia da des…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2615794",
+      "shortId": "2615794",
+      "label": "2615794",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1983306",
+      "shortId": "1983306",
+      "label": "\"Fornitura in acquisto di 20 apparecchi per anestesia da des…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9902319425",
+      "shortId": "lot:9902319425",
+      "label": "\"Lotto 1 - Fornitura di un'apparecchiatura Angio-OCT-FAG int…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2616157",
+      "shortId": "2616157",
+      "label": "2616157",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1983457",
+      "shortId": "1983457",
+      "label": "\"Fornitura in acquisto di un ANGIO-OCT-FAG integrato, un mic…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "shortId": "lot:9902346A6B",
+      "label": "\"Lotto 2 - Fornitura di un microscopio operatorio per ORL\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2616171",
+      "shortId": "2616171",
+      "label": "2616171",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "shortId": "lot:9902372FDE",
+      "label": "\"Lotto 3 - Fornitura di due portatili digitali per radiograf…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2616163",
+      "shortId": "2616163",
+      "label": "2616163",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "shortId": "lot:A00EEFE9CC",
+      "label": "\"Fornitura in acquisto di una CARDIO TC\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2667236",
+      "shortId": "2667236",
+      "label": "2667236",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/2052788",
+      "shortId": "2052788",
+      "label": "\"Fornitura in acquisto di una CARDIO TC\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1643",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1643",
       "label": "POTENZIAMENTO AREE DIAGNOSTICHE E CHIRURGICHE POST-COVID*VIA…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -257,6 +424,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca23008bp000000010/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/h64e23000100006---cam_fdr_062---1317415121/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/06798201213",
       "label": "pi:ha_soggetto_titolare"
@@ -267,34 +444,14 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/9902212BD6",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/9902319425",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/9902346A6B",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/9902372FDE",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/A00EEF95AD",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "label": "PCTR:hasProject"
+      "source": "https://w3id.org/italia/data/ContractNotice/2060957",
+      "target": "https://w3id.org/italia/data/Lot/A00EEF95AD",
+      "label": "PCTR:hasLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/A00EF26ACE",
@@ -302,9 +459,19 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/ContractNotice/2060957",
+      "target": "https://w3id.org/italia/data/Lot/A00EF26ACE",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/A0201256A5",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/2101826",
+      "target": "https://w3id.org/italia/data/Lot/A0201256A5",
+      "label": "PCTR:hasLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/A0201353DA",
@@ -312,8 +479,88 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/ContractNotice/2101826",
+      "target": "https://w3id.org/italia/data/Lot/A0201353DA",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2615794",
+      "target": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983306",
+      "target": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902319425",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616157",
+      "target": "https://w3id.org/italia/data/Lot/9902319425",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983457",
+      "target": "https://w3id.org/italia/data/Lot/9902319425",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616171",
+      "target": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983457",
+      "target": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616163",
+      "target": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1983457",
+      "target": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2667236",
+      "target": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/2052788",
+      "target": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H64E23000100006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1643",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -327,7 +574,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1643",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -337,7 +584,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1643",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_30",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -347,7 +594,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1643",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_30_111",
       "label": "pi:ha_categoria_intervento"
     },
@@ -357,17 +604,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1643",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1643",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/01",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1583",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1643",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01_00",
       "label": "pi:ha_tipologia_intervento"
     },

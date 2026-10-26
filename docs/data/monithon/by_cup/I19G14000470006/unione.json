@@ -1,10 +1,11 @@
 {
   "id": "monithon_I19G14000470006",
   "title": "Unione semantica — CUP I19G14000470006",
-  "sparql_note": "Il CUP I19G14000470006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP I19G14000470006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/74",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca507c122007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I19G14000470006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I19G14000470006",
@@ -57,6 +63,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca507c122007it161po009/",
+      "shortId": "",
+      "label": "DIP. 53 - DGR 344/2014 - Risanamento Conservativo Chiesa San…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "shortId": "cf:soggetto%20privato",
       "label": "soggetto privato",
@@ -78,8 +91,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1055",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "id": "ne7d28342d6964779bba482cdd32840a0b941",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b941",
       "label": "CHIESA S.MARIA ASSUNTA  – PARROCCHIA DI S.MARIA ASSUNTA IN A…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -160,6 +173,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca507c122007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I19G14000470006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I19G14000470006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "label": "pi:ha_soggetto_titolare"
@@ -176,7 +194,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I19G14000470006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "target": "ne7d28342d6964779bba482cdd32840a0b941",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -190,7 +208,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "source": "ne7d28342d6964779bba482cdd32840a0b941",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -200,7 +218,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "source": "ne7d28342d6964779bba482cdd32840a0b941",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_31",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -210,7 +228,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "source": "ne7d28342d6964779bba482cdd32840a0b941",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_31_1",
       "label": "pi:ha_categoria_intervento"
     },
@@ -220,17 +238,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "source": "ne7d28342d6964779bba482cdd32840a0b941",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "source": "ne7d28342d6964779bba482cdd32840a0b941",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1055",
+      "source": "ne7d28342d6964779bba482cdd32840a0b941",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

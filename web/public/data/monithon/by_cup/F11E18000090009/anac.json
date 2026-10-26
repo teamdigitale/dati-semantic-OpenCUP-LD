@@ -1,0 +1,104 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2851266",
+      "shortId": "2851266",
+      "label": "2851266",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2524614",
+      "shortId": "2524614",
+      "label": "2524614",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2524648",
+      "shortId": "2524648",
+      "label": "2524648",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2564012",
+      "shortId": "2564012",
+      "label": "2564012",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2528821",
+      "shortId": "2528821",
+      "label": "2528821",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A06337C967",
+      "shortId": "lot:A06337C967",
+      "label": "CIG A063…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9433922EB3",
+      "shortId": "lot:9433922EB3",
+      "label": "\"Lotto Prestazionale 1: Servizi di Progettazione e Coordinam…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/943396308D",
+      "shortId": "lot:943396308D",
+      "label": "\"Lotto Prestazionale 2: Servizi di verifica della progettazi…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9434043291",
+      "shortId": "lot:9434043291",
+      "label": "\"Lotto Prestazionale 3: Lavori\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9434063312",
+      "shortId": "lot:9434063312",
+      "label": "\"Lotto Prestazionale 4: Collaudo\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2851266",
+      "target": "https://w3id.org/italia/data/Lot/A06337C967",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2524614",
+      "target": "https://w3id.org/italia/data/Lot/9433922EB3",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2524648",
+      "target": "https://w3id.org/italia/data/Lot/943396308D",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2564012",
+      "target": "https://w3id.org/italia/data/Lot/9434043291",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2528821",
+      "target": "https://w3id.org/italia/data/Lot/9434063312",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

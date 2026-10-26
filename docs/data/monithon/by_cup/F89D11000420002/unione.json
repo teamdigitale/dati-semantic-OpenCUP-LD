@@ -1,11 +1,12 @@
 {
   "id": "monithon_F89D11000420002",
   "title": "Unione semantica — CUP F89D11000420002",
-  "sparql_note": "Il CUP F89D11000420002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP F89D11000420002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,16 @@
       "source": "https://it.monithon.eu/report/view/873",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl200209/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F89D11000420002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl238195/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F89D11000420002",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F89D11000420002",
@@ -47,7 +58,7 @@
       "id": "https://it.monithon.eu/report/view/873",
       "shortId": "873",
       "label": "873",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -56,6 +67,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl200209/",
+      "shortId": "",
+      "label": "Realizzazione di un parcheggio interrato in piazza C. Bilott…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl238195/",
+      "shortId": "",
+      "label": "Realizzazione di un parcheggio interrato in piazza C. Bilott…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00347720781",
@@ -79,8 +104,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b740",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1175",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1175",
       "label": "PIAZZA C. BILOTTI*PIAZZA C. BILOTTI*REALIZZAZIONE DI UN PARC…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -161,6 +186,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl200209/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F89D11000420002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl238195/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F89D11000420002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F89D11000420002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00347720781",
       "label": "pi:ha_soggetto_titolare"
@@ -177,7 +212,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F89D11000420002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1175",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -191,7 +226,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1175",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -201,7 +236,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1175",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -211,7 +246,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1175",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -221,17 +256,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1175",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1175",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b740",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1175",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

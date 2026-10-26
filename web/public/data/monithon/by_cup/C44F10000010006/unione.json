@@ -1,11 +1,13 @@
 {
   "id": "monithon_C44F10000010006",
   "title": "Unione semantica — CUP C44F10000010006",
-  "sparql_note": "Il CUP C44F10000010006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C44F10000010006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +20,11 @@
       "source": "https://it.monithon.eu/report/view/257",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si6941/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C44F10000010006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C44F10000010006",
@@ -35,9 +42,19 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/182601",
+      "target": "https://w3id.org/italia/data/Lot/23628952A3",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/3434237605",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C44F10000010006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/319560",
+      "target": "https://w3id.org/italia/data/Lot/3434237605",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -63,6 +80,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si6941/",
+      "shortId": "",
+      "label": "ACIREALE - Lavori di riqualificazione della villa Belvedere …",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/81000970871",
       "shortId": "cf:81000970871",
       "label": "COMUNE DI ACIREALE - CT -",
@@ -84,6 +108,13 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Award/anac/182601",
+      "shortId": "182601",
+      "label": "182601",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/3434237605",
       "shortId": "lot:3434237605",
       "label": "CIG 3434…",
@@ -91,8 +122,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b941",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "id": "https://w3id.org/italia/data/Award/anac/319560",
+      "shortId": "319560",
+      "label": "319560",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b848",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b848",
       "label": "GIARDINO BELVEDERE*PIAZZA INDIRIZZO*RIQUALIFICAZIONE DEL GIR…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -173,6 +211,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si6941/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C44F10000010006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C44F10000010006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000970871",
       "label": "pi:ha_soggetto_titolare"
@@ -188,13 +231,23 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/182601",
+      "target": "https://w3id.org/italia/data/Lot/23628952A3",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/3434237605",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C44F10000010006",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/319560",
+      "target": "https://w3id.org/italia/data/Lot/3434237605",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C44F10000010006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "target": "ne7d28342d6964779bba482cdd32840a0b848",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -208,7 +261,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "source": "ne7d28342d6964779bba482cdd32840a0b848",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -218,7 +271,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "source": "ne7d28342d6964779bba482cdd32840a0b848",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_12",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -228,7 +281,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "source": "ne7d28342d6964779bba482cdd32840a0b848",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_12_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -238,17 +291,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "source": "ne7d28342d6964779bba482cdd32840a0b848",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "source": "ne7d28342d6964779bba482cdd32840a0b848",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b941",
+      "source": "ne7d28342d6964779bba482cdd32840a0b848",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
       "label": "pi:ha_tipologia_intervento"
     },

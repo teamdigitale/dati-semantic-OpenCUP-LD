@@ -1,0 +1,88 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-02050770813",
+      "shortId": "8209784015-748731-02050770813",
+      "label": "8209784015-748731-02050770813",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-04639280017",
+      "shortId": "8209784015-748731-04639280017",
+      "label": "8209784015-748731-04639280017",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-08897290154",
+      "shortId": "8209784015-748731-08897290154",
+      "label": "8209784015-748731-08897290154",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-LPZGPP72P60E377A",
+      "shortId": "8209784015-748731-LPZGPP72P60E377A",
+      "label": "8209784015-748731-LPZGPP72P60E377A",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-MSSPLA75A21G273N",
+      "shortId": "8209784015-748731-MSSPLA75A21G273N",
+      "label": "8209784015-748731-MSSPLA75A21G273N",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/748731",
+      "shortId": "748731",
+      "label": "\"SERVIZI INTEGRATI DI PROGETTAZIONE DEFINITIVA/ESECUTIVA, DI…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8209784015",
+      "shortId": "lot:8209784015",
+      "label": "\"SERVIZI INTEGRATI DI PROGETTAZIONE DEFINITIVA/ESECUTIVA, DI…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-02050770813",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-04639280017",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-08897290154",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-LPZGPP72P60E377A",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-MSSPLA75A21G273N",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/748731",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

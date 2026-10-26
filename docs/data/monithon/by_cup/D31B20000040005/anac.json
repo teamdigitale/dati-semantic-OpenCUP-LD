@@ -1,0 +1,104 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2500723",
+      "shortId": "2500723",
+      "label": "2500723",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/10690731",
+      "shortId": "10690731",
+      "label": "10690731",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/15008155",
+      "shortId": "15008155",
+      "label": "15008155",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/15494143",
+      "shortId": "15494143",
+      "label": "15494143",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/19110813",
+      "shortId": "19110813",
+      "label": "19110813",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/95819657A8",
+      "shortId": "lot:95819657A8",
+      "label": "CIG 9581…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B0B392B507",
+      "shortId": "lot:B0B392B507",
+      "label": "CIG B0B3…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B57A531335",
+      "shortId": "lot:B57A531335",
+      "label": "CIG B57A…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B5F9B911FF",
+      "shortId": "lot:B5F9B911FF",
+      "label": "CIG B5F9…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B9A22D8971",
+      "shortId": "lot:B9A22D8971",
+      "label": "CIG B9A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2500723",
+      "target": "https://w3id.org/italia/data/Lot/95819657A8",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/10690731",
+      "target": "https://w3id.org/italia/data/Lot/B0B392B507",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/15008155",
+      "target": "https://w3id.org/italia/data/Lot/B57A531335",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/15494143",
+      "target": "https://w3id.org/italia/data/Lot/B5F9B911FF",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/19110813",
+      "target": "https://w3id.org/italia/data/Lot/B9A22D8971",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

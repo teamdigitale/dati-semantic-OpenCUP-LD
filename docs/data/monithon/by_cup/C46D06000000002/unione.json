@@ -1,10 +1,11 @@
 {
   "id": "monithon_C46D06000000002",
   "title": "Unione semantica — CUP C46D06000000002",
-  "sparql_note": "Il CUP C46D06000000002 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C46D06000000002 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,16 @@
       "source": "https://it.monithon.eu/report/view/1672",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca25c102007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C46D06000000002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1mise999-1.7_25-valva/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C46D06000000002",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C46D06000000002",
@@ -41,7 +52,7 @@
       "id": "https://it.monithon.eu/report/view/1672",
       "shortId": "1672",
       "label": "1672",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -50,6 +61,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca25c102007it161po009/",
+      "shortId": "",
+      "label": "\"TRASFORMAZIONE DELLA EX CHIESA DELLA CONGREGAZIONE IN SALA …",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1mise999-1.7_25-valva/",
+      "shortId": "",
+      "label": "TRASFORMAZIONE DELLA EX CHIESA DELLA CONGREGAZIONE IN SALA P…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/82004670657",
@@ -66,8 +91,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b116",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1016",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1016",
       "label": "TRASFORMAZIONE DELLA EX CHIESA DELLA CONGREGAZIONE IN SALA P…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +173,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca25c102007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C46D06000000002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1mise999-1.7_25-valva/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C46D06000000002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C46D06000000002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82004670657",
       "label": "pi:ha_soggetto_titolare"
@@ -159,7 +194,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C46D06000000002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1016",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +208,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1016",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +218,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1016",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +228,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1016",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_96",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +238,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1016",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1016",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b116",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1016",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

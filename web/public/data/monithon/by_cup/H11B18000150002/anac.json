@@ -1,0 +1,104 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1552003",
+      "shortId": "1552003",
+      "label": "1552003",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1539783",
+      "shortId": "1539783",
+      "label": "1539783",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2162373",
+      "shortId": "2162373",
+      "label": "2162373",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2553558",
+      "shortId": "2553558",
+      "label": "2553558",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2252703",
+      "shortId": "2252703",
+      "label": "2252703",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7445179412",
+      "shortId": "lot:7445179412",
+      "label": "CIG 7445…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/744520270C",
+      "shortId": "lot:744520270C",
+      "label": "CIG 7445…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8828622958",
+      "shortId": "lot:8828622958",
+      "label": "\"GL21005_F04218 - Procedura aperta per l'affidamento dei lav…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9368922703",
+      "shortId": "lot:9368922703",
+      "label": "\"APPROVAZIONE DEL PREVENTIVO EMESSO DA UNARETI S.P.A. PER LA…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8864419DF5",
+      "shortId": "lot:8864419DF5",
+      "label": "\"Lotto 1 - Collaudo Rotatoria BG\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1552003",
+      "target": "https://w3id.org/italia/data/Lot/7445179412",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1539783",
+      "target": "https://w3id.org/italia/data/Lot/744520270C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2162373",
+      "target": "https://w3id.org/italia/data/Lot/8828622958",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2553558",
+      "target": "https://w3id.org/italia/data/Lot/9368922703",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2252703",
+      "target": "https://w3id.org/italia/data/Lot/8864419DF5",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

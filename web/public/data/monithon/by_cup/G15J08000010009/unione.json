@@ -1,10 +1,11 @@
 {
   "id": "monithon_G15J08000010009",
   "title": "Unione semantica — CUP G15J08000010009",
-  "sparql_note": "Il CUP G15J08000010009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G15J08000010009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 5 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -29,6 +30,31 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a78289416/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a78643329/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a80934991/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a80992397/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1lolombgefo-00000000000008080229/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82001030186",
       "label": "pi:ha_soggetto_titolare"
@@ -51,7 +77,7 @@
       "id": "https://it.monithon.eu/report/view/1459",
       "shortId": "1459",
       "label": "1459",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -65,8 +91,43 @@
       "id": "https://it.monithon.eu/report/view/2278",
       "shortId": "2278",
       "label": "2278",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a78289416/",
+      "shortId": "",
+      "label": "LOM7534-A78289416",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a78643329/",
+      "shortId": "",
+      "label": "LOM7534-A78643329",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a80934991/",
+      "shortId": "",
+      "label": "LOM7534-A80934991",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a80992397/",
+      "shortId": "",
+      "label": "LOM7534-A80992397",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1lolombgefo-00000000000008080229/",
+      "shortId": "",
+      "label": "IMPIANTO DI ILLUMINAZIONE PUBBLICA ORNAMENTALE",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/82001030186",
@@ -83,8 +144,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1004",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1673",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1673",
       "label": "VIA CASTELLONE, VIA CASTELLO, VIALE VITTORIO VENETO*VIA CAST…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -182,6 +243,31 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a78289416/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a78643329/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a80934991/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1anpallom7534-a80992397/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1lolombgefo-00000000000008080229/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82001030186",
       "label": "pi:ha_soggetto_titolare"
@@ -193,7 +279,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G15J08000010009",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1673",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -212,7 +298,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1673",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_3",
       "label": "pi:ha_settore_intervento"
     },
@@ -222,7 +308,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1673",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_3_16",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -232,7 +318,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1673",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_3_16_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -242,17 +328,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1673",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1673",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1004",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1673",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

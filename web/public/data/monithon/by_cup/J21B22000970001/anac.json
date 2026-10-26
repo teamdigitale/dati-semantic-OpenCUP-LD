@@ -1,0 +1,66 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/10108648",
+      "shortId": "10108648",
+      "label": "10108648",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/18432119",
+      "shortId": "18432119",
+      "label": "18432119",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2377018",
+      "shortId": "2377018",
+      "label": "2377018",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B01BD3CCE8",
+      "shortId": "lot:B01BD3CCE8",
+      "label": "CIG B01B…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B8F2A59482",
+      "shortId": "lot:B8F2A59482",
+      "label": "CIG B8F2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9498986B37",
+      "shortId": "lot:9498986B37",
+      "label": "\"COLLEGAMENTO DELL'ASSE ATTREZZATO DI PESCARA AL PORTO E ADE…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/10108648",
+      "target": "https://w3id.org/italia/data/Lot/B01BD3CCE8",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/18432119",
+      "target": "https://w3id.org/italia/data/Lot/B8F2A59482",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2377018",
+      "target": "https://w3id.org/italia/data/Lot/9498986B37",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

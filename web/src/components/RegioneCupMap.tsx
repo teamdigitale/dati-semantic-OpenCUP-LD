@@ -182,14 +182,27 @@ function resolveValue(
   return cupsPerPilMld(raw, pilMlnEuro(ind));
 }
 
-/** Fallback: build region cups map from legacy chart if map_territory missing. */
-function legacyFromChart(chart: ChartData | null): MapTerritoryData | null {
+const SKIP_REGION_LABELS = new Set(["N/D", "ND", "TUTTE", "TUTTI", ""]);
+
+/** Build region metrics from chart labels (and optional euro chart). */
+function legacyFromChart(
+  chart: ChartData | null,
+  euroChart?: ChartData | null
+): MapTerritoryData | null {
   if (!chart) return null;
+  const euroByRegion = new Map<string, number>();
+  euroChart?.labels.forEach((lab, i) => {
+    euroByRegion.set(normalizeRegion(lab), euroChart.series[0]?.data[i] ?? 0);
+  });
   const regioni: Record<string, TerritoryMetrics> = {};
   chart.labels.forEach((lab, i) => {
-    regioni[normalizeRegion(lab)] = {
+    const raw = (lab || "").trim().toUpperCase();
+    if (SKIP_REGION_LABELS.has(raw)) return;
+    const key = normalizeRegion(lab);
+    if (!key || SKIP_REGION_LABELS.has(key)) return;
+    regioni[key] = {
       cups: chart.series[0]?.data[i] ?? 0,
-      cup_euro: 0,
+      cup_euro: euroByRegion.get(key) ?? 0,
       cigs: 0,
       cig_euro: 0,
     };
@@ -197,7 +210,19 @@ function legacyFromChart(chart: ChartData | null): MapTerritoryData | null {
   return { source: "cups_by_regione", regioni, province: {}, comuni: {} };
 }
 
-export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
+export function RegioneCupMap({
+  chart,
+  euroChart = null,
+  preferChart = false,
+  footerNote,
+}: {
+  chart: ChartData | null;
+  /** Optional euro amounts by region (same labels as chart). */
+  euroChart?: ChartData | null;
+  /** If true, use chart data only (ignore national map_territory.json). */
+  preferChart?: boolean;
+  footerNote?: string;
+}) {
   const [regGeo, setRegGeo] = useState<FeatureCollection | null>(null);
   const [provGeo, setProvGeo] = useState<FeatureCollection | null>(null);
   const [comGeo, setComGeo] = useState<FeatureCollection | null>(null);
@@ -205,7 +230,7 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
   const [territory, setTerritory] = useState<MapTerritoryData | null>(null);
   const [zoom, setZoom] = useState(5);
   const [levelOverride, setLevelOverride] = useState<"auto" | TerritoryLevel>(
-    "auto"
+    preferChart ? "regione" : "auto"
   );
   const [entity, setEntity] = useState<EntityKind>("cup");
   const [valueKind, setValueKind] = useState<ValueKind>("count");
@@ -217,6 +242,16 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
       .then((r) => r.json())
       .then(setRegGeo)
       .catch(() => setRegGeo(null));
+    fetch(IND_URL)
+      .then((r) => r.json())
+      .then(setIndicators)
+      .catch(() => setIndicators(null));
+
+    if (preferChart) {
+      setTerritory(legacyFromChart(chart, euroChart));
+      return;
+    }
+
     fetch(GEO_PROV)
       .then((r) => r.json())
       .then(setProvGeo)
@@ -228,15 +263,11 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
         setComGeo(topoFeature(topo, obj) as FeatureCollection);
       })
       .catch(() => setComGeo(null));
-    fetch(IND_URL)
-      .then((r) => r.json())
-      .then(setIndicators)
-      .catch(() => setIndicators(null));
     fetch(MAP_URL)
       .then((r) => (r.ok ? r.json() : null))
-      .then((d) => setTerritory(d ?? legacyFromChart(chart)))
-      .catch(() => setTerritory(legacyFromChart(chart)));
-  }, [chart]);
+      .then((d) => setTerritory(d ?? legacyFromChart(chart, euroChart)))
+      .catch(() => setTerritory(legacyFromChart(chart, euroChart)));
+  }, [chart, euroChart, preferChart]);
 
   const wantedLevel: TerritoryLevel =
     levelOverride === "auto" ? levelFromZoom(zoom) : levelOverride;
@@ -347,16 +378,23 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
     );
   };
 
+  const entityButtons = preferChart
+    ? ([["cup", mappa.entity.cup]] as const)
+    : ([["cup", mappa.entity.cup], ["cig", mappa.entity.cig]] as const);
+  const levelButtons = preferChart
+    ? ([["regione", mappa.level.regione]] as const)
+    : ([
+        ["auto", mappa.level.auto],
+        ["regione", mappa.level.regione],
+        ["provincia", mappa.level.provincia],
+        ["comune", mappa.level.comune],
+      ] as const);
+
   return (
     <div className="regione-map-wrap">
       <div className="regione-map-toolbar">
         <div className="btn-group" role="group" aria-label={mappa.aria.entity}>
-          {(
-            [
-              ["cup", mappa.entity.cup],
-              ["cig", mappa.entity.cig],
-            ] as const
-          ).map(([id, label]) => (
+          {entityButtons.map(([id, label]) => (
             <button
               key={id}
               type="button"
@@ -384,25 +422,20 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
             </button>
           ))}
         </div>
-        <div className="btn-group" role="group" aria-label={mappa.aria.level}>
-          {(
-            [
-              ["auto", mappa.level.auto],
-              ["regione", mappa.level.regione],
-              ["provincia", mappa.level.provincia],
-              ["comune", mappa.level.comune],
-            ] as const
-          ).map(([id, label]) => (
-            <button
-              key={id}
-              type="button"
-              className={`btn btn-sm ${levelOverride === id ? "btn-primary" : "btn-outline-primary"}`}
-              onClick={() => setLevelOverride(id)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+        {!preferChart ? (
+          <div className="btn-group" role="group" aria-label={mappa.aria.level}>
+            {levelButtons.map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                className={`btn btn-sm ${levelOverride === id ? "btn-primary" : "btn-outline-primary"}`}
+                onClick={() => setLevelOverride(id)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        ) : null}
         {level === "regione" ? (
           <div className="btn-group" role="group" aria-label={mappa.aria.scale}>
             {(
@@ -451,21 +484,27 @@ export function RegioneCupMap({ chart }: { chart: ChartData | null }) {
         <ZoomWatcher onZoom={setZoom} />
       </MapContainer>
       <p className="small text-secondary mt-2 mb-0">
-        {mappa.footer.level_prefix}
-        <strong>{level}</strong>
-        {levelOverride === "auto"
-          ? mappa.footer.zoom_auto.replace("{zoom}", zoom.toFixed(0))
-          : null}
-        .{" "}
-        {valueKind === "count"
-          ? mappa.footer.colors_count.replace(
-              "{entity}",
-              entity === "cup" ? mappa.entity.cup : mappa.entity.cig
-            )
-          : entity === "cup"
-            ? mappa.footer.colors_cup_euro
-            : mappa.footer.colors_cig_euro}{" "}
-        {mappa.footer.borders}
+        {footerNote ? (
+          footerNote
+        ) : (
+          <>
+            {mappa.footer.level_prefix}
+            <strong>{level}</strong>
+            {levelOverride === "auto"
+              ? mappa.footer.zoom_auto.replace("{zoom}", zoom.toFixed(0))
+              : null}
+            .{" "}
+            {valueKind === "count"
+              ? mappa.footer.colors_count.replace(
+                  "{entity}",
+                  entity === "cup" ? mappa.entity.cup : mappa.entity.cig
+                )
+              : entity === "cup"
+                ? mappa.footer.colors_cup_euro
+                : mappa.footer.colors_cig_euro}{" "}
+            {mappa.footer.borders}
+          </>
+        )}
       </p>
     </div>
   );

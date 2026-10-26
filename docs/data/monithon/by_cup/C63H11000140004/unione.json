@@ -1,11 +1,13 @@
 {
   "id": "monithon_C63H11000140004",
   "title": "Unione semantica — CUP C63H11000140004",
-  "sparql_note": "Il CUP C63H11000140004 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C63H11000140004 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -40,6 +42,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si15090/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C63H11000140004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C63H11000140004",
       "target": "https://w3id.org/italia/data/CodiceFiscale/02482390842",
       "label": "pi:ha_soggetto_titolare"
@@ -55,9 +62,19 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/704574",
+      "target": "https://w3id.org/italia/data/Lot/609491749E",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/6097041D63",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C63H11000140004",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/704125",
+      "target": "https://w3id.org/italia/data/Lot/6097041D63",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -72,7 +89,7 @@
       "id": "https://it.monithon.eu/report/view/1093",
       "shortId": "1093",
       "label": "1093",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -93,8 +110,15 @@
       "id": "https://it.monithon.eu/report/view/1685",
       "shortId": "1685",
       "label": "1685",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si15090/",
+      "shortId": "",
+      "label": "Licata - Opere per la razionalizzazione del sistema idrico c…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/02482390842",
@@ -118,6 +142,13 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Award/anac/704574",
+      "shortId": "704574",
+      "label": "704574",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/6097041D63",
       "shortId": "lot:6097041D63",
       "label": "CIG 6097…",
@@ -125,8 +156,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1391",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "id": "https://w3id.org/italia/data/Award/anac/704125",
+      "shortId": "704125",
+      "label": "704125",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1310",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1310",
       "label": "SISTEMA IDRICO COMUNALE*COMUNE DI LICATA*OPERE PER LA RAZION…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -234,6 +272,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si15090/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C63H11000140004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C63H11000140004",
       "target": "https://w3id.org/italia/data/CodiceFiscale/02482390842",
       "label": "pi:ha_soggetto_titolare"
@@ -249,13 +292,23 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/704574",
+      "target": "https://w3id.org/italia/data/Lot/609491749E",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/6097041D63",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C63H11000140004",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/704125",
+      "target": "https://w3id.org/italia/data/Lot/6097041D63",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C63H11000140004",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1310",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -274,7 +327,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1310",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -284,7 +337,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1310",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_15",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -294,7 +347,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1310",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_15_118",
       "label": "pi:ha_categoria_intervento"
     },
@@ -304,17 +357,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1310",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1310",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1391",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1310",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

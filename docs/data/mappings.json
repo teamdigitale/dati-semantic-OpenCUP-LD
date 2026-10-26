@@ -15,6 +15,10 @@
     {
       "file": "convert_scp_jsonld.py",
       "dataset": "scp_bandi_esiti"
+    },
+    {
+      "file": "convert_anac_aggiudicazioni_jsonld.py",
+      "dataset": "anac_aggiudicazioni"
     }
   ],
   "fieldMappings": [
@@ -169,6 +173,36 @@
       "scp"
     ],
     [
+      "cig",
+      "lot:{cig} (+ PCTR:Award anac/{id})",
+      "@id lotto = stesso URI CUP↔CIG",
+      "anac"
+    ],
+    [
+      "award_id",
+      "award:anac/{id}",
+      "esito ANAC (senza aggiudicatario)",
+      "anac"
+    ],
+    [
+      "importo",
+      "PCTR:awardAmount",
+      "importo aggiudicazione",
+      "anac"
+    ],
+    [
+      "data_aggiudicazione",
+      "PCTR:awardDate",
+      "data aggiudicazione",
+      "anac"
+    ],
+    [
+      "esito / criterio",
+      "PCTR:awardOutcome / awardCriterion",
+      "esito e criterio",
+      "anac"
+    ],
+    [
       "Codice_IPA",
       "ipa:{IPA}",
       "@id ente",
@@ -229,6 +263,16 @@
         "cupcig"
       ],
       "note": "L'aggiudicazione arricchisce lo stesso Lot/{CIG} con vincitore (CF) e importo."
+    },
+    {
+      "id": "anac_award",
+      "label": "Esito ANAC → Lot (importo/data/esito)",
+      "uri": "PCTR:awardedLot",
+      "datasets": [
+        "anac",
+        "cupcig"
+      ],
+      "note": "L'aggiudicazione ANAC arricchisce lo stesso Lot/{CIG} con importo, data ed esito; non contiene imprese (usare SCP/FOIA)."
     },
     {
       "id": "pnrr_call",

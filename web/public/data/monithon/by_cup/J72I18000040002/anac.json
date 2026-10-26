@@ -1,0 +1,47 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2182528",
+      "shortId": "2182528",
+      "label": "2182528",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2051234",
+      "shortId": "2051234",
+      "label": "2051234",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/86697220ED",
+      "shortId": "lot:86697220ED",
+      "label": "CIG 8669…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/823262838B",
+      "shortId": "lot:823262838B",
+      "label": "\"LAVORI DI RECUPERO DI N. 4 PALAZZINE PER COMPLESSIVI N. 26 …",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2182528",
+      "target": "https://w3id.org/italia/data/Lot/86697220ED",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2051234",
+      "target": "https://w3id.org/italia/data/Lot/823262838B",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

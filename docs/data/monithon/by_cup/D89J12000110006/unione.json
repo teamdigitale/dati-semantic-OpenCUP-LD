@@ -1,10 +1,12 @@
 {
   "id": "monithon_D89J12000110006",
   "title": "Unione semantica — CUP D89J12000110006",
-  "sparql_note": "Il CUP D89J12000110006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP D89J12000110006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -19,6 +21,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa110201ii221asd12040/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D89J12000110006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D89J12000110006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/83000430914",
       "label": "pi:ha_soggetto_titolare"
@@ -27,6 +34,11 @@
       "source": "https://w3id.org/italia/data/Lot/4380240066",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D89J12000110006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/485282",
+      "target": "https://w3id.org/italia/data/Lot/4380240066",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -52,6 +64,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1sa110201ii221asd12040/",
+      "shortId": "",
+      "label": "ISTITUTO TECNICO STATALE COMMERCIALE TURISTICO E PER GEOMETR…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/83000430914",
       "shortId": "cf:83000430914",
       "label": "IST TECNICO COMMERCIALE I.T.C.G. S. SATTA MACOMER - MACOMER …",
@@ -66,8 +85,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b665",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "id": "https://w3id.org/italia/data/Award/anac/485282",
+      "shortId": "485282",
+      "label": "485282",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b605",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b605",
       "label": "ISTITUZIONI SCOLASTICHE DELLA PROVINCIA*VIA S. ANTONIO N. 4*…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +174,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa110201ii221asd12040/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D89J12000110006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D89J12000110006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/83000430914",
       "label": "pi:ha_soggetto_titolare"
@@ -158,8 +189,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/485282",
+      "target": "https://w3id.org/italia/data/Lot/4380240066",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D89J12000110006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "target": "ne7d28342d6964779bba482cdd32840a0b605",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +209,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "source": "ne7d28342d6964779bba482cdd32840a0b605",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +219,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "source": "ne7d28342d6964779bba482cdd32840a0b605",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_33",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +229,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "source": "ne7d28342d6964779bba482cdd32840a0b605",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_33_5",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +239,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "source": "ne7d28342d6964779bba482cdd32840a0b605",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "source": "ne7d28342d6964779bba482cdd32840a0b605",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/01",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b665",
+      "source": "ne7d28342d6964779bba482cdd32840a0b605",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01_00",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,10 +1,12 @@
 {
   "id": "monithon_I47C10000000006",
   "title": "Unione semantica — CUP I47C10000000006",
-  "sparql_note": "Il CUP I47C10000000006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP I47C10000000006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -19,6 +21,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl201574/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I47C10000000006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I47C10000000006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01937260790",
       "label": "pi:ha_soggetto_titolare"
@@ -27,6 +34,11 @@
       "source": "https://w3id.org/italia/data/Lot/1662700770",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I47C10000000006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/277628",
+      "target": "https://w3id.org/italia/data/Lot/1662700770",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -41,7 +53,7 @@
       "id": "https://it.monithon.eu/report/view/717",
       "shortId": "717",
       "label": "717",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -50,6 +62,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl201574/",
+      "shortId": "",
+      "label": "Adegeguamento normativo, riassetto funzionale e distributivo…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/01937260790",
@@ -66,8 +85,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b839",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "id": "https://w3id.org/italia/data/Award/anac/277628",
+      "shortId": "277628",
+      "label": "277628",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b749",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b749",
       "label": "AEROPORTO DI CROTONE AEROSTAZIONE PITAGORA SS 106 LOC. S.ANN…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +174,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl201574/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I47C10000000006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I47C10000000006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01937260790",
       "label": "pi:ha_soggetto_titolare"
@@ -158,8 +189,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/277628",
+      "target": "https://w3id.org/italia/data/Lot/1662700770",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I47C10000000006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "target": "ne7d28342d6964779bba482cdd32840a0b749",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +209,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "source": "ne7d28342d6964779bba482cdd32840a0b749",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +219,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "source": "ne7d28342d6964779bba482cdd32840a0b749",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_2",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +229,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "source": "ne7d28342d6964779bba482cdd32840a0b749",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_2_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +239,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "source": "ne7d28342d6964779bba482cdd32840a0b749",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "source": "ne7d28342d6964779bba482cdd32840a0b749",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b839",
+      "source": "ne7d28342d6964779bba482cdd32840a0b749",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
       "label": "pi:ha_tipologia_intervento"
     },

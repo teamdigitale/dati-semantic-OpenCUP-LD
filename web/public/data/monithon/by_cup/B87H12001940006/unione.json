@@ -1,11 +1,13 @@
 {
   "id": "monithon_B87H12001940006",
   "title": "Unione semantica — CUP B87H12001940006",
-  "sparql_note": "Il CUP B87H12001940006 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP B87H12001940006 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca72c72007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca16030bp000000001/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
       "label": "pi:ha_soggetto_titolare"
@@ -30,16 +42,6 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/5454310EFC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5744764937",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/Z6335A7375",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
       "label": "PCTR:hasProject"
@@ -48,6 +50,26 @@
       "source": "https://w3id.org/italia/data/Lot/Z9B0FA31B8",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5454310EFC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1775390",
+      "target": "https://w3id.org/italia/data/Lot/5454310EFC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5744764937",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1944225",
+      "target": "https://w3id.org/italia/data/Lot/5744764937",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -73,6 +95,20 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca72c72007it161po009/",
+      "shortId": "",
+      "label": "Risanamento ambientale e valorizzazione Regi Lagni",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/9ca16030bp000000001/",
+      "shortId": "",
+      "label": "Risanamento ambientale e valorizzazione dei Regi Lagni - Fas…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
       "shortId": "cf:80011990639",
       "label": "REGIONE CAMPANIA",
@@ -85,20 +121,6 @@
       "label": "Regione Campania",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5454310EFC",
-      "shortId": "lot:5454310EFC",
-      "label": "CIG 5454…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5744764937",
-      "shortId": "lot:5744764937",
-      "label": "CIG 5744…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z6335A7375",
@@ -115,8 +137,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1232",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "id": "https://w3id.org/italia/data/Lot/5454310EFC",
+      "shortId": "lot:5454310EFC",
+      "label": "CIG 5454…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1775390",
+      "shortId": "1775390",
+      "label": "1775390",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5744764937",
+      "shortId": "lot:5744764937",
+      "label": "CIG 5744…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1944225",
+      "shortId": "1944225",
+      "label": "1944225",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1391",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1391",
       "label": "GRANDE PROGETTO RISANAMENTO AMBIENTALE E VALORIZZAZIONE DEI …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -197,6 +247,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca72c72007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca16030bp000000001/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
       "label": "pi:ha_soggetto_titolare"
@@ -205,16 +265,6 @@
       "source": "https://indicepa.gov.it/ente/r_campan",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80011990639",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5454310EFC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5744764937",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z6335A7375",
@@ -227,8 +277,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/5454310EFC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1775390",
+      "target": "https://w3id.org/italia/data/Lot/5454310EFC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5744764937",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1944225",
+      "target": "https://w3id.org/italia/data/Lot/5744764937",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B87H12001940006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1391",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -242,7 +312,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1391",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -252,7 +322,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1391",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_15",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -262,7 +332,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1391",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_15_114",
       "label": "pi:ha_categoria_intervento"
     },
@@ -272,17 +342,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1391",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1391",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1232",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1391",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,0 +1,28 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/748081215B-709263-01588840494",
+      "shortId": "748081215B-709263-01588840494",
+      "label": "748081215B-709263-01588840494",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/748081215B",
+      "shortId": "lot:748081215B",
+      "label": "CIG 7480…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/748081215B-709263-01588840494",
+      "target": "https://w3id.org/italia/data/Lot/748081215B",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

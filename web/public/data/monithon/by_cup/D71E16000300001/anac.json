@@ -1,0 +1,66 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2453911",
+      "shortId": "2453911",
+      "label": "2453911",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2368488",
+      "shortId": "2368488",
+      "label": "2368488",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2646827",
+      "shortId": "2646827",
+      "label": "2646827",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/798131015F",
+      "shortId": "lot:798131015F",
+      "label": "CIG 7981…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8721038C37",
+      "shortId": "lot:8721038C37",
+      "label": "CIG 8721…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "shortId": "lot:9555931BB7",
+      "label": "\"APPALTO INTEGRATO NUOVE LINEEE TRANVIARIE DELLA CITTA' DI P…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2453911",
+      "target": "https://w3id.org/italia/data/Lot/798131015F",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2368488",
+      "target": "https://w3id.org/italia/data/Lot/8721038C37",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2646827",
+      "target": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

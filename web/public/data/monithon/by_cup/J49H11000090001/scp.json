@@ -1,0 +1,131 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/9490049C2B-1946306-93",
+      "shortId": "9490049C2B-1946306-93",
+      "label": "9490049C2B-1946306-93",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9341437DAA-1532668-199",
+      "shortId": "9341437DAA-1532668-199",
+      "label": "9341437DAA-1532668-199",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1532668",
+      "shortId": "1532668",
+      "label": "\"Procedura Aperta, articolata in n.3 (tre) lotti ai sensi de…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/93414876EF-1532668-06967360725",
+      "shortId": "93414876EF-1532668-06967360725",
+      "label": "93414876EF-1532668-06967360725",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9341267164-1532668-02942070802",
+      "shortId": "9341267164-1532668-02942070802",
+      "label": "9341267164-1532668-02942070802",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9341267164-1532668-05961930962",
+      "shortId": "9341267164-1532668-05961930962",
+      "label": "9341267164-1532668-05961930962",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9341267164-1532668-11040080019",
+      "shortId": "9341267164-1532668-11040080019",
+      "label": "9341267164-1532668-11040080019",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9490049C2B",
+      "shortId": "lot:9490049C2B",
+      "label": "CIG 9490…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9341437DAA",
+      "shortId": "lot:9341437DAA",
+      "label": "\"Componente della Commissione di collaudo tecnico-amministra…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/93414876EF",
+      "shortId": "lot:93414876EF",
+      "label": "\"Componente della Commissione di collaudo tecnico-amministra…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9341267164",
+      "shortId": "lot:9341267164",
+      "label": "\"Presidente della Commissione di collaudo tecnico-amministra…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9490049C2B-1946306-93",
+      "target": "https://w3id.org/italia/data/Lot/9490049C2B",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9341437DAA-1532668-199",
+      "target": "https://w3id.org/italia/data/Lot/9341437DAA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1532668",
+      "target": "https://w3id.org/italia/data/Lot/9341437DAA",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/93414876EF-1532668-06967360725",
+      "target": "https://w3id.org/italia/data/Lot/93414876EF",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1532668",
+      "target": "https://w3id.org/italia/data/Lot/93414876EF",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9341267164-1532668-02942070802",
+      "target": "https://w3id.org/italia/data/Lot/9341267164",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9341267164-1532668-05961930962",
+      "target": "https://w3id.org/italia/data/Lot/9341267164",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9341267164-1532668-11040080019",
+      "target": "https://w3id.org/italia/data/Lot/9341267164",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1532668",
+      "target": "https://w3id.org/italia/data/Lot/9341267164",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

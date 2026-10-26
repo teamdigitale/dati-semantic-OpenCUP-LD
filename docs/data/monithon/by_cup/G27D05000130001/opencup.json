@@ -1,7 +1,7 @@
 {
   "dataset": "opencup",
   "coverage": "monithon_hub",
-  "sample_note": "Sottoinsieme opencup dell’hub Monithon-seeded.",
+  "sample_note": "Sottoinsieme opencup del grafo collegato ai report Monithon.",
   "nodes": [
     {
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/G27D05000130001",
@@ -18,8 +18,8 @@
       "dataset": "opencup"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b344",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "id": "ne7d28342d6964779bba482cdd32840a0b311",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b311",
       "label": "PORTO DI PANTELLERIA*AREA PORTUALE*PORTO DI PANTELLERIA(TP) …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -96,7 +96,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G27D05000130001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "target": "ne7d28342d6964779bba482cdd32840a0b311",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -110,7 +110,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "source": "ne7d28342d6964779bba482cdd32840a0b311",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -120,7 +120,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "source": "ne7d28342d6964779bba482cdd32840a0b311",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_4",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -130,7 +130,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "source": "ne7d28342d6964779bba482cdd32840a0b311",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_4_45",
       "label": "pi:ha_categoria_intervento"
     },
@@ -140,17 +140,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "source": "ne7d28342d6964779bba482cdd32840a0b311",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "source": "ne7d28342d6964779bba482cdd32840a0b311",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b344",
+      "source": "ne7d28342d6964779bba482cdd32840a0b311",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
       "label": "pi:ha_tipologia_intervento"
     },

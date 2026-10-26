@@ -1,0 +1,88 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/8275685F4A-788642-01060740774",
+      "shortId": "8275685F4A-788642-01060740774",
+      "label": "8275685F4A-788642-01060740774",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8275685F4A-788642-01105410771",
+      "shortId": "8275685F4A-788642-01105410771",
+      "label": "8275685F4A-788642-01105410771",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8275685F4A-788642-04925801211",
+      "shortId": "8275685F4A-788642-04925801211",
+      "label": "8275685F4A-788642-04925801211",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8275685F4A-788642-80136450584",
+      "shortId": "8275685F4A-788642-80136450584",
+      "label": "8275685F4A-788642-80136450584",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8275685F4A-788642-GNZLCU64L04D527Y",
+      "shortId": "8275685F4A-788642-GNZLCU64L04D527Y",
+      "label": "8275685F4A-788642-GNZLCU64L04D527Y",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/788642",
+      "shortId": "788642",
+      "label": "\"AFFIDAMENTO DEI SERVIZI DI PROGETTAZIONE INTEGRATA E COORDI…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8275685F4A",
+      "shortId": "lot:8275685F4A",
+      "label": "\"Discarica 'Cava Monti' - Maddaloni\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/8275685F4A-788642-01060740774",
+      "target": "https://w3id.org/italia/data/Lot/8275685F4A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8275685F4A-788642-01105410771",
+      "target": "https://w3id.org/italia/data/Lot/8275685F4A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8275685F4A-788642-04925801211",
+      "target": "https://w3id.org/italia/data/Lot/8275685F4A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8275685F4A-788642-80136450584",
+      "target": "https://w3id.org/italia/data/Lot/8275685F4A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8275685F4A-788642-GNZLCU64L04D527Y",
+      "target": "https://w3id.org/italia/data/Lot/8275685F4A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/788642",
+      "target": "https://w3id.org/italia/data/Lot/8275685F4A",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

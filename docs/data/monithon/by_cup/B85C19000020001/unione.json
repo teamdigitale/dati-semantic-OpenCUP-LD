@@ -1,10 +1,11 @@
 {
   "id": "monithon_B85C19000020001",
   "title": "Unione semantica — CUP B85C19000020001",
-  "sparql_note": "Il CUP B85C19000020001 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP B85C19000020001 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -27,6 +28,11 @@
       "source": "https://it.monithon.eu/report/view/982",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si19564/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B85C19000020001",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B85C19000020001",
@@ -65,8 +71,15 @@
       "id": "https://it.monithon.eu/report/view/982",
       "shortId": "982",
       "label": "982",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si19564/",
+      "shortId": "",
+      "label": "MARSALA  - Recupero funzionale e riuso in collegamento con a…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00139550818",
@@ -83,8 +96,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b920",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "id": "ne7d28342d6964779bba482cdd32840a0b827",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b827",
       "label": "IMMOBILE E PIAZZA*PIAZZA DELLA VITTORIA*RECUPERO FUNZIONALE …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -182,6 +195,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si19564/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B85C19000020001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B85C19000020001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00139550818",
       "label": "pi:ha_soggetto_titolare"
@@ -193,7 +211,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B85C19000020001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "target": "ne7d28342d6964779bba482cdd32840a0b827",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -212,7 +230,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "source": "ne7d28342d6964779bba482cdd32840a0b827",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -222,7 +240,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "source": "ne7d28342d6964779bba482cdd32840a0b827",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -232,7 +250,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "source": "ne7d28342d6964779bba482cdd32840a0b827",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -242,17 +260,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "source": "ne7d28342d6964779bba482cdd32840a0b827",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "source": "ne7d28342d6964779bba482cdd32840a0b827",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b920",
+      "source": "ne7d28342d6964779bba482cdd32840a0b827",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,0 +1,40 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/875860557E-1852661-12431501001",
+      "shortId": "875860557E-1852661-12431501001",
+      "label": "875860557E-1852661-12431501001",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1852661",
+      "shortId": "1852661",
+      "label": "\"PROCEDURA APERTA SOPRA SOGLIA COMUNITARIA IN MODALITA\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/875860557E",
+      "shortId": "lot:875860557E",
+      "label": "\"PROCEDURA APERTA SOPRA SOGLIA COMUNITARIA IN MODALITA\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/875860557E-1852661-12431501001",
+      "target": "https://w3id.org/italia/data/Lot/875860557E",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1852661",
+      "target": "https://w3id.org/italia/data/Lot/875860557E",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

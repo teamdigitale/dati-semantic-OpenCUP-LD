@@ -1,0 +1,75 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/912632",
+      "shortId": "912632",
+      "label": "\"Servizio di verifica, finalizzata alla validazione, delle p…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1935806",
+      "shortId": "1935806",
+      "label": "\"LAVORI MESSA IN SICUREZZA GALLERIE\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1150200",
+      "shortId": "1150200",
+      "label": "\"Lavori all'armamento ferroviario sulla Linea Cosenza - Cata…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/91731746A7-1396516-05007570871",
+      "shortId": "91731746A7-1396516-05007570871",
+      "label": "91731746A7-1396516-05007570871",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1396516",
+      "shortId": "1396516",
+      "label": "\"Fornitura di materiale ferroso per armamento ferroviario - …",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1561410",
+      "shortId": "1561410",
+      "label": "\"'Progettazione esecutiva e lavori di costruzione di sovrapp…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1581328",
+      "shortId": "1581328",
+      "label": "\"Appalto integrato relativo ai lavori di 'Eliminazione Di N.…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/91731746A7",
+      "shortId": "lot:91731746A7",
+      "label": "\"Fornitura di materiale ferroso per armamento ferroviario - …",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/91731746A7-1396516-05007570871",
+      "target": "https://w3id.org/italia/data/Lot/91731746A7",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1396516",
+      "target": "https://w3id.org/italia/data/Lot/91731746A7",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

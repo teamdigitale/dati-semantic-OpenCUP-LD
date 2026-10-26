@@ -1,8 +1,15 @@
 {
   "dataset": "cupcig",
   "coverage": "monithon_hub",
-  "sample_note": "Sottoinsieme cupcig dell’hub Monithon-seeded.",
+  "sample_note": "Sottoinsieme cupcig del grafo collegato ai report Monithon.",
   "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZC023CCEB1",
+      "shortId": "lot:ZC023CCEB1",
+      "label": "CIG ZC02…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
     {
       "id": "https://w3id.org/italia/data/Lot/66845010BB",
       "shortId": "lot:66845010BB",
@@ -63,13 +70,6 @@
       "id": "https://w3id.org/italia/data/Lot/835646878A",
       "shortId": "lot:835646878A",
       "label": "CIG 8356…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/ZC023CCEB1",
-      "shortId": "lot:ZC023CCEB1",
-      "label": "CIG ZC02…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     }

@@ -1,11 +1,12 @@
 {
   "id": "monithon_I72D14000010002",
   "title": "Unione semantica — CUP I72D14000010002",
-  "sparql_note": "Il CUP I72D14000010002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP I72D14000010002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,11 @@
       "source": "https://it.monithon.eu/report/view/586",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca355c92007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I72D14000010002",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I72D14000010002",
@@ -58,6 +64,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca355c92007it161po009/",
+      "shortId": "",
+      "label": "Piano di Protione Ciivile del Comune di Vico Equense (NA)",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/82007510637",
       "shortId": "cf:82007510637",
       "label": "COMUNE DI VICO EQUENSE - NAPOLI -",
@@ -79,8 +92,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b851",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "id": "ne7d28342d6964779bba482cdd32840a0b761",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b761",
       "label": "IMPLEMENTAZIONE DIVULGAZIONE E DIFFUSIONE PIANO DI PROTEZION…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -161,6 +174,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca355c92007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I72D14000010002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I72D14000010002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82007510637",
       "label": "pi:ha_soggetto_titolare"
@@ -177,7 +195,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I72D14000010002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "target": "ne7d28342d6964779bba482cdd32840a0b761",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -191,7 +209,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "source": "ne7d28342d6964779bba482cdd32840a0b761",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -201,7 +219,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "source": "ne7d28342d6964779bba482cdd32840a0b761",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -211,7 +229,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "source": "ne7d28342d6964779bba482cdd32840a0b761",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -221,17 +239,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "source": "ne7d28342d6964779bba482cdd32840a0b761",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "source": "ne7d28342d6964779bba482cdd32840a0b761",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b851",
+      "source": "ne7d28342d6964779bba482cdd32840a0b761",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_11",
       "label": "pi:ha_tipologia_intervento"
     },

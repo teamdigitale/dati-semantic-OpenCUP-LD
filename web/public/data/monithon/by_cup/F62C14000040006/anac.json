@@ -1,0 +1,85 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/799711",
+      "shortId": "799711",
+      "label": "799711",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/855822",
+      "shortId": "855822",
+      "label": "855822",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/993643",
+      "shortId": "993643",
+      "label": "993643",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1089333",
+      "shortId": "1089333",
+      "label": "1089333",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5986446B82",
+      "shortId": "lot:5986446B82",
+      "label": "CIG 5986…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6324489D6A",
+      "shortId": "lot:6324489D6A",
+      "label": "CIG 6324…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/63870421CC",
+      "shortId": "lot:63870421CC",
+      "label": "CIG 6387…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6439407EBF",
+      "shortId": "lot:6439407EBF",
+      "label": "CIG 6439…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/799711",
+      "target": "https://w3id.org/italia/data/Lot/5986446B82",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/855822",
+      "target": "https://w3id.org/italia/data/Lot/6324489D6A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/993643",
+      "target": "https://w3id.org/italia/data/Lot/63870421CC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1089333",
+      "target": "https://w3id.org/italia/data/Lot/6439407EBF",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

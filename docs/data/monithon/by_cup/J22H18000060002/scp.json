@@ -1,0 +1,40 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/800085526A-803886-59",
+      "shortId": "800085526A-803886-59",
+      "label": "800085526A-803886-59",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/803886",
+      "shortId": "803886",
+      "label": "\"Lavori ristrutturazione di un fabbricato da destinare a Cen…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/800085526A",
+      "shortId": "lot:800085526A",
+      "label": "\"Lavori ristrutturazione di un fabbricato da destinare a Cen…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/800085526A-803886-59",
+      "target": "https://w3id.org/italia/data/Lot/800085526A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/803886",
+      "target": "https://w3id.org/italia/data/Lot/800085526A",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

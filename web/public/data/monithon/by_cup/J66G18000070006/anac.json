@@ -1,0 +1,66 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2767543",
+      "shortId": "2767543",
+      "label": "2767543",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2767569",
+      "shortId": "2767569",
+      "label": "2767569",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1966679",
+      "shortId": "1966679",
+      "label": "1966679",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8410685CD1",
+      "shortId": "lot:8410685CD1",
+      "label": "CIG 8410…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/80723677FA",
+      "shortId": "lot:80723677FA",
+      "label": "CIG 8072…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8697097F79",
+      "shortId": "lot:8697097F79",
+      "label": "\"Lavori di Efficientamento Energetico del Presidio Ospedalie…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2767543",
+      "target": "https://w3id.org/italia/data/Lot/8410685CD1",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2767569",
+      "target": "https://w3id.org/italia/data/Lot/80723677FA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1966679",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

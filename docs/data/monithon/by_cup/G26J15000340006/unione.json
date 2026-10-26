@@ -1,11 +1,13 @@
 {
   "id": "monithon_G26J15000340006",
   "title": "Unione semantica — CUP G26J15000340006",
-  "sparql_note": "Il CUP G26J15000340006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G26J15000340006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -30,6 +32,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl205830/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G26J15000340006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G26J15000340006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00401460787",
       "label": "pi:ha_soggetto_titolare"
@@ -43,6 +50,11 @@
       "source": "https://w3id.org/italia/data/Lot/640699645B",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G26J15000340006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1095397",
+      "target": "https://w3id.org/italia/data/Lot/640699645B",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -71,8 +83,15 @@
       "id": "https://it.monithon.eu/report/view/718",
       "shortId": "718",
       "label": "718",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl205830/",
+      "shortId": "",
+      "label": "L.I. 5.3.2.1 - Comune di Scalea - \"Azioni per la realizzazio…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00401460787",
@@ -96,8 +115,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1172",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "id": "https://w3id.org/italia/data/Award/anac/1095397",
+      "shortId": "1095397",
+      "label": "1095397",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1061",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1061",
       "label": "PISL RIVIERA DEI CEDRI SOSTENIBILE, ACCESSIBILE, COMPETITIVA…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -188,6 +214,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl205830/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G26J15000340006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G26J15000340006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00401460787",
       "label": "pi:ha_soggetto_titolare"
@@ -203,8 +234,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/1095397",
+      "target": "https://w3id.org/italia/data/Lot/640699645B",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G26J15000340006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1061",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -218,7 +254,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1061",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -228,7 +264,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1061",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_12",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -238,7 +274,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1061",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_12_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -248,17 +284,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1061",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1061",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1172",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1061",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
       "label": "pi:ha_tipologia_intervento"
     },

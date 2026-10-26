@@ -1,0 +1,35 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/799584",
+      "shortId": "799584",
+      "label": "\"Bando di  concorso  per la realizzazione  di  un opera d'ar…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9719001558-1848130-01515010856",
+      "shortId": "9719001558-1848130-01515010856",
+      "label": "9719001558-1848130-01515010856",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9719001558",
+      "shortId": "lot:9719001558",
+      "label": "CIG 9719…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9719001558-1848130-01515010856",
+      "target": "https://w3id.org/italia/data/Lot/9719001558",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

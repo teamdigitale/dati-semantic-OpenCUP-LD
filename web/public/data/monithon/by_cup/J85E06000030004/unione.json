@@ -1,11 +1,13 @@
 {
   "id": "monithon_J85E06000030004",
   "title": "Unione semantica — CUP J85E06000030004",
-  "sparql_note": "Il CUP J85E06000030004 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J85E06000030004 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -30,6 +32,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca710c352007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecamsnns.46/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00221880651",
       "label": "pi:ha_soggetto_titolare"
@@ -43,6 +55,11 @@
       "source": "https://w3id.org/italia/data/Lot/01803952A9",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/101621",
+      "target": "https://w3id.org/italia/data/Lot/01803952A9",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -71,8 +88,22 @@
       "id": "https://it.monithon.eu/report/view/673",
       "shortId": "673",
       "label": "673",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca710c352007it161po009/",
+      "shortId": "",
+      "label": "Progetto di un teatro al castello Fienga",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misecamsnns.46/",
+      "shortId": "",
+      "label": "Progetto di un teatro al castello Fienga",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00221880651",
@@ -96,8 +127,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1214",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "id": "https://w3id.org/italia/data/Award/anac/101621",
+      "shortId": "101621",
+      "label": "101621",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1379",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1379",
       "label": "Straordinaria Manutenzione e recupero del Parco Fienga",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -188,6 +226,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca710c352007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecamsnns.46/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00221880651",
       "label": "pi:ha_soggetto_titolare"
@@ -203,8 +251,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/101621",
+      "target": "https://w3id.org/italia/data/Lot/01803952A9",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J85E06000030004",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1379",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -218,7 +271,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1379",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -228,7 +281,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1379",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -238,7 +291,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1379",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -248,17 +301,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1379",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1379",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1214",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1379",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
       "label": "pi:ha_tipologia_intervento"
     },

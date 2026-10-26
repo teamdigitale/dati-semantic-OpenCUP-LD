@@ -1,0 +1,104 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1841841",
+      "shortId": "1841841",
+      "label": "1841841",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2672662",
+      "shortId": "2672662",
+      "label": "2672662",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2466919",
+      "shortId": "2466919",
+      "label": "2466919",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2081328",
+      "shortId": "2081328",
+      "label": "2081328",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2466105",
+      "shortId": "2466105",
+      "label": "2466105",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/852277506D",
+      "shortId": "lot:852277506D",
+      "label": "CIG 8522…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9483835439",
+      "shortId": "lot:9483835439",
+      "label": "CIG 9483…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9797512AAA",
+      "shortId": "lot:9797512AAA",
+      "label": "CIG 9797…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8988749654",
+      "shortId": "lot:8988749654",
+      "label": "CIG 8988…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/94169801BC",
+      "shortId": "lot:94169801BC",
+      "label": "\"Servizio di somministrazione di lavoro a tempo determinato …",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1841841",
+      "target": "https://w3id.org/italia/data/Lot/852277506D",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2672662",
+      "target": "https://w3id.org/italia/data/Lot/9483835439",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2466919",
+      "target": "https://w3id.org/italia/data/Lot/9797512AAA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2081328",
+      "target": "https://w3id.org/italia/data/Lot/8988749654",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2466105",
+      "target": "https://w3id.org/italia/data/Lot/94169801BC",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

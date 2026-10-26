@@ -1,11 +1,14 @@
 {
   "id": "monithon_D86B18000100006",
   "title": "Unione semantica — CUP D86B18000100006",
-  "sparql_note": "Il CUP D86B18000100006 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP D86B18000100006 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -19,14 +22,19 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/5mtra1c1021/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/5mtra1c1030/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "label": "pi:ha_soggetto_titolare"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8675188F98",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z7C28E63F5",
@@ -39,9 +47,34 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/8675188F98",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1913618",
+      "target": "https://w3id.org/italia/data/Lot/8675188F98",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/84595197EA",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/84595197EA-934062-12628550159",
+      "target": "https://w3id.org/italia/data/Lot/84595197EA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1869539",
+      "target": "https://w3id.org/italia/data/Lot/84595197EA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/900344",
+      "target": "https://w3id.org/italia/data/Lot/84595197EA",
+      "label": "PCTR:hasLot"
     }
   ],
   "nodes": [
@@ -67,18 +100,25 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/5mtra1c1021/",
+      "shortId": "",
+      "label": "¿Metropolitana leggera automatica di Brescia -1° lotto funzi…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/5mtra1c1030/",
+      "shortId": "",
+      "label": "Metropolitana leggera automatica di Brescia - 1° lotto funzi…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "shortId": "cf:soggetto%20privato",
       "label": "soggetto privato",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/8675188F98",
-      "shortId": "lot:8675188F98",
-      "label": "CIG 8675…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z7C28E63F5",
@@ -95,6 +135,20 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Lot/8675188F98",
+      "shortId": "lot:8675188F98",
+      "label": "CIG 8675…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1913618",
+      "shortId": "1913618",
+      "label": "1913618",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/84595197EA",
       "shortId": "lot:84595197EA",
       "label": "\"APPALTO INTEGRATO PER LA REALIZZAZIONE DI UN IMPIANTO DI VI…",
@@ -102,8 +156,29 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1247",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "id": "https://w3id.org/italia/data/Award/84595197EA-934062-12628550159",
+      "shortId": "84595197EA-934062-12628550159",
+      "label": "84595197EA-934062-12628550159",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1869539",
+      "shortId": "1869539",
+      "label": "1869539",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/900344",
+      "shortId": "900344",
+      "label": "\"APPALTO INTEGRATO PER LA REALIZZAZIONE DI UN IMPIANTO DI VI…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1403",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1403",
       "label": "SISTEMA D'IMPIANTO DI VIDEOSORVEGLIANZA CON TRASMISSIONE DEL…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -184,14 +259,19 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/5mtra1c1021/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/5mtra1c1030/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "label": "pi:ha_soggetto_titolare"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8675188F98",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z7C28E63F5",
@@ -204,13 +284,38 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/8675188F98",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1913618",
+      "target": "https://w3id.org/italia/data/Lot/8675188F98",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/84595197EA",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/84595197EA-934062-12628550159",
+      "target": "https://w3id.org/italia/data/Lot/84595197EA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1869539",
+      "target": "https://w3id.org/italia/data/Lot/84595197EA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/900344",
+      "target": "https://w3id.org/italia/data/Lot/84595197EA",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D86B18000100006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1403",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -224,7 +329,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1403",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -234,7 +339,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1403",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_5",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -244,7 +349,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1403",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_5_32",
       "label": "pi:ha_categoria_intervento"
     },
@@ -254,17 +359,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1403",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1403",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1247",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1403",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_60",
       "label": "pi:ha_tipologia_intervento"
     },

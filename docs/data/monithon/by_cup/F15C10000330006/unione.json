@@ -1,11 +1,12 @@
 {
   "id": "monithon_F15C10000330006",
   "title": "Unione semantica — CUP F15C10000330006",
-  "sparql_note": "Il CUP F15C10000330006 è oggetto di report Monithon. Collegato a 3 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP F15C10000330006 è oggetto di report Monithon. Collegato a 3 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,16 @@
       "source": "https://it.monithon.eu/report/view/699",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl219624/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F15C10000330006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl99297/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F15C10000330006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F15C10000330006",
@@ -57,7 +68,7 @@
       "id": "https://it.monithon.eu/report/view/699",
       "shortId": "699",
       "label": "699",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -66,6 +77,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl219624/",
+      "shortId": "",
+      "label": "2.a) Completamento Parco Tematico e Museo di Pitagora: infra…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl99297/",
+      "shortId": "",
+      "label": "2.a) Completamento Parco Tematico e Museo di Pitagora: infra…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/81000250795",
@@ -103,8 +128,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1151",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1322",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1322",
       "label": "PARCO PIGNERA*VIA BOLOGNA*2.A) COMPLETAMENTO PARCO TEMATICO …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -185,6 +210,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl219624/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F15C10000330006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl99297/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F15C10000330006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F15C10000330006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000250795",
       "label": "pi:ha_soggetto_titolare"
@@ -211,7 +246,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F15C10000330006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1322",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -225,7 +260,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1322",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -235,7 +270,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1322",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -245,7 +280,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1322",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_97",
       "label": "pi:ha_categoria_intervento"
     },
@@ -255,17 +290,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1322",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1322",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1151",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1322",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,12 +1,15 @@
 {
   "id": "monithon_D79D20000000006",
   "title": "Unione semantica — CUP D79D20000000006",
-  "sparql_note": "Il CUP D79D20000000006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D79D20000000006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -18,6 +21,11 @@
       "source": "https://it.monithon.eu/report/view/1172",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1agcoe1208/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D79D20000000006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D79D20000000006",
@@ -33,6 +41,16 @@
       "source": "https://w3id.org/italia/data/Lot/82498485EF",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D79D20000000006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2336639",
+      "target": "https://w3id.org/italia/data/Lot/82498485EF",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/782157",
+      "target": "https://w3id.org/italia/data/Lot/82498485EF",
+      "label": "PCTR:hasLot"
     }
   ],
   "nodes": [
@@ -47,7 +65,7 @@
       "id": "https://it.monithon.eu/report/view/1172",
       "shortId": "1172",
       "label": "1172",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -58,9 +76,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1agcoe1208/",
+      "shortId": "",
+      "label": "SERVIZI RESIDENZIALI PER DONNE VITTIME DI VIOLENZA",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "shortId": "cf:80016350821",
-      "label": "COMUNE DI PALERMO - PA -",
+      "label": "Comune di Palermo",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -79,8 +104,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b656",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "id": "https://w3id.org/italia/data/Award/anac/2336639",
+      "shortId": "2336639",
+      "label": "2336639",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/782157",
+      "shortId": "782157",
+      "label": "\"CIG. 82498485EF - PROCEDURA APERTA -  Servizio di progettaz…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b596",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b596",
       "label": "PON METRO*VIA GARIBALDI, 26*SERVIZI RESIDENZIALI PER DONNE V…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -161,6 +200,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1agcoe1208/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D79D20000000006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D79D20000000006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "label": "pi:ha_soggetto_titolare"
@@ -176,8 +220,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/2336639",
+      "target": "https://w3id.org/italia/data/Lot/82498485EF",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/782157",
+      "target": "https://w3id.org/italia/data/Lot/82498485EF",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D79D20000000006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "target": "ne7d28342d6964779bba482cdd32840a0b596",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -191,7 +245,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "source": "ne7d28342d6964779bba482cdd32840a0b596",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -201,7 +255,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "source": "ne7d28342d6964779bba482cdd32840a0b596",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_94",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -211,7 +265,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "source": "ne7d28342d6964779bba482cdd32840a0b596",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_94_4",
       "label": "pi:ha_categoria_intervento"
     },
@@ -221,17 +275,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "source": "ne7d28342d6964779bba482cdd32840a0b596",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "source": "ne7d28342d6964779bba482cdd32840a0b596",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b656",
+      "source": "ne7d28342d6964779bba482cdd32840a0b596",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
       "label": "pi:ha_tipologia_intervento"
     },

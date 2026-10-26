@@ -1,10 +1,11 @@
 {
   "id": "monithon_J24E14001980005",
   "title": "Unione semantica — CUP J24E14001980005",
-  "sparql_note": "Il CUP J24E14001980005 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J24E14001980005 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/96",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl217040/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J24E14001980005",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J24E14001980005",
@@ -52,9 +58,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl217040/",
+      "shortId": "",
+      "label": "SERVIZI INNOVAZIONE - VIAGGI DELL'ARCA - ICT CALABRIA DESTIN…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/02205340793",
       "shortId": "cf:02205340793",
-      "label": "Regione Calabria",
+      "label": "REGIONE CALABRIA",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b479",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "id": "ne7d28342d6964779bba482cdd32840a0b437",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b437",
       "label": "I vIaggi dell Arca Società Consortile a r.l.*Programma di mi…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -162,6 +175,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl217040/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J24E14001980005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J24E14001980005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/02205340793",
       "label": "pi:ha_soggetto_titolare"
@@ -173,7 +191,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J24E14001980005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "target": "ne7d28342d6964779bba482cdd32840a0b437",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -197,7 +215,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "source": "ne7d28342d6964779bba482cdd32840a0b437",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/4_9",
       "label": "pi:ha_settore_intervento"
     },
@@ -207,7 +225,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "source": "ne7d28342d6964779bba482cdd32840a0b437",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/4_9_21",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -217,7 +235,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "source": "ne7d28342d6964779bba482cdd32840a0b437",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/4_9_21_229",
       "label": "pi:ha_categoria_intervento"
     },
@@ -227,17 +245,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "source": "ne7d28342d6964779bba482cdd32840a0b437",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/4",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "source": "ne7d28342d6964779bba482cdd32840a0b437",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/07",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b479",
+      "source": "ne7d28342d6964779bba482cdd32840a0b437",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/07_19",
       "label": "pi:ha_tipologia_intervento"
     },

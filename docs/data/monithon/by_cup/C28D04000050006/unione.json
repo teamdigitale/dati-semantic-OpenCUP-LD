@@ -1,10 +1,11 @@
 {
   "id": "monithon_C28D04000050006",
   "title": "Unione semantica — CUP C28D04000050006",
-  "sparql_note": "Il CUP C28D04000050006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C28D04000050006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,16 @@
       "source": "https://it.monithon.eu/report/view/716",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl89826/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C28D04000050006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecalcynb.02.a3/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C28D04000050006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C28D04000050006",
@@ -52,6 +63,20 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl89826/",
+      "shortId": "",
+      "label": "Acquedotti delle dighe del Metramo e del Lordo a servizio de…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misecalcynb.02.a3/",
+      "shortId": "",
+      "label": "Acquedotti delle dighe del Metramo e del Lordo a servizio de…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/02559020793",
       "shortId": "cf:02559020793",
       "label": "SO.RI.CAL. S.P.A. - SOCIETÀ RISORSE IDRICHE CALABRESI",
@@ -66,8 +91,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b101",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1010",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1010",
       "label": "ACQUEDOTTO DELLE DIGHE DEL METRAMO E DEL LORDO*FASCIA COSTIE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +173,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl89826/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C28D04000050006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecalcynb.02.a3/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C28D04000050006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C28D04000050006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/02559020793",
       "label": "pi:ha_soggetto_titolare"
@@ -159,7 +194,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C28D04000050006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1010",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +208,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1010",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +218,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1010",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_15",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +228,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1010",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_15_120",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +238,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1010",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1010",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b101",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1010",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

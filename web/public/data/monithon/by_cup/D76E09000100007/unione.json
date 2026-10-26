@@ -1,10 +1,11 @@
 {
   "id": "monithon_D76E09000100007",
   "title": "Unione semantica — CUP D76E09000100007",
-  "sparql_note": "Il CUP D76E09000100007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D76E09000100007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/461",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepa01leonardodavinci/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D76E09000100007",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D76E09000100007",
@@ -41,7 +47,7 @@
       "id": "https://it.monithon.eu/report/view/461",
       "shortId": "461",
       "label": "461",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -52,9 +58,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misepa01leonardodavinci/",
+      "shortId": "",
+      "label": "SCUOLA MEDIA LEONARDO DA VINCI*VIA SERRADIFALCO, 180*MANUTEN…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "shortId": "cf:80016350821",
-      "label": "COMUNE DI PALERMO - PA -",
+      "label": "Comune di Palermo",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b203",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "id": "ne7d28342d6964779bba482cdd32840a0b176",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b176",
       "label": "SCUOLA MEDIA LEONARDO DA VINCI*VIA SERRADIFALCO, 180*MANUTEN…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -162,6 +175,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepa01leonardodavinci/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D76E09000100007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D76E09000100007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "label": "pi:ha_soggetto_titolare"
@@ -173,7 +191,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D76E09000100007",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "target": "ne7d28342d6964779bba482cdd32840a0b176",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -197,7 +215,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "source": "ne7d28342d6964779bba482cdd32840a0b176",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -207,7 +225,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "source": "ne7d28342d6964779bba482cdd32840a0b176",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_8",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -217,7 +235,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "source": "ne7d28342d6964779bba482cdd32840a0b176",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_8_86",
       "label": "pi:ha_categoria_intervento"
     },
@@ -227,17 +245,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "source": "ne7d28342d6964779bba482cdd32840a0b176",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "source": "ne7d28342d6964779bba482cdd32840a0b176",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b203",
+      "source": "ne7d28342d6964779bba482cdd32840a0b176",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
       "label": "pi:ha_tipologia_intervento"
     },

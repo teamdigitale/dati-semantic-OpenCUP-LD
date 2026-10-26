@@ -1,0 +1,28 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2845280",
+      "shortId": "2845280",
+      "label": "2845280",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8674838EC4",
+      "shortId": "lot:8674838EC4",
+      "label": "\"lavori di ripristino funzionalità, qualificazione e innovaz…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2845280",
+      "target": "https://w3id.org/italia/data/Lot/8674838EC4",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

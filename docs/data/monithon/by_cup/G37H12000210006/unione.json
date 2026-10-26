@@ -1,11 +1,13 @@
 {
   "id": "monithon_G37H12000210006",
   "title": "Unione semantica — CUP G37H12000210006",
-  "sparql_note": "Il CUP G37H12000210006 è oggetto di report Monithon. Collegato a 11 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G37H12000210006 è oggetto di report Monithon. Collegato a 11 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca70c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00184530640",
       "label": "pi:ha_soggetto_titolare"
@@ -31,16 +38,6 @@
     },
     {
       "source": "https://w3id.org/italia/data/Lot/5829898804",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7210145FDD",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/76751641B3",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
       "label": "PCTR:hasProject"
     },
@@ -83,6 +80,26 @@
       "source": "https://w3id.org/italia/data/Lot/ZAA15B46C3",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7210145FDD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1592841",
+      "target": "https://w3id.org/italia/data/Lot/7210145FDD",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/76751641B3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1466289",
+      "target": "https://w3id.org/italia/data/Lot/76751641B3",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -108,6 +125,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca70c332007it161po009/",
+      "shortId": "",
+      "label": "Riqualificazione Piazza Libertà - Sistemazioni Superficiali",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00184530640",
       "shortId": "cf:00184530640",
       "label": "COMUNE DI AVELLINO - AV -",
@@ -125,20 +149,6 @@
       "id": "https://w3id.org/italia/data/Lot/5829898804",
       "shortId": "lot:5829898804",
       "label": "CIG 5829…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7210145FDD",
-      "shortId": "lot:7210145FDD",
-      "label": "CIG 7210…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/76751641B3",
-      "shortId": "lot:76751641B3",
-      "label": "CIG 7675…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -199,8 +209,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1634",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "id": "https://w3id.org/italia/data/Lot/7210145FDD",
+      "shortId": "lot:7210145FDD",
+      "label": "CIG 7210…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1592841",
+      "shortId": "1592841",
+      "label": "1592841",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/76751641B3",
+      "shortId": "lot:76751641B3",
+      "label": "CIG 7675…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1466289",
+      "shortId": "1466289",
+      "label": "1466289",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1595",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1595",
       "label": "PIAZZA LIBERTÀ*PIAZZA LIBERTÀ*RIQUALIFICAZIONE PIAZZA LIBERT…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -281,6 +319,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca70c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00184530640",
       "label": "pi:ha_soggetto_titolare"
@@ -292,16 +335,6 @@
     },
     {
       "source": "https://w3id.org/italia/data/Lot/5829898804",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7210145FDD",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/76751641B3",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
       "label": "PCTR:hasProject"
     },
@@ -346,8 +379,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/7210145FDD",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1592841",
+      "target": "https://w3id.org/italia/data/Lot/7210145FDD",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/76751641B3",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1466289",
+      "target": "https://w3id.org/italia/data/Lot/76751641B3",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G37H12000210006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1595",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -361,7 +414,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1595",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -371,7 +424,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1595",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -381,7 +434,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1595",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_1_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -391,17 +444,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1595",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1595",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1634",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1595",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
       "label": "pi:ha_tipologia_intervento"
     },

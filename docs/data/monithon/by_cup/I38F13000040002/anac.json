@@ -1,0 +1,28 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/450878",
+      "shortId": "450878",
+      "label": "450878",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5093464B73",
+      "shortId": "lot:5093464B73",
+      "label": "CIG 5093…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/450878",
+      "target": "https://w3id.org/italia/data/Lot/5093464B73",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

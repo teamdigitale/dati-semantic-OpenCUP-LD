@@ -1,0 +1,40 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/8396338D4C-1017431-05877181213",
+      "shortId": "8396338D4C-1017431-05877181213",
+      "label": "8396338D4C-1017431-05877181213",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1017431",
+      "shortId": "1017431",
+      "label": "\"Servizi di comunicazione per lo sviluppo della raccolta dif…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8396338D4C",
+      "shortId": "lot:8396338D4C",
+      "label": "\"Servizi di comunicazione per lo sviluppo della raccolta dif…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/8396338D4C-1017431-05877181213",
+      "target": "https://w3id.org/italia/data/Lot/8396338D4C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1017431",
+      "target": "https://w3id.org/italia/data/Lot/8396338D4C",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

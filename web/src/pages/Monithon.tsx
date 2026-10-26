@@ -17,6 +17,7 @@ import { ResourceLink } from "../components/ResourceLink";
 import { DATASET_LABELS } from "../constants";
 import { useCupQueryParam } from "../hooks/useCupQueryParam";
 import { PageIntro } from "../components/PageIntro";
+import { RegioneCupMap } from "../components/RegioneCupMap";
 import { site } from "../content/site";
 import monithonRaw from "../../content/monithon.md?raw";
 
@@ -57,7 +58,10 @@ interface MonithonAnalytics {
     cigs: number;
     pairs: number;
     opencup_rows: number;
+    opencoesione_progetti?: number;
     enti_ipa: number;
+    n_anac_aggiudicazioni?: number;
+    n_esiti?: number;
     cases: number;
     cases_with_monithon_report: number;
   };
@@ -72,7 +76,72 @@ interface MonithonAnalytics {
 
 type ViewMode = "separati" | "uniti";
 
-const SOURCE_ORDER = ["monithon", "opencup", "cupcig", "enti_ipa"] as const;
+type SortKey =
+  | "regione"
+  | "comune"
+  | "cup"
+  | "report"
+  | "cig"
+  | "costo"
+  | "fonti";
+
+type SortDir = "asc" | "desc";
+
+const SOURCE_ORDER = [
+  "monithon",
+  "opencup",
+  "opencoesione",
+  "cupcig",
+  "anac",
+  "scp",
+  "enti_ipa",
+] as const;
+
+const TABLE_COLUMNS: { key: SortKey; label: string }[] = [
+  { key: "regione", label: "Regione" },
+  { key: "comune", label: "Comune" },
+  { key: "cup", label: "CUP" },
+  { key: "report", label: "Report" },
+  { key: "cig", label: "CIG" },
+  { key: "costo", label: "Costo" },
+  { key: "fonti", label: "Fonti" },
+];
+
+function parseCosto(raw: string | null | undefined): number {
+  if (raw == null || raw === "") return Number.NaN;
+  const n = Number(String(raw).replace(",", "."));
+  return Number.isFinite(n) ? n : Number.NaN;
+}
+
+function compareCases(a: MonithonCase, b: MonithonCase, key: SortKey): number {
+  switch (key) {
+    case "regione":
+      return (a.regione || "").localeCompare(b.regione || "", "it");
+    case "comune":
+      return (a.comune || "").localeCompare(b.comune || "", "it");
+    case "cup":
+      return a.cup.localeCompare(b.cup, "it");
+    case "report":
+      return a.report_id - b.report_id;
+    case "cig":
+      return a.n_cig - b.n_cig;
+    case "costo": {
+      const na = parseCosto(a.costo);
+      const nb = parseCosto(b.costo);
+      const aMissing = Number.isNaN(na);
+      const bMissing = Number.isNaN(nb);
+      if (aMissing && bMissing) return 0;
+      if (aMissing) return 1;
+      if (bMissing) return -1;
+      return na - nb;
+    }
+    case "fonti":
+      return a.sources.length - b.sources.length ||
+        a.sources.join(",").localeCompare(b.sources.join(","), "it");
+    default:
+      return 0;
+  }
+}
 
 const BI = {
   primary: "#0066cc",
@@ -159,6 +228,8 @@ export function Monithon() {
   const [activeSource, setActiveSource] = useState<string>("monithon");
   const [graph, setGraph] = useState<GraphData | SubgraphData | null>(null);
   const [loading, setLoading] = useState(false);
+  const [sortKey, setSortKey] = useState<SortKey>("regione");
+  const [sortDir, setSortDir] = useState<SortDir>("asc");
   const { selectCup } = useCupQueryParam(
     cases.map((c) => c.cup),
     activeCup,
@@ -188,14 +259,31 @@ export function Monithon() {
     return SOURCE_ORDER.filter((s) => current.sources.includes(s));
   }, [current]);
 
-  const tableRows = useMemo(
-    () =>
-      [...cases].sort((a, b) =>
-        (a.regione || "").localeCompare(b.regione || "", "it") ||
-        (a.comune || "").localeCompare(b.comune || "", "it")
-      ),
-    [cases]
-  );
+  const toggleSort = (key: SortKey) => {
+    if (key === sortKey) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir(key === "cig" || key === "costo" || key === "fonti" ? "desc" : "asc");
+    }
+  };
+
+  const tableRows = useMemo(() => {
+    const dir = sortDir === "asc" ? 1 : -1;
+    return [...cases].sort((a, b) => {
+      const primary = compareCases(a, b, sortKey) * dir;
+      if (primary !== 0) return primary;
+      if (sortKey !== "regione") {
+        const byRegione = compareCases(a, b, "regione");
+        if (byRegione !== 0) return byRegione;
+      }
+      if (sortKey !== "comune") {
+        const byComune = compareCases(a, b, "comune");
+        if (byComune !== 0) return byComune;
+      }
+      return a.cup.localeCompare(b.cup, "it");
+    });
+  }, [cases, sortKey, sortDir]);
 
   useEffect(() => {
     if (!current) return;
@@ -225,13 +313,13 @@ export function Monithon() {
       {analytics && (
         <section className="mb-4" aria-labelledby="monithon-stats">
           <h2 id="monithon-stats" className="h4">
-            Conteggi catalogo e hub
+            Conteggi del catalogo e del grafo
           </h2>
           <div className="row g-3 mb-3">
             <div className="col-md-6">
               <div className="callout callout-highlight h-100">
                 <div className="callout-title">
-                  <span className="text">Catalogo Monithon (scrape)</span>
+                  <span className="text">Catalogo Monithon</span>
                 </div>
                 <ul className="mb-0">
                   <li>
@@ -242,8 +330,10 @@ export function Monithon() {
                     {analytics.catalog.with_cig}
                   </li>
                   <li>
-                    senza subject CUP/CIG: {analytics.catalog.without_subject}{" "}
-                    <span className="text-secondary">(spesso solo codice OpenCoesione)</span>
+                    senza CUP o CIG espliciti: {analytics.catalog.without_subject}{" "}
+                    <span className="text-secondary">
+                      (in molti casi è indicato solo il codice OpenCoesione)
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -251,26 +341,48 @@ export function Monithon() {
             <div className="col-md-6">
               <div className="callout callout-note h-100">
                 <div className="callout-title">
-                  <span className="text">Hub collegabile (`all_monithon.ttl`)</span>
+                  <span className="text">Grafo collegato</span>
                 </div>
                 <ul className="mb-0">
                   <li>
                     <strong>{analytics.hub.cups}</strong> CUP ·{" "}
                     <strong>{analytics.hub.cigs}</strong> CIG ·{" "}
-                    {analytics.hub.pairs} pair ANAC
+                    {analytics.hub.pairs} coppie CUP↔CIG (ANAC)
                   </li>
                   <li>
-                    OpenCUP: {analytics.hub.opencup_rows} righe · IndicePA:{" "}
-                    {analytics.hub.enti_ipa} enti
+                    OpenCUP: {analytics.hub.opencup_rows} righe · OpenCoesione:{" "}
+                    {analytics.hub.opencoesione_progetti ?? 0} progetti ·
+                    IndicePA: {analytics.hub.enti_ipa} enti
                   </li>
                   <li>
-                    casi in pagina: {analytics.hub.cases} (con report Monithon:{" "}
-                    {analytics.hub.cases_with_monithon_report})
+                    ANAC aggiudicazioni:{" "}
+                    {analytics.hub.n_anac_aggiudicazioni ?? 0} · SCP esiti:{" "}
+                    {analytics.hub.n_esiti ?? 0}
+                  </li>
+                  <li>
+                    casi in questa pagina: {analytics.hub.cases} (con report
+                    Monithon: {analytics.hub.cases_with_monithon_report})
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+
+          <section className="mb-4" aria-labelledby="monithon-mappa">
+            <h3 id="monithon-mappa" className="h5">
+              Distribuzione territoriale dei CUP
+            </h3>
+            <p className="text-secondary small">
+              Numero di CUP (o costo OpenCUP associato) per regione nei casi
+              Monithon collegati al grafo.
+            </p>
+            <RegioneCupMap
+              chart={analytics.by_regione}
+              euroChart={analytics.costo_by_regione}
+              preferChart
+              footerNote="Colori = CUP Monithon per regione (o costo OpenCUP in euro). Confini: openpolis / ISTAT."
+            />
+          </section>
 
           <div className="row g-3">
             <div className="col-lg-6">
@@ -307,17 +419,50 @@ export function Monithon() {
           <div className="table-responsive mb-4">
             <table className="table table-sm table-striped align-middle">
               <caption className="text-start">
-                CUP dell’hub Monithon-seeded (ordinati per regione / comune)
+                CUP del grafo Monithon — clicca l’intestazione per ordinare
+                {` (${TABLE_COLUMNS.find((c) => c.key === sortKey)?.label ?? sortKey}, ${
+                  sortDir === "asc" ? "crescente" : "decrescente"
+                })`}
               </caption>
               <thead>
                 <tr>
-                  <th scope="col">Regione</th>
-                  <th scope="col">Comune</th>
-                  <th scope="col">CUP</th>
-                  <th scope="col">Report</th>
-                  <th scope="col">CIG</th>
-                  <th scope="col">Costo</th>
-                  <th scope="col">Fonti</th>
+                  {TABLE_COLUMNS.map(({ key, label }) => {
+                    const active = sortKey === key;
+                    const ariaSort = active
+                      ? sortDir === "asc"
+                        ? "ascending"
+                        : "descending"
+                      : "none";
+                    return (
+                      <th
+                        key={key}
+                        scope="col"
+                        aria-sort={ariaSort}
+                        className="monithon-sortable-th"
+                      >
+                        <button
+                          type="button"
+                          className="btn btn-link btn-sm p-0 text-decoration-none text-dark fw-semibold monithon-sort-btn"
+                          onClick={() => toggleSort(key)}
+                          aria-label={
+                            active
+                              ? `Ordina per ${label}, attualmente ${
+                                  sortDir === "asc" ? "crescente" : "decrescente"
+                                }. Clicca per invertire.`
+                              : `Ordina per ${label}`
+                          }
+                        >
+                          {label}
+                          <span
+                            className={`monithon-sort-indicator${active ? " is-active" : ""}`}
+                            aria-hidden="true"
+                          >
+                            {active ? (sortDir === "asc" ? "▲" : "▼") : "↕"}
+                          </span>
+                        </button>
+                      </th>
+                    );
+                  })}
                 </tr>
               </thead>
               <tbody>
@@ -365,7 +510,7 @@ export function Monithon() {
 
       <div className="mb-3">
         <label className="form-label" htmlFor="monithonCase">
-          Caso (CUP + report Monithon)
+          Progetto (CUP e report Monithon)
         </label>
         <select
           id="monithonCase"

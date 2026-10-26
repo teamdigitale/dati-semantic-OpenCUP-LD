@@ -1,11 +1,13 @@
 {
   "id": "monithon_D57E10000000006",
   "title": "Unione semantica — CUP D57E10000000006",
-  "sparql_note": "Il CUP D57E10000000006 è oggetto di report Monithon. Collegato a 9 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D57E10000000006 è oggetto di report Monithon. Collegato a 9 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6to169154/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00097460521",
       "label": "pi:ha_soggetto_titolare"
@@ -28,16 +35,6 @@
       "source": "https://indicepa.gov.it/ente/c_g752",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00097460521",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/0535323283",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/3800812149",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z0C0E583DD",
@@ -73,6 +70,26 @@
       "source": "https://w3id.org/italia/data/Lot/ZDB0EDE509",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/0535323283",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/222293",
+      "target": "https://w3id.org/italia/data/Lot/0535323283",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/3800812149",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/773344",
+      "target": "https://w3id.org/italia/data/Lot/3800812149",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -98,6 +115,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/6to169154/",
+      "shortId": "",
+      "label": "ALTA_18_5.2 / Recupero e valorizzazione del parco della fort…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00097460521",
       "shortId": "cf:00097460521",
       "label": "COMUNE DI POGGIBONSI - SI -",
@@ -110,20 +134,6 @@
       "label": "Comune di Poggibonsi",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/0535323283",
-      "shortId": "lot:0535323283",
-      "label": "CIG 0535…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/3800812149",
-      "shortId": "lot:3800812149",
-      "label": "CIG 3800…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z0C0E583DD",
@@ -175,8 +185,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1559",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "id": "https://w3id.org/italia/data/Lot/0535323283",
+      "shortId": "lot:0535323283",
+      "label": "CIG 0535…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/222293",
+      "shortId": "222293",
+      "label": "222293",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/3800812149",
+      "shortId": "lot:3800812149",
+      "label": "CIG 3800…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/773344",
+      "shortId": "773344",
+      "label": "773344",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1517",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1517",
       "label": "CINTA MURARIA FORTEZZA POGGIO IMPERIALE*POGGIO IMPERIALE*REC…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -264,6 +302,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6to169154/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00097460521",
       "label": "pi:ha_soggetto_titolare"
@@ -272,16 +315,6 @@
       "source": "https://indicepa.gov.it/ente/c_g752",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00097460521",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/0535323283",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/3800812149",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z0C0E583DD",
@@ -319,8 +352,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/0535323283",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/222293",
+      "target": "https://w3id.org/italia/data/Lot/0535323283",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/3800812149",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/773344",
+      "target": "https://w3id.org/italia/data/Lot/3800812149",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D57E10000000006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1517",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -339,7 +392,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1517",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -349,7 +402,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1517",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -359,7 +412,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1517",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_96",
       "label": "pi:ha_categoria_intervento"
     },
@@ -369,17 +422,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1517",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1517",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1559",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1517",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

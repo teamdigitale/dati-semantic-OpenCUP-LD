@@ -1,0 +1,40 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/ZA22EF707E-874732-02683470641",
+      "shortId": "ZA22EF707E-874732-02683470641",
+      "label": "ZA22EF707E-874732-02683470641",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/874732",
+      "shortId": "874732",
+      "label": "\"Affidamento, mediante Richiesta di Offerta n. 2678711 sul M…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZA22EF707E",
+      "shortId": "lot:ZA22EF707E",
+      "label": "\"Affidamento, mediante Richiesta di Offerta n. 2678711 sul M…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/ZA22EF707E-874732-02683470641",
+      "target": "https://w3id.org/italia/data/Lot/ZA22EF707E",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/874732",
+      "target": "https://w3id.org/italia/data/Lot/ZA22EF707E",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

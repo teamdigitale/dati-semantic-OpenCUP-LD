@@ -1,11 +1,12 @@
 {
   "id": "monithon_C38C09000010002",
   "title": "Unione semantica — CUP C38C09000010002",
-  "sparql_note": "Il CUP C38C09000010002 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C38C09000010002 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,16 @@
       "source": "https://it.monithon.eu/report/view/958",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca283c122007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C38C09000010002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecamazsu7-sa02/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C38C09000010002",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C38C09000010002",
@@ -83,6 +94,20 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca283c122007it161po009/",
+      "shortId": "",
+      "label": "DG 53 09 00 02 IL GRANDE ATTRATTORE CULTURALE \"CERTOSA DI SA…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misecamazsu7-sa02/",
+      "shortId": "",
+      "label": "IL GRANDE ATTRATTORE CULTURALE 'CERTOSA DI SAN LORENZO':RECU…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00532480654",
       "shortId": "cf:00532480654",
       "label": "COMUNE DI PADULA - SALERNO -",
@@ -139,8 +164,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1385",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1514",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1514",
       "label": "AREE CIRCOSTANTI LA CERTOSA DI SAN LORENZO*VIA VIALE CERTOSA…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -221,6 +246,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca283c122007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C38C09000010002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecamazsu7-sa02/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C38C09000010002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C38C09000010002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00532480654",
       "label": "pi:ha_soggetto_titolare"
@@ -262,7 +297,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C38C09000010002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1514",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -276,7 +311,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1514",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -286,7 +321,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1514",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -296,7 +331,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1514",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -306,17 +341,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1514",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1514",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1385",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1514",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

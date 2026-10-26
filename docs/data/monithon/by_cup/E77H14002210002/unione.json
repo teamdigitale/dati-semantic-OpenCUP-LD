@@ -1,10 +1,12 @@
 {
   "id": "monithon_E77H14002210002",
   "title": "Unione semantica — CUP E77H14002210002",
-  "sparql_note": "Il CUP E77H14002210002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP E77H14002210002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -19,6 +21,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1miselomslca01/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E77H14002210002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E77H14002210002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/03430120133",
       "label": "pi:ha_soggetto_titolare"
@@ -27,6 +34,11 @@
       "source": "https://w3id.org/italia/data/Lot/6666192BA7",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E77H14002210002",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1024519",
+      "target": "https://w3id.org/italia/data/Lot/6666192BA7",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -41,7 +53,7 @@
       "id": "https://it.monithon.eu/report/view/556",
       "shortId": "556",
       "label": "556",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -50,6 +62,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1miselomslca01/",
+      "shortId": "",
+      "label": "Realizzazione della terza linea dell'impianto di depurazione…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/03430120133",
@@ -66,8 +85,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b698",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "id": "https://w3id.org/italia/data/Award/anac/1024519",
+      "shortId": "1024519",
+      "label": "1024519",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b632",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b632",
       "label": "REALIZZAZIONE DELLA TERZA LINEA DELL'IMPIANTO DI DEPURAZIONE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +174,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1miselomslca01/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E77H14002210002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E77H14002210002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/03430120133",
       "label": "pi:ha_soggetto_titolare"
@@ -158,8 +189,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/1024519",
+      "target": "https://w3id.org/italia/data/Lot/6666192BA7",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E77H14002210002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "target": "ne7d28342d6964779bba482cdd32840a0b632",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +209,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "source": "ne7d28342d6964779bba482cdd32840a0b632",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +219,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "source": "ne7d28342d6964779bba482cdd32840a0b632",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_15",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +229,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "source": "ne7d28342d6964779bba482cdd32840a0b632",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_15_114",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +239,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "source": "ne7d28342d6964779bba482cdd32840a0b632",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "source": "ne7d28342d6964779bba482cdd32840a0b632",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b698",
+      "source": "ne7d28342d6964779bba482cdd32840a0b632",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

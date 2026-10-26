@@ -1,0 +1,66 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2214867",
+      "shortId": "2214867",
+      "label": "2214867",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2022414",
+      "shortId": "2022414",
+      "label": "2022414",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2112155",
+      "shortId": "2112155",
+      "label": "2112155",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8462814709",
+      "shortId": "lot:8462814709",
+      "label": "CIG 8462…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8838747CC1",
+      "shortId": "lot:8838747CC1",
+      "label": "CIG 8838…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/800085526A",
+      "shortId": "lot:800085526A",
+      "label": "\"Lavori ristrutturazione di un fabbricato da destinare a Cen…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2214867",
+      "target": "https://w3id.org/italia/data/Lot/8462814709",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2022414",
+      "target": "https://w3id.org/italia/data/Lot/8838747CC1",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2112155",
+      "target": "https://w3id.org/italia/data/Lot/800085526A",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

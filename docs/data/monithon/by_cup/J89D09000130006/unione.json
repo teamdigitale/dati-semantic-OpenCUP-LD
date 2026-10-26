@@ -1,11 +1,13 @@
 {
   "id": "monithon_J89D09000130006",
   "title": "Unione semantica — CUP J89D09000130006",
-  "sparql_note": "Il CUP J89D09000130006 è oggetto di report Monithon. Collegato a 5 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J89D09000130006 è oggetto di report Monithon. Collegato a 5 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca53c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00074270620",
       "label": "pi:ha_soggetto_titolare"
@@ -30,22 +37,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/0478473069",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/5870443ACE",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6340251CA1",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/671118550F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
       "label": "PCTR:hasProject"
     },
@@ -53,6 +45,36 @@
       "source": "https://w3id.org/italia/data/Lot/6784656B3D",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/0478473069",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/829117",
+      "target": "https://w3id.org/italia/data/Lot/0478473069",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6340251CA1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1263932",
+      "target": "https://w3id.org/italia/data/Lot/6340251CA1",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/671118550F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1260750",
+      "target": "https://w3id.org/italia/data/Lot/671118550F",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -78,6 +100,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca53c332007it161po009/",
+      "shortId": "",
+      "label": "Sistemazione degli spazi sociali al Rione Libertà - Spina ve…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00074270620",
       "shortId": "cf:00074270620",
       "label": "COMUNE DI BENEVENTO - BN -",
@@ -92,30 +121,9 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/0478473069",
-      "shortId": "lot:0478473069",
-      "label": "CIG 0478…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
       "id": "https://w3id.org/italia/data/Lot/5870443ACE",
       "shortId": "lot:5870443ACE",
       "label": "CIG 5870…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/6340251CA1",
-      "shortId": "lot:6340251CA1",
-      "label": "CIG 6340…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/671118550F",
-      "shortId": "lot:671118550F",
-      "label": "CIG 6711…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -127,8 +135,50 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1379",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "id": "https://w3id.org/italia/data/Lot/0478473069",
+      "shortId": "lot:0478473069",
+      "label": "CIG 0478…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/829117",
+      "shortId": "829117",
+      "label": "829117",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6340251CA1",
+      "shortId": "lot:6340251CA1",
+      "label": "CIG 6340…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1263932",
+      "shortId": "1263932",
+      "label": "1263932",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/671118550F",
+      "shortId": "lot:671118550F",
+      "label": "CIG 6711…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1260750",
+      "shortId": "1260750",
+      "label": "1260750",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1295",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1295",
       "label": "SPINA VERDE - SPAZI SOCIALI RIONE LIBERTA'*VIA NAPOLI*REALIZ…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -209,6 +259,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca53c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00074270620",
       "label": "pi:ha_soggetto_titolare"
@@ -219,22 +274,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/0478473069",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/5870443ACE",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6340251CA1",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/671118550F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
       "label": "PCTR:hasProject"
     },
@@ -244,8 +284,38 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/0478473069",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/829117",
+      "target": "https://w3id.org/italia/data/Lot/0478473069",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6340251CA1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1263932",
+      "target": "https://w3id.org/italia/data/Lot/6340251CA1",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/671118550F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1260750",
+      "target": "https://w3id.org/italia/data/Lot/671118550F",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J89D09000130006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1295",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -259,7 +329,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1295",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -269,7 +339,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1295",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -279,7 +349,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1295",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -289,17 +359,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1295",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1295",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1379",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1295",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

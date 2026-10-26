@@ -1,10 +1,11 @@
 {
   "id": "monithon_E54B11000000006",
   "title": "Unione semantica — CUP E54B11000000006",
-  "sparql_note": "Il CUP E54B11000000006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E54B11000000006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/121",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa11103iv423asm100003/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E54B11000000006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E54B11000000006",
@@ -41,7 +47,7 @@
       "id": "https://it.monithon.eu/report/view/121",
       "shortId": "121",
       "label": "121",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -50,6 +56,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1sa11103iv423asm100003/",
+      "shortId": "",
+      "label": "Adeguamento espositivo del museo \"civico archeologico delle …",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00247640907",
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b245",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "id": "ne7d28342d6964779bba482cdd32840a0b218",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b218",
       "label": "ARRICCHIMENTO E ADEGUAMENTO ESPOSITIVO E COMUNICATIVO DEL MU…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -155,6 +168,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa11103iv423asm100003/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E54B11000000006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E54B11000000006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00247640907",
       "label": "pi:ha_soggetto_titolare"
@@ -166,7 +184,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E54B11000000006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "target": "ne7d28342d6964779bba482cdd32840a0b218",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -185,7 +203,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "source": "ne7d28342d6964779bba482cdd32840a0b218",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -195,7 +213,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "source": "ne7d28342d6964779bba482cdd32840a0b218",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -205,7 +223,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "source": "ne7d28342d6964779bba482cdd32840a0b218",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -215,17 +233,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "source": "ne7d28342d6964779bba482cdd32840a0b218",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "source": "ne7d28342d6964779bba482cdd32840a0b218",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b245",
+      "source": "ne7d28342d6964779bba482cdd32840a0b218",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
       "label": "pi:ha_tipologia_intervento"
     },

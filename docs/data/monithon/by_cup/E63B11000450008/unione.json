@@ -1,11 +1,13 @@
 {
   "id": "monithon_E63B11000450008",
   "title": "Unione semantica — CUP E63B11000450008",
-  "sparql_note": "Il CUP E63B11000450008 è oggetto di report Monithon. Collegato a 9 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E63B11000450008 è oggetto di report Monithon. Collegato a 9 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa050106iv411bdds121411/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa050106iv411bdds121411_/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
       "target": "https://w3id.org/italia/data/CodiceFiscale/83000090916",
       "label": "pi:ha_soggetto_titolare"
@@ -30,22 +42,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/583249899A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6221866E3C",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/632360431A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6356427180",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
       "label": "PCTR:hasProject"
     },
@@ -73,6 +70,36 @@
       "source": "https://w3id.org/italia/data/Lot/ZEB1C4E214",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/583249899A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/706333",
+      "target": "https://w3id.org/italia/data/Lot/583249899A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6221866E3C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/983748",
+      "target": "https://w3id.org/italia/data/Lot/6221866E3C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6356427180",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/993867",
+      "target": "https://w3id.org/italia/data/Lot/6356427180",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -87,7 +114,7 @@
       "id": "https://it.monithon.eu/report/view/841",
       "shortId": "841",
       "label": "841",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -96,6 +123,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1sa050106iv411bdds121411/",
+      "shortId": "",
+      "label": "Consolidamento dei versanti e messa in sicurezza nei tratti …",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1sa050106iv411bdds121411_/",
+      "shortId": "",
+      "label": "Consolidamento dei versanti e messa in sicurezza nei tratti …",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/83000090916",
@@ -112,30 +153,9 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/583249899A",
-      "shortId": "lot:583249899A",
-      "label": "CIG 5832…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/6221866E3C",
-      "shortId": "lot:6221866E3C",
-      "label": "CIG 6221…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
       "id": "https://w3id.org/italia/data/Lot/632360431A",
       "shortId": "lot:632360431A",
       "label": "CIG 6323…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/6356427180",
-      "shortId": "lot:6356427180",
-      "label": "CIG 6356…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -175,8 +195,50 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1565",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "id": "https://w3id.org/italia/data/Lot/583249899A",
+      "shortId": "lot:583249899A",
+      "label": "CIG 5832…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/706333",
+      "shortId": "706333",
+      "label": "706333",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6221866E3C",
+      "shortId": "lot:6221866E3C",
+      "label": "CIG 6221…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/983748",
+      "shortId": "983748",
+      "label": "983748",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6356427180",
+      "shortId": "lot:6356427180",
+      "label": "CIG 6356…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/993867",
+      "shortId": "993867",
+      "label": "993867",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1628",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1628",
       "label": "CONSOLIDAMENTO DEI VERSANTI E MESSA IN SICUREZZA NEI TRATTI …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -264,6 +326,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa050106iv411bdds121411/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa050106iv411bdds121411_/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
       "target": "https://w3id.org/italia/data/CodiceFiscale/83000090916",
       "label": "pi:ha_soggetto_titolare"
@@ -274,22 +346,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/583249899A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6221866E3C",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/632360431A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6356427180",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
       "label": "PCTR:hasProject"
     },
@@ -319,8 +376,38 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/583249899A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/706333",
+      "target": "https://w3id.org/italia/data/Lot/583249899A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6221866E3C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/983748",
+      "target": "https://w3id.org/italia/data/Lot/6221866E3C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6356427180",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/993867",
+      "target": "https://w3id.org/italia/data/Lot/6356427180",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E63B11000450008",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1628",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -339,7 +426,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1628",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -349,7 +436,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1628",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_5",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -359,7 +446,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1628",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_5_121",
       "label": "pi:ha_categoria_intervento"
     },
@@ -369,17 +456,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1628",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1628",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1565",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1628",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

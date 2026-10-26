@@ -1,0 +1,28 @@
+{
+  "dataset": "opencoesione",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme opencoesione del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
+      "shortId": "cup:G82B13000010009",
+      "label": "G82B13000010009",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si9597/",
+      "shortId": "",
+      "label": "2-25 âNella vita e nella casa\": Programma integrato per la r…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9597/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
+      "label": "schema:about"
+    }
+  ]
+}

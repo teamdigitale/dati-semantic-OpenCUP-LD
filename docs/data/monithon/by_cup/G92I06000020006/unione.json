@@ -1,10 +1,11 @@
 {
   "id": "monithon_G92I06000020006",
   "title": "Unione semantica — CUP G92I06000020006",
-  "sparql_note": "Il CUP G92I06000020006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G92I06000020006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/989",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si339/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G92I06000020006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G92I06000020006",
@@ -52,6 +58,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si339/",
+      "shortId": "",
+      "label": "AREA ARCHEOLOGICA DI SAN MICELI - VALORIZZAZIONE TURISTICA -…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "shortId": "cf:80012000826",
       "label": "Regione Siciliana",
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b383",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "id": "ne7d28342d6964779bba482cdd32840a0b347",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b347",
       "label": "Area archeologica di San Miceli - Salemi - Progetto per la v…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +161,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si339/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G92I06000020006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G92I06000020006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "pi:ha_soggetto_titolare"
@@ -159,7 +177,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G92I06000020006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "target": "ne7d28342d6964779bba482cdd32840a0b347",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +191,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "source": "ne7d28342d6964779bba482cdd32840a0b347",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +201,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "source": "ne7d28342d6964779bba482cdd32840a0b347",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +211,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "source": "ne7d28342d6964779bba482cdd32840a0b347",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_95",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +221,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "source": "ne7d28342d6964779bba482cdd32840a0b347",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "source": "ne7d28342d6964779bba482cdd32840a0b347",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b383",
+      "source": "ne7d28342d6964779bba482cdd32840a0b347",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_99",
       "label": "pi:ha_tipologia_intervento"
     },

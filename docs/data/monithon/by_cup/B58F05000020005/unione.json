@@ -1,12 +1,15 @@
 {
   "id": "monithon_B58F05000020005",
   "title": "Unione semantica — CUP B58F05000020005",
-  "sparql_note": "Il CUP B58F05000020005 è oggetto di report Monithon. Collegato a 19 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP B58F05000020005 è oggetto di report Monithon. Collegato a 19 lotti CIG ANAC, a 6 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -18,6 +21,16 @@
       "source": "https://it.monithon.eu/report/view/63",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9664/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/b58f05000020005---fscri_ri_3384---1424400853/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
@@ -123,6 +136,41 @@
       "source": "https://w3id.org/italia/data/Lot/8209784015",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-02050770813",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-04639280017",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-08897290154",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-LPZGPP72P60E377A",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-MSSPLA75A21G273N",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1833595",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/748731",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:hasLot"
     }
   ],
   "nodes": [
@@ -137,7 +185,7 @@
       "id": "https://it.monithon.eu/report/view/63",
       "shortId": "63",
       "label": "63",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -146,6 +194,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si9664/",
+      "shortId": "",
+      "label": "Castellammare del Golfo - Realizzazione nuovo impianto di de…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/b58f05000020005---fscri_ri_3384---1424400853/",
+      "shortId": "",
+      "label": "REALIZZAZIONE NUOVO IMPIANTO DI DEPURAZIONE CASTELLAMARE DEL…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00082410812",
@@ -295,8 +357,57 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1757",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-02050770813",
+      "shortId": "8209784015-748731-02050770813",
+      "label": "8209784015-748731-02050770813",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-04639280017",
+      "shortId": "8209784015-748731-04639280017",
+      "label": "8209784015-748731-04639280017",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-08897290154",
+      "shortId": "8209784015-748731-08897290154",
+      "label": "8209784015-748731-08897290154",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-LPZGPP72P60E377A",
+      "shortId": "8209784015-748731-LPZGPP72P60E377A",
+      "label": "8209784015-748731-LPZGPP72P60E377A",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8209784015-748731-MSSPLA75A21G273N",
+      "shortId": "8209784015-748731-MSSPLA75A21G273N",
+      "label": "8209784015-748731-MSSPLA75A21G273N",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1833595",
+      "shortId": "1833595",
+      "label": "1833595",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/748731",
+      "shortId": "748731",
+      "label": "\"SERVIZI INTEGRATI DI PROGETTAZIONE DEFINITIVA/ESECUTIVA, DI…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1769",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1769",
       "label": "adeguamento e ripristino della condotta a mare, vasca di dis…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -375,6 +486,16 @@
       "source": "https://it.monithon.eu/report/view/63",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9664/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/b58f05000020005---fscri_ri_3384---1424400853/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
@@ -482,8 +603,43 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-02050770813",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-04639280017",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-08897290154",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-LPZGPP72P60E377A",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8209784015-748731-MSSPLA75A21G273N",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1833595",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/748731",
+      "target": "https://w3id.org/italia/data/Lot/8209784015",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B58F05000020005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1769",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -497,7 +653,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1769",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -507,7 +663,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1769",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_15",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -517,7 +673,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1769",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_15_114",
       "label": "pi:ha_categoria_intervento"
     },
@@ -527,17 +683,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1769",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1769",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1757",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1769",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

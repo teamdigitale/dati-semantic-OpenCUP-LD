@@ -1,12 +1,15 @@
 {
   "id": "monithon_F13G15000390007",
   "title": "Unione semantica — CUP F13G15000390007",
-  "sparql_note": "Il CUP F13G15000390007 è oggetto di report Monithon. Collegato a 7 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP F13G15000390007 è oggetto di report Monithon. Collegato a 7 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -20,6 +23,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl214260/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000250795",
       "label": "pi:ha_soggetto_titolare"
@@ -28,11 +36,6 @@
       "source": "https://indicepa.gov.it/ente/c_d122",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000250795",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6669701B5F",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7439666E96",
@@ -60,9 +63,24 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/6669701B5F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1352811",
+      "target": "https://w3id.org/italia/data/Lot/6669701B5F",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/8662017A8C",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8662017A8C-1033056-148",
+      "target": "https://w3id.org/italia/data/Lot/8662017A8C",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -77,7 +95,7 @@
       "id": "https://it.monithon.eu/report/view/782",
       "shortId": "782",
       "label": "782",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -86,6 +104,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl214260/",
+      "shortId": "",
+      "label": "Completamento Teatro comunale.",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/81000250795",
@@ -100,13 +125,6 @@
       "label": "Comune di Crotone",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/6669701B5F",
-      "shortId": "lot:6669701B5F",
-      "label": "CIG 6669…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/7439666E96",
@@ -144,6 +162,20 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Lot/6669701B5F",
+      "shortId": "lot:6669701B5F",
+      "label": "CIG 6669…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1352811",
+      "shortId": "1352811",
+      "label": "1352811",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/8662017A8C",
       "shortId": "lot:8662017A8C",
       "label": "CIG 8662…",
@@ -151,8 +183,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1475",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "id": "https://w3id.org/italia/data/Award/8662017A8C-1033056-148",
+      "shortId": "8662017A8C-1033056-148",
+      "label": "8662017A8C-1033056-148",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1415",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1415",
       "label": "TEATRO COMUNALE*VIA POGGIOREALE*COMPLETAMENTO TEATRO COMUNAL…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -240,6 +279,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl214260/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000250795",
       "label": "pi:ha_soggetto_titolare"
@@ -248,11 +292,6 @@
       "source": "https://indicepa.gov.it/ente/c_d122",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000250795",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6669701B5F",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7439666E96",
@@ -280,13 +319,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/6669701B5F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1352811",
+      "target": "https://w3id.org/italia/data/Lot/6669701B5F",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/8662017A8C",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/8662017A8C-1033056-148",
+      "target": "https://w3id.org/italia/data/Lot/8662017A8C",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F13G15000390007",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1415",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -305,7 +359,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1415",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -315,7 +369,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1415",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_12",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -325,7 +379,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1415",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_12_100",
       "label": "pi:ha_categoria_intervento"
     },
@@ -335,17 +389,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1415",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1415",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1475",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1415",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

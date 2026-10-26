@@ -1,11 +1,13 @@
 {
   "id": "monithon_J86G19000390006",
   "title": "Unione semantica — CUP J86G19000390006",
-  "sparql_note": "Il CUP J86G19000390006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J86G19000390006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +20,11 @@
       "source": "https://it.monithon.eu/report/view/2080",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca19074bp000000012/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J86G19000390006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J86G19000390006",
@@ -35,9 +42,19 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/2234326",
+      "target": "https://w3id.org/italia/data/Lot/8399163891",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/890296819D",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J86G19000390006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2254040",
+      "target": "https://w3id.org/italia/data/Lot/890296819D",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -63,6 +80,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/9ca19074bp000000012/",
+      "shortId": "",
+      "label": "LA CASA DI JONAS - Ristrutturazione di un edificio da adibir…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00074270620",
       "shortId": "cf:00074270620",
       "label": "COMUNE DI BENEVENTO - BN -",
@@ -84,6 +108,13 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Award/anac/2234326",
+      "shortId": "2234326",
+      "label": "2234326",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/890296819D",
       "shortId": "lot:890296819D",
       "label": "CIG 8902…",
@@ -91,8 +122,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1103",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "id": "https://w3id.org/italia/data/Award/anac/2254040",
+      "shortId": "2254040",
+      "label": "2254040",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b986",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b986",
       "label": "LA CASA DI JONAS. RISTRUTTURAZIONE DI UN EDIFICIO DA ADIBIRE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -173,6 +211,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca19074bp000000012/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J86G19000390006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J86G19000390006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00074270620",
       "label": "pi:ha_soggetto_titolare"
@@ -188,13 +231,23 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/2234326",
+      "target": "https://w3id.org/italia/data/Lot/8399163891",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/890296819D",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J86G19000390006",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/2254040",
+      "target": "https://w3id.org/italia/data/Lot/890296819D",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J86G19000390006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "target": "ne7d28342d6964779bba482cdd32840a0b986",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -208,7 +261,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "source": "ne7d28342d6964779bba482cdd32840a0b986",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -218,7 +271,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "source": "ne7d28342d6964779bba482cdd32840a0b986",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_30",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -228,7 +281,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "source": "ne7d28342d6964779bba482cdd32840a0b986",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_30_153",
       "label": "pi:ha_categoria_intervento"
     },
@@ -238,17 +291,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "source": "ne7d28342d6964779bba482cdd32840a0b986",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "source": "ne7d28342d6964779bba482cdd32840a0b986",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1103",
+      "source": "ne7d28342d6964779bba482cdd32840a0b986",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

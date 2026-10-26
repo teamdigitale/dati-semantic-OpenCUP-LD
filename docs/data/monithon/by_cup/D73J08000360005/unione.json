@@ -1,11 +1,13 @@
 {
   "id": "monithon_D73J08000360005",
   "title": "Unione semantica — CUP D73J08000360005",
-  "sparql_note": "Il CUP D73J08000360005 è oggetto di report Monithon. Collegato a 7 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D73J08000360005 è oggetto di report Monithon. Collegato a 7 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9631/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/d73j08000360005---si_1_48398/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80188230587",
       "label": "pi:ha_soggetto_titolare"
@@ -30,17 +42,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/86306838EA",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/A05DC1DF90",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/B35F294B23",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
       "label": "PCTR:hasProject"
     },
@@ -63,6 +65,26 @@
       "source": "https://w3id.org/italia/data/Lot/Z3722B67C6",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/86306838EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2459664",
+      "target": "https://w3id.org/italia/data/Lot/86306838EA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B35F294B23",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/13309892",
+      "target": "https://w3id.org/italia/data/Lot/B35F294B23",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -77,7 +99,7 @@
       "id": "https://it.monithon.eu/report/view/794",
       "shortId": "794",
       "label": "794",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -86,6 +108,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si9631/",
+      "shortId": "",
+      "label": "Palermo - eliminazione scarico fognario di via Decollati nel…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/d73j08000360005---si_1_48398/",
+      "shortId": "",
+      "label": "ELIMINAZIONE SCARICO FOGNARIO VIA DECOLLATI FIUME ORETO CONV…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80188230587",
@@ -102,23 +138,9 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/86306838EA",
-      "shortId": "lot:86306838EA",
-      "label": "CIG 8630…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
       "id": "https://w3id.org/italia/data/Lot/A05DC1DF90",
       "shortId": "lot:A05DC1DF90",
       "label": "CIG A05D…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/B35F294B23",
-      "shortId": "lot:B35F294B23",
-      "label": "CIG B35F…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -151,8 +173,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1463",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "id": "https://w3id.org/italia/data/Lot/86306838EA",
+      "shortId": "lot:86306838EA",
+      "label": "CIG 8630…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2459664",
+      "shortId": "2459664",
+      "label": "2459664",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B35F294B23",
+      "shortId": "lot:B35F294B23",
+      "label": "CIG B35F…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/13309892",
+      "shortId": "13309892",
+      "label": "13309892",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1553",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1553",
       "label": "COLLETTORI FOGNARI*VIA DECOLLATI*ELIMINAZIONE DELLO SCARICO …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -233,6 +283,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9631/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/d73j08000360005---si_1_48398/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80188230587",
       "label": "pi:ha_soggetto_titolare"
@@ -243,17 +303,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/86306838EA",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/A05DC1DF90",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/B35F294B23",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
       "label": "PCTR:hasProject"
     },
@@ -278,8 +328,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/86306838EA",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2459664",
+      "target": "https://w3id.org/italia/data/Lot/86306838EA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B35F294B23",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/13309892",
+      "target": "https://w3id.org/italia/data/Lot/B35F294B23",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D73J08000360005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1553",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -293,7 +363,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1553",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -303,7 +373,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1553",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_10",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -313,7 +383,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1553",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_10_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -323,17 +393,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1553",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1553",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1463",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1553",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

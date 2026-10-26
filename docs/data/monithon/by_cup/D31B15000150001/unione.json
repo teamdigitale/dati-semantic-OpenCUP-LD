@@ -1,11 +1,13 @@
 {
   "id": "monithon_D31B15000150001",
   "title": "Unione semantica — CUP D31B15000150001",
-  "sparql_note": "Il CUP D31B15000150001 è oggetto di report Monithon. Collegato a 3 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D31B15000150001 è oggetto di report Monithon. Collegato a 3 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -30,6 +32,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misemo2n31/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00071560700",
       "label": "pi:ha_soggetto_titolare"
@@ -40,19 +47,29 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/662816786F",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/7048656EED",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/662816786F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1375132",
+      "target": "https://w3id.org/italia/data/Lot/662816786F",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/7561602F5B",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1660333",
+      "target": "https://w3id.org/italia/data/Lot/7561602F5B",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -81,8 +98,15 @@
       "id": "https://it.monithon.eu/report/view/880",
       "shortId": "880",
       "label": "880",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misemo2n31/",
+      "shortId": "",
+      "label": "Terminal autobus - completamento percorso pedonale",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00071560700",
@@ -99,6 +123,13 @@
       "dataset": "enti_ipa"
     },
     {
+      "id": "https://w3id.org/italia/data/Lot/7048656EED",
+      "shortId": "lot:7048656EED",
+      "label": "CIG 7048…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/662816786F",
       "shortId": "lot:662816786F",
       "label": "CIG 6628…",
@@ -106,11 +137,11 @@
       "dataset": "cupcig"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/7048656EED",
-      "shortId": "lot:7048656EED",
-      "label": "CIG 7048…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
+      "id": "https://w3id.org/italia/data/Award/anac/1375132",
+      "shortId": "1375132",
+      "label": "1375132",
+      "type": "PCTR:Award",
+      "dataset": "anac"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/7561602F5B",
@@ -120,8 +151,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1325",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "id": "https://w3id.org/italia/data/Award/anac/1660333",
+      "shortId": "1660333",
+      "label": "1660333",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1241",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1241",
       "label": "LAVORI DI COMPLETAMENTO DEL COLLEGAMENTO TRA IL TERMINAL PER…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -212,6 +250,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misemo2n31/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00071560700",
       "label": "pi:ha_soggetto_titolare"
@@ -222,14 +265,19 @@
       "label": "owl:sameAs"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/7048656EED",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
+      "label": "PCTR:hasProject"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/662816786F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/7048656EED",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
-      "label": "PCTR:hasProject"
+      "source": "https://w3id.org/italia/data/Award/anac/1375132",
+      "target": "https://w3id.org/italia/data/Lot/662816786F",
+      "label": "PCTR:awardedLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7561602F5B",
@@ -237,8 +285,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/1660333",
+      "target": "https://w3id.org/italia/data/Lot/7561602F5B",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D31B15000150001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1241",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -252,7 +305,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1241",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -262,7 +315,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1241",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -272,7 +325,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1241",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_1_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -282,17 +335,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1241",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1241",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1325",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1241",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

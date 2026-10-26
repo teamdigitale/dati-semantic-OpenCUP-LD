@@ -1,0 +1,95 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/7653306BE5-529119-01981810060",
+      "shortId": "7653306BE5-529119-01981810060",
+      "label": "7653306BE5-529119-01981810060",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/7653306BE5-529119-02461490647",
+      "shortId": "7653306BE5-529119-02461490647",
+      "label": "7653306BE5-529119-02461490647",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/7653306BE5-529119-06044391214",
+      "shortId": "7653306BE5-529119-06044391214",
+      "label": "7653306BE5-529119-06044391214",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/89986744B3-1243600-02461490647",
+      "shortId": "89986744B3-1243600-02461490647",
+      "label": "89986744B3-1243600-02461490647",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/89986744B3-1243600-14206491004",
+      "shortId": "89986744B3-1243600-14206491004",
+      "label": "89986744B3-1243600-14206491004",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1243600",
+      "shortId": "1243600",
+      "label": "\"DAC.0238.2021_GPA_Raddoppio Termoli-Ripalta\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7653306BE5",
+      "shortId": "lot:7653306BE5",
+      "label": "CIG 7653…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/89986744B3",
+      "shortId": "lot:89986744B3",
+      "label": "\"DAC.0238.2021_GPA_Raddoppio Termoli-Ripalta\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/7653306BE5-529119-01981810060",
+      "target": "https://w3id.org/italia/data/Lot/7653306BE5",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/7653306BE5-529119-02461490647",
+      "target": "https://w3id.org/italia/data/Lot/7653306BE5",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/7653306BE5-529119-06044391214",
+      "target": "https://w3id.org/italia/data/Lot/7653306BE5",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/89986744B3-1243600-02461490647",
+      "target": "https://w3id.org/italia/data/Lot/89986744B3",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/89986744B3-1243600-14206491004",
+      "target": "https://w3id.org/italia/data/Lot/89986744B3",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1243600",
+      "target": "https://w3id.org/italia/data/Lot/89986744B3",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

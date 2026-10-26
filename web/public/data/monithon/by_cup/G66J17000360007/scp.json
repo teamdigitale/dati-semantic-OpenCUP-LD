@@ -1,0 +1,95 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1284181",
+      "shortId": "1284181",
+      "label": "\"lavori per la realizzazione di una infrastruttura per misur…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8396958CF0-842428-06273650827",
+      "shortId": "8396958CF0-842428-06273650827",
+      "label": "8396958CF0-842428-06273650827",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/842428",
+      "shortId": "842428",
+      "label": "\"Fornitura di n. 4 Osservatori multiparametrici sottomarini\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/83969717AC-842428-01657700157",
+      "shortId": "83969717AC-842428-01657700157",
+      "label": "83969717AC-842428-01657700157",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8396984268-842428-01657700157",
+      "shortId": "8396984268-842428-01657700157",
+      "label": "8396984268-842428-01657700157",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8396958CF0",
+      "shortId": "lot:8396958CF0",
+      "label": "\"Fornitura della struttura meccanica\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/83969717AC",
+      "shortId": "lot:83969717AC",
+      "label": "\"Fornitura di sensoristica specialistica per uso marino\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8396984268",
+      "shortId": "lot:8396984268",
+      "label": "\"Fornitura di sensori chimico-fisici per uso sottomarino\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/8396958CF0-842428-06273650827",
+      "target": "https://w3id.org/italia/data/Lot/8396958CF0",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/842428",
+      "target": "https://w3id.org/italia/data/Lot/8396958CF0",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/83969717AC-842428-01657700157",
+      "target": "https://w3id.org/italia/data/Lot/83969717AC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/842428",
+      "target": "https://w3id.org/italia/data/Lot/83969717AC",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8396984268-842428-01657700157",
+      "target": "https://w3id.org/italia/data/Lot/8396984268",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/842428",
+      "target": "https://w3id.org/italia/data/Lot/8396984268",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

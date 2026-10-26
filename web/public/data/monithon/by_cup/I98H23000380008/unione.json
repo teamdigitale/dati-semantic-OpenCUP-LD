@@ -1,11 +1,13 @@
 {
   "id": "monithon_I98H23000380008",
   "title": "Unione semantica — CUP I98H23000380008",
-  "sparql_note": "Il CUP I98H23000380008 è oggetto di report Monithon. Collegato a 15 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP I98H23000380008 è oggetto di report Monithon. Collegato a 15 lotti CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca20023cp000000041/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/i98h23000380008---24003bp000000006/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80009450653",
       "label": "pi:ha_soggetto_titolare"
@@ -31,11 +43,6 @@
     },
     {
       "source": "https://w3id.org/italia/data/Lot/A0163658B6",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/A018842460",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
       "label": "PCTR:hasProject"
     },
@@ -103,6 +110,16 @@
       "source": "https://w3id.org/italia/data/Lot/BA5DDD80E0",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/A018842460",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2904660",
+      "target": "https://w3id.org/italia/data/Lot/A018842460",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -128,6 +145,20 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/9ca20023cp000000041/",
+      "shortId": "",
+      "label": "Intervento cod I.3.d_Ripristino funzionalità idraulica Alveo…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/i98h23000380008---24003bp000000006/",
+      "shortId": "",
+      "label": "Ripristino funzionalita' idraulica Alveo Comune Nocerino - I…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80009450653",
       "shortId": "cf:80009450653",
       "label": "CONSORZIO BONIFICA AGRO SARNESE NOCERINO - NOCERA INFERIORE …",
@@ -145,13 +176,6 @@
       "id": "https://w3id.org/italia/data/Lot/A0163658B6",
       "shortId": "lot:A0163658B6",
       "label": "CIG A016…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/A018842460",
-      "shortId": "lot:A018842460",
-      "label": "CIG A018…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -247,8 +271,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1721",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "id": "https://w3id.org/italia/data/Lot/A018842460",
+      "shortId": "lot:A018842460",
+      "label": "CIG A018…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2904660",
+      "shortId": "2904660",
+      "label": "2904660",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1739",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1739",
       "label": "ALVEO COMUNE NOCERINO*LUNGO IL CORSO DELL'ALVEO COMUNE NOCER…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -336,6 +374,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/9ca20023cp000000041/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/i98h23000380008---24003bp000000006/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80009450653",
       "label": "pi:ha_soggetto_titolare"
@@ -347,11 +395,6 @@
     },
     {
       "source": "https://w3id.org/italia/data/Lot/A0163658B6",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/A018842460",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
       "label": "PCTR:hasProject"
     },
@@ -421,8 +464,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/A018842460",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2904660",
+      "target": "https://w3id.org/italia/data/Lot/A018842460",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I98H23000380008",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1739",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -441,7 +494,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1739",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -451,7 +504,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1739",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_5",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -461,7 +514,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1739",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_5_51",
       "label": "pi:ha_categoria_intervento"
     },
@@ -471,17 +524,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1739",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1739",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1721",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1739",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_61",
       "label": "pi:ha_tipologia_intervento"
     },

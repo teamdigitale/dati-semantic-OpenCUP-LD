@@ -1,0 +1,35 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/85547356A5-1052949-02628520344",
+      "shortId": "85547356A5-1052949-02628520344",
+      "label": "85547356A5-1052949-02628520344",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/983539",
+      "shortId": "983539",
+      "label": "\"ECO MUSEO VIRTUALE\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/85547356A5",
+      "shortId": "lot:85547356A5",
+      "label": "CIG 8554…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/85547356A5-1052949-02628520344",
+      "target": "https://w3id.org/italia/data/Lot/85547356A5",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

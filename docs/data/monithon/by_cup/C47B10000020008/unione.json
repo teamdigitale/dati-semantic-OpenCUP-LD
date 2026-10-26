@@ -1,11 +1,12 @@
 {
   "id": "monithon_C47B10000020008",
   "title": "Unione semantica — CUP C47B10000020008",
-  "sparql_note": "Il CUP C47B10000020008 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C47B10000020008 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,11 @@
       "source": "https://it.monithon.eu/report/view/213",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si14581/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C47B10000020008",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C47B10000020008",
@@ -47,7 +53,7 @@
       "id": "https://it.monithon.eu/report/view/213",
       "shortId": "213",
       "label": "213",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -56,6 +62,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si14581/",
+      "shortId": "",
+      "label": "Comune di Acireale - Interventi per la mitigazione del risch…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/81000970871",
@@ -79,8 +92,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b584",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "id": "ne7d28342d6964779bba482cdd32840a0b536",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b536",
       "label": "TORRENTE LAVINAIO-PLATANI*VIA CAPOMULINI - VIA ANZALONE*INTE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -168,6 +181,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si14581/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C47B10000020008",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C47B10000020008",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000970871",
       "label": "pi:ha_soggetto_titolare"
@@ -184,7 +202,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C47B10000020008",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "target": "ne7d28342d6964779bba482cdd32840a0b536",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -203,7 +221,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "source": "ne7d28342d6964779bba482cdd32840a0b536",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -213,7 +231,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "source": "ne7d28342d6964779bba482cdd32840a0b536",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -223,7 +241,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "source": "ne7d28342d6964779bba482cdd32840a0b536",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_11_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -233,17 +251,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "source": "ne7d28342d6964779bba482cdd32840a0b536",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "source": "ne7d28342d6964779bba482cdd32840a0b536",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b584",
+      "source": "ne7d28342d6964779bba482cdd32840a0b536",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

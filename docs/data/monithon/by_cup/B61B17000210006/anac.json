@@ -1,0 +1,85 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1280926",
+      "shortId": "1280926",
+      "label": "1280926",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2520534",
+      "shortId": "2520534",
+      "label": "2520534",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2042574",
+      "shortId": "2042574",
+      "label": "2042574",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1912350",
+      "shortId": "1912350",
+      "label": "1912350",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/711777099C",
+      "shortId": "lot:711777099C",
+      "label": "CIG 7117…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8752130627",
+      "shortId": "lot:8752130627",
+      "label": "CIG 8752…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8811573412",
+      "shortId": "lot:8811573412",
+      "label": "CIG 8811…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8580406706",
+      "shortId": "lot:8580406706",
+      "label": "\"ABITARE IN FIORINDA - GESTIONE DELLA CASA DI ACCOGLIENZA CO…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1280926",
+      "target": "https://w3id.org/italia/data/Lot/711777099C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2520534",
+      "target": "https://w3id.org/italia/data/Lot/8752130627",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2042574",
+      "target": "https://w3id.org/italia/data/Lot/8811573412",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1912350",
+      "target": "https://w3id.org/italia/data/Lot/8580406706",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

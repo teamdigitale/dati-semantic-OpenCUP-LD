@@ -1,10 +1,12 @@
 {
   "id": "monithon_B83E04000010001",
   "title": "Unione semantica — CUP B83E04000010001",
-  "sparql_note": "Il CUP B83E04000010001 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP B83E04000010001 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -19,9 +21,19 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si10238/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/96019600822",
       "label": "pi:ha_soggetto_titolare"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/ZF40EBD761",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
+      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/5386117C58",
@@ -29,9 +41,19 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/597134",
+      "target": "https://w3id.org/italia/data/Lot/5386117C58",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/5508244ABC",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/634214",
+      "target": "https://w3id.org/italia/data/Lot/5508244ABC",
+      "label": "PCTR:awardedLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/605516503C",
@@ -39,9 +61,9 @@
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/ZF40EBD761",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
-      "label": "PCTR:hasProject"
+      "source": "https://w3id.org/italia/data/Award/anac/854230",
+      "target": "https://w3id.org/italia/data/Lot/605516503C",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -56,7 +78,7 @@
       "id": "https://it.monithon.eu/report/view/779",
       "shortId": "779",
       "label": "779",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -67,32 +89,18 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si10238/",
+      "shortId": "",
+      "label": "Ristrutturazione corpi annessi palazzo Sgadari",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/96019600822",
       "shortId": "cf:96019600822",
       "label": "UFFICIO PIST 22 CITTA' A RETE MADONIE - TERMINI",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5386117C58",
-      "shortId": "lot:5386117C58",
-      "label": "CIG 5386…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5508244ABC",
-      "shortId": "lot:5508244ABC",
-      "label": "CIG 5508…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/605516503C",
-      "shortId": "lot:605516503C",
-      "label": "CIG 6055…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/ZF40EBD761",
@@ -102,8 +110,50 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1229",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "id": "https://w3id.org/italia/data/Lot/5386117C58",
+      "shortId": "lot:5386117C58",
+      "label": "CIG 5386…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/597134",
+      "shortId": "597134",
+      "label": "597134",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5508244ABC",
+      "shortId": "lot:5508244ABC",
+      "label": "CIG 5508…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/634214",
+      "shortId": "634214",
+      "label": "634214",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/605516503C",
+      "shortId": "lot:605516503C",
+      "label": "CIG 6055…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/854230",
+      "shortId": "854230",
+      "label": "854230",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1118",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1118",
       "label": "RISTRUTTURAZIONE CORPI ANNESSI AL PALAZZO SGADARI DA DESTINA…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -191,24 +241,14 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si10238/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/96019600822",
       "label": "pi:ha_soggetto_titolare"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5386117C58",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5508244ABC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/605516503C",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/ZF40EBD761",
@@ -216,8 +256,38 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/5386117C58",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/597134",
+      "target": "https://w3id.org/italia/data/Lot/5386117C58",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5508244ABC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/634214",
+      "target": "https://w3id.org/italia/data/Lot/5508244ABC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/605516503C",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/854230",
+      "target": "https://w3id.org/italia/data/Lot/605516503C",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B83E04000010001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1118",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -236,7 +306,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1118",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -246,7 +316,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1118",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_12",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -256,7 +326,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1118",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_12_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -266,17 +336,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1118",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1118",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1229",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1118",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

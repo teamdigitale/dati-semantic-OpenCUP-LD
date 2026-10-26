@@ -1,0 +1,47 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1913618",
+      "shortId": "1913618",
+      "label": "1913618",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1869539",
+      "shortId": "1869539",
+      "label": "1869539",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8675188F98",
+      "shortId": "lot:8675188F98",
+      "label": "CIG 8675…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/84595197EA",
+      "shortId": "lot:84595197EA",
+      "label": "\"APPALTO INTEGRATO PER LA REALIZZAZIONE DI UN IMPIANTO DI VI…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1913618",
+      "target": "https://w3id.org/italia/data/Lot/8675188F98",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1869539",
+      "target": "https://w3id.org/italia/data/Lot/84595197EA",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

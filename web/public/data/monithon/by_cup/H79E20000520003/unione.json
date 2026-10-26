@@ -1,12 +1,15 @@
 {
   "id": "monithon_H79E20000520003",
   "title": "Unione semantica — CUP H79E20000520003",
-  "sparql_note": "Il CUP H79E20000520003 è oggetto di report Monithon. Collegato a 135 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP H79E20000520003 è oggetto di report Monithon. Collegato a 135 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -40,6 +43,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/7ve10255547/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
       "label": "pi:ha_soggetto_titolare"
@@ -48,11 +56,6 @@
       "source": "https://indicepa.gov.it/ente/r_veneto",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/86972849CC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/96483473D2",
@@ -720,9 +723,29 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/86972849CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1933144",
+      "target": "https://w3id.org/italia/data/Lot/86972849CC",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/8747445BF6",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8747445BF6-1481920-02024291201",
+      "target": "https://w3id.org/italia/data/Lot/8747445BF6",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2212214",
+      "target": "https://w3id.org/italia/data/Lot/8747445BF6",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -737,7 +760,7 @@
       "id": "https://it.monithon.eu/report/view/1726",
       "shortId": "1726",
       "label": "1726",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -758,8 +781,15 @@
       "id": "https://it.monithon.eu/report/view/1762",
       "shortId": "1762",
       "label": "1762",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/7ve10255547/",
+      "shortId": "",
+      "label": "Smart and Slow Tourism Supporting Adriatic Heritage for Tomo…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
@@ -774,13 +804,6 @@
       "label": "Regione del Veneto",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/86972849CC",
-      "shortId": "lot:86972849CC",
-      "label": "CIG 8697…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/96483473D2",
@@ -1714,6 +1737,20 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Lot/86972849CC",
+      "shortId": "lot:86972849CC",
+      "label": "CIG 8697…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1933144",
+      "shortId": "1933144",
+      "label": "1933144",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/8747445BF6",
       "shortId": "lot:8747445BF6",
       "label": "CIG 8747…",
@@ -1721,8 +1758,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1907",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "id": "https://w3id.org/italia/data/Award/8747445BF6-1481920-02024291201",
+      "shortId": "8747445BF6-1481920-02024291201",
+      "label": "8747445BF6-1481920-02024291201",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2212214",
+      "shortId": "2212214",
+      "label": "2212214",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1907",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1907",
       "label": "PROGETTO INTERREG ITALIA CROAZIA TAKE IT SLOW PER UN TURISMO…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -1837,6 +1888,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/7ve10255547/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
       "label": "pi:ha_soggetto_titolare"
@@ -1845,11 +1901,6 @@
       "source": "https://indicepa.gov.it/ente/r_veneto",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80007580279",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/86972849CC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/96483473D2",
@@ -2517,13 +2568,33 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/86972849CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1933144",
+      "target": "https://w3id.org/italia/data/Lot/86972849CC",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/8747445BF6",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/8747445BF6-1481920-02024291201",
+      "target": "https://w3id.org/italia/data/Lot/8747445BF6",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2212214",
+      "target": "https://w3id.org/italia/data/Lot/8747445BF6",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H79E20000520003",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1907",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -2547,7 +2618,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1907",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -2557,7 +2628,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1907",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -2567,7 +2638,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1907",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -2577,17 +2648,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1907",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1907",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1907",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1907",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
       "label": "pi:ha_tipologia_intervento"
     },

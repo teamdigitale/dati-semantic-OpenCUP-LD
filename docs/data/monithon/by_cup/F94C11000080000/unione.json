@@ -1,10 +1,11 @@
 {
   "id": "monithon_F94C11000080000",
   "title": "Unione semantica — CUP F94C11000080000",
-  "sparql_note": "Il CUP F94C11000080000 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a OpenCUP.",
+  "sparql_note": "Il CUP F94C11000080000 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/69",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/4fr12490/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F94C11000080000",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/6711293E2C",
@@ -47,6 +53,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/4fr12490/",
+      "shortId": "",
+      "label": "Ampliamento rete wi-fi TriesteFreeSpoTS e collegamento fibra…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/6711293E2C",
       "shortId": "lot:6711293E2C",
       "label": "CIG 6711…",
@@ -64,6 +77,11 @@
       "source": "https://it.monithon.eu/report/view/69",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/4fr12490/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F94C11000080000",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/6711293E2C",

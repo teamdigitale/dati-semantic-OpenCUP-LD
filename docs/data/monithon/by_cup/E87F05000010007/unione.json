@@ -1,10 +1,11 @@
 {
   "id": "monithon_E87F05000010007",
   "title": "Unione semantica — CUP E87F05000010007",
-  "sparql_note": "Il CUP E87F05000010007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E87F05000010007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/452",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca249c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E87F05000010007",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E87F05000010007",
@@ -52,9 +58,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca249c332007it161po009/",
+      "shortId": "",
+      "label": "Conforme Rest. e consolidamento Complesso termale Antiche Te…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/82000270635",
       "shortId": "cf:82000270635",
-      "label": "Comune di Castellammare di Stabia",
+      "label": "COMUNE DI CASTELLAMMARE DI STABIA - NA -",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b260",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "id": "ne7d28342d6964779bba482cdd32840a0b233",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b233",
       "label": "ANTICHE TERME DI STABIA*PIAZZA AMENDOLA*RESTAURO DEGLI EDIFI…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -162,6 +175,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca249c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E87F05000010007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E87F05000010007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82000270635",
       "label": "pi:ha_soggetto_titolare"
@@ -173,7 +191,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E87F05000010007",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "target": "ne7d28342d6964779bba482cdd32840a0b233",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -197,7 +215,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "source": "ne7d28342d6964779bba482cdd32840a0b233",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -207,7 +225,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "source": "ne7d28342d6964779bba482cdd32840a0b233",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_12",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -217,7 +235,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "source": "ne7d28342d6964779bba482cdd32840a0b233",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_12_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -227,17 +245,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "source": "ne7d28342d6964779bba482cdd32840a0b233",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "source": "ne7d28342d6964779bba482cdd32840a0b233",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b260",
+      "source": "ne7d28342d6964779bba482cdd32840a0b233",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
       "label": "pi:ha_tipologia_intervento"
     },

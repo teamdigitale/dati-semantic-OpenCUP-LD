@@ -1,9 +1,10 @@
 {
   "id": "monithon_I64C12000020007",
   "title": "Unione semantica — CUP I64C12000020007",
-  "sparql_note": "Il CUP I64C12000020007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP I64C12000020007 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -16,6 +17,11 @@
       "source": "https://it.monithon.eu/report/view/311",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/3um31902/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I64C12000020007",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I64C12000020007",
@@ -35,7 +41,7 @@
       "id": "https://it.monithon.eu/report/view/311",
       "shortId": "311",
       "label": "311",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -46,6 +52,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/3um31902/",
+      "shortId": "",
+      "label": "Portale web dedicato al digital divide",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/03761180961",
       "shortId": "cf:03761180961",
       "label": "UMBRIA DIGITALE S.C. A R.L.",
@@ -53,8 +66,8 @@
       "dataset": "opencup"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b446",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "id": "ne7d28342d6964779bba482cdd32840a0b407",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b407",
       "label": "RETE REGIONALE DI CABLAGGIO A LARGA BANDA DELL'UMBRIA*TERRIT…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -142,13 +155,18 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/3um31902/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I64C12000020007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I64C12000020007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/03761180961",
       "label": "pi:ha_soggetto_titolare"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I64C12000020007",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "target": "ne7d28342d6964779bba482cdd32840a0b407",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -167,7 +185,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "source": "ne7d28342d6964779bba482cdd32840a0b407",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_7",
       "label": "pi:ha_settore_intervento"
     },
@@ -177,7 +195,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "source": "ne7d28342d6964779bba482cdd32840a0b407",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_7_17",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -187,7 +205,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "source": "ne7d28342d6964779bba482cdd32840a0b407",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_7_17_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -197,17 +215,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "source": "ne7d28342d6964779bba482cdd32840a0b407",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "source": "ne7d28342d6964779bba482cdd32840a0b407",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b446",
+      "source": "ne7d28342d6964779bba482cdd32840a0b407",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

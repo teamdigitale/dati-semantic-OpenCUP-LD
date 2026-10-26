@@ -1,0 +1,123 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/984105",
+      "shortId": "984105",
+      "label": "\"Procedura chiavi in mano del completamento dellupgrade dell…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9452012F0A-1612694-00801720152",
+      "shortId": "9452012F0A-1612694-00801720152",
+      "label": "9452012F0A-1612694-00801720152",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9452168FC6-1612622-10828560960",
+      "shortId": "9452168FC6-1612622-10828560960",
+      "label": "9452168FC6-1612622-10828560960",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1204367",
+      "shortId": "1204367",
+      "label": "\"Gara europea a procedura aperta telematica, mediante l'util…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/84637267A4-861705-02143930150",
+      "shortId": "84637267A4-861705-02143930150",
+      "label": "84637267A4-861705-02143930150",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/861705",
+      "shortId": "861705",
+      "label": "\"GARA EUROPEA A PROCEDURA APERTA TELEMATICAPER LA FORNITURA …",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8799938291-1088901-87",
+      "shortId": "8799938291-1088901-87",
+      "label": "8799938291-1088901-87",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1088901",
+      "shortId": "1088901",
+      "label": "\"BIOBANCA\"",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9452012F0A",
+      "shortId": "lot:9452012F0A",
+      "label": "CIG 9452…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9452168FC6",
+      "shortId": "lot:9452168FC6",
+      "label": "CIG 9452…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/84637267A4",
+      "shortId": "lot:84637267A4",
+      "label": "\"GARA EUROPEA A PROCEDURA APERTA TELEMATICA PER LA FORNITURA…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8799938291",
+      "shortId": "lot:8799938291",
+      "label": "\"BIOBANCA\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9452012F0A-1612694-00801720152",
+      "target": "https://w3id.org/italia/data/Lot/9452012F0A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9452168FC6-1612622-10828560960",
+      "target": "https://w3id.org/italia/data/Lot/9452168FC6",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/84637267A4-861705-02143930150",
+      "target": "https://w3id.org/italia/data/Lot/84637267A4",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/861705",
+      "target": "https://w3id.org/italia/data/Lot/84637267A4",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8799938291-1088901-87",
+      "target": "https://w3id.org/italia/data/Lot/8799938291",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1088901",
+      "target": "https://w3id.org/italia/data/Lot/8799938291",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

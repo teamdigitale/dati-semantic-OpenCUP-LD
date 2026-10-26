@@ -1,0 +1,54 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1000283",
+      "shortId": "1000283",
+      "label": "\"PROGETTAZIONE DEFINITIVA, ESECUTIVA E COORDINAMENTO DELLA S…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9740961F4C-1972332-141",
+      "shortId": "9740961F4C-1972332-141",
+      "label": "9740961F4C-1972332-141",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1972332",
+      "shortId": "1972332",
+      "label": "\"Villa Gabola - Realizzazione di un centro di aggregazione g…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/2107487",
+      "shortId": "2107487",
+      "label": "\"'Fornitura di Arredi' per  'Villa Gabola - Realizzazione di…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9740961F4C",
+      "shortId": "lot:9740961F4C",
+      "label": "\"Villa Gabola - Realizzazione di un centro di aggregazione g…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9740961F4C-1972332-141",
+      "target": "https://w3id.org/italia/data/Lot/9740961F4C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1972332",
+      "target": "https://w3id.org/italia/data/Lot/9740961F4C",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

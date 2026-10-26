@@ -1,0 +1,104 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2615794",
+      "shortId": "2615794",
+      "label": "2615794",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2616157",
+      "shortId": "2616157",
+      "label": "2616157",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2616171",
+      "shortId": "2616171",
+      "label": "2616171",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2616163",
+      "shortId": "2616163",
+      "label": "2616163",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2667236",
+      "shortId": "2667236",
+      "label": "2667236",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "shortId": "lot:9902212BD6",
+      "label": "\"Fornitura in acquisto di 20 apparecchi per anestesia da des…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9902319425",
+      "shortId": "lot:9902319425",
+      "label": "\"Lotto 1 - Fornitura di un'apparecchiatura Angio-OCT-FAG int…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "shortId": "lot:9902346A6B",
+      "label": "\"Lotto 2 - Fornitura di un microscopio operatorio per ORL\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "shortId": "lot:9902372FDE",
+      "label": "\"Lotto 3 - Fornitura di due portatili digitali per radiograf…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "shortId": "lot:A00EEFE9CC",
+      "label": "\"Fornitura in acquisto di una CARDIO TC\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2615794",
+      "target": "https://w3id.org/italia/data/Lot/9902212BD6",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616157",
+      "target": "https://w3id.org/italia/data/Lot/9902319425",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616171",
+      "target": "https://w3id.org/italia/data/Lot/9902346A6B",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2616163",
+      "target": "https://w3id.org/italia/data/Lot/9902372FDE",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2667236",
+      "target": "https://w3id.org/italia/data/Lot/A00EEFE9CC",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

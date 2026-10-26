@@ -1,11 +1,13 @@
 {
   "id": "monithon_H39D07000210001",
   "title": "Unione semantica — CUP H39D07000210001",
-  "sparql_note": "Il CUP H39D07000210001 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP H39D07000210001 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cmrc0249/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00136380805",
       "label": "pi:ha_soggetto_titolare"
@@ -28,16 +35,6 @@
       "source": "https://indicepa.gov.it/ente/c_h224",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00136380805",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6697290A89",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/B1DB8AF409",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z4F2D0AF82",
@@ -58,6 +55,26 @@
       "source": "https://w3id.org/italia/data/Lot/ZC42B3B185",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6697290A89",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2935809",
+      "target": "https://w3id.org/italia/data/Lot/6697290A89",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B1DB8AF409",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/11833555",
+      "target": "https://w3id.org/italia/data/Lot/B1DB8AF409",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -83,6 +100,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cmrc0249/",
+      "shortId": "",
+      "label": "COMPLETAMENTO LAVORI DI REALIZZAZIONE PARCO URBANO LINEARE A…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00136380805",
       "shortId": "cf:00136380805",
       "label": "COMUNE DI REGGIO DI CALABRIA - RC -",
@@ -95,20 +119,6 @@
       "label": "Comune di Reggio Calabria",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/6697290A89",
-      "shortId": "lot:6697290A89",
-      "label": "CIG 6697…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/B1DB8AF409",
-      "shortId": "lot:B1DB8AF409",
-      "label": "CIG B1DB…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z4F2D0AF82",
@@ -139,8 +149,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1412",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "id": "https://w3id.org/italia/data/Lot/6697290A89",
+      "shortId": "lot:6697290A89",
+      "label": "CIG 6697…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2935809",
+      "shortId": "2935809",
+      "label": "2935809",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/B1DB8AF409",
+      "shortId": "lot:B1DB8AF409",
+      "label": "CIG B1DB…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/11833555",
+      "shortId": "11833555",
+      "label": "11833555",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1349",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1349",
       "label": "REALIZZAZIONE DEL PARCO URBANO LINEARE AREA SUD *VIA CALAMIZ…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -221,6 +259,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cmrc0249/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00136380805",
       "label": "pi:ha_soggetto_titolare"
@@ -229,16 +272,6 @@
       "source": "https://indicepa.gov.it/ente/c_h224",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00136380805",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6697290A89",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/B1DB8AF409",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z4F2D0AF82",
@@ -261,8 +294,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/6697290A89",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2935809",
+      "target": "https://w3id.org/italia/data/Lot/6697290A89",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/B1DB8AF409",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/11833555",
+      "target": "https://w3id.org/italia/data/Lot/B1DB8AF409",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H39D07000210001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1349",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -276,7 +329,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1349",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -286,7 +339,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1349",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -296,7 +349,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1349",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -306,17 +359,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1349",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1349",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1412",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1349",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

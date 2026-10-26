@@ -1,11 +1,12 @@
 {
   "id": "monithon_G83F11000280004",
   "title": "Unione semantica — CUP G83F11000280004",
-  "sparql_note": "Il CUP G83F11000280004 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G83F11000280004 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,11 @@
       "source": "https://it.monithon.eu/report/view/468",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si7639/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G83F11000280004",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G83F11000280004",
@@ -47,7 +53,7 @@
       "id": "https://it.monithon.eu/report/view/468",
       "shortId": "468",
       "label": "468",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -56,6 +62,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si7639/",
+      "shortId": "",
+      "label": "Hydroenergy",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
@@ -79,8 +92,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b779",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "id": "ne7d28342d6964779bba482cdd32840a0b698",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b698",
       "label": "ONDA SRL*OTTIMIZZARE LO SFRUTTAMENTO DI ALCUNE FONTI DI ENER…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -168,6 +181,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si7639/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G83F11000280004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G83F11000280004",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "pi:ha_soggetto_titolare"
@@ -184,7 +202,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G83F11000280004",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "target": "ne7d28342d6964779bba482cdd32840a0b698",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -203,7 +221,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "source": "ne7d28342d6964779bba482cdd32840a0b698",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_6",
       "label": "pi:ha_settore_intervento"
     },
@@ -213,7 +231,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "source": "ne7d28342d6964779bba482cdd32840a0b698",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_6_40",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -223,7 +241,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "source": "ne7d28342d6964779bba482cdd32840a0b698",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_6_40_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -233,17 +251,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "source": "ne7d28342d6964779bba482cdd32840a0b698",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "source": "ne7d28342d6964779bba482cdd32840a0b698",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/07",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b779",
+      "source": "ne7d28342d6964779bba482cdd32840a0b698",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/07_20",
       "label": "pi:ha_tipologia_intervento"
     },

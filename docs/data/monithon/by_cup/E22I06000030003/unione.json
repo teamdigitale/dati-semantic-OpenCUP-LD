@@ -1,11 +1,13 @@
 {
   "id": "monithon_E22I06000030003",
   "title": "Unione semantica — CUP E22I06000030003",
-  "sparql_note": "Il CUP E22I06000030003 è oggetto di report Monithon. Collegato a 10 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E22I06000030003 è oggetto di report Monithon. Collegato a 10 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 3 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,21 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa110106iv423cmt080001/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sasarbdsarbd-08/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sasarbgsarbg-03/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80002870923",
       "label": "pi:ha_soggetto_titolare"
@@ -28,16 +45,6 @@
       "source": "https://indicepa.gov.it/ente/r_sardeg",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80002870923",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/0183239D97",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5278509B6A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z1D0CAC6E4",
@@ -78,6 +85,26 @@
       "source": "https://w3id.org/italia/data/Lot/Z9C0E81C37",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/0183239D97",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/46055",
+      "target": "https://w3id.org/italia/data/Lot/0183239D97",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5278509B6A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/495419",
+      "target": "https://w3id.org/italia/data/Lot/5278509B6A",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -103,6 +130,27 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1sa110106iv423cmt080001/",
+      "shortId": "",
+      "label": "Manifatture. Fabbrica delle creatività  - Cagliari",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1sasarbdsarbd-08/",
+      "shortId": "",
+      "label": "Manifatture. Fabbrica delle creativit §; Cagliari",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1sasarbgsarbg-03/",
+      "shortId": "",
+      "label": "Manifatture. Fabbrica delle creativit  di Cagliari",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80002870923",
       "shortId": "cf:80002870923",
       "label": "REGIONE AUTONOMA DELLA SARDEGNA",
@@ -115,20 +163,6 @@
       "label": "Regione Autonoma della Sardegna",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/0183239D97",
-      "shortId": "lot:0183239D97",
-      "label": "CIG 0183…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5278509B6A",
-      "shortId": "lot:5278509B6A",
-      "label": "CIG 5278…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z1D0CAC6E4",
@@ -187,8 +221,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1595",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "id": "https://w3id.org/italia/data/Lot/0183239D97",
+      "shortId": "lot:0183239D97",
+      "label": "CIG 0183…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/46055",
+      "shortId": "46055",
+      "label": "46055",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5278509B6A",
+      "shortId": "lot:5278509B6A",
+      "label": "CIG 5278…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/495419",
+      "shortId": "495419",
+      "label": "495419",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1709",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1709",
       "label": "EX MANIFATTURA TABACCHI*VIALE REGINA MARGHERITA*RECUPERO DEL…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -276,6 +338,21 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sa110106iv423cmt080001/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sasarbdsarbd-08/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1sasarbgsarbg-03/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80002870923",
       "label": "pi:ha_soggetto_titolare"
@@ -284,16 +361,6 @@
       "source": "https://indicepa.gov.it/ente/r_sardeg",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80002870923",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/0183239D97",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5278509B6A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z1D0CAC6E4",
@@ -336,8 +403,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/0183239D97",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/46055",
+      "target": "https://w3id.org/italia/data/Lot/0183239D97",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5278509B6A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/495419",
+      "target": "https://w3id.org/italia/data/Lot/5278509B6A",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E22I06000030003",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1709",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -356,7 +443,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1709",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -366,7 +453,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1709",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -376,7 +463,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1709",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_96",
       "label": "pi:ha_categoria_intervento"
     },
@@ -386,17 +473,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1709",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1709",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1595",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1709",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

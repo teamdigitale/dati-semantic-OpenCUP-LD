@@ -1,10 +1,11 @@
 {
   "id": "monithon_H34B05000090001",
   "title": "Unione semantica — CUP H34B05000090001",
-  "sparql_note": "Il CUP H34B05000090001 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP H34B05000090001 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,16 @@
       "source": "https://it.monithon.eu/report/view/374",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl203283/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H34B05000090001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecalbcsc%206/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H34B05000090001",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H34B05000090001",
@@ -41,7 +52,7 @@
       "id": "https://it.monithon.eu/report/view/374",
       "shortId": "374",
       "label": "374",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -50,6 +61,20 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl203283/",
+      "shortId": "",
+      "label": "Lavori di completamento del Castello Aragonese di Reggio di …",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misecalbcsc%206/",
+      "shortId": "",
+      "label": "Valorizzazione del castello Aragonese di Reggio Calabria",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00136380805",
@@ -66,8 +91,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b413",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1073",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1073",
       "label": "CASTELO ARAGONESE*PIAZZA CATELLO*VALORIZZAZIONE",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +173,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl203283/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H34B05000090001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecalbcsc%206/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H34B05000090001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H34B05000090001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00136380805",
       "label": "pi:ha_soggetto_titolare"
@@ -159,7 +194,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H34B05000090001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1073",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +208,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1073",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +218,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1073",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +228,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1073",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_96",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +238,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1073",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1073",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b413",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1073",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,11 +1,13 @@
 {
   "id": "monithon_G68F11000050006",
   "title": "Unione semantica — CUP G68F11000050006",
-  "sparql_note": "Il CUP G68F11000050006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G68F11000050006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +20,11 @@
       "source": "https://it.monithon.eu/report/view/194",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9775/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G68F11000050006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G68F11000050006",
@@ -33,6 +40,11 @@
       "source": "https://w3id.org/italia/data/Lot/330107988F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G68F11000050006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/564238",
+      "target": "https://w3id.org/italia/data/Lot/330107988F",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -58,6 +70,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si9775/",
+      "shortId": "",
+      "label": "Valorizzazione finalizzata alla fruizione dell'area archeolo…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "shortId": "cf:80012000826",
       "label": "Regione Siciliana",
@@ -79,8 +98,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b773",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "id": "https://w3id.org/italia/data/Award/anac/564238",
+      "shortId": "564238",
+      "label": "564238",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b692",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b692",
       "label": "AREA ARCHEOLOGICA DI MOKARTA*MOKARTA*VALORIZZAZIONE FINALIZZ…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -161,6 +187,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9775/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G68F11000050006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G68F11000050006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "pi:ha_soggetto_titolare"
@@ -176,8 +207,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/564238",
+      "target": "https://w3id.org/italia/data/Lot/330107988F",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G68F11000050006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "target": "ne7d28342d6964779bba482cdd32840a0b692",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -191,7 +227,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "source": "ne7d28342d6964779bba482cdd32840a0b692",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -201,7 +237,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "source": "ne7d28342d6964779bba482cdd32840a0b692",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -211,7 +247,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "source": "ne7d28342d6964779bba482cdd32840a0b692",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_95",
       "label": "pi:ha_categoria_intervento"
     },
@@ -221,17 +257,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "source": "ne7d28342d6964779bba482cdd32840a0b692",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "source": "ne7d28342d6964779bba482cdd32840a0b692",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b773",
+      "source": "ne7d28342d6964779bba482cdd32840a0b692",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_99",
       "label": "pi:ha_tipologia_intervento"
     },

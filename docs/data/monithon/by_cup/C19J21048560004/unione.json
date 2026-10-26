@@ -1,10 +1,11 @@
 {
   "id": "monithon_C19J21048560004",
   "title": "Unione semantica — CUP C19J21048560004",
-  "sparql_note": "Il CUP C19J21048560004 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C19J21048560004 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/2156",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1agcoe1802/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C19J21048560004",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C19J21048560004",
@@ -52,6 +58,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1agcoe1802/",
+      "shortId": "",
+      "label": "HOUSING CAPPEL VERDE",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00514490010",
       "shortId": "cf:00514490010",
       "label": "COMUNE DI TORINO - TORINO -",
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b86",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "id": "ne7d28342d6964779bba482cdd32840a0b80",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b80",
       "label": "COOPERATIVA ANIMAZIONE VALDOCCO SOCIETA' COOPERATIVA SOCIALE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -155,6 +168,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1agcoe1802/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C19J21048560004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C19J21048560004",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00514490010",
       "label": "pi:ha_soggetto_titolare"
@@ -166,7 +184,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C19J21048560004",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "target": "ne7d28342d6964779bba482cdd32840a0b80",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -185,7 +203,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "source": "ne7d28342d6964779bba482cdd32840a0b80",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -195,7 +213,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "source": "ne7d28342d6964779bba482cdd32840a0b80",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_94",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -205,7 +223,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "source": "ne7d28342d6964779bba482cdd32840a0b80",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_94_5",
       "label": "pi:ha_categoria_intervento"
     },
@@ -215,17 +233,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "source": "ne7d28342d6964779bba482cdd32840a0b80",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "source": "ne7d28342d6964779bba482cdd32840a0b80",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b86",
+      "source": "ne7d28342d6964779bba482cdd32840a0b80",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
       "label": "pi:ha_tipologia_intervento"
     },

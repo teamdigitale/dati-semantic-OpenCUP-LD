@@ -1,11 +1,13 @@
 {
   "id": "monithon_F62C14000040006",
   "title": "Unione semantica — CUP F62C14000040006",
-  "sparql_note": "Il CUP F62C14000040006 è oggetto di report Monithon. Collegato a 8 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP F62C14000040006 è oggetto di report Monithon. Collegato a 8 lotti CIG ANAC, a 4 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca409c122007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/97904380587",
       "label": "pi:ha_soggetto_titolare"
@@ -30,27 +37,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/5986446B82",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6324489D6A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/63870421CC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/6394420A4E",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6439407EBF",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
       "label": "PCTR:hasProject"
     },
@@ -68,6 +55,46 @@
       "source": "https://w3id.org/italia/data/Lot/ZBA1495A8F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5986446B82",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/799711",
+      "target": "https://w3id.org/italia/data/Lot/5986446B82",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6324489D6A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/855822",
+      "target": "https://w3id.org/italia/data/Lot/6324489D6A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/63870421CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/993643",
+      "target": "https://w3id.org/italia/data/Lot/63870421CC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6439407EBF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1089333",
+      "target": "https://w3id.org/italia/data/Lot/6439407EBF",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -82,7 +109,7 @@
       "id": "https://it.monithon.eu/report/view/777",
       "shortId": "777",
       "label": "777",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -91,6 +118,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca409c122007it161po009/",
+      "shortId": "",
+      "label": "Recupero e valorizzazione della Villa Pignatelli e dei giard…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/97904380587",
@@ -107,37 +141,9 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/5986446B82",
-      "shortId": "lot:5986446B82",
-      "label": "CIG 5986…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/6324489D6A",
-      "shortId": "lot:6324489D6A",
-      "label": "CIG 6324…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/63870421CC",
-      "shortId": "lot:63870421CC",
-      "label": "CIG 6387…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
       "id": "https://w3id.org/italia/data/Lot/6394420A4E",
       "shortId": "lot:6394420A4E",
       "label": "CIG 6394…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/6439407EBF",
-      "shortId": "lot:6439407EBF",
-      "label": "CIG 6439…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -163,8 +169,64 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1532",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "id": "https://w3id.org/italia/data/Lot/5986446B82",
+      "shortId": "lot:5986446B82",
+      "label": "CIG 5986…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/799711",
+      "shortId": "799711",
+      "label": "799711",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6324489D6A",
+      "shortId": "lot:6324489D6A",
+      "label": "CIG 6324…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/855822",
+      "shortId": "855822",
+      "label": "855822",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/63870421CC",
+      "shortId": "lot:63870421CC",
+      "label": "CIG 6387…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/993643",
+      "shortId": "993643",
+      "label": "993643",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/6439407EBF",
+      "shortId": "lot:6439407EBF",
+      "label": "CIG 6439…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1089333",
+      "shortId": "1089333",
+      "label": "1089333",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1490",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1490",
       "label": "NAPOLI VILLA PIGNATELLI*VIA RIVIERA DI CHIAIA, 200*RECUPERO …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -245,6 +307,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca409c122007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/97904380587",
       "label": "pi:ha_soggetto_titolare"
@@ -255,27 +322,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/5986446B82",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6324489D6A",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/63870421CC",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/6394420A4E",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/6439407EBF",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
       "label": "PCTR:hasProject"
     },
@@ -295,8 +342,48 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/5986446B82",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/799711",
+      "target": "https://w3id.org/italia/data/Lot/5986446B82",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6324489D6A",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/855822",
+      "target": "https://w3id.org/italia/data/Lot/6324489D6A",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/63870421CC",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/993643",
+      "target": "https://w3id.org/italia/data/Lot/63870421CC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/6439407EBF",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1089333",
+      "target": "https://w3id.org/italia/data/Lot/6439407EBF",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F62C14000040006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1490",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -310,7 +397,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1490",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -320,7 +407,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1490",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -330,7 +417,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1490",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_96",
       "label": "pi:ha_categoria_intervento"
     },
@@ -340,17 +427,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1490",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1490",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1532",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1490",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
       "label": "pi:ha_tipologia_intervento"
     },

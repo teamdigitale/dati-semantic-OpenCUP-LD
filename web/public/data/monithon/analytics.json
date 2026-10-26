@@ -11,12 +11,15 @@
     "cigs": 5780,
     "pairs": 6253,
     "opencup_rows": 1329,
+    "opencoesione_progetti": 785,
     "enti_ipa": 273,
+    "n_anac_aggiudicazioni": 2081,
+    "n_esiti": 206,
     "cases": 652,
     "cases_with_monithon_report": 644
   },
   "by_regione": {
-    "title": "CUP hub per regione",
+    "title": "CUP per regione",
     "labels": [
       "SICILIA",
       "CAMPANIA",
@@ -70,7 +73,7 @@
     ]
   },
   "costo_by_regione": {
-    "title": "Costo progetti hub per regione (€)",
+    "title": "Costo progetti per regione (€)",
     "labels": [
       "SICILIA",
       "CAMPANIA",
@@ -122,7 +125,7 @@
     ]
   },
   "by_settore": {
-    "title": "CUP hub per settore",
+    "title": "CUP per settore",
     "labels": [
       "INFRASTRUTTURE SOCIALI",
       "INFRASTRUTTURE DI TRASPORTO",
@@ -158,7 +161,7 @@
     ]
   },
   "by_natura": {
-    "title": "CUP hub per natura intervento",
+    "title": "CUP per natura intervento",
     "labels": [
       "REALIZZAZIONE DI LAVORI PUBBLICI (OPERE ED IMPIANTISTICA)",
       "ACQUISTO O REALIZZAZIONE DI SERVIZI",
@@ -182,7 +185,7 @@
     ]
   },
   "by_stato": {
-    "title": "CUP hub per stato OpenCUP",
+    "title": "CUP per stato OpenCUP",
     "labels": [
       "ATTIVO",
       "CHIUSO",
@@ -200,21 +203,27 @@
     ]
   },
   "sources_coverage": {
-    "title": "Casi hub con dataset collegato",
+    "title": "Casi con dataset collegato",
     "labels": [
       "opencup",
+      "opencoesione",
       "monithon",
       "enti_ipa",
-      "cupcig"
+      "cupcig",
+      "anac",
+      "scp"
     ],
     "series": [
       {
         "name": "casi",
         "data": [
           652,
+          650,
           644,
           602,
-          469
+          469,
+          342,
+          72
         ]
       }
     ]

@@ -1,9 +1,10 @@
 {
   "id": "monithon_F77H13001650002",
   "title": "Unione semantica — CUP F77H13001650002",
-  "sparql_note": "Il CUP F77H13001650002 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, a OpenCUP.",
+  "sparql_note": "Il CUP F77H13001650002 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -16,6 +17,11 @@
       "source": "https://it.monithon.eu/report/view/122",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl205454/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
+      "label": "schema:about"
     }
   ],
   "nodes": [
@@ -23,14 +29,14 @@
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
       "shortId": "cup:F77H13001650002",
       "label": "F77H13001650002",
-      "type": "PRJ:PublicInvestmentProject",
+      "type": "pi:Progetto_di_investimento_pubblico",
       "dataset": "opencup"
     },
     {
       "id": "https://it.monithon.eu/report/view/122",
       "shortId": "122",
       "label": "122",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -39,6 +45,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl205454/",
+      "shortId": "",
+      "label": "L.I. 5.3.2.1- Direzione Regionale Beni Culturali e Paesaggis…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     }
   ],
   "edges": [
@@ -51,6 +64,11 @@
       "source": "https://it.monithon.eu/report/view/122",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl205454/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
+      "label": "schema:about"
     }
   ]
 }

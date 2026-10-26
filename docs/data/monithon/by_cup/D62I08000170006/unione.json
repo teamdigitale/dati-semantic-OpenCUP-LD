@@ -1,10 +1,11 @@
 {
   "id": "monithon_D62I08000170006",
   "title": "Unione semantica — CUP D62I08000170006",
-  "sparql_note": "Il CUP D62I08000170006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D62I08000170006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -39,6 +40,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si382/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D62I08000170006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D62I08000170006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/02298890845",
       "label": "pi:ha_soggetto_titolare"
@@ -61,7 +67,7 @@
       "id": "https://it.monithon.eu/report/view/1829",
       "shortId": "1829",
       "label": "1829",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -75,7 +81,7 @@
       "id": "https://it.monithon.eu/report/view/2414",
       "shortId": "2414",
       "label": "2414",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -84,6 +90,13 @@
       "label": "279",
       "type": "Report",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si382/",
+      "shortId": "",
+      "label": "LICATA Compostaggio domestico per la riduzione della produzi…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/02298890845",
@@ -100,8 +113,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1241",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1136",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1136",
       "label": "PROGETTO DEL COMPOSTAGGIO DOMESTICO*VIA COLLEGIO 8*COMPOSTIE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -202,6 +215,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si382/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D62I08000170006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D62I08000170006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/02298890845",
       "label": "pi:ha_soggetto_titolare"
@@ -213,7 +231,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D62I08000170006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1136",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -227,7 +245,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1136",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -237,7 +255,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1136",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_10",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -247,7 +265,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1136",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_10_118",
       "label": "pi:ha_categoria_intervento"
     },
@@ -257,17 +275,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1136",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1136",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/01",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1241",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1136",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/01_00",
       "label": "pi:ha_tipologia_intervento"
     },

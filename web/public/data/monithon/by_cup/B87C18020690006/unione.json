@@ -1,11 +1,13 @@
 {
   "id": "monithon_B87C18020690006",
   "title": "Unione semantica — CUP B87C18020690006",
-  "sparql_note": "Il CUP B87C18020690006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP B87C18020690006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -30,6 +32,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si22730/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87C18020690006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B87C18020690006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00139550818",
       "label": "pi:ha_soggetto_titolare"
@@ -43,6 +50,11 @@
       "source": "https://w3id.org/italia/data/Lot/8431908699",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87C18020690006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1992738",
+      "target": "https://w3id.org/italia/data/Lot/8431908699",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -71,8 +83,15 @@
       "id": "https://it.monithon.eu/report/view/1602",
       "shortId": "1602",
       "label": "1602",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si22730/",
+      "shortId": "",
+      "label": "4.1.3 Efficientamento Tecnologico degli Impianti della Pubbl…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00139550818",
@@ -96,8 +115,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1118",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "id": "https://w3id.org/italia/data/Award/anac/1992738",
+      "shortId": "1992738",
+      "label": "1992738",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1001",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1001",
       "label": "IMPIANTI DI PUBBLICA ILLUMINAZIONE*VIA VARIE VIE*EFFICIENTAM…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -188,6 +214,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si22730/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B87C18020690006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B87C18020690006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00139550818",
       "label": "pi:ha_soggetto_titolare"
@@ -203,8 +234,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/1992738",
+      "target": "https://w3id.org/italia/data/Lot/8431908699",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B87C18020690006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1001",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -218,7 +254,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1001",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -228,7 +264,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1001",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_36",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -238,7 +274,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1001",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_36_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -248,17 +284,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1001",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1001",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1118",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1001",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_09",
       "label": "pi:ha_tipologia_intervento"
     },

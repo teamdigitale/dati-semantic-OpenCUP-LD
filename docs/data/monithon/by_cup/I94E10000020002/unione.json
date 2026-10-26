@@ -1,11 +1,13 @@
 {
   "id": "monithon_I94E10000020002",
   "title": "Unione semantica — CUP I94E10000020002",
-  "sparql_note": "Il CUP I94E10000020002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP I94E10000020002 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +20,11 @@
       "source": "https://it.monithon.eu/report/view/167",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si16175/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I94E10000020002",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I94E10000020002",
@@ -33,6 +40,11 @@
       "source": "https://w3id.org/italia/data/Lot/0667322388",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I94E10000020002",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/177221",
+      "target": "https://w3id.org/italia/data/Lot/0667322388",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -47,7 +59,7 @@
       "id": "https://it.monithon.eu/report/view/167",
       "shortId": "167",
       "label": "167",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -56,6 +68,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si16175/",
+      "shortId": "",
+      "label": "Riqualificazione urbanistica e architettonica di Piazza Mart…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80003210814",
@@ -79,8 +98,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b863",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "id": "https://w3id.org/italia/data/Award/anac/177221",
+      "shortId": "177221",
+      "label": "177221",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b773",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b773",
       "label": "PIAZZA MARTIRI D'UNGHERIA*PIAZZA MARTIRI D'UNGHERIA*RIQUALIF…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -161,6 +187,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si16175/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I94E10000020002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I94E10000020002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80003210814",
       "label": "pi:ha_soggetto_titolare"
@@ -176,8 +207,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/177221",
+      "target": "https://w3id.org/italia/data/Lot/0667322388",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I94E10000020002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "target": "ne7d28342d6964779bba482cdd32840a0b773",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -191,7 +227,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "source": "ne7d28342d6964779bba482cdd32840a0b773",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -201,7 +237,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "source": "ne7d28342d6964779bba482cdd32840a0b773",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -211,7 +247,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "source": "ne7d28342d6964779bba482cdd32840a0b773",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_1_13",
       "label": "pi:ha_categoria_intervento"
     },
@@ -221,17 +257,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "source": "ne7d28342d6964779bba482cdd32840a0b773",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "source": "ne7d28342d6964779bba482cdd32840a0b773",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b863",
+      "source": "ne7d28342d6964779bba482cdd32840a0b773",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
       "label": "pi:ha_tipologia_intervento"
     },

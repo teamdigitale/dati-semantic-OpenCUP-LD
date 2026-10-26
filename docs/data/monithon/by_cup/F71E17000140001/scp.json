@@ -1,0 +1,47 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/77697020ED-568105-151",
+      "shortId": "77697020ED-568105-151",
+      "label": "77697020ED-568105-151",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/79805974FB-616896-160",
+      "shortId": "79805974FB-616896-160",
+      "label": "79805974FB-616896-160",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/77697020ED",
+      "shortId": "lot:77697020ED",
+      "label": "CIG 7769…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/79805974FB",
+      "shortId": "lot:79805974FB",
+      "label": "CIG 7980…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/77697020ED-568105-151",
+      "target": "https://w3id.org/italia/data/Lot/77697020ED",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/79805974FB-616896-160",
+      "target": "https://w3id.org/italia/data/Lot/79805974FB",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

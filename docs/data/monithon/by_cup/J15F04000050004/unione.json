@@ -1,10 +1,12 @@
 {
   "id": "monithon_J15F04000050004",
   "title": "Unione semantica — CUP J15F04000050004",
-  "sparql_note": "Il CUP J15F04000050004 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a OpenCUP.",
+  "sparql_note": "Il CUP J15F04000050004 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a 2 aggiudicazioni, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -19,14 +21,29 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si790/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J15F04000050004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/00430115CB",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J15F04000050004",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/3007",
+      "target": "https://w3id.org/italia/data/Lot/00430115CB",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/5547594364",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J15F04000050004",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/825350",
+      "target": "https://w3id.org/italia/data/Lot/5547594364",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -41,7 +58,7 @@
       "id": "https://it.monithon.eu/report/view/695",
       "shortId": "695",
       "label": "695",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -52,6 +69,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si790/",
+      "shortId": "",
+      "label": "ACQUEDOTTO MONTESCURO OVEST",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/00430115CB",
       "shortId": "lot:00430115CB",
       "label": "CIG 0043…",
@@ -59,11 +83,25 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Award/anac/3007",
+      "shortId": "3007",
+      "label": "3007",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/5547594364",
       "shortId": "lot:5547594364",
       "label": "CIG 5547…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/825350",
+      "shortId": "825350",
+      "label": "825350",
+      "type": "PCTR:Award",
+      "dataset": "anac"
     }
   ],
   "edges": [
@@ -78,14 +116,29 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si790/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J15F04000050004",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/00430115CB",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J15F04000050004",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/3007",
+      "target": "https://w3id.org/italia/data/Lot/00430115CB",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/5547594364",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J15F04000050004",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/825350",
+      "target": "https://w3id.org/italia/data/Lot/5547594364",
+      "label": "PCTR:awardedLot"
     }
   ]
 }

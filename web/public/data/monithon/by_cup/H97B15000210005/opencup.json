@@ -1,7 +1,7 @@
 {
   "dataset": "opencup",
   "coverage": "monithon_hub",
-  "sample_note": "Sottoinsieme opencup dell’hub Monithon-seeded.",
+  "sample_note": "Sottoinsieme opencup del grafo collegato ai report Monithon.",
   "nodes": [
     {
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H97B15000210005",
@@ -13,13 +13,13 @@
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00297910796",
       "shortId": "cf:00297910796",
-      "label": "Comune di Cotronei",
+      "label": "COMUNE DI COTRONEI - KR -",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1292",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1202",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1202",
       "label": "LOCALITÀ PONTE CONIGLIO*LOCALITÀ PONTE CONIGLIO*COMPLESSO TE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -110,7 +110,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H97B15000210005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1202",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -134,7 +134,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -144,7 +144,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_8",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -154,7 +154,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_8_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -164,17 +164,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

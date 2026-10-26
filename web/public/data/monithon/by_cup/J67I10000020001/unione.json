@@ -1,11 +1,13 @@
 {
   "id": "monithon_J67I10000020001",
   "title": "Unione semantica — CUP J67I10000020001",
-  "sparql_note": "Il CUP J67I10000020001 è oggetto di report Monithon. Collegato a 26 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J67I10000020001 è oggetto di report Monithon. Collegato a 26 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -30,6 +32,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1mtra121110/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/4mtra111101/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01585570581",
       "label": "pi:ha_soggetto_titolare"
@@ -40,22 +52,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/527189595F",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/5274837531",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/53782754EE",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5614853346",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
       "label": "PCTR:hasProject"
     },
@@ -168,6 +165,36 @@
       "source": "https://w3id.org/italia/data/Lot/ZEB24399DE",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/527189595F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/590329",
+      "target": "https://w3id.org/italia/data/Lot/527189595F",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/53782754EE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/538175",
+      "target": "https://w3id.org/italia/data/Lot/53782754EE",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5614853346",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/609906",
+      "target": "https://w3id.org/italia/data/Lot/5614853346",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -182,7 +209,7 @@
       "id": "https://it.monithon.eu/report/view/1046",
       "shortId": "1046",
       "label": "1046",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -200,9 +227,23 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1mtra121110/",
+      "shortId": "",
+      "label": "Potenziamento tecnologico nodo di Napoli",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/4mtra111101/",
+      "shortId": "",
+      "label": "Potenziamento tecnologico nodo di Napoli",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/01585570581",
       "shortId": "cf:01585570581",
-      "label": "RFI SPA",
+      "label": "RETE FERROVIARIA ITALIANA S.P.A.",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -214,30 +255,9 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/527189595F",
-      "shortId": "lot:527189595F",
-      "label": "CIG 5271…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
       "id": "https://w3id.org/italia/data/Lot/5274837531",
       "shortId": "lot:5274837531",
       "label": "CIG 5274…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/53782754EE",
-      "shortId": "lot:53782754EE",
-      "label": "CIG 5378…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5614853346",
-      "shortId": "lot:5614853346",
-      "label": "CIG 5614…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -396,8 +416,50 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1829",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "id": "https://w3id.org/italia/data/Lot/527189595F",
+      "shortId": "lot:527189595F",
+      "label": "CIG 5271…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/590329",
+      "shortId": "590329",
+      "label": "590329",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/53782754EE",
+      "shortId": "lot:53782754EE",
+      "label": "CIG 5378…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/538175",
+      "shortId": "538175",
+      "label": "538175",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5614853346",
+      "shortId": "lot:5614853346",
+      "label": "CIG 5614…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/609906",
+      "shortId": "609906",
+      "label": "609906",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1835",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1835",
       "label": "NODO DI NAPOLI*VIA TERRITORIO MULTICOMUNALE*POTENZIAMENTO TE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -488,6 +550,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1mtra121110/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/4mtra111101/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01585570581",
       "label": "pi:ha_soggetto_titolare"
@@ -498,22 +570,7 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/527189595F",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/5274837531",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/53782754EE",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5614853346",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
       "label": "PCTR:hasProject"
     },
@@ -628,8 +685,38 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/527189595F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/590329",
+      "target": "https://w3id.org/italia/data/Lot/527189595F",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/53782754EE",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/538175",
+      "target": "https://w3id.org/italia/data/Lot/53782754EE",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5614853346",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/609906",
+      "target": "https://w3id.org/italia/data/Lot/5614853346",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J67I10000020001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1835",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -643,7 +730,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1835",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -653,7 +740,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1835",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_3",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -663,7 +750,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1835",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_3_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -673,17 +760,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1835",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1835",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1829",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1835",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_58",
       "label": "pi:ha_tipologia_intervento"
     },

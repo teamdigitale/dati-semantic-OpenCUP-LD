@@ -1,0 +1,40 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/9498986B37-1639222-01827240688",
+      "shortId": "9498986B37-1639222-01827240688",
+      "label": "9498986B37-1639222-01827240688",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1639222",
+      "shortId": "1639222",
+      "label": "\"COLLEGAMENTO DELL'ASSE ATTREZZATO DI PESCARA AL PORTO E ADE…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9498986B37",
+      "shortId": "lot:9498986B37",
+      "label": "\"COLLEGAMENTO DELL'ASSE ATTREZZATO DI PESCARA AL PORTO E ADE…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9498986B37-1639222-01827240688",
+      "target": "https://w3id.org/italia/data/Lot/9498986B37",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1639222",
+      "target": "https://w3id.org/italia/data/Lot/9498986B37",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

@@ -1,11 +1,13 @@
 {
   "id": "monithon_E43C10018650006",
   "title": "Unione semantica — CUP E43C10018650006",
-  "sparql_note": "Il CUP E43C10018650006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E43C10018650006 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 3 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +20,21 @@
       "source": "https://it.monithon.eu/report/view/1317",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl208040/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl219421/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl99539/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
@@ -33,6 +50,11 @@
       "source": "https://w3id.org/italia/data/Lot/2286403F6D",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/336119",
+      "target": "https://w3id.org/italia/data/Lot/2286403F6D",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -58,6 +80,27 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl208040/",
+      "shortId": "",
+      "label": "Ristrutturazione ex convento dei Padri Minori Osservanti, gi…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl219421/",
+      "shortId": "",
+      "label": "RISTRUTTURAZIONE DELL'EX CONVENTO DEI PADRI MINORI OSSERVANT…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl99539/",
+      "shortId": "",
+      "label": "Ristrutturazione ex convento dei Padri Minori Osservanti, gi…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00302030796",
       "shortId": "cf:00302030796",
       "label": "COMUNE DI VIBO VALENTIA - VV -",
@@ -79,8 +122,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b680",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "id": "https://w3id.org/italia/data/Award/anac/336119",
+      "shortId": "336119",
+      "label": "336119",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1406",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1406",
       "label": "EX CONVENTO DEI PADRI MINORI OSSERVANTI, GIÀ CASERMA GARIBAL…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -161,6 +211,21 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl208040/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl219421/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl99539/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00302030796",
       "label": "pi:ha_soggetto_titolare"
@@ -176,8 +241,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/336119",
+      "target": "https://w3id.org/italia/data/Lot/2286403F6D",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E43C10018650006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1406",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -191,7 +261,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1406",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -201,7 +271,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1406",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_33",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -211,7 +281,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1406",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_33_4",
       "label": "pi:ha_categoria_intervento"
     },
@@ -221,17 +291,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1406",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1406",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b680",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1406",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

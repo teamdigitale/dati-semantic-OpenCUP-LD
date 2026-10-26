@@ -1,11 +1,13 @@
 {
   "id": "monithon_F41D11000010001",
   "title": "Unione semantica — CUP F41D11000010001",
-  "sparql_note": "Il CUP F41D11000010001 è oggetto di report Monithon. Collegato a 25 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP F41D11000010001 è oggetto di report Monithon. Collegato a 25 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/7um32224/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00175660554",
       "label": "pi:ha_soggetto_titolare"
@@ -28,16 +35,6 @@
       "source": "https://indicepa.gov.it/ente/c_l117",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00175660554",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5090708921",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/65817865A0",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z020758734",
@@ -153,6 +150,26 @@
       "source": "https://w3id.org/italia/data/Lot/ZF50758702",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5090708921",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/564276",
+      "target": "https://w3id.org/italia/data/Lot/5090708921",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/65817865A0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/995430",
+      "target": "https://w3id.org/italia/data/Lot/65817865A0",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -167,7 +184,7 @@
       "id": "https://it.monithon.eu/report/view/522",
       "shortId": "522",
       "label": "522",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -176,6 +193,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/7um32224/",
+      "shortId": "",
+      "label": "Sistema di collegamento sopraelevato tra il nuovo parcheggio…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00175660554",
@@ -190,20 +214,6 @@
       "label": "Comune di Terni",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5090708921",
-      "shortId": "lot:5090708921",
-      "label": "CIG 5090…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/65817865A0",
-      "shortId": "lot:65817865A0",
-      "label": "CIG 6581…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z020758734",
@@ -367,8 +377,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1808",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "id": "https://w3id.org/italia/data/Lot/5090708921",
+      "shortId": "lot:5090708921",
+      "label": "CIG 5090…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/564276",
+      "shortId": "564276",
+      "label": "564276",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/65817865A0",
+      "shortId": "lot:65817865A0",
+      "label": "CIG 6581…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/995430",
+      "shortId": "995430",
+      "label": "995430",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1790",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1790",
       "label": "PERCORSO PEDONALE SOPRAELEVATO *PIAZZA DANTE*REALIZZAZIONE D…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -456,6 +494,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/7um32224/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00175660554",
       "label": "pi:ha_soggetto_titolare"
@@ -464,16 +507,6 @@
       "source": "https://indicepa.gov.it/ente/c_l117",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00175660554",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5090708921",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/65817865A0",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z020758734",
@@ -591,8 +624,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/5090708921",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/564276",
+      "target": "https://w3id.org/italia/data/Lot/5090708921",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/65817865A0",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/995430",
+      "target": "https://w3id.org/italia/data/Lot/65817865A0",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F41D11000010001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1790",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -611,7 +664,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1790",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -621,7 +674,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1790",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_6",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -631,7 +684,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1790",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_6_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -641,17 +694,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1790",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1790",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1808",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1790",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

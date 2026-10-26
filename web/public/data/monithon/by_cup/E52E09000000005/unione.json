@@ -1,11 +1,13 @@
 {
   "id": "monithon_E52E09000000005",
   "title": "Unione semantica — CUP E52E09000000005",
-  "sparql_note": "Il CUP E52E09000000005 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E52E09000000005 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si16662/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80004000818",
       "label": "pi:ha_soggetto_titolare"
@@ -30,16 +37,6 @@
       "label": "owl:sameAs"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/3344456C63",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7069504341",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
-      "label": "PCTR:hasProject"
-    },
-    {
       "source": "https://w3id.org/italia/data/Lot/8022121FA8",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
       "label": "PCTR:hasProject"
@@ -48,6 +45,26 @@
       "source": "https://w3id.org/italia/data/Lot/82316772C1",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/3344456C63",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/226845",
+      "target": "https://w3id.org/italia/data/Lot/3344456C63",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7069504341",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1166367",
+      "target": "https://w3id.org/italia/data/Lot/7069504341",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -73,6 +90,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si16662/",
+      "shortId": "",
+      "label": "ERICE 9.4.1. Lavori di riqualificazione urbana del centro st…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80004000818",
       "shortId": "cf:80004000818",
       "label": "COMUNE DI ERICE - TRAPANI -",
@@ -85,20 +109,6 @@
       "label": "Comune di Erice",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/3344456C63",
-      "shortId": "lot:3344456C63",
-      "label": "CIG 3344…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7069504341",
-      "shortId": "lot:7069504341",
-      "label": "CIG 7069…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/8022121FA8",
@@ -115,8 +125,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1259",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "id": "https://w3id.org/italia/data/Lot/3344456C63",
+      "shortId": "lot:3344456C63",
+      "label": "CIG 3344…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/226845",
+      "shortId": "226845",
+      "label": "226845",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7069504341",
+      "shortId": "lot:7069504341",
+      "label": "CIG 7069…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1166367",
+      "shortId": "1166367",
+      "label": "1166367",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1157",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1157",
       "label": "HOTEL IGEA E COMPLESSO CONVENTUALE SAN CARLO *VIA SAN CARLO …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -204,6 +242,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si16662/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80004000818",
       "label": "pi:ha_soggetto_titolare"
@@ -212,16 +255,6 @@
       "source": "https://indicepa.gov.it/ente/c_d423",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80004000818",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/3344456C63",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7069504341",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/8022121FA8",
@@ -234,8 +267,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/3344456C63",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/226845",
+      "target": "https://w3id.org/italia/data/Lot/3344456C63",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7069504341",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1166367",
+      "target": "https://w3id.org/italia/data/Lot/7069504341",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E52E09000000005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1157",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -254,7 +307,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1157",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -264,7 +317,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1157",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_10",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -274,7 +327,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1157",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_10_105",
       "label": "pi:ha_categoria_intervento"
     },
@@ -284,17 +337,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1157",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1157",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1259",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1157",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

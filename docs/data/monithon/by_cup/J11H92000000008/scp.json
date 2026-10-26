@@ -1,0 +1,128 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1520587",
+      "shortId": "1520587",
+      "label": "\"DAC.0129.2022_GPA_lavori di Completamento della tratta Orle…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/2174983",
+      "shortId": "2174983",
+      "label": "\"DAC.0277.2023 - GPA - E - Completamento delle fermate Lolli…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/88626287FC-1585609-00365520949",
+      "shortId": "88626287FC-1585609-00365520949",
+      "label": "88626287FC-1585609-00365520949",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/88626287FC-1585609-05041951210",
+      "shortId": "88626287FC-1585609-05041951210",
+      "label": "88626287FC-1585609-05041951210",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/95097004B2-1657891-06746680724",
+      "shortId": "95097004B2-1657891-06746680724",
+      "label": "95097004B2-1657891-06746680724",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1657891",
+      "shortId": "1657891",
+      "label": "\"DAC.0223.2022 - GPA - LAVORI DI REALIZZAZIONE DELLA FERMATA…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8487681FEC-892343-00365520949",
+      "shortId": "8487681FEC-892343-00365520949",
+      "label": "8487681FEC-892343-00365520949",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8487681FEC-892343-05122790636",
+      "shortId": "8487681FEC-892343-05122790636",
+      "label": "8487681FEC-892343-05122790636",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/892343",
+      "shortId": "892343",
+      "label": "\"Lavori di completamento della galleria denominata GN1D e de…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/88626287FC",
+      "shortId": "lot:88626287FC",
+      "label": "CIG 8862…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/95097004B2",
+      "shortId": "lot:95097004B2",
+      "label": "\"DAC.0223.2022 - GPA - LAVORI DI REALIZZAZIONE DELLA FERMATA…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8487681FEC",
+      "shortId": "lot:8487681FEC",
+      "label": "\"Lavori di completamento della galleria denominata GN1D e de…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/88626287FC-1585609-00365520949",
+      "target": "https://w3id.org/italia/data/Lot/88626287FC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/88626287FC-1585609-05041951210",
+      "target": "https://w3id.org/italia/data/Lot/88626287FC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/95097004B2-1657891-06746680724",
+      "target": "https://w3id.org/italia/data/Lot/95097004B2",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1657891",
+      "target": "https://w3id.org/italia/data/Lot/95097004B2",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8487681FEC-892343-00365520949",
+      "target": "https://w3id.org/italia/data/Lot/8487681FEC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8487681FEC-892343-05122790636",
+      "target": "https://w3id.org/italia/data/Lot/8487681FEC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/892343",
+      "target": "https://w3id.org/italia/data/Lot/8487681FEC",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

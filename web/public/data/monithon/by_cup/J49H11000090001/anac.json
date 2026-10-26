@@ -1,0 +1,123 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/581653",
+      "shortId": "581653",
+      "label": "581653",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1137907",
+      "shortId": "1137907",
+      "label": "1137907",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2232107",
+      "shortId": "2232107",
+      "label": "2232107",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1137888",
+      "shortId": "1137888",
+      "label": "1137888",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2609686",
+      "shortId": "2609686",
+      "label": "2609686",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2609756",
+      "shortId": "2609756",
+      "label": "2609756",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/235556628E",
+      "shortId": "lot:235556628E",
+      "label": "CIG 2355…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/595284289D",
+      "shortId": "lot:595284289D",
+      "label": "CIG 5952…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/684001816B",
+      "shortId": "lot:684001816B",
+      "label": "CIG 6840…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/686458960B",
+      "shortId": "lot:686458960B",
+      "label": "CIG 6864…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/93414876EF",
+      "shortId": "lot:93414876EF",
+      "label": "\"Componente della Commissione di collaudo tecnico-amministra…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9341267164",
+      "shortId": "lot:9341267164",
+      "label": "\"Presidente della Commissione di collaudo tecnico-amministra…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/581653",
+      "target": "https://w3id.org/italia/data/Lot/235556628E",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1137907",
+      "target": "https://w3id.org/italia/data/Lot/595284289D",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2232107",
+      "target": "https://w3id.org/italia/data/Lot/684001816B",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1137888",
+      "target": "https://w3id.org/italia/data/Lot/686458960B",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2609686",
+      "target": "https://w3id.org/italia/data/Lot/93414876EF",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2609756",
+      "target": "https://w3id.org/italia/data/Lot/9341267164",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

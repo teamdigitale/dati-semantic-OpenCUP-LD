@@ -1,0 +1,166 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/Z112FF0B0F-919802-04705810150",
+      "shortId": "Z112FF0B0F-919802-04705810150",
+      "label": "Z112FF0B0F-919802-04705810150",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/Z5A2FF0E11-919359-01153210875",
+      "shortId": "Z5A2FF0E11-919359-01153210875",
+      "label": "Z5A2FF0E11-919359-01153210875",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/Z812FF0EC6-919407-01153210875",
+      "shortId": "Z812FF0EC6-919407-01153210875",
+      "label": "Z812FF0EC6-919407-01153210875",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/ZB32FF0C90-919844-01153210875",
+      "shortId": "ZB32FF0C90-919844-01153210875",
+      "label": "ZB32FF0C90-919844-01153210875",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/ZDD2DEDF33-824192-04705810150",
+      "shortId": "ZDD2DEDF33-824192-04705810150",
+      "label": "ZDD2DEDF33-824192-04705810150",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/ZEA2DEDFC3-824210-01153210875",
+      "shortId": "ZEA2DEDFC3-824210-01153210875",
+      "label": "ZEA2DEDFC3-824210-01153210875",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/83368011D3-826137-01963210818",
+      "shortId": "83368011D3-826137-01963210818",
+      "label": "83368011D3-826137-01963210818",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/83368011D3-826137-05840560824",
+      "shortId": "83368011D3-826137-05840560824",
+      "label": "83368011D3-826137-05840560824",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/826137",
+      "shortId": "826137",
+      "label": "\"LAVORI DI RECUPERO E ADEGUAMENTO FUNZIONALE DELL'EREDITA' S…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z112FF0B0F",
+      "shortId": "lot:Z112FF0B0F",
+      "label": "CIG Z112…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z5A2FF0E11",
+      "shortId": "lot:Z5A2FF0E11",
+      "label": "CIG Z5A2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/Z812FF0EC6",
+      "shortId": "lot:Z812FF0EC6",
+      "label": "CIG Z812…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZB32FF0C90",
+      "shortId": "lot:ZB32FF0C90",
+      "label": "CIG ZB32…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZDD2DEDF33",
+      "shortId": "lot:ZDD2DEDF33",
+      "label": "CIG ZDD2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/ZEA2DEDFC3",
+      "shortId": "lot:ZEA2DEDFC3",
+      "label": "CIG ZEA2…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/83368011D3",
+      "shortId": "lot:83368011D3",
+      "label": "\"LAVORI DI RECUPERO E ADEGUAMENTO FUNZIONALE DELL'EREDITA' S…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/Z112FF0B0F-919802-04705810150",
+      "target": "https://w3id.org/italia/data/Lot/Z112FF0B0F",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/Z5A2FF0E11-919359-01153210875",
+      "target": "https://w3id.org/italia/data/Lot/Z5A2FF0E11",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/Z812FF0EC6-919407-01153210875",
+      "target": "https://w3id.org/italia/data/Lot/Z812FF0EC6",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/ZB32FF0C90-919844-01153210875",
+      "target": "https://w3id.org/italia/data/Lot/ZB32FF0C90",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/ZDD2DEDF33-824192-04705810150",
+      "target": "https://w3id.org/italia/data/Lot/ZDD2DEDF33",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/ZEA2DEDFC3-824210-01153210875",
+      "target": "https://w3id.org/italia/data/Lot/ZEA2DEDFC3",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/83368011D3-826137-01963210818",
+      "target": "https://w3id.org/italia/data/Lot/83368011D3",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/83368011D3-826137-05840560824",
+      "target": "https://w3id.org/italia/data/Lot/83368011D3",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/826137",
+      "target": "https://w3id.org/italia/data/Lot/83368011D3",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

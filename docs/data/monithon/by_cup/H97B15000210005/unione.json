@@ -1,11 +1,12 @@
 {
   "id": "monithon_H97B15000210005",
   "title": "Unione semantica — CUP H97B15000210005",
-  "sparql_note": "Il CUP H97B15000210005 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP H97B15000210005 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -28,6 +29,11 @@
       "source": "https://it.monithon.eu/report/view/51",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl214254/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H97B15000210005",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H97B15000210005",
@@ -62,7 +68,7 @@
       "id": "https://it.monithon.eu/report/view/1717",
       "shortId": "1717",
       "label": "1717",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -80,9 +86,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl214254/",
+      "shortId": "",
+      "label": "Comune di Crotonei. Realizzazione Terme Magna Graecia",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00297910796",
       "shortId": "cf:00297910796",
-      "label": "Comune di Cotronei",
+      "label": "COMUNE DI COTRONEI - KR -",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -108,8 +121,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1292",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1202",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1202",
       "label": "LOCALITÀ PONTE CONIGLIO*LOCALITÀ PONTE CONIGLIO*COMPLESSO TE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -214,6 +227,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl214254/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H97B15000210005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H97B15000210005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00297910796",
       "label": "pi:ha_soggetto_titolare"
@@ -235,7 +253,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H97B15000210005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1202",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -259,7 +277,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -269,7 +287,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_8",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -279,7 +297,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_8_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -289,17 +307,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1292",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1202",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

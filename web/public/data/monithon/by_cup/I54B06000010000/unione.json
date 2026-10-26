@@ -1,10 +1,12 @@
 {
   "id": "monithon_I54B06000010000",
   "title": "Unione semantica — CUP I54B06000010000",
-  "sparql_note": "Il CUP I54B06000010000 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a OpenCUP.",
+  "sparql_note": "Il CUP I54B06000010000 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a 1 aggiudicazioni, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -19,14 +21,24 @@
       "label": "dct:creator"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/476970336E",
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca17c332007it161po009/",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
-      "label": "PCTR:hasProject"
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z9E147F306",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/476970336E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/890826",
+      "target": "https://w3id.org/italia/data/Lot/476970336E",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -52,11 +64,11 @@
       "dataset": "monithon"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/476970336E",
-      "shortId": "lot:476970336E",
-      "label": "CIG 4769…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca17c332007it161po009/",
+      "shortId": "",
+      "label": "Recupero edilizio e restauro del palazzo fruscione",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z9E147F306",
@@ -64,6 +76,20 @@
       "label": "CIG Z9E1…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/476970336E",
+      "shortId": "lot:476970336E",
+      "label": "CIG 4769…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/890826",
+      "shortId": "890826",
+      "label": "890826",
+      "type": "PCTR:Award",
+      "dataset": "anac"
     }
   ],
   "edges": [
@@ -78,14 +104,24 @@
       "label": "dct:creator"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/476970336E",
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca17c332007it161po009/",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
-      "label": "PCTR:hasProject"
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z9E147F306",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/476970336E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/890826",
+      "target": "https://w3id.org/italia/data/Lot/476970336E",
+      "label": "PCTR:awardedLot"
     }
   ]
 }

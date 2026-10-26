@@ -1,0 +1,40 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/9137204346-1404237-02245680562",
+      "shortId": "9137204346-1404237-02245680562",
+      "label": "9137204346-1404237-02245680562",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1375489",
+      "shortId": "1375489",
+      "label": "\"FORNITURA PALINE PER LE FERMATE DELLE AUTOLINEE TRANSFRONTA…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9137204346",
+      "shortId": "lot:9137204346",
+      "label": "\"FORNITURA PALINE PER LE FERMATE DELLE AUTOLINEE TRANSFRONTA…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9137204346-1404237-02245680562",
+      "target": "https://w3id.org/italia/data/Lot/9137204346",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1375489",
+      "target": "https://w3id.org/italia/data/Lot/9137204346",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

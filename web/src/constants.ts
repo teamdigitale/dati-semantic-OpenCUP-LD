@@ -3,8 +3,11 @@ export const DATASET_COLORS: Record<string, string> = {
   opencup: "#3b82f6",
   candidature: "#10b981",
   cupcig: "#f59e0b",
+  anac: "#ea580c",
+  scp: "#b45309",
   enti_ipa: "#8b5cf6",
   monithon: "#0d9488",
+  opencoesione: "#e11d48",
   shared: "#64748b",
 };
 
@@ -13,8 +16,11 @@ export const DATASET_FILLS: Record<string, string> = {
   opencup: "#eff6ff",
   candidature: "#ecfdf5",
   cupcig: "#fffbeb",
+  anac: "#fff7ed",
+  scp: "#ffedd5",
   enti_ipa: "#f5f3ff",
   monithon: "#f0fdfa",
+  opencoesione: "#fff1f2",
   shared: "#f8fafc",
 };
 
@@ -30,6 +36,8 @@ export const TYPE_COLORS: Record<string, string> = {
   "PCTR:ContractNotice": "#b45309",
   "PRJ:Call": "#10b981",
   "schema:Report": "#0d9488",
+  "schema:GovernmentProject": "#e11d48",
+  "oc:Progetto_di_coesione": "#e11d48",
   "cm:Report_di_monitoraggio_civico": "#0d9488",
   "cm:Gruppo_di_monitoraggio": "#14b8a6",
   "skos:Concept": "#94a3b8",
@@ -47,6 +55,8 @@ export const TYPE_FILLS: Record<string, string> = {
   "PCTR:ContractNotice": "#ffedd5",
   "PRJ:Call": "#ecfdf5",
   "schema:Report": "#f0fdfa",
+  "schema:GovernmentProject": "#fff1f2",
+  "oc:Progetto_di_coesione": "#fff1f2",
   "cm:Report_di_monitoraggio_civico": "#f0fdfa",
   "cm:Gruppo_di_monitoraggio": "#ccfbf1",
   "skos:Concept": "#f1f5f9",

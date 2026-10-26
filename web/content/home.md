@@ -42,7 +42,7 @@ I Linked Data usano proprio questo modello. Le ontologie e i vocabolari pubblica
 - Dove si concentrano i CUP sul territorio (anche in **mappa**) e quanto finanziamento è stato assegnato nell’ambito dei fondi PNRR di PA Digitale.
 - **A chi** sono state aggiudicate più spesso le gare.
 - A cosa servono i progetti (settori e categorie di intervento).
-- Come un singolo CUP collega OpenCUP, gare ANAC, avvisi PA Digitale ed enti IndicePA — nella [unione semantica](/unione).
+- Come un singolo CUP collega OpenCUP, gare ANAC (CUP↔CIG e aggiudicazioni), avvisi PA Digitale ed enti IndicePA — nella [unione semantica](/unione). Le aggiudicazioni ANAC forniscono importi, date ed esiti; per gli aggiudicatari si utilizzano SCP e altre fonti.
 
 I numeri nazionali sono in [Analisi](/analisi). I collegamenti tra fonti si esplorano nei [grafi](/grafi) e nell’[unione animata](/unione/animazione).
 

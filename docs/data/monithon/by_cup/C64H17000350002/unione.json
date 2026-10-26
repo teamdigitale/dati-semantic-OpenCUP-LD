@@ -1,12 +1,15 @@
 {
   "id": "monithon_C64H17000350002",
   "title": "Unione semantica — CUP C64H17000350002",
-  "sparql_note": "Il CUP C64H17000350002 è oggetto di report Monithon. Collegato a 10 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP C64H17000350002 è oggetto di report Monithon. Collegato a 10 lotti CIG ANAC, a 4 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -20,6 +23,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si17307/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000410845",
       "label": "pi:ha_soggetto_titolare"
@@ -28,16 +36,6 @@
       "source": "https://indicepa.gov.it/ente/c_e573",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000410845",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7311542852",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7311542B52",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/9028969CEA",
@@ -70,14 +68,49 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/7311542852",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1442334",
+      "target": "https://w3id.org/italia/data/Lot/7311542852",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7311542B52",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1442334",
+      "target": "https://w3id.org/italia/data/Lot/7311542B52",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/8343746504",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/ContractNotice/799584",
+      "target": "https://w3id.org/italia/data/Lot/8343746504",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/9719001558",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9719001558-1848130-01515010856",
+      "target": "https://w3id.org/italia/data/Lot/9719001558",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2505276",
+      "target": "https://w3id.org/italia/data/Lot/9719001558",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -103,6 +136,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si17307/",
+      "shortId": "",
+      "label": "LICATA - REALIZZAZIONE NUOVO MERCATO ORTOFRUTTICOLO.",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/81000410845",
       "shortId": "cf:81000410845",
       "label": "COMUNE DI LICATA - AG -",
@@ -115,20 +155,6 @@
       "label": "Comune di Licata",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7311542852",
-      "shortId": "lot:7311542852",
-      "label": "CIG 7311…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7311542B52",
-      "shortId": "lot:7311542B52",
-      "label": "CIG 7311…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/9028969CEA",
@@ -173,11 +199,39 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Lot/7311542852",
+      "shortId": "lot:7311542852",
+      "label": "CIG 7311…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1442334",
+      "shortId": "1442334",
+      "label": "1442334",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/7311542B52",
+      "shortId": "lot:7311542B52",
+      "label": "CIG 7311…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/8343746504",
       "shortId": "lot:8343746504",
       "label": "\"Realizzazione  di  un opera d'arte nell'ambito dei lavori d…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/799584",
+      "shortId": "799584",
+      "label": "\"Bando di  concorso  per la realizzazione  di  un opera d'ar…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/9719001558",
@@ -187,8 +241,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1589",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "id": "https://w3id.org/italia/data/Award/9719001558-1848130-01515010856",
+      "shortId": "9719001558-1848130-01515010856",
+      "label": "9719001558-1848130-01515010856",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2505276",
+      "shortId": "2505276",
+      "label": "2505276",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1550",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1550",
       "label": "REALIZZAZIONE NUOVO MERCATO ORTOFRUTTICOLO.*VIA ROSARIO TORR…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -269,6 +337,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si17307/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000410845",
       "label": "pi:ha_soggetto_titolare"
@@ -277,16 +350,6 @@
       "source": "https://indicepa.gov.it/ente/c_e573",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000410845",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7311542852",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7311542B52",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/9028969CEA",
@@ -319,9 +382,34 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/7311542852",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1442334",
+      "target": "https://w3id.org/italia/data/Lot/7311542852",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7311542B52",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1442334",
+      "target": "https://w3id.org/italia/data/Lot/7311542B52",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/8343746504",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/799584",
+      "target": "https://w3id.org/italia/data/Lot/8343746504",
+      "label": "PCTR:hasLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/9719001558",
@@ -329,8 +417,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/9719001558-1848130-01515010856",
+      "target": "https://w3id.org/italia/data/Lot/9719001558",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2505276",
+      "target": "https://w3id.org/italia/data/Lot/9719001558",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C64H17000350002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1550",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -344,7 +442,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1550",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/4_6",
       "label": "pi:ha_settore_intervento"
     },
@@ -354,7 +452,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1550",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/4_6_13",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -364,7 +462,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1550",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/4_6_13_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -374,17 +472,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1550",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/4",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1550",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1589",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1550",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

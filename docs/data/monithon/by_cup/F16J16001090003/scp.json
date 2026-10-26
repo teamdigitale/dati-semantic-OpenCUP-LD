@@ -1,0 +1,76 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/78460415DB-578872-03796520652",
+      "shortId": "78460415DB-578872-03796520652",
+      "label": "78460415DB-578872-03796520652",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/78460415DB-578872-04231191216",
+      "shortId": "78460415DB-578872-04231191216",
+      "label": "78460415DB-578872-04231191216",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/78460415DB-578872-07743681210",
+      "shortId": "78460415DB-578872-07743681210",
+      "label": "78460415DB-578872-07743681210",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/78460415DB-578872-07935340963",
+      "shortId": "78460415DB-578872-07935340963",
+      "label": "78460415DB-578872-07935340963",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/78460415DB-578872-13274160152",
+      "shortId": "78460415DB-578872-13274160152",
+      "label": "78460415DB-578872-13274160152",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/78460415DB",
+      "shortId": "lot:78460415DB",
+      "label": "CIG 7846…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/78460415DB-578872-03796520652",
+      "target": "https://w3id.org/italia/data/Lot/78460415DB",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/78460415DB-578872-04231191216",
+      "target": "https://w3id.org/italia/data/Lot/78460415DB",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/78460415DB-578872-07743681210",
+      "target": "https://w3id.org/italia/data/Lot/78460415DB",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/78460415DB-578872-07935340963",
+      "target": "https://w3id.org/italia/data/Lot/78460415DB",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/78460415DB-578872-13274160152",
+      "target": "https://w3id.org/italia/data/Lot/78460415DB",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

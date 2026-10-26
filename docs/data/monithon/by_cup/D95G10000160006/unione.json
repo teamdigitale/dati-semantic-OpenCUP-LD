@@ -1,11 +1,13 @@
 {
   "id": "monithon_D95G10000160006",
   "title": "Unione semantica — CUP D95G10000160006",
-  "sparql_note": "Il CUP D95G10000160006 è oggetto di report Monithon. Collegato a 5 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D95G10000160006 è oggetto di report Monithon. Collegato a 5 lotti CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/4fr1225/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80014930327",
       "label": "pi:ha_soggetto_titolare"
@@ -28,11 +35,6 @@
       "source": "https://indicepa.gov.it/ente/r_friuve",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80014930327",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/4080689317",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z410485115",
@@ -53,6 +55,16 @@
       "source": "https://w3id.org/italia/data/Lot/ZF803857D9",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/4080689317",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/527879",
+      "target": "https://w3id.org/italia/data/Lot/4080689317",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -67,7 +79,7 @@
       "id": "https://it.monithon.eu/report/view/466",
       "shortId": "466",
       "label": "466",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -76,6 +88,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/4fr1225/",
+      "shortId": "",
+      "label": "SISTEMA ELETTRICO INTEGRATO PER GRANDI NAVI A PROPULSIONE EL…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80014930327",
@@ -90,13 +109,6 @@
       "label": "Regione Autonoma Friuli-Venezia Giulia",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/4080689317",
-      "shortId": "lot:4080689317",
-      "label": "CIG 4080…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z410485115",
@@ -127,8 +139,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1334",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "id": "https://w3id.org/italia/data/Lot/4080689317",
+      "shortId": "lot:4080689317",
+      "label": "CIG 4080…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/527879",
+      "shortId": "527879",
+      "label": "527879",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1250",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1250",
       "label": "    UNIVERSITA DI TRIESTE**SISTEMA ELETTRICO INTEGRATO CON D…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -209,6 +235,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/4fr1225/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80014930327",
       "label": "pi:ha_soggetto_titolare"
@@ -217,11 +248,6 @@
       "source": "https://indicepa.gov.it/ente/r_friuve",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80014930327",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/4080689317",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z410485115",
@@ -244,8 +270,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/4080689317",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/527879",
+      "target": "https://w3id.org/italia/data/Lot/4080689317",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D95G10000160006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1250",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -259,7 +295,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1250",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/5_8",
       "label": "pi:ha_settore_intervento"
     },
@@ -269,7 +305,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1250",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/5_8_62",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -279,7 +315,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1250",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/5_8_62_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -289,17 +325,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1250",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/5",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1250",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/06",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1334",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1250",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/06_99",
       "label": "pi:ha_tipologia_intervento"
     },

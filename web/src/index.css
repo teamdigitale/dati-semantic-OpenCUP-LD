@@ -563,3 +563,30 @@ a.resource-link code {
 .dup-hidden {
   display: none !important;
 }
+
+.monithon-sortable-th {
+  white-space: nowrap;
+}
+
+.monithon-sort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.monithon-sort-btn:hover,
+.monithon-sort-btn:focus-visible {
+  color: #0066cc !important;
+}
+
+.monithon-sort-indicator {
+  font-size: 0.7em;
+  opacity: 0.35;
+  line-height: 1;
+}
+
+.monithon-sort-indicator.is-active {
+  opacity: 1;
+  color: #0066cc;
+}

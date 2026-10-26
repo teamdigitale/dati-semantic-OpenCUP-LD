@@ -1,11 +1,12 @@
 {
   "id": "monithon_E89E12000840006",
   "title": "Unione semantica — CUP E89E12000840006",
-  "sparql_note": "Il CUP E89E12000840006 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP E89E12000840006 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +19,11 @@
       "source": "https://it.monithon.eu/report/view/242",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si12710/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E89E12000840006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E89E12000840006",
@@ -73,6 +79,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si12710/",
+      "shortId": "",
+      "label": "Fruizione e Valorizzazione del patrimonio culturale: allesti…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00220950844",
       "shortId": "cf:00220950844",
       "label": "COMUNE DI SCIACCA - AG -",
@@ -115,8 +128,8 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1262",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1160",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1160",
       "label": "MUSEO DEL CARNEVALE*VIA ALLENDE*SERVIZI DI PROGETTAZIONE E R…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -197,6 +210,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si12710/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E89E12000840006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E89E12000840006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00220950844",
       "label": "pi:ha_soggetto_titolare"
@@ -228,7 +246,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/E89E12000840006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1160",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -242,7 +260,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1160",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -252,7 +270,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1160",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_99",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -262,7 +280,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1160",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_99_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -272,17 +290,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1160",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1160",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1262",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1160",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_99",
       "label": "pi:ha_tipologia_intervento"
     },

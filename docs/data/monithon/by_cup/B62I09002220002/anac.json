@@ -1,0 +1,47 @@
+{
+  "dataset": "anac",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme anac del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2911950",
+      "shortId": "2911950",
+      "label": "2911950",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1915778",
+      "shortId": "1915778",
+      "label": "1915778",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8583539077",
+      "shortId": "lot:8583539077",
+      "label": "CIG 8583…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8396338D4C",
+      "shortId": "lot:8396338D4C",
+      "label": "\"Servizi di comunicazione per lo sviluppo della raccolta dif…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2911950",
+      "target": "https://w3id.org/italia/data/Lot/8583539077",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1915778",
+      "target": "https://w3id.org/italia/data/Lot/8396338D4C",
+      "label": "PCTR:awardedLot"
+    }
+  ]
+}

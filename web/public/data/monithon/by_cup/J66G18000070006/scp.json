@@ -1,0 +1,71 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/80723677FA-824202-65",
+      "shortId": "80723677FA-824202-65",
+      "label": "80723677FA-824202-65",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8697097F79-1040566-03224520878",
+      "shortId": "8697097F79-1040566-03224520878",
+      "label": "8697097F79-1040566-03224520878",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8697097F79-1040566-05791980724",
+      "shortId": "8697097F79-1040566-05791980724",
+      "label": "8697097F79-1040566-05791980724",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1040566",
+      "shortId": "1040566",
+      "label": "\"Lavori di Efficientamento Energetico del Presidio Ospedalie…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/80723677FA",
+      "shortId": "lot:80723677FA",
+      "label": "CIG 8072…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8697097F79",
+      "shortId": "lot:8697097F79",
+      "label": "\"Lavori di Efficientamento Energetico del Presidio Ospedalie…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/80723677FA-824202-65",
+      "target": "https://w3id.org/italia/data/Lot/80723677FA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8697097F79-1040566-03224520878",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8697097F79-1040566-05791980724",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1040566",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

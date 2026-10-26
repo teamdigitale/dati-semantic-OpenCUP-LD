@@ -1,11 +1,13 @@
 {
   "id": "monithon_I34C10000110006",
   "title": "Unione semantica — CUP I34C10000110006",
-  "sparql_note": "Il CUP I34C10000110006 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP I34C10000110006 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca108c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000970616",
       "label": "pi:ha_soggetto_titolare"
@@ -28,11 +35,6 @@
       "source": "https://indicepa.gov.it/ente/c_a512",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000970616",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5608116BB7",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z2B14F0072",
@@ -58,6 +60,16 @@
       "source": "https://w3id.org/italia/data/Lot/ZF214F0123",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5608116BB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/923228",
+      "target": "https://w3id.org/italia/data/Lot/5608116BB7",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -72,7 +84,7 @@
       "id": "https://it.monithon.eu/report/view/692",
       "shortId": "692",
       "label": "692",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -83,9 +95,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca108c332007it161po009/",
+      "shortId": "",
+      "label": "Ampl. (ZTL) e Bike sharing (P.zza Cirillo, Diana e Crispi)",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/81000970616",
       "shortId": "cf:81000970616",
-      "label": "Comune di Aversa",
+      "label": "COMUNE DI AVERSA - CASERTA -",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -95,13 +114,6 @@
       "label": "Comune di Aversa",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5608116BB7",
-      "shortId": "lot:5608116BB7",
-      "label": "CIG 5608…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z2B14F0072",
@@ -139,8 +151,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1415",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "id": "https://w3id.org/italia/data/Lot/5608116BB7",
+      "shortId": "lot:5608116BB7",
+      "label": "CIG 5608…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/923228",
+      "shortId": "923228",
+      "label": "923228",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1358",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1358",
       "label": "AMPLIAMENTO DELLA ZONA A TRAFFICO LIMITATO (ZTL) E PUNTI DI …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -221,6 +247,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca108c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000970616",
       "label": "pi:ha_soggetto_titolare"
@@ -229,11 +260,6 @@
       "source": "https://indicepa.gov.it/ente/c_a512",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81000970616",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5608116BB7",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z2B14F0072",
@@ -261,8 +287,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/5608116BB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/923228",
+      "target": "https://w3id.org/italia/data/Lot/5608116BB7",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I34C10000110006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1358",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -276,7 +312,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1358",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -286,7 +322,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1358",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_5",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -296,7 +332,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1358",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_5_36",
       "label": "pi:ha_categoria_intervento"
     },
@@ -306,17 +342,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1358",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1358",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1415",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1358",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_58",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,12 +1,15 @@
 {
   "id": "monithon_J29D16001340001",
   "title": "Unione semantica — CUP J29D16001340001",
-  "sparql_note": "Il CUP J29D16001340001 è oggetto di report Monithon. Collegato a 3 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J29D16001340001 è oggetto di report Monithon. Collegato a 3 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -18,6 +21,11 @@
       "source": "https://it.monithon.eu/report/view/98",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si17820/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D16001340001",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D16001340001",
@@ -43,6 +51,16 @@
       "source": "https://w3id.org/italia/data/Lot/779003081D",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D16001340001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/779003081D-729509-02230600245",
+      "target": "https://w3id.org/italia/data/Lot/779003081D",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1863911",
+      "target": "https://w3id.org/italia/data/Lot/779003081D",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -68,9 +86,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si17820/",
+      "shortId": "",
+      "label": "Pantelleria - Consolidamento dei costoni rocciosi sovrastant…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/97250980824",
       "shortId": "cf:97250980824",
-      "label": "Commissario di Governo contro il Dissesto Idrogeologico nell…",
+      "label": "- COMMISSARIO DELEGATO RISCHIO IDROGEOLOGICO SICILIA EX DPCM…",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -103,8 +128,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1208",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "id": "https://w3id.org/italia/data/Award/779003081D-729509-02230600245",
+      "shortId": "779003081D-729509-02230600245",
+      "label": "779003081D-729509-02230600245",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1863911",
+      "shortId": "1863911",
+      "label": "1863911",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1094",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1094",
       "label": "CONSOLIDAMENTO DEI COSTONI ROCCIOSI SOVRASTANTI AREE DI PERC…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -185,6 +224,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si17820/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D16001340001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D16001340001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/97250980824",
       "label": "pi:ha_soggetto_titolare"
@@ -210,8 +254,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/779003081D-729509-02230600245",
+      "target": "https://w3id.org/italia/data/Lot/779003081D",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1863911",
+      "target": "https://w3id.org/italia/data/Lot/779003081D",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J29D16001340001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1094",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -225,7 +279,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1094",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -235,7 +289,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1094",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_5",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -245,7 +299,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1094",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_5_141",
       "label": "pi:ha_categoria_intervento"
     },
@@ -255,17 +309,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1094",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1094",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1208",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1094",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

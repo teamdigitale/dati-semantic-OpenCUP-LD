@@ -1,12 +1,14 @@
 {
   "id": "unione_completa",
   "title": "Unione semantica — CUP B11C22000490006",
-  "sparql_note": "Il CUP B11C22000490006 è lo stesso progetto in OpenCUP e PA Digitale. Collegato a 1 lotto CIG ANAC, all’avviso PNRR, al soggetto titolare, all’ente IndicePA, alla classificazione dell’intervento.",
+  "sparql_note": "Il CUP B11C22000490006 è lo stesso progetto in OpenCUP e PA Digitale. Collegato a 1 lotto CIG ANAC, a 2 aggiudicazioni, all’avviso PNRR, al soggetto titolare, all’ente IndicePA, alla classificazione dell’intervento.",
   "datasets_involved": [
+    "anac",
     "candidature",
     "cupcig",
     "enti_ipa",
-    "opencup"
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -28,6 +30,16 @@
       "source": "https://w3id.org/italia/data/Lot/9721794633",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9721794633-1968511-00384350435",
+      "target": "https://w3id.org/italia/data/Lot/9721794633",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2633813",
+      "target": "https://w3id.org/italia/data/Lot/9721794633",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -48,7 +60,7 @@
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/82005730161",
       "shortId": "cf:82005730161",
-      "label": "Comune di Terno d'Isola",
+      "label": "COMUNE DI TERNO D'ISOLA - BG -",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -67,8 +79,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
-      "shortId": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "id": "https://w3id.org/italia/data/Award/9721794633-1968511-00384350435",
+      "shortId": "9721794633-1968511-00384350435",
+      "label": "9721794633-1968511-00384350435",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2633813",
+      "shortId": "2633813",
+      "label": "2633813",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "n45930c9487b5414fb7d35b8938ff5d92b10",
+      "shortId": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "label": "MIGRAZIONE AL CLOUD DEI SERVIZI DIGITALI DELL'AMMINISTRAZION…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -159,8 +185,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/9721794633-1968511-00384350435",
+      "target": "https://w3id.org/italia/data/Lot/9721794633",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2633813",
+      "target": "https://w3id.org/italia/data/Lot/9721794633",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B11C22000490006",
-      "target": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "target": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -174,7 +210,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "source": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -184,7 +220,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "source": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -194,7 +230,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "source": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_1_7",
       "label": "pi:ha_categoria_intervento"
     },
@@ -204,17 +240,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "source": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "source": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n6f4ee4da15514560a6c2ca40dbf69ef5b10",
+      "source": "n45930c9487b5414fb7d35b8938ff5d92b10",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_19",
       "label": "pi:ha_tipologia_intervento"
     },

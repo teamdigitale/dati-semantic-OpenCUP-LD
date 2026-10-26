@@ -1,11 +1,13 @@
 {
   "id": "monithon_G63H19000770001",
   "title": "Unione semantica — CUP G63H19000770001",
-  "sparql_note": "Il CUP G63H19000770001 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G63H19000770001 è oggetto di report Monithon. Collegato a 4 lotti CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -30,6 +32,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si25583/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "pi:ha_soggetto_titolare"
@@ -38,11 +45,6 @@
       "source": "https://indicepa.gov.it/ente/r_sicili",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8030713204",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/8587180D19",
@@ -58,6 +60,16 @@
       "source": "https://w3id.org/italia/data/Lot/Z7A311A801",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8030713204",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1856943",
+      "target": "https://w3id.org/italia/data/Lot/8030713204",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -86,8 +98,15 @@
       "id": "https://it.monithon.eu/report/view/1683",
       "shortId": "1683",
       "label": "1683",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si25583/",
+      "shortId": "",
+      "label": "Lavori per eliminare l'ostruzione della foce del fiume Salso…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
@@ -102,13 +121,6 @@
       "label": "Regione Siciliana",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/8030713204",
-      "shortId": "lot:8030713204",
-      "label": "CIG 8030…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/8587180D19",
@@ -132,8 +144,22 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1406",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "id": "https://w3id.org/italia/data/Lot/8030713204",
+      "shortId": "lot:8030713204",
+      "label": "CIG 8030…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1856943",
+      "shortId": "1856943",
+      "label": "1856943",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1343",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1343",
       "label": "LAVORI PER ELIMINARE L'OSTRUZIONE DELLA FOCE DEL FIUME SALSO…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -224,6 +250,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si25583/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "pi:ha_soggetto_titolare"
@@ -232,11 +263,6 @@
       "source": "https://indicepa.gov.it/ente/r_sicili",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8030713204",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/8587180D19",
@@ -254,8 +280,18 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/8030713204",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1856943",
+      "target": "https://w3id.org/italia/data/Lot/8030713204",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G63H19000770001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1343",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -269,7 +305,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1343",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/3_2",
       "label": "pi:ha_settore_intervento"
     },
@@ -279,7 +315,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1343",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/3_2_5",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -289,7 +325,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1343",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/3_2_5_51",
       "label": "pi:ha_categoria_intervento"
     },
@@ -299,17 +335,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1343",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/3",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1343",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1406",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1343",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_07",
       "label": "pi:ha_tipologia_intervento"
     },

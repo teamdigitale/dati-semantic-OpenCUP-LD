@@ -1,10 +1,11 @@
 {
   "id": "monithon_B37B18000150009",
   "title": "Unione semantica — CUP B37B18000150009",
-  "sparql_note": "Il CUP B37B18000150009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP B37B18000150009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/1042",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/7ve10074781/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B37B18000150009",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B37B18000150009",
@@ -52,6 +58,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/7ve10074781/",
+      "shortId": "",
+      "label": "Progetto di miglioramento efficienza di uno stabilimento pro…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/90098670277",
       "shortId": "cf:90098670277",
       "label": "AVEPA -AGENZIA VENETA PER I PAGAMENTI",
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b38",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "id": "ne7d28342d6964779bba482cdd32840a0b35",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b35",
       "label": "SERENISSIMA S.R.L.*Progetto di miglioramento efficienza di u…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -155,6 +168,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/7ve10074781/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B37B18000150009",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B37B18000150009",
       "target": "https://w3id.org/italia/data/CodiceFiscale/90098670277",
       "label": "pi:ha_soggetto_titolare"
@@ -166,7 +184,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/B37B18000150009",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "target": "ne7d28342d6964779bba482cdd32840a0b35",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -185,7 +203,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "source": "ne7d28342d6964779bba482cdd32840a0b35",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/4_4",
       "label": "pi:ha_settore_intervento"
     },
@@ -195,7 +213,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "source": "ne7d28342d6964779bba482cdd32840a0b35",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/4_4_39",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -205,7 +223,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "source": "ne7d28342d6964779bba482cdd32840a0b35",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/4_4_39_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -215,17 +233,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "source": "ne7d28342d6964779bba482cdd32840a0b35",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/4",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "source": "ne7d28342d6964779bba482cdd32840a0b35",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/07",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b38",
+      "source": "ne7d28342d6964779bba482cdd32840a0b35",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/07_13",
       "label": "pi:ha_tipologia_intervento"
     },

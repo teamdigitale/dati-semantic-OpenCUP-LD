@@ -1,13 +1,20 @@
 {
   "id": "monithon_G88I13000450005",
   "title": "Unione semantica — CUP G88I13000450005",
-  "sparql_note": "Il CUP G88I13000450005 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP G88I13000450005 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepacsic-tp02/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G88I13000450005",
+      "label": "schema:about"
+    },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G88I13000450005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
@@ -22,6 +29,11 @@
       "source": "https://w3id.org/italia/data/Lot/56837624C7",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G88I13000450005",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/826595",
+      "target": "https://w3id.org/italia/data/Lot/56837624C7",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -31,6 +43,13 @@
       "label": "G88I13000450005",
       "type": "pi:Progetto_di_investimento_pubblico",
       "dataset": "opencup"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misepacsic-tp02/",
+      "shortId": "",
+      "label": "MUSEO ARCHEOLOGICO REGIONALE \"BAGLIO ANSELMI\" -RESTAURO,VALO…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
@@ -54,8 +73,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b17",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "id": "https://w3id.org/italia/data/Award/anac/826595",
+      "shortId": "826595",
+      "label": "826595",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b14",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b14",
       "label": "MUSEO ARCHEOLOGICO REGIONALE BAGLIO ANSELMI*VIA CAPO BOEO*RE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -126,6 +152,11 @@
   ],
   "edges": [
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepacsic-tp02/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G88I13000450005",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G88I13000450005",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80012000826",
       "label": "pi:ha_soggetto_titolare"
@@ -141,8 +172,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/826595",
+      "target": "https://w3id.org/italia/data/Lot/56837624C7",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/G88I13000450005",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "target": "ne7d28342d6964779bba482cdd32840a0b14",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -156,7 +192,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "source": "ne7d28342d6964779bba482cdd32840a0b14",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -166,7 +202,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "source": "ne7d28342d6964779bba482cdd32840a0b14",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -176,7 +212,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "source": "ne7d28342d6964779bba482cdd32840a0b14",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_97",
       "label": "pi:ha_categoria_intervento"
     },
@@ -186,17 +222,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "source": "ne7d28342d6964779bba482cdd32840a0b14",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "source": "ne7d28342d6964779bba482cdd32840a0b14",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b17",
+      "source": "ne7d28342d6964779bba482cdd32840a0b14",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
       "label": "pi:ha_tipologia_intervento"
     },

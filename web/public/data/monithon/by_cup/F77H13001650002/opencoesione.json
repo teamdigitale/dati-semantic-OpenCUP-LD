@@ -1,0 +1,28 @@
+{
+  "dataset": "opencoesione",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme opencoesione del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
+      "shortId": "cup:F77H13001650002",
+      "label": "F77H13001650002",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1cl205454/",
+      "shortId": "",
+      "label": "L.I. 5.3.2.1- Direzione Regionale Beni Culturali e Paesaggis…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1cl205454/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F77H13001650002",
+      "label": "schema:about"
+    }
+  ]
+}

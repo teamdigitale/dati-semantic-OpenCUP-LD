@@ -1,0 +1,59 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/8988749654-1245313-01200790291",
+      "shortId": "8988749654-1245313-01200790291",
+      "label": "8988749654-1245313-01200790291",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/94169801BC-1586546-159",
+      "shortId": "94169801BC-1586546-159",
+      "label": "94169801BC-1586546-159",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1586546",
+      "shortId": "1586546",
+      "label": "\"Servizio di somministrazione di lavoro a tempo determinato …",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8988749654",
+      "shortId": "lot:8988749654",
+      "label": "CIG 8988…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/94169801BC",
+      "shortId": "lot:94169801BC",
+      "label": "\"Servizio di somministrazione di lavoro a tempo determinato …",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/8988749654-1245313-01200790291",
+      "target": "https://w3id.org/italia/data/Lot/8988749654",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/94169801BC-1586546-159",
+      "target": "https://w3id.org/italia/data/Lot/94169801BC",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1586546",
+      "target": "https://w3id.org/italia/data/Lot/94169801BC",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

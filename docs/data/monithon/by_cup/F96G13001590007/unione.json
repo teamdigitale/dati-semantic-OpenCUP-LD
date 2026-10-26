@@ -1,11 +1,13 @@
 {
   "id": "monithon_F96G13001590007",
   "title": "Unione semantica — CUP F96G13001590007",
-  "sparql_note": "Il CUP F96G13001590007 è oggetto di report Monithon. Collegato a 14 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP F96G13001590007 è oggetto di report Monithon. Collegato a 14 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepuglia9/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81003470754",
       "label": "pi:ha_soggetto_titolare"
@@ -28,16 +35,6 @@
       "source": "https://indicepa.gov.it/ente/c_l484",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81003470754",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5336631736",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5521451D7E",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z050D0801B",
@@ -98,6 +95,26 @@
       "source": "https://w3id.org/italia/data/Lot/ZF1128FBC1",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5336631736",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/604441",
+      "target": "https://w3id.org/italia/data/Lot/5336631736",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5521451D7E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/671678",
+      "target": "https://w3id.org/italia/data/Lot/5521451D7E",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -112,7 +129,7 @@
       "id": "https://it.monithon.eu/report/view/1904",
       "shortId": "1904",
       "label": "1904",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -121,6 +138,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misepuglia9/",
+      "shortId": "",
+      "label": "RESTAURO, RECUPERO E RIFUNZIONALIZZAZIONE DEL CASTELLO DI UG…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/81003470754",
@@ -135,20 +159,6 @@
       "label": "Comune di Ugento",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5336631736",
-      "shortId": "lot:5336631736",
-      "label": "CIG 5336…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/5521451D7E",
-      "shortId": "lot:5521451D7E",
-      "label": "CIG 5521…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z050D0801B",
@@ -235,8 +245,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1697",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "id": "https://w3id.org/italia/data/Lot/5336631736",
+      "shortId": "lot:5336631736",
+      "label": "CIG 5336…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/604441",
+      "shortId": "604441",
+      "label": "604441",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/5521451D7E",
+      "shortId": "lot:5521451D7E",
+      "label": "CIG 5521…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/671678",
+      "shortId": "671678",
+      "label": "671678",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1670",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1670",
       "label": "CASTELLO DI UGENTO*VIA CASTELLO*RESTAURO, RECUPERO E RIFUNZI…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -324,6 +362,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepuglia9/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81003470754",
       "label": "pi:ha_soggetto_titolare"
@@ -332,16 +375,6 @@
       "source": "https://indicepa.gov.it/ente/c_l484",
       "target": "https://w3id.org/italia/data/CodiceFiscale/81003470754",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5336631736",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/5521451D7E",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z050D0801B",
@@ -404,8 +437,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/5336631736",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/604441",
+      "target": "https://w3id.org/italia/data/Lot/5336631736",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/5521451D7E",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/671678",
+      "target": "https://w3id.org/italia/data/Lot/5521451D7E",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/F96G13001590007",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1670",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -424,7 +477,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1670",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -434,7 +487,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1670",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -444,7 +497,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1670",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_96",
       "label": "pi:ha_categoria_intervento"
     },
@@ -454,17 +507,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1670",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1670",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1697",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1670",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_03",
       "label": "pi:ha_tipologia_intervento"
     },

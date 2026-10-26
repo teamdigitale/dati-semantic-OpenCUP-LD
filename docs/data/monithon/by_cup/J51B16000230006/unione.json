@@ -1,11 +1,13 @@
 {
   "id": "monithon_J51B16000230006",
   "title": "Unione semantica — CUP J51B16000230006",
-  "sparql_note": "Il CUP J51B16000230006 è oggetto di report Monithon. Collegato a 23 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J51B16000230006 è oggetto di report Monithon. Collegato a 23 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -20,6 +22,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6lo119719/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00828590158",
       "label": "pi:ha_soggetto_titolare"
@@ -28,16 +35,6 @@
       "source": "https://indicepa.gov.it/ente/c_h827",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00828590158",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7090217828",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/77481610BB",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z0227950E4",
@@ -143,6 +140,26 @@
       "source": "https://w3id.org/italia/data/Lot/ZF026CA9D7",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/7090217828",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1589171",
+      "target": "https://w3id.org/italia/data/Lot/7090217828",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/77481610BB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1567076",
+      "target": "https://w3id.org/italia/data/Lot/77481610BB",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -157,7 +174,7 @@
       "id": "https://it.monithon.eu/report/view/942",
       "shortId": "942",
       "label": "942",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -166,6 +183,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/6lo119719/",
+      "shortId": "",
+      "label": "REALIZZAZIONE DELLA CONNESSIONE CICLABILE IN TERCOMUNALE TRA…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00828590158",
@@ -180,20 +204,6 @@
       "label": "Comune di San Donato Milanese",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/7090217828",
-      "shortId": "lot:7090217828",
-      "label": "CIG 7090…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/77481610BB",
-      "shortId": "lot:77481610BB",
-      "label": "CIG 7748…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Z0227950E4",
@@ -343,8 +353,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1787",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "id": "https://w3id.org/italia/data/Lot/7090217828",
+      "shortId": "lot:7090217828",
+      "label": "CIG 7090…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1589171",
+      "shortId": "1589171",
+      "label": "1589171",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/77481610BB",
+      "shortId": "lot:77481610BB",
+      "label": "CIG 7748…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1567076",
+      "shortId": "1567076",
+      "label": "1567076",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1781",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1781",
       "label": "VIACAVIAGA (M3 SAN DONATO MILANESE)‐VIA CARDUCCI (PESCHIERA …",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -432,6 +470,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6lo119719/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00828590158",
       "label": "pi:ha_soggetto_titolare"
@@ -440,16 +483,6 @@
       "source": "https://indicepa.gov.it/ente/c_h827",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00828590158",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/7090217828",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/77481610BB",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Z0227950E4",
@@ -557,8 +590,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/7090217828",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1589171",
+      "target": "https://w3id.org/italia/data/Lot/7090217828",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/77481610BB",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1567076",
+      "target": "https://w3id.org/italia/data/Lot/77481610BB",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J51B16000230006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1781",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -577,7 +630,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1781",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -587,7 +640,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1781",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -597,7 +650,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1781",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_1_14",
       "label": "pi:ha_categoria_intervento"
     },
@@ -607,17 +660,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1781",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1781",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1787",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1781",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

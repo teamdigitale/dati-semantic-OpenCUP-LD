@@ -1,0 +1,119 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/Award/9290334226-1623075-05593210726",
+      "shortId": "9290334226-1623075-05593210726",
+      "label": "9290334226-1623075-05593210726",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9290334226-1623075-09586200017",
+      "shortId": "9290334226-1623075-09586200017",
+      "label": "9290334226-1623075-09586200017",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1623075",
+      "shortId": "1623075",
+      "label": "\"P.O.R. CAMPANIA FESR 2014-2020 P.I.C.S Città di Castellamma…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/858104130C-990868-CRDMTT86S05C710P",
+      "shortId": "858104130C-990868-CRDMTT86S05C710P",
+      "label": "858104130C-990868-CRDMTT86S05C710P",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/858104130C-990868-DGDFNC88R69D575P",
+      "shortId": "858104130C-990868-DGDFNC88R69D575P",
+      "label": "858104130C-990868-DGDFNC88R69D575P",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/858104130C-990868-GRPLNZ57H18L219E",
+      "shortId": "858104130C-990868-GRPLNZ57H18L219E",
+      "label": "858104130C-990868-GRPLNZ57H18L219E",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/858104130C-990868-SCRBCM79A42B774G",
+      "shortId": "858104130C-990868-SCRBCM79A42B774G",
+      "label": "858104130C-990868-SCRBCM79A42B774G",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/990868",
+      "shortId": "990868",
+      "label": "\"Progettazione Museo civico delle arti e della storia di Cas…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9290334226",
+      "shortId": "lot:9290334226",
+      "label": "\"P.O.R. CAMPANIA FESR 2014-2020 P.I.C.S Città di Castellamma…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/858104130C",
+      "shortId": "lot:858104130C",
+      "label": "\"Progettazione Museo civico delle arti e della storia di Cas…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9290334226-1623075-05593210726",
+      "target": "https://w3id.org/italia/data/Lot/9290334226",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/9290334226-1623075-09586200017",
+      "target": "https://w3id.org/italia/data/Lot/9290334226",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1623075",
+      "target": "https://w3id.org/italia/data/Lot/9290334226",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/858104130C-990868-CRDMTT86S05C710P",
+      "target": "https://w3id.org/italia/data/Lot/858104130C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/858104130C-990868-DGDFNC88R69D575P",
+      "target": "https://w3id.org/italia/data/Lot/858104130C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/858104130C-990868-GRPLNZ57H18L219E",
+      "target": "https://w3id.org/italia/data/Lot/858104130C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/858104130C-990868-SCRBCM79A42B774G",
+      "target": "https://w3id.org/italia/data/Lot/858104130C",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/990868",
+      "target": "https://w3id.org/italia/data/Lot/858104130C",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

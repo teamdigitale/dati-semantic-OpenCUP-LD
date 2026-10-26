@@ -1,11 +1,13 @@
 {
   "id": "monithon_D83G18000320003",
   "title": "Unione semantica — CUP D83G18000320003",
-  "sparql_note": "Il CUP D83G18000320003 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D83G18000320003 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +20,11 @@
       "source": "https://it.monithon.eu/report/view/1188",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misesan06/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D83G18000320003",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D83G18000320003",
@@ -33,6 +40,11 @@
       "source": "https://w3id.org/italia/data/Lot/9457980BFE",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D83G18000320003",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2731179",
+      "target": "https://w3id.org/italia/data/Lot/9457980BFE",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -47,7 +59,7 @@
       "id": "https://it.monithon.eu/report/view/1188",
       "shortId": "1188",
       "label": "1188",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -56,6 +68,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misesan06/",
+      "shortId": "",
+      "label": "RECUPERO RESTAURO E VALORIZZAZIONE DEL COMPLESSO DI S.ANGELO",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/82001050721",
@@ -79,8 +98,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b659",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "id": "https://w3id.org/italia/data/Award/anac/2731179",
+      "shortId": "2731179",
+      "label": "2731179",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b599",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b599",
       "label": "GROTTA SANT'ANGELO GROTTE DI SANT'ANGELO*AGRO DI SANT'ANGELO…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -161,6 +187,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misesan06/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D83G18000320003",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D83G18000320003",
       "target": "https://w3id.org/italia/data/CodiceFiscale/82001050721",
       "label": "pi:ha_soggetto_titolare"
@@ -176,8 +207,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/2731179",
+      "target": "https://w3id.org/italia/data/Lot/9457980BFE",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D83G18000320003",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "target": "ne7d28342d6964779bba482cdd32840a0b599",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -191,7 +227,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "source": "ne7d28342d6964779bba482cdd32840a0b599",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -201,7 +237,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "source": "ne7d28342d6964779bba482cdd32840a0b599",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_11",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -211,7 +247,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "source": "ne7d28342d6964779bba482cdd32840a0b599",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_11_96",
       "label": "pi:ha_categoria_intervento"
     },
@@ -221,17 +257,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "source": "ne7d28342d6964779bba482cdd32840a0b599",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "source": "ne7d28342d6964779bba482cdd32840a0b599",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b659",
+      "source": "ne7d28342d6964779bba482cdd32840a0b599",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_05",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,0 +1,28 @@
+{
+  "dataset": "opencoesione",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme opencoesione del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "shortId": "cup:I54B06000010000",
+      "label": "I54B06000010000",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "opencup"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca17c332007it161po009/",
+      "shortId": "",
+      "label": "Recupero edilizio e restauro del palazzo fruscione",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca17c332007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I54B06000010000",
+      "label": "schema:about"
+    }
+  ]
+}

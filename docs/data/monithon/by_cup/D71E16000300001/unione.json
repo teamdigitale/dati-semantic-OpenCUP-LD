@@ -1,12 +1,15 @@
 {
   "id": "monithon_D71E16000300001",
   "title": "Unione semantica — CUP D71E16000300001",
-  "sparql_note": "Il CUP D71E16000300001 è oggetto di report Monithon. Collegato a 14 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D71E16000300001 è oggetto di report Monithon. Collegato a 14 lotti CIG ANAC, a 3 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -30,6 +33,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepapa107/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "label": "pi:ha_soggetto_titolare"
@@ -41,16 +49,6 @@
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7568020FA8",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/798131015F",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8721038C37",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
       "label": "PCTR:hasProject"
     },
@@ -100,14 +98,49 @@
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "source": "https://w3id.org/italia/data/Lot/798131015F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2453911",
+      "target": "https://w3id.org/italia/data/Lot/798131015F",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8721038C37",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2368488",
+      "target": "https://w3id.org/italia/data/Lot/8721038C37",
+      "label": "PCTR:awardedLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/9833419A0F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1935521",
+      "target": "https://w3id.org/italia/data/Lot/9833419A0F",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2646827",
+      "target": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1704576",
+      "target": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "label": "PCTR:hasLot"
     }
   ],
   "nodes": [
@@ -122,7 +155,7 @@
       "id": "https://it.monithon.eu/report/view/1253",
       "shortId": "1253",
       "label": "1253",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -140,9 +173,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misepapa107/",
+      "shortId": "",
+      "label": "Sistema tram Palermo - FASE II",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "shortId": "cf:80016350821",
-      "label": "COMUNE DI PALERMO - PA -",
+      "label": "Comune di Palermo",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -157,20 +197,6 @@
       "id": "https://w3id.org/italia/data/Lot/7568020FA8",
       "shortId": "lot:7568020FA8",
       "label": "CIG 7568…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/798131015F",
-      "shortId": "lot:798131015F",
-      "label": "CIG 7981…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/8721038C37",
-      "shortId": "lot:8721038C37",
-      "label": "CIG 8721…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
     },
@@ -238,11 +264,32 @@
       "dataset": "cupcig"
     },
     {
-      "id": "https://w3id.org/italia/data/Lot/9555931BB7",
-      "shortId": "lot:9555931BB7",
-      "label": "\"APPALTO INTEGRATO NUOVE LINEEE TRANVIARIE DELLA CITTA' DI P…",
+      "id": "https://w3id.org/italia/data/Lot/798131015F",
+      "shortId": "lot:798131015F",
+      "label": "CIG 7981…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2453911",
+      "shortId": "2453911",
+      "label": "2453911",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8721038C37",
+      "shortId": "lot:8721038C37",
+      "label": "CIG 8721…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2368488",
+      "shortId": "2368488",
+      "label": "2368488",
+      "type": "PCTR:Award",
+      "dataset": "anac"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/9833419A0F",
@@ -252,8 +299,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1724",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "id": "https://w3id.org/italia/data/ContractNotice/1935521",
+      "shortId": "1935521",
+      "label": "\"Affidamento del Servizio di Verifica del progetto Definitiv…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "shortId": "lot:9555931BB7",
+      "label": "\"APPALTO INTEGRATO NUOVE LINEEE TRANVIARIE DELLA CITTA' DI P…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2646827",
+      "shortId": "2646827",
+      "label": "2646827",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1704576",
+      "shortId": "1704576",
+      "label": "\"APPALTO INTEGRATO NUOVE LINEEE TRANVIARIE DELLA CITTA' DI P…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1703",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1703",
       "label": "SISTEMA TRAM PALERMO - AMPLIAMENTO DEL SISTEMA TRAMVIARIO DE…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -344,6 +419,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misepapa107/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "label": "pi:ha_soggetto_titolare"
@@ -355,16 +435,6 @@
     },
     {
       "source": "https://w3id.org/italia/data/Lot/7568020FA8",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/798131015F",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
-      "label": "PCTR:hasProject"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8721038C37",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
       "label": "PCTR:hasProject"
     },
@@ -414,9 +484,24 @@
       "label": "PCTR:hasProject"
     },
     {
-      "source": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "source": "https://w3id.org/italia/data/Lot/798131015F",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2453911",
+      "target": "https://w3id.org/italia/data/Lot/798131015F",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/8721038C37",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2368488",
+      "target": "https://w3id.org/italia/data/Lot/8721038C37",
+      "label": "PCTR:awardedLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/9833419A0F",
@@ -424,8 +509,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/ContractNotice/1935521",
+      "target": "https://w3id.org/italia/data/Lot/9833419A0F",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2646827",
+      "target": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1704576",
+      "target": "https://w3id.org/italia/data/Lot/9555931BB7",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71E16000300001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1703",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -439,7 +544,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1703",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -449,7 +554,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1703",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_5",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -459,7 +564,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1703",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_5_32",
       "label": "pi:ha_categoria_intervento"
     },
@@ -469,17 +574,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1703",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1703",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1724",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1703",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

@@ -1,9 +1,10 @@
 {
   "id": "monithon_C43G03000030009",
   "title": "Unione semantica — CUP C43G03000030009",
-  "sparql_note": "Il CUP C43G03000030009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, a OpenCUP.",
+  "sparql_note": "Il CUP C43G03000030009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -16,6 +17,11 @@
       "source": "https://it.monithon.eu/report/view/477",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6to370616/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C43G03000030009",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C43G03000030009",
@@ -35,7 +41,7 @@
       "id": "https://it.monithon.eu/report/view/477",
       "shortId": "477",
       "label": "477",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -46,6 +52,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/6to370616/",
+      "shortId": "",
+      "label": "VIA_20_51C / Comunit? a dimensione familiare per minori da 0…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "shortId": "cf:soggetto%20privato",
       "label": "soggetto privato",
@@ -53,8 +66,8 @@
       "dataset": "opencup"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b113",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "id": "ne7d28342d6964779bba482cdd32840a0b98",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b98",
       "label": "COMUNITÀ A DIMENSIONE FAMILIARE PER MINORI DA 0 A 3 ANNI FRA…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -142,13 +155,18 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/6to370616/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/C43G03000030009",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C43G03000030009",
       "target": "https://w3id.org/italia/data/CodiceFiscale/soggetto%20privato",
       "label": "pi:ha_soggetto_titolare"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/C43G03000030009",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "target": "ne7d28342d6964779bba482cdd32840a0b98",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -167,7 +185,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "source": "ne7d28342d6964779bba482cdd32840a0b98",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -177,7 +195,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "source": "ne7d28342d6964779bba482cdd32840a0b98",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_10",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -187,7 +205,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "source": "ne7d28342d6964779bba482cdd32840a0b98",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_10_106",
       "label": "pi:ha_categoria_intervento"
     },
@@ -197,17 +215,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "source": "ne7d28342d6964779bba482cdd32840a0b98",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "source": "ne7d28342d6964779bba482cdd32840a0b98",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b113",
+      "source": "ne7d28342d6964779bba482cdd32840a0b98",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

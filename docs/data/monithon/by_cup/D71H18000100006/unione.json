@@ -1,10 +1,11 @@
 {
   "id": "monithon_D71H18000100006",
   "title": "Unione semantica — CUP D71H18000100006",
-  "sparql_note": "Il CUP D71H18000100006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP D71H18000100006 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,11 @@
       "source": "https://it.monithon.eu/report/view/1091",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1agcoe630/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71H18000100006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71H18000100006",
@@ -52,9 +58,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1agcoe630/",
+      "shortId": "",
+      "label": "SERVIZI RESIDENZIALI PER DONNE VITTIME DI VIOLENZA",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "shortId": "cf:80016350821",
-      "label": "COMUNE DI PALERMO - PA -",
+      "label": "Comune di Palermo",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -66,8 +79,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b197",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "id": "ne7d28342d6964779bba482cdd32840a0b170",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b170",
       "label": "CASA DELLE MOIRE, VILLA ANNA*VIALE CAMPANIA 25*SERVIZI RESID…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +161,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1agcoe630/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/D71H18000100006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71H18000100006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/80016350821",
       "label": "pi:ha_soggetto_titolare"
@@ -159,7 +177,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/D71H18000100006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "target": "ne7d28342d6964779bba482cdd32840a0b170",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +191,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "source": "ne7d28342d6964779bba482cdd32840a0b170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/6_10",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +201,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "source": "ne7d28342d6964779bba482cdd32840a0b170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/6_10_94",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +211,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "source": "ne7d28342d6964779bba482cdd32840a0b170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/6_10_94_4",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +221,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "source": "ne7d28342d6964779bba482cdd32840a0b170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/6",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "source": "ne7d28342d6964779bba482cdd32840a0b170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/02",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b197",
+      "source": "ne7d28342d6964779bba482cdd32840a0b170",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/02_10",
       "label": "pi:ha_tipologia_intervento"
     },

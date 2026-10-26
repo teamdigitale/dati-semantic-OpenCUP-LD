@@ -1,11 +1,13 @@
 {
   "id": "monithon_I33B13000030001",
   "title": "Unione semantica — CUP I33B13000030001",
-  "sparql_note": "Il CUP I33B13000030001 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP I33B13000030001 è oggetto di report Monithon. Collegato a 1 lotto CIG ANAC, a 1 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -30,6 +32,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misebasa02/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/i33b13000030001---13%2F2025%2F0748/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01186830764",
       "label": "pi:ha_soggetto_titolare"
@@ -43,6 +55,11 @@
       "source": "https://w3id.org/italia/data/Lot/6349576BDD",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1166305",
+      "target": "https://w3id.org/italia/data/Lot/6349576BDD",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -57,7 +74,7 @@
       "id": "https://it.monithon.eu/report/view/1157",
       "shortId": "1157",
       "label": "1157",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
     },
     {
@@ -71,8 +88,22 @@
       "id": "https://it.monithon.eu/report/view/1526",
       "shortId": "1526",
       "label": "1526",
-      "type": "Document",
+      "type": "Report",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misebasa02/",
+      "shortId": "",
+      "label": "LAVORI DI ADEGUAMENTO SISMICO DEI PADIGLIONI I4-I5 E I6 (D.E…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/i33b13000030001---13%2F2025%2F0748/",
+      "shortId": "",
+      "label": "LAVORI DI REALIZZAZIONE DEL NUOVO TRAUMA CENTER - LAVORI DI …",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     },
     {
       "id": "https://w3id.org/italia/data/CodiceFiscale/01186830764",
@@ -96,8 +127,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1196",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "id": "https://w3id.org/italia/data/Award/anac/1166305",
+      "shortId": "1166305",
+      "label": "1166305",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1355",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1355",
       "label": "PLESSO OSPEDALE SAN CARLO DI POTENZA*VIA POTITO PETRONE*LAVO…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -188,6 +226,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misebasa02/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/i33b13000030001---13%2F2025%2F0748/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01186830764",
       "label": "pi:ha_soggetto_titolare"
@@ -203,8 +251,13 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/1166305",
+      "target": "https://w3id.org/italia/data/Lot/6349576BDD",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I33B13000030001",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1355",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -218,7 +271,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1355",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -228,7 +281,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1355",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_30",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -238,7 +291,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1355",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_30_111",
       "label": "pi:ha_categoria_intervento"
     },
@@ -248,17 +301,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1355",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1355",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1196",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1355",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

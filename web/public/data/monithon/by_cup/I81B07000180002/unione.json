@@ -1,10 +1,11 @@
 {
   "id": "monithon_I81B07000180002",
   "title": "Unione semantica — CUP I81B07000180002",
-  "sparql_note": "Il CUP I81B07000180002 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP I81B07000180002 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 2 progetti OpenCoesione.",
   "datasets_involved": [
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -17,6 +18,16 @@
       "source": "https://it.monithon.eu/report/view/412",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca18c292007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I81B07000180002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecamaxsu3-sa.15/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I81B07000180002",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I81B07000180002",
@@ -52,6 +63,20 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1ca18c292007it161po009/",
+      "shortId": "",
+      "label": "53-09 Miglioram. della mobilità interna/esterna per il porto…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1misecamaxsu3-sa.15/",
+      "shortId": "",
+      "label": "Miglioramento della mobiliti interna ed esterna per il porto…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00252900659",
       "shortId": "cf:00252900659",
       "label": "COMUNE DI AGROPOLI - SALERNO -",
@@ -66,8 +91,8 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b455",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "id": "ne7d28342d6964779bba482cdd32840a0b1088",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1088",
       "label": "MIGLIORAMENTO DELLA MOBILITÀ INTERNA ED ESTERNA PER IL PORTO…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -148,6 +173,16 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1ca18c292007it161po009/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I81B07000180002",
+      "label": "schema:about"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1misecamaxsu3-sa.15/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/I81B07000180002",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I81B07000180002",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00252900659",
       "label": "pi:ha_soggetto_titolare"
@@ -159,7 +194,7 @@
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/I81B07000180002",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1088",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -173,7 +208,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1088",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/2_1",
       "label": "pi:ha_settore_intervento"
     },
@@ -183,7 +218,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1088",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/2_1_1",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -193,7 +228,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1088",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/2_1_1_13",
       "label": "pi:ha_categoria_intervento"
     },
@@ -203,17 +238,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1088",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/2",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1088",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b455",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1088",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_01",
       "label": "pi:ha_tipologia_intervento"
     },

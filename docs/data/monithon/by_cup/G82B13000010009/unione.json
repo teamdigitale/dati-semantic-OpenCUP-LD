@@ -1,9 +1,10 @@
 {
   "id": "monithon_G82B13000010009",
   "title": "Unione semantica — CUP G82B13000010009",
-  "sparql_note": "Il CUP G82B13000010009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, a OpenCUP.",
+  "sparql_note": "Il CUP G82B13000010009 è oggetto di report Monithon. Collegato a 0 lotti CIG ANAC, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -16,6 +17,11 @@
       "source": "https://it.monithon.eu/report/view/706",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9597/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
+      "label": "schema:about"
     }
   ],
   "nodes": [
@@ -23,14 +29,14 @@
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
       "shortId": "cup:G82B13000010009",
       "label": "G82B13000010009",
-      "type": "PRJ:PublicInvestmentProject",
+      "type": "pi:Progetto_di_investimento_pubblico",
       "dataset": "opencup"
     },
     {
       "id": "https://it.monithon.eu/report/view/706",
       "shortId": "706",
       "label": "706",
-      "type": "Report",
+      "type": "Document",
       "dataset": "monithon"
     },
     {
@@ -39,6 +45,13 @@
       "label": "Monithon Europe E.T.S.",
       "type": "COV:Organization",
       "dataset": "monithon"
+    },
+    {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si9597/",
+      "shortId": "",
+      "label": "2-25 âNella vita e nella casa\": Programma integrato per la r…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
     }
   ],
   "edges": [
@@ -51,6 +64,11 @@
       "source": "https://it.monithon.eu/report/view/706",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si9597/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/G82B13000010009",
+      "label": "schema:about"
     }
   ]
 }

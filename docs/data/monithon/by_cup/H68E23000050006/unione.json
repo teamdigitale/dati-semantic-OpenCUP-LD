@@ -1,11 +1,13 @@
 {
   "id": "monithon_H68E23000050006",
   "title": "Unione semantica — CUP H68E23000050006",
-  "sparql_note": "Il CUP H68E23000050006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP H68E23000050006 è oggetto di report Monithon. Collegato a 2 lotti CIG ANAC, a 2 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
+    "opencoesione",
     "opencup"
   ],
   "join_edges": [
@@ -18,6 +20,11 @@
       "source": "https://it.monithon.eu/report/view/2444",
       "target": "https://www.monithon.eu/",
       "label": "dct:creator"
+    },
+    {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/h68e23000050006---1261622%2F2/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H68E23000050006",
+      "label": "schema:about"
     },
     {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H68E23000050006",
@@ -35,9 +42,19 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/13815676",
+      "target": "https://w3id.org/italia/data/Lot/B444E451EF",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/B94CA07431",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H68E23000050006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/18780473",
+      "target": "https://w3id.org/italia/data/Lot/B94CA07431",
+      "label": "PCTR:awardedLot"
     }
   ],
   "nodes": [
@@ -63,6 +80,13 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/h68e23000050006---1261622%2F2/",
+      "shortId": "",
+      "label": "PROGETTO DEFINITIVO DI RIGENERAZIONE URBANA DEL COMPLESSO ED…",
+      "type": "PRJ:PublicInvestmentProject",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00117110536",
       "shortId": "cf:00117110536",
       "label": "COMUNE DI ROCCASTRADA - GR -",
@@ -84,6 +108,13 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Award/anac/13815676",
+      "shortId": "13815676",
+      "label": "13815676",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/B94CA07431",
       "shortId": "lot:B94CA07431",
       "label": "CIG B94C…",
@@ -91,8 +122,15 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1049",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "id": "https://w3id.org/italia/data/Award/anac/18780473",
+      "shortId": "18780473",
+      "label": "18780473",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b935",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b935",
       "label": "COMPLESSO EDILIZIO EX OPERA PIA CONTESSA NELLA*VIA ALESSANDR…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -180,6 +218,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/h68e23000050006---1261622%2F2/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H68E23000050006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H68E23000050006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/00117110536",
       "label": "pi:ha_soggetto_titolare"
@@ -195,13 +238,23 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/13815676",
+      "target": "https://w3id.org/italia/data/Lot/B444E451EF",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/B94CA07431",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H68E23000050006",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/anac/18780473",
+      "target": "https://w3id.org/italia/data/Lot/B94CA07431",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H68E23000050006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "target": "ne7d28342d6964779bba482cdd32840a0b935",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -220,7 +273,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "source": "ne7d28342d6964779bba482cdd32840a0b935",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -230,7 +283,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "source": "ne7d28342d6964779bba482cdd32840a0b935",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_12",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -240,7 +293,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "source": "ne7d28342d6964779bba482cdd32840a0b935",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_12_999",
       "label": "pi:ha_categoria_intervento"
     },
@@ -250,17 +303,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "source": "ne7d28342d6964779bba482cdd32840a0b935",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "source": "ne7d28342d6964779bba482cdd32840a0b935",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1049",
+      "source": "ne7d28342d6964779bba482cdd32840a0b935",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_04",
       "label": "pi:ha_tipologia_intervento"
     },

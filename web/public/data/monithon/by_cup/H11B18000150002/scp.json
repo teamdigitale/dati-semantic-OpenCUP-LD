@@ -1,0 +1,109 @@
+{
+  "dataset": "scp",
+  "coverage": "monithon_hub",
+  "sample_note": "Sottoinsieme scp del grafo collegato ai report Monithon.",
+  "nodes": [
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1124825",
+      "shortId": "1124825",
+      "label": "\"GS21035_F04218 - Procedura aperta - 2 lotti - per l'affidam…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1649476",
+      "shortId": "1649476",
+      "label": "\"APPROVAZIONE DEL PREVENTIVO EMESSO DA SNAM RETE GAS S.P.A. …",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1099874",
+      "shortId": "1099874",
+      "label": "\"GL21005_F04218 - Procedura aperta per l'affidamento dei lav…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/9368922703-1624123-12883450152",
+      "shortId": "9368922703-1624123-12883450152",
+      "label": "9368922703-1624123-12883450152",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1624031",
+      "shortId": "1624031",
+      "label": "\"APPROVAZIONE DEL PREVENTIVO EMESSO DA UNARETI S.P.A. PER LA…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8864419DF5-1345010-05060100012",
+      "shortId": "8864419DF5-1345010-05060100012",
+      "label": "8864419DF5-1345010-05060100012",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8864419DF5-1345010-10001690154",
+      "shortId": "8864419DF5-1345010-10001690154",
+      "label": "8864419DF5-1345010-10001690154",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8864419DF5-1345010-BRCGLI50C18G393D",
+      "shortId": "8864419DF5-1345010-BRCGLI50C18G393D",
+      "label": "8864419DF5-1345010-BRCGLI50C18G393D",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/9368922703",
+      "shortId": "lot:9368922703",
+      "label": "\"APPROVAZIONE DEL PREVENTIVO EMESSO DA UNARETI S.P.A. PER LA…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Lot/8864419DF5",
+      "shortId": "lot:8864419DF5",
+      "label": "\"Lotto 1 - Collaudo Rotatoria BG\"",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    }
+  ],
+  "edges": [
+    {
+      "source": "https://w3id.org/italia/data/Award/9368922703-1624123-12883450152",
+      "target": "https://w3id.org/italia/data/Lot/9368922703",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1624031",
+      "target": "https://w3id.org/italia/data/Lot/9368922703",
+      "label": "PCTR:hasLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8864419DF5-1345010-05060100012",
+      "target": "https://w3id.org/italia/data/Lot/8864419DF5",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8864419DF5-1345010-10001690154",
+      "target": "https://w3id.org/italia/data/Lot/8864419DF5",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8864419DF5-1345010-BRCGLI50C18G393D",
+      "target": "https://w3id.org/italia/data/Lot/8864419DF5",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1124825",
+      "target": "https://w3id.org/italia/data/Lot/8864419DF5",
+      "label": "PCTR:hasLot"
+    }
+  ]
+}

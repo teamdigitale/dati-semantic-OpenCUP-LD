@@ -1,12 +1,15 @@
 {
   "id": "monithon_J66G18000070006",
   "title": "Unione semantica — CUP J66G18000070006",
-  "sparql_note": "Il CUP J66G18000070006 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, al soggetto titolare, all’ente IndicePA, a OpenCUP.",
+  "sparql_note": "Il CUP J66G18000070006 è oggetto di report Monithon. Collegato a 6 lotti CIG ANAC, a 6 aggiudicazioni, al soggetto titolare, all’ente IndicePA, a OpenCUP, a 1 progetti OpenCoesione.",
   "datasets_involved": [
+    "anac",
     "cupcig",
     "enti_ipa",
     "monithon",
-    "opencup"
+    "opencoesione",
+    "opencup",
+    "scp"
   ],
   "join_edges": [
     {
@@ -20,6 +23,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si19971/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01661590891",
       "label": "pi:ha_soggetto_titolare"
@@ -28,11 +36,6 @@
       "source": "https://indicepa.gov.it/ente/a_sr",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01661590891",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8410685CD1",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Y112E0A900",
@@ -50,14 +53,54 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/8410685CD1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2767543",
+      "target": "https://w3id.org/italia/data/Lot/8410685CD1",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/80723677FA",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/80723677FA-824202-65",
+      "target": "https://w3id.org/italia/data/Lot/80723677FA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2767569",
+      "target": "https://w3id.org/italia/data/Lot/80723677FA",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/8697097F79",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8697097F79-1040566-03224520878",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8697097F79-1040566-05791980724",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1966679",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1040566",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:hasLot"
     }
   ],
   "nodes": [
@@ -83,9 +126,16 @@
       "dataset": "monithon"
     },
     {
+      "id": "https://opencoesione.gov.it/it/dati/progetti/1si19971/",
+      "shortId": "",
+      "label": "4.1.1 - Lavori di efficientamento energetico del Presidio Os…",
+      "type": "Progetto_di_coesione",
+      "dataset": "opencoesione"
+    },
+    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/01661590891",
       "shortId": "cf:01661590891",
-      "label": "AZIENDA SANITARIA PROVINCIALE DI SIRACUSA",
+      "label": "Azienda Sanitaria Provinciale di Siracusa",
       "type": "COV:PublicOrganization",
       "dataset": "opencup"
     },
@@ -95,13 +145,6 @@
       "label": "Azienda Sanitaria Provinciale di Siracusa",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://w3id.org/italia/data/Lot/8410685CD1",
-      "shortId": "lot:8410685CD1",
-      "label": "CIG 8410…",
-      "type": "PCTR:Lot",
-      "dataset": "cupcig"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/Y112E0A900",
@@ -125,11 +168,39 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/Lot/8410685CD1",
+      "shortId": "lot:8410685CD1",
+      "label": "CIG 8410…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2767543",
+      "shortId": "2767543",
+      "label": "2767543",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/80723677FA",
       "shortId": "lot:80723677FA",
       "label": "CIG 8072…",
       "type": "PCTR:Lot",
       "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/80723677FA-824202-65",
+      "shortId": "80723677FA-824202-65",
+      "label": "80723677FA-824202-65",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/2767569",
+      "shortId": "2767569",
+      "label": "2767569",
+      "type": "PCTR:Award",
+      "dataset": "anac"
     },
     {
       "id": "https://w3id.org/italia/data/Lot/8697097F79",
@@ -139,8 +210,36 @@
       "dataset": "cupcig"
     },
     {
-      "id": "n8d1e9328ab544484895edd2b898ac6f7b1433",
-      "shortId": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "id": "https://w3id.org/italia/data/Award/8697097F79-1040566-03224520878",
+      "shortId": "8697097F79-1040566-03224520878",
+      "label": "8697097F79-1040566-03224520878",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/8697097F79-1040566-05791980724",
+      "shortId": "8697097F79-1040566-05791980724",
+      "label": "8697097F79-1040566-05791980724",
+      "type": "PCTR:Award",
+      "dataset": "scp"
+    },
+    {
+      "id": "https://w3id.org/italia/data/Award/anac/1966679",
+      "shortId": "1966679",
+      "label": "1966679",
+      "type": "PCTR:Award",
+      "dataset": "anac"
+    },
+    {
+      "id": "https://w3id.org/italia/data/ContractNotice/1040566",
+      "shortId": "1040566",
+      "label": "\"Lavori di Efficientamento Energetico del Presidio Ospedalie…",
+      "type": "PCTR:ContractNotice",
+      "dataset": "scp"
+    },
+    {
+      "id": "ne7d28342d6964779bba482cdd32840a0b1373",
+      "shortId": "ne7d28342d6964779bba482cdd32840a0b1373",
       "label": "NUOVO OSPEDALE DI LENTINI, STRADA PROVINCIALE 16 LENTINI SCO…",
       "type": "pi:Intervento_di_investimento_pubblico",
       "dataset": "opencup"
@@ -221,6 +320,11 @@
       "label": "dct:creator"
     },
     {
+      "source": "https://opencoesione.gov.it/it/dati/progetti/1si19971/",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
+      "label": "schema:about"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01661590891",
       "label": "pi:ha_soggetto_titolare"
@@ -229,11 +333,6 @@
       "source": "https://indicepa.gov.it/ente/a_sr",
       "target": "https://w3id.org/italia/data/CodiceFiscale/01661590891",
       "label": "owl:sameAs"
-    },
-    {
-      "source": "https://w3id.org/italia/data/Lot/8410685CD1",
-      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
-      "label": "PCTR:hasProject"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/Y112E0A900",
@@ -251,9 +350,29 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Lot/8410685CD1",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
+      "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2767543",
+      "target": "https://w3id.org/italia/data/Lot/8410685CD1",
+      "label": "PCTR:awardedLot"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/80723677FA",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
       "label": "PCTR:hasProject"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/80723677FA-824202-65",
+      "target": "https://w3id.org/italia/data/Lot/80723677FA",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/2767569",
+      "target": "https://w3id.org/italia/data/Lot/80723677FA",
+      "label": "PCTR:awardedLot"
     },
     {
       "source": "https://w3id.org/italia/data/Lot/8697097F79",
@@ -261,8 +380,28 @@
       "label": "PCTR:hasProject"
     },
     {
+      "source": "https://w3id.org/italia/data/Award/8697097F79-1040566-03224520878",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/8697097F79-1040566-05791980724",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Award/anac/1966679",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:awardedLot"
+    },
+    {
+      "source": "https://w3id.org/italia/data/ContractNotice/1040566",
+      "target": "https://w3id.org/italia/data/Lot/8697097F79",
+      "label": "PCTR:hasLot"
+    },
+    {
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/J66G18000070006",
-      "target": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "target": "ne7d28342d6964779bba482cdd32840a0b1373",
       "label": "pi:ha_intervento_di_investimento_pubblico"
     },
     {
@@ -276,7 +415,7 @@
       "label": "pi:ha_strumento_di_programmazione"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1373",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Settore_di_intervento/1_5",
       "label": "pi:ha_settore_intervento"
     },
@@ -286,7 +425,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1373",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Sottosettore_di_intervento/1_5_30",
       "label": "pi:ha_sottosettore_intervento"
     },
@@ -296,7 +435,7 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1373",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Categoria_di_intervento/1_5_30_111",
       "label": "pi:ha_categoria_intervento"
     },
@@ -306,17 +445,17 @@
       "label": "skos:broader"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1373",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/classificazione_intervento/Area_di_intervento/1",
       "label": "pi:ha_area_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1373",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/natura_intervento/03",
       "label": "pi:ha_natura_intervento"
     },
     {
-      "source": "n8d1e9328ab544484895edd2b898ac6f7b1433",
+      "source": "ne7d28342d6964779bba482cdd32840a0b1373",
       "target": "https://w3id.org/italia/PublicInvestment/controlled-vocabulary/tipologia_intervento/03_08",
       "label": "pi:ha_tipologia_intervento"
     },
