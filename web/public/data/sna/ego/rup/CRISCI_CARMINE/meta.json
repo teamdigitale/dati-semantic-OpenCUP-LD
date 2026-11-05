@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-CRISCI_CARMINE",
+  "kind": "rup",
+  "key": "Crisci Carmine",
+  "label": "Crisci Carmine",
+  "title": "RUP: Crisci Carmine",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/CRISCI_CARMINE/network.json",
+  "n_nodes": 42,
+  "n_edges": 119,
+  "kinds": {
+    "rup": 1,
+    "cup": 15,
+    "sa": 1,
+    "impresa": 25
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 25,
+    "con_rup": 25,
+    "aggiudicato_su_cup": 25,
+    "sa_su_cup": 15,
+    "co_aggiudicatario_cig": 3,
+    "stesso_cup": 21,
+    "rti_mandataria": 2,
+    "rti_mandante": 2
+  },
+  "n_communities": 13,
+  "n_cig": 24,
+  "n_cup": 0
+}

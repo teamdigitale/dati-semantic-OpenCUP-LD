@@ -1,0 +1,533 @@
+{
+  "seed": "pa-digitale",
+  "title": "Come si chiede al grafo",
+  "note": "Stesse domande in SQL (tabelle nodes/edges) e in SPARQL sul network.ttl del seed. I risultati sono precomputati in build; non c’è un endpoint live.",
+  "queries": [
+    {
+      "id": "ego",
+      "title": "Vicini di «MAGGIOLI S.P.A.»",
+      "intent": "In SQL servono JOIN sulla tabella degli archi; in SPARQL lo stesso vicinato è un pattern soggetto–predicato–oggetto (eventualmente bidirezionale).",
+      "focus": {
+        "id": "impresa:06188330150",
+        "label": "MAGGIOLI S.P.A.",
+        "kind": "impresa",
+        "value": 0.04408846863209008
+      },
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Vicini di un soggetto (join su tabella archi)\n-- DuckDB su nodes/edges del network.json\nSELECT DISTINCT\n  CASE WHEN e.source = 'impresa:06188330150' THEN e.target ELSE e.source END AS neighbor_id,\n  n.label AS neighbor_label,\n  n.kind AS neighbor_kind,\n  e.rel\nFROM edges e\nJOIN nodes n\n  ON n.id = CASE WHEN e.source = 'impresa:06188330150' THEN e.target ELSE e.source END\nWHERE e.source = 'impresa:06188330150' OR e.target = 'impresa:06188330150'\nORDER BY neighbor_kind, neighbor_label\nLIMIT 15;",
+        "note": "Tabelle `nodes`/`edges` derivate da network.json."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?neighborId ?neighborLabel ?neighborKind ?rel\nWHERE {\n  BIND(<https://w3id.org/italia/data/opencup-ld/sna/node/impresa%3A06188330150> AS ?focus)\n  {\n    ?focus ?p ?neighbor .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  UNION\n  {\n    ?neighbor ?p ?focus .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  ?neighbor sna:nodeId ?neighborId ;\n            rdfs:label ?neighborLabel ;\n            sna:kind ?neighborKind .\n  FILTER(?rel NOT IN (\n    \"nodeId\",\"kind\",\"cf\",\"seed\",\"degree\",\"weightedDegree\",\n    \"betweenness\",\"pagerank\",\"community\",\"importoTot\"\n  ))\n}\nORDER BY ?neighborKind ?neighborLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "neighborId",
+          "neighborLabel",
+          "neighborKind",
+          "rel"
+        ],
+        "rows": [
+          [
+            "cup:B11F22002260006",
+            "B11F22002260006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B11F22002780006",
+            "B11F22002780006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B21F22003880006",
+            "B21F22003880006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B31C22000520006",
+            "B31C22000520006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B31F22002870006",
+            "B31F22002870006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B41C22001610006",
+            "B41C22001610006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B51C22000200006",
+            "B51C22000200006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B51C22000970007",
+            "B51C22000970007",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B51F22003690006",
+            "B51F22003690006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B51F22003720006",
+            "B51F22003720006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B51F22005220006",
+            "B51F22005220006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B61C22000400006",
+            "B61C22000400006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B61F22000580006",
+            "B61F22000580006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B61F22001670006",
+            "B61F22001670006",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B71C22000020001",
+            "B71C22000020001",
+            "cup",
+            "aggiudicato_su_cup"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "co_cig",
+      "title": "Co-aggiudicatari sullo stesso CIG",
+      "intent": "SQL filtra una colonna `rel`; SPARQL dichiara direttamente il predicato `sna:co_aggiudicatario_cig` — stesso fatto, sintassi a grafo.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Coppie di imprese co-aggiudicatarie sullo stesso CIG\nSELECT e.source AS a_id, na.label AS a_label,\n       e.target AS b_id, nb.label AS b_label,\n       e.n\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'co_aggiudicatario_cig'\nORDER BY e.n DESC, a_label, b_label\nLIMIT 15;",
+        "note": "Co-presenza su CIG ≠ necessariamente rapporto commerciale."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?aId ?aLabel ?bId ?bLabel\nWHERE {\n  ?a sna:co_aggiudicatario_cig ?b ;\n     sna:nodeId ?aId ; rdfs:label ?aLabel .\n  ?b sna:nodeId ?bId ; rdfs:label ?bLabel .\n}\nORDER BY ?aLabel ?bLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "aId",
+          "aLabel",
+          "bId",
+          "bLabel"
+        ],
+        "rows": [
+          [
+            "impresa:08776181219",
+            "ALMAVIVA DIGITALTEC",
+            "impresa:10121480015",
+            "Consorzio REPLY PUBLIC SECTOR"
+          ],
+          [
+            "impresa:08776181219",
+            "ALMAVIVA DIGITALTEC",
+            "impresa:11317151006",
+            "GEEK LOGICA"
+          ],
+          [
+            "impresa:08776181219",
+            "ALMAVIVA DIGITALTEC",
+            "impresa:10850910158",
+            "SOPRA STERIA GROUP S.P.A."
+          ],
+          [
+            "impresa:08450891000",
+            "Almaviva S.p.A.",
+            "impresa:11088550964",
+            "Intellera Consulting S.p.A."
+          ],
+          [
+            "impresa:10121480015",
+            "Consorzio REPLY PUBLIC SECTOR",
+            "impresa:11317151006",
+            "GEEK LOGICA"
+          ],
+          [
+            "impresa:10121480015",
+            "Consorzio REPLY PUBLIC SECTOR",
+            "impresa:10850910158",
+            "SOPRA STERIA GROUP S.P.A."
+          ],
+          [
+            "impresa:00902000769",
+            "Digit'Ed S.p.A.",
+            "impresa:08450891000",
+            "Almaviva S.p.A."
+          ],
+          [
+            "impresa:00902000769",
+            "Digit'Ed S.p.A.",
+            "impresa:11088550964",
+            "Intellera Consulting S.p.A."
+          ],
+          [
+            "impresa:00902000769",
+            "Digit'Ed S.p.A.",
+            "impresa:07900400966",
+            "Openknowledge S.r.l."
+          ],
+          [
+            "impresa:00902000769",
+            "Digit'Ed S.p.A.",
+            "impresa:03249821202",
+            "Talent Garden Milano S.r.l."
+          ],
+          [
+            "impresa:00118410323",
+            "INSIEL S.p.A.",
+            "impresa:06180320969",
+            "PRODIGYS TECHNOLOGY S.R.L"
+          ],
+          [
+            "impresa:03970540963",
+            "ITALIAONLINE S.p.A",
+            "impresa:05512020727",
+            "GESTIONE SERVIZI SPA"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:08776181219",
+            "ALMAVIVA DIGITALTEC"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:10121480015",
+            "Consorzio REPLY PUBLIC SECTOR"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:11317151006",
+            "GEEK LOGICA"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rti",
+      "title": "RTI: mandataria → mandanti",
+      "intent": "Nel relazionale il ruolo è spesso una colonna su più righe dello stesso CIG; nel grafo diventa un arco tipizzato tra due imprese.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- RTI: mandataria → mandanti\nSELECT e.source AS mandataria_id, na.label AS mandataria,\n       e.target AS mandante_id, nb.label AS mandante\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'rti_mandataria'\nORDER BY mandataria, mandante\nLIMIT 15;",
+        "note": "Rel `rti_mandataria`."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?mandatariaId ?mandataria ?mandanteId ?mandante\nWHERE {\n  ?a sna:rti_mandataria ?b ;\n     sna:nodeId ?mandatariaId ; rdfs:label ?mandataria .\n  ?b sna:nodeId ?mandanteId ; rdfs:label ?mandante .\n}\nORDER BY ?mandataria ?mandante\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "mandatariaId",
+          "mandataria",
+          "mandanteId",
+          "mandante"
+        ],
+        "rows": [
+          [
+            "impresa:05512020727",
+            "GESTIONE SERVIZI SPA",
+            "impresa:03970540963",
+            "ITALIAONLINE S.p.A"
+          ],
+          [
+            "impresa:00118410323",
+            "INSIEL S.p.A.",
+            "impresa:06180320969",
+            "PRODIGYS TECHNOLOGY S.R.L"
+          ],
+          [
+            "impresa:11088550964",
+            "Intellera Consulting S.p.A.",
+            "impresa:08450891000",
+            "Almaviva S.p.A."
+          ],
+          [
+            "impresa:11088550964",
+            "Intellera Consulting S.p.A.",
+            "impresa:00902000769",
+            "Digit'Ed S.p.A."
+          ],
+          [
+            "impresa:11088550964",
+            "Intellera Consulting S.p.A.",
+            "impresa:07900400966",
+            "Openknowledge S.r.l."
+          ],
+          [
+            "impresa:11088550964",
+            "Intellera Consulting S.p.A.",
+            "impresa:03249821202",
+            "Talent Garden Milano S.r.l."
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:08776181219",
+            "ALMAVIVA DIGITALTEC"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:10121480015",
+            "Consorzio REPLY PUBLIC SECTOR"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:11317151006",
+            "GEEK LOGICA"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:04057301006",
+            "ONIT GROUP"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:07917330636",
+            "P.A. ADVICE"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:05334830485",
+            "SCHEMA31"
+          ],
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa:10850910158",
+            "SOPRA STERIA GROUP S.P.A."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "top_degree",
+      "title": "Top nodi per grado",
+      "intent": "Stesso ordinamento: in SQL su una colonna; in SPARQL su una proprietà datatyped (`sna:degree`). Le comunità Louvain restano fuori dal pattern base.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Top nodi per grado (metrica precalcolata)\nSELECT id, label, kind, degree\nFROM nodes\nORDER BY degree DESC, label\nLIMIT 15;",
+        "note": "Grado calcolato offline (NetworkX) e materializzato sui nodi."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?id ?label ?kind ?degree\nWHERE {\n  ?s sna:nodeId ?id ;\n     rdfs:label ?label ;\n     sna:kind ?kind ;\n     sna:degree ?degree .\n}\nORDER BY DESC(?degree) ?label\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": {
+        "text": "PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>\nPREFIX PCTR: <https://w3id.org/italia/onto/PCTR/>\nPREFIX COV: <https://w3id.org/italia/onto/COV/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX schema: <https://schema.org/>\n\nSELECT ?name (COUNT(DISTINCT ?prj) AS ?nProjects)\nWHERE {\n  ?prj a pi:Progetto_di_investimento_pubblico ;\n       pi:ha_soggetto_titolare ?org .\n  ?org COV:legalName ?name .\n}\nGROUP BY ?name\nORDER BY DESC(?nProjects) ?name\nLIMIT 15",
+        "graph": "LD/ttl/all.ttl",
+        "note": "Sul grafo Linked Data del hub: aggregazione per ente titolare (ontologia PublicInvestment), non grado SNA."
+      },
+      "results": {
+        "columns": [
+          "id",
+          "label",
+          "kind",
+          "degree"
+        ],
+        "rows": [
+          [
+            "impresa:06188330150",
+            "MAGGIOLI S.P.A.",
+            "impresa",
+            "342"
+          ],
+          [
+            "impresa:02066400405",
+            "MAGGIOLI S.P.A.",
+            "impresa",
+            "59"
+          ],
+          [
+            "impresa:01818301200",
+            "SOFTECH srl",
+            "impresa",
+            "49"
+          ],
+          [
+            "impresa:00384350435",
+            "HALLEY INFORMATICA S.R.L.",
+            "impresa",
+            "47"
+          ],
+          [
+            "impresa:02554480349",
+            "NEXT STEP SOLUTION S.R.L.,",
+            "impresa",
+            "46"
+          ],
+          [
+            "impresa:08543640158",
+            "APKAPPA S.R.L.",
+            "impresa",
+            "38"
+          ],
+          [
+            "impresa:01190430262",
+            "Kibernetes s.r.l.",
+            "impresa",
+            "37"
+          ],
+          [
+            "impresa:06628860964",
+            "PA DIGITALE S.P.A.",
+            "impresa",
+            "37"
+          ],
+          [
+            "impresa:03188950103",
+            "DEDA NEXT SRL",
+            "impresa",
+            "32"
+          ],
+          [
+            "impresa:01343230130",
+            "HALLEY LOMBARDIA S.R.L.",
+            "impresa",
+            "31"
+          ],
+          [
+            "impresa:02808610279",
+            "HALLEY VENETO Srl",
+            "impresa",
+            "30"
+          ],
+          [
+            "impresa:02810000279",
+            "OPEN SOFTWARE S.R.L.",
+            "impresa",
+            "28"
+          ],
+          [
+            "impresa:01973900838",
+            "MUNICIPIA S.P.A.",
+            "impresa",
+            "27"
+          ],
+          [
+            "impresa:01467600381",
+            "REDTURTLE TECHNOLOGY S.R.L.",
+            "impresa",
+            "25"
+          ],
+          [
+            "impresa:00695690362",
+            "DATAGRAPH SRL",
+            "impresa",
+            "24"
+          ]
+        ]
+      },
+      "results_ld": {
+        "columns": [
+          "name",
+          "nProjects"
+        ],
+        "rows": [
+          [
+            "COMUNE DI CALCIO - BG -",
+            "7"
+          ],
+          [
+            "COMUNE DI GALBIATE - LC -",
+            "7"
+          ],
+          [
+            "COMUNE DI SAN BENEDETTO DEL TRONTO",
+            "7"
+          ],
+          [
+            "COMUNE DI SAN BENEDETTO DEL TRONTO - AP -",
+            "7"
+          ],
+          [
+            "Comune di Calcio",
+            "7"
+          ],
+          [
+            "Comune di Galbiate",
+            "7"
+          ],
+          [
+            "COMUNE DI CASALE MARITTIMO",
+            "6"
+          ],
+          [
+            "COMUNE DI CASALE MARITTIMO - PISA -",
+            "6"
+          ],
+          [
+            "COMUNE DI CASTANO PRIMO - MI -",
+            "6"
+          ],
+          [
+            "COMUNE DI CASTRI DI LECCE - LECCE -",
+            "6"
+          ],
+          [
+            "COMUNE DI CITTIGLIO",
+            "6"
+          ],
+          [
+            "COMUNE DI CITTIGLIO - VARESE -",
+            "6"
+          ],
+          [
+            "COMUNE DI MASCALUCIA - CT -",
+            "6"
+          ],
+          [
+            "COMUNE DI MESOLA",
+            "6"
+          ],
+          [
+            "COMUNE DI MESOLA - FERRARA -",
+            "6"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -20,7 +20,7 @@ I testi delle pagine del sito vivono qui, **non** nei componenti React.
 | `mappa.yml` | Toolbar e piede della mappa territoriale |
 | `legenda.yml` | Legenda colori / nodi e archi di incontro |
 | `grafi.common.yml` | Lista URI + controlli unione animata |
-| `unione.md`, `unione-animazione.md`, `grafi.md` | Lead delle altre pagine |
+| `unione.md`, `unione-animazione.md`, `grafi.md`, `rete.md` | Lead delle altre pagine |
 
 ## Convenzioni
 

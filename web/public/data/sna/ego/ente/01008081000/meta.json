@@ -1,0 +1,32 @@
+{
+  "id": "ego-ente-01008081000",
+  "kind": "ente",
+  "key": "01008081000",
+  "label": "rfi spa",
+  "title": "Ente: rfi spa",
+  "description": "Ego-network nazionale (ente) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/ente/01008081000/network.json",
+  "n_nodes": 36,
+  "n_edges": 87,
+  "kinds": {
+    "ente": 1,
+    "rup": 2,
+    "impresa": 27,
+    "cup": 6
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 27,
+    "con_rup": 27,
+    "aggiudicato_su_cup": 7,
+    "titolare_di": 6,
+    "co_aggiudicatario_cig": 6,
+    "stesso_cup": 2,
+    "rti_mandataria": 5,
+    "rti_mandante": 5
+  },
+  "n_communities": 4,
+  "n_cig": 31,
+  "n_cup": 6
+}

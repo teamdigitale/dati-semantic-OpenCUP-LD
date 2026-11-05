@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-11-05T09:46:34.797124+00:00",
+  "seed": {
+    "n_cups": 1192,
+    "n_cigs": 6593,
+    "n_our_cup_cig_pairs": 7127,
+    "by": {
+      "pa-digitale": 540,
+      "monithon": 652,
+      "hub_cig": 743
+    }
+  },
+  "ondata_pnrr_cup_cig": {
+    "present": true,
+    "file": "srcdata/rawdata/ondata_pnrr_cup_cig/cup_cig_anac_pnrr_merge.csv",
+    "n_rows_seed": 1388,
+    "n_pairs_seed": 1388,
+    "n_cups_hit": 527,
+    "by_fonte": {
+      "anac": 1388
+    },
+    "n_new_pairs_vs_cup_cig_parquet": 0,
+    "n_italiadomani_only_new": 0,
+    "sample_new_pairs": []
+  },
+  "openpnrr_bandi": {
+    "present": true,
+    "file": "srcdata/rawdata/openpnrr/cig_gare_pnrr.csv",
+    "n_cigs_total_file": 44329,
+    "n_cigs_seed_hit": 171,
+    "flag_quota_counts": {
+      "N": 85,
+      "S": 86
+    },
+    "misure_premiali_counts": {
+      "N": 171
+    },
+    "sample": [
+      {
+        "cig": "9422434683",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "944909470A",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9449166276",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9449235B64",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9449296DBA",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "94473610EE",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9447417F20",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "94474580FA",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9448057F45",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9451210937",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "944806992E",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "94488036E6",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "94627246DF",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9459610D1C",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9461521620",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9467132C76",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9467299648",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "947228158F",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "94844228A0",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "94865504B6",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9490816520",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9490844C39",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "949487283D",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "949508258A",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9492513D86",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "950907401C",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9511075362",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9516692EAA",
+        "flag_quota": "N",
+        "quota_femminile": "NULL",
+        "quota_giovanile": "NULL",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "951988599E",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      },
+      {
+        "cig": "9522220088",
+        "flag_quota": "S",
+        "quota_femminile": ">30%",
+        "quota_giovanile": ">30%",
+        "misure_premiali": "N"
+      }
+    ]
+  },
+  "istat_comuni": {
+    "present": true,
+    "file": "srcdata/rawdata/istat/elenco_comuni_italiani.csv",
+    "n_comuni": 7896,
+    "columns_head": [
+      "Codice Regione",
+      "Codice dell'Unità territoriale sovracomunale \n(valida a fini statistici)",
+      "Codice Provincia (Storico)(1)",
+      "Progressivo del Comune (2)",
+      "Codice Comune formato alfanumerico",
+      "Denominazione (Italiana e straniera)",
+      "Denominazione in italiano",
+      "Denominazione altra lingua",
+      "Codice Ripartizione Geografica",
+      "Ripartizione geografica",
+      "Denominazione Regione",
+      "Denominazione dell'Unità territoriale sovracomunale \n(valida a fini statistici)"
+    ],
+    "sample": [
+      {
+        "Codice Regione": "01",
+        "Codice dell'Unità territoriale sovracomunale \n(valida a fini statistici)": "201",
+        "Codice Provincia (Storico)(1)": "001",
+        "Progressivo del Comune (2)": "001",
+        "Codice Comune formato alfanumerico": "001001",
+        "Denominazione (Italiana e straniera)": "Agliè"
+      },
+      {
+        "Codice Regione": "01",
+        "Codice dell'Unità territoriale sovracomunale \n(valida a fini statistici)": "201",
+        "Codice Provincia (Storico)(1)": "001",
+        "Progressivo del Comune (2)": "002",
+        "Codice Comune formato alfanumerico": "001002",
+        "Denominazione (Italiana e straniera)": "Airasca"
+      },
+      {
+        "Codice Regione": "01",
+        "Codice dell'Unità territoriale sovracomunale \n(valida a fini statistici)": "201",
+        "Codice Provincia (Storico)(1)": "001",
+        "Progressivo del Comune (2)": "003",
+        "Codice Comune formato alfanumerico": "001003",
+        "Denominazione (Italiana e straniera)": "Ala di Stura"
+      }
+    ],
+    "note": "Anagrafica territoriale ISTAT — join futuro su codice comune OpenCUP"
+  },
+  "highlights": [
+    "onData: 1388 coppie CUP↔CIG sui seed (0 nuove vs cup_cig.parquet; 0 solo Italia Domani).",
+    "OpenPNRR: 171 CIG del hub con flag quote/premiali (file 44329 CIG PNRR).",
+    "ISTAT: elenco 7896 comuni (latin-1) pronto per normalizzazione territorio."
+  ]
+}

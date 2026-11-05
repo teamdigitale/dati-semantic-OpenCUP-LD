@@ -1,0 +1,29 @@
+{
+  "id": "ego-rup-CIOCE_SAVERIO",
+  "kind": "rup",
+  "key": "CIOCE SAVERIO",
+  "label": "CIOCE SAVERIO",
+  "title": "RUP: CIOCE SAVERIO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/CIOCE_SAVERIO/network.json",
+  "n_nodes": 33,
+  "n_edges": 61,
+  "kinds": {
+    "rup": 1,
+    "sa": 2,
+    "cup": 15,
+    "impresa": 15
+  },
+  "rels": {
+    "rup_presso": 2,
+    "sa_su_cup": 15,
+    "aggiudicato_da": 15,
+    "con_rup": 15,
+    "aggiudicato_su_cup": 13,
+    "stesso_cup": 1
+  },
+  "n_communities": 6,
+  "n_cig": 20,
+  "n_cup": 0
+}

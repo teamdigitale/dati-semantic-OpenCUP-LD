@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-TESSADRI_LORIS",
+  "kind": "rup",
+  "key": "TESSADRI LORIS",
+  "label": "TESSADRI LORIS",
+  "title": "RUP: TESSADRI LORIS",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/TESSADRI_LORIS/network.json",
+  "n_nodes": 105,
+  "n_edges": 221,
+  "kinds": {
+    "rup": 1,
+    "cup": 10,
+    "sa": 1,
+    "impresa": 93
+  },
+  "rels": {
+    "rup_presso": 1,
+    "sa_su_cup": 10,
+    "aggiudicato_da": 93,
+    "con_rup": 93,
+    "aggiudicato_su_cup": 14,
+    "co_aggiudicatario_cig": 1,
+    "stesso_cup": 7,
+    "rti_mandataria": 1,
+    "rti_mandante": 1
+  },
+  "n_communities": 9,
+  "n_cig": 134,
+  "n_cup": 0
+}

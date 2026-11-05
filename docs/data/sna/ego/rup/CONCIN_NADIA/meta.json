@@ -1,0 +1,29 @@
+{
+  "id": "ego-rup-CONCIN_NADIA",
+  "kind": "rup",
+  "key": "CONCIN NADIA",
+  "label": "CONCIN NADIA",
+  "title": "RUP: CONCIN NADIA",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/CONCIN_NADIA/network.json",
+  "n_nodes": 256,
+  "n_edges": 509,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 248,
+    "cup": 6
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 248,
+    "con_rup": 248,
+    "aggiudicato_su_cup": 5,
+    "sa_su_cup": 6,
+    "co_aggiudicatario_cig": 1
+  },
+  "n_communities": 1,
+  "n_cig": 908,
+  "n_cup": 0
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ego-rup-BORONI_FLORA",
+  "kind": "rup",
+  "key": "Boroni Flora",
+  "label": "Boroni Flora",
+  "title": "RUP: Boroni Flora",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/BORONI_FLORA/network.json",
+  "n_nodes": 24,
+  "n_edges": 162,
+  "kinds": {
+    "rup": 1,
+    "cup": 1,
+    "sa": 1,
+    "impresa": 21
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 21,
+    "con_rup": 21,
+    "aggiudicato_su_cup": 1,
+    "sa_su_cup": 1,
+    "co_aggiudicatario_cig": 117
+  },
+  "n_communities": 2,
+  "n_cig": 10,
+  "n_cup": 0
+}

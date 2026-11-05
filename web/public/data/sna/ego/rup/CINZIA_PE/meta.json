@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-CINZIA_PE",
+  "kind": "rup",
+  "key": "CINZIA PE",
+  "label": "CINZIA PE",
+  "title": "RUP: CINZIA PE",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/CINZIA_PE/network.json",
+  "n_nodes": 300,
+  "n_edges": 1657,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 297,
+    "cup": 1
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 297,
+    "con_rup": 297,
+    "sa_su_cup": 1,
+    "aggiudicato_su_cup": 4,
+    "co_aggiudicatario_cig": 1047,
+    "stesso_cup": 6,
+    "rti_mandataria": 2,
+    "rti_mandante": 2
+  },
+  "n_communities": 1,
+  "n_cig": 1956,
+  "n_cup": 0
+}

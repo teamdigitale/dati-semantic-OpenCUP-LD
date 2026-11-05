@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-CHINI_LUIGI",
+  "kind": "rup",
+  "key": "CHINI LUIGI",
+  "label": "CHINI LUIGI",
+  "title": "RUP: CHINI LUIGI",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/CHINI_LUIGI/network.json",
+  "n_nodes": 171,
+  "n_edges": 464,
+  "kinds": {
+    "rup": 1,
+    "cup": 9,
+    "sa": 1,
+    "impresa": 160
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 160,
+    "con_rup": 160,
+    "aggiudicato_su_cup": 25,
+    "sa_su_cup": 9,
+    "co_aggiudicatario_cig": 11,
+    "stesso_cup": 88,
+    "rti_mandataria": 5,
+    "rti_mandante": 5
+  },
+  "n_communities": 7,
+  "n_cig": 491,
+  "n_cup": 0
+}

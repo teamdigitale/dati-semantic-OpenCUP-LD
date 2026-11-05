@@ -1,0 +1,497 @@
+{
+  "id": "pa-digitale",
+  "title": "PA Digitale (hub PNRR)",
+  "description": "Rete soggetto-solo sul hub PA Digitale: CUP delle candidature comuni finanziate, enti candidati/titolari OpenCUP, imprese aggiudicatarie, stazioni appaltanti e RUP dagli esiti SCP collegati, con co-aggiudicatari / stesso CUP / RTI e soggetti OpenCoesione (programmatore/attuatore/beneficiario/realizzatore).",
+  "sources_line": "PA Digitale · OpenCUP · IndicePA · SCP MIT · OpenCoesione Soggetti",
+  "n_nodes": 1349,
+  "n_edges": 2866,
+  "n_communities": 169,
+  "n_components": 79,
+  "density": 0.0024922296546733154,
+  "modularity": 0.9273995856907287,
+  "kinds": {
+    "cup": 540,
+    "ente": 238,
+    "impresa": 123,
+    "rup": 220,
+    "sa": 228
+  },
+  "rels": {
+    "aggiudicato_da": 394,
+    "aggiudicato_su_cup": 541,
+    "candidato_su": 540,
+    "co_aggiudicatario_cig": 41,
+    "con_rup": 364,
+    "rti_mandante": 13,
+    "rti_mandataria": 13,
+    "rup_presso": 237,
+    "stesso_cup": 190,
+    "titolare_di": 533
+  },
+  "metrics": [
+    "degree",
+    "weighted_degree",
+    "betweenness",
+    "pagerank"
+  ],
+  "top_pagerank": [
+    {
+      "id": "impresa:06188330150",
+      "label": "MAGGIOLI S.P.A.",
+      "kind": "impresa",
+      "value": 0.04408846863209008
+    },
+    {
+      "id": "impresa:02066400405",
+      "label": "MAGGIOLI S.P.A.",
+      "kind": "impresa",
+      "value": 0.008936850592465613
+    },
+    {
+      "id": "impresa:08543640158",
+      "label": "APKAPPA S.R.L.",
+      "kind": "impresa",
+      "value": 0.005720617509576052
+    },
+    {
+      "id": "impresa:06628860964",
+      "label": "PA DIGITALE S.P.A.",
+      "kind": "impresa",
+      "value": 0.00531410715447981
+    },
+    {
+      "id": "impresa:02554480349",
+      "label": "NEXT STEP SOLUTION S.R.L.,",
+      "kind": "impresa",
+      "value": 0.004418183990715591
+    },
+    {
+      "id": "ente:00297110389",
+      "label": "Comune di Ferrara",
+      "kind": "ente",
+      "value": 0.004414397787727709
+    },
+    {
+      "id": "impresa:01190430262",
+      "label": "Kibernetes s.r.l.",
+      "kind": "impresa",
+      "value": 0.004117299143817789
+    },
+    {
+      "id": "impresa:01343230130",
+      "label": "HALLEY LOMBARDIA S.R.L.",
+      "kind": "impresa",
+      "value": 0.0037847848876560687
+    },
+    {
+      "id": "cup:B71C22000020001",
+      "label": "B71C22000020001",
+      "kind": "cup",
+      "value": 0.003578422999803349
+    },
+    {
+      "id": "impresa:00384350435",
+      "label": "HALLEY INFORMATICA S.R.L.",
+      "kind": "impresa",
+      "value": 0.0035448955099972863
+    },
+    {
+      "id": "ente:00229080338",
+      "label": "Comune di Piacenza",
+      "kind": "ente",
+      "value": 0.0033044056409553234
+    },
+    {
+      "id": "ente:00351040423",
+      "label": "Comune di Ancona",
+      "kind": "ente",
+      "value": 0.0032336144707501334
+    },
+    {
+      "id": "cup:E31C22001170006",
+      "label": "E31C22001170006",
+      "kind": "cup",
+      "value": 0.0031045171163357702
+    },
+    {
+      "id": "impresa:01583190648",
+      "label": "Halley Campania S.r.l.",
+      "kind": "impresa",
+      "value": 0.003020091689534001
+    },
+    {
+      "id": "impresa:00994810430",
+      "label": "PALITALSOFT SRL",
+      "kind": "impresa",
+      "value": 0.002989522049996831
+    },
+    {
+      "id": "impresa:03188950103",
+      "label": "DEDA NEXT SRL",
+      "kind": "impresa",
+      "value": 0.002919064424442472
+    },
+    {
+      "id": "impresa:01973900838",
+      "label": "MUNICIPIA S.P.A.",
+      "kind": "impresa",
+      "value": 0.0029109670251855828
+    },
+    {
+      "id": "impresa:01467600381",
+      "label": "REDTURTLE TECHNOLOGY S.R.L.",
+      "kind": "impresa",
+      "value": 0.002868501093256113
+    },
+    {
+      "id": "ente:00372530162",
+      "label": "Comune di Calcio",
+      "kind": "ente",
+      "value": 0.0027847652419368575
+    },
+    {
+      "id": "impresa:02808610279",
+      "label": "HALLEY VENETO Srl",
+      "kind": "impresa",
+      "value": 0.0027787251186870985
+    },
+    {
+      "id": "ente:00426650131",
+      "label": "Comune di Galbiate",
+      "kind": "ente",
+      "value": 0.0027479836935445853
+    },
+    {
+      "id": "impresa:00089070403",
+      "label": "GRAFICHE E. GASPARI S.R.L.",
+      "kind": "impresa",
+      "value": 0.0027205457056112066
+    },
+    {
+      "id": "impresa:01883370221",
+      "label": "GESTIONE INFORMATICA SERVIZI E CONSULENZE S.R.L.",
+      "kind": "impresa",
+      "value": 0.002705525582382559
+    },
+    {
+      "id": "cup:C41C22000320006",
+      "label": "C41C22000320006",
+      "kind": "cup",
+      "value": 0.002663884354057386
+    },
+    {
+      "id": "ente:80011350750",
+      "label": "Comune di Castri di Lecce",
+      "kind": "ente",
+      "value": 0.0026194517365971883
+    }
+  ],
+  "top_betweenness": [
+    {
+      "id": "impresa:06188330150",
+      "label": "MAGGIOLI S.P.A.",
+      "kind": "impresa",
+      "value": 0.5129147730070542
+    },
+    {
+      "id": "impresa:02066400405",
+      "label": "MAGGIOLI S.P.A.",
+      "kind": "impresa",
+      "value": 0.10326243327097524
+    },
+    {
+      "id": "impresa:01818301200",
+      "label": "SOFTECH srl",
+      "kind": "impresa",
+      "value": 0.0648100454266018
+    },
+    {
+      "id": "impresa:00384350435",
+      "label": "HALLEY INFORMATICA S.R.L.",
+      "kind": "impresa",
+      "value": 0.06202429406297477
+    },
+    {
+      "id": "impresa:06628860964",
+      "label": "PA DIGITALE S.P.A.",
+      "kind": "impresa",
+      "value": 0.06164371658836616
+    },
+    {
+      "id": "impresa:14788511005",
+      "label": "Datamanagement Italia spa",
+      "kind": "impresa",
+      "value": 0.05007366322403856
+    },
+    {
+      "id": "impresa:07795180152",
+      "label": "STARCH",
+      "kind": "impresa",
+      "value": 0.04697459070315522
+    },
+    {
+      "id": "impresa:01973900838",
+      "label": "MUNICIPIA S.P.A.",
+      "kind": "impresa",
+      "value": 0.04494090475830313
+    },
+    {
+      "id": "impresa:03188950103",
+      "label": "DEDA NEXT SRL",
+      "kind": "impresa",
+      "value": 0.042336888797812604
+    },
+    {
+      "id": "impresa:02808610279",
+      "label": "HALLEY VENETO Srl",
+      "kind": "impresa",
+      "value": 0.04159295999389051
+    },
+    {
+      "id": "impresa:02554480349",
+      "label": "NEXT STEP SOLUTION S.R.L.,",
+      "kind": "impresa",
+      "value": 0.04045807916922758
+    },
+    {
+      "id": "impresa:01190430262",
+      "label": "Kibernetes s.r.l.",
+      "kind": "impresa",
+      "value": 0.03943150952000158
+    },
+    {
+      "id": "impresa:00695690362",
+      "label": "DATAGRAPH SRL",
+      "kind": "impresa",
+      "value": 0.03816573739349706
+    },
+    {
+      "id": "sa:00263530123",
+      "label": "Comune di Uboldo",
+      "kind": "sa",
+      "value": 0.03774956547025041
+    },
+    {
+      "id": "impresa:04155080270",
+      "label": "BOXXAPPS SRL",
+      "kind": "impresa",
+      "value": 0.036680458942653586
+    },
+    {
+      "id": "impresa:00089070403",
+      "label": "GRAFICHE E. GASPARI S.R.L.",
+      "kind": "impresa",
+      "value": 0.03498744691834512
+    },
+    {
+      "id": "impresa:00994810430",
+      "label": "PALITALSOFT SRL",
+      "kind": "impresa",
+      "value": 0.03463817317058684
+    },
+    {
+      "id": "impresa:08543640158",
+      "label": "APKAPPA S.R.L.",
+      "kind": "impresa",
+      "value": 0.030338280438335953
+    },
+    {
+      "id": "impresa:01883370221",
+      "label": "GESTIONE INFORMATICA SERVIZI E CONSULENZE S.R.L.",
+      "kind": "impresa",
+      "value": 0.029435673075016686
+    },
+    {
+      "id": "impresa:02432200984",
+      "label": "Incloud Team s.r.l.",
+      "kind": "impresa",
+      "value": 0.025457817957470957
+    },
+    {
+      "id": "sa:00237070362",
+      "label": "COMUNE DI NONANTOLA",
+      "kind": "sa",
+      "value": 0.024671817138426085
+    },
+    {
+      "id": "rup:SOLA_STEFANO",
+      "label": "SOLA STEFANO",
+      "kind": "rup",
+      "value": 0.02372235035985011
+    },
+    {
+      "id": "impresa:02810000279",
+      "label": "OPEN SOFTWARE S.R.L.",
+      "kind": "impresa",
+      "value": 0.02183519258088599
+    },
+    {
+      "id": "impresa:91137650403",
+      "label": "SAPIDATA spa",
+      "kind": "impresa",
+      "value": 0.01947363112140797
+    },
+    {
+      "id": "impresa:00595270042",
+      "label": "TECHNICAL DESIGN SRL",
+      "kind": "impresa",
+      "value": 0.019288935297473893
+    }
+  ],
+  "top_degree": [
+    {
+      "id": "impresa:06188330150",
+      "label": "MAGGIOLI S.P.A.",
+      "kind": "impresa",
+      "value": 342
+    },
+    {
+      "id": "impresa:02066400405",
+      "label": "MAGGIOLI S.P.A.",
+      "kind": "impresa",
+      "value": 59
+    },
+    {
+      "id": "impresa:01818301200",
+      "label": "SOFTECH srl",
+      "kind": "impresa",
+      "value": 49
+    },
+    {
+      "id": "impresa:00384350435",
+      "label": "HALLEY INFORMATICA S.R.L.",
+      "kind": "impresa",
+      "value": 47
+    },
+    {
+      "id": "impresa:02554480349",
+      "label": "NEXT STEP SOLUTION S.R.L.,",
+      "kind": "impresa",
+      "value": 46
+    },
+    {
+      "id": "impresa:08543640158",
+      "label": "APKAPPA S.R.L.",
+      "kind": "impresa",
+      "value": 38
+    },
+    {
+      "id": "impresa:06628860964",
+      "label": "PA DIGITALE S.P.A.",
+      "kind": "impresa",
+      "value": 37
+    },
+    {
+      "id": "impresa:01190430262",
+      "label": "Kibernetes s.r.l.",
+      "kind": "impresa",
+      "value": 37
+    },
+    {
+      "id": "impresa:03188950103",
+      "label": "DEDA NEXT SRL",
+      "kind": "impresa",
+      "value": 32
+    },
+    {
+      "id": "impresa:01343230130",
+      "label": "HALLEY LOMBARDIA S.R.L.",
+      "kind": "impresa",
+      "value": 31
+    },
+    {
+      "id": "impresa:02808610279",
+      "label": "HALLEY VENETO Srl",
+      "kind": "impresa",
+      "value": 30
+    },
+    {
+      "id": "impresa:02810000279",
+      "label": "OPEN SOFTWARE S.R.L.",
+      "kind": "impresa",
+      "value": 28
+    },
+    {
+      "id": "impresa:01973900838",
+      "label": "MUNICIPIA S.P.A.",
+      "kind": "impresa",
+      "value": 27
+    },
+    {
+      "id": "impresa:01467600381",
+      "label": "REDTURTLE TECHNOLOGY S.R.L.",
+      "kind": "impresa",
+      "value": 25
+    },
+    {
+      "id": "impresa:00695690362",
+      "label": "DATAGRAPH SRL",
+      "kind": "impresa",
+      "value": 24
+    },
+    {
+      "id": "impresa:01883370221",
+      "label": "GESTIONE INFORMATICA SERVIZI E CONSULENZE S.R.L.",
+      "kind": "impresa",
+      "value": 23
+    },
+    {
+      "id": "impresa:02690660309",
+      "label": "P.A. A.B.S. - Partners Associates Advanced Business Solution",
+      "kind": "impresa",
+      "value": 21
+    },
+    {
+      "id": "impresa:04155080270",
+      "label": "BOXXAPPS SRL",
+      "kind": "impresa",
+      "value": 20
+    },
+    {
+      "id": "impresa:00994810430",
+      "label": "PALITALSOFT SRL",
+      "kind": "impresa",
+      "value": 18
+    },
+    {
+      "id": "rup:SOLA_STEFANO",
+      "label": "SOLA STEFANO",
+      "kind": "rup",
+      "value": 18
+    },
+    {
+      "id": "impresa:00890370372",
+      "label": "ADS automated data systems S.p.A.",
+      "kind": "impresa",
+      "value": 18
+    },
+    {
+      "id": "impresa:00089070403",
+      "label": "GRAFICHE E. GASPARI S.R.L.",
+      "kind": "impresa",
+      "value": 17
+    },
+    {
+      "id": "impresa:14788511005",
+      "label": "Datamanagement Italia spa",
+      "kind": "impresa",
+      "value": 17
+    },
+    {
+      "id": "impresa:02743730125",
+      "label": "SI.NET SERVIZI INFORMATICI S.R.L.",
+      "kind": "impresa",
+      "value": 16
+    },
+    {
+      "id": "impresa:02432200984",
+      "label": "Incloud Team s.r.l.",
+      "kind": "impresa",
+      "value": 16
+    }
+  ],
+  "graphml": "sna/pa-digitale/network.graphml",
+  "network": "sna/pa-digitale/network.json",
+  "ttl": "sna/pa-digitale/network.ttl",
+  "queries": "sna/pa-digitale/queries.json"
+}

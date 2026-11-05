@@ -1,0 +1,29 @@
+{
+  "id": "ego-rup-BETTI_LORENZO",
+  "kind": "rup",
+  "key": "betti lorenzo",
+  "label": "betti lorenzo",
+  "title": "RUP: betti lorenzo",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/BETTI_LORENZO/network.json",
+  "n_nodes": 129,
+  "n_edges": 264,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 120,
+    "cup": 7
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 120,
+    "con_rup": 120,
+    "aggiudicato_su_cup": 11,
+    "sa_su_cup": 7,
+    "stesso_cup": 5
+  },
+  "n_communities": 6,
+  "n_cig": 444,
+  "n_cup": 0
+}

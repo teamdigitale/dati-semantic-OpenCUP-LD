@@ -1,0 +1,141 @@
+{
+  "title": "Analisi di rete — seed soggetto-solo",
+  "note": "Grafi tra soggetti (impresa, stazione appaltante, RUP, CUP/progetto). Metriche precalcolate con NetworkX; comunità Louvain.",
+  "seeds": [
+    {
+      "id": "crucianelli-unicam-erdis",
+      "title": "Crucianelli / Unicam / ERDIS",
+      "blurb": "Ego-network dell’inchiesta (nominativi)",
+      "description": "Rete impresa ↔ RUP ↔ stazione appaltante costruita dagli esiti SCP partendo dall’impresa seed Crucianelli Rest/Edile, dai CUP Unicam e dagli esiti ERDIS con RUP Pompili. Include co-aggiudicatari, stesso CUP e archi RTI (mandataria/mandante).",
+      "path": "sna/crucianelli-unicam-erdis/network.json",
+      "meta": "sna/crucianelli-unicam-erdis/meta.json",
+      "graphml": "sna/crucianelli-unicam-erdis/network.graphml",
+      "ttl": "sna/crucianelli-unicam-erdis/network.ttl",
+      "queries": "sna/crucianelli-unicam-erdis/queries.json",
+      "nodes": 71,
+      "edges": 152,
+      "kinds": [
+        "sa",
+        "impresa",
+        "rup"
+      ],
+      "rels": [
+        "rup_presso",
+        "aggiudicato_da",
+        "con_rup",
+        "co_aggiudicatario_cig",
+        "rti_mandante",
+        "rti_mandataria",
+        "stesso_cup"
+      ],
+      "n_communities": 5
+    },
+    {
+      "id": "ricostruzione-sisma2016-marche",
+      "title": "Ricostruzione sisma 2016 — Marche",
+      "blurb": "Tutti i CUP FOIA Marche espansi a imprese/SA/RUP",
+      "description": "Rete soggetto-solo (impresa, CUP, SA, RUP) dal seed FOIA sulla ricostruzione pubblica, filtrata sulla regione Marche e ampliata con gare BDAP e esiti SCP, più archi impresa↔impresa (co-aggiudicatari, stesso CUP, RTI) e ruoli OpenCoesione dove il CUP è in coesione.",
+      "path": "sna/ricostruzione-sisma2016-marche/network.json",
+      "meta": "sna/ricostruzione-sisma2016-marche/meta.json",
+      "graphml": "sna/ricostruzione-sisma2016-marche/network.graphml",
+      "ttl": "sna/ricostruzione-sisma2016-marche/network.ttl",
+      "queries": "sna/ricostruzione-sisma2016-marche/queries.json",
+      "nodes": 1766,
+      "edges": 4916,
+      "kinds": [
+        "impresa",
+        "sa",
+        "cup",
+        "ente",
+        "rup"
+      ],
+      "rels": [
+        "rup_presso",
+        "aggiudicato_da",
+        "con_rup",
+        "aggiudicato_su_cup",
+        "co_aggiudicatario_cig",
+        "rti_mandante",
+        "rti_mandataria",
+        "stesso_cup",
+        "oc:beneficiario_di",
+        "oc:programmatore_di",
+        "oc:attuatore_di"
+      ],
+      "n_communities": 163
+    },
+    {
+      "id": "pa-digitale",
+      "title": "PA Digitale (hub PNRR)",
+      "blurb": "CUP candidature comuni + esiti SCP del hub",
+      "description": "Rete soggetto-solo sul hub PA Digitale: CUP delle candidature comuni finanziate, enti candidati/titolari OpenCUP, imprese aggiudicatarie, stazioni appaltanti e RUP dagli esiti SCP collegati, con co-aggiudicatari / stesso CUP / RTI e soggetti OpenCoesione (programmatore/attuatore/beneficiario/realizzatore).",
+      "path": "sna/pa-digitale/network.json",
+      "meta": "sna/pa-digitale/meta.json",
+      "graphml": "sna/pa-digitale/network.graphml",
+      "ttl": "sna/pa-digitale/network.ttl",
+      "queries": "sna/pa-digitale/queries.json",
+      "nodes": 1349,
+      "edges": 2866,
+      "kinds": [
+        "ente",
+        "cup",
+        "impresa",
+        "sa",
+        "rup"
+      ],
+      "rels": [
+        "rup_presso",
+        "con_rup",
+        "aggiudicato_da",
+        "stesso_cup",
+        "aggiudicato_su_cup",
+        "candidato_su",
+        "titolare_di",
+        "co_aggiudicatario_cig",
+        "rti_mandante",
+        "rti_mandataria"
+      ],
+      "n_communities": 169
+    },
+    {
+      "id": "monithon",
+      "title": "Monithon (monitoraggio civico)",
+      "blurb": "Report civici + hub CUP/CIG, RTI e beneficiari",
+      "description": "Rete soggetto-solo sul hub Monithon: report di monitoraggio collegati ai CUP, titolari e beneficiari OpenCUP, imprese/SA/RUP dagli esiti SCP, ruoli OpenCoesione Soggetti e (se disponibile) ANAC Aggiudicatari.",
+      "path": "sna/monithon/network.json",
+      "meta": "sna/monithon/meta.json",
+      "graphml": "sna/monithon/network.graphml",
+      "ttl": "sna/monithon/network.ttl",
+      "queries": "sna/monithon/queries.json",
+      "nodes": 10087,
+      "edges": 20321,
+      "kinds": [
+        "beneficiario",
+        "ente",
+        "sa",
+        "cup",
+        "impresa",
+        "report",
+        "rup"
+      ],
+      "rels": [
+        "oc:programmatore_di",
+        "oc:attuatore_di",
+        "oc:beneficiario_di",
+        "oc:realizzatore_di",
+        "beneficiario_di",
+        "titolare_di",
+        "rup_presso",
+        "aggiudicato_da",
+        "aggiudicato_su_cup",
+        "con_rup",
+        "stesso_cup",
+        "co_aggiudicatario_cig",
+        "monitora",
+        "rti_mandante",
+        "rti_mandataria"
+      ],
+      "n_communities": 273
+    }
+  ]
+}

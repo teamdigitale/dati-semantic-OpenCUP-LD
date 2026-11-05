@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-LENTI_MAURO",
+  "kind": "rup",
+  "key": "Lenti Mauro",
+  "label": "Lenti Mauro",
+  "title": "RUP: Lenti Mauro",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/LENTI_MAURO/network.json",
+  "n_nodes": 51,
+  "n_edges": 125,
+  "kinds": {
+    "rup": 1,
+    "cup": 9,
+    "sa": 1,
+    "impresa": 40
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 40,
+    "con_rup": 40,
+    "aggiudicato_su_cup": 17,
+    "sa_su_cup": 9,
+    "co_aggiudicatario_cig": 2,
+    "stesso_cup": 14,
+    "rti_mandataria": 1,
+    "rti_mandante": 1
+  },
+  "n_communities": 9,
+  "n_cig": 45,
+  "n_cup": 0
+}

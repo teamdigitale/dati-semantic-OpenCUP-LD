@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-ADDEI_LUCA",
+  "kind": "rup",
+  "key": "ADDEI LUCA",
+  "label": "ADDEI LUCA",
+  "title": "RUP: ADDEI LUCA",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/ADDEI_LUCA/network.json",
+  "n_nodes": 70,
+  "n_edges": 325,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 39,
+    "cup": 29
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 39,
+    "con_rup": 39,
+    "sa_su_cup": 29,
+    "aggiudicato_su_cup": 49,
+    "co_aggiudicatario_cig": 56,
+    "stesso_cup": 56,
+    "rti_mandataria": 28,
+    "rti_mandante": 28
+  },
+  "n_communities": 9,
+  "n_cig": 43,
+  "n_cup": 0
+}

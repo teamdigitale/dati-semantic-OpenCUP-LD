@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-VEGGIS_MAURIZIO",
+  "kind": "rup",
+  "key": "Veggis Maurizio",
+  "label": "Veggis Maurizio",
+  "title": "RUP: Veggis Maurizio",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/VEGGIS_MAURIZIO/network.json",
+  "n_nodes": 10,
+  "n_edges": 34,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 5,
+    "cup": 3
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 5,
+    "con_rup": 5,
+    "aggiudicato_su_cup": 6,
+    "sa_su_cup": 3,
+    "co_aggiudicatario_cig": 4,
+    "stesso_cup": 4,
+    "rti_mandataria": 3,
+    "rti_mandante": 3
+  },
+  "n_communities": 2,
+  "n_cig": 32,
+  "n_cup": 0
+}

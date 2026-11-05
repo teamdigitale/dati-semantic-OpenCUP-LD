@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-ZECCHETTI",
+  "kind": "rup",
+  "key": "Zecchetti",
+  "label": "Zecchetti",
+  "title": "RUP: Zecchetti",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/ZECCHETTI/network.json",
+  "n_nodes": 42,
+  "n_edges": 333,
+  "kinds": {
+    "rup": 1,
+    "cup": 18,
+    "sa": 1,
+    "impresa": 22
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 22,
+    "con_rup": 22,
+    "aggiudicato_su_cup": 106,
+    "sa_su_cup": 18,
+    "co_aggiudicatario_cig": 66,
+    "stesso_cup": 66,
+    "rti_mandataria": 16,
+    "rti_mandante": 16
+  },
+  "n_communities": 13,
+  "n_cig": 25,
+  "n_cup": 0
+}

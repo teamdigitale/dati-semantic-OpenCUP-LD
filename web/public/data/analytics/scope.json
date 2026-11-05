@@ -12,31 +12,39 @@
       "step": "01–05 filter + convertLD",
       "rule": "Hub PA Digitale ∩ ANAC cup_json ∩ v_od_esiti → JSON-LD/TTL",
       "role": "Grafo RDF e visualizzazioni unione (come sono collegati)"
+    },
+    {
+      "step": "slice-discovered / sna-ego-batch",
+      "rule": "onData/OpenPNRR/ISTAT + ego ente/RUP nazionali",
+      "role": "Fonti enrichment + /rete esplora ente-RUP"
     }
   ],
   "opencup_cups": 11942785,
   "opencup_rows": 26532619,
   "anac_pairs": 7228216,
-  "anac_cups": 1570517,
+  "anac_cups": 1569918,
   "anac_cigs": 7103635,
   "padigitale_raw_cups": 69533,
   "padigitale_rows": 72402,
   "enti_ipa": 23764,
-  "hub_cups": 540,
-  "hub_cigs": 623,
-  "hub_pairs": 677,
-  "hub_opencup_cups": 533,
+  "hub_cups": 541,
+  "hub_cigs": 624,
+  "hub_pairs": 678,
+  "hub_opencup_cups": 534,
   "hub_padigitale_rows": 570,
   "hub_padigitale_cups": 540,
-  "hub_enti_ipa": 238,
-  "hub_ttl_lines": 46617,
+  "hub_enti_ipa": 239,
+  "hub_ttl_lines": 49196,
   "gaps": [
     "I grafici e la mappa usano i dati di tutta Italia; l'Unione semantica mostra un campione di progetti dove le fonti si incontrano.",
     "ND nei dati ANAC non è un progetto: significa CUP non dichiarato ed è escluso dalle classifiche.",
     "Le aggiudicazioni SCP nazionali sono nei grafici; nel grafo hub solo per i lotti del campione.",
     "«Soggetto privato» in OpenCUP è un'etichetta generica, non un singolo ente.",
-    "Ancora in arrivo: arricchimenti territoriali (Wikidata) e mappe PA Digitale per comune."
+    "ANAC Aggiudicatari/Subappalti/OCDS spesso WAF: depositare CSV manualmente se servono archi impresa extra."
   ],
+  "istat_comuni": 7896,
+  "opencup_comuni": 8637,
+  "istat_opencup_matched": 7894,
   "scp_bandi_cigs_full": 135005,
   "scp_esiti_cigs_full": 396221
 }

@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-LORIS_DE_COL",
+  "kind": "rup",
+  "key": "Loris De Col",
+  "label": "Loris De Col",
+  "title": "RUP: Loris De Col",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/LORIS_DE_COL/network.json",
+  "n_nodes": 72,
+  "n_edges": 287,
+  "kinds": {
+    "rup": 1,
+    "cup": 20,
+    "sa": 1,
+    "impresa": 50
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 50,
+    "con_rup": 50,
+    "aggiudicato_su_cup": 45,
+    "sa_su_cup": 20,
+    "co_aggiudicatario_cig": 28,
+    "stesso_cup": 71,
+    "rti_mandataria": 11,
+    "rti_mandante": 11
+  },
+  "n_communities": 17,
+  "n_cig": 50,
+  "n_cup": 0
+}

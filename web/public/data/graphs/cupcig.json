@@ -2,6 +2,20 @@
   "dataset": "cupcig",
   "nodes": [
     {
+      "id": "https://w3id.org/italia/data/Lot/9219018E4F",
+      "shortId": "lot:9219018E4F",
+      "label": "CIG 9219…",
+      "type": "PCTR:Lot",
+      "dataset": "cupcig"
+    },
+    {
+      "id": "https://w3id.org/italia/PublicInvestment/data/CUP/B31B21006780001",
+      "shortId": "cup:B31B21006780001",
+      "label": "B31B21006780001",
+      "type": "pi:Progetto_di_investimento_pubblico",
+      "dataset": "cupcig"
+    },
+    {
       "id": "https://w3id.org/italia/data/Lot/9459610D1C",
       "shortId": "lot:9459610D1C",
       "label": "CIG 9459…",
@@ -221,6 +235,11 @@
   ],
   "edges": [
     {
+      "source": "https://w3id.org/italia/data/Lot/9219018E4F",
+      "target": "https://w3id.org/italia/PublicInvestment/data/CUP/B31B21006780001",
+      "label": "PCTR:hasProject"
+    },
+    {
       "source": "https://w3id.org/italia/data/Lot/9459610D1C",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/E31C22001170006",
       "label": "PCTR:hasProject"
@@ -356,12 +375,13 @@
       "label": "PCTR:hasProject"
     }
   ],
-  "sample_note": "27 lotti CIG per 4 CUP campionati",
+  "sample_note": "28 lotti CIG per 5 CUP campionati",
   "coverage": "sample",
   "sample_cups": [
     "E31C22001170006",
     "D91F22000440006",
     "E31F22000170006",
-    "C61F22001090006"
+    "C61F22001090006",
+    "B31B21006780001"
   ]
 }

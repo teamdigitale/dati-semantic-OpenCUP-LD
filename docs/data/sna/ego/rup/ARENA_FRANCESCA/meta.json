@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-ARENA_FRANCESCA",
+  "kind": "rup",
+  "key": "ARENA FRANCESCA",
+  "label": "ARENA FRANCESCA",
+  "title": "RUP: ARENA FRANCESCA",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/ARENA_FRANCESCA/network.json",
+  "n_nodes": 20,
+  "n_edges": 63,
+  "kinds": {
+    "rup": 1,
+    "sa": 2,
+    "impresa": 12,
+    "cup": 5
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 12,
+    "con_rup": 12,
+    "aggiudicato_su_cup": 8,
+    "sa_su_cup": 5,
+    "co_aggiudicatario_cig": 10,
+    "stesso_cup": 6,
+    "rti_mandataria": 4,
+    "rti_mandante": 4
+  },
+  "n_communities": 4,
+  "n_cig": 12,
+  "n_cup": 0
+}

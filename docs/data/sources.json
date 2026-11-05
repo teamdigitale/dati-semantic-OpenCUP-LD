@@ -1,0 +1,405 @@
+{
+  "generated_at": "2026-11-05T09:47:33.249219+00:00",
+  "manifest_generated_at": "2026-11-01T08:13:48.140687+00:00",
+  "doc": "srcdata/ETL.md · srcdata/SOURCES_DISCOVERY.md",
+  "sources": [
+    {
+      "id": "opencup",
+      "title": "OpenCUP",
+      "publisher": "DIPE / Presidenza del Consiglio",
+      "url": "https://www.opencup.gov.it/",
+      "license": "open government data",
+      "graph_keys": [
+        "CUP",
+        "ente titolare",
+        "beneficiario",
+        "costo"
+      ],
+      "role": "in_use",
+      "pipeline": "parquet OpenCUP → hub LD / analytics / SNA",
+      "local": "srcdata/rawdata/OpenCUP.parquet",
+      "present": true,
+      "updated_at": "2026-09-07T09:13:23.968251+00:00",
+      "bytes": 1264192452
+    },
+    {
+      "id": "anac_cup_cig",
+      "title": "ANAC CUP↔CIG",
+      "publisher": "ANAC",
+      "url": "https://dati.anticorruzione.it/opendata/",
+      "license": "open / CC-BY (portale ANAC)",
+      "graph_keys": [
+        "CUP",
+        "CIG"
+      ],
+      "role": "in_use",
+      "pipeline": "cup_json → cup_cig.parquet → filter hub",
+      "local": "srcdata/rawdata/cup_cig.parquet",
+      "present": true,
+      "updated_at": "2026-11-01T08:12:07.615666+00:00",
+      "bytes": 45084548
+    },
+    {
+      "id": "anac_aggiudicazioni",
+      "title": "ANAC Aggiudicazioni",
+      "publisher": "ANAC",
+      "url": "https://dati.anticorruzione.it/opendata/",
+      "license": "open / CC-BY",
+      "graph_keys": [
+        "CIG",
+        "importo",
+        "data",
+        "esito"
+      ],
+      "role": "in_use",
+      "pipeline": "parquet → hub LD (senza CF impresa)",
+      "local": "srcdata/rawdata/anac_aggiudicazioni.parquet",
+      "note": "Non contiene aggiudicatari/CF — per le imprese usare SCP o Aggiudicatari.",
+      "present": true,
+      "updated_at": "2026-10-26T14:18:21.170033+00:00",
+      "bytes": 84527274
+    },
+    {
+      "id": "anac_aggiudicatari",
+      "title": "ANAC Aggiudicatari",
+      "publisher": "ANAC",
+      "url": "https://dati.anticorruzione.it/opendata/opendata/dataset/aggiudicatari",
+      "license": "open / CC-BY",
+      "graph_keys": [
+        "CIG",
+        "CF impresa",
+        "co-aggiudicazione"
+      ],
+      "role": "optional",
+      "pipeline": "CSV → slice SNA (WAF frequente → download manuale)",
+      "local": "srcdata/rawdata/anac_aggiudicatari/",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    },
+    {
+      "id": "scp_mit",
+      "title": "SCP MIT bandi/esiti",
+      "publisher": "MIT — Servizio Contratti Pubblici",
+      "url": "https://www.serviziocontrattipubblici.it/",
+      "license": "open data MIT",
+      "graph_keys": [
+        "CIG",
+        "impresa",
+        "SA",
+        "RUP",
+        "RTI"
+      ],
+      "role": "in_use",
+      "pipeline": "v_od_*.parquet → hub / SNA",
+      "local": "srcdata/rawdata/v_od_esiti.parquet",
+      "present": true,
+      "updated_at": "2026-11-01T08:11:58.638462+00:00",
+      "bytes": 60547169
+    },
+    {
+      "id": "pa_digitale",
+      "title": "PA Digitale (candidature)",
+      "publisher": "Dipartimento per la trasformazione digitale",
+      "url": "https://padigitale2026.gov.it/",
+      "license": "open",
+      "graph_keys": [
+        "CUP",
+        "comune",
+        "avviso PNRR"
+      ],
+      "role": "in_use",
+      "pipeline": "JSON → seed hub PA Digitale",
+      "local": "srcdata/rawdata/candidature_comuni_finanziate.json",
+      "present": true,
+      "updated_at": "2026-10-19T08:53:46.751223+00:00",
+      "bytes": 46280707
+    },
+    {
+      "id": "indicepa",
+      "title": "IndicePA",
+      "publisher": "AgID",
+      "url": "https://www.indicepa.gov.it/",
+      "license": "open",
+      "graph_keys": [
+        "CF ente",
+        "codice IPA"
+      ],
+      "role": "in_use",
+      "pipeline": "enti_ipa.csv → hub",
+      "local": "srcdata/rawdata/enti_ipa.csv",
+      "present": true,
+      "updated_at": "2026-10-19T08:53:47.842725+00:00",
+      "bytes": 7491790
+    },
+    {
+      "id": "opencoesione_progetti",
+      "title": "OpenCoesione Progetti",
+      "publisher": "Dipartimento per le politiche di coesione",
+      "url": "https://opencoesione.gov.it/it/opendata/",
+      "license": "CC BY 4.0",
+      "graph_keys": [
+        "CUP",
+        "COD_LOCALE_PROGETTO",
+        "tema",
+        "ciclo"
+      ],
+      "role": "in_use",
+      "pipeline": "parquet → Monithon hub / vocabolari",
+      "local": "srcdata/rawdata/opencoesione_progetti.parquet",
+      "present": true,
+      "updated_at": "2026-11-01T08:12:54.242671+00:00",
+      "bytes": 211865719
+    },
+    {
+      "id": "opencoesione_soggetti",
+      "title": "OpenCoesione Soggetti",
+      "publisher": "Dipartimento per le politiche di coesione",
+      "url": "https://opencoesione.gov.it/it/opendata/dataset/soggetti/",
+      "license": "CC BY 4.0",
+      "graph_keys": [
+        "CF",
+        "ruolo OC",
+        "CUP"
+      ],
+      "role": "in_use",
+      "pipeline": "parquet → slice → archi oc:* nelle reti SNA",
+      "local": "srcdata/rawdata/opencoesione_soggetti.parquet",
+      "present": true,
+      "updated_at": "2026-11-01T08:13:28.935615+00:00",
+      "bytes": 92506813
+    },
+    {
+      "id": "monithon",
+      "title": "Monithon (catalogo report)",
+      "publisher": "Monithon / civic monitoring",
+      "url": "https://www.monithon.it/",
+      "license": "secondo sito Monithon",
+      "graph_keys": [
+        "report",
+        "CUP",
+        "CIG"
+      ],
+      "role": "in_use",
+      "pipeline": "catalog JSON → seed SNA / hub Monithon",
+      "local": "srcdata/rawdata/monithon_catalog.json",
+      "present": true,
+      "updated_at": "2026-10-26T14:38:06.754035+00:00",
+      "bytes": 514869
+    },
+    {
+      "id": "ondata_pnrr_cup_cig",
+      "title": "onData — PNRR CUP↔CIG (liberiamoli-tutti)",
+      "publisher": "Associazione onData",
+      "url": "https://github.com/ondata/liberiamoli-tutti/tree/main/pnrr_cup_cig",
+      "license": "riuso civico (GitHub)",
+      "graph_keys": [
+        "CUP",
+        "CIG",
+        "fonte anac|italiadomani"
+      ],
+      "role": "in_use",
+      "pipeline": "CSV raw → slice vs seed (gap Italia Domani)",
+      "local": "srcdata/rawdata/ondata_pnrr_cup_cig/cup_cig_anac_pnrr_merge.csv",
+      "note": "Incrocio Italia Domani × ANAC; risultati in analytics/discovered_enrichment.json.",
+      "present": true,
+      "updated_at": "2026-11-01T08:24:12.800373+00:00",
+      "bytes": 22536366
+    },
+    {
+      "id": "openpolis_openpnrr_bandi",
+      "title": "OpenPNRR — bandi/CIG PNRR (quote)",
+      "publisher": "Fondazione Openpolis (fonte ANAC)",
+      "url": "https://openpnrr.it/opendata/",
+      "license": "ODbL 1.0",
+      "graph_keys": [
+        "CIG",
+        "quote genere/giovani",
+        "misure premiali"
+      ],
+      "role": "in_use",
+      "pipeline": "S3 cig_gare-pnrr.csv → flag su CIG hub",
+      "local": "srcdata/rawdata/openpnrr/cig_gare_pnrr.csv",
+      "note": "Raw CSV su S3 OpenPNRR; sito openpnrr.it protetto Anubis.",
+      "present": true,
+      "updated_at": "2025-09-04T16:54:30+00:00",
+      "bytes": 1109830
+    },
+    {
+      "id": "istat_comuni_elenco",
+      "title": "ISTAT — elenco comuni italiani",
+      "publisher": "ISTAT",
+      "url": "https://www.istat.it/notizia/la-lista-dei-comuni-italiani/",
+      "license": "open ISTAT",
+      "graph_keys": [
+        "codice ISTAT",
+        "provincia",
+        "regione"
+      ],
+      "role": "in_use",
+      "pipeline": "CSV raw → pronto per normalizzazione territorio",
+      "local": "srcdata/rawdata/istat/elenco_comuni_italiani.csv",
+      "note": "ISO-8859; delimiter ';'.",
+      "present": true,
+      "updated_at": "2024-01-26T10:33:36+00:00",
+      "bytes": 1126843
+    },
+    {
+      "id": "istat_popolazione_comuni",
+      "title": "ISTAT — popolazione residente comuni",
+      "publisher": "ISTAT (SDMX 22_289)",
+      "url": "https://esploradati.istat.it/",
+      "license": "open ISTAT",
+      "graph_keys": [
+        "codice ISTAT comune",
+        "popolazione"
+      ],
+      "role": "in_use",
+      "pipeline": "SDMX CSV → popolazione_comuni.csv → €/abitante Analisi",
+      "local": "srcdata/rawdata/istat/popolazione_comuni.csv",
+      "note": "Derivato da popolazione_residente_sdmx.csv (ultimo anno disponibile).",
+      "present": true,
+      "updated_at": "2026-11-01T09:31:37.594764+00:00",
+      "bytes": 133579
+    },
+    {
+      "id": "anac_ocds",
+      "title": "ANAC OCDS (appalti ordinari)",
+      "publisher": "ANAC / eNEIDE",
+      "url": "https://dati.anticorruzione.it/opendata/ocds",
+      "license": "CC BY 4.0",
+      "graph_keys": [
+        "ocid",
+        "CIG",
+        "buyer",
+        "award",
+        "contract",
+        "SAL"
+      ],
+      "role": "candidate",
+      "pipeline": "make fetch-anac-candidates (WAF frequente)",
+      "local": "srcdata/rawdata/anac_ocds/ocds_index.json",
+      "note": "Download automatico spesso bloccato da WAF; depositare manualmente se disponibile.",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    },
+    {
+      "id": "anac_subappalti",
+      "title": "ANAC Subappalti",
+      "publisher": "ANAC",
+      "url": "https://dati.anticorruzione.it/opendata/opendata/dataset/subappalti",
+      "license": "open / CC-BY",
+      "graph_keys": [
+        "CIG",
+        "subappaltatore"
+      ],
+      "role": "candidate",
+      "pipeline": "make fetch-anac-candidates (WAF frequente)",
+      "local": "srcdata/rawdata/anac_subappalti/subappalti.csv",
+      "note": "WAF come Aggiudicatari; CSV manuale → slice futuro su CIG seed.",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    },
+    {
+      "id": "ted_eu",
+      "title": "TED / eForms (UE)",
+      "publisher": "Publications Office of the EU",
+      "url": "https://docs.ted.europa.eu/api/latest/index.html",
+      "license": "riuso TED / open data UE",
+      "graph_keys": [
+        "notice",
+        "CPV",
+        "NUTS",
+        "buyer",
+        "award"
+      ],
+      "role": "candidate",
+      "pipeline": "Search API (CC~IT) filtrata su CIG/CUP noti o CPV dei seed",
+      "note": "Copre gare EU-visibili; utile per fornitori esteri e confronti cross-border.",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    },
+    {
+      "id": "italiadomani",
+      "title": "Italia Domani (catalogo PNRR)",
+      "publisher": "Presidenza del Consiglio / Italia Domani",
+      "url": "https://www.italiadomani.gov.it/",
+      "license": "open (catalogo ufficiale)",
+      "graph_keys": [
+        "CUP",
+        "misura",
+        "soggetto attuatore"
+      ],
+      "role": "candidate",
+      "pipeline": "open data progetti/gare PNRR → seed e gap vs OpenCUP",
+      "note": "Citato da onData; base ufficiale da incrociare con ANAC.",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    },
+    {
+      "id": "contrattipubblici",
+      "title": "Atoka PA / ContrattiPubblici.org",
+      "publisher": "Cerved / Atoka PA",
+      "url": "https://contrattipubblici.org/",
+      "license": "commerciale (non open dump)",
+      "graph_keys": [
+        "contratto",
+        "fornitore",
+        "SA"
+      ],
+      "role": "reference",
+      "pipeline": "non integrabile via ETL open — riferimento UX/copertura",
+      "note": "Aggrega L.190/2012 XML + ANAC + OpenCUP; spunto metodologico, non fonte ridistribuibile.",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    },
+    {
+      "id": "datigov_anac_cig",
+      "title": "dati.gov.it — catalogo ANAC (CIG / CUP)",
+      "publisher": "AgID / dati.gov.it (harvest ANAC)",
+      "url": "https://www.dati.gov.it/",
+      "license": "CC BY 4.0 (distribuzioni ANAC harvestate)",
+      "graph_keys": [
+        "CIG",
+        "CUP",
+        "metadati DCAT"
+      ],
+      "role": "candidate",
+      "pipeline": "preferire raw ANAC linkati da dati.gov.it (es. CIG anno N) vs dump già processati",
+      "note": "Punto di ingresso catalogo nazionale; le risorse puntano ai file raw ANAC (CSV/JSON/TTL).",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    },
+    {
+      "id": "istat_asia",
+      "title": "ISTAT ASIA (imprese / unità locali)",
+      "publisher": "ISTAT",
+      "url": "https://www.istat.it/scheda-qualita/registro-statistico-delle-unita-locali-asia-ul/",
+      "license": "statistica ufficiale (microdati non open a CF)",
+      "graph_keys": [
+        "ATECO",
+        "addetti",
+        "territorio"
+      ],
+      "role": "reference",
+      "pipeline": "solo aggregati open; microdato CF non pubblico",
+      "note": "Utile per contesto settoriale aggregato; non sostituisce anagrafica impresa da SCP/ANAC.",
+      "present": false,
+      "updated_at": null,
+      "bytes": null
+    }
+  ],
+  "counts": {
+    "in_use": 13,
+    "optional": 1,
+    "candidate": 5,
+    "reference": 2,
+    "present": 13
+  }
+}

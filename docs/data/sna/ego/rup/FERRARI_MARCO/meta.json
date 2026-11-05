@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-FERRARI_MARCO",
+  "kind": "rup",
+  "key": "Ferrari Marco",
+  "label": "Ferrari Marco",
+  "title": "RUP: Ferrari Marco",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/FERRARI_MARCO/network.json",
+  "n_nodes": 67,
+  "n_edges": 204,
+  "kinds": {
+    "rup": 1,
+    "cup": 25,
+    "sa": 2,
+    "impresa": 39
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 39,
+    "con_rup": 39,
+    "aggiudicato_su_cup": 41,
+    "sa_su_cup": 25,
+    "co_aggiudicatario_cig": 15,
+    "stesso_cup": 23,
+    "rti_mandataria": 10,
+    "rti_mandante": 10
+  },
+  "n_communities": 20,
+  "n_cig": 31,
+  "n_cup": 0
+}

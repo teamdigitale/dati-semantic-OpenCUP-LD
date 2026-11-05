@@ -1,0 +1,31 @@
+{
+  "id": "ego-rup-VOLPE_LUIGI",
+  "kind": "rup",
+  "key": "VOLPE LUIGI",
+  "label": "VOLPE LUIGI",
+  "title": "RUP: VOLPE LUIGI",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/VOLPE_LUIGI/network.json",
+  "n_nodes": 60,
+  "n_edges": 822,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 52,
+    "cup": 6
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 52,
+    "con_rup": 52,
+    "aggiudicato_su_cup": 6,
+    "sa_su_cup": 6,
+    "co_aggiudicatario_cig": 477,
+    "rti_mandataria": 114,
+    "rti_mandante": 114
+  },
+  "n_communities": 7,
+  "n_cig": 22,
+  "n_cup": 0
+}

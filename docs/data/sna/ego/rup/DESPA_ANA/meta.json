@@ -1,0 +1,30 @@
+{
+  "id": "ego-rup-DESPA_ANA",
+  "kind": "rup",
+  "key": "Despa Ana",
+  "label": "Despa Ana",
+  "title": "RUP: Despa Ana",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/DESPA_ANA/network.json",
+  "n_nodes": 50,
+  "n_edges": 102,
+  "kinds": {
+    "rup": 1,
+    "cup": 25,
+    "sa": 1,
+    "impresa": 23
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 23,
+    "con_rup": 23,
+    "aggiudicato_su_cup": 27,
+    "sa_su_cup": 25,
+    "co_aggiudicatario_cig": 1,
+    "stesso_cup": 2
+  },
+  "n_communities": 19,
+  "n_cig": 30,
+  "n_cup": 0
+}

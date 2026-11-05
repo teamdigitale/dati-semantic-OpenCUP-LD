@@ -249,9 +249,16 @@ export function Analisi() {
   const [byStato, setByStato] = useState<ChartData | null>(null);
   const [padRegione, setPadRegione] = useState<ChartData | null>(null);
   const [padComuni, setPadComuni] = useState<ChartData | null>(null);
+  const [padComuniPc, setPadComuniPc] = useState<ChartData | null>(null);
   const [scpAwards, setScpAwards] = useState<ChartData | null>(null);
   const [scpAwardsEuro, setScpAwardsEuro] = useState<ChartData | null>(null);
   const [privCat, setPrivCat] = useState<ChartData | null>(null);
+  const [openpnrrQuota, setOpenpnrrQuota] = useState<ChartData | null>(null);
+  const [openpnrrPrem, setOpenpnrrPrem] = useState<ChartData | null>(null);
+  const [enrichment, setEnrichment] = useState<{
+    highlights?: string[];
+    generated_at?: string;
+  } | null>(null);
   const [scope, setScope] = useState<ScopeData | null>(null);
   const [sampleCups, setSampleCups] = useState<string[]>([]);
   const [regionInd, setRegionInd] = useState<RegioneIndicatori | null>(null);
@@ -268,12 +275,22 @@ export function Analisi() {
       fetchJson<ChartData>("analytics/opencup_by_stato.json"),
       fetchJson<ChartData>("analytics/pad_cost_by_regione.json"),
       fetchJson<ChartData>("analytics/pad_top_comuni.json"),
+      fetchJson<ChartData>("analytics/pad_top_comuni_per_abitante.json").catch(
+        () => null
+      ),
       fetchJson<ChartData>("analytics/scp_top_aggiudicatari.json"),
       fetchJson<ChartData>("analytics/scp_top_aggiudicatari_euro.json"),
       fetchJson<ChartData>("analytics/soggetto_privato_by_categoria.json"),
       fetchJson<ScopeData>("analytics/scope.json"),
       fetchJson<SubgraphIndex>("subgraphs/index.json"),
       fetchJson<RegioneIndicatori>("geo/regioni_indicatori.json"),
+      fetchJson<ChartData>("analytics/openpnrr_flag_quota.json").catch(() => null),
+      fetchJson<ChartData>("analytics/openpnrr_misure_premiali.json").catch(
+        () => null
+      ),
+      fetchJson<{ highlights?: string[]; generated_at?: string }>(
+        "analytics/discovered_enrichment.json"
+      ).catch(() => null),
     ]).then(
       ([
         f,
@@ -286,12 +303,16 @@ export function Analisi() {
         stato,
         padR,
         padC,
+        padCpc,
         scp,
         scpEuro,
         priv,
         s,
         idx,
         ind,
+        pnrrQ,
+        pnrrP,
+        enr,
       ]) => {
         setByFunder(f);
         setByCall(c);
@@ -303,12 +324,16 @@ export function Analisi() {
         setByStato(stato);
         setPadRegione(padR);
         setPadComuni(padC);
+        setPadComuniPc(padCpc);
         setScpAwards(scp);
         setScpAwardsEuro(scpEuro);
         setPrivCat(priv);
         setScope(s);
         setSampleCups(idx.sample_cups ?? []);
         setRegionInd(ind);
+        setOpenpnrrQuota(pnrrQ);
+        setOpenpnrrPrem(pnrrP);
+        setEnrichment(enr);
       }
     );
   }, []);
@@ -365,6 +390,7 @@ export function Analisi() {
   const statoChart = mapChart(byStato, 24);
   const padRegioneChart = mapChart(padRegione, 28);
   const padComuniChart = mapChart(padComuni, 28);
+  const padComuniPcChart = mapChart(padComuniPc, 28);
   const scpAwardsChart = mapChart(scpAwards, 28);
   const scpAwardsEuroChart = mapChart(scpAwardsEuro, 28);
   const privCatChart = mapChart(privCat, 32);
@@ -520,6 +546,16 @@ export function Analisi() {
         />
 
         <ChartSection
+          title={padComuniPc?.title}
+          insight={insights.pad_top_comuni_per_abitante}
+          data={padComuniPcChart}
+          color={BI.analogue1}
+          euro
+          valueDecimals
+          yWidth={140}
+        />
+
+        <ChartSection
           title={byCall?.title}
           insight={insights.cost_by_call}
           data={callChart}
@@ -527,7 +563,50 @@ export function Analisi() {
           euro
           yWidth={200}
         />
+
+        <ChartSection
+          title={openpnrrQuota?.title}
+          insight="Flag quota OpenPNRR (bandi PNRR / ANAC via Openpolis)."
+          data={mapChart(openpnrrQuota)}
+          color={BI.analogue1}
+          layout="horizontal"
+          height={260}
+        />
+
+        <ChartSection
+          title={openpnrrPrem?.title}
+          insight="Misure premiali dichiarate sui CIG PNRR (OpenPNRR)."
+          data={mapChart(openpnrrPrem)}
+          color={BI.analogue1}
+          layout="horizontal"
+          height={260}
+        />
       </div>
+
+      {enrichment?.highlights && enrichment.highlights.length > 0 && (
+        <section className="mb-5" id="analisi-enrichment">
+          <h2 className="h4">Enrichment fonti discovery</h2>
+          <p className="small text-secondary">
+            Slice su seed hub · dettagli in{" "}
+            <Link to="/fonti">Fonti</Link>
+            {enrichment.generated_at
+              ? ` · ${new Date(enrichment.generated_at).toLocaleString("it-IT")}`
+              : ""}
+          </p>
+          <ul>
+            {enrichment.highlights.map((h) => (
+              <li key={h}>{h}</li>
+            ))}
+          </ul>
+          {scope?.istat_opencup_matched != null && (
+            <p className="small text-secondary mb-0">
+              ISTAT↔OpenCUP comuni: {scope.istat_opencup_matched?.toLocaleString("it")}{" "}
+              codici allineati su {scope.opencup_comuni?.toLocaleString("it")} comuni
+              OpenCUP ({scope.istat_comuni?.toLocaleString("it")} in elenco ISTAT).
+            </p>
+          )}
+        </section>
+      )}
 
       <div id="analisi-gare">
         <ChartSection

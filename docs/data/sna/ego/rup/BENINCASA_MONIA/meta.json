@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-BENINCASA_MONIA",
+  "kind": "rup",
+  "key": "Benincasa Monia",
+  "label": "Benincasa Monia",
+  "title": "RUP: Benincasa Monia",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/BENINCASA_MONIA/network.json",
+  "n_nodes": 35,
+  "n_edges": 158,
+  "kinds": {
+    "rup": 1,
+    "cup": 11,
+    "sa": 1,
+    "impresa": 22
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 22,
+    "con_rup": 22,
+    "aggiudicato_su_cup": 22,
+    "sa_su_cup": 11,
+    "co_aggiudicatario_cig": 28,
+    "stesso_cup": 28,
+    "rti_mandataria": 12,
+    "rti_mandante": 12
+  },
+  "n_communities": 10,
+  "n_cig": 12,
+  "n_cup": 0
+}

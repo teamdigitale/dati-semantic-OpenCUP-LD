@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-SOCCI_LORENZO",
+  "kind": "rup",
+  "key": "Socci Lorenzo",
+  "label": "Socci Lorenzo",
+  "title": "RUP: Socci Lorenzo",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/SOCCI_LORENZO/network.json",
+  "n_nodes": 44,
+  "n_edges": 98,
+  "kinds": {
+    "rup": 1,
+    "sa": 2,
+    "impresa": 27,
+    "cup": 14
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 27,
+    "con_rup": 27,
+    "aggiudicato_su_cup": 15,
+    "sa_su_cup": 14,
+    "co_aggiudicatario_cig": 6,
+    "stesso_cup": 1,
+    "rti_mandataria": 3,
+    "rti_mandante": 3
+  },
+  "n_communities": 15,
+  "n_cig": 30,
+  "n_cup": 0
+}

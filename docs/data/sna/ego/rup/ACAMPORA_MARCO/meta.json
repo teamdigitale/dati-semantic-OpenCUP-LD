@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-ACAMPORA_MARCO",
+  "kind": "rup",
+  "key": "ACAMPORA MARCO",
+  "label": "ACAMPORA MARCO",
+  "title": "RUP: ACAMPORA MARCO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/ACAMPORA_MARCO/network.json",
+  "n_nodes": 200,
+  "n_edges": 544,
+  "kinds": {
+    "rup": 1,
+    "cup": 85,
+    "sa": 1,
+    "impresa": 113
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 113,
+    "con_rup": 113,
+    "aggiudicato_su_cup": 115,
+    "sa_su_cup": 85,
+    "co_aggiudicatario_cig": 27,
+    "stesso_cup": 58,
+    "rti_mandataria": 16,
+    "rti_mandante": 16
+  },
+  "n_communities": 48,
+  "n_cig": 161,
+  "n_cup": 0
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-PANZIERA_FIORENZO",
+  "kind": "rup",
+  "key": "PANZIERA FIORENZO",
+  "label": "PANZIERA FIORENZO",
+  "title": "RUP: PANZIERA FIORENZO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/PANZIERA_FIORENZO/network.json",
+  "n_nodes": 38,
+  "n_edges": 135,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 32,
+    "cup": 4
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 32,
+    "con_rup": 32,
+    "aggiudicato_su_cup": 15,
+    "sa_su_cup": 4,
+    "co_aggiudicatario_cig": 3,
+    "stesso_cup": 42,
+    "rti_mandataria": 3,
+    "rti_mandante": 3
+  },
+  "n_communities": 4,
+  "n_cig": 38,
+  "n_cup": 0
+}

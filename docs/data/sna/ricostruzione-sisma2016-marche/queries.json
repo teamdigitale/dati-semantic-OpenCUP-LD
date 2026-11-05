@@ -1,0 +1,473 @@
+{
+  "seed": "ricostruzione-sisma2016-marche",
+  "title": "Come si chiede al grafo",
+  "note": "Stesse domande in SQL (tabelle nodes/edges) e in SPARQL sul network.ttl del seed. I risultati sono precomputati in build; non c’è un endpoint live.",
+  "queries": [
+    {
+      "id": "ego",
+      "title": "Vicini di «ANNESSI LEONARDO»",
+      "intent": "In SQL servono JOIN sulla tabella degli archi; in SPARQL lo stesso vicinato è un pattern soggetto–predicato–oggetto (eventualmente bidirezionale).",
+      "focus": {
+        "id": "impresa:_",
+        "label": "ANNESSI LEONARDO",
+        "kind": "impresa",
+        "value": 0.019314061967730705
+      },
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Vicini di un soggetto (join su tabella archi)\n-- DuckDB su nodes/edges del network.json\nSELECT DISTINCT\n  CASE WHEN e.source = 'impresa:_' THEN e.target ELSE e.source END AS neighbor_id,\n  n.label AS neighbor_label,\n  n.kind AS neighbor_kind,\n  e.rel\nFROM edges e\nJOIN nodes n\n  ON n.id = CASE WHEN e.source = 'impresa:_' THEN e.target ELSE e.source END\nWHERE e.source = 'impresa:_' OR e.target = 'impresa:_'\nORDER BY neighbor_kind, neighbor_label\nLIMIT 15;",
+        "note": "Tabelle `nodes`/`edges` derivate da network.json."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?neighborId ?neighborLabel ?neighborKind ?rel\nWHERE {\n  BIND(<https://w3id.org/italia/data/opencup-ld/sna/node/impresa%3A_> AS ?focus)\n  {\n    ?focus ?p ?neighbor .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  UNION\n  {\n    ?neighbor ?p ?focus .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  ?neighbor sna:nodeId ?neighborId ;\n            rdfs:label ?neighborLabel ;\n            sna:kind ?neighborKind .\n  FILTER(?rel NOT IN (\n    \"nodeId\",\"kind\",\"cf\",\"seed\",\"degree\",\"weightedDegree\",\n    \"betweenness\",\"pagerank\",\"community\",\"importoTot\"\n  ))\n}\nORDER BY ?neighborKind ?neighborLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "neighborId",
+          "neighborLabel",
+          "neighborKind",
+          "rel"
+        ],
+        "rows": [
+          [
+            "cup:B12J20001210001",
+            "B12J20001210001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B22E20000010001",
+            "B22E20000010001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B23B20000200001",
+            "B23B20000200001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B24B19000330002",
+            "B24B19000330002",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B31B21006540004",
+            "B31B21006540004",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B51D18000110001",
+            "B51D18000110001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B53B20000140001",
+            "B53B20000140001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B53D20003320002",
+            "B53D20003320002",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B53D20003420002",
+            "B53D20003420002",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B61D17000070002",
+            "B61D17000070002",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B61D18000210001",
+            "B61D18000210001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B62C21000900001",
+            "B62C21000900001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B63J18000080001",
+            "B63J18000080001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B67H22005720001",
+            "B67H22005720001",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "cup:B69C17000010002",
+            "B69C17000010002",
+            "cup",
+            "aggiudicato_su_cup"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "co_cig",
+      "title": "Co-aggiudicatari sullo stesso CIG",
+      "intent": "SQL filtra una colonna `rel`; SPARQL dichiara direttamente il predicato `sna:co_aggiudicatario_cig` — stesso fatto, sintassi a grafo.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Coppie di imprese co-aggiudicatarie sullo stesso CIG\nSELECT e.source AS a_id, na.label AS a_label,\n       e.target AS b_id, nb.label AS b_label,\n       e.n\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'co_aggiudicatario_cig'\nORDER BY e.n DESC, a_label, b_label\nLIMIT 15;",
+        "note": "Co-presenza su CIG ≠ necessariamente rapporto commerciale."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?aId ?aLabel ?bId ?bLabel\nWHERE {\n  ?a sna:co_aggiudicatario_cig ?b ;\n     sna:nodeId ?aId ; rdfs:label ?aLabel .\n  ?b sna:nodeId ?bId ; rdfs:label ?bLabel .\n}\nORDER BY ?aLabel ?bLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "aId",
+          "aLabel",
+          "bId",
+          "bLabel"
+        ],
+        "rows": [
+          [
+            "impresa:11937750963",
+            "3ENERGY srl",
+            "impresa:FRIMSM52L24E975E",
+            "Arch. Massimo Fiori"
+          ],
+          [
+            "impresa:11937750963",
+            "3ENERGY srl",
+            "impresa:CLLGPP62B02D429X",
+            "Geol. Giuseppe Cilla"
+          ],
+          [
+            "impresa:11937750963",
+            "3ENERGY srl",
+            "impresa:TRBLSN92B53B474Y",
+            "Ing. Alessandra Traballoni"
+          ],
+          [
+            "impresa:11937750963",
+            "3ENERGY srl",
+            "impresa:CLMCST83A27I156H",
+            "Ing. Cristhian Clementi"
+          ],
+          [
+            "impresa:11937750963",
+            "3ENERGY srl",
+            "impresa:FLCLNZ92R31I156R",
+            "Ing. Lorenzo Falcioni"
+          ],
+          [
+            "impresa:PDEGRL88L31G751Y",
+            "A.P.P.C. PEDE GABRIELE",
+            "impresa:VSSPGS55D30C886F",
+            "Arch. VISSANI PIERGIUSEPPE"
+          ],
+          [
+            "impresa:PDEGRL88L31G751Y",
+            "A.P.P.C. PEDE GABRIELE",
+            "impresa:PLMSRA94B55E783H",
+            "ing. PALMUCCI SARA"
+          ],
+          [
+            "impresa:02852540422",
+            "A2A srl",
+            "impresa:BTTLSE89L48C309P",
+            "BETTOLLINI ELISA"
+          ],
+          [
+            "impresa:02852540422",
+            "A2A srl",
+            "impresa:LTLNNL70D21H501N",
+            "Dott. Agronomo Antonello Loiotile"
+          ],
+          [
+            "impresa:02852540422",
+            "A2A srl",
+            "impresa:03672950544",
+            "LEGOROCK STUDIO ASSOCIATO INGG. CARLO OLIVANTI E FRANCESCA P"
+          ],
+          [
+            "impresa:01926770445",
+            "ABACO SOCIETA' COOPERATIVA",
+            "impresa:02881441204",
+            "Angela Buonamici Officinarte"
+          ],
+          [
+            "impresa:01926770445",
+            "ABACO SOCIETA' COOPERATIVA",
+            "impresa:02425011208",
+            "FRANCESCA BARONE E MARCO FONTANA - INGEGNERI ASSOCIATI"
+          ],
+          [
+            "impresa:01926770445",
+            "ABACO SOCIETA' COOPERATIVA",
+            "impresa:03624131201",
+            "STIEM ENGINEERING soc. coop. arl"
+          ],
+          [
+            "impresa:01926770445",
+            "ABACO SOCIETA' COOPERATIVA",
+            "impresa:02356950424",
+            "studio associato Galanti e Carlocchia Architetti"
+          ],
+          [
+            "impresa:02453890549",
+            "ABACUS S.R.L.",
+            "impresa:DMINNN60A27I862B",
+            "ANTONINO DI MAIO"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rti",
+      "title": "RTI: mandataria → mandanti",
+      "intent": "Nel relazionale il ruolo è spesso una colonna su più righe dello stesso CIG; nel grafo diventa un arco tipizzato tra due imprese.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- RTI: mandataria → mandanti\nSELECT e.source AS mandataria_id, na.label AS mandataria,\n       e.target AS mandante_id, nb.label AS mandante\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'rti_mandataria'\nORDER BY mandataria, mandante\nLIMIT 15;",
+        "note": "Rel `rti_mandataria`."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?mandatariaId ?mandataria ?mandanteId ?mandante\nWHERE {\n  ?a sna:rti_mandataria ?b ;\n     sna:nodeId ?mandatariaId ; rdfs:label ?mandataria .\n  ?b sna:nodeId ?mandanteId ; rdfs:label ?mandante .\n}\nORDER BY ?mandataria ?mandante\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "mandatariaId",
+          "mandataria",
+          "mandanteId",
+          "mandante"
+        ],
+        "rows": [
+          [
+            "impresa:02453890549",
+            "ABACUS S.R.L.",
+            "impresa:02844570545",
+            "ARCHEOTECH associazione professionale di archeologia"
+          ],
+          [
+            "impresa:02453890549",
+            "ABACUS S.R.L.",
+            "impresa:04347550263",
+            "DEMOGO Studio d'Architettura"
+          ],
+          [
+            "impresa:02453890549",
+            "ABACUS S.R.L.",
+            "impresa:03859330288",
+            "Mass Ingegneria e Architettura srl"
+          ],
+          [
+            "impresa:02453890549",
+            "ABACUS S.R.L.",
+            "impresa:02276000540",
+            "SGA Studio Geologi Associati"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:01272230424",
+            "ACALE STUDIO ASSOCIATO"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:01175050416",
+            "DOTT. GEOL. ALBERTO ANTINORI"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:01228490866",
+            "ENGINEERING GROUP SRL"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:04693180962",
+            "ING.MARIJA GOLUBOVIC"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:01985170446",
+            "LAURA PETRUCCI"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:03419611201",
+            "MATE SOCIETA' COOPERATIVA"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:02729900544",
+            "RELEVO SRL"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:01540750435",
+            "SOCIETA' COOPERATIVA ARCHEOLAB"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:02773280413",
+            "STUDIO PACI BETA SOC.CONS. A R.L"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa:03883230272",
+            "TFE INGEGNERIA SRL"
+          ],
+          [
+            "impresa:01065520429",
+            "ALL INGEGNERIA STUDIO TECNICO ASSOCIATO",
+            "impresa:00973370422",
+            "GEO/TEC"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "top_degree",
+      "title": "Top nodi per grado",
+      "intent": "Stesso ordinamento: in SQL su una colonna; in SPARQL su una proprietà datatyped (`sna:degree`). Le comunità Louvain restano fuori dal pattern base.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Top nodi per grado (metrica precalcolata)\nSELECT id, label, kind, degree\nFROM nodes\nORDER BY degree DESC, label\nLIMIT 15;",
+        "note": "Grado calcolato offline (NetworkX) e materializzato sui nodi."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?id ?label ?kind ?degree\nWHERE {\n  ?s sna:nodeId ?id ;\n     rdfs:label ?label ;\n     sna:kind ?kind ;\n     sna:degree ?degree .\n}\nORDER BY DESC(?degree) ?label\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "id",
+          "label",
+          "kind",
+          "degree"
+        ],
+        "rows": [
+          [
+            "impresa:_",
+            "ANNESSI LEONARDO",
+            "impresa",
+            "255"
+          ],
+          [
+            "sa:80001250432",
+            "PROVINCIA DI MACERATA",
+            "sa",
+            "143"
+          ],
+          [
+            "sa:80008630420",
+            "Regione Marche",
+            "sa",
+            "81"
+          ],
+          [
+            "sa:90038780442",
+            "AMMINISTRAZIONE PROVINCIALE DI FERMO",
+            "sa",
+            "59"
+          ],
+          [
+            "rup:MARINANGELI_LUCIA",
+            "MARINANGELI LUCIA",
+            "rup",
+            "59"
+          ],
+          [
+            "impresa:12502151009",
+            "SIDOTI ENGINEERING S.R.L.",
+            "impresa",
+            "51"
+          ],
+          [
+            "rup:CONOSCENTI_MAURIZIO",
+            "CONOSCENTI MAURIZIO",
+            "rup",
+            "45"
+          ],
+          [
+            "sa:06340981007",
+            "AGENZIA DEL DEMANIO",
+            "sa",
+            "38"
+          ],
+          [
+            "rup:BORSELLA_MARINA",
+            "BORSELLA MARINA",
+            "rup",
+            "38"
+          ],
+          [
+            "impresa:02453890549",
+            "ABACUS S.R.L.",
+            "impresa",
+            "35"
+          ],
+          [
+            "rup:ADDEI_LUCA",
+            "ADDEI LUCA",
+            "rup",
+            "34"
+          ],
+          [
+            "sa:00242710432",
+            "COMUNE DI CESSAPALOMBO",
+            "sa",
+            "34"
+          ],
+          [
+            "impresa:04347550263",
+            "DEMOGO Studio d'Architettura",
+            "impresa",
+            "32"
+          ],
+          [
+            "impresa:11203280158",
+            "CONTECO CHECK SRL",
+            "impresa",
+            "30"
+          ],
+          [
+            "impresa:02399260427",
+            "ACALE SRL",
+            "impresa",
+            "29"
+          ]
+        ]
+      }
+    }
+  ]
+}

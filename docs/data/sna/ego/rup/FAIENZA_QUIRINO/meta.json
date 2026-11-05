@@ -1,0 +1,29 @@
+{
+  "id": "ego-rup-FAIENZA_QUIRINO",
+  "kind": "rup",
+  "key": "FAIENZA QUIRINO",
+  "label": "FAIENZA QUIRINO",
+  "title": "RUP: FAIENZA QUIRINO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/FAIENZA_QUIRINO/network.json",
+  "n_nodes": 13,
+  "n_edges": 56,
+  "kinds": {
+    "rup": 1,
+    "cup": 2,
+    "sa": 2,
+    "impresa": 8
+  },
+  "rels": {
+    "rup_presso": 2,
+    "sa_su_cup": 2,
+    "aggiudicato_da": 8,
+    "con_rup": 8,
+    "aggiudicato_su_cup": 8,
+    "stesso_cup": 28
+  },
+  "n_communities": 2,
+  "n_cig": 11,
+  "n_cup": 0
+}

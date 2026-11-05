@@ -590,3 +590,382 @@ a.resource-link code {
   opacity: 1;
   color: #0066cc;
 }
+
+.sna-seed-picker {
+  padding: 1rem 1.1rem 1.15rem;
+  border: 1px solid #c5d0db;
+  border-left: 4px solid #5c2d91;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #faf7fd 0%, #ffffff 70%);
+}
+
+.sna-seed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.sna-seed-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border: 2px solid #cfd8e3;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sna-seed-card:hover {
+  border-color: #5c2d91;
+}
+
+.sna-seed-card.is-active {
+  border-color: #5c2d91;
+  box-shadow: 0 0 0 3px rgba(92, 45, 145, 0.15);
+  background: #f6f0fb;
+}
+
+.sna-seed-card__title {
+  font-weight: 700;
+  color: #17324d;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.sna-seed-card__blurb {
+  font-size: 0.85rem;
+  color: #5b6f82;
+  line-height: 1.35;
+}
+
+.sna-seed-card__stats {
+  font-size: 0.78rem;
+  color: #435a70;
+  font-variant-numeric: tabular-nums;
+}
+
+.sna-seed-desc {
+  font-size: 0.9rem;
+  color: #435a70;
+  border-top: 1px dashed #d0d7de;
+  padding-top: 0.75rem;
+}
+
+.sna-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.65rem;
+}
+
+.sna-stat {
+  padding: 0.65rem 0.8rem;
+  border-radius: 4px;
+  background: #f0f4f8;
+  border: 1px solid #d9e2ec;
+}
+
+.sna-stat--wide {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .sna-stat--wide {
+    grid-column: span 2;
+  }
+}
+
+.sna-stat__label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5b6f82;
+  margin-bottom: 0.15rem;
+}
+
+.sna-stat__value {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #17324d;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.sna-stat__hint {
+  display: block;
+  font-size: 0.78rem;
+  color: #5b6f82;
+  margin-top: 0.15rem;
+}
+
+.sna-stat__hint--block {
+  font-size: 0.85rem;
+  color: #17324d;
+}
+
+.sna-controls {
+  padding: 1rem 1.1rem 1.15rem;
+  border: 1px solid #b8c7d6;
+  border-radius: 4px;
+  background: #f5f8fb;
+}
+
+.sna-controls__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #d0d9e3;
+}
+
+.sna-controls__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+  align-items: flex-end;
+}
+
+.sna-control-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 140px;
+}
+
+.sna-control-block--full {
+  flex: 1 1 100%;
+}
+
+.sna-control-block--grow {
+  flex: 1 1 220px;
+}
+
+.sna-control-block--actions {
+  margin-left: auto;
+}
+
+.sna-control-block__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #435a70;
+  margin: 0;
+}
+
+.sna-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sna-chip {
+  appearance: none;
+  border: 1px solid #9aaeba;
+  background: #fff;
+  color: #17324d;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.sna-chip:hover {
+  border-color: #0066cc;
+}
+
+.sna-chip.is-active {
+  background: #0066cc;
+  border-color: #0066cc;
+  color: #fff;
+  font-weight: 600;
+}
+
+.sna-chip--kind.is-active {
+  color: #17324d;
+  font-weight: 600;
+}
+
+.sna-chip__count {
+  margin-left: 0.35rem;
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+
+.sna-input {
+  max-width: 100%;
+  background: #fff;
+}
+
+.sna-graph-wrap {
+  position: relative;
+  border: 1px solid #d9e2ec;
+  border-radius: 4px;
+  background: #f7f9fc;
+  padding: 0.5rem;
+}
+
+.sna-graph-canvas {
+  width: 100%;
+  min-height: 360px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.sna-graph-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.sna-swatch {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.sna-legend {
+  margin-bottom: 0;
+}
+
+.sna-query-panel {
+  padding: 0;
+  border: 1px solid #9eb6c9;
+  border-left: 4px solid #0066cc;
+  border-radius: 4px;
+  background: #f3f7fb;
+  overflow: hidden;
+}
+
+.sna-query-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 1.1rem;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: #17324d;
+}
+
+.sna-query-toggle:hover {
+  background: rgba(0, 102, 204, 0.06);
+}
+
+.sna-query-toggle__title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.sna-query-toggle__hint {
+  font-size: 0.85rem;
+  color: #5b6f82;
+}
+
+.sna-query-panel__body {
+  padding: 0 1.1rem 1.15rem;
+  border-top: 1px solid #c5d4e0;
+}
+
+.sna-query-intent {
+  font-size: 0.92rem;
+  color: #17324d;
+  margin-bottom: 0.85rem;
+}
+
+.sna-query-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sna-query-col {
+  background: #fff;
+  border: 1px solid #cfd8e3;
+  border-radius: 4px;
+  padding: 0.65rem 0.75rem;
+  min-width: 0;
+}
+
+.sna-query-col__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.6rem;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+
+.sna-query-col__title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #17324d;
+}
+
+.sna-query-col__meta {
+  font-size: 0.72rem;
+  color: #5b6f82;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.sna-query-code,
+.sna-query-code code {
+  margin: 0;
+  padding: 0;
+  max-height: none;
+  overflow: visible;
+  background: transparent;
+  color: #17324d;
+  border-radius: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: none;
+}
+
+.sna-query-code {
+  padding: 0.75rem 0.85rem;
+  max-height: 280px;
+  overflow: auto;
+  background: #f2f7fc;
+  border: 1px solid #d9e6f2;
+  border-radius: 4px;
+  color: #17324d;
+}
+
+.sna-query-code code {
+  display: block;
+  padding: 0;
+  background: transparent !important;
+  color: inherit !important;
+  font-size: inherit;
+}
+
+.sna-query-note {
+  margin: 0.45rem 0 0;
+  font-size: 0.78rem;
+  color: #5b6f82;
+}
+
+.sna-query-results {
+  margin-top: 0.85rem;
+}

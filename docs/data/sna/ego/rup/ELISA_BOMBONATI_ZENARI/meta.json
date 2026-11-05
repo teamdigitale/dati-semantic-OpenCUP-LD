@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-ELISA_BOMBONATI_ZENARI",
+  "kind": "rup",
+  "key": "ELISA BOMBONATI ZENARI",
+  "label": "ELISA BOMBONATI ZENARI",
+  "title": "RUP: ELISA BOMBONATI ZENARI",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/ELISA_BOMBONATI_ZENARI/network.json",
+  "n_nodes": 40,
+  "n_edges": 186,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 35,
+    "cup": 3
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 35,
+    "con_rup": 35,
+    "aggiudicato_su_cup": 12,
+    "sa_su_cup": 3,
+    "co_aggiudicatario_cig": 37,
+    "stesso_cup": 31,
+    "rti_mandataria": 16,
+    "rti_mandante": 16
+  },
+  "n_communities": 4,
+  "n_cig": 23,
+  "n_cup": 0
+}

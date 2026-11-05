@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-BONI_ENRICO",
+  "kind": "rup",
+  "key": "Boni Enrico",
+  "label": "Boni Enrico",
+  "title": "RUP: Boni Enrico",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/BONI_ENRICO/network.json",
+  "n_nodes": 32,
+  "n_edges": 102,
+  "kinds": {
+    "rup": 1,
+    "cup": 10,
+    "sa": 1,
+    "impresa": 20
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 20,
+    "con_rup": 20,
+    "aggiudicato_su_cup": 20,
+    "sa_su_cup": 10,
+    "co_aggiudicatario_cig": 10,
+    "stesso_cup": 13,
+    "rti_mandataria": 4,
+    "rti_mandante": 4
+  },
+  "n_communities": 5,
+  "n_cig": 47,
+  "n_cup": 0
+}

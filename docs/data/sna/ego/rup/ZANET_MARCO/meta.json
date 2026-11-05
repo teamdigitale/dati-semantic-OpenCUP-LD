@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-ZANET_MARCO",
+  "kind": "rup",
+  "key": "ZANET MARCO",
+  "label": "ZANET MARCO",
+  "title": "RUP: ZANET MARCO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/ZANET_MARCO/network.json",
+  "n_nodes": 32,
+  "n_edges": 95,
+  "kinds": {
+    "rup": 1,
+    "cup": 11,
+    "sa": 1,
+    "impresa": 19
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 19,
+    "con_rup": 19,
+    "aggiudicato_su_cup": 18,
+    "sa_su_cup": 11,
+    "co_aggiudicatario_cig": 6,
+    "stesso_cup": 11,
+    "rti_mandataria": 5,
+    "rti_mandante": 5
+  },
+  "n_communities": 11,
+  "n_cig": 14,
+  "n_cup": 0
+}

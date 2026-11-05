@@ -50,6 +50,9 @@ export interface ScopeData {
   scp_bandi_cigs?: number;
   scp_esiti_cigs?: number;
   hub_cigs_without_bando?: number;
+  istat_comuni?: number;
+  opencup_comuni?: number;
+  istat_opencup_matched?: number;
   gaps?: string[];
 }
 
@@ -88,6 +91,130 @@ export interface ChartData {
   /** Optional long titles / descriptions aligned with labels */
   details?: string[];
   series: { name: string; data: number[] }[];
+}
+
+export type SnaKind = "impresa" | "sa" | "rup" | "cup" | string;
+
+export type SnaMetric =
+  | "degree"
+  | "weighted_degree"
+  | "betweenness"
+  | "pagerank";
+
+export interface SnaNode {
+  id: string;
+  kind: SnaKind;
+  label: string;
+  cf?: string;
+  seed?: boolean;
+  n_esiti?: number;
+  importo_tot?: number;
+  report_url?: string;
+  degree: number;
+  weighted_degree: number;
+  betweenness: number;
+  pagerank: number;
+  community: number;
+}
+
+export interface SnaEdge {
+  source: string;
+  target: string;
+  rel: string;
+  n: number;
+  importo_tot: number;
+  weight: number;
+  n_cig?: number;
+}
+
+export interface SnaNetwork {
+  id: string;
+  directed: boolean;
+  nodes: SnaNode[];
+  edges: SnaEdge[];
+}
+
+export interface SnaTopEntry {
+  id: string;
+  label?: string;
+  kind?: string;
+  value: number;
+}
+
+export interface SnaMeta {
+  id: string;
+  title: string;
+  description: string;
+  sources_line: string;
+  n_nodes: number;
+  n_edges: number;
+  n_communities: number;
+  n_components: number;
+  density: number;
+  modularity: number;
+  kinds: Record<string, number>;
+  rels: Record<string, number>;
+  metrics: SnaMetric[];
+  top_pagerank: SnaTopEntry[];
+  top_betweenness: SnaTopEntry[];
+  top_degree: SnaTopEntry[];
+  graphml: string;
+  network: string;
+}
+
+export interface SnaIndexEntry {
+  id: string;
+  title: string;
+  blurb?: string;
+  description: string;
+  path: string;
+  meta: string;
+  graphml: string;
+  ttl?: string;
+  queries?: string;
+  nodes: number;
+  edges: number;
+  kinds: string[];
+  rels: string[];
+  n_communities: number;
+}
+
+export interface SnaIndex {
+  title: string;
+  note: string;
+  seeds: SnaIndexEntry[];
+}
+
+export interface SnaQueryBlock {
+  dialect?: string;
+  text: string;
+  note?: string;
+  graph?: string;
+  error?: string;
+}
+
+export interface SnaQueryResults {
+  columns: string[];
+  rows: string[][];
+}
+
+export interface SnaQueryCard {
+  id: string;
+  title: string;
+  intent: string;
+  focus?: { id: string; label?: string; kind?: string; value?: number };
+  sql: SnaQueryBlock;
+  sparql_sna: SnaQueryBlock;
+  sparql_ld: SnaQueryBlock | null;
+  results: SnaQueryResults;
+  results_ld?: SnaQueryResults;
+}
+
+export interface SnaQueriesDoc {
+  seed: string;
+  title: string;
+  note: string;
+  queries: SnaQueryCard[];
 }
 
 export interface CountsData {

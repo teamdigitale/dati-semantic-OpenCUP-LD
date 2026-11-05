@@ -1,0 +1,28 @@
+{
+  "id": "ego-rup-LEO_CARLO",
+  "kind": "rup",
+  "key": "LEO CARLO",
+  "label": "LEO CARLO",
+  "title": "RUP: LEO CARLO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/LEO_CARLO/network.json",
+  "n_nodes": 23,
+  "n_edges": 43,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 20,
+    "cup": 1
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 20,
+    "con_rup": 20,
+    "aggiudicato_su_cup": 1,
+    "sa_su_cup": 1
+  },
+  "n_communities": 2,
+  "n_cig": 22,
+  "n_cup": 0
+}

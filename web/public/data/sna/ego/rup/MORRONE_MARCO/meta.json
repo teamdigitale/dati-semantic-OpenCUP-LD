@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-MORRONE_MARCO",
+  "kind": "rup",
+  "key": "MORRONE MARCO",
+  "label": "MORRONE MARCO",
+  "title": "RUP: MORRONE MARCO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/MORRONE_MARCO/network.json",
+  "n_nodes": 33,
+  "n_edges": 85,
+  "kinds": {
+    "rup": 1,
+    "sa": 2,
+    "impresa": 24,
+    "cup": 6
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 24,
+    "con_rup": 24,
+    "aggiudicato_su_cup": 12,
+    "sa_su_cup": 6,
+    "co_aggiudicatario_cig": 3,
+    "stesso_cup": 10,
+    "rti_mandataria": 2,
+    "rti_mandante": 2
+  },
+  "n_communities": 4,
+  "n_cig": 31,
+  "n_cup": 0
+}

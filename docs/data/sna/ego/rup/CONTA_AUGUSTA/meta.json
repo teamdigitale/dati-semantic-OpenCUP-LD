@@ -1,0 +1,29 @@
+{
+  "id": "ego-rup-CONTA_AUGUSTA",
+  "kind": "rup",
+  "key": "CONTA AUGUSTA",
+  "label": "CONTA AUGUSTA",
+  "title": "RUP: CONTA AUGUSTA",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/CONTA_AUGUSTA/network.json",
+  "n_nodes": 129,
+  "n_edges": 300,
+  "kinds": {
+    "rup": 1,
+    "sa": 2,
+    "impresa": 111,
+    "cup": 15
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 112,
+    "con_rup": 111,
+    "aggiudicato_su_cup": 31,
+    "sa_su_cup": 16,
+    "stesso_cup": 28
+  },
+  "n_communities": 8,
+  "n_cig": 213,
+  "n_cup": 0
+}

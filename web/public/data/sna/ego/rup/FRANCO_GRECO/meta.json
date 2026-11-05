@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-FRANCO_GRECO",
+  "kind": "rup",
+  "key": "FRANCO GRECO",
+  "label": "FRANCO GRECO",
+  "title": "RUP: FRANCO GRECO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/FRANCO_GRECO/network.json",
+  "n_nodes": 49,
+  "n_edges": 108,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 40,
+    "cup": 7
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 40,
+    "con_rup": 40,
+    "aggiudicato_su_cup": 9,
+    "sa_su_cup": 7,
+    "co_aggiudicatario_cig": 3,
+    "stesso_cup": 2,
+    "rti_mandataria": 3,
+    "rti_mandante": 3
+  },
+  "n_communities": 11,
+  "n_cig": 40,
+  "n_cup": 0
+}

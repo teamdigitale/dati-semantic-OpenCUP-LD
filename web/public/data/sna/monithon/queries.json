@@ -1,0 +1,511 @@
+{
+  "seed": "monithon",
+  "title": "Come si chiede al grafo",
+  "note": "Stesse domande in SQL (tabelle nodes/edges) e in SPARQL sul network.ttl del seed. I risultati sono precomputati in build; non c’è un endpoint live.",
+  "queries": [
+    {
+      "id": "ego",
+      "title": "Vicini di «D'Agostino Angelo Antonio Costruzioni Generali Srl»",
+      "intent": "In SQL servono JOIN sulla tabella degli archi; in SPARQL lo stesso vicinato è un pattern soggetto–predicato–oggetto (eventualmente bidirezionale).",
+      "focus": {
+        "id": "impresa:02461490647",
+        "label": "D'Agostino Angelo Antonio Costruzioni Generali Srl",
+        "kind": "impresa",
+        "value": 0.019340614344900545
+      },
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Vicini di un soggetto (join su tabella archi)\n-- DuckDB su nodes/edges del network.json\nSELECT DISTINCT\n  CASE WHEN e.source = 'impresa:02461490647' THEN e.target ELSE e.source END AS neighbor_id,\n  n.label AS neighbor_label,\n  n.kind AS neighbor_kind,\n  e.rel\nFROM edges e\nJOIN nodes n\n  ON n.id = CASE WHEN e.source = 'impresa:02461490647' THEN e.target ELSE e.source END\nWHERE e.source = 'impresa:02461490647' OR e.target = 'impresa:02461490647'\nORDER BY neighbor_kind, neighbor_label\nLIMIT 15;",
+        "note": "Tabelle `nodes`/`edges` derivate da network.json."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?neighborId ?neighborLabel ?neighborKind ?rel\nWHERE {\n  BIND(<https://w3id.org/italia/data/opencup-ld/sna/node/impresa%3A02461490647> AS ?focus)\n  {\n    ?focus ?p ?neighbor .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  UNION\n  {\n    ?neighbor ?p ?focus .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  ?neighbor sna:nodeId ?neighborId ;\n            rdfs:label ?neighborLabel ;\n            sna:kind ?neighborKind .\n  FILTER(?rel NOT IN (\n    \"nodeId\",\"kind\",\"cf\",\"seed\",\"degree\",\"weightedDegree\",\n    \"betweenness\",\"pagerank\",\"community\",\"importoTot\"\n  ))\n}\nORDER BY ?neighborKind ?neighborLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "neighborId",
+          "neighborLabel",
+          "neighborKind",
+          "rel"
+        ],
+        "rows": [
+          [
+            "cup:J71H92000000007",
+            "J71H92000000007",
+            "cup",
+            "aggiudicato_su_cup"
+          ],
+          [
+            "impresa:14206491004",
+            "Atlante S.C.p.A.,",
+            "impresa",
+            "co_aggiudicatario_cig"
+          ],
+          [
+            "impresa:14206491004",
+            "Atlante S.C.p.A.,",
+            "impresa",
+            "rti_mandataria"
+          ],
+          [
+            "impresa:14206491004",
+            "Atlante S.C.p.A.,",
+            "impresa",
+            "stesso_cup"
+          ],
+          [
+            "impresa:14206491004",
+            "Atlante S.C.p.A.,",
+            "impresa",
+            "rti_mandante"
+          ],
+          [
+            "impresa:06044391214",
+            "Consorzio CONPAT S.C.A.R.L. (con consorziata esecutrice Mane",
+            "impresa",
+            "co_aggiudicatario_cig"
+          ],
+          [
+            "impresa:06044391214",
+            "Consorzio CONPAT S.C.A.R.L. (con consorziata esecutrice Mane",
+            "impresa",
+            "rti_mandante"
+          ],
+          [
+            "impresa:06044391214",
+            "Consorzio CONPAT S.C.A.R.L. (con consorziata esecutrice Mane",
+            "impresa",
+            "stesso_cup"
+          ],
+          [
+            "impresa:06044391214",
+            "Consorzio CONPAT S.C.A.R.L. (con consorziata esecutrice Mane",
+            "impresa",
+            "rti_mandataria"
+          ],
+          [
+            "impresa:01981810060",
+            "S.I.F.EL. S.p.A.",
+            "impresa",
+            "co_aggiudicatario_cig"
+          ],
+          [
+            "impresa:01981810060",
+            "S.I.F.EL. S.p.A.",
+            "impresa",
+            "stesso_cup"
+          ],
+          [
+            "rup:ALBANESE_GIUSEPPE",
+            "Albanese Giuseppe",
+            "rup",
+            "con_rup"
+          ],
+          [
+            "rup:IORANI_MASSIMO",
+            "Iorani Massimo",
+            "rup",
+            "con_rup"
+          ],
+          [
+            "sa:01585570581",
+            "RFI SPA",
+            "sa",
+            "aggiudicato_da"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "co_cig",
+      "title": "Co-aggiudicatari sullo stesso CIG",
+      "intent": "SQL filtra una colonna `rel`; SPARQL dichiara direttamente il predicato `sna:co_aggiudicatario_cig` — stesso fatto, sintassi a grafo.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Coppie di imprese co-aggiudicatarie sullo stesso CIG\nSELECT e.source AS a_id, na.label AS a_label,\n       e.target AS b_id, nb.label AS b_label,\n       e.n\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'co_aggiudicatario_cig'\nORDER BY e.n DESC, a_label, b_label\nLIMIT 15;",
+        "note": "Co-presenza su CIG ≠ necessariamente rapporto commerciale."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?aId ?aLabel ?bId ?bLabel\nWHERE {\n  ?a sna:co_aggiudicatario_cig ?b ;\n     sna:nodeId ?aId ; rdfs:label ?aLabel .\n  ?b sna:nodeId ?bId ; rdfs:label ?bLabel .\n}\nORDER BY ?aLabel ?bLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "aId",
+          "aLabel",
+          "bId",
+          "bLabel"
+        ],
+        "rows": [
+          [
+            "impresa:01210310551",
+            "ARCEXPLORERS S.N.C. DI LISCIARELLI ANDREA E SUADONI TANIA",
+            "impresa:03509710830",
+            "CONSORZIO STABILE VENTIMAGGIO SOC. CONS. A R.L."
+          ],
+          [
+            "impresa:DGDFNC88R69D575P",
+            "Arch. Francesca De Gaudio",
+            "impresa:SCRBCM79A42B774G",
+            "Arch. Bianca Maria Scerbo"
+          ],
+          [
+            "impresa:DGDFNC88R69D575P",
+            "Arch. Francesca De Gaudio",
+            "impresa:GRPLNZ57H18L219E",
+            "Arch. Lorenzo Greppi"
+          ],
+          [
+            "impresa:GRPLNZ57H18L219E",
+            "Arch. Lorenzo Greppi",
+            "impresa:SCRBCM79A42B774G",
+            "Arch. Bianca Maria Scerbo"
+          ],
+          [
+            "impresa:CRDMTT86S05C710P",
+            "Arch. Mattia Ciardullo",
+            "impresa:SCRBCM79A42B774G",
+            "Arch. Bianca Maria Scerbo"
+          ],
+          [
+            "impresa:CRDMTT86S05C710P",
+            "Arch. Mattia Ciardullo",
+            "impresa:DGDFNC88R69D575P",
+            "Arch. Francesca De Gaudio"
+          ],
+          [
+            "impresa:CRDMTT86S05C710P",
+            "Arch. Mattia Ciardullo",
+            "impresa:GRPLNZ57H18L219E",
+            "Arch. Lorenzo Greppi"
+          ],
+          [
+            "impresa:05593210726",
+            "BAWER",
+            "impresa:09586200017",
+            "PUNTO REC STUDIOS"
+          ],
+          [
+            "impresa:00761470848",
+            "COGEN S.r.l.",
+            "impresa:BRLMSM78P20D122U",
+            "Massimiliano Berlingeri"
+          ],
+          [
+            "impresa:00761470848",
+            "COGEN S.r.l.",
+            "impresa:05075971001",
+            "Studio Tecnico dellIng. M. Mulè & C. - M&B Progettazioni Amb"
+          ],
+          [
+            "impresa:03224520878",
+            "COGISA srl",
+            "impresa:05791980724",
+            "PRODON IMPIANTI TECNOLOGICI srl"
+          ],
+          [
+            "impresa:04490580653",
+            "Consorzio Stabile Grandi Lavori Scarl",
+            "impresa:07467330630",
+            "Meridiana Costruzioni Generali S.r.l."
+          ],
+          [
+            "impresa:04490580653",
+            "Consorzio Stabile Grandi Lavori Scarl",
+            "impresa:08164060587",
+            "Società Italiana Dragaggi S.p.a."
+          ],
+          [
+            "impresa:01963210818",
+            "D'ALBERTI COSTRUZIONI S.A.S. DI D'ALBERTI FRANCESCO",
+            "impresa:05840560824",
+            "I.CO.SER. S.R.L."
+          ],
+          [
+            "impresa:02461490647",
+            "D'Agostino Angelo Antonio Costruzioni Generali Srl",
+            "impresa:14206491004",
+            "Atlante S.C.p.A.,"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rti",
+      "title": "RTI: mandataria → mandanti",
+      "intent": "Nel relazionale il ruolo è spesso una colonna su più righe dello stesso CIG; nel grafo diventa un arco tipizzato tra due imprese.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- RTI: mandataria → mandanti\nSELECT e.source AS mandataria_id, na.label AS mandataria,\n       e.target AS mandante_id, nb.label AS mandante\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'rti_mandataria'\nORDER BY mandataria, mandante\nLIMIT 15;",
+        "note": "Rel `rti_mandataria`."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?mandatariaId ?mandataria ?mandanteId ?mandante\nWHERE {\n  ?a sna:rti_mandataria ?b ;\n     sna:nodeId ?mandatariaId ; rdfs:label ?mandataria .\n  ?b sna:nodeId ?mandanteId ; rdfs:label ?mandante .\n}\nORDER BY ?mandataria ?mandante\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "mandatariaId",
+          "mandataria",
+          "mandanteId",
+          "mandante"
+        ],
+        "rows": [
+          [
+            "impresa:GRPLNZ57H18L219E",
+            "Arch. Lorenzo Greppi",
+            "impresa:SCRBCM79A42B774G",
+            "Arch. Bianca Maria Scerbo"
+          ],
+          [
+            "impresa:GRPLNZ57H18L219E",
+            "Arch. Lorenzo Greppi",
+            "impresa:DGDFNC88R69D575P",
+            "Arch. Francesca De Gaudio"
+          ],
+          [
+            "impresa:GRPLNZ57H18L219E",
+            "Arch. Lorenzo Greppi",
+            "impresa:CRDMTT86S05C710P",
+            "Arch. Mattia Ciardullo"
+          ],
+          [
+            "impresa:05593210726",
+            "BAWER",
+            "impresa:09586200017",
+            "PUNTO REC STUDIOS"
+          ],
+          [
+            "impresa:02057500064",
+            "C.S.I. CONSORZIO STABILE INFRASTRUTTURE",
+            "impresa:00326430105",
+            "IMPRESA COSTRUZIONI APPALTI MARITTIMI I.C.A.M. FRATELLI..."
+          ],
+          [
+            "impresa:02057500064",
+            "C.S.I. CONSORZIO STABILE INFRASTRUTTURE",
+            "impresa:00166640342",
+            "IMPRESA TRE COLLI S.P.A."
+          ],
+          [
+            "impresa:00761470848",
+            "COGEN S.r.l.",
+            "impresa:BRLMSM78P20D122U",
+            "Massimiliano Berlingeri"
+          ],
+          [
+            "impresa:00761470848",
+            "COGEN S.r.l.",
+            "impresa:05075971001",
+            "Studio Tecnico dellIng. M. Mulè & C. - M&B Progettazioni Amb"
+          ],
+          [
+            "impresa:03224520878",
+            "COGISA srl",
+            "impresa:05791980724",
+            "PRODON IMPIANTI TECNOLOGICI srl"
+          ],
+          [
+            "impresa:03509710830",
+            "CONSORZIO STABILE VENTIMAGGIO SOC. CONS. A R.L.",
+            "impresa:01210310551",
+            "ARCEXPLORERS S.N.C. DI LISCIARELLI ANDREA E SUADONI TANIA"
+          ],
+          [
+            "impresa:06044391214",
+            "Consorzio CONPAT S.C.A.R.L. (con consorziata esecutrice Mane",
+            "impresa:02461490647",
+            "D'Agostino Angelo Antonio Costruzioni Generali Srl"
+          ],
+          [
+            "impresa:06044391214",
+            "Consorzio CONPAT S.C.A.R.L. (con consorziata esecutrice Mane",
+            "impresa:01981810060",
+            "S.I.F.EL. S.p.A."
+          ],
+          [
+            "impresa:02461490647",
+            "D'Agostino Angelo Antonio Costruzioni Generali Srl",
+            "impresa:14206491004",
+            "Atlante S.C.p.A.,"
+          ],
+          [
+            "impresa:11040080019",
+            "EP&S S.C.A.R.L.",
+            "impresa:05961930962",
+            "ECSSD SRL"
+          ],
+          [
+            "impresa:11040080019",
+            "EP&S S.C.A.R.L.",
+            "impresa:02942070802",
+            "STUDIO TECNICO ARTUSO ARCHITETTI ASSOCIATI"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "top_degree",
+      "title": "Top nodi per grado",
+      "intent": "Stesso ordinamento: in SQL su una colonna; in SPARQL su una proprietà datatyped (`sna:degree`). Le comunità Louvain restano fuori dal pattern base.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Top nodi per grado (metrica precalcolata)\nSELECT id, label, kind, degree\nFROM nodes\nORDER BY degree DESC, label\nLIMIT 15;",
+        "note": "Grado calcolato offline (NetworkX) e materializzato sui nodi."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?id ?label ?kind ?degree\nWHERE {\n  ?s sna:nodeId ?id ;\n     rdfs:label ?label ;\n     sna:kind ?kind ;\n     sna:degree ?degree .\n}\nORDER BY DESC(?degree) ?label\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": {
+        "text": "PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>\nPREFIX PCTR: <https://w3id.org/italia/onto/PCTR/>\nPREFIX COV: <https://w3id.org/italia/onto/COV/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX schema: <https://schema.org/>\n\nSELECT ?title ?about\nWHERE {\n  ?report a schema:Report .\n  OPTIONAL { ?report schema:name ?title }\n  OPTIONAL { ?report schema:headline ?title }\n  OPTIONAL { ?report schema:about ?about }\n}\nLIMIT 15",
+        "graph": "LD/ttl/all_monithon.ttl",
+        "note": "Report Monithon → CUP nel grafo RDF (schema:about / subject)."
+      },
+      "results": {
+        "columns": [
+          "id",
+          "label",
+          "kind",
+          "degree"
+        ],
+        "rows": [
+          [
+            "cup:G15J08000010009",
+            "G15J08000010009",
+            "cup",
+            "7594"
+          ],
+          [
+            "beneficiario:_",
+            "***************",
+            "beneficiario",
+            "579"
+          ],
+          [
+            "ente:80012000826",
+            "REGIONE AUTONOMA DELLA SICILIA",
+            "ente",
+            "136"
+          ],
+          [
+            "ente:80011990639",
+            "REGIONE CAMPANIA",
+            "ente",
+            "104"
+          ],
+          [
+            "ente:AMMINISTRAZIONE_REGIONALE_REGIONE_CALABRIA",
+            "AMMINISTRAZIONE REGIONALE - REGIONE CALABRIA",
+            "ente",
+            "80"
+          ],
+          [
+            "ente:_CODICE_FISCALE_",
+            "CAT SUITE HOME DI MIRELLA ARIATA",
+            "ente",
+            "46"
+          ],
+          [
+            "ente:02205340793",
+            "REGIONE CALABRIA",
+            "ente",
+            "38"
+          ],
+          [
+            "ente:80050050154",
+            "REGIONE LOMBARDIA",
+            "ente",
+            "32"
+          ],
+          [
+            "ente:80002870923",
+            "REGIONE AUTONOMA DELLA SARDEGNA",
+            "ente",
+            "31"
+          ],
+          [
+            "cup:B83J12000240008",
+            "B83J12000240008",
+            "cup",
+            "28"
+          ],
+          [
+            "ente:97532760580",
+            "MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI",
+            "ente",
+            "27"
+          ],
+          [
+            "ente:80007580279",
+            "REGIONE VENETO",
+            "ente",
+            "26"
+          ],
+          [
+            "ente:SOGGETTO_PRIVATO",
+            "soggetto privato",
+            "ente",
+            "25"
+          ],
+          [
+            "cup:B29E20000270001",
+            "B29E20000270001",
+            "cup",
+            "24"
+          ],
+          [
+            "ente:01386030488",
+            "REGIONE TOSCANA",
+            "ente",
+            "22"
+          ]
+        ]
+      },
+      "results_ld": {
+        "columns": [
+          "title",
+          "about"
+        ],
+        "rows": [
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/H96D17000560002"
+          ],
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/C97E12000010005"
+          ],
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/J56G14000650002"
+          ],
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/J33D13000430006"
+          ],
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/H32I18000050006"
+          ],
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/G75C11004900006"
+          ],
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/1SA00120105938A"
+          ],
+          [
+            "",
+            "https://w3id.org/italia/PublicInvestment/data/CUP/2MINT28CAL23RC2"
+          ]
+        ]
+      }
+    }
+  ]
+}

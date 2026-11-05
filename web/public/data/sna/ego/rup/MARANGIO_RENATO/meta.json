@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-MARANGIO_RENATO",
+  "kind": "rup",
+  "key": "Marangio Renato",
+  "label": "Marangio Renato",
+  "title": "RUP: Marangio Renato",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/MARANGIO_RENATO/network.json",
+  "n_nodes": 27,
+  "n_edges": 83,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 22,
+    "cup": 3
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 22,
+    "con_rup": 22,
+    "aggiudicato_su_cup": 10,
+    "sa_su_cup": 3,
+    "co_aggiudicatario_cig": 1,
+    "stesso_cup": 22,
+    "rti_mandataria": 1,
+    "rti_mandante": 1
+  },
+  "n_communities": 4,
+  "n_cig": 22,
+  "n_cup": 0
+}

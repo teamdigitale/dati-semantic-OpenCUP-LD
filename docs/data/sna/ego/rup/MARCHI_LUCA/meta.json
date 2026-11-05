@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-MARCHI_LUCA",
+  "kind": "rup",
+  "key": "marchi luca",
+  "label": "marchi luca",
+  "title": "RUP: marchi luca",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/MARCHI_LUCA/network.json",
+  "n_nodes": 10,
+  "n_edges": 21,
+  "kinds": {
+    "rup": 1,
+    "cup": 5,
+    "sa": 1,
+    "impresa": 3
+  },
+  "rels": {
+    "rup_presso": 1,
+    "sa_su_cup": 5,
+    "aggiudicato_da": 3,
+    "con_rup": 3,
+    "aggiudicato_su_cup": 5,
+    "co_aggiudicatario_cig": 1,
+    "stesso_cup": 1,
+    "rti_mandataria": 1,
+    "rti_mandante": 1
+  },
+  "n_communities": 2,
+  "n_cig": 10,
+  "n_cup": 0
+}

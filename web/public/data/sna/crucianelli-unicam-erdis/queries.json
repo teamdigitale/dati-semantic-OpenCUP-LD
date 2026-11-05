@@ -1,0 +1,293 @@
+{
+  "seed": "crucianelli-unicam-erdis",
+  "title": "Come si chiede al grafo",
+  "note": "Stesse domande in SQL (tabelle nodes/edges) e in SPARQL sul network.ttl del seed. I risultati sono precomputati in build; non c’è un endpoint live.",
+  "queries": [
+    {
+      "id": "ego",
+      "title": "Vicini di «Crucianelli Restauri di Crucianelli Paola»",
+      "intent": "In SQL servono JOIN sulla tabella degli archi; in SPARQL lo stesso vicinato è un pattern soggetto–predicato–oggetto (eventualmente bidirezionale).",
+      "focus": {
+        "id": "impresa:CRCPLA74L43G702G",
+        "label": "Crucianelli Restauri di Crucianelli Paola",
+        "kind": "impresa",
+        "value": 0.05012697909920318
+      },
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Vicini di un soggetto (join su tabella archi)\n-- DuckDB su nodes/edges del network.json\nSELECT DISTINCT\n  CASE WHEN e.source = 'impresa:CRCPLA74L43G702G' THEN e.target ELSE e.source END AS neighbor_id,\n  n.label AS neighbor_label,\n  n.kind AS neighbor_kind,\n  e.rel\nFROM edges e\nJOIN nodes n\n  ON n.id = CASE WHEN e.source = 'impresa:CRCPLA74L43G702G' THEN e.target ELSE e.source END\nWHERE e.source = 'impresa:CRCPLA74L43G702G' OR e.target = 'impresa:CRCPLA74L43G702G'\nORDER BY neighbor_kind, neighbor_label\nLIMIT 15;",
+        "note": "Tabelle `nodes`/`edges` derivate da network.json."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?neighborId ?neighborLabel ?neighborKind ?rel\nWHERE {\n  BIND(<https://w3id.org/italia/data/opencup-ld/sna/node/impresa%3ACRCPLA74L43G702G> AS ?focus)\n  {\n    ?focus ?p ?neighbor .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  UNION\n  {\n    ?neighbor ?p ?focus .\n    BIND(STRAFTER(STR(?p), \"https://w3id.org/italia/data/opencup-ld/sna/\") AS ?rel)\n  }\n  ?neighbor sna:nodeId ?neighborId ;\n            rdfs:label ?neighborLabel ;\n            sna:kind ?neighborKind .\n  FILTER(?rel NOT IN (\n    \"nodeId\",\"kind\",\"cf\",\"seed\",\"degree\",\"weightedDegree\",\n    \"betweenness\",\"pagerank\",\"community\",\"importoTot\"\n  ))\n}\nORDER BY ?neighborKind ?neighborLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "neighborId",
+          "neighborLabel",
+          "neighborKind",
+          "rel"
+        ],
+        "rows": [
+          [
+            "rup:BARION_FRANCESCA",
+            "Barion Francesca",
+            "rup",
+            "con_rup"
+          ],
+          [
+            "sa:90008170293",
+            "Ente Parco Regionale Veneto Delta del Po",
+            "sa",
+            "aggiudicato_da"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "co_cig",
+      "title": "Co-aggiudicatari sullo stesso CIG",
+      "intent": "SQL filtra una colonna `rel`; SPARQL dichiara direttamente il predicato `sna:co_aggiudicatario_cig` — stesso fatto, sintassi a grafo.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Coppie di imprese co-aggiudicatarie sullo stesso CIG\nSELECT e.source AS a_id, na.label AS a_label,\n       e.target AS b_id, nb.label AS b_label,\n       e.n\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'co_aggiudicatario_cig'\nORDER BY e.n DESC, a_label, b_label\nLIMIT 15;",
+        "note": "Co-presenza su CIG ≠ necessariamente rapporto commerciale."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?aId ?aLabel ?bId ?bLabel\nWHERE {\n  ?a sna:co_aggiudicatario_cig ?b ;\n     sna:nodeId ?aId ; rdfs:label ?aLabel .\n  ?b sna:nodeId ?bId ; rdfs:label ?bLabel .\n}\nORDER BY ?aLabel ?bLabel\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "aId",
+          "aLabel",
+          "bId",
+          "bLabel"
+        ],
+        "rows": [
+          [
+            "impresa:00634600431",
+            "CRUCIANELLI REST/EDILE SRL",
+            "impresa:01096690431",
+            "EREDI PACI GERARDO"
+          ],
+          [
+            "impresa:00634600431",
+            "CRUCIANELLI REST/EDILE SRL",
+            "impresa:01441990437",
+            "GRIME"
+          ],
+          [
+            "impresa:01781710668",
+            "Consorzio Stabile Rennova SCARL",
+            "impresa:05362211004",
+            "La Torre Costruzioni"
+          ],
+          [
+            "impresa:01096690431",
+            "EREDI PACI GERARDO",
+            "impresa:01441990437",
+            "GRIME"
+          ],
+          [
+            "impresa:02019130430",
+            "Edilasfalti & C. srl",
+            "impresa:02398840401",
+            "Olimpia Costruzioni srl"
+          ],
+          [
+            "impresa:00452620552",
+            "Italstem spa",
+            "impresa:01922900566",
+            "Esteel srl"
+          ],
+          [
+            "impresa:00799220157",
+            "WALDNER",
+            "impresa:02481080964",
+            "AHSI"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rti",
+      "title": "RTI: mandataria → mandanti",
+      "intent": "Nel relazionale il ruolo è spesso una colonna su più righe dello stesso CIG; nel grafo diventa un arco tipizzato tra due imprese.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- RTI: mandataria → mandanti\nSELECT e.source AS mandataria_id, na.label AS mandataria,\n       e.target AS mandante_id, nb.label AS mandante\nFROM edges e\nJOIN nodes na ON na.id = e.source\nJOIN nodes nb ON nb.id = e.target\nWHERE e.rel = 'rti_mandataria'\nORDER BY mandataria, mandante\nLIMIT 15;",
+        "note": "Rel `rti_mandataria`."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?mandatariaId ?mandataria ?mandanteId ?mandante\nWHERE {\n  ?a sna:rti_mandataria ?b ;\n     sna:nodeId ?mandatariaId ; rdfs:label ?mandataria .\n  ?b sna:nodeId ?mandanteId ; rdfs:label ?mandante .\n}\nORDER BY ?mandataria ?mandante\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "mandatariaId",
+          "mandataria",
+          "mandanteId",
+          "mandante"
+        ],
+        "rows": [
+          [
+            "impresa:02481080964",
+            "AHSI",
+            "impresa:00799220157",
+            "WALDNER"
+          ],
+          [
+            "impresa:00634600431",
+            "CRUCIANELLI REST/EDILE SRL",
+            "impresa:01096690431",
+            "EREDI PACI GERARDO"
+          ],
+          [
+            "impresa:00634600431",
+            "CRUCIANELLI REST/EDILE SRL",
+            "impresa:01441990437",
+            "GRIME"
+          ],
+          [
+            "impresa:01781710668",
+            "Consorzio Stabile Rennova SCARL",
+            "impresa:05362211004",
+            "La Torre Costruzioni"
+          ],
+          [
+            "impresa:01922900566",
+            "Esteel srl",
+            "impresa:00452620552",
+            "Italstem spa"
+          ],
+          [
+            "impresa:02398840401",
+            "Olimpia Costruzioni srl",
+            "impresa:02019130430",
+            "Edilasfalti & C. srl"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "top_degree",
+      "title": "Top nodi per grado",
+      "intent": "Stesso ordinamento: in SQL su una colonna; in SPARQL su una proprietà datatyped (`sna:degree`). Le comunità Louvain restano fuori dal pattern base.",
+      "sql": {
+        "dialect": "duckdb",
+        "text": "-- Top nodi per grado (metrica precalcolata)\nSELECT id, label, kind, degree\nFROM nodes\nORDER BY degree DESC, label\nLIMIT 15;",
+        "note": "Grado calcolato offline (NetworkX) e materializzato sui nodi."
+      },
+      "sparql_sna": {
+        "text": "PREFIX sna: <https://w3id.org/italia/data/opencup-ld/sna/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?id ?label ?kind ?degree\nWHERE {\n  ?s sna:nodeId ?id ;\n     rdfs:label ?label ;\n     sna:kind ?kind ;\n     sna:degree ?degree .\n}\nORDER BY DESC(?degree) ?label\nLIMIT 15",
+        "graph": "network.ttl"
+      },
+      "sparql_ld": null,
+      "results": {
+        "columns": [
+          "id",
+          "label",
+          "kind",
+          "degree"
+        ],
+        "rows": [
+          [
+            "sa:90008170293",
+            "Ente Parco Regionale Veneto Delta del Po",
+            "sa",
+            "26"
+          ],
+          [
+            "rup:GOTTARDI_MARCO",
+            "Gottardi Marco",
+            "rup",
+            "14"
+          ],
+          [
+            "rup:MARUCCI_GIAN_LUCA",
+            "Marucci Gian Luca",
+            "rup",
+            "14"
+          ],
+          [
+            "sa:81001910439",
+            "Università degli studi di Camerino",
+            "sa",
+            "14"
+          ],
+          [
+            "sa:02770710420",
+            "ERDIS MARCHE",
+            "sa",
+            "11"
+          ],
+          [
+            "rup:POMPILI_MICHELE",
+            "POMPILI MICHELE",
+            "rup",
+            "11"
+          ],
+          [
+            "sa:80007580279",
+            "Regione del Veneto",
+            "sa",
+            "11"
+          ],
+          [
+            "rup:DE_FAVERI_ROBERTA",
+            "De Faveri Roberta",
+            "rup",
+            "8"
+          ],
+          [
+            "rup:BRESSANI_FAUSTA",
+            "Bressani Fausta",
+            "rup",
+            "7"
+          ],
+          [
+            "impresa:00634600431",
+            "CRUCIANELLI REST/EDILE SRL",
+            "impresa",
+            "4"
+          ],
+          [
+            "sa:CFAVCP_0000EFC",
+            "CUC COMUNE DI COMACCHIO,CODIGORO,FISCAGLIA,GORO,LAGOSANTO,MESOLA",
+            "sa",
+            "4"
+          ],
+          [
+            "rup:DE_GREGORIO_MARIA_TERESA",
+            "De Gregorio Maria Teresa",
+            "rup",
+            "4"
+          ],
+          [
+            "impresa:01096690431",
+            "EREDI PACI GERARDO",
+            "impresa",
+            "4"
+          ],
+          [
+            "impresa:01441990437",
+            "GRIME",
+            "impresa",
+            "4"
+          ],
+          [
+            "impresa:02481080964",
+            "AHSI",
+            "impresa",
+            "3"
+          ]
+        ]
+      }
+    }
+  ]
+}

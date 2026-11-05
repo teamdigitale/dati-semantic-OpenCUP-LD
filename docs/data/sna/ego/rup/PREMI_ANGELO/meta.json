@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-PREMI_ANGELO",
+  "kind": "rup",
+  "key": "PREMI ANGELO",
+  "label": "PREMI ANGELO",
+  "title": "RUP: PREMI ANGELO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/PREMI_ANGELO/network.json",
+  "n_nodes": 73,
+  "n_edges": 224,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 47,
+    "cup": 24
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 47,
+    "con_rup": 47,
+    "aggiudicato_su_cup": 30,
+    "sa_su_cup": 24,
+    "co_aggiudicatario_cig": 39,
+    "stesso_cup": 12,
+    "rti_mandataria": 12,
+    "rti_mandante": 12
+  },
+  "n_communities": 23,
+  "n_cig": 36,
+  "n_cup": 0
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-SCOMMEGNA_SANTA",
+  "kind": "rup",
+  "key": "SCOMMEGNA SANTA",
+  "label": "SCOMMEGNA SANTA",
+  "title": "RUP: SCOMMEGNA SANTA",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/SCOMMEGNA_SANTA/network.json",
+  "n_nodes": 21,
+  "n_edges": 77,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 18,
+    "cup": 1
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 18,
+    "con_rup": 18,
+    "aggiudicato_su_cup": 5,
+    "sa_su_cup": 1,
+    "co_aggiudicatario_cig": 12,
+    "stesso_cup": 10,
+    "rti_mandataria": 6,
+    "rti_mandante": 6
+  },
+  "n_communities": 2,
+  "n_cig": 17,
+  "n_cup": 0
+}

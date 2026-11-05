@@ -1,0 +1,29 @@
+{
+  "id": "ego-rup-BONANNO_SANTI",
+  "kind": "rup",
+  "key": "Bonanno Santi",
+  "label": "Bonanno Santi",
+  "title": "RUP: Bonanno Santi",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/BONANNO_SANTI/network.json",
+  "n_nodes": 14,
+  "n_edges": 31,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 8,
+    "cup": 4
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 8,
+    "con_rup": 8,
+    "aggiudicato_su_cup": 4,
+    "sa_su_cup": 4,
+    "co_aggiudicatario_cig": 6
+  },
+  "n_communities": 5,
+  "n_cig": 16,
+  "n_cup": 0
+}

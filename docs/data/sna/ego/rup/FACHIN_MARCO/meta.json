@@ -1,0 +1,28 @@
+{
+  "id": "ego-rup-FACHIN_MARCO",
+  "kind": "rup",
+  "key": "Fachin Marco",
+  "label": "Fachin Marco",
+  "title": "RUP: Fachin Marco",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/FACHIN_MARCO/network.json",
+  "n_nodes": 10,
+  "n_edges": 17,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 6,
+    "cup": 2
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 6,
+    "con_rup": 6,
+    "aggiudicato_su_cup": 2,
+    "sa_su_cup": 2
+  },
+  "n_communities": 3,
+  "n_cig": 101,
+  "n_cup": 0
+}

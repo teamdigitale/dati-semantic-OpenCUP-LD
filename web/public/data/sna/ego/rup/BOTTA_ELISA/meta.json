@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-BOTTA_ELISA",
+  "kind": "rup",
+  "key": "Botta Elisa",
+  "label": "Botta Elisa",
+  "title": "RUP: Botta Elisa",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/BOTTA_ELISA/network.json",
+  "n_nodes": 53,
+  "n_edges": 132,
+  "kinds": {
+    "rup": 1,
+    "cup": 20,
+    "sa": 2,
+    "impresa": 30
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 30,
+    "con_rup": 30,
+    "aggiudicato_su_cup": 29,
+    "sa_su_cup": 20,
+    "co_aggiudicatario_cig": 2,
+    "stesso_cup": 15,
+    "rti_mandataria": 2,
+    "rti_mandante": 2
+  },
+  "n_communities": 3,
+  "n_cig": 31,
+  "n_cup": 0
+}

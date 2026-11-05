@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-MINUTI_DIEGO",
+  "kind": "rup",
+  "key": "MINUTI DIEGO",
+  "label": "MINUTI DIEGO",
+  "title": "RUP: MINUTI DIEGO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/MINUTI_DIEGO/network.json",
+  "n_nodes": 91,
+  "n_edges": 319,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 50,
+    "cup": 39
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 50,
+    "con_rup": 50,
+    "aggiudicato_su_cup": 64,
+    "sa_su_cup": 39,
+    "co_aggiudicatario_cig": 53,
+    "stesso_cup": 60,
+    "rti_mandataria": 1,
+    "rti_mandante": 1
+  },
+  "n_communities": 26,
+  "n_cig": 74,
+  "n_cup": 0
+}

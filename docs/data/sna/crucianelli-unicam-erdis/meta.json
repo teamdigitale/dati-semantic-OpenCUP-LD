@@ -1,0 +1,492 @@
+{
+  "id": "crucianelli-unicam-erdis",
+  "title": "Crucianelli / Unicam / ERDIS",
+  "description": "Rete impresa ↔ RUP ↔ stazione appaltante costruita dagli esiti SCP partendo dall’impresa seed Crucianelli Rest/Edile, dai CUP Unicam e dagli esiti ERDIS con RUP Pompili. Include co-aggiudicatari, stesso CUP e archi RTI (mandataria/mandante).",
+  "sources_line": "SCP MIT · ANAC CUP↔CIG · OpenCUP · OpenCoesione Soggetti",
+  "n_nodes": 71,
+  "n_edges": 152,
+  "n_communities": 5,
+  "n_components": 5,
+  "density": 0.05352112676056338,
+  "modularity": 0.27171544672096637,
+  "kinds": {
+    "impresa": 56,
+    "rup": 10,
+    "sa": 5
+  },
+  "rels": {
+    "aggiudicato_da": 56,
+    "co_aggiudicatario_cig": 7,
+    "con_rup": 58,
+    "rti_mandante": 6,
+    "rti_mandataria": 6,
+    "rup_presso": 10,
+    "stesso_cup": 9
+  },
+  "metrics": [
+    "degree",
+    "weighted_degree",
+    "betweenness",
+    "pagerank"
+  ],
+  "top_pagerank": [
+    {
+      "id": "sa:90008170293",
+      "label": "Ente Parco Regionale Veneto Delta del Po",
+      "kind": "sa",
+      "value": 0.0870523695698816
+    },
+    {
+      "id": "impresa:CRCPLA74L43G702G",
+      "label": "Crucianelli Restauri di Crucianelli Paola",
+      "kind": "impresa",
+      "value": 0.05012697909920318
+    },
+    {
+      "id": "rup:MARUCCI_GIAN_LUCA",
+      "label": "Marucci Gian Luca",
+      "kind": "rup",
+      "value": 0.04935284527133033
+    },
+    {
+      "id": "sa:81001910439",
+      "label": "Università degli studi di Camerino",
+      "kind": "sa",
+      "value": 0.049352845271330326
+    },
+    {
+      "id": "sa:02770710420",
+      "label": "ERDIS MARCHE",
+      "kind": "sa",
+      "value": 0.03996957084509348
+    },
+    {
+      "id": "rup:POMPILI_MICHELE",
+      "label": "POMPILI MICHELE",
+      "kind": "rup",
+      "value": 0.03996957084509348
+    },
+    {
+      "id": "sa:80007580279",
+      "label": "Regione del Veneto",
+      "kind": "sa",
+      "value": 0.03948668143503203
+    },
+    {
+      "id": "rup:GOTTARDI_MARCO",
+      "label": "Gottardi Marco",
+      "kind": "rup",
+      "value": 0.03895717287356817
+    },
+    {
+      "id": "impresa:00823440763",
+      "label": "falegnameria la quercia di giovanni e francesco zaccagnino",
+      "kind": "impresa",
+      "value": 0.030121680184466006
+    },
+    {
+      "id": "impresa:01873840670",
+      "label": "KS COSTRUZIONI S.r.l.",
+      "kind": "impresa",
+      "value": 0.027723211263172468
+    },
+    {
+      "id": "impresa:04968991002",
+      "label": "ALTAIR 4 MULTIMEDIA SRL",
+      "kind": "impresa",
+      "value": 0.025954175929564016
+    },
+    {
+      "id": "impresa:GBCDAA56M59L424P",
+      "label": "CHIMERA di Ada Gabucci",
+      "kind": "impresa",
+      "value": 0.025838761911104353
+    },
+    {
+      "id": "rup:BARION_FRANCESCA",
+      "label": "Barion Francesca",
+      "kind": "rup",
+      "value": 0.02483009267866777
+    },
+    {
+      "id": "impresa:01732620305",
+      "label": "Legnolandia srl",
+      "kind": "impresa",
+      "value": 0.0244621652273762
+    },
+    {
+      "id": "rup:DE_FAVERI_ROBERTA",
+      "label": "De Faveri Roberta",
+      "kind": "rup",
+      "value": 0.021988018786226506
+    },
+    {
+      "id": "rup:BRESSANI_FAUSTA",
+      "label": "Bressani Fausta",
+      "kind": "rup",
+      "value": 0.02082400520386743
+    },
+    {
+      "id": "rup:DE_GREGORIO_MARIA_TERESA",
+      "label": "De Gregorio Maria Teresa",
+      "kind": "rup",
+      "value": 0.020774751697106096
+    },
+    {
+      "id": "impresa:00968020297",
+      "label": "FULVIA TOUR S.R.L.",
+      "kind": "impresa",
+      "value": 0.019606390559266194
+    },
+    {
+      "id": "impresa:00205160427",
+      "label": "TORELLI DOTTORI SPA",
+      "kind": "impresa",
+      "value": 0.018760032773418773
+    },
+    {
+      "id": "impresa:01922900566",
+      "label": "Esteel srl",
+      "kind": "impresa",
+      "value": 0.018450307213461057
+    },
+    {
+      "id": "sa:CFAVCP_0000EFC",
+      "label": "CUC COMUNE DI COMACCHIO,CODIGORO,FISCAGLIA,GORO,LAGOSANTO,MESOLA",
+      "kind": "sa",
+      "value": 0.018037663757292946
+    },
+    {
+      "id": "impresa:00452620552",
+      "label": "Italstem spa",
+      "kind": "impresa",
+      "value": 0.016393348410359956
+    },
+    {
+      "id": "impresa:04469920260",
+      "label": "Duelle Sport Promotions srl",
+      "kind": "impresa",
+      "value": 0.01493386703666014
+    },
+    {
+      "id": "rup:POZZATI_MARIO",
+      "label": "Pozzati Mario",
+      "kind": "rup",
+      "value": 0.014914472073534574
+    },
+    {
+      "id": "impresa:01798430615",
+      "label": "COSTRUZIONI INGG. PENZI SPA",
+      "kind": "impresa",
+      "value": 0.013265011178341108
+    }
+  ],
+  "top_betweenness": [
+    {
+      "id": "sa:90008170293",
+      "label": "Ente Parco Regionale Veneto Delta del Po",
+      "kind": "sa",
+      "value": 0.10248447204968944
+    },
+    {
+      "id": "rup:GOTTARDI_MARCO",
+      "label": "Gottardi Marco",
+      "kind": "rup",
+      "value": 0.02401656314699793
+    },
+    {
+      "id": "sa:80007580279",
+      "label": "Regione del Veneto",
+      "kind": "sa",
+      "value": 0.015320910973084885
+    },
+    {
+      "id": "rup:MARUCCI_GIAN_LUCA",
+      "label": "Marucci Gian Luca",
+      "kind": "rup",
+      "value": 0.014699792960662525
+    },
+    {
+      "id": "sa:81001910439",
+      "label": "Università degli studi di Camerino",
+      "kind": "sa",
+      "value": 0.014699792960662525
+    },
+    {
+      "id": "rup:DE_FAVERI_ROBERTA",
+      "label": "De Faveri Roberta",
+      "kind": "rup",
+      "value": 0.012422360248447204
+    },
+    {
+      "id": "sa:02770710420",
+      "label": "ERDIS MARCHE",
+      "kind": "sa",
+      "value": 0.008902691511387164
+    },
+    {
+      "id": "rup:POMPILI_MICHELE",
+      "label": "POMPILI MICHELE",
+      "kind": "rup",
+      "value": 0.008902691511387164
+    },
+    {
+      "id": "impresa:05362211004",
+      "label": "La Torre Costruzioni",
+      "kind": "impresa",
+      "value": 0.005797101449275362
+    },
+    {
+      "id": "impresa:00452620552",
+      "label": "Italstem spa",
+      "kind": "impresa",
+      "value": 0.005383022774327122
+    },
+    {
+      "id": "impresa:02487951200",
+      "label": "CO.AR.CO Soc. Cons. a r.l.",
+      "kind": "impresa",
+      "value": 0.004140786749482402
+    },
+    {
+      "id": "impresa:05583490874",
+      "label": "NEW CIR SRL",
+      "kind": "impresa",
+      "value": 0.004140786749482402
+    },
+    {
+      "id": "rup:BRESSANI_FAUSTA",
+      "label": "Bressani Fausta",
+      "kind": "rup",
+      "value": 0.003105590062111801
+    },
+    {
+      "id": "impresa:01096690431",
+      "label": "EREDI PACI GERARDO",
+      "kind": "impresa",
+      "value": 0.002484472049689441
+    },
+    {
+      "id": "impresa:01441990437",
+      "label": "GRIME",
+      "kind": "impresa",
+      "value": 0.002484472049689441
+    },
+    {
+      "id": "sa:CFAVCP_0000EFC",
+      "label": "CUC COMUNE DI COMACCHIO,CODIGORO,FISCAGLIA,GORO,LAGOSANTO,MESOLA",
+      "kind": "sa",
+      "value": 0.0016563146997929607
+    },
+    {
+      "id": "rup:DE_GREGORIO_MARIA_TERESA",
+      "label": "De Gregorio Maria Teresa",
+      "kind": "rup",
+      "value": 0.0006211180124223603
+    },
+    {
+      "id": "rup:GASPARINI_MORENO",
+      "label": "Gasparini Moreno",
+      "kind": "rup",
+      "value": 0.00020703933747412008
+    },
+    {
+      "id": "impresa:CRCPLA74L43G702G",
+      "label": "Crucianelli Restauri di Crucianelli Paola",
+      "kind": "impresa",
+      "value": 0.0
+    },
+    {
+      "id": "impresa:00823440763",
+      "label": "falegnameria la quercia di giovanni e francesco zaccagnino",
+      "kind": "impresa",
+      "value": 0.0
+    },
+    {
+      "id": "impresa:01873840670",
+      "label": "KS COSTRUZIONI S.r.l.",
+      "kind": "impresa",
+      "value": 0.0
+    },
+    {
+      "id": "impresa:04968991002",
+      "label": "ALTAIR 4 MULTIMEDIA SRL",
+      "kind": "impresa",
+      "value": 0.0
+    },
+    {
+      "id": "impresa:GBCDAA56M59L424P",
+      "label": "CHIMERA di Ada Gabucci",
+      "kind": "impresa",
+      "value": 0.0
+    },
+    {
+      "id": "rup:BARION_FRANCESCA",
+      "label": "Barion Francesca",
+      "kind": "rup",
+      "value": 0.0
+    },
+    {
+      "id": "impresa:01732620305",
+      "label": "Legnolandia srl",
+      "kind": "impresa",
+      "value": 0.0
+    }
+  ],
+  "top_degree": [
+    {
+      "id": "sa:90008170293",
+      "label": "Ente Parco Regionale Veneto Delta del Po",
+      "kind": "sa",
+      "value": 26
+    },
+    {
+      "id": "rup:MARUCCI_GIAN_LUCA",
+      "label": "Marucci Gian Luca",
+      "kind": "rup",
+      "value": 14
+    },
+    {
+      "id": "sa:81001910439",
+      "label": "Università degli studi di Camerino",
+      "kind": "sa",
+      "value": 14
+    },
+    {
+      "id": "rup:GOTTARDI_MARCO",
+      "label": "Gottardi Marco",
+      "kind": "rup",
+      "value": 14
+    },
+    {
+      "id": "sa:02770710420",
+      "label": "ERDIS MARCHE",
+      "kind": "sa",
+      "value": 11
+    },
+    {
+      "id": "rup:POMPILI_MICHELE",
+      "label": "POMPILI MICHELE",
+      "kind": "rup",
+      "value": 11
+    },
+    {
+      "id": "sa:80007580279",
+      "label": "Regione del Veneto",
+      "kind": "sa",
+      "value": 11
+    },
+    {
+      "id": "rup:DE_FAVERI_ROBERTA",
+      "label": "De Faveri Roberta",
+      "kind": "rup",
+      "value": 8
+    },
+    {
+      "id": "rup:BRESSANI_FAUSTA",
+      "label": "Bressani Fausta",
+      "kind": "rup",
+      "value": 7
+    },
+    {
+      "id": "rup:DE_GREGORIO_MARIA_TERESA",
+      "label": "De Gregorio Maria Teresa",
+      "kind": "rup",
+      "value": 4
+    },
+    {
+      "id": "sa:CFAVCP_0000EFC",
+      "label": "CUC COMUNE DI COMACCHIO,CODIGORO,FISCAGLIA,GORO,LAGOSANTO,MESOLA",
+      "kind": "sa",
+      "value": 4
+    },
+    {
+      "id": "impresa:00634600431",
+      "label": "CRUCIANELLI REST/EDILE SRL",
+      "kind": "impresa",
+      "value": 4
+    },
+    {
+      "id": "impresa:01096690431",
+      "label": "EREDI PACI GERARDO",
+      "kind": "impresa",
+      "value": 4
+    },
+    {
+      "id": "impresa:01441990437",
+      "label": "GRIME",
+      "kind": "impresa",
+      "value": 4
+    },
+    {
+      "id": "rup:BARION_FRANCESCA",
+      "label": "Barion Francesca",
+      "kind": "rup",
+      "value": 3
+    },
+    {
+      "id": "impresa:00205160427",
+      "label": "TORELLI DOTTORI SPA",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "impresa:01922900566",
+      "label": "Esteel srl",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "impresa:00452620552",
+      "label": "Italstem spa",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "impresa:02195800590",
+      "label": "MANNOZZI MARCO SRL",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "impresa:02487951200",
+      "label": "CO.AR.CO Soc. Cons. a r.l.",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "rup:GASPARINI_MORENO",
+      "label": "Gasparini Moreno",
+      "kind": "rup",
+      "value": 3
+    },
+    {
+      "id": "impresa:02481080964",
+      "label": "AHSI",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "impresa:00799220157",
+      "label": "WALDNER",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "impresa:01781710668",
+      "label": "Consorzio Stabile Rennova SCARL",
+      "kind": "impresa",
+      "value": 3
+    },
+    {
+      "id": "impresa:BRGGFR46B26H620V",
+      "label": "Studio Tecnico Ing. Brigo Gianfranco",
+      "kind": "impresa",
+      "value": 3
+    }
+  ],
+  "graphml": "sna/crucianelli-unicam-erdis/network.graphml",
+  "network": "sna/crucianelli-unicam-erdis/network.json",
+  "ttl": "sna/crucianelli-unicam-erdis/network.ttl",
+  "queries": "sna/crucianelli-unicam-erdis/queries.json"
+}

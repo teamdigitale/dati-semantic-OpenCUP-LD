@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ContentMarkdown } from "../components/ContentMarkdown";
 import { parseMarkdown, parseYaml, splitSections } from "../content/load";
 import { site } from "../content/site";
+import { fetchJson } from "../api";
 import homeRaw from "../../content/home.md?raw";
 import sourcesRaw from "../../content/home.sources.yml?raw";
 import exploreRaw from "../../content/home.explore.yml?raw";
@@ -29,8 +31,17 @@ const JSONLD_CUPCIG = {
 };
 
 interface SourceCard {
+  id?: string;
   title: string;
   description: string;
+}
+
+interface ProvenanceSource {
+  id: string;
+  title: string;
+  publisher?: string;
+  updated_at?: string | null;
+  present?: boolean;
 }
 
 interface ExploreItem {
@@ -44,7 +55,32 @@ const sections = splitSections(homeBody);
 const sourcesDoc = parseYaml<{ sources: SourceCard[]; sources_note: string }>(sourcesRaw);
 const exploreDoc = parseYaml<{ items: ExploreItem[] }>(exploreRaw);
 
+function formatUpdated(iso?: string | null): string {
+  if (!iso) return "data n.d.";
+  try {
+    return new Date(iso).toLocaleDateString("it-IT", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+  } catch {
+    return "data n.d.";
+  }
+}
+
 export function Home() {
+  const [prov, setProv] = useState<Record<string, ProvenanceSource>>({});
+
+  useEffect(() => {
+    fetchJson<{ sources: ProvenanceSource[] }>("sources.json")
+      .then((d) => {
+        const map: Record<string, ProvenanceSource> = {};
+        for (const s of d.sources || []) map[s.id] = s;
+        setProv(map);
+      })
+      .catch(() => undefined);
+  }, []);
+
   return (
     <div>
       <div className="row mb-4">
@@ -71,24 +107,35 @@ export function Home() {
           <ContentMarkdown source={sections["sources-intro"]} />
         )}
         <div className="row g-3">
-          {sourcesDoc.sources.map((s) => (
-            <div className="col-12 col-md-6 col-lg-4" key={s.title}>
-              <div className="card-wrapper card-space h-100">
-                <div className="card card-bg h-100">
-                  <div className="card-body">
-                    <h3 className="h5 card-title">{s.title}</h3>
-                    <p className="card-text mb-0">{s.description}</p>
+          {sourcesDoc.sources.map((s) => {
+            const meta = s.id ? prov[s.id] : undefined;
+            return (
+              <div className="col-12 col-md-6 col-lg-4" key={s.title}>
+                <div className="card-wrapper card-space h-100">
+                  <div className="card card-bg h-100">
+                    <div className="card-body">
+                      <h3 className="h5 card-title">{s.title}</h3>
+                      <p className="card-text">{s.description}</p>
+                      <p className="small text-secondary mb-0">
+                        {meta?.publisher ? `${meta.publisher} · ` : ""}
+                        aggiornato {formatUpdated(meta?.updated_at)}
+                        {meta?.present === false ? " · file assente" : ""}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         {sourcesDoc.sources_note && (
           <div className="mt-3 text-secondary">
             <ContentMarkdown source={sourcesDoc.sources_note} />
           </div>
         )}
+        <p className="mt-2 mb-0">
+          <Link to="/fonti">Catalogo completo fonti e candidati →</Link>
+        </p>
       </section>
 
       {sections.citizen && (

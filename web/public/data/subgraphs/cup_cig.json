@@ -22,6 +22,13 @@
       "dataset": "cupcig"
     },
     {
+      "id": "https://w3id.org/italia/data/RUP/DIEGO%20SGARLATO",
+      "shortId": "DIEGO%20SGARLATO",
+      "label": "DIEGO SGARLATO",
+      "type": "COV:Person",
+      "dataset": "shared"
+    },
+    {
       "id": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
       "shortId": "cup:H71C22000500006",
       "label": "H71C22000500006",
@@ -67,6 +74,11 @@
   "edges": [
     {
       "source": "https://w3id.org/italia/data/Lot/9422434683",
+      "target": "https://w3id.org/italia/data/RUP/DIEGO%20SGARLATO",
+      "label": "hasRup"
+    },
+    {
+      "source": "https://w3id.org/italia/data/Lot/9422434683",
       "target": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
       "label": "PCTR:hasProject"
     },
@@ -94,6 +106,11 @@
       "source": "https://w3id.org/italia/PublicInvestment/data/CUP/H71C22000500006",
       "target": "https://w3id.org/italia/data/Call/1.2%20Abilitazione%20al%20cloud%20-%20Comuni%20-%20Aprile%202022",
       "label": "PRJ:hasCall"
+    },
+    {
+      "source": "https://w3id.org/italia/data/RUP/DIEGO%20SGARLATO",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00341200095",
+      "label": "rupPresso"
     },
     {
       "source": "https://w3id.org/italia/data/CodiceFiscale/00341200095",

@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-ZANELLO_EDI",
+  "kind": "rup",
+  "key": "ZANELLO EDI",
+  "label": "ZANELLO EDI",
+  "title": "RUP: ZANELLO EDI",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/ZANELLO_EDI/network.json",
+  "n_nodes": 89,
+  "n_edges": 305,
+  "kinds": {
+    "rup": 1,
+    "cup": 33,
+    "sa": 1,
+    "impresa": 54
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 54,
+    "con_rup": 54,
+    "aggiudicato_su_cup": 57,
+    "sa_su_cup": 33,
+    "co_aggiudicatario_cig": 28,
+    "stesso_cup": 46,
+    "rti_mandataria": 16,
+    "rti_mandante": 16
+  },
+  "n_communities": 30,
+  "n_cig": 45,
+  "n_cup": 0
+}

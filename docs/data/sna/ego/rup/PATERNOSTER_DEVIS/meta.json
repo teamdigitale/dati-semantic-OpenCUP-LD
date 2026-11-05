@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-PATERNOSTER_DEVIS",
+  "kind": "rup",
+  "key": "Paternoster Devis",
+  "label": "Paternoster Devis",
+  "title": "RUP: Paternoster Devis",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/PATERNOSTER_DEVIS/network.json",
+  "n_nodes": 300,
+  "n_edges": 648,
+  "kinds": {
+    "rup": 1,
+    "cup": 19,
+    "sa": 1,
+    "impresa": 279
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 279,
+    "con_rup": 279,
+    "aggiudicato_su_cup": 34,
+    "sa_su_cup": 19,
+    "co_aggiudicatario_cig": 3,
+    "stesso_cup": 31,
+    "rti_mandataria": 1,
+    "rti_mandante": 1
+  },
+  "n_communities": 1,
+  "n_cig": 883,
+  "n_cup": 0
+}

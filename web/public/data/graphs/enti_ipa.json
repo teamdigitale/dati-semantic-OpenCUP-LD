@@ -2,20 +2,6 @@
   "dataset": "enti_ipa",
   "nodes": [
     {
-      "id": "https://w3id.org/italia/data/CodiceFiscale/00351040423",
-      "shortId": "cf:00351040423",
-      "label": "cf:00351040423",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
-    },
-    {
-      "id": "https://indicepa.gov.it/ente/c_a271",
-      "shortId": "ipa:c_a271",
-      "label": "Comune di Ancona",
-      "type": "COV:PublicOrganization",
-      "dataset": "enti_ipa"
-    },
-    {
       "id": "https://w3id.org/italia/data/CodiceFiscale/00354730392",
       "shortId": "cf:00354730392",
       "label": "cf:00354730392",
@@ -23,9 +9,23 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
-      "shortId": "cf:00221940364",
-      "label": "cf:00221940364",
+      "id": "https://indicepa.gov.it/ente/c_d969",
+      "shortId": "ipa:c_d969",
+      "label": "Comune di Genova",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00856930102",
+      "shortId": "cf:00856930102",
+      "label": "cf:00856930102",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_h199",
+      "shortId": "ipa:c_h199",
+      "label": "Comune di Ravenna",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     },
@@ -37,9 +37,16 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://indicepa.gov.it/ente/c_f257",
-      "shortId": "ipa:c_f257",
-      "label": "Comune di Modena",
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00351040423",
+      "shortId": "cf:00351040423",
+      "label": "cf:00351040423",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
+      "shortId": "cf:00221940364",
+      "label": "cf:00221940364",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     },
@@ -51,22 +58,29 @@
       "dataset": "enti_ipa"
     },
     {
-      "id": "https://indicepa.gov.it/ente/c_h199",
-      "shortId": "ipa:c_h199",
-      "label": "Comune di Ravenna",
+      "id": "https://indicepa.gov.it/ente/c_f257",
+      "shortId": "ipa:c_f257",
+      "label": "Comune di Modena",
+      "type": "COV:PublicOrganization",
+      "dataset": "enti_ipa"
+    },
+    {
+      "id": "https://indicepa.gov.it/ente/c_a271",
+      "shortId": "ipa:c_a271",
+      "label": "Comune di Ancona",
       "type": "COV:PublicOrganization",
       "dataset": "enti_ipa"
     }
   ],
   "edges": [
     {
-      "source": "https://indicepa.gov.it/ente/c_a271",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00351040423",
+      "source": "https://indicepa.gov.it/ente/c_d969",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00856930102",
       "label": "sameAs"
     },
     {
-      "source": "https://indicepa.gov.it/ente/c_f257",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
+      "source": "https://indicepa.gov.it/ente/c_h199",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00354730392",
       "label": "sameAs"
     },
     {
@@ -75,17 +89,23 @@
       "label": "sameAs"
     },
     {
-      "source": "https://indicepa.gov.it/ente/c_h199",
-      "target": "https://w3id.org/italia/data/CodiceFiscale/00354730392",
+      "source": "https://indicepa.gov.it/ente/c_f257",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00221940364",
+      "label": "sameAs"
+    },
+    {
+      "source": "https://indicepa.gov.it/ente/c_a271",
+      "target": "https://w3id.org/italia/data/CodiceFiscale/00351040423",
       "label": "sameAs"
     }
   ],
-  "sample_note": "8 enti IndicePA collegati ai CUP campionati",
+  "sample_note": "10 enti IndicePA collegati ai CUP campionati",
   "coverage": "sample",
   "sample_cups": [
     "E31C22001170006",
     "D91F22000440006",
     "E31F22000170006",
-    "C61F22001090006"
+    "C61F22001090006",
+    "B31B21006780001"
   ]
 }

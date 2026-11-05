@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-BETTI_MASSIMO",
+  "kind": "rup",
+  "key": "BETTI MASSIMO",
+  "label": "BETTI MASSIMO",
+  "title": "RUP: BETTI MASSIMO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/BETTI_MASSIMO/network.json",
+  "n_nodes": 85,
+  "n_edges": 185,
+  "kinds": {
+    "rup": 1,
+    "sa": 1,
+    "impresa": 32,
+    "cup": 51
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 32,
+    "con_rup": 32,
+    "sa_su_cup": 51,
+    "aggiudicato_su_cup": 56,
+    "co_aggiudicatario_cig": 3,
+    "stesso_cup": 4,
+    "rti_mandataria": 3,
+    "rti_mandante": 3
+  },
+  "n_communities": 19,
+  "n_cig": 66,
+  "n_cup": 0
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ego-rup-CAGOL_MONICA",
+  "kind": "rup",
+  "key": "CAGOL MONICA",
+  "label": "CAGOL MONICA",
+  "title": "RUP: CAGOL MONICA",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/CAGOL_MONICA/network.json",
+  "n_nodes": 15,
+  "n_edges": 26,
+  "kinds": {
+    "rup": 1,
+    "sa": 2,
+    "impresa": 9,
+    "cup": 3
+  },
+  "rels": {
+    "rup_presso": 2,
+    "aggiudicato_da": 9,
+    "con_rup": 9,
+    "aggiudicato_su_cup": 3,
+    "sa_su_cup": 3
+  },
+  "n_communities": 3,
+  "n_cig": 15,
+  "n_cup": 0
+}

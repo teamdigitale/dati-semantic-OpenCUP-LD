@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-VASSENA_MARCO",
+  "kind": "rup",
+  "key": "VASSENA MARCO",
+  "label": "VASSENA MARCO",
+  "title": "RUP: VASSENA MARCO",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/VASSENA_MARCO/network.json",
+  "n_nodes": 41,
+  "n_edges": 136,
+  "kinds": {
+    "rup": 1,
+    "cup": 11,
+    "sa": 1,
+    "impresa": 28
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 28,
+    "con_rup": 28,
+    "aggiudicato_su_cup": 19,
+    "sa_su_cup": 11,
+    "co_aggiudicatario_cig": 16,
+    "stesso_cup": 15,
+    "rti_mandataria": 9,
+    "rti_mandante": 9
+  },
+  "n_communities": 10,
+  "n_cig": 24,
+  "n_cup": 0
+}

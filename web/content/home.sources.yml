@@ -1,15 +1,30 @@
 sources:
-  - title: OpenCUP
+  - id: opencup
+    title: OpenCUP
     description: Anagrafica dei progetti — CUP, costi, classificazione, soggetto titolare
-  - title: ANAC CUP↔CIG
+  - id: anac_cup_cig
+    title: ANAC CUP↔CIG
     description: Lotti di gara (CIG) collegati al Codice Unico di Progetto
-  - title: PA Digitale
+  - id: anac_aggiudicazioni
+    title: ANAC Aggiudicazioni
+    description: Importi, date ed esiti (senza imprese/CF) sullo stesso CIG
+  - id: pa_digitale
+    title: PA Digitale
     description: Avvisi PNRR e finanziamenti per la digitalizzazione della PA
-  - title: IndicePA
+  - id: indicepa
+    title: IndicePA
     description: Enti pubblici con codice IPA, collegati al codice fiscale del titolare
-  - title: SCP MIT
-    description: Bandi ed esiti di gara (aggiudicatari) sullo stesso CIG
+  - id: scp_mit
+    title: SCP MIT
+    description: Bandi ed esiti di gara (aggiudicatari, RUP, RTI) sullo stesso CIG
+  - id: opencoesione_soggetti
+    title: OpenCoesione Soggetti
+    description: Ruoli programmatore/attuatore/beneficiario/realizzatore con CF → CUP
+  - id: monithon
+    title: Monithon
+    description: Report di monitoraggio civico collegati a CUP/CIG
 sources_note: >
-  Le [Analisi](/analisi) mostrano i numeri a scala nazionale.
-  I [grafi](/grafi) e l’[unione](/unione) mostrano come le stesse entità si colleghino
-  a partire dallo stesso CUP.
+  Ogni scheda mostra la **data di aggiornamento** del file in pipeline (da
+  [`/fonti`](/fonti)). Si privilegiano i dump **raw** ufficiali; il Parquet è
+  solo un derivato per le join. Candidati (dati.gov.it, ISTAT, OpenPNRR, TED,
+  OCDS) sono elencati nella stessa pagina Fonti.

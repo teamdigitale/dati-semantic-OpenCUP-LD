@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-TOMA_MASSIMO",
+  "kind": "rup",
+  "key": "TOMA Massimo",
+  "label": "TOMA Massimo",
+  "title": "RUP: TOMA Massimo",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/TOMA_MASSIMO/network.json",
+  "n_nodes": 24,
+  "n_edges": 77,
+  "kinds": {
+    "rup": 1,
+    "cup": 10,
+    "sa": 1,
+    "impresa": 12
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 12,
+    "con_rup": 12,
+    "aggiudicato_su_cup": 14,
+    "sa_su_cup": 10,
+    "co_aggiudicatario_cig": 10,
+    "stesso_cup": 10,
+    "rti_mandataria": 4,
+    "rti_mandante": 4
+  },
+  "n_communities": 8,
+  "n_cig": 10,
+  "n_cup": 0
+}

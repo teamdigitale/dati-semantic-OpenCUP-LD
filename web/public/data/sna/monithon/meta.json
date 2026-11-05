@@ -1,0 +1,504 @@
+{
+  "id": "monithon",
+  "title": "Monithon (monitoraggio civico)",
+  "description": "Rete soggetto-solo sul hub Monithon: report di monitoraggio collegati ai CUP, titolari e beneficiari OpenCUP, imprese/SA/RUP dagli esiti SCP, ruoli OpenCoesione Soggetti e (se disponibile) ANAC Aggiudicatari.",
+  "sources_line": "Monithon · OpenCUP · SCP MIT · OpenCoesione Soggetti · ANAC Aggiudicatari*",
+  "n_nodes": 10087,
+  "n_edges": 20321,
+  "n_communities": 273,
+  "n_components": 6,
+  "density": 0.000223791660186754,
+  "modularity": 0.45885034548003506,
+  "kinds": {
+    "beneficiario": 141,
+    "cup": 652,
+    "ente": 8123,
+    "impresa": 353,
+    "report": 707,
+    "rup": 65,
+    "sa": 46
+  },
+  "rels": {
+    "aggiudicato_da": 116,
+    "aggiudicato_su_cup": 115,
+    "beneficiario_di": 644,
+    "co_aggiudicatario_cig": 54,
+    "con_rup": 118,
+    "monitora": 707,
+    "oc:attuatore_di": 8242,
+    "oc:beneficiario_di": 8304,
+    "oc:programmatore_di": 690,
+    "oc:realizzatore_di": 397,
+    "rti_mandante": 32,
+    "rti_mandataria": 32,
+    "rup_presso": 65,
+    "stesso_cup": 160,
+    "titolare_di": 645
+  },
+  "metrics": [
+    "degree",
+    "weighted_degree",
+    "betweenness",
+    "pagerank"
+  ],
+  "top_pagerank": [
+    {
+      "id": "beneficiario:_",
+      "label": "***************",
+      "kind": "beneficiario",
+      "value": 0.15973231856176592
+    },
+    {
+      "id": "cup:G15J08000010009",
+      "label": "G15J08000010009",
+      "kind": "cup",
+      "value": 0.1529740048699433
+    },
+    {
+      "id": "cup:J71H92000000007",
+      "label": "J71H92000000007",
+      "kind": "cup",
+      "value": 0.05974623465262164
+    },
+    {
+      "id": "ente:82001030186",
+      "label": "COMUNE DI FRASCAROLO - PAVIA -",
+      "kind": "ente",
+      "value": 0.058147316528903085
+    },
+    {
+      "id": "ente:01585570581",
+      "label": "RETE FERROVIARIA ITALIANA S.P.A.",
+      "kind": "ente",
+      "value": 0.029509985753531108
+    },
+    {
+      "id": "cup:J11H92000000008",
+      "label": "J11H92000000008",
+      "kind": "cup",
+      "value": 0.026000431220092154
+    },
+    {
+      "id": "impresa:02461490647",
+      "label": "D'Agostino Angelo Antonio Costruzioni Generali Srl",
+      "kind": "impresa",
+      "value": 0.019340614344900545
+    },
+    {
+      "id": "impresa:14206491004",
+      "label": "Atlante S.C.p.A.,",
+      "kind": "impresa",
+      "value": 0.017002937736181372
+    },
+    {
+      "id": "cup:I49C18000020001",
+      "label": "I49C18000020001",
+      "kind": "cup",
+      "value": 0.016915266450812684
+    },
+    {
+      "id": "cup:E89J20001650009",
+      "label": "E89J20001650009",
+      "kind": "cup",
+      "value": 0.01447985113852372
+    },
+    {
+      "id": "ente:80050050154",
+      "label": "REGIONE LOMBARDIA",
+      "kind": "ente",
+      "value": 0.012773600706898251
+    },
+    {
+      "id": "sa:01585570581",
+      "label": "RFI SPA",
+      "kind": "sa",
+      "value": 0.011939433252044664
+    },
+    {
+      "id": "rup:ALBANESE_GIUSEPPE",
+      "label": "Albanese Giuseppe",
+      "kind": "rup",
+      "value": 0.009820682556008351
+    },
+    {
+      "id": "ente:SOGGETTO_PRIVATO",
+      "label": "soggetto privato",
+      "kind": "ente",
+      "value": 0.009093595045572911
+    },
+    {
+      "id": "ente:02355890795",
+      "label": "FERROVIE DELLA CALABRIA S.R.L.- CATANZARO",
+      "kind": "ente",
+      "value": 0.007203955156456762
+    },
+    {
+      "id": "cup:J81I13000020004",
+      "label": "J81I13000020004",
+      "kind": "cup",
+      "value": 0.007136054597763582
+    },
+    {
+      "id": "cup:B87D16000060001",
+      "label": "B87D16000060001",
+      "kind": "cup",
+      "value": 0.005435930204084321
+    },
+    {
+      "id": "cup:F16J16001090003",
+      "label": "F16J16001090003",
+      "kind": "cup",
+      "value": 0.005314348417494978
+    },
+    {
+      "id": "ente:02205340793",
+      "label": "REGIONE CALABRIA",
+      "kind": "ente",
+      "value": 0.005267592298979463
+    },
+    {
+      "id": "cup:D11E05000000008",
+      "label": "D11E05000000008",
+      "kind": "cup",
+      "value": 0.004531745145758529
+    },
+    {
+      "id": "cup:B17D16000040001",
+      "label": "B17D16000040001",
+      "kind": "cup",
+      "value": 0.004503280166849385
+    },
+    {
+      "id": "cup:J44H17000670001",
+      "label": "J44H17000670001",
+      "kind": "cup",
+      "value": 0.003807406407885561
+    },
+    {
+      "id": "cup:D57G13000040003",
+      "label": "D57G13000040003",
+      "kind": "cup",
+      "value": 0.0036620533850745918
+    },
+    {
+      "id": "ente:90048270731",
+      "label": "AUTORITA' DI SISTEMA PORTUALE DEL MAR IONIO",
+      "kind": "ente",
+      "value": 0.003497734160357969
+    },
+    {
+      "id": "cup:J99E20000370001",
+      "label": "J99E20000370001",
+      "kind": "cup",
+      "value": 0.0034382975560887995
+    }
+  ],
+  "top_betweenness": [
+    {
+      "id": "cup:G15J08000010009",
+      "label": "G15J08000010009",
+      "kind": "cup",
+      "value": 0.9441357129872978
+    },
+    {
+      "id": "ente:80012000826",
+      "label": "REGIONE AUTONOMA DELLA SICILIA",
+      "kind": "ente",
+      "value": 0.36705164562731324
+    },
+    {
+      "id": "ente:80032350482",
+      "label": "LIPU, Lega Italiana Protezione Uccelli",
+      "kind": "ente",
+      "value": 0.35182519081560454
+    },
+    {
+      "id": "cup:I79B11000120001",
+      "label": "I79B11000120001",
+      "kind": "cup",
+      "value": 0.35176315614323656
+    },
+    {
+      "id": "ente:_CODICE_FISCALE_",
+      "label": "CAT SUITE HOME DI MIRELLA ARIATA",
+      "kind": "ente",
+      "value": 0.2035300073903578
+    },
+    {
+      "id": "cup:J29D16001340001",
+      "label": "J29D16001340001",
+      "kind": "cup",
+      "value": 0.19046413356024053
+    },
+    {
+      "id": "ente:AMMINISTRAZIONE_REGIONALE_REGIONE_CALABRIA",
+      "label": "AMMINISTRAZIONE REGIONALE - REGIONE CALABRIA",
+      "kind": "ente",
+      "value": 0.09037412058548742
+    },
+    {
+      "id": "cup:J61H13000150006",
+      "label": "J61H13000150006",
+      "kind": "cup",
+      "value": 0.08331988601708194
+    },
+    {
+      "id": "ente:97532760580",
+      "label": "MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI",
+      "kind": "ente",
+      "value": 0.07879916829160204
+    },
+    {
+      "id": "ente:80011990639",
+      "label": "REGIONE CAMPANIA",
+      "kind": "ente",
+      "value": 0.07297956062692773
+    },
+    {
+      "id": "cup:J44H17000670001",
+      "label": "J44H17000670001",
+      "kind": "cup",
+      "value": 0.07159378241637905
+    },
+    {
+      "id": "beneficiario:_",
+      "label": "***************",
+      "kind": "beneficiario",
+      "value": 0.05319958815269495
+    },
+    {
+      "id": "cup:H79E04000010007",
+      "label": "H79E04000010007",
+      "kind": "cup",
+      "value": 0.051592241281252914
+    },
+    {
+      "id": "cup:J71H92000000007",
+      "label": "J71H92000000007",
+      "kind": "cup",
+      "value": 0.037494856994081074
+    },
+    {
+      "id": "ente:80017210727",
+      "label": "REGIONE PUGLIA",
+      "kind": "ente",
+      "value": 0.03739039298603085
+    },
+    {
+      "id": "cup:J99E20000370001",
+      "label": "J99E20000370001",
+      "kind": "cup",
+      "value": 0.03139261255042003
+    },
+    {
+      "id": "ente:80199930589",
+      "label": "MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI",
+      "kind": "ente",
+      "value": 0.023236928832249683
+    },
+    {
+      "id": "ente:80007580279",
+      "label": "REGIONE VENETO",
+      "kind": "ente",
+      "value": 0.02072327248681303
+    },
+    {
+      "id": "cup:D92I16000210003",
+      "label": "D92I16000210003",
+      "kind": "cup",
+      "value": 0.020160069117046056
+    },
+    {
+      "id": "ente:80002870923",
+      "label": "REGIONE AUTONOMA DELLA SARDEGNA",
+      "kind": "ente",
+      "value": 0.01966858934826334
+    },
+    {
+      "id": "cup:B67D16000080006",
+      "label": "B67D16000080006",
+      "kind": "cup",
+      "value": 0.018886393282792308
+    },
+    {
+      "id": "cup:H11B18000150002",
+      "label": "H11B18000150002",
+      "kind": "cup",
+      "value": 0.018348414837162114
+    },
+    {
+      "id": "cup:J27I12000190001",
+      "label": "J27I12000190001",
+      "kind": "cup",
+      "value": 0.01734006970892324
+    },
+    {
+      "id": "cup:F16J16001090003",
+      "label": "F16J16001090003",
+      "kind": "cup",
+      "value": 0.016569511377502167
+    },
+    {
+      "id": "ente:80050050154",
+      "label": "REGIONE LOMBARDIA",
+      "kind": "ente",
+      "value": 0.016128385620894872
+    }
+  ],
+  "top_degree": [
+    {
+      "id": "cup:G15J08000010009",
+      "label": "G15J08000010009",
+      "kind": "cup",
+      "value": 7594
+    },
+    {
+      "id": "beneficiario:_",
+      "label": "***************",
+      "kind": "beneficiario",
+      "value": 579
+    },
+    {
+      "id": "ente:80012000826",
+      "label": "REGIONE AUTONOMA DELLA SICILIA",
+      "kind": "ente",
+      "value": 136
+    },
+    {
+      "id": "ente:80011990639",
+      "label": "REGIONE CAMPANIA",
+      "kind": "ente",
+      "value": 104
+    },
+    {
+      "id": "ente:AMMINISTRAZIONE_REGIONALE_REGIONE_CALABRIA",
+      "label": "AMMINISTRAZIONE REGIONALE - REGIONE CALABRIA",
+      "kind": "ente",
+      "value": 80
+    },
+    {
+      "id": "ente:_CODICE_FISCALE_",
+      "label": "CAT SUITE HOME DI MIRELLA ARIATA",
+      "kind": "ente",
+      "value": 46
+    },
+    {
+      "id": "ente:02205340793",
+      "label": "REGIONE CALABRIA",
+      "kind": "ente",
+      "value": 38
+    },
+    {
+      "id": "ente:80050050154",
+      "label": "REGIONE LOMBARDIA",
+      "kind": "ente",
+      "value": 32
+    },
+    {
+      "id": "ente:80002870923",
+      "label": "REGIONE AUTONOMA DELLA SARDEGNA",
+      "kind": "ente",
+      "value": 31
+    },
+    {
+      "id": "cup:B83J12000240008",
+      "label": "B83J12000240008",
+      "kind": "cup",
+      "value": 28
+    },
+    {
+      "id": "ente:97532760580",
+      "label": "MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI",
+      "kind": "ente",
+      "value": 27
+    },
+    {
+      "id": "ente:80007580279",
+      "label": "REGIONE VENETO",
+      "kind": "ente",
+      "value": 26
+    },
+    {
+      "id": "ente:SOGGETTO_PRIVATO",
+      "label": "soggetto privato",
+      "kind": "ente",
+      "value": 25
+    },
+    {
+      "id": "cup:B29E20000270001",
+      "label": "B29E20000270001",
+      "kind": "cup",
+      "value": 24
+    },
+    {
+      "id": "ente:01386030488",
+      "label": "REGIONE TOSCANA",
+      "kind": "ente",
+      "value": 22
+    },
+    {
+      "id": "cup:J54H14000570001",
+      "label": "J54H14000570001",
+      "kind": "cup",
+      "value": 20
+    },
+    {
+      "id": "ente:80143490581",
+      "label": "REGIONE LAZIO",
+      "kind": "ente",
+      "value": 20
+    },
+    {
+      "id": "cup:G39G18000140009",
+      "label": "G39G18000140009",
+      "kind": "cup",
+      "value": 20
+    },
+    {
+      "id": "cup:E49H10000990003",
+      "label": "E49H10000990003",
+      "kind": "cup",
+      "value": 20
+    },
+    {
+      "id": "cup:F99H12000160006",
+      "label": "F99H12000160006",
+      "kind": "cup",
+      "value": 19
+    },
+    {
+      "id": "cup:J99E20000370001",
+      "label": "J99E20000370001",
+      "kind": "cup",
+      "value": 18
+    },
+    {
+      "id": "cup:B79C20000010006",
+      "label": "B79C20000010006",
+      "kind": "cup",
+      "value": 16
+    },
+    {
+      "id": "sa:01585570581",
+      "label": "RFI SPA",
+      "kind": "sa",
+      "value": 15
+    },
+    {
+      "id": "ente:80016350821",
+      "label": "COMUNE DI PALERMO - PA -",
+      "kind": "ente",
+      "value": 15
+    },
+    {
+      "id": "ente:97904380587",
+      "label": "MINISTERO DELLA CULTURA",
+      "kind": "ente",
+      "value": 15
+    }
+  ],
+  "graphml": "sna/monithon/network.graphml",
+  "network": "sna/monithon/network.json",
+  "ttl": "sna/monithon/network.ttl",
+  "queries": "sna/monithon/queries.json"
+}

@@ -7,6 +7,8 @@ import { Unione } from "./pages/Unione";
 import { UnioneAnimazione } from "./pages/UnioneAnimazione";
 import { Analisi } from "./pages/Analisi";
 import { Monithon } from "./pages/Monithon";
+import { Rete } from "./pages/Rete";
+import { Fonti } from "./pages/Fonti";
 
 export function App() {
   return (
@@ -19,7 +21,9 @@ export function App() {
           <Route path="unione" element={<Unione />} />
           <Route path="unione/animazione" element={<UnioneAnimazione />} />
           <Route path="analisi" element={<Analisi />} />
+          <Route path="rete" element={<Rete />} />
           <Route path="monithon" element={<Monithon />} />
+          <Route path="fonti" element={<Fonti />} />
         </Route>
       </Routes>
     </HashRouter>

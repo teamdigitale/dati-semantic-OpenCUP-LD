@@ -1,0 +1,498 @@
+{
+  "id": "ricostruzione-sisma2016-marche",
+  "title": "Ricostruzione sisma 2016 — Marche",
+  "description": "Rete soggetto-solo (impresa, CUP, SA, RUP) dal seed FOIA sulla ricostruzione pubblica, filtrata sulla regione Marche e ampliata con gare BDAP e esiti SCP, più archi impresa↔impresa (co-aggiudicatari, stesso CUP, RTI) e ruoli OpenCoesione dove il CUP è in coesione.",
+  "sources_line": "FOIA #20 · BDAP-MOP · SCP MIT · OpenCUP · OpenCoesione Soggetti",
+  "n_nodes": 1766,
+  "n_edges": 4916,
+  "n_communities": 163,
+  "n_components": 106,
+  "density": 0.002370877032008444,
+  "modularity": 0.49006710282368804,
+  "kinds": {
+    "cup": 686,
+    "ente": 7,
+    "impresa": 940,
+    "rup": 100,
+    "sa": 33
+  },
+  "rels": {
+    "aggiudicato_da": 485,
+    "aggiudicato_su_cup": 1790,
+    "co_aggiudicatario_cig": 680,
+    "con_rup": 532,
+    "oc:attuatore_di": 1,
+    "oc:beneficiario_di": 8,
+    "oc:programmatore_di": 9,
+    "rti_mandante": 271,
+    "rti_mandataria": 271,
+    "rup_presso": 107,
+    "stesso_cup": 762
+  },
+  "metrics": [
+    "degree",
+    "weighted_degree",
+    "betweenness",
+    "pagerank"
+  ],
+  "top_pagerank": [
+    {
+      "id": "impresa:_",
+      "label": "ANNESSI LEONARDO",
+      "kind": "impresa",
+      "value": 0.019314061967730705
+    },
+    {
+      "id": "sa:80001250432",
+      "label": "PROVINCIA DI MACERATA",
+      "kind": "sa",
+      "value": 0.014916576174782625
+    },
+    {
+      "id": "impresa:00205160427",
+      "label": "TORELLI DOTTORI SPA",
+      "kind": "impresa",
+      "value": 0.011546486977501727
+    },
+    {
+      "id": "cup:C34I20000270001",
+      "label": "C34I20000270001",
+      "kind": "cup",
+      "value": 0.010533774004743916
+    },
+    {
+      "id": "cup:F63H19000560001",
+      "label": "F63H19000560001",
+      "kind": "cup",
+      "value": 0.010523773658494285
+    },
+    {
+      "id": "cup:B31B21006540004",
+      "label": "B31B21006540004",
+      "kind": "cup",
+      "value": 0.0101796938390018
+    },
+    {
+      "id": "cup:B71B21003230001",
+      "label": "B71B21003230001",
+      "kind": "cup",
+      "value": 0.0101796938390018
+    },
+    {
+      "id": "cup:F61B21002590001",
+      "label": "F61B21002590001",
+      "kind": "cup",
+      "value": 0.010146877320174632
+    },
+    {
+      "id": "sa:80008630420",
+      "label": "Regione Marche",
+      "kind": "sa",
+      "value": 0.008595161750528744
+    },
+    {
+      "id": "impresa:00220070213",
+      "label": "DOPPELMAYR ITALIA SRL",
+      "kind": "impresa",
+      "value": 0.006982425714633287
+    },
+    {
+      "id": "sa:06340981007",
+      "label": "AGENZIA DEL DEMANIO",
+      "kind": "sa",
+      "value": 0.006132926823162116
+    },
+    {
+      "id": "rup:BORSELLA_MARINA",
+      "label": "BORSELLA MARINA",
+      "kind": "rup",
+      "value": 0.006132926823162115
+    },
+    {
+      "id": "impresa:01798430615",
+      "label": "COSTRUZIONI INGG.PENZI S.P.A.",
+      "kind": "impresa",
+      "value": 0.005960765612458808
+    },
+    {
+      "id": "impresa:09433891000",
+      "label": "COGECO 7 S.R.L.",
+      "kind": "impresa",
+      "value": 0.005899855558274984
+    },
+    {
+      "id": "impresa:00140990409",
+      "label": "CONSCOOP CONSORZIO FRA COOPERA TIVE DI PRODUZIONE E LAVORO",
+      "kind": "impresa",
+      "value": 0.005816172507296738
+    },
+    {
+      "id": "impresa:03579980636",
+      "label": "LUCCI SALVATORE IMPRESA DI COSTRUZIONI S.R.L.",
+      "kind": "impresa",
+      "value": 0.005578886733144571
+    },
+    {
+      "id": "impresa:05937430725",
+      "label": "APULIA S.R.L.",
+      "kind": "impresa",
+      "value": 0.005554795568609718
+    },
+    {
+      "id": "impresa:01151370689",
+      "label": "DI VINCENZO DINO & C. SPA",
+      "kind": "impresa",
+      "value": 0.005517277537235251
+    },
+    {
+      "id": "impresa:08066951008",
+      "label": "VALORI S.C.A R.L. - CONSORZIO STABILE IN SIGLA VALORI - S.C. A R. L.",
+      "kind": "impresa",
+      "value": 0.005517277537235251
+    },
+    {
+      "id": "rup:CONOSCENTI_MAURIZIO",
+      "label": "CONOSCENTI MAURIZIO",
+      "kind": "rup",
+      "value": 0.0050165259844080785
+    },
+    {
+      "id": "cup:B28I17001280008",
+      "label": "B28I17001280008",
+      "kind": "cup",
+      "value": 0.004766044626180093
+    },
+    {
+      "id": "sa:90038780442",
+      "label": "AMMINISTRAZIONE PROVINCIALE DI FERMO",
+      "kind": "sa",
+      "value": 0.0039741461133488525
+    },
+    {
+      "id": "rup:MARINANGELI_LUCIA",
+      "label": "MARINANGELI LUCIA",
+      "kind": "rup",
+      "value": 0.0039741461133488525
+    },
+    {
+      "id": "impresa:03811731201",
+      "label": "ACREIDE CONSORZIO STABILE SOCIETA' CONSORTILE A.R.L.",
+      "kind": "impresa",
+      "value": 0.0036283309453167397
+    },
+    {
+      "id": "rup:ADDEI_LUCA",
+      "label": "ADDEI LUCA",
+      "kind": "rup",
+      "value": 0.0033314329805643646
+    }
+  ],
+  "top_betweenness": [
+    {
+      "id": "impresa:_",
+      "label": "ANNESSI LEONARDO",
+      "kind": "impresa",
+      "value": 0.5520327866746321
+    },
+    {
+      "id": "impresa:01540750435",
+      "label": "SOCIETA' COOPERATIVA ARCHEOLAB",
+      "kind": "impresa",
+      "value": 0.26947766579089927
+    },
+    {
+      "id": "cup:F67F19000470001",
+      "label": "F67F19000470001",
+      "kind": "cup",
+      "value": 0.19776326016714524
+    },
+    {
+      "id": "sa:80008630420",
+      "label": "Regione Marche",
+      "kind": "sa",
+      "value": 0.1922092034799441
+    },
+    {
+      "id": "cup:I69E17000040001",
+      "label": "I69E17000040001",
+      "kind": "cup",
+      "value": 0.1849896899269623
+    },
+    {
+      "id": "impresa:00101350445",
+      "label": "CIIP S.P.A. - CICLI INTEGRATI IMPIANTI PRIMARI",
+      "kind": "impresa",
+      "value": 0.1835533457953531
+    },
+    {
+      "id": "cup:C69H18000140003",
+      "label": "C69H18000140003",
+      "kind": "cup",
+      "value": 0.18307606328650441
+    },
+    {
+      "id": "rup:FARAONI_KATIUSCIA",
+      "label": "FARAONI KATIUSCIA",
+      "kind": "rup",
+      "value": 0.1576891946580332
+    },
+    {
+      "id": "cup:B97F18000210002",
+      "label": "B97F18000210002",
+      "kind": "cup",
+      "value": 0.1363325689104726
+    },
+    {
+      "id": "sa:00217240431",
+      "label": "COMUNE DI CALDAROLA",
+      "kind": "sa",
+      "value": 0.12734042940437115
+    },
+    {
+      "id": "sa:80001250432",
+      "label": "PROVINCIA DI MACERATA",
+      "kind": "sa",
+      "value": 0.10613664540414845
+    },
+    {
+      "id": "rup:COLOCCI_MICHELE",
+      "label": "Colocci Michele",
+      "kind": "rup",
+      "value": 0.09613227727351564
+    },
+    {
+      "id": "cup:F81B21005390001",
+      "label": "F81B21005390001",
+      "kind": "cup",
+      "value": 0.09197291759007664
+    },
+    {
+      "id": "sa:00242710432",
+      "label": "COMUNE DI CESSAPALOMBO",
+      "kind": "sa",
+      "value": 0.08921649868634896
+    },
+    {
+      "id": "impresa:02660180429",
+      "label": "SIDLAB S.R.L.",
+      "kind": "impresa",
+      "value": 0.08453424807127762
+    },
+    {
+      "id": "cup:G29D23000030001",
+      "label": "G29D23000030001",
+      "kind": "cup",
+      "value": 0.0803093664283466
+    },
+    {
+      "id": "impresa:02262740422",
+      "label": "S.T.S. MOBILE S.R.L.",
+      "kind": "impresa",
+      "value": 0.07819940578444007
+    },
+    {
+      "id": "impresa:01356390433",
+      "label": "DINAMICA SPURGHI S.R.L",
+      "kind": "impresa",
+      "value": 0.07786578276258568
+    },
+    {
+      "id": "cup:F37H19001540002",
+      "label": "F37H19001540002",
+      "kind": "cup",
+      "value": 0.07655036518856835
+    },
+    {
+      "id": "impresa:02131430445",
+      "label": "MARZETTI S.R.L.",
+      "kind": "impresa",
+      "value": 0.07319917849778507
+    },
+    {
+      "id": "impresa:01475070437",
+      "label": "Studio HELIX Associati di Perna & Consoli",
+      "kind": "impresa",
+      "value": 0.06410681364141502
+    },
+    {
+      "id": "cup:F85E17000070002",
+      "label": "F85E17000070002",
+      "kind": "cup",
+      "value": 0.06344131609206478
+    },
+    {
+      "id": "impresa:02330570447",
+      "label": "ENGINEERING & ARCHITECTURE CONTI SRL",
+      "kind": "impresa",
+      "value": 0.059378954603560026
+    },
+    {
+      "id": "impresa:01083980423",
+      "label": "STUDIO GEOLOGICO TECNICO DOTT. RICCI - DOTT. STRONATI",
+      "kind": "impresa",
+      "value": 0.05816855642411032
+    },
+    {
+      "id": "impresa:11203280158",
+      "label": "CONTECO CHECK SRL",
+      "kind": "impresa",
+      "value": 0.057729985289677724
+    }
+  ],
+  "top_degree": [
+    {
+      "id": "impresa:_",
+      "label": "ANNESSI LEONARDO",
+      "kind": "impresa",
+      "value": 255
+    },
+    {
+      "id": "sa:80001250432",
+      "label": "PROVINCIA DI MACERATA",
+      "kind": "sa",
+      "value": 143
+    },
+    {
+      "id": "sa:80008630420",
+      "label": "Regione Marche",
+      "kind": "sa",
+      "value": 81
+    },
+    {
+      "id": "sa:90038780442",
+      "label": "AMMINISTRAZIONE PROVINCIALE DI FERMO",
+      "kind": "sa",
+      "value": 59
+    },
+    {
+      "id": "rup:MARINANGELI_LUCIA",
+      "label": "MARINANGELI LUCIA",
+      "kind": "rup",
+      "value": 59
+    },
+    {
+      "id": "impresa:12502151009",
+      "label": "SIDOTI ENGINEERING S.R.L.",
+      "kind": "impresa",
+      "value": 51
+    },
+    {
+      "id": "rup:CONOSCENTI_MAURIZIO",
+      "label": "CONOSCENTI MAURIZIO",
+      "kind": "rup",
+      "value": 45
+    },
+    {
+      "id": "sa:06340981007",
+      "label": "AGENZIA DEL DEMANIO",
+      "kind": "sa",
+      "value": 38
+    },
+    {
+      "id": "rup:BORSELLA_MARINA",
+      "label": "BORSELLA MARINA",
+      "kind": "rup",
+      "value": 38
+    },
+    {
+      "id": "impresa:02453890549",
+      "label": "ABACUS S.R.L.",
+      "kind": "impresa",
+      "value": 35
+    },
+    {
+      "id": "rup:ADDEI_LUCA",
+      "label": "ADDEI LUCA",
+      "kind": "rup",
+      "value": 34
+    },
+    {
+      "id": "sa:00242710432",
+      "label": "COMUNE DI CESSAPALOMBO",
+      "kind": "sa",
+      "value": 34
+    },
+    {
+      "id": "impresa:04347550263",
+      "label": "DEMOGO Studio d'Architettura",
+      "kind": "impresa",
+      "value": 32
+    },
+    {
+      "id": "impresa:11203280158",
+      "label": "CONTECO CHECK SRL",
+      "kind": "impresa",
+      "value": 30
+    },
+    {
+      "id": "impresa:02399260427",
+      "label": "ACALE SRL",
+      "kind": "impresa",
+      "value": 29
+    },
+    {
+      "id": "impresa:02617840414",
+      "label": "STUDIO PACI S.R.L.",
+      "kind": "impresa",
+      "value": 29
+    },
+    {
+      "id": "impresa:00141310433",
+      "label": "STUDIO TECNICO GRUPPO MARCHE",
+      "kind": "impresa",
+      "value": 28
+    },
+    {
+      "id": "impresa:02425011208",
+      "label": "FRANCESCA BARONE E MARCO FONTANA - INGEGNERI ASSOCIATI",
+      "kind": "impresa",
+      "value": 28
+    },
+    {
+      "id": "impresa:01540750435",
+      "label": "SOCIETA' COOPERATIVA ARCHEOLAB",
+      "kind": "impresa",
+      "value": 28
+    },
+    {
+      "id": "impresa:03877160279",
+      "label": "SINERGO S.P.A.",
+      "kind": "impresa",
+      "value": 27
+    },
+    {
+      "id": "impresa:01083980423",
+      "label": "STUDIO GEOLOGICO TECNICO DOTT. RICCI - DOTT. STRONATI",
+      "kind": "impresa",
+      "value": 27
+    },
+    {
+      "id": "impresa:02356950424",
+      "label": "studio associato Galanti e Carlocchia Architetti",
+      "kind": "impresa",
+      "value": 26
+    },
+    {
+      "id": "impresa:FRMLGU61L07D773J",
+      "label": "Arch. Luigi Fioramanti",
+      "kind": "impresa",
+      "value": 26
+    },
+    {
+      "id": "impresa:SNTSFN61H24E388J",
+      "label": "Ing. Santarelli Stefano",
+      "kind": "impresa",
+      "value": 26
+    },
+    {
+      "id": "impresa:DMINNN60A27I862B",
+      "label": "ANTONINO DI MAIO",
+      "kind": "impresa",
+      "value": 26
+    }
+  ],
+  "graphml": "sna/ricostruzione-sisma2016-marche/network.graphml",
+  "network": "sna/ricostruzione-sisma2016-marche/network.json",
+  "ttl": "sna/ricostruzione-sisma2016-marche/network.ttl",
+  "queries": "sna/ricostruzione-sisma2016-marche/queries.json"
+}

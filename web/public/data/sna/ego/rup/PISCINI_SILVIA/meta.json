@@ -1,0 +1,32 @@
+{
+  "id": "ego-rup-PISCINI_SILVIA",
+  "kind": "rup",
+  "key": "PISCINI SILVIA",
+  "label": "PISCINI SILVIA",
+  "title": "RUP: PISCINI SILVIA",
+  "description": "Ego-network nazionale (rup) da SCP esiti + enrichment impresa.",
+  "sources_line": "SCP MIT esiti · ANAC CUP↔CIG · OpenCUP (titolare) · OpenPNRR flags",
+  "path": "sna/ego/rup/PISCINI_SILVIA/network.json",
+  "n_nodes": 38,
+  "n_edges": 101,
+  "kinds": {
+    "rup": 1,
+    "cup": 15,
+    "sa": 1,
+    "impresa": 21
+  },
+  "rels": {
+    "rup_presso": 1,
+    "aggiudicato_da": 21,
+    "con_rup": 21,
+    "aggiudicato_su_cup": 24,
+    "sa_su_cup": 15,
+    "co_aggiudicatario_cig": 3,
+    "stesso_cup": 10,
+    "rti_mandataria": 3,
+    "rti_mandante": 3
+  },
+  "n_communities": 13,
+  "n_cig": 21,
+  "n_cup": 0
+}
