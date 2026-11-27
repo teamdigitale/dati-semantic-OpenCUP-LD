@@ -1,0 +1,76 @@
+@prefix : <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/> .
+@prefix adms: <https://w3id.org/italia/onto/ADMS/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ndc: <https://w3id.org/italia/onto/NDC/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xkos: <http://purl.org/linked-data/xkos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione>
+    a skos:ConceptScheme , adms:Asset , dcatapit:Dataset ;
+    dct:title "Vocabolario controllato del ciclo di programmazione"@it ,
+              "Controlled vocabulary of programming period"@en ;
+    dct:description "Cicli di programmazione delle politiche di coesione (OC_COD_CICLO / OC_DESCR_CICLO)."@it ,
+                    "Cohesion policy programming periods (OC_COD_CICLO / OC_DESCR_CICLO)."@en ;
+    dct:identifier "https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione" ;
+    dct:type <http://purl.org/adms/assettype/CodeList> ;
+    adms:representationTechnique <http://purl.org/adms/representationtechnique/SKOS> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ITA> ,
+                 <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-10-23"^^xsd:date ;
+    dct:modified "2026-10-23"^^xsd:date ;
+    dct:conformsTo <https://w3id.org/italia/data/standard/SKOS> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON> ,
+               <http://publications.europa.eu/resource/authority/data-theme/REGI> ;
+    dcat:keyword "Ciclo_programmazione"@it , "OpenCoesione"@en ;
+    xkos:numberOfLevels "1" ;
+    ndc:keyConcept "Ciclo_programmazione" ;
+    owl:versionInfo "0.1-draft"@en , "0.1-bozza"@it ;
+    rdfs:label "Vocabolario controllato del ciclo di programmazione"@it ,
+               "Controlled vocabulary of programming period"@en ;
+    skos:prefLabel "Vocabolario controllato del ciclo di programmazione"@it ,
+                   "Controlled vocabulary of programming period"@en ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/1> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/2> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/3> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/9> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/1>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:notation "1" ;
+    skos:prefLabel "Ciclo di programmazione 2007-2013"@it ,
+                   "Ciclo di programmazione 2007-2013"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/2>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:notation "2" ;
+    skos:prefLabel "Ciclo di programmazione 2014-2020"@it ,
+                   "Ciclo di programmazione 2014-2020"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/3>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:notation "3" ;
+    skos:prefLabel "Ciclo di programmazione 2021-2027"@it ,
+                   "Ciclo di programmazione 2021-2027"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione/9>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/ciclo-programmazione> ;
+    skos:notation "9" ;
+    skos:prefLabel "Ciclo di programmazione 2000-2006"@it ,
+                   "Ciclo di programmazione 2000-2006"@en .
+

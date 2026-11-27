@@ -1,0 +1,139 @@
+@prefix : <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/> .
+@prefix adms: <https://w3id.org/italia/onto/ADMS/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ndc: <https://w3id.org/italia/onto/NDC/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xkos: <http://purl.org/linked-data/xkos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto>
+    a skos:ConceptScheme , adms:Asset , dcatapit:Dataset ;
+    dct:title "Vocabolario controllato della tipologia di aiuto OpenCoesione"@it ,
+              "Controlled vocabulary of OpenCoesione aid type"@en ;
+    dct:description "Tipologie di aiuto di Stato (OC_COD_TIPO_AIUTO / OC_DESCR_TIPO_AIUTO)."@it ,
+                    "State-aid types (OC_COD_TIPO_AIUTO / OC_DESCR_TIPO_AIUTO)."@en ;
+    dct:identifier "https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto" ;
+    dct:type <http://purl.org/adms/assettype/CodeList> ;
+    adms:representationTechnique <http://purl.org/adms/representationtechnique/SKOS> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ITA> ,
+                 <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-10-23"^^xsd:date ;
+    dct:modified "2026-10-23"^^xsd:date ;
+    dct:conformsTo <https://w3id.org/italia/data/standard/SKOS> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON> ,
+               <http://publications.europa.eu/resource/authority/data-theme/REGI> ;
+    dcat:keyword "Tipologia_aiuto"@it , "OpenCoesione"@en ;
+    xkos:numberOfLevels "1" ;
+    ndc:keyConcept "Tipologia_aiuto" ;
+    owl:versionInfo "0.1-draft"@en , "0.1-bozza"@it ;
+    rdfs:label "Vocabolario controllato della tipologia di aiuto OpenCoesione"@it ,
+               "Controlled vocabulary of OpenCoesione aid type"@en ;
+    skos:prefLabel "Vocabolario controllato della tipologia di aiuto OpenCoesione"@it ,
+                   "Controlled vocabulary of OpenCoesione aid type"@en ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/a> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/b> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/c> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/d> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/e> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/f> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/g> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/h> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/i> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/l> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/m> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/a>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "a" ;
+    skos:prefLabel "Regime di aiuto approvato con Programma"@it ,
+                   "Regime di aiuto approvato con Programma"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/b>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "b" ;
+    skos:prefLabel "Regime de minimis"@it ,
+                   "Regime de minimis"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/c>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "c" ;
+    skos:prefLabel "Regime di aiuto esentato dalla notifica"@it ,
+                   "Regime di aiuto esentato dalla notifica"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/d>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "d" ;
+    skos:prefLabel "Regime di aiuto autorizzato a seguito di notifica"@it ,
+                   "Regime di aiuto autorizzato a seguito di notifica"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/e>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "e" ;
+    skos:prefLabel "Aiuto esistente"@it ,
+                   "Aiuto esistente"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/f>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "f" ;
+    skos:prefLabel "Intervento che non costituisce aiuto di stato"@it ,
+                   "Intervento che non costituisce aiuto di stato"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/g>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "g" ;
+    skos:prefLabel "Altro tipo di aiuto"@it ,
+                   "Altro tipo di aiuto"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/h>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "h" ;
+    skos:prefLabel "Aiuto ad hoc autorizzato a seguito di notifica"@it ,
+                   "Aiuto ad hoc autorizzato a seguito di notifica"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/i>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "i" ;
+    skos:prefLabel "Aiuto per emergenza COVID-19"@it ,
+                   "Aiuto per emergenza COVID-19"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/l>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "l" ;
+    skos:prefLabel "Aiuto ad hoc de minimis"@it ,
+                   "Aiuto ad hoc de minimis"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto/m>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/tipologia-aiuto> ;
+    skos:notation "m" ;
+    skos:prefLabel "Aiuto ad hoc esentato dalla notifica"@it ,
+                   "Aiuto ad hoc esentato dalla notifica"@en .
+

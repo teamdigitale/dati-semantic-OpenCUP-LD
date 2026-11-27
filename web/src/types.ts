@@ -236,3 +236,92 @@ export interface CountsData {
   scp_bandi_cigs?: number;
   scp_esiti_cigs?: number;
 }
+
+export interface ReteExample {
+  id?: string;
+  title?: string;
+  question?: string;
+  dimension?: string;
+  tier?: string;
+  sparql: string;
+}
+
+export interface ReteManifestDataset {
+  id: string;
+  title: string;
+  description: string;
+  file: string;
+  path: string;
+  size_bytes: number;
+  quads: number;
+  content_hash: string;
+  source_files: string[];
+  license_note: string;
+  examples_count: number;
+  examples: ReteExample[];
+  input_fingerprint: string;
+  rete_graph_version: string;
+}
+
+export interface ReteManifest {
+  format: string;
+  format_version: string;
+  rete_graph_version: string;
+  pre_release_notice: string;
+  canonical_url: string;
+  source: string;
+  datasets: ReteManifestDataset[];
+}
+
+export interface ReteTerm {
+  kind: "iri" | "literal" | "bnode" | "triple" | null;
+  value: string;
+  datatype: string | null;
+  lang: string | null;
+  n3: string | null;
+  js: string | number | boolean | null;
+}
+
+export type ReteRow = Record<string, ReteTerm | null>;
+
+export interface ReteStats {
+  fileLength: number;
+  bytes: number;
+  requests: number;
+}
+
+export interface ReteQueryWarning {
+  severity?: string;
+  message?: string;
+  hint?: string;
+  count?: number;
+  [key: string]: unknown;
+}
+
+export interface ReteOpenResult {
+  quads: number;
+  info: {
+    quads: number;
+    terms: number;
+    pyramidLevels: number;
+    namedGraphs: number;
+  };
+  card: Record<string, unknown> | null;
+  examples: ReteExample[];
+  contentHash: string | null;
+  stats: ReteStats | null;
+}
+
+export interface ReteQueryResult {
+  form: "select" | "ask" | "construct" | "describe";
+  streaming: boolean;
+  resultId: number | null;
+  vars: string[];
+  total: number;
+  offset: number;
+  limit: number;
+  rows: ReteRow[];
+  value?: boolean;
+  warnings: ReteQueryWarning[];
+  stats: ReteStats | null;
+}

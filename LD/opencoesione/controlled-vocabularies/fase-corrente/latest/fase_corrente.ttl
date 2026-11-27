@@ -1,0 +1,238 @@
+@prefix : <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/> .
+@prefix adms: <https://w3id.org/italia/onto/ADMS/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ndc: <https://w3id.org/italia/onto/NDC/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xkos: <http://purl.org/linked-data/xkos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente>
+    a skos:ConceptScheme , adms:Asset , dcatapit:Dataset ;
+    dct:title "Vocabolario controllato della fase corrente OpenCoesione"@it ,
+              "Controlled vocabulary of OpenCoesione current phase"@en ;
+    dct:description "Fasi procedurali correnti del monitoraggio (OC_COD_FASE_CORRENTE / OC_DESCR_FASE_CORRENTE)."@it ,
+                    "Current procedural monitoring phases (OC_COD_FASE_CORRENTE / OC_DESCR_FASE_CORRENTE)."@en ;
+    dct:identifier "https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente" ;
+    dct:type <http://purl.org/adms/assettype/CodeList> ;
+    adms:representationTechnique <http://purl.org/adms/representationtechnique/SKOS> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ITA> ,
+                 <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-10-23"^^xsd:date ;
+    dct:modified "2026-10-23"^^xsd:date ;
+    dct:conformsTo <https://w3id.org/italia/data/standard/SKOS> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON> ,
+               <http://publications.europa.eu/resource/authority/data-theme/REGI> ;
+    dcat:keyword "Fase_corrente"@it , "OpenCoesione"@en ;
+    xkos:numberOfLevels "1" ;
+    ndc:keyConcept "Fase_corrente" ;
+    owl:versionInfo "0.1-draft"@en , "0.1-bozza"@it ;
+    rdfs:label "Vocabolario controllato della fase corrente OpenCoesione"@it ,
+               "Controlled vocabulary of OpenCoesione current phase"@en ;
+    skos:prefLabel "Vocabolario controllato della fase corrente OpenCoesione"@it ,
+                   "Controlled vocabulary of OpenCoesione current phase"@en ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ab01> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ab02> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ab03> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/as01> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/as02> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/as03> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cc02> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cc03> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cp01> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cp02> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cp03> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ii01> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ii02> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ii03> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in01> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in02> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in03> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in04> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in05> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in06> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in07> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in08> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ab01>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "ab01" ;
+    skos:prefLabel "Aggiudicazione gara"@it ,
+                   "Aggiudicazione gara"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ab02>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "ab02" ;
+    skos:prefLabel "Stipula contratto"@it ,
+                   "Stipula contratto"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ab03>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "ab03" ;
+    skos:prefLabel "Esecuzione fornitura"@it ,
+                   "Esecuzione fornitura"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/as01>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "as01" ;
+    skos:prefLabel "Aggiudicazione gara"@it ,
+                   "Aggiudicazione gara"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/as02>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "as02" ;
+    skos:prefLabel "Stipula contratto"@it ,
+                   "Stipula contratto"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/as03>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "as03" ;
+    skos:prefLabel "Esecuzione fornitura"@it ,
+                   "Esecuzione fornitura"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cc02>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "cc02" ;
+    skos:prefLabel "Attribuzione finanziamento"@it ,
+                   "Attribuzione finanziamento"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cc03>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "cc03" ;
+    skos:prefLabel "Esecuzione investimenti"@it ,
+                   "Esecuzione investimenti"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cp01>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "cp01" ;
+    skos:prefLabel "Aggiudicazione gara"@it ,
+                   "Aggiudicazione gara"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cp02>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "cp02" ;
+    skos:prefLabel "Attribuzione finanziamento"@it ,
+                   "Attribuzione finanziamento"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/cp03>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "cp03" ;
+    skos:prefLabel "Esecuzione investimenti/attività"@it ,
+                   "Esecuzione investimenti/attività"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ii01>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "ii01" ;
+    skos:prefLabel "Aggiudicazione gara"@it ,
+                   "Aggiudicazione gara"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ii02>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "ii02" ;
+    skos:prefLabel "Attribuzione finanziamento"@it ,
+                   "Attribuzione finanziamento"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/ii03>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "ii03" ;
+    skos:prefLabel "Esecuzione investimenti"@it ,
+                   "Esecuzione investimenti"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in01>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in01" ;
+    skos:prefLabel "Studio di fattibilità"@it ,
+                   "Studio di fattibilità"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in02>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in02" ;
+    skos:prefLabel "Progettazione preliminare"@it ,
+                   "Progettazione preliminare"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in03>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in03" ;
+    skos:prefLabel "Progettazione definitiva"@it ,
+                   "Progettazione definitiva"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in04>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in04" ;
+    skos:prefLabel "Progettazione esecutiva"@it ,
+                   "Progettazione esecutiva"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in05>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in05" ;
+    skos:prefLabel "Aggiudicazione gara"@it ,
+                   "Aggiudicazione gara"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in06>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in06" ;
+    skos:prefLabel "Stipula contratto"@it ,
+                   "Stipula contratto"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in07>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in07" ;
+    skos:prefLabel "Esecuzione lavori"@it ,
+                   "Esecuzione lavori"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente/in08>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/fase-corrente> ;
+    skos:notation "in08" ;
+    skos:prefLabel "Collaudo"@it ,
+                   "Collaudo"@en .
+

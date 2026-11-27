@@ -1,0 +1,121 @@
+{
+  "format": "rete",
+  "format_version": "0x08",
+  "rete_graph_version": "0.7.8",
+  "pre_release_notice": "Formato rete pre-1.0 generato con rete-graph 0.7.8; rigenerare i file con la stessa versione quando cambiano i TTL.",
+  "canonical_url": "https://teamdigitale.github.io/dati-semantic-OpenCUP-LD/#/sparql",
+  "source": "https://github.com/teamdigitale/dati-semantic-OpenCUP-LD",
+  "datasets": [
+    {
+      "id": "opencup-hub",
+      "title": "Hub OpenCUP / PA Digitale",
+      "description": "Grafo Linked Data dell'hub PA Digitale: progetti OpenCUP, CUP↔CIG, candidature, lotti ANAC/SCP, enti IndicePA, ontologia PublicInvestment e vocabolari controllati delle tipologie di intervento.",
+      "file": "opencup-hub.rete",
+      "path": "data/rete/opencup-hub.rete",
+      "size_bytes": 544425,
+      "quads": 36257,
+      "content_hash": "cccf4d1f28b741c3030d930c6d64c109",
+      "source_files": [
+        "LD/ttl/all.ttl",
+        "LD/ontologies/public-investment/latest/public-investment.ttl",
+        "LD/controlled-vocabularies/classificazione-intervento/latest/classificazione_intervento.ttl",
+        "LD/controlled-vocabularies/natura-intervento/latest/natura_intervento.ttl",
+        "LD/controlled-vocabularies/tipologia-intervento/latest/tipologia_intervento.ttl"
+      ],
+      "license_note": "Licenze miste: verificare la pagina Fonti del sito e le note di provenienza dei singoli dataset prima del riuso.",
+      "examples_count": 4,
+      "examples": [
+        {
+          "id": "opencup-conteggi-hub",
+          "title": "Conteggi dell'hub",
+          "question": "Quanti progetti CUP, lotti e organizzazioni pubbliche contiene l'hub?",
+          "sparql": "PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>\nPREFIX pctr: <https://w3id.org/italia/onto/PublicContract/>\nPREFIX cov: <https://w3id.org/italia/onto/COV/>\nSELECT ?progetti ?lotti ?organizzazioni\nWHERE {\n  { SELECT (COUNT(DISTINCT ?cup) AS ?progetti) WHERE { ?cup a pi:Progetto_di_investimento_pubblico . } }\n  { SELECT (COUNT(DISTINCT ?lot) AS ?lotti) WHERE { ?lot a pctr:Lot . } }\n  { SELECT (COUNT(DISTINCT ?org) AS ?organizzazioni) WHERE { ?org a cov:PublicOrganization . } }\n}",
+          "dimension": "overview"
+        },
+        {
+          "id": "opencup-cup-piu-lotti",
+          "title": "CUP con più lotti",
+          "question": "Quali CUP hanno il maggior numero di lotti CIG collegati?",
+          "sparql": "PREFIX pctr: <https://w3id.org/italia/onto/PublicContract/>\nSELECT ?cup (COUNT(DISTINCT ?lot) AS ?lotti)\nWHERE {\n  ?lot a pctr:Lot ; pctr:hasProject ?cup .\n}\nGROUP BY ?cup\nORDER BY DESC(?lotti)\nLIMIT 20",
+          "dimension": "contracts"
+        },
+        {
+          "id": "opencup-dettaglio-cup-funivia",
+          "title": "Dettaglio del CUP B31B21006780001",
+          "question": "Come si collegano progetto, titolare, lotto, aggiudicazione e vincitore per il CUP B31B21006780001?",
+          "sparql": "PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>\nPREFIX pctr: <https://w3id.org/italia/onto/PublicContract/>\nPREFIX cov: <https://w3id.org/italia/onto/COV/>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX l0: <https://w3id.org/italia/onto/l0/>\nSELECT ?lot ?notice ?noticeTitle ?award ?awardDate ?awardAmount ?titolareName ?winnerName\nWHERE {\n  VALUES ?cup { <https://w3id.org/italia/PublicInvestment/data/CUP/B31B21006780001> }\n  OPTIONAL { ?cup pi:ha_soggetto_titolare ?titolare .\n    OPTIONAL { ?titolareOrg owl:sameAs ?titolare ; cov:legalName ?titolareName . }\n  }\n  OPTIONAL {\n    ?lot a pctr:Lot ; pctr:hasProject ?cup .\n    OPTIONAL { ?notice a pctr:ContractNotice ; pctr:hasLot ?lot ; l0:name ?noticeTitle . }\n    OPTIONAL {\n      ?award a pctr:Award ; pctr:awardedLot ?lot .\n      OPTIONAL { ?award pctr:awardDate ?awardDate . }\n      OPTIONAL { ?award pctr:awardAmount ?awardAmount . }\n      OPTIONAL { ?award pctr:hasWinner ?winner .\n        OPTIONAL { ?winner cov:legalName ?winnerName . }\n      }\n    }\n  }\n}\nLIMIT 50",
+          "dimension": "integration"
+        },
+        {
+          "id": "opencup-settori-intervento",
+          "title": "Settori di intervento",
+          "question": "Quali settori di intervento ricoprono più progetti, con etichette SKOS italiane?",
+          "sparql": "PREFIX pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nSELECT ?settore ?label (COUNT(DISTINCT ?cup) AS ?progetti)\nWHERE {\n  ?cup pi:ha_intervento_di_investimento_pubblico ?intervento .\n  ?intervento pi:ha_settore_intervento ?settore .\n  ?settore skos:prefLabel ?label .\n  FILTER(lang(?label) = \"it\")\n}\nGROUP BY ?settore ?label\nORDER BY DESC(?progetti)\nLIMIT 20",
+          "dimension": "vocabularies"
+        }
+      ],
+      "input_fingerprint": "cfd9bbf94550a9dda3a56e5b08ee75c1d3bd0ad8eca0cec40bc9250ecc11c4a4",
+      "rete_graph_version": "0.7.8"
+    },
+    {
+      "id": "monithon-hub",
+      "title": "Hub Monithon / OpenCoesione",
+      "description": "Grafo Linked Data seedato dai report Monithon: monitoraggio civico, progetti OpenCoesione, progetti OpenCUP, lotti ANAC/SCP ed enti, con ontologie e vocabolari controllati locali inclusi.",
+      "file": "monithon-hub.rete",
+      "path": "data/rete/monithon-hub.rete",
+      "size_bytes": 1891245,
+      "quads": 96323,
+      "content_hash": "3491a14189af6495946478b058d24653",
+      "source_files": [
+        "LD/ttl/all_monithon.ttl",
+        "LD/ontologies/public-investment/latest/public-investment.ttl",
+        "LD/controlled-vocabularies/classificazione-intervento/latest/classificazione_intervento.ttl",
+        "LD/controlled-vocabularies/natura-intervento/latest/natura_intervento.ttl",
+        "LD/controlled-vocabularies/tipologia-intervento/latest/tipologia_intervento.ttl",
+        "LD/opencoesione/ontologies/open-coesione/latest/open-coesione.ttl",
+        "LD/opencoesione/controlled-vocabularies/ciclo-programmazione/latest/ciclo_programmazione.ttl",
+        "LD/opencoesione/controlled-vocabularies/fase-corrente/latest/fase_corrente.ttl",
+        "LD/opencoesione/controlled-vocabularies/macroarea/latest/macroarea.ttl",
+        "LD/opencoesione/controlled-vocabularies/stato-finanziario/latest/stato_finanziario.ttl",
+        "LD/opencoesione/controlled-vocabularies/stato-procedurale/latest/stato_procedurale.ttl",
+        "LD/opencoesione/controlled-vocabularies/stato-progetto/latest/stato_progetto.ttl",
+        "LD/opencoesione/controlled-vocabularies/tema-sintetico/latest/tema_sintetico.ttl",
+        "LD/opencoesione/controlled-vocabularies/tipologia-aiuto/latest/tipologia_aiuto.ttl"
+      ],
+      "license_note": "Licenze miste: verificare la pagina Fonti del sito e le note di provenienza dei singoli dataset prima del riuso.",
+      "examples_count": 4,
+      "examples": [
+        {
+          "id": "monithon-report-conteggi",
+          "title": "Report Monithon",
+          "question": "Quanti report Monithon contiene l'hub e qual è la data più recente?",
+          "sparql": "PREFIX schema: <https://schema.org/>\nPREFIX dct: <http://purl.org/dc/terms/>\nSELECT (COUNT(DISTINCT ?report) AS ?report) (MAX(?data) AS ?ultimoReport)\nWHERE {\n  ?report a schema:Report ; dct:issued ?data .\n}",
+          "dimension": "overview"
+        },
+        {
+          "id": "opencoesione-temi-sintetici",
+          "title": "Temi sintetici OpenCoesione",
+          "question": "Come si distribuiscono progetti e costi OpenCoesione per tema sintetico?",
+          "sparql": "PREFIX oc: <https://w3id.org/italia/draft/OpenCoesione/onto/OpenCoesione/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nSELECT ?tema ?label (COUNT(DISTINCT ?progetto) AS ?progetti) (SUM(?costo) AS ?costoTotale)\nWHERE {\n  ?progetto a oc:Progetto_di_coesione ; oc:ha_tema_sintetico ?tema .\n  OPTIONAL { ?progetto oc:costo_coesione ?costo . }\n  ?tema skos:prefLabel ?label .\n  FILTER(lang(?label) = \"it\")\n}\nGROUP BY ?tema ?label\nORDER BY DESC(?costoTotale)\nLIMIT 20",
+          "dimension": "cohesion"
+        },
+        {
+          "id": "cup-attraverso-fonti",
+          "title": "Un CUP attraverso le fonti",
+          "question": "Come si incontrano report Monithon, progetti OpenCoesione e lotti ANAC intorno al CUP B23D13000420009?",
+          "sparql": "PREFIX pctr: <https://w3id.org/italia/onto/PublicContract/>\nPREFIX oc: <https://w3id.org/italia/draft/OpenCoesione/onto/OpenCoesione/>\nPREFIX schema: <https://schema.org/>\nPREFIX dct: <http://purl.org/dc/terms/>\nSELECT ?kind ?node ?title ?cup\nWHERE {\n  VALUES ?cup { <https://w3id.org/italia/PublicInvestment/data/CUP/B23D13000420009> }\n  {\n    ?report a schema:Report ; schema:about ?cup ; dct:title ?title .\n    BIND(\"report Monithon\" AS ?kind)\n    BIND(?report AS ?node)\n  }\n  UNION\n  {\n    ?ocProject a oc:Progetto_di_coesione ; oc:ha_cup ?cup ; dct:title ?title .\n    BIND(\"progetto OpenCoesione\" AS ?kind)\n    BIND(?ocProject AS ?node)\n  }\n  UNION\n  {\n    ?lot a pctr:Lot ; pctr:hasProject ?cup .\n    BIND(\"lotto ANAC\" AS ?kind)\n    BIND(?lot AS ?node)\n  }\n}\nORDER BY ?kind ?node\nLIMIT 50",
+          "dimension": "integration"
+        },
+        {
+          "id": "opencoesione-stati-progetto",
+          "title": "Stati dei progetti OpenCoesione",
+          "question": "Quanti progetti OpenCoesione ci sono per stato progettuale?",
+          "sparql": "PREFIX oc: <https://w3id.org/italia/draft/OpenCoesione/onto/OpenCoesione/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nSELECT ?stato ?label (COUNT(DISTINCT ?progetto) AS ?progetti)\nWHERE {\n  ?progetto a oc:Progetto_di_coesione ; oc:ha_stato_progetto ?stato .\n  ?stato skos:prefLabel ?label .\n  FILTER(lang(?label) = \"it\" || lang(?label) = \"\")\n}\nGROUP BY ?stato ?label\nORDER BY DESC(?progetti)",
+          "dimension": "cohesion"
+        }
+      ],
+      "input_fingerprint": "07c251c5ce642f9e3843c357eab8f36dc1e3199712151fa3f673000631c21c63",
+      "rete_graph_version": "0.7.8"
+    }
+  ]
+}

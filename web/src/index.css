@@ -969,3 +969,189 @@ a.resource-link code {
 .sna-query-results {
   margin-top: 0.85rem;
 }
+
+.sparql-format-notice {
+  font-size: 0.92rem;
+}
+
+.sparql-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.sparql-control--wide {
+  min-width: min(100%, 320px);
+}
+
+.sparql-example-question {
+  margin: 0 0 1rem;
+  color: #5b6f82;
+  font-size: 0.95rem;
+}
+
+.sparql-dataset-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #d9e6f2;
+  border-left: 4px solid #0066cc;
+  border-radius: 4px;
+  background: #f7f9fc;
+}
+
+.sparql-dataset-card__main {
+  min-width: 0;
+}
+
+.sparql-dataset-card__main p:last-child {
+  margin-bottom: 0;
+}
+
+.sparql-dataset-card__actions {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.sparql-dataset-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.sparql-dataset-facts div {
+  min-width: 6rem;
+}
+
+.sparql-dataset-facts dt {
+  font-size: 0.74rem;
+  color: #5b6f82;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.sparql-dataset-facts dd {
+  margin: 0;
+  font-weight: 600;
+  color: #17324d;
+}
+
+.sparql-editor-section {
+  margin-bottom: 1.25rem;
+}
+
+.sparql-editor-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.sparql-fetch-stats {
+  margin: 0;
+  color: #5b6f82;
+  font-size: 0.86rem;
+}
+
+.sparql-editor {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #9eb6c9;
+  border-radius: 4px;
+  background: #f7f9fc;
+  color: #17324d;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  white-space: pre;
+  overflow: auto;
+}
+
+.sparql-editor:focus {
+  background: #fff;
+}
+
+.sparql-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.sparql-error {
+  white-space: pre-wrap;
+}
+
+.sparql-results-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sparql-results-count {
+  margin: 0;
+  color: #5b6f82;
+  font-size: 0.9rem;
+}
+
+.sparql-table {
+  font-size: 0.86rem;
+}
+
+.sparql-table th {
+  white-space: nowrap;
+}
+
+.sparql-table td {
+  max-width: 24rem;
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+
+.sparql-iri {
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.sparql-literal {
+  overflow-wrap: anywhere;
+}
+
+.sparql-term-meta {
+  margin-left: 0.25rem;
+  color: #5b6f82;
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+}
+
+.sparql-unbound {
+  color: #8799aa;
+}
+
+.sparql-ask-result {
+  padding: 1rem 1.25rem;
+  border: 1px solid #d9e6f2;
+  border-radius: 4px;
+  background: #f7f9fc;
+}
+
+@media (max-width: 767px) {
+  .sparql-dataset-card {
+    display: block;
+  }
+
+  .sparql-dataset-card__actions {
+    margin-top: 0.75rem;
+  }
+}

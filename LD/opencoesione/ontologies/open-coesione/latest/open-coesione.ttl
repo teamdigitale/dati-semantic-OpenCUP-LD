@@ -1,0 +1,253 @@
+@prefix oc: <https://w3id.org/italia/draft/OpenCoesione/onto/OpenCoesione/> .
+@prefix pi: <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/> .
+@prefix PRJ: <https://w3id.org/italia/onto/Project/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix COV: <https://w3id.org/italia/onto/COV/> .
+@prefix admsapit: <https://w3id.org/italia/onto/ADMS/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@base <https://w3id.org/italia/draft/OpenCoesione/onto/OpenCoesione/> .
+
+#################################################################
+# Ontologia — bozza v0.1
+#
+# Domino: progetti di coesione pubblicati su OpenCoesione
+# (Sistema Nazionale di Monitoraggio), identificati da
+# COD_LOCALE_PROGETTO e collegati al CUP OpenCUP.
+#
+# Allineamento OntoPiA / schema.gov.it:
+#   - sottoclasse di PRJ:PublicInvestmentProject (Project-AP_IT)
+#   - collegamento al CUP via pi:Progetto / Codice Unico (PublicInvestment)
+#   - riutilizzo di l0, dct, schema.org dove appropriato
+#   - vocabolari SKOS dedicati per dimensioni OC (tema, ciclo, stati, …)
+#################################################################
+
+<https://w3id.org/italia/draft/OpenCoesione/onto/OpenCoesione>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/italia/draft/OpenCoesione/onto/OpenCoesione/0.1> ;
+    dct:title "Ontologia OpenCoesione"@it ,
+              "OpenCoesione ontology"@en ;
+    dct:description """Bozza di ontologia di dominio per i progetti finanziati dalle politiche di coesione
+come pubblicati sul portale OpenCoesione (unità di rilevazione = progetto / COD_LOCALE_PROGETTO).
+Allineata a OntoPiA (Project-AP_IT, PublicInvestment, l0) e al Catalogo Nazionale dei dati (schema.gov.it).
+Non sostituisce PublicInvestment (CUP/OpenCUP): la specializza per il monitoraggio di coesione."""@it ,
+                    """Draft domain ontology for projects financed by cohesion policy as published on the
+OpenCoesione portal (unit of observation = project / COD_LOCALE_PROGETTO). Aligned with OntoPiA
+(Project-AP_IT, PublicInvestment, l0) and the National Data Catalogue (schema.gov.it).
+It does not replace PublicInvestment (CUP/OpenCUP): it specialises it for cohesion monitoring."""@en ;
+    dct:issued "2026-10-23"^^xsd:date ;
+    dct:modified "2026-10-23"^^xsd:date ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ITA> ,
+                 <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:subject <http://publications.europa.eu/resource/authority/data-theme/ECON> ,
+                <http://publications.europa.eu/resource/authority/data-theme/GOVE> ,
+                <http://publications.europa.eu/resource/authority/data-theme/REGI> ;
+    owl:versionInfo "0.1-draft"@en ,
+                    "0.1-bozza"@it ;
+    rdfs:label "Ontologia OpenCoesione"@it ,
+               "OpenCoesione ontology"@en ;
+    rdfs:comment "Namespace draft: non ancora registrato sul National Data Catalogue."@it ,
+                 "Draft namespace: not yet registered in the National Data Catalogue."@en ;
+    admsapit:prefix "oc" ;
+    admsapit:status "draft" ;
+    admsapit:type admsapit:DomainOntology ;
+    dcat:keyword "OpenCoesione"@it ,
+                 "OpenCoesione"@en ,
+                 "coesione"@it ,
+                 "cohesion"@en ,
+                 "fondi strutturali"@it ,
+                 "CUP"@en ;
+    owl:imports <https://w3id.org/italia/onto/l0/> ,
+                <https://w3id.org/italia/onto/Project/> ,
+                <https://w3id.org/italia/PublicInvestment/onto/PublicInvestment/> .
+
+#################################################################
+# Classi
+#################################################################
+
+oc:Progetto_di_coesione
+    a owl:Class ;
+    rdfs:subClassOf PRJ:PublicInvestmentProject ;
+    rdfs:label "Progetto di coesione"@it ,
+               "Cohesion project"@en ;
+    rdfs:comment """Progetto finanziato dalle politiche di coesione (Fondi Strutturali, FSC, PAC, …)
+come pubblicato su OpenCoesione. Identificato da COD_LOCALE_PROGETTO; tipicamente collegato
+a un CUP OpenCUP tramite oc:ha_cup / schema:about."""@it ,
+                 """Project financed by cohesion policy (Structural Funds, FSC, PAC, …) as published
+on OpenCoesione. Identified by COD_LOCALE_PROGETTO; typically linked to an OpenCUP CUP
+via oc:ha_cup / schema:about."""@en ;
+    owl:equivalentClass schema:GovernmentProject ;
+    skos:definition "Unità minima di rilevazione del Sistema Nazionale di Monitoraggio pubblicata su OpenCoesione."@it .
+
+#################################################################
+# Object properties — collegamenti strutturali
+#################################################################
+
+oc:ha_cup
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:about ,
+                       dct:subject ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range pi:Progetto_di_investimento_pubblico ;
+    rdfs:label "ha CUP"@it ,
+               "has CUP"@en ;
+    rdfs:comment """Collega il progetto di coesione al progetto di investimento pubblico OpenCUP
+identificato dal Codice Unico di Progetto (CUP). Funzionalmente equivalente a schema:about /
+dct:subject verso l'URI CUP."""@it ,
+                 """Links the cohesion project to the OpenCUP public investment project identified
+by the Unique Project Code (CUP). Functionally equivalent to schema:about / dct:subject
+towards the CUP URI."""@en .
+
+oc:ha_tema_sintetico
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha tema sintetico"@it ,
+               "has synthetic theme"@en ;
+    rdfs:comment "Classificazione OC in 11 temi sintetici (vocabolario tema-sintetico; campo OC_COD_TEMA_SINTETICO)."@it ,
+                 "OC classification into 11 synthetic themes (tema-sintetico vocabulary; OC_COD_TEMA_SINTETICO)."@en .
+
+oc:ha_ciclo_programmazione
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha ciclo di programmazione"@it ,
+               "has programming period"@en ;
+    rdfs:comment "Ciclo di programmazione (vocabolario ciclo-programmazione; campo OC_COD_CICLO). Concetti allineabili a PRJ:Programme."@it ,
+                 "Programming period (ciclo-programmazione vocabulary; OC_COD_CICLO). Concepts alignable to PRJ:Programme."@en .
+
+oc:ha_stato_progetto
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha stato del progetto"@it ,
+               "has project status"@en ;
+    rdfs:comment "Stato complessivo del progetto su OpenCoesione (vocabolario stato-progetto; campo OC_STATO_PROGETTO)."@it ,
+                 "Overall project status on OpenCoesione (stato-progetto vocabulary; OC_STATO_PROGETTO)."@en .
+
+oc:ha_stato_finanziario
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha stato finanziario"@it ,
+               "has financial status"@en ;
+    rdfs:comment "Stato finanziario (vocabolario stato-finanziario; campo OC_STATO_FINANZIARIO)."@it ,
+                 "Financial status (stato-finanziario vocabulary; OC_STATO_FINANZIARIO)."@en .
+
+oc:ha_stato_procedurale
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha stato procedurale"@it ,
+               "has procedural status"@en ;
+    rdfs:comment "Stato procedurale (vocabolario stato-procedurale; campo OC_STATO_PROCEDURALE)."@it ,
+                 "Procedural status (stato-procedurale vocabulary; OC_STATO_PROCEDURALE)."@en .
+
+oc:ha_tipologia_aiuto
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha tipologia di aiuto"@it ,
+               "has aid type"@en ;
+    rdfs:comment "Tipologia di aiuto di Stato (vocabolario tipologia-aiuto; campo OC_COD_TIPO_AIUTO)."@it ,
+                 "State-aid type (tipologia-aiuto vocabulary; OC_COD_TIPO_AIUTO)."@en .
+
+oc:ha_fase_corrente
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha fase corrente"@it ,
+               "has current phase"@en ;
+    rdfs:comment "Fase procedurale corrente del monitoraggio (vocabolario fase-corrente; campo OC_COD_FASE_CORRENTE)."@it ,
+                 "Current procedural monitoring phase (fase-corrente vocabulary; OC_COD_FASE_CORRENTE)."@en .
+
+oc:ha_macroarea
+    a owl:ObjectProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range skos:Concept ;
+    rdfs:label "ha macroarea"@it ,
+               "has macro-area"@en ;
+    rdfs:comment "Macroarea territoriale del progetto (vocabolario macroarea; campo OC_MACROAREA_PROGETTO)."@it ,
+                 "Territorial macro-area of the project (macroarea vocabulary; OC_MACROAREA_PROGETTO)."@en .
+
+#################################################################
+# Datatype properties
+#################################################################
+
+oc:codice_locale_progetto
+    a owl:DatatypeProperty ,
+      owl:FunctionalProperty ;
+    rdfs:subPropertyOf dct:identifier ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range xsd:string ;
+    rdfs:label "codice locale progetto"@it ,
+               "local project code"@en ;
+    rdfs:comment "Identificativo locale del progetto nel Sistema Nazionale di Monitoraggio (COD_LOCALE_PROGETTO)."@it ,
+                 "Local project identifier in the National Monitoring System (COD_LOCALE_PROGETTO)."@en .
+
+oc:sintesi
+    a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dct:description ,
+                       l0:description ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range rdf:langString ;
+    rdfs:label "sintesi"@it ,
+               "summary"@en ;
+    rdfs:comment "Sintesi testuale del progetto (OC_SINTESI_PROGETTO)."@it ,
+                 "Textual project summary (OC_SINTESI_PROGETTO)."@en .
+
+oc:costo_coesione
+    a owl:DatatypeProperty ;
+    rdfs:subPropertyOf PRJ:projectTotalCost ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "costo di coesione"@it ,
+               "cohesion cost"@en ;
+    rdfs:comment "Costo di coesione del progetto in euro (OC_COSTO_COESIONE)."@it ,
+                 "Project cohesion cost in euro (OC_COSTO_COESIONE)."@en .
+
+oc:data_inizio
+    a owl:DatatypeProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range xsd:date ;
+    rdfs:label "data di inizio"@it ,
+               "start date"@en ;
+    rdfs:comment "Data di inizio progetto (OC_DATA_INIZIO_PROGETTO)."@it ,
+                 "Project start date (OC_DATA_INIZIO_PROGETTO)."@en .
+
+oc:data_fine_prevista
+    a owl:DatatypeProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range xsd:date ;
+    rdfs:label "data di fine prevista"@it ,
+               "planned end date"@en ;
+    rdfs:comment "Data di fine prevista (OC_DATA_FINE_PROGETTO_PREVISTA)."@it ,
+                 "Planned end date (OC_DATA_FINE_PROGETTO_PREVISTA)."@en .
+
+oc:data_fine_effettiva
+    a owl:DatatypeProperty ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range xsd:date ;
+    rdfs:label "data di fine effettiva"@it ,
+               "actual end date"@en ;
+    rdfs:comment "Data di fine effettiva (OC_DATA_FINE_PROGETTO_EFFETTIVA)."@it ,
+                 "Actual end date (OC_DATA_FINE_PROGETTO_EFFETTIVA)."@en .
+
+oc:url_pagina
+    a owl:DatatypeProperty ;
+    rdfs:subPropertyOf foaf:page ,
+                       schema:url ;
+    rdfs:domain oc:Progetto_di_coesione ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "URL pagina"@it ,
+               "page URL"@en ;
+    rdfs:comment "URL della scheda pubblica su opencoesione.gov.it (OC_LINK o pagina dati/progetti)."@it ,
+                 "Public page URL on opencoesione.gov.it (OC_LINK or dati/progetti page)."@en .

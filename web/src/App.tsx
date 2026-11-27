@@ -8,6 +8,7 @@ import { UnioneAnimazione } from "./pages/UnioneAnimazione";
 import { Analisi } from "./pages/Analisi";
 import { Monithon } from "./pages/Monithon";
 import { Rete } from "./pages/Rete";
+import { Sparql } from "./pages/Sparql";
 import { Fonti } from "./pages/Fonti";
 
 export function App() {
@@ -22,6 +23,7 @@ export function App() {
           <Route path="unione/animazione" element={<UnioneAnimazione />} />
           <Route path="analisi" element={<Analisi />} />
           <Route path="rete" element={<Rete />} />
+          <Route path="sparql" element={<Sparql />} />
           <Route path="monithon" element={<Monithon />} />
           <Route path="fonti" element={<Fonti />} />
         </Route>

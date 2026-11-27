@@ -1,0 +1,58 @@
+@prefix : <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea/> .
+@prefix adms: <https://w3id.org/italia/onto/ADMS/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ndc: <https://w3id.org/italia/onto/NDC/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xkos: <http://purl.org/linked-data/xkos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea>
+    a skos:ConceptScheme , adms:Asset , dcatapit:Dataset ;
+    dct:title "Vocabolario controllato della macroarea OpenCoesione"@it ,
+              "Controlled vocabulary of OpenCoesione macro-area"@en ;
+    dct:description "Macroarea territoriale del progetto (OC_MACROAREA_PROGETTO)."@it ,
+                    "Project territorial macro-area (OC_MACROAREA_PROGETTO)."@en ;
+    dct:identifier "https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea" ;
+    dct:type <http://purl.org/adms/assettype/CodeList> ;
+    adms:representationTechnique <http://purl.org/adms/representationtechnique/SKOS> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ITA> ,
+                 <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-10-23"^^xsd:date ;
+    dct:modified "2026-10-23"^^xsd:date ;
+    dct:conformsTo <https://w3id.org/italia/data/standard/SKOS> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON> ,
+               <http://publications.europa.eu/resource/authority/data-theme/REGI> ;
+    dcat:keyword "Macroarea"@it , "OpenCoesione"@en ;
+    xkos:numberOfLevels "1" ;
+    ndc:keyConcept "Macroarea" ;
+    owl:versionInfo "0.1-draft"@en , "0.1-bozza"@it ;
+    rdfs:label "Vocabolario controllato della macroarea OpenCoesione"@it ,
+               "Controlled vocabulary of OpenCoesione macro-area"@en ;
+    skos:prefLabel "Vocabolario controllato della macroarea OpenCoesione"@it ,
+                   "Controlled vocabulary of OpenCoesione macro-area"@en ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea/centro-nord> ;
+    skos:hasTopConcept <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea/mezzogiorno> .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea/centro-nord>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea> ;
+    skos:notation "centro-nord" ;
+    skos:prefLabel "Centro-Nord"@it ,
+                   "Centro-Nord"@en .
+
+<https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea/mezzogiorno>
+    a skos:Concept ;
+    skos:inScheme <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea> ;
+    skos:topConceptOf <https://w3id.org/italia/draft/OpenCoesione/controlled-vocabulary/macroarea> ;
+    skos:notation "mezzogiorno" ;
+    skos:prefLabel "Mezzogiorno"@it ,
+                   "Mezzogiorno"@en .
+

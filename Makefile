@@ -34,7 +34,8 @@ FILTER_OUTPUTS := \
 LD_JSON := $(wildcard LD/json-ld/*-ld.json)
 LD_TTL  := $(patsubst LD/json-ld/%-ld.json,LD/ttl/%.ttl,$(LD_JSON))
 
-.PHONY: help setup fetch fetch-assets check-rawdata filter ld all clean clean-ld clean-filter analytics-full web-assets web web-preview
+.PHONY: help setup fetch fetch-assets check-rawdata filter ld all clean clean-ld \
+	clean-filter analytics-full web-assets rete-assets web web-preview
 
 .DEFAULT_GOAL := help
 
@@ -97,8 +98,11 @@ clean: clean-filter clean-ld ## Rimuove tutti gli output generati (non i rawdata
 analytics-full: check-rawdata ## Statistiche Analisi sulle basi raw complete (DuckDB)
 	env -u VIRTUAL_ENV uv run python LD/scripts/build_full_analytics.py
 
-web-assets: ld analytics-full ## Grafi da all.ttl (hub) + analytics da raw completi
+web-assets: ld analytics-full rete-assets ## Grafi da all.ttl (hub) + analytics + .rete
 	env -u VIRTUAL_ENV uv run python LD/scripts/export_web_assets.py
+
+rete-assets: ld ## File .rete interrogabili → web/public/data/rete/
+	env -u VIRTUAL_ENV uv run python LD/scripts/export_rete_assets.py
 
 web: web-assets ## Build sito statico in docs/ (GitHub Pages)
 	cd web && npm install && npm run build

@@ -48,15 +48,16 @@ Le URI già pubblicate ufficialmente (es. IndicePA `https://indicepa.gov.it/ente
 | Percorso | Input | Output | Uso |
 |----------|--------|--------|-----|
 | **Analytics full** | `srcdata/rawdata/*` (OpenCUP, ANAC, PA Digitale, IndicePA, SCP) | `web/public/data/analytics/*.json` | Pagina **Analisi** (quanto / dove / chi / stato) |
-| **LD hub** | Filtri 01–05 (PA Digitale ∩ ANAC ∩ esiti) → JSON-LD → `all.ttl` | grafi / subgraph (campione CUP) | Unione semantica |
+| **LD hub** | Filtri 01–05 (PA Digitale ∩ ANAC ∩ esiti) → JSON-LD → `all.ttl` | grafi / subgraph + `.rete` | Unione semantica e pagina SPARQL |
 
 ```bash
 make analytics-full   # solo statistiche nazionali (DuckDB CLI)
-make web-assets       # LD hub + analytics-full + export grafi
+make rete-assets      # artifact .rete interrogabili in HTTP Range
+make web-assets       # LD hub + analytics-full + export grafi + .rete
 ```
 
-Non si materializza un RDF nazionale nel sito statico: aggregati tabellari +
-campioni di grafo.
+Non si materializza un RDF nazionale nel sito statico: aggregati tabellari,
+campioni di grafo e artifact `.rete` limitati agli hub Linked Data.
 
 ## Organizzazione del repository
 
@@ -68,6 +69,7 @@ campioni di grafo.
   * `scripts/build_full_analytics.py` — aggregati DuckDB sulle basi raw complete
     (regione, stato progetto, top comuni PAD, top aggiudicatari SCP, …)
   * `scripts/convert_scp_jsonld.py` — SCP bandi/esiti hub → Award / ContractNotice su `Lot/{cig}`
+  * `scripts/export_rete_assets.py` — hub Turtle + ontologie/CV → `.rete` con Dataset Card e query esempio
   * `ttl/all.ttl` — grafo unito (**hub** interop, non nazionale)
 * `web` — sito statico; testi editoriali in **`web/content/`** (Markdown/YAML), non nei `.tsx`
   * `content/README.md` — come modificare i testi
@@ -106,6 +108,22 @@ uv run python LD/scripts/convert_cupcig_jsonld.py --spike
 make all
 make web            # export JSON + build → docs/
 make web-preview    # http://localhost:4173/dati-semantic-OpenCUP-LD/
+```
+
+La pagina `/sparql` interroga nel browser `web/public/data/rete/opencup-hub.rete`
+e `monithon-hub.rete` tramite un web worker `rete-graph` (versione pinned `0.7.8`).
+I file `.rete` sono committati come asset derivati perché il workflow Pages non
+riesegue la pipeline Python. Formato rete pre-1.0: i Turtle restano la fonte
+canonica e gli artifact vanno rigenerati con `make rete-assets` quando cambiano.
+
+Esempio locale minimo:
+
+```bash
+uv run python - <<'PY'
+import rete_graph as rete
+g = rete.open("web/public/data/rete/opencup-hub.rete")
+print(g.quads, len(g.examples()))
+PY
 ```
 
 **Non usare** `npx serve docs` dalla root: la build referenzia

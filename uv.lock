@@ -19,6 +19,7 @@ dependencies = [
     { name = "pybars3" },
     { name = "pyld" },
     { name = "rdflib" },
+    { name = "rete-graph" },
 ]
 
 [package.metadata]
@@ -26,6 +27,7 @@ requires-dist = [
     { name = "pybars3", specifier = "==0.9.7" },
     { name = "pyld", specifier = ">=3.3.0" },
     { name = "rdflib", specifier = "==7.0.0" },
+    { name = "rete-graph", specifier = "==0.7.8" },
 ]
 
 [[package]]
@@ -190,6 +192,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0d/a3/63740490a392921a611cfc05b5b17bffd4259b3c9589c7904a4033b3d291/rdflib-7.0.0.tar.gz", hash = "sha256:9995eb8569428059b8c1affd26b25eac510d64f5043d9ce8c84e0d0036e995ae", size = 4765796, upload-time = "2023-08-01T21:14:57.338Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d4/b0/7b7d8b5b0d01f1a0b12cc2e5038a868ef3a15825731b8a0d776cf47566c0/rdflib-7.0.0-py3-none-any.whl", hash = "sha256:0438920912a642c866a513de6fe8a0001bd86ef975057d6962c79ce4771687cd", size = 531912, upload-time = "2023-08-01T21:14:52.851Z" },
+]
+
+[[package]]
+name = "rete-graph"
+version = "0.7.8"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b4/de/bbd2e9d3630974cffa7fcf85cc8336b3fc382c593b364cd0e582f5f01d9b/rete_graph-0.7.8.tar.gz", hash = "sha256:efa7c2204fca837f2e5a810870f3ad331bc5baa1fbc6ae73ba0e8fe746435a53", size = 1434635, upload-time = "2026-11-22T15:37:59.063Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/90/a8/cbdecd328c7107b0eea3b70470f26fc8aa545c55d7a6082a670cbc0fb426/rete_graph-0.7.8-cp39-abi3-macosx_10_12_universal2.macosx_10_12_x86_64.macosx_11_0_arm64.whl", hash = "sha256:740c4b4aa7caf4ee56fce9b1f08049a875050ec0755b160aca83c75cc3570209", size = 9507623, upload-time = "2026-11-22T15:37:48.433Z" },
+    { url = "https://files.pythonhosted.org/packages/ce/c3/812944d528f2450bf95351dc25f676eba9ae94a8236edf91cd9d90b939d7/rete_graph-0.7.8-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:704ea35be26b67359f77d91e8301f8923e5df5538dada57ee8dcba1dd2ad9d79", size = 5280542, upload-time = "2026-11-22T15:37:50.778Z" },
+    { url = "https://files.pythonhosted.org/packages/f6/33/0bce4aba707aed66dc892eaf97f9e4f2ea4555662e46c7451d7af4b53055/rete_graph-0.7.8-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:b6977e918c72e7c4a921b03ceddf53b6a05af764a45da2a57cdec90f276278c0", size = 4860334, upload-time = "2026-11-22T15:37:52.478Z" },
+    { url = "https://files.pythonhosted.org/packages/07/6d/0eddfb150800558f4c66fb42c0426caf78ae55c947cb39eca3ddbb2301c3/rete_graph-0.7.8-cp39-abi3-pyemscripten_2025_0_wasm32.whl", hash = "sha256:12c4c1c5ed550a66284b9dd31ae15fc8c8b2e7130172302bfb03a8c4d13806bb", size = 1647065, upload-time = "2026-11-22T15:37:54.233Z" },
+    { url = "https://files.pythonhosted.org/packages/d8/6a/6470e921c11ad59fecd4905162646ab250deed348b73322750e1b4f11b0c/rete_graph-0.7.8-cp39-abi3-pyemscripten_2026_0_wasm32.whl", hash = "sha256:177866ce3ad44e4499c3834fbdd9ddf533a8f2cd55bbd7344fcba3445631660b", size = 1579772, upload-time = "2026-11-22T15:37:55.556Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/3d/6bb657b377430b5154b1836442020219895e88a204c94b657b52bc454904/rete_graph-0.7.8-cp39-abi3-win_amd64.whl", hash = "sha256:3a07761df5244d519787607fa0dcb14f93910b53241af42060010244e59220a6", size = 4920275, upload-time = "2026-11-22T15:37:57.69Z" },
 ]
 
 [[package]]
